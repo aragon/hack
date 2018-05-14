@@ -2,7 +2,7 @@
 const users = [
   {
     caption: 'district0x',
-    image: '/img/users/district0x.png',
+    image: '/img/users/district0x.svg',
     infoLink: 'https://district0x.io',
     pinned: true,
   },
@@ -33,7 +33,8 @@ const siteConfig = {
   organizationName: 'aragon',
 
   headerLinks: [
-    {doc: 'get-started', label: 'Get started'},
+    {doc: 'getting-started', label: 'Get started'},
+    {doc: 'tutorial', label: 'Tutorial'},
     {doc: 'aragonos-intro', label: 'aragonOS'},
     {doc: 'aragonjs-intro', label: 'aragon.js'},
     {doc: 'aragonui-intro', label: 'aragon-ui'},

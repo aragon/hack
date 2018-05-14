@@ -94,7 +94,7 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle />
           <PromoSection>            
-            <Button.Anchor mode="strong" href={docUrl('get-started')}>
+            <Button.Anchor mode="strong" href={docUrl('getting-started')}>
               Get started
             </Button.Anchor>
             &nbsp;&nbsp;
@@ -251,7 +251,7 @@ const Showcase = props => {
   return (
     <div className="productShowcaseSection paddingBottom">
       <h2>Trusted by</h2>
-      <p>These projects use parts of the Aragon stack</p>
+      <p>Projects like these leverage the Aragon stack</p>
       <div className="logos">{showcase}</div>
       <div className="more-users">
         <a className="button" href={pageUrl('users', props.language)}>

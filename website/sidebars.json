@@ -1,5 +1,15 @@
 {
   "docs": {
-    "aragonOS": ["aragonos-intro"]
+    "The basics": [
+      "getting-started",
+      "acl-intro",
+      "forwarding-intro",
+      "upgradeability-intro",
+      "package-management",
+      "client"
+    ],
+    "aragonOS": [],
+    "aragon.js": [],
+    "Aragon UI": []
   }
 }
