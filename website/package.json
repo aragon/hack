@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "examples": "docusaurus-examples",
+    "sync-assets": "rsync -rtu \"$(dirname $(node -p 'require.resolve(\"@aragon/ui\")'))/\" static/aragon-ui",
+    "start": "npm run sync-assets; docusaurus-start",
+    "build": "docusaurus-build",
+    "publish-gh-pages": "docusaurus-publish",
+    "write-translations": "docusaurus-write-translations",
+    "version": "docusaurus-version",
+    "rename-version": "docusaurus-rename-version"
+  },
+  "devDependencies": {
+    "docusaurus": "^1.0.15"
+  },
+  "dependencies": {
+    "@aragon/ui": "^0.11.0",
+    "styled-components": "^3.2.6"
+  }
+}
