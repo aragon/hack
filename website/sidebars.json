@@ -9,8 +9,13 @@
       "client",
       "human-readable-txs"
     ],
-    "aragonOS": [],
-    "aragon.js": [],
+    "aragonOS": [
+      "aragonos-ref"
+    ],
+    "aragon.js": [
+      "aragonjs-ref",
+      "aragonjs-ref-clients"
+    ],
     "Aragon UI": []
   }
 }

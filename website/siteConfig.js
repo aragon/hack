@@ -35,9 +35,9 @@ const siteConfig = {
   headerLinks: [
     {doc: 'getting-started', label: 'Get started'},
     {doc: 'tutorial', label: 'Tutorial'},
-    {doc: 'aragonos-intro', label: 'aragonOS'},
-    {doc: 'aragonjs-intro', label: 'aragon.js'},
-    {doc: 'aragonui-intro', label: 'aragon-ui'},
+    {doc: 'aragonos-ref', label: 'aragonOS'},
+    {doc: 'aragonjs-ref', label: 'aragon.js'},
+    {doc: 'aragonui-ref', label: 'aragon-ui'},
     {page: 'help', label: 'Help'},
     {blog: true, label: 'Blog'},
   ],

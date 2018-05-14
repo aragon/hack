@@ -154,19 +154,19 @@ const BuildingBlocks = props => (
     <EmptyStateCard
       title="aragonOS"
       text="Solidity framework for governance"
-      actionButton={() => <GetStartedButton href={docUrl('aragonos-intro')}/>}
+      actionButton={() => <GetStartedButton href={docUrl('aragonos-ref')}/>}
       icon={() => <IconSettings /> }
     />
     <EmptyStateCard
       title="aragon.js"
       text="Easily interact your dapp's state"
-      actionButton={() => <GetStartedButton href={docUrl('aragonjs-intro')}/>}
+      actionButton={() => <GetStartedButton href={docUrl('aragonjs-ref')}/>}
       icon={() => <IconTokens /> }
     />
     <EmptyStateCard
       title="Aragon UI"
       text="Create a beautiful UI for your dapp"
-      actionButton={() => <GetStartedButton href={docUrl('aragonui-intro')}/>}
+      actionButton={() => <GetStartedButton href={docUrl('aragonui-ref')}/>}
       icon={() => <IconBlank /> }
     />
   </BuildingBlocksContainer>

@@ -4,7 +4,7 @@ title: Tutorial
 ---
 
 # Your first Aragon app
-In this guide, we will walk you through creating your first Aragon app using [aragonOS](aragonos-intro.md), [aragon.js](aragonjs-intro.md), [Aragon UI](aragonui-intro.md) and [Aragon CLI](aragoncli.md).
+In this guide, we will walk you through creating your first Aragon app using [aragonOS](aragonos-ref.md), [aragon.js](aragonjs-ref.md), [Aragon UI](aragonui-intro.md) and [Aragon CLI](aragoncli.md).
 
 ## Why build an Aragon app?
 
