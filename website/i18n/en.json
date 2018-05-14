@@ -14,17 +14,16 @@
     "aragonos-ref": "aragonOS reference documentation",
     "package-management": "Package management",
     "tutorial": "Tutorial",
-    "aragonui-ref": "Aragon UI reference documentation",
+    "aragonui-intro": "Aragon UI intro",
     "upgradeability-intro": "Intro to upgradeability",
     "Get started": "Get started",
     "Tutorial": "Tutorial",
     "aragonOS": "aragonOS",
     "aragon.js": "aragon.js",
-    "aragon-ui": "aragon-ui",
+    "Aragon UI": "Aragon UI",
     "Help": "Help",
     "Blog": "Blog",
-    "The basics": "The basics",
-    "Aragon UI": "Aragon UI"
+    "The basics": "The basics"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",

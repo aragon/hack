@@ -159,14 +159,14 @@ const BuildingBlocks = props => (
     />
     <EmptyStateCard
       title="aragon.js"
-      text="Easily interact your dapp's state"
+      text="Easily interact with your dapp's state"
       actionButton={() => <GetStartedButton href={docUrl('aragonjs-ref')}/>}
       icon={() => <IconTokens /> }
     />
     <EmptyStateCard
       title="Aragon UI"
       text="Create a beautiful UI for your dapp"
-      actionButton={() => <GetStartedButton href={docUrl('aragonui-ref')}/>}
+      actionButton={() => <GetStartedButton href={docUrl('aragonui-intro')}/>}
       icon={() => <IconBlank /> }
     />
   </BuildingBlocksContainer>
@@ -201,7 +201,7 @@ const UseCases = props => (
     <h1>Use cases</h1>
     <h2>For DAOs</h2>
     <MarkdownBlock>
-      You can create organizations that let entities (users, smart contracts) interact with each other and create rich **governance mechanisms** by using the **Access Control List** [LINK HERE].
+      You can create organizations that let entities (users, smart contracts) interact with each other and create rich **governance mechanisms** by using the [**Access Control List**](/docs/acl-intro.html).
     </MarkdownBlock>
     <MarkdownBlock>
       You can also create templates, so other people will be able to create pre-configured organizations just by selecting your template in the setup process.

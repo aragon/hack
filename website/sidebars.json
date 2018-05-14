@@ -16,6 +16,8 @@
       "aragonjs-ref",
       "aragonjs-ref-clients"
     ],
-    "Aragon UI": []
+    "Aragon UI": [
+      "aragonui-intro"
+    ]
   }
 }

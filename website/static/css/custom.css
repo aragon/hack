@@ -4,6 +4,15 @@
   text-decoration: underline;
 }
 
+.homeContainer .homeWrapper {
+  padding: 6em 10px !important;
+}
+
+.projectLogo img {
+  margin-top: 2rem;
+  max-height: 200px !important;
+}
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 
