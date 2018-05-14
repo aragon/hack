@@ -98,8 +98,6 @@ Second, define the roles that you want your app to have. A role can be assigned 
 In this example, we will define a role for incrementing, and a role for decrementing, but note that you can have a single role to guard all methods in your contract if you find that appropriate. 
 
 ```solidity
-// ...
-
 contract Counter is AragonApp {
     // ...
     bytes32 constant public INCREMENT_ROLE = keccak256("INCREMENT_ROLE");
@@ -111,8 +109,6 @@ contract Counter is AragonApp {
 Finally, guard the methods with the `auth` modifier that the `AragonApp` interface gives you:
 
 ```solidity
-// ...
-
 contract Counter is AragonApp {
     // ...
     
@@ -129,26 +125,12 @@ contract Counter is AragonApp {
 That's it. In 3 steps, you now have an Aragon app, with full upgradeability and modular governance.
 
 
-### Descriptive transactions
+## Descriptive transactions
 
-A big part of Aragon is user-friendliness, and one of the most unfriendly things might be transaction data. Examine this screenshot of a transaction in MetaMask:
-
-![](/docs/assets/metamask.png)
-
-Would you know what this transaction does? Not even a developer could tell (by the way, it buys a cryptokitty); this is why we created Radspec.
-
-Radspec is a secure alternative to Natspec. Natspec was supposed to be a way to describe transactions from a Natspec *expression* and some transaction data.
-
-The issue with Natspec, however, is that it is fully insecure. Any JavaScript goes in Natspec, which opens up a lot of potential attacks, like cross-site scripting, which might successfully phish users.
-
-We will make a post about Radspec in more detail, but for now, let's add some simple descriptions to some transactions in our app.
+Aragon wants to be as user friendly as possible, so it provides an easy way for developers to describe what their smart contracts do in a human readable way. It's called [Radspec](human-readable-txs.md). It works by putting `@notice` statements alongside a human readable description for the function.
 
 ```solidity
-// ...
-
-contract Counter is AragonApp {
-    // ...
-    
+contract Counter is AragonApp {    
     /**
      * @notice Increment the counter by 1
      */
@@ -165,51 +147,26 @@ contract Counter is AragonApp {
 }
 ```
 
-These Radspec expressions are written in comments in your source code, and they will be grabbed by `aragon` and bundled with your app.
+## Building the frontend
 
-The wrapper will now display these *alongside* the transaction a user is about to perform, so that they have a clear understanding of what they're about to sign.
+Because apps inside the [Aragon client](client.md) are sandboxed, it also means that apps do not have direct access to Web3.
 
-![Screenshot of signer showing Radspec](/docs/assets/radspec.png)
+Apps are run inside an iframe, which means that it only has access to its own DOM, not the outlying DOM. The app can communicate with the client over our own custom RPC protocol.
 
-*Caption: Our Radspec expressions showing up in the Aragon signer*
+Then the client takes care of connecting to Ethereum via Web3, and also handles things like signing transactions, displaying notifications and more to the end-user.
 
-Obviously, this is a super trivial example as we are not actually evaluating anything, but we could instead write something like:
-
-```
-Decrement the counter by `(2 * 2) - 3`
-```
-
-which would evaluate to
-
-```
-Decrement the counter by 1
-```
-
-
-## Building The Frontend
-
-Building the front-end of your Aragon app is a bit different from building a normal dapp. This is because we have other security requirements, since we're essentially running code from other developers inside of our dapp, so in order to mitigate risk (such as cross-site scripting, phishing attempts by manipulating the DOM) we sandbox apps.
-
-Because we sandbox apps, it also means that apps do not have direct access to Web3.
-
-Apps are run inside a sandboxed iframe, which means that it only has access to its own DOM, not the outlying DOM. In order to perform transactions, calls, send notifications and so on, the app communicates with the *wrapper* over our own custom RPC protocol.
-
-The wrapper takes care of connecting to Ethereum via Web3, and also handles things like signing transactions, displaying notifications and more to the end-user.
-
-To make it a bit easier, we've developed a library we use internally called Aragon.js.
-
-Aragon.js is split in two parts; one for wrappers and one for apps. The wrapper portion of Aragon.js reads *requests* from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion of Aragon.js provides a simple API to communicate with the wrapper (to read state, send transactions and more).
+All of this is achieved by using aragon.js. aragon.js is split in two parts; one for clients and one for apps. The client portion of aragon.js reads *requests* from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).
 
 Because we're building is an app, all we need is `@aragon/client`, and our template already has that installed.
 
 
-### Background Workers And Building State
+### Background workers and building state
 
 Apps usually want to listen to events using Web3 and build an application state from those events. This concept is also known as *event sourcing*.
 
-Aragon.js was built with event sourcing in mind. To build state continually without having the app loaded indefinitely, though, we need to run a background script.
+aragon.js was built with event sourcing in mind. To build state continually without having the app loaded indefinitely, though, we need to run a background script.
 
-Thankfully wrappers will run background scripts specified in the manifest files of our app (more on manifest files later).
+Thankfully the [Aragon client](client.md) will run background scripts specified in the manifest files of our app (more on manifest files later).
 
 Let's start by writing a background worker that listens for our `Increment` and `Decrement` events, and builds a state that simply is the current value of our counter.
 
@@ -217,7 +174,7 @@ Let's start by writing a background worker that listens for our `Increment` and 
 // app/script.js
 import Aragon from '@aragon/client'
 
-// Initialise the app
+// Initialize the app
 const app = new Aragon()
 
 // Listen for events and reduce them to a state
@@ -243,7 +200,7 @@ If you've worked with [Redux](https://redux.js.org/) before, this might look vag
 
 The `store` method takes in a reducer function with the signature `(state, event) => state`, where `state` is whatever you want it to be (in this example it is an integer), and `event` is a [Web3 event](https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#contract-events).
 
-Internally, `store` will fetch the last known state (if any) and pass that in as the first argument, and then store the resulting state in cache. This state can be observed in the view portion of your app. Also note that the `store` method returns an observable of states. This is a recurring theme in Aragon.js; almost everything is an [RxJS](http://reactivex.io/rxjs/) observable.
+Internally, `store` will fetch the last known state (if any) and pass that in as the first argument, and then store the resulting state in cache. This state can be observed in the view portion of your app. Also note that the `store` method returns an observable of states. This is a recurring theme in aragon.js; almost everything is an [RxJS](http://reactivex.io/rxjs/) observable.
 
 The reducer function **must always** return a state, even if it is the same state as before.
 
@@ -293,29 +250,26 @@ app.state().subscribe(
 That's it! Internally, `state` observes the `state` key in cache and emits every time a change occurs.
 
 
-### Sending Transactions
+### Sending transactions
 
 Our users need to be able to increment and decrement the counter. For this, we publish what is called an *intent* to the wrapper.
 
-An intent is an action you would like to occur on a specific contract. This intent is handled by the wrapper, which will calculate a *transaction path* using the ACL of our DAO.
+An intent is an action you would like to occur on a specific contract. This intent is handled by the client, which will calculate a *transaction path* using the ACL of our DAO.
 
 To understand transaction paths, we must first understand a little bit about how the ACL works.
 
-The ACL (access control list) is a simple mapping of *who* can perform *what* actions *where*. In our case, *someone* can perform an action guarded by a specific role (the *what*) on our app (the *where*).
+The [ACL (Access Control List)](acl-intro.md) is a simple mapping of *who* can perform *what* actions *where*. In our case, *someone* can perform an action guarded by a specific role (the *what*) on our app (the *where*).
 
 However, it is entirely possible that users can not perform actions directly. For example, in order to increment the counter, we might want a decision making process, such as a vote. The beauty of aragonOS is that we never need to specify this directly, as this is handled by the ACL.
 
 We simply say that the only one (*who*) that can perform increments and decrements (*what*) on our app (*where*) is the voting app. This is not done at compile time, it is done at run time.
 
-This works because of a concept called *forwarders*. A forwarder is simply an app that can execute transactions on someones behalf, if the ACL permits it, and that app can have its own *arbitrary conditions* under which it wants to execute your transaction! In the example of the voting app, the voting app will only execute your transaction if the vote passes. Cool, right?
+This works because of a concept called [*forwarders*](forwarding-intro.md). A forwarder is simply an app that can execute transactions on someones behalf, if the ACL permits it, and that app can have its own *arbitrary conditions* under which it wants to execute your transaction! In the example of the voting app, the voting app will only execute your transaction if the vote passes. Cool, right?
 
-We will release a post deep diving a bit more into the forwarding concept, but bear with me for now.
-
-It's actually really simple to use. Let's add our intents to our app:
+It's really simple to use. Let's add our intents to our app:
 
 ```js
 // app/app.js
-// ...
 const view = document.getElementById('view')
 const increment = document.getElementById('increment')
 const decrement = document.getElementById('decrement')
@@ -326,13 +280,12 @@ increment.onclick = () => {
 decrement.onclick = () => {
   app.decrement()
 }
-// ...
 ```
 
 That's it! Now whenever the user clicks one of either the increment or decrement buttons, an intent is sent to the wrapper, and it will show the user a transaction to sign.
 
 
-### The Build Script
+### The build script
 
 Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use `parcel` because it is zero config, but you can use your favorite bundler.
 
@@ -357,9 +310,9 @@ Next, let's add the build script to `package.json`:
 You can now build the front-end of your app by running `npm run build`.
 
 
-## Writing The Manifest Files
+## Writing the manifest files
 
-In order for Aragon.js to function, it needs some metadata about your app. This metadata is specified in two manifest files; `manifest.json` and `arapp.json`.
+In order for aragon.js to function, it needs some metadata about your app. This metadata is specified in two manifest files; `manifest.json` and `arapp.json`.
 
 `arapp.json` defines smart contract and APM-specific things, like the roles in your app and the name and version of your app.
 
@@ -391,12 +344,11 @@ Let's modify it accordingly:
 ```
 
 
-## Running Your App Locally
+## Running your app locally
 
 To test out your app without deploying a DAO yourself, installing apps, setting up permissions and setting up APM, you can simply run:
 
 ```
-npx truffle compile # Remember to compile your contracts!
 aragon run
 ```
 
@@ -409,9 +361,7 @@ This will do a couple of things for you:
 
 After running this command a browser tab should pop up with your freshly created DAO, complete with permissions and your local app installed.
 
-<center>
-    <img alt="Screenshot of dapp" src="https://i.imgur.com/TMW7rlO.png" />
-</center>
+[Screenshot of dapp](https://i.imgur.com/TMW7rlO.png)
 
 > Caption: *It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the [React template](https://github.com/aragon/aragon-react-boilerplate)!*
 
@@ -423,7 +373,6 @@ Now that we're confident that our app will work and amaze the world, we should p
 To publish it, simply run:
 
 ```
-npx truffle compile
 aragon publish
 ```
 
@@ -432,12 +381,12 @@ This will give you a transaction to sign that will either register the repositor
 Now you just need to share the great news on Twitter and Reddit, to let people know that you've built something great!
 
 
-## Next Steps
+## Next steps
 
 The full source code of the application we've built in this guide is available on [our GitHub](https://github.com/aragon/aragon-example-application).
 
-A good place to go from here would be to check out [our existing apps](https://github.com/aragon/aragon-apps). They're fairly self-contained and use some patterns you might find helpful.
+A good place to go from here would be to check out [our existing apps](https://github.com/aragon/aragon-apps). They are fairly self-contained and use some patterns you might find helpful.
 
-There's much more to aragonOS 3 and Aragon.js, and we even have our own [UI toolkit](https://github.com/aragon/aragon-ui). We encourage you to explore all 3 and provide us feedback.
+There is much more to aragonOS and aragon.js, and we even have our own [UI toolkit](https://github.com/aragon/aragon-ui). We encourage you to explore all 3 and provide us feedback.
 
 Join the conversation and ask questions on [GitHub](https://github.com/aragon) and [Aragon Chat](https://aragon.chat), and make sure to tell us if you build something ara-mazing!

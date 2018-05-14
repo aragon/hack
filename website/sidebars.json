@@ -6,7 +6,8 @@
       "forwarding-intro",
       "upgradeability-intro",
       "package-management",
-      "client"
+      "client",
+      "human-readable-txs"
     ],
     "aragonOS": [],
     "aragon.js": [],

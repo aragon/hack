@@ -23,6 +23,9 @@ The ACL is a mapping of who has permission to execute an action in an Aragon app
 
 Which in English would be: an *Entity* can call a *Role* in an *App*, and this all is managed by *Manager*.
 
+
+## Example
+
 Now let's say we have these 3 apps:
 - A *Token Manager* app, which represents BOB token holders and forwards all their intents to another app
 - A *Voting* app, which executes any arbitraty action after a voting of BOB token holders passes
