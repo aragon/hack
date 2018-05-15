@@ -28,7 +28,7 @@ npm i -g @aragon/cli
 Next, we bootstrap our project:
 
 ```
-aragon init foo.aragonpm.eth bare
+aragon init foo.aragonpm.eth
 ```
 
 This will create a new directory named `foo`, with files cloned from the official Aragon [react](https://github.com/aragon/aragon-react-boilerplate) boilerplate. This particular boilerplate includes everything you need to get started — Truffle, aragonOS and aragon.js.
