@@ -19,5 +19,63 @@
     "Aragon UI": [
       "aragonui-intro"
     ]
+  },
+  "docs-api": {
+    "ACL": [
+      "acl_ACL",
+      "acl_ACLSyntaxSugar",
+      "acl_ACLSyntaxSugar_ACLHelpers",
+      "acl_ACL_ACLOracle",
+      "acl_IACL"
+    ],
+    "APM": [
+      "apm_APMRegistry",
+      "apm_APMRegistry_APMRegistryConstants",
+      "apm_Repo"
+    ],
+    "APPS": [
+      "apps_AppProxyBase",
+      "apps_AppProxyPinned",
+      "apps_AppProxyUpgradeable",
+      "apps_AppStorage",
+      "apps_AragonApp"
+    ],
+    "COMMON": [
+      "common_DelegateProxy",
+      "common_IForwarder",
+      "common_Initializable"
+    ],
+    "ENS": [
+      "ens_ENSConstants",
+      "ens_ENSSubdomainRegistrar"
+    ],
+    "EVMSCRIPT": [
+      "evmscript_EVMScriptRegistry",
+      "evmscript_EVMScriptRunner",
+      "evmscript_IEVMScriptExecutor",
+      "evmscript_IEVMScriptRegistry",
+      "evmscript_IEVMScriptRegistry_EVMScriptRegistryConstants",
+      "evmscript_ScriptHelpers"
+    ],
+    "EVMSCRIPT / EXECUTORS": [
+      "evmscript_executors_CallsScript",
+      "evmscript_executors_DelegateScript",
+      "evmscript_executors_DelegateScript_DelegateScriptTarget",
+      "evmscript_executors_DeployDelegateScript"
+    ],
+    "FACTORY": [
+      "factory_APMRegistryFactory",
+      "factory_AppProxyFactory",
+      "factory_DAOFactory",
+      "factory_ENSFactory",
+      "factory_EVMScriptRegistryFactory"
+    ],
+    "KERNEL": [
+      "kernel_IKernel",
+      "kernel_Kernel",
+      "kernel_KernelProxy",
+      "kernel_KernelStorage",
+      "kernel_KernelStorage_KernelConstants"
+    ]
   }
 }
