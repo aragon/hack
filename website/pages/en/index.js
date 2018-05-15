@@ -194,6 +194,12 @@ const UseCasesContainer = styled(Container)`
   h1 {
     font-size: 150% !important;
   }
+
+  img {
+    width: 100%;
+    max-width: 386px;
+    padding: 1rem;
+  }
 `
 
 const UseCases = props => (
@@ -220,8 +226,9 @@ const UseCases = props => (
     <MarkdownBlock>
       Some examples of Aragon apps:
     </MarkdownBlock>
-    <a href={pageUrl('users', props.language)}>
-      <img src={imgUrl('cases/althea-small.jpg')} width="50%" />
+    <a href="http://wiki.aragon.one/projects/" target="_blank">
+      <img src={imgUrl('cases/althea-small.jpg')} />
+      <img src={imgUrl('cases/planning-small.jpg')} />
     </a>
     <br />
     <h2>For crypto protocols</h2>
@@ -254,7 +261,7 @@ const Showcase = props => {
       <p>Projects like these leverage the Aragon stack</p>
       <div className="logos">{showcase}</div>
       <div className="more-users">
-        <a className="button" href={pageUrl('users', props.language)}>
+        <a className="button" href="http://wiki.aragon.one/projects/" target="_blank">
           More Aragon users
         </a>
       </div>

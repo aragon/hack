@@ -49,10 +49,10 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Community</h5>
-            <a href={this.pageUrl('users', this.props.language)}>
+            <a href="http://wiki.aragon.one/projects/" target="_blank">
               User showcase
             </a>
-            <a href="https://aragon.chat">Community chat</a>
+            <a href="https://aragon.chat" target="_blank">Community chat</a>
             <a
               href="https://twitter.com/AragonProject"
               target="_blank"
@@ -62,7 +62,7 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href={this.props.config.baseUrl + 'blog'}>Blog</a>
+            <a href="https://blog.aragon.one">Blog</a>
             <a href="https://github.com/aragon">GitHub</a>
           </div>
         </section>
