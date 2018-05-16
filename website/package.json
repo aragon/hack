@@ -13,8 +13,8 @@
     "rename-version": "docusaurus-rename-version"
   },
   "devDependencies": {
-    "docusaurus": "aragon/docusaurus",
-    "solidity-docgen": "^0.1.0"
+    "solidity-docgen": "^0.1.0",
+    "@aragon/docusaurus": "^1.0.15"
   },
   "dependencies": {
     "@aragon/ui": "^0.11.0",
