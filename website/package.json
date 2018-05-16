@@ -2,18 +2,23 @@
   "scripts": {
     "examples": "docusaurus-examples",
     "sync-assets": "rsync -rtu \"$(dirname $(node -p 'require.resolve(\"@aragon/ui\")'))/\" static/aragon-ui",
+    "hack_solidity_version": "find ./node_modules/@aragon/os/contracts -name \"*.sol\" -exec sed -i 's/pragma solidity 0.4.18/pragma solidity ^0.4.18/g' {} \\;",
+    "hack_clean_os_lib_api": "rm -f ../docs/api_lib_*",
+    "generate:os": "npm run hack_solidity_version && solidity-docgen --exclude lib node_modules/@aragon/os node_modules/@aragon/os/contracts ../ && npm run hack_clean_os_lib_api",
     "start": "npm run sync-assets; docusaurus-start",
-    "build": "docusaurus-build",
+    "build": "npm run generate:os && docusaurus-build",
     "publish-gh-pages": "USE_SSH=true docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version"
   },
   "devDependencies": {
+    "solidity-docgen": "^0.1.0",
     "@aragon/docusaurus": "^1.0.15"
   },
   "dependencies": {
     "@aragon/ui": "^0.11.0",
+    "@aragon/os": "^3.1.5",
     "styled-components": "^3.2.6"
   }
 }
