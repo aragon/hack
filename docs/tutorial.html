@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Tutorial · Aragon Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Tutorial · Aragon Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://hack2.aragon.one/index.html"/><meta property="og:description" content="# Your first Aragon app"/><meta property="og:image" content="https://hack2.aragon.one/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://hack2.aragon.one/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://hack2.aragon.one/blog/atom.xml" title="Aragon Developer Portal Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://hack2.aragon.one/blog/feed.xml" title="Aragon Developer Portal Blog RSS Feed"/><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible doc separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/isotype.svg" alt="Aragon Developer Portal"/><h2 class="headerTitleWithLogo">Aragon Developer Portal</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/getting-started.html" target="_self">Get started</a></li><li class="siteNavItemActive"><a href="/docs/tutorial.html" target="_self">Tutorial</a></li><li class=""><a href="/docs/aragonos-ref.html" target="_self">aragonOS</a></li><li class=""><a href="/docs/aragonjs-ref.html" target="_self">aragon.js</a></li><li class=""><a href="/docs/aragonui-intro.html" target="_self">Aragon UI</a></li><li class=""><a href="/en/help.html" target="_self">Help</a></li><li class=""><a href="/blog" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Tutorial</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="your-first-aragon-app"></a><a href="#your-first-aragon-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Your first Aragon app</h1>
+<p>In this guide, we will walk you through creating your first Aragon app using <a href="aragonos-ref.md">aragonOS</a>, <a href="aragonjs-ref.md">aragon.js</a>, <a href="aragonui-intro.md">Aragon UI</a> and <a href="aragoncli.md">Aragon CLI</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="why-build-an-aragon-app"></a><a href="#why-build-an-aragon-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Why build an Aragon app?</h2>
+<p>Let's first talk a bit about why you might want to build an Aragon app.</p>
+<p>If you are building a protocol with some sort of curation mechanism or community involvement, or a dapp, Aragon gives you two things virtually for free: upgradeability and governance.</p>
+<p>There is a case to be made that upgradeability and governance are two sides of the same coin, since upgradeability without governance re-centralises authority in an otherwise decentralised system, because you have a single entity who decides what version of a contract you interact with.</p>
+<p>On the flipside, governance without upgradeability creates rigid systems, which is bad, because what works today, might not work tomorrow.</p>
+<h2><a class="anchor" aria-hidden="true" id="the-setup"></a><a href="#the-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The setup</h2>
+<p>Let's first set up our project.</p>
+<pre><code class="hljs"><span class="hljs-built_in">npm</span> i -g @aragon/cli
+</code></pre>
+<p>Next, we bootstrap our project:</p>
+<pre><code class="hljs">aragon init foo<span class="hljs-selector-class">.aragonpm</span><span class="hljs-selector-class">.eth</span> bare
+</code></pre>
+<p>This will create a new directory named <code>foo</code>, with files cloned from the official Aragon <a href="https://github.com/aragon/aragon-react-boilerplate">react</a> boilerplate. This particular boilerplate includes everything you need to get started — Truffle, aragonOS and aragon.js.</p>
+<p>Notice that we input a fully qualified <a href="https://ens.domains/">ENS</a> name. We also initialise the app from the <a href="https://github.com/aragon/aragon-react-boilerplate">react template</a>, so we get <a href="https://github.com/aragon/aragon-ui">Aragon UI</a> included. You can use the <code>bare</code> template if you don't want to use it.</p>
+<p>Let's examine the ENS name we entered, because it is not entirely arbitrary.</p>
+<p><center>
+<img alt="Illustration of foo.aragonpm.eth" src="https://i.imgur.com/MQnYT6d.png" />
+</center></p>
+<p>The first label in the ENS name is the name of our app. This can be anything you want, given that the full ENS name is not taken.</p>
+<p>The second and third label is the name of the <a href="/docs/package-management.html">APM</a> (Aragon Package Manager) registry that your repository will be (or is) registered to. For the sake of simplicity, this guide assumes that you have rights to create repositories on aragonpm.eth, but you could deploy your own APM registry if you so desire.</p>
+<h2><a class="anchor" aria-hidden="true" id="writing-a-simple-contract"></a><a href="#writing-a-simple-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing a simple contract</h2>
+<p>To illustrate how easy it is to use aragonOS, we will build our app as a vanilla smart contract, without any Aragon-specific interfaces at all.</p>
+<p>Today, we will build a simple counter app — you can increment it, you can decrement it, and it will all be decentralized. Decentralized coffee counter, anyone?</p>
+<pre><code class="hljs css solidity"><span class="hljs-comment">// contracts/Counter.sol</span>
+pragma solidity <span class="hljs-number">0.4</span><span class="hljs-number">.18</span>;
+
+contract Counter {
+    <span class="hljs-comment">// Events</span>
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Increment</span>(<span class="hljs-params">address entity</span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Decrement</span>(<span class="hljs-params">address entity</span>)</span>;
+
+    <span class="hljs-comment">// State</span>
+    <span class="hljs-keyword">int</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">value</span>;
+    
+    <span class="hljs-function">function <span class="hljs-title">increment</span>(<span class="hljs-params"></span>) external </span>{
+        <span class="hljs-keyword">value</span> += <span class="hljs-number">1</span>;
+        Increment(msg.sender);
+    }
+
+    <span class="hljs-function">function <span class="hljs-title">decrement</span>(<span class="hljs-params"></span>) external </span>{
+        <span class="hljs-keyword">value</span> -= <span class="hljs-number">1</span>;
+        Decrement(msg.sender);
+    }
+}
+</code></pre>
+<p>Pretty simple, right? You might wonder why we would bother adding events to this smart contract, but it comes in handy later for illustration purposes — and we can also create an activity feed from it, if we wanted to.</p>
+<h2><a class="anchor" aria-hidden="true" id="3-steps-to-governance-and-upgradeability"></a><a href="#3-steps-to-governance-and-upgradeability" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3 steps to governance and upgradeability</h2>
+<p>Now for the interesting part: making our simple smart contract an Aragon app.</p>
+<p>First, inherit from the Aragon app smart contract, like so:</p>
+<pre><code class="hljs css solidity"><span class="hljs-keyword">import</span> <span class="hljs-string">"@aragon/os/contracts/apps/AragonApp.sol"</span>;
+
+contract Counter <span class="hljs-keyword">is</span> AragonApp {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Second, define the roles that you want your app to have. A role can be assigned to other apps or people, and those entities will have access to methods guarded by that role.</p>
+<p>In this example, we will define a role for incrementing, and a role for decrementing, but note that you can have a single role to guard all methods in your contract if you find that appropriate.</p>
+<pre><code class="hljs css solidity">contract Counter <span class="hljs-keyword">is</span> AragonApp {
+    <span class="hljs-comment">// ...</span>
+    bytes32 constant <span class="hljs-keyword">public</span> INCREMENT_ROLE = keccak256(<span class="hljs-string">"INCREMENT_ROLE"</span>);
+    bytes32 constant <span class="hljs-keyword">public</span> DECREMENT_ROLE = keccak256(<span class="hljs-string">"DECREMENT_ROLE"</span>);
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Finally, guard the methods with the <code>auth</code> modifier that the <code>AragonApp</code> interface gives you:</p>
+<pre><code class="hljs css solidity">contract Counter <span class="hljs-keyword">is</span> AragonApp {
+    <span class="hljs-comment">// ...</span>
+    
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span><span class="hljs-params">()</span> <span class="hljs-title">auth</span><span class="hljs-params">(INCREMENT_ROLE)</span> <span class="hljs-title">external</span> </span>{
+        <span class="hljs-comment">// ...</span>
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span><span class="hljs-params">()</span> <span class="hljs-title">auth</span><span class="hljs-params">(DECREMENT_ROLE)</span> <span class="hljs-title">external</span> </span>{
+        <span class="hljs-comment">// ...</span>
+    }
+}
+</code></pre>
+<p>That's it. In 3 steps, you now have an Aragon app, with full upgradeability and modular governance.</p>
+<h2><a class="anchor" aria-hidden="true" id="descriptive-transactions"></a><a href="#descriptive-transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descriptive transactions</h2>
+<p>Aragon wants to be as user friendly as possible, so it provides an easy way for developers to describe what their smart contracts do in a human readable way. It's called <a href="/docs/human-readable-txs.html">Radspec</a>. It works by putting <code>@notice</code> statements alongside a human readable description for the function.</p>
+<pre><code class="hljs css solidity">contract Counter is AragonApp {    
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@notice</span> Increment the counter by 1
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span><span class="hljs-params">()</span> <span class="hljs-title">auth</span><span class="hljs-params">(INCREMENT_ROLE)</span> <span class="hljs-title">external</span> </span>{
+        <span class="hljs-comment">// ...</span>
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@notice</span> Decrement the counter by 1
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span><span class="hljs-params">()</span> <span class="hljs-title">auth</span><span class="hljs-params">(DECREMENT_ROLE)</span> <span class="hljs-title">external</span> </span>{
+        <span class="hljs-comment">// ...</span>
+    }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="building-the-frontend"></a><a href="#building-the-frontend" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Building the frontend</h2>
+<p>Because apps inside the <a href="/docs/client.html">Aragon client</a> are sandboxed, it also means that apps do not have direct access to Web3.</p>
+<p>Apps are run inside an iframe, which means that it only has access to its own DOM, not the outlying DOM. The app can communicate with the client over our own custom RPC protocol.</p>
+<p>Then the client takes care of connecting to Ethereum via Web3, and also handles things like signing transactions, displaying notifications and more to the end-user.</p>
+<p>All of this is achieved by using aragon.js. aragon.js is split in two parts; one for clients and one for apps. The client portion of aragon.js reads <em>requests</em> from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).</p>
+<p>Because we're building is an app, all we need is <code>@aragon/client</code>, and our template already has that installed.</p>
+<h3><a class="anchor" aria-hidden="true" id="background-workers-and-building-state"></a><a href="#background-workers-and-building-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background workers and building state</h3>
+<p>Apps usually want to listen to events using Web3 and build an application state from those events. This concept is also known as <em>event sourcing</em>.</p>
+<p>aragon.js was built with event sourcing in mind. To build state continually without having the app loaded indefinitely, though, we need to run a background script.</p>
+<p>Thankfully the <a href="/docs/client.html">Aragon client</a> will run background scripts specified in the manifest files of our app (more on manifest files later).</p>
+<p>Let's start by writing a background worker that listens for our <code>Increment</code> and <code>Decrement</code> events, and builds a state that simply is the current value of our counter.</p>
+<pre><code class="hljs css js"><span class="hljs-comment">// app/script.js</span>
+<span class="hljs-keyword">import</span> Aragon <span class="hljs-keyword">from</span> <span class="hljs-string">'@aragon/client'</span>
+
+<span class="hljs-comment">// Initialize the app</span>
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Aragon()
+
+<span class="hljs-comment">// Listen for events and reduce them to a state</span>
+<span class="hljs-keyword">const</span> state$ = app.store(<span class="hljs-function">(<span class="hljs-params">state, event</span>) =&gt;</span> {
+  <span class="hljs-comment">// Initial state</span>
+  <span class="hljs-keyword">if</span> (state === <span class="hljs-literal">null</span>) state = <span class="hljs-number">0</span>
+  
+  <span class="hljs-comment">// Build state</span>
+  <span class="hljs-keyword">switch</span> (event.event) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'Decrement'</span>:
+      state--
+      <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'Increment'</span>:
+      state++
+      <span class="hljs-keyword">break</span>
+  }
+  
+  <span class="hljs-keyword">return</span> state
+})
+</code></pre>
+<p>If you've worked with <a href="https://redux.js.org/">Redux</a> before, this might look vaguely familiar.</p>
+<p>The <code>store</code> method takes in a reducer function with the signature <code>(state, event) =&gt; state</code>, where <code>state</code> is whatever you want it to be (in this example it is an integer), and <code>event</code> is a <a href="https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#contract-events">Web3 event</a>.</p>
+<p>Internally, <code>store</code> will fetch the last known state (if any) and pass that in as the first argument, and then store the resulting state in cache. This state can be observed in the view portion of your app. Also note that the <code>store</code> method returns an observable of states. This is a recurring theme in aragon.js; almost everything is an <a href="http://reactivex.io/rxjs/">RxJS</a> observable.</p>
+<p>The reducer function <strong>must always</strong> return a state, even if it is the same state as before.</p>
+<blockquote>
+<p><strong>Note</strong>: The state will start out as <code>null</code>, not <code>undefined</code> because of the JSONRPC specification.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="displaying-state"></a><a href="#displaying-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Displaying State</h3>
+<p>Now let's write the view portion of our app. In our case, this is a simple HTML file, and a simple JavaScript file that observes the state that our background worker builds for us.</p>
+<pre><code class="hljs css html"><span class="hljs-comment">&lt;!-- app/index.html !--&gt;</span>
+<span class="hljs-meta">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Counter App<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"decrement"</span>&gt;</span>-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"view"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"increment"</span>&gt;</span>+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"app.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<pre><code class="hljs css js"><span class="hljs-comment">// app/app.js</span>
+<span class="hljs-keyword">import</span> Aragon, { providers } <span class="hljs-keyword">from</span> <span class="hljs-string">'@aragon/client'</span>
+
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Aragon(
+  <span class="hljs-keyword">new</span> providers.WindowMessage(<span class="hljs-built_in">window</span>.parent)
+)
+<span class="hljs-keyword">const</span> view = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'view'</span>)
+
+app.state().subscribe(
+  <span class="hljs-function">(<span class="hljs-params">state</span>) =&gt;</span> {
+    view.innerHTML = <span class="hljs-string">`The counter is <span class="hljs-subst">${state || <span class="hljs-number">0</span>}</span>`</span>
+  },
+  (err) =&gt; {
+    view.innerHTML = <span class="hljs-string">'An error occured, check the console'</span>
+    <span class="hljs-built_in">console</span>.log(err)
+  }
+)
+</code></pre>
+<p>That's it! Internally, <code>state</code> observes the <code>state</code> key in cache and emits every time a change occurs.</p>
+<h3><a class="anchor" aria-hidden="true" id="sending-transactions"></a><a href="#sending-transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sending transactions</h3>
+<p>Our users need to be able to increment and decrement the counter. For this, we publish what is called an <em>intent</em> to the wrapper.</p>
+<p>An intent is an action you would like to occur on a specific contract. This intent is handled by the client, which will calculate a <em>transaction path</em> using the ACL of our DAO.</p>
+<p>To understand transaction paths, we must first understand a little bit about how the ACL works.</p>
+<p>The <a href="/docs/acl-intro.html">ACL (Access Control List)</a> is a simple mapping of <em>who</em> can perform <em>what</em> actions <em>where</em>. In our case, <em>someone</em> can perform an action guarded by a specific role (the <em>what</em>) on our app (the <em>where</em>).</p>
+<p>However, it is entirely possible that users can not perform actions directly. For example, in order to increment the counter, we might want a decision making process, such as a vote. The beauty of aragonOS is that we never need to specify this directly, as this is handled by the ACL.</p>
+<p>We simply say that the only one (<em>who</em>) that can perform increments and decrements (<em>what</em>) on our app (<em>where</em>) is the voting app. This is not done at compile time, it is done at run time.</p>
+<p>This works because of a concept called <a href="/docs/forwarding-intro.html"><em>forwarders</em></a>. A forwarder is simply an app that can execute transactions on someones behalf, if the ACL permits it, and that app can have its own <em>arbitrary conditions</em> under which it wants to execute your transaction! In the example of the voting app, the voting app will only execute your transaction if the vote passes. Cool, right?</p>
+<p>It's really simple to use. Let's add our intents to our app:</p>
+<pre><code class="hljs css js"><span class="hljs-comment">// app/app.js</span>
+<span class="hljs-keyword">const</span> view = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'view'</span>)
+<span class="hljs-keyword">const</span> increment = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'increment'</span>)
+<span class="hljs-keyword">const</span> decrement = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'decrement'</span>)
+
+increment.onclick = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  app.increment()
+}
+decrement.onclick = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  app.decrement()
+}
+</code></pre>
+<p>That's it! Now whenever the user clicks one of either the increment or decrement buttons, an intent is sent to the wrapper, and it will show the user a transaction to sign.</p>
+<h3><a class="anchor" aria-hidden="true" id="the-build-script"></a><a href="#the-build-script" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The build script</h3>
+<p>Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use <code>parcel</code> because it is zero config, but you can use your favorite bundler.</p>
+<p>Let's install Parcel first:</p>
+<pre><code class="hljs">npm <span class="hljs-selector-tag">i</span> parcel-bundler -D
+</code></pre>
+<p>Next, let's add the build script to <code>package.json</code>:</p>
+<pre><code class="hljs css js">{
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-string">"scripts"</span>: {
+    <span class="hljs-string">"build"</span>: <span class="hljs-string">"parcel build app/script.js -d dist/ &amp;&amp; parcel build app/index.html -d dist/ --public-url '.'"</span>
+  }
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>You can now build the front-end of your app by running <code>npm run build</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="writing-the-manifest-files"></a><a href="#writing-the-manifest-files" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing the manifest files</h2>
+<p>In order for aragon.js to function, it needs some metadata about your app. This metadata is specified in two manifest files; <code>manifest.json</code> and <code>arapp.json</code>.</p>
+<p><code>arapp.json</code> defines smart contract and APM-specific things, like the roles in your app and the name and version of your app.</p>
+<p>Let's modify <code>arapp.json</code> so that it knows about the roles we defined previously:</p>
+<pre><code class="hljs css js">{
+  <span class="hljs-string">"appName"</span>: <span class="hljs-string">"foo.aragonpm.eth"</span>,
+  <span class="hljs-string">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
+  <span class="hljs-string">"roles"</span>: [
+      { <span class="hljs-string">"name"</span>: <span class="hljs-string">"Increment the counter"</span>, <span class="hljs-string">"id"</span>: <span class="hljs-string">"INCREMENT_ROLE"</span>, <span class="hljs-string">"params"</span>: [] },
+      { <span class="hljs-string">"name"</span>: <span class="hljs-string">"Decrement the counter"</span>, <span class="hljs-string">"id"</span>: <span class="hljs-string">"DECREMENT_ROLE"</span>, <span class="hljs-string">"params"</span>: [] }
+  ],
+  <span class="hljs-string">"path"</span>: <span class="hljs-string">"contracts/Counter.sol"</span>
+}
+</code></pre>
+<p><code>manifest.json</code> defines end-user specific things, like the human-readable name of your app, icons and a small description of your app. It also (optionally) defines background scripts, of which we have one.</p>
+<p>Let's modify it accordingly:</p>
+<pre><code class="hljs css json">{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Counter"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"My first Aragon app"</span>,
+  <span class="hljs-attr">"script"</span>: <span class="hljs-string">"/dist/script.js"</span>,
+  <span class="hljs-attr">"start_url"</span>: <span class="hljs-string">"/dist/index.html"</span>
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="running-your-app-locally"></a><a href="#running-your-app-locally" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running your app locally</h2>
+<p>To test out your app without deploying a DAO yourself, installing apps, setting up permissions and setting up APM, you can simply run:</p>
+<pre><code class="hljs">aragon <span class="hljs-keyword">run</span><span class="bash">
+</span></code></pre>
+<p>This will do a couple of things for you:</p>
+<ul>
+<li>It will start a development chain you can interact with (it uses <code>ganache-core</code>, so it's a full testrpc instance)</li>
+<li>It deploys an Aragon DAO with apps and development permissions (i.e. everyone can do everything)</li>
+<li>It publishes your app to a local APM instance</li>
+<li>It installs your app</li>
+</ul>
+<p>After running this command a browser tab should pop up with your freshly created DAO, complete with permissions and your local app installed.</p>
+<p><a href="https://i.imgur.com/TMW7rlO.png">Screenshot of dapp</a></p>
+<blockquote>
+<p>Caption: <em>It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the <a href="https://github.com/aragon/aragon-react-boilerplate">React template</a>!</em></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="publishing"></a><a href="#publishing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Publishing</h2>
+<p>Now that we're confident that our app will work and amaze the world, we should publish it.</p>
+<p>To publish it, simply run:</p>
+<pre><code class="hljs"><span class="hljs-attribute">aragon publish</span>
+</code></pre>
+<p>This will give you a transaction to sign that will either register the repository (if it does not exist) or publish a new version (if the repository exists). Furthermore, it will run your build script (if available) and publish your front-end and manifest files to IPFS.</p>
+<p>Now you just need to share the great news on Twitter and Reddit, to let people know that you've built something great!</p>
+<h2><a class="anchor" aria-hidden="true" id="next-steps"></a><a href="#next-steps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next steps</h2>
+<p>The full source code of the application we've built in this guide is available on <a href="https://github.com/aragon/aragon-example-application">our GitHub</a>.</p>
+<p>A good place to go from here would be to check out <a href="https://github.com/aragon/aragon-apps">our existing apps</a>. They are fairly self-contained and use some patterns you might find helpful.</p>
+<p>There is much more to aragonOS and aragon.js, and we even have our own <a href="https://github.com/aragon/aragon-ui">UI toolkit</a>. We encourage you to explore all 3 and provide us feedback.</p>
+<p>Join the conversation and ask questions on <a href="https://github.com/aragon">GitHub</a> and <a href="https://aragon.chat">Aragon Chat</a>, and make sure to tell us if you build something ara-mazing!</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#why-build-an-aragon-app">Why build an Aragon app?</a></li><li><a href="#the-setup">The setup</a></li><li><a href="#writing-a-simple-contract">Writing a simple contract</a></li><li><a href="#3-steps-to-governance-and-upgradeability">3 steps to governance and upgradeability</a></li><li><a href="#descriptive-transactions">Descriptive transactions</a></li><li><a href="#building-the-frontend">Building the frontend</a><ul class="toc-headings"><li><a href="#background-workers-and-building-state">Background workers and building state</a></li><li><a href="#displaying-state">Displaying State</a></li><li><a href="#sending-transactions">Sending transactions</a></li><li><a href="#the-build-script">The build script</a></li></ul></li><li><a href="#writing-the-manifest-files">Writing the manifest files</a></li><li><a href="#running-your-app-locally">Running your app locally</a></li><li><a href="#publishing">Publishing</a></li><li><a href="#next-steps">Next steps</a></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bXwoTT" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/isotype.svg" alt="Aragon Developer Portal" width="66" height="58"/></a><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-ref.html">aragonOS</a><a href="/docs/aragonjs-ref.html">aragon.js</a><a href="/docs/aragonui-intro.html">Aragon UI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.one/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.one">Blog</a><a href="https://github.com/aragon">GitHub</a></div></section></footer></div></body></html>
