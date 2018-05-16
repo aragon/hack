@@ -1,0 +1,6 @@
+---
+id: evmscript_IEVMScriptExecutor
+title: IEVMScriptExecutor
+---
+
+<div class="contract-doc"><div class="contract"><h2 class="contract-header"><span class="contract-kind">interface</span> IEVMScriptExecutor</h2><div class="source">Source: <a href="https://github.com/aragon/aragonOS//blob/v3.1.4/contracts/evmscript/IEVMScriptExecutor.sol" target="_blank">evmscript/IEVMScriptExecutor.sol</a></div></div><div class="index"><h2>Index</h2><ul><li><a href="evmscript_IEVMScriptExecutor.html#execScript">execScript</a></li></ul></div><div class="reference"><h2>Reference</h2><div class="functions"><h3>Functions</h3><ul><li><div class="item function"><span id="execScript" class="anchor-marker"></span><h4 class="name">execScript</h4><div class="body"><code class="signature"><span>abstract </span>function <strong>execScript</strong><span>(bytes script, bytes input, address[] blacklist) </span><span>external </span><span>returns  (bytes) </span></code><hr/><dl><dt><span class="label-parameters">Parameters:</span></dt><dd><div><code>script</code> - bytes</div><div><code>input</code> - bytes</div><div><code>blacklist</code> - address[]</div></dd><dt><span class="label-return">Returns:</span></dt><dd>bytes</dd></dl></div></div></li></ul></div></div></div>
