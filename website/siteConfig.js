@@ -30,6 +30,7 @@ const siteConfig = {
   tagline: 'What you need to get started building with Aragon',
   url: 'https://hack2.aragon.one',
   baseUrl: '/',
+  cname: 'hack2.aragon.one',
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
