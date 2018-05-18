@@ -381,6 +381,36 @@ This will give you a transaction to sign that will either register the repositor
 Now you just need to share the great news on Twitter and Reddit, to let people know that you've built something great!
 
 
+## More CLI commands
+
+Now that you have your app up and running, there are several other commands that `aragon` CLI provides which are very useful for managing your brand new DAO. These commands must be run from inside the root folder of your app, so they know which one they are managing (they do so by reading the config files). You can have a brief description with `aragon --help`.
+
+### dao
+
+This command provides basic DAO management:
+
+- `aragon dao apps <your-dao-address` shows your installed apps along with their Proxy and IPFS addresses.
+- `aragon dao acl <your-dao-address` show the roles defined in your DAO with all the relevant info: where they are defined and to whom are granted.
+
+### grant
+
+`aragon grant <new-address>` grants the provided address the permission to create new versions of this package. Take care!
+It's an alias for `aragon apm grant`.
+
+### versions
+
+`aragon versions` shows all the previously installed versions of this package. It's an alias for `aragon apm versions`.
+
+### version
+
+With `aragon version [patch|minor|major]` you can upgrade the version of your package (following the [semver standard](https://semver.org/)). If you modified the contracts, then you need to do a `major` upgrade or publishing will fail.
+It's an alias for `aragon apm version`.
+
+### devchain
+
+`aragon devchain` starts a local ganache test chain for development. This is done automatically with `aragon run` also if you don't have one already running.
+
+
 ## Next steps
 
 The full source code of the application we've built in this guide is available on [our GitHub](https://github.com/aragon/aragon-example-application).
