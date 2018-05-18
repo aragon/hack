@@ -117,7 +117,7 @@ const BuildingBlocksContainer = styled.div`
   padding: 2rem 1rem;
   flex-wrap: wrap;
 
-  & > div {
+  * {
     margin: 1rem;
     display: flex;
     align-items: center;
