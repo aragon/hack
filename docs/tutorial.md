@@ -381,12 +381,44 @@ Now that we're confident that our app will work and amaze the world, we should p
 To publish it, simply run:
 
 ```
-aragon publish
+aragon apm publish
 ```
 
 This will give you a transaction to sign that will either register the repository (if it does not exist) or publish a new version (if the repository exists). Furthermore, it will run your build script (if available) and publish your front-end and manifest files to IPFS.
 
 Now you just need to share the great news on Twitter and Reddit, to let people know that you've built something great!
+
+You can use just `apm publish` too.
+
+## More CLI commands
+
+Now that you have your app up and running, there are several other commands that `aragon` CLI provides which are very useful for managing your brand new DAO. These commands must be run from inside the root folder of your app, so they know which one they are managing (they do so by reading the config files). You can have a brief description with `aragon --help`.
+
+### dao
+
+This command provides basic DAO management:
+
+- `aragon dao apps <your-dao-address` shows your installed apps along with their Proxy and IPFS addresses.
+
+- `aragon dao acl <your-dao-address` show the roles defined in your DAO with all the relevant info: where they are defined and to whom are granted.
+
+You can use just `dao` too as a shortcut instead of `aragon dao`.
+
+### apm
+
+Besides already explained `publish` command, there are other APM related tools available:
+
+- `aragon apm grant <new-address>` grants the provided address the permission to create new versions of this package. Take care!
+
+- `aragon apm versions` shows all the previously installed versions of this package. It's an alias for `aragon apm versions`.
+
+- With `aragon apm version [patch|minor|major]` you can upgrade the version of your package (following the [semver standard](https://semver.org/)). If you modified the contracts, then you need to do a `major` upgrade or publishing will fail.
+
+You can use just `apm` too as a shortcut instead of `aragon apm`.
+
+### devchain
+
+`aragon devchain` starts a local ganache test chain for development. This is done automatically with `aragon run` also if you don't have one already running.
 
 
 ## Next steps
