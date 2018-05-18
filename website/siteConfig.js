@@ -1,3 +1,8 @@
+const React = require('react')
+const { BaseStyles, PublicUrl } = require('@aragon/ui')
+const ServerStyleSheet = require('styled-components').ServerStyleSheet
+const renderToStaticMarkup = require('react-dom/server').renderToStaticMarkup
+
 /* List of projects/orgs using your project for the users page */
 const users = [
   {
@@ -18,7 +23,7 @@ const users = [
     infoLink: 'https://altheamesh.com',
     pinned: true,
   },
-];
+]
 
 const siteConfig = {
   title: 'Aragon Developer Portal',
@@ -37,6 +42,7 @@ const siteConfig = {
     {doc: 'getting-started', label: 'Get started'},
     {doc: 'tutorial', label: 'Tutorial'},
     {doc: 'aragonos-ref', label: 'aragonOS'},
+    {doc: 'kernel_Kernel', label: 'API'},
     {doc: 'aragonjs-ref', label: 'aragon.js'},
     {doc: 'aragonui-intro', label: 'Aragon UI'},
     {page: 'help', label: 'Help'},
@@ -90,6 +96,27 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   //   repoUrl: 'https://github.com/facebook/test-site',
-};
 
-module.exports = siteConfig;
+  renderToString: element => {
+    const sheet = new ServerStyleSheet()
+    const html = renderToStaticMarkup(
+      sheet.collectStyles(
+        React.createElement(
+          PublicUrl.Provider,
+          { url: '/aragon-ui/' },
+          React.createElement(BaseStyles, { enableLegacyFonts: true }),
+          element
+        )
+      )
+    )
+    const insertStylesAt = html.lastIndexOf('</body>')
+    return `
+      <!DOCTYPE html>
+      ${html.slice(0, insertStylesAt)}
+      ${sheet.getStyleTags()}
+      ${html.slice(insertStylesAt)}
+    `.trim()
+  },
+}
+
+module.exports = siteConfig

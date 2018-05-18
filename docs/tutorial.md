@@ -28,7 +28,7 @@ npm i -g @aragon/cli
 Next, we bootstrap our project:
 
 ```
-aragon init foo.aragonpm.eth bare
+aragon init foo.aragonpm.eth
 ```
 
 This will create a new directory named `foo`, with files cloned from the official Aragon [react](https://github.com/aragon/aragon-react-boilerplate) boilerplate. This particular boilerplate includes everything you need to get started — Truffle, aragonOS and aragon.js.
@@ -365,6 +365,14 @@ After running this command a browser tab should pop up with your freshly created
 
 > Caption: *It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the [React template](https://github.com/aragon/aragon-react-boilerplate)!*
 
+
+### Metamask
+
+At this point you are likely going to use [Metamask](https://metamask.io/) to interact with your DAO. In order to do so, you must make sure that:
+
+- It's unlocked
+- Private network (_Localhost 8545_) is chosen
+- The first account provided by `aragon run` is imported and selected. To import the account, copy the private key (something like `a8a54b2d8197bc0b19bb8a084031be71835580a01e70a45a13babd16c9bc1563`), go to the accounts upper icon, to the left of the hamburguer button, scroll down, click on `Import account` and paste the value you copied.
 
 ## Publishing
 

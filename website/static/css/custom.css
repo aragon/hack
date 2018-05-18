@@ -1,4 +1,7 @@
 /* your custom css */
+.headerTitleWithLogo {
+  white-space: nowrap;
+}
 
 .mainContainer .wrapper a, .inner .projectIntro a {
   text-decoration: underline;
@@ -9,6 +12,8 @@
 }
 
 .projectLogo img {
+  position: relative;
+  left: 3rem;
   margin-top: 2rem;
   max-height: 200px !important;
 }
