@@ -40,22 +40,6 @@ function pageUrl(page, language) {
   return siteConfig.baseUrl + (language ? language + '/' : '') + page + '.html'
 }
 
-/*class Button extends React.Component {
-  render() {
-    return (
-      <div className="pluginWrapper buttonWrapper">
-        <a className="button" href={this.props.href} target={this.props.target}>
-          {this.props.children}
-        </a>
-      </div>
-    )
-  }
-}
-
-Button.defaultProps = {
-  target: '_self',
-}*/
-
 const SplashContainer = props => (
   <div className="homeContainer">
     <div className="homeSplashFade">
@@ -135,6 +119,11 @@ const BuildingBlocksContainer = styled.div`
 
   & > div {
     margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    flex-wrap: wrap;
   }
 `
 
