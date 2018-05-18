@@ -28,9 +28,9 @@ const users = [
 const siteConfig = {
   title: 'Aragon Developer Portal',
   tagline: 'What you need to get started building with Aragon',
-  url: 'https://hack2.aragon.one',
+  url: 'https://hack.aragon.one',
   baseUrl: '/',
-  cname: 'hack2.aragon.one',
+  cname: 'hack.aragon.one',
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
