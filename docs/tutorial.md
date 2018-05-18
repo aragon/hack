@@ -373,13 +373,14 @@ Now that we're confident that our app will work and amaze the world, we should p
 To publish it, simply run:
 
 ```
-aragon publish
+aragon apm publish
 ```
 
 This will give you a transaction to sign that will either register the repository (if it does not exist) or publish a new version (if the repository exists). Furthermore, it will run your build script (if available) and publish your front-end and manifest files to IPFS.
 
 Now you just need to share the great news on Twitter and Reddit, to let people know that you've built something great!
 
+You can use just `apm publish` too.
 
 ## More CLI commands
 
@@ -396,6 +397,8 @@ This command provides basic DAO management:
 You can use just `dao` too as a shortcut instead of `aragon dao`.
 
 ### apm
+
+Besides already explained `publish` command, there are other APM related tools available:
 
 - `aragon apm grant <new-address>` grants the provided address the permission to create new versions of this package. Take care!
 
