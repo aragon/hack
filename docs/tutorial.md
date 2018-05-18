@@ -390,21 +390,20 @@ Now that you have your app up and running, there are several other commands that
 This command provides basic DAO management:
 
 - `aragon dao apps <your-dao-address` shows your installed apps along with their Proxy and IPFS addresses.
+
 - `aragon dao acl <your-dao-address` show the roles defined in your DAO with all the relevant info: where they are defined and to whom are granted.
 
-### grant
+You can use just `dao` too as a shortcut instead of `aragon dao`.
 
-`aragon grant <new-address>` grants the provided address the permission to create new versions of this package. Take care!
-It's an alias for `aragon apm grant`.
+### apm
 
-### versions
+- `aragon apm grant <new-address>` grants the provided address the permission to create new versions of this package. Take care!
 
-`aragon versions` shows all the previously installed versions of this package. It's an alias for `aragon apm versions`.
+- `aragon apm versions` shows all the previously installed versions of this package. It's an alias for `aragon apm versions`.
 
-### version
+- With `aragon apm version [patch|minor|major]` you can upgrade the version of your package (following the [semver standard](https://semver.org/)). If you modified the contracts, then you need to do a `major` upgrade or publishing will fail.
 
-With `aragon version [patch|minor|major]` you can upgrade the version of your package (following the [semver standard](https://semver.org/)). If you modified the contracts, then you need to do a `major` upgrade or publishing will fail.
-It's an alias for `aragon apm version`.
+You can use just `apm` too as a shortcut instead of `aragon apm`.
 
 ### devchain
 
