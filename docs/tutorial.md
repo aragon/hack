@@ -4,7 +4,7 @@ title: Tutorial
 ---
 
 # Your first Aragon app
-In this guide, we will walk you through creating your first Aragon app using [aragonOS](aragonos-ref.md), [aragon.js](aragonjs-ref.md), [Aragon UI](aragonui-intro.md) and [Aragon CLI](aragoncli.md).
+In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-ref.md), [aragon.js](js-ref.md), [Aragon UI](ui-intro.md) and [Aragon CLI](https://github.com/aragon/aragon-cli).
 
 ## Why build an Aragon app?
 
@@ -63,7 +63,7 @@ contract Counter {
 
     // State
     int public value;
-    
+
     function increment() external {
         value += 1;
         Increment(msg.sender);
@@ -95,7 +95,7 @@ contract Counter is AragonApp {
 
 Second, define the roles that you want your app to have. A role can be assigned to other apps or people, and those entities will have access to methods guarded by that role.
 
-In this example, we will define a role for incrementing, and a role for decrementing, but note that you can have a single role to guard all methods in your contract if you find that appropriate. 
+In this example, we will define a role for incrementing, and a role for decrementing, but note that you can have a single role to guard all methods in your contract if you find that appropriate.
 
 ```solidity
 contract Counter is AragonApp {
@@ -111,7 +111,7 @@ Finally, guard the methods with the `auth` modifier that the `AragonApp` interfa
 ```solidity
 contract Counter is AragonApp {
     // ...
-    
+
     function increment() auth(INCREMENT_ROLE) external {
         // ...
     }
@@ -181,7 +181,7 @@ const app = new Aragon()
 const state$ = app.store((state, event) => {
   // Initial state
   if (state === null) state = 0
-  
+
   // Build state
   switch (event.event) {
     case 'Decrement':
@@ -191,7 +191,7 @@ const state$ = app.store((state, event) => {
       state++
       break
   }
-  
+
   return state
 })
 ```
