@@ -28,7 +28,7 @@ Which in English would be: an *Entity* can call a *Role* in an *App*, and this a
 
 Now let's say we have these 3 apps:
 - A *Token Manager* app, which represents BOB token holders and forwards all their intents to another app
-- A *Voting* app, which executes any arbitraty action after a voting of BOB token holders passes
+- A *Voting* app, which executes any arbitrary action after a voting of BOB token holders passes
 - A *Finance* app, which controls the funds of the organization
 
 With the simple mapping in the table above, we have:
