@@ -6,12 +6,12 @@
  */
 
 const React = require('react');
-const { theme } = require('@aragon/ui')
-const styled = require('styled-components').default
+const { theme } = require('@aragon/ui');
+const styled = require('styled-components').default;
 
 const FooterContainer = styled.footer`
   background: ${theme.badgeInfoForeground} !important;
-`
+`;
 
 class Footer extends React.Component {
   docUrl(doc, language) {
@@ -52,11 +52,10 @@ class Footer extends React.Component {
             <a href="http://wiki.aragon.one/projects/" target="_blank">
               User showcase
             </a>
-            <a href="https://aragon.chat" target="_blank">Community chat</a>
-            <a
-              href="https://twitter.com/AragonProject"
-              target="_blank"
-              rel="noreferrer noopener">
+            <a href="https://aragon.chat" target="_blank">
+              Community chat
+            </a>
+            <a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">
               Twitter
             </a>
           </div>
@@ -64,6 +63,7 @@ class Footer extends React.Component {
             <h5>More</h5>
             <a href="https://blog.aragon.one">Blog</a>
             <a href="https://github.com/aragon">GitHub</a>
+            <a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Terms</a>
           </div>
         </section>
       </FooterContainer>
