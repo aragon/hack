@@ -9,6 +9,9 @@
 
 .homeContainer .homeWrapper {
   padding: 6em 10px !important;
+  background-color: rgba(255,255,255,0.9);
+  background-image: linear-gradient(to top, #F7FBFD 0%, transparent 100%), url(/img/bg.png);
+  background-size: cover;
 }
 
 .projectLogo img {
@@ -16,6 +19,36 @@
   left: 3rem;
   margin-top: 2rem;
   max-height: 200px !important;
+}
+
+.docsNavContainer {
+  background-color: #effaff;
+}
+
+.navigationSlider .slidingNav ul li.siteNavItemActive a {
+  font-weight: bold;
+}
+
+.navigationSlider .slidingNav ul li a,
+.navigationSlider .slidingNav ul li a:hover {
+  background-color: transparent !important;
+  color: black !important;
+}
+
+.fixedHeaderContainer {
+  background-color: white;
+  -webkit-box-shadow: 0px 3px 66px -16px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 3px 66px -16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 66px -16px rgba(0, 0, 0, 0.3);
+}
+
+.fixedHeaderContainer header h2 {
+  color: black;
+}
+
+blockquote {
+  border-left: 5px solid #ffe563;
+  background-color: #fff7d2;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
