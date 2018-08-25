@@ -45,11 +45,9 @@ const siteConfig = {
     {doc: 'kernel_Kernel', label: 'API'},
     {doc: 'aragonjs-ref', label: 'aragon.js'},
     {doc: 'aragonui-intro', label: 'Aragon UI'},
-    {page: 'help', label: 'Help'},
     {blog: true, label: 'Blog'},
   ],
 
-  // If you have users set above, you add it here:
   users,
 
   /* path to images for header/footer */

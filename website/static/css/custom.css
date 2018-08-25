@@ -3,15 +3,21 @@
   white-space: nowrap;
 }
 
+.mainContainer {
+  background: #F7FBFD;
+}
+
 .mainContainer .wrapper a, .inner .projectIntro a {
   text-decoration: underline;
 }
 
-.homeContainer .homeWrapper {
-  padding: 6em 10px !important;
-  background-color: rgba(255,255,255,0.9);
+.homeContainer {
   background-image: linear-gradient(to top, #F7FBFD 0%, transparent 100%), url(/img/bg.png);
   background-size: cover;
+}
+
+.homeContainer .homeWrapper {
+  padding: 6em 10px !important;
 }
 
 .projectLogo img {
@@ -21,18 +27,19 @@
   max-height: 200px !important;
 }
 
-.docsNavContainer {
-  background-color: #effaff;
-}
-
 .navigationSlider .slidingNav ul li.siteNavItemActive a {
   font-weight: bold;
 }
 
-.navigationSlider .slidingNav ul li a,
-.navigationSlider .slidingNav ul li a:hover {
+.navigationSlider .slidingNav ul li a {
   background-color: transparent !important;
   color: black !important;
+  transition: all 0.25s ease-in-out 0s;
+}
+
+.navigationSlider .slidingNav ul li a:hover {
+  background-color: transparent !important;
+  color: rgb(75,75,75) !important;
 }
 
 .fixedHeaderContainer {
@@ -49,6 +56,10 @@
 blockquote {
   border-left: 5px solid #ffe563;
   background-color: #fff7d2;
+}
+
+footer {
+  box-shadow: none !important;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
