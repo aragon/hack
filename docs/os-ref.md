@@ -7,7 +7,7 @@ title: aragonOS reference documentation
 
 This document provides a technical overview about the architecture and can be used
 as a specification and developer guide. For a less technically-oriented introduction
-to aragonOS 3.0, you can check the [alpha release blog post](https://blog.aragon.one/introducing-aragonos-3-0-alpha-the-new-operating-system-for-protocols-and-dapps-348f7ac92cff).
+to aragonOS 3.0, you can check the [alpha release blog post](https://blog.aragon.org/introducing-aragonos-3-0-alpha-the-new-operating-system-for-protocols-and-dapps-348f7ac92cff).
 
 ## 0. Motivation
 
@@ -834,7 +834,7 @@ The `state` parameter in our reducer is the current state (`null` if no state is
 
 Now our application state is an array of entry IDs. You could also fetch the actual entry using `app.call('get', entryId)`, which will return an observable that emits the result of the call.
 
-Let's simply log out the state for the purpose of this guide, but know that you can build your app and bundle it with something like React (we have a UI library called [Aragon UI](https://ui.aragon.one) to build beautiful app front-ends).
+Let's simply log out the state for the purpose of this guide, but know that you can build your app and bundle it with something like React (we have a UI library called [Aragon UI](https://ui.aragon.org) to build beautiful app front-ends).
 
 ```js
 // ...
