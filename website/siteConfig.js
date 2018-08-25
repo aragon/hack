@@ -43,7 +43,8 @@ const siteConfig = {
     {doc: 'tutorial', label: 'Tutorial'},
     {doc: 'aragonos-intro', label: 'aragonOS'},
     {doc: 'aragonjs-ref', label: 'aragon.js'},
-    {doc: 'aragonui-intro', label: 'Aragon UI'}
+    {doc: 'aragonui-intro', label: 'Aragon UI'},
+    {page: 'help', label: 'Help'}
   ],
 
   users,
