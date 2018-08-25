@@ -43,13 +43,13 @@ class Footer extends React.Component {
             <h5>Documentation</h5>
             <a href={this.docUrl('getting-started')}>Get started</a>
             <a href={this.docUrl('tutorial')}>Tutorial</a>
-            <a href={this.docUrl('aragonos-ref')}>aragonOS</a>
+            <a href={this.docUrl('aragonos-intro')}>aragonOS</a>
             <a href={this.docUrl('aragonjs-ref')}>aragon.js</a>
             <a href={this.docUrl('aragonui-intro')}>Aragon UI</a>
           </div>
           <div>
             <h5>Community</h5>
-            <a href="http://wiki.aragon.one/projects/" target="_blank">
+            <a href="http://wiki.aragon.org/projects/" target="_blank">
               User showcase
             </a>
             <a href="https://aragon.chat" target="_blank">Community chat</a>
@@ -62,7 +62,7 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href="https://blog.aragon.one">Blog</a>
+            <a href="https://blog.aragon.org">Blog</a>
             <a href="https://github.com/aragon">GitHub</a>
           </div>
         </section>
