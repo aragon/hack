@@ -74,7 +74,6 @@ class HomeSplash extends React.Component {
     let language = this.props.language || ''
     return (
       <SplashContainer>
-        <Logo img_src={imgUrl('stroke.png')} />
         <div className="inner">
           <ProjectTitle />
           <PromoSection>            
@@ -178,8 +177,8 @@ const Intro = props => (
   <div className="productShowcaseSection paddingTop">
     <h2>Build DAOs, protocols and dapps</h2>
     <MarkdownBlock>
-      Aragon is the most powerful and modular way to run [DAOs](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization).
-      But in our journey creating DAOs, we discovered how to modularize individual components that can be used for creating any dapp or crypto protocol.
+      Aragon is the most **powerful** and **modular** way to run [DAOs](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization).
+      But in our journey creating DAOs, we discovered how to modularize individual components that can be used for creating **any dapp or crypto protocol**.
     </MarkdownBlock>
   </div>
 )

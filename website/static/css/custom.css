@@ -3,8 +3,17 @@
   white-space: nowrap;
 }
 
+.mainContainer {
+  background: #F7FBFD;
+}
+
 .mainContainer .wrapper a, .inner .projectIntro a {
   text-decoration: underline;
+}
+
+.homeContainer {
+  background-image: linear-gradient(to top, #F7FBFD 0%, rgba(255,255,255,0.1) 100%), url(/img/bg.png);
+  background-size: cover;
 }
 
 .homeContainer .homeWrapper {
@@ -16,6 +25,41 @@
   left: 3rem;
   margin-top: 2rem;
   max-height: 200px !important;
+}
+
+.navigationSlider .slidingNav ul li.siteNavItemActive a {
+  font-weight: bold;
+}
+
+.navigationSlider .slidingNav ul li a {
+  background-color: transparent !important;
+  color: black !important;
+  transition: all 0.25s ease-in-out 0s;
+}
+
+.navigationSlider .slidingNav ul li a:hover {
+  background-color: transparent !important;
+  color: rgb(75,75,75) !important;
+}
+
+.fixedHeaderContainer {
+  background-color: white;
+  -webkit-box-shadow: 0px 3px 66px -16px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 3px 66px -16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 66px -16px rgba(0, 0, 0, 0.3);
+}
+
+.fixedHeaderContainer header h2 {
+  color: black;
+}
+
+blockquote {
+  border-left: 5px solid #ffe563;
+  background-color: #fff7d2;
+}
+
+footer {
+  box-shadow: none !important;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
