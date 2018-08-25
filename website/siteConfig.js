@@ -43,12 +43,9 @@ const siteConfig = {
     {doc: 'tutorial', label: 'Tutorial'},
     {doc: 'aragonos-ref', label: 'aragonOS'},
     {doc: 'kernel_Kernel', label: 'API'},
-    {doc: 'aragonjs-ref', label: 'aragon.js'},
-    {doc: 'aragonui-intro', label: 'Aragon UI'},
-    {page: 'help', label: 'Help'}
+    {doc: 'aragonjs-ref', label: 'aragon.js'}
   ],
 
-  // If you have users set above, you add it here:
   users,
 
   /* path to images for header/footer */
@@ -82,7 +79,7 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
-    theme: 'default',
+    theme: 'atom-one-dark',
   },
 
   /* On page navigation for the current documentation page */
