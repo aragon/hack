@@ -12,11 +12,10 @@ In this guide, we will walk you through creating your first Aragon app using [ar
 npm i -g @aragon/cli
 aragon init foo.aragonpm.eth react
 cd foo
-npm install
-npm start
+aragon run
 ```
 
-This should open up the app in your browser.
+This should open up the app in your browser!
 
 ## Why build an Aragon app?
 
