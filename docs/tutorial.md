@@ -392,34 +392,7 @@ You can use just `apm publish` too.
 
 ## More CLI commands
 
-Now that you have your app up and running, there are several other commands that `aragon` CLI provides which are very useful for managing your brand new DAO. These commands must be run from inside the root folder of your app, so they know which one they are managing (they do so by reading the config files). You can have a brief description with `aragon --help`.
-
-### dao
-
-This command provides basic DAO management:
-
-- `aragon dao apps <your-dao-address` shows your installed apps along with their Proxy and IPFS addresses.
-
-- `aragon dao acl <your-dao-address` show the roles defined in your DAO with all the relevant info: where they are defined and to whom are granted.
-
-You can use just `dao` too as a shortcut instead of `aragon dao`.
-
-### apm
-
-Besides already explained `publish` command, there are other APM related tools available:
-
-- `aragon apm grant <new-address>` grants the provided address the permission to create new versions of this package. Take care!
-
-- `aragon apm versions` shows all the previously installed versions of this package. It's an alias for `aragon apm versions`.
-
-- With `aragon apm version [patch|minor|major]` you can upgrade the version of your package (following the [semver standard](https://semver.org/)). If you modified the contracts, then you need to do a `major` upgrade or publishing will fail.
-
-You can use just `apm` too as a shortcut instead of `aragon apm`.
-
-### devchain
-
-`aragon devchain` starts a local ganache test chain for development. This is done automatically with `aragon run` also if you don't have one already running.
-
+You can check the '[Using the Aragon CLI](cli-usage.md)' guide for an in-depth description of how all the commands available in the CLI work.
 
 ## Next steps
 
