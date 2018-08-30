@@ -6,6 +6,17 @@ title: Tutorial
 # Your first Aragon app
 In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-ref.md), [aragon.js](js-ref.md), [Aragon UI](ui-intro.md) and [Aragon CLI](https://github.com/aragon/aragon-cli).
 
+# Quickstart
+
+```
+npm i -g @aragon/cli
+aragon init foo.aragonpm.eth react
+cd foo
+aragon run
+```
+
+This should open up the app in your browser!
+
 ## Why build an Aragon app?
 
 Let's first talk a bit about why you might want to build an Aragon app.
