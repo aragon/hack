@@ -388,8 +388,6 @@ This will give you a transaction to sign that will either register the repositor
 
 Now you just need to share the great news on Twitter and Reddit, to let people know that you've built something great!
 
-You can use just `apm publish` too.
-
 ## More CLI commands
 
 You can check the '[Using the Aragon CLI](cli-usage.md)' guide for an in-depth description of how all the commands available in the CLI work.
