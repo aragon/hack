@@ -388,8 +388,6 @@ This will give you a transaction to sign that will either register the repositor
 
 Now you just need to share the great news on Twitter and Reddit, to let people know that you've built something great!
 
-You can use just `apm publish` too.
-
 ## More CLI commands
 
 Now that you have your app up and running, there are several other commands that `aragon` CLI provides which are very useful for managing your brand new DAO. These commands must be run from inside the root folder of your app, so they know which one they are managing (they do so by reading the config files). You can have a brief description with `aragon --help`.
@@ -413,8 +411,6 @@ Besides already explained `publish` command, there are other APM related tools a
 - `aragon apm versions` shows all the previously installed versions of this package. It's an alias for `aragon apm versions`.
 
 - With `aragon apm version [patch|minor|major]` you can upgrade the version of your package (following the [semver standard](https://semver.org/)). If you modified the contracts, then you need to do a `major` upgrade or publishing will fail.
-
-You can use just `apm` too as a shortcut instead of `aragon apm`.
 
 ### devchain
 
