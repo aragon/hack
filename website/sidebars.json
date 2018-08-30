@@ -10,6 +10,9 @@
       "client",
       "human-readable-txs"
     ],
+    "Aragon CLI": [
+      "cli-usage"
+    ],
     "aragonOS": [
       "aragonos-intro",
       "aragonos-ref"
