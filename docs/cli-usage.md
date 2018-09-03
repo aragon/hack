@@ -60,6 +60,27 @@ Some available options to customize the `run` command:
 - `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
 - `--client [true|false]`: Can be used to disable starting the Aragon Core client. Defaults to `true`.
 
+
+#### Running your app from a development HTTP server
+
+`aragon run` by default will replicate Aragon's production environment and publish you app using IPFS. However when developing the webapp part of you Aragon app, using IPFS would require you to repeat the entire publishing process every time you make a change and want to try it out.
+
+Using the HTTP mode for running your app requires starting an HTTP server is serving your app files before executing `aragon run` or `aragon apm publish`
+
+```console
+# start your app server before
+aragon run --http [server-uri] --http-served-from [path]
+```
+
+- `http`: This is the flag that indicates that you wish to run your app using HTTP. The URI of the server must be provided here (e.g. `localhost:4001`)
+- `http-served-from`: Path to the directory that the HTTP server exposes. Some artifacts are generated and placed in this directory during the publishing process of your app. The server needs serve these new files when they are created and the server is already running.
+
+If your HTTP server supports hot-reloading, your app's frontend will be hot-reloaded inside the Aragon Core client.
+
+However, when **making changes to the background script** of your app, a refresh of the client is required so the new script will be loaded when the app starts. Also depending on how the background script of your app is being built, you may need to manually trigger the compilation of the script.
+
+The [React boilerplate](https://github.com/aragon/aragon-react-boilerplate) supports serving your app using HTTP.
+
 ### `aragon devchain`
 
 The `devchain` command is used for starting a local development testnet with all the required components already deployed and ready to use. It uses [aragen](https://github.com/aragon/aragen) for setting up the snapshot from which the chain starts. At any point, `aragon devchain --reset` can be run which will reset the devchain to the original snapshot.
@@ -179,6 +200,8 @@ The command allows some parametrization:
 - `--publish-dir`: The path to the directory where all the files and generated artifacts will be copied to before publishing. If it is not specified, it will create a temporary directory.
 - `--build [true|false]`: A flag to specify whether the webapp should be build while publishing. Defaults to `true`.
 - `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
+- `--http`: The URI for the HTTP server that will be serving your app files. See the [running from HTTP](#running-your-app-from-a-development-http-server) doc for more information on using HTTP.
+- `http-served-from`: Path to the directory that the HTTP server exposes. Some artifacts are generated and placed in this directory during the publishing process of your app.
 
 ## Global configuration
 
