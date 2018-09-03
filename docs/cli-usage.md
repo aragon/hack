@@ -109,6 +109,16 @@ Running `aragon deploy` will compile your contracts using `truffle compile` and 
 
 The `--init` arguments need to be separated by a space, and they will be passed to the contract constructor on deploy. The `@ARAGON_ENS` alias can be used and it will be replaced by the address of the ENS registry in the devchain.
 
+### `aragon contracts`
+
+The `aragon contracts` command can be used to execute commands using the same [truffle](https://github.com/trufflesuite/truffle) version that the CLI uses behind the scenes to assist in compiling your app's contracts at some times when that is necessary.
+
+```console
+aragon contracts [command]
+```
+
+It is the equivalent to executing `npx truffle [command]`
+
 ## DAO commands
 
 The `aragon dao` commands can be used for interacting with your DAO directly from the command line. These commands are also available directly using the `dao` alias.
@@ -132,6 +142,10 @@ The `dao upgrade` command upgrades all instances of an app to a newer version.
 dao upgrade [dao-addr] [app-apm-repo] [repo-version]
 ```
 
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-apm-repo`: The repo name of the app being upgraded (e.g. `voting` or `voting.aragonpm.eth`)
+- `repo-version`: Version of the repo that the app will be upgraded to, can be a version number or `latest` for the newest published version (defaults to `latest`)
+
 aragonOS protects against having different instances of a particular app running with different versions (e.g. all the Voting app instances run the same version), so performing a `dao upgrade` will upgrade all instances of the app to the version specified.
 
 ### `dao install`
@@ -142,28 +156,50 @@ The `dao install` command installs an instance of an app in the DAO.
 dao install [dao-addr] [app-apm-repo] [repo-version]
 ```
 
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-apm-repo`: The repo name of the app being installed (e.g. `voting` or `voting.aragonpm.eth`)
+- `repo-version`: Version of the repo that will be installed, can be a version number or `latest` for the newest published version (defaults to `latest`)
+
 In aragonOS, an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO. 
 
 The `dao install` command will create an instance of the app and assign permissions to the main account to perform all the protected actions in the app.
 
 As explained in the [upgrade command](#dao-upgrade), all app instances of the same app in DAO must run the same version, so installing an app with a version will effectively upgrade all app instances to this version.
 
-### dao apps
+### `dao apps`
 
 ```console
 dao apps [dao-addr]
 ```
 
+- `dao-addr`: The main address of the DAO (Kernel).
+
 Used to inspect all the installed apps in a DAO.
 
-### dao acl
+### `dao acl`
 
 
 ```console
 dao acl [dao-addr]
 ```
 
+- `dao-addr`: The main address of the DAO (Kernel).
+
 Used to inspect the ACL state in a DAO to check its permissions.
+
+### `dao exec`
+
+
+```console
+dao exec [dao-addr] [app-proxy-addr] [method] [argument1 ... argumentN]
+```
+
+`dao exec` allows performing transactions in your DAO directly from the CLI. It supports [transaction pathing](forwarding-intro.md) so if your account cannot perform the action directly, it will try to find how to do it (e.g. creating a vote).
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-proxy-addr`: The address of the app where the action is being performed. You can find the proxy address by checking [`dao apps`](#dao-apps)
+- `method`: Name of the method being executed in the app (e.g. `withdrawTokens`)
+- `arguments`: The arguments that the method will be executed with separated by a space.
 
 ## APM commands
 
