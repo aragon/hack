@@ -24,12 +24,6 @@ const users = [
     pinned: true,
   },
   {
-    caption: 'Espresso',
-    image: '/img/users/espresso.png',
-    infoLink: 'https://github.com/espresso-org',
-    pinned: true,
-  },
-  {
     caption: 'DAppNode',
     image: '/img/users/dappnode.png',
     infoLink: 'https://dappnode.io',
@@ -39,6 +33,18 @@ const users = [
     caption: 'Pando',
     image: '/img/users/pando.png',
     infoLink: 'https://github.com/ryhope/pando',
+    pinned: true,
+  },
+  {
+    caption: 'Espresso',
+    image: '/img/users/espresso.png',
+    infoLink: 'https://github.com/espresso-org',
+    pinned: true,
+  },
+  {
+    caption: 'Giveth',
+    image: '/img/users/giveth.png',
+    infoLink: 'https://giveth.io',
     pinned: true,
   },
 ]
