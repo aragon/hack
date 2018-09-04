@@ -1,6 +1,10 @@
 ---
 id: acl-intro
-title: Intro to the ACL
+title: Permissions
+sidebar_label: Permissions
+---
+
+### Use the ACL to control who can access your app's functionality
 ---
 
 As you may have guessed, **the OS in aragonOS stands for Operating System**. How so?

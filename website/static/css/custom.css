@@ -52,6 +52,12 @@
   color: black;
 }
 
+hr {
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 0;
+  margin: 2.5rem 0;
+}
+
 blockquote, pre {
   max-width: 50rem;
 }

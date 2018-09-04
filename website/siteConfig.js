@@ -71,6 +71,12 @@ const siteConfig = {
     {page: 'help', label: 'Help'}
   ],
 
+  cleanUrl: true,
+
+  editUrl: 'https://github.com/aragon/hack/tree/master/docs/',
+
+  twitterUsername: 'AragonProject',
+
   users,
 
   /* path to images for header/footer */
