@@ -1,6 +1,7 @@
 ---
 id: aragonos-ref
 title: aragonOS reference documentation
+sidebar_label: Reference documentation
 ---
 
 *Documentation for [aragonOS](https://github.com/aragon/aragonOS) v3.1.2*

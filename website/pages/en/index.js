@@ -155,7 +155,7 @@ const BuildingBlocks = props => (
     <EmptyStateCard
       title="aragonOS"
       text="Solidity framework for governance"
-      actionButton={() => <GetStartedButton href={docUrl('aragonos-ref')}/>}
+      actionButton={() => <GetStartedButton href={docUrl('aragonos-intro')}/>}
       icon={() => <IconSettings /> }
     />
     <EmptyStateCard

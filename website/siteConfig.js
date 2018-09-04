@@ -24,6 +24,30 @@ const users = [
     infoLink: 'https://altheamesh.com',
     pinned: true,
   },
+  {
+    caption: 'DAppNode',
+    image: '/img/users/dappnode.png',
+    infoLink: 'https://dappnode.io',
+    pinned: true,
+  },
+  {
+    caption: 'Pando',
+    image: '/img/users/pando.png',
+    infoLink: 'https://github.com/ryhope/pando',
+    pinned: true,
+  },
+  {
+    caption: 'Espresso',
+    image: '/img/users/espresso.png',
+    infoLink: 'https://github.com/espresso-org',
+    pinned: true,
+  },
+  {
+    caption: 'Giveth',
+    image: '/img/users/giveth.png',
+    infoLink: 'https://giveth.io',
+    pinned: true,
+  },
 ]
 
 const siteConfig = {
@@ -47,6 +71,12 @@ const siteConfig = {
     {doc: 'aragonui-intro', label: 'Aragon UI'},
     {page: 'help', label: 'Help'}
   ],
+
+  cleanUrl: true,
+
+  editUrl: 'https://github.com/aragon/hack/tree/master/docs/',
+
+  twitterUsername: 'AragonProject',
 
   users,
 

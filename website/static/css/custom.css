@@ -1,6 +1,7 @@
 /* your custom css */
 .headerTitleWithLogo {
   white-space: nowrap;
+  margin-top: 0.25rem;
 }
 
 .mainContainer {
@@ -35,6 +36,7 @@
   background-color: transparent !important;
   color: black !important;
   transition: all 0.25s ease-in-out 0s;
+  padding: 6px 25px !important;
 }
 
 .navigationSlider .slidingNav ul li a:hover {
@@ -43,19 +45,44 @@
 }
 
 .fixedHeaderContainer {
-  background-color: white;
-  -webkit-box-shadow: 0px 3px 66px -16px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 3px 66px -16px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 3px 66px -16px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255,255,255,0.95);
 }
 
 .fixedHeaderContainer header h2 {
   color: black;
 }
 
+.edit-page-link {
+  border: none;
+}
+
+.edit-page-link:hover {
+  background: none;
+  color: black;
+}
+
+hr {
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 0;
+  margin: 2.5rem 0;
+}
+
+code {
+  font-size: 1rem;
+  margin: 0 0.25rem;
+}
+
+blockquote, pre {
+  max-width: 50rem;
+}
+
 blockquote {
   border-left: 5px solid #ffe563;
   background-color: #fff7d2;
+}
+
+blockquote p {
+  padding-top: 0px !important;
 }
 
 footer {

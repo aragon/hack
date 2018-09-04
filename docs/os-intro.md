@@ -1,7 +1,11 @@
 ---
 id: aragonos-intro
 title: aragonOS intro
+sidebar_label: Introduction
+hide_title: true
 ---
+
+![](/docs/assets/brand/aragonos.png)
 
 **aragonOS** is a **smart contract framework** for building DAOs, dapps and protocols.
 

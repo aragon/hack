@@ -1,17 +1,21 @@
 ---
 id: kits-intro
-title: Intro to Kits
+title: Kits
+sidebar_label: Kits
+---
+
+### Create templates for easy DAO setup
 ---
 
 Creating a DAO with all the desired apps and permissions requires multiple operations that must be properly orchestated. In the context of Ethereum, performing all these operations would require sending many transactions. This would not only be very costly, as every transaction needs to pay for gas, also the integrity of the deployment depends on all operations occurring in the right order.
 
-For these reasons, the recommended way of creating Aragon DAOs is using what we call Kits, on-chain 'deployment scripts' that create a DAO and perform all the required configuration steps in an atomic manner, without the possibility of an attacker interacting with the DAO while it is still being set up. Kits allow creating a DAO in just one transaction, and when the transaction is processed, the DAO is already fully configured and functional. 
+For these reasons, **the recommended way of creating Aragon DAOs** is using what we call **Kits**, on-chain *deployment scripts* that create a DAO and perform all the required configuration steps in an **atomic manner**, without the possibility of an attacker interacting with the DAO while it is still being set up. **Kits allow creating a DAO in just one transaction**, and when the transaction is processed, the DAO is already **fully configured and functional**.
 
-Kits can also be thought of as DAO templates, as every kit can create a DAO with specific settings for an organization type. The two DAO configurations that one can choose from when using [Aragon Core](http://app.aragon.org) correspond to the beta kits ([Democracy](https://github.com/aragon/dao-kits/blob/master/kits/beta/contracts/DemocracyTemplate.sol) and [Multisig](https://github.com/aragon/dao-kits/blob/master/kits/beta/contracts/MultisigTemplate.sol)) available in the [DAO kits repository](https://github.com/aragon/dao-kits).
+Kits can also be thought of as **DAO templates**, as every kit can create a DAO with specific settings for an organization type. The two DAO configurations that one can choose from when using [Aragon Core](http://app.aragon.org) correspond to the beta kits ([Democracy](https://github.com/aragon/dao-kits/blob/master/kits/beta/contracts/DemocracyTemplate.sol) and [Multisig](https://github.com/aragon/dao-kits/blob/master/kits/beta/contracts/MultisigTemplate.sol)) available in the [DAO kits repository](https://github.com/aragon/dao-kits).
 
 ## Getting started with kits using the Aragon CLI
 
-The Aragon CLI (>= v4.1.0) supports using kits to create a DAO to interact with the apps being developed.
+The [Aragon CLI](/docs/cli-usage.html) (>= v4.1.0) supports using kits to create a DAO to interact with the apps being developed.
 
 To quickly get started developing your own kits:
 

@@ -1,6 +1,10 @@
 ---
 id: human-readable-txs
 title: Human readable transactions
+sidebar_label: Human readable transactions
+---
+
+### Allowing users to be in control
 ---
 
 A big part of Aragon is user-friendliness, and one of the most unfriendly things in the Ethereum world, might be transaction data. Examine this screenshot of a transaction in MetaMask:

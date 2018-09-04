@@ -1,6 +1,10 @@
 ---
 id: package-management
 title: Package management
+sidebar_label: Package management
+---
+
+### Publishing and upgrading Aragon apps
 ---
 
 To ease upgrades for Aragon apps, both app **smart contracts and frontend can be upgraded using the Aragon Package Manager**.

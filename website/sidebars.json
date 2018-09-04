@@ -2,6 +2,7 @@
   "docs": {
     "The basics": [
       "getting-started",
+      "stack",
       "acl-intro",
       "forwarding-intro",
       "upgradeability-intro",

@@ -1,7 +1,11 @@
 ---
 id: aragonjs-ref
 title: aragon.js reference documentation
+sidebar_label: Reference documentation
+hide_title: true
 ---
+
+![](/docs/assets/brand/aragonjs.png)
 
 ## Top-Level Exports
 
