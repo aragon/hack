@@ -215,8 +215,8 @@ Internally, `store` will fetch the last known state (if any) and pass that in as
 
 The reducer function **must always** return a state, even if it is the same state as before.
 
-> **Note**: The state will start out as `null`, not `undefined` because of the JSONRPC specification.
-
+> **Note**<br>
+> The state will start out as `null`, not `undefined` because of the JSONRPC specification.
 
 ### Displaying State
 
@@ -372,9 +372,10 @@ This will do a couple of things for you:
 
 After running this command a browser tab should pop up with your freshly created DAO, complete with permissions and your local app installed.
 
-[Screenshot of dapp](https://i.imgur.com/TMW7rlO.png)
+![Screenshot of dapp](/docs/assets/counter.png)
 
-> Caption: *It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the [React template](https://github.com/aragon/aragon-react-boilerplate)!*
+> **Note**<br>
+> It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the [React template](https://github.com/aragon/aragon-react-boilerplate)!
 
 
 ### Metamask
