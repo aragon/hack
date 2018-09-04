@@ -23,6 +23,24 @@ const users = [
     infoLink: 'https://altheamesh.com',
     pinned: true,
   },
+  {
+    caption: 'Espresso',
+    image: '/img/users/espresso.png',
+    infoLink: 'https://github.com/espresso-org',
+    pinned: true,
+  },
+  {
+    caption: 'DAppNode',
+    image: '/img/users/dappnode.png',
+    infoLink: 'https://dappnode.io',
+    pinned: true,
+  },
+  {
+    caption: 'Pando',
+    image: '/img/users/pando.png',
+    infoLink: 'https://github.com/ryhope/pando',
+    pinned: true,
+  },
 ]
 
 const siteConfig = {
