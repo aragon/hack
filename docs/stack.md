@@ -8,7 +8,7 @@ sidebar_label: The stack
 ---
 
 From a technical perspective, Aragon can be seen as an **operating system for human organization**.
-That way, the Aragon stack can be thought of as an operating system, just like macOS or Linux.
+Therefore, the Aragon stack can be thought of as an operating system, just like macOS or Linux.
 
 A computer operating system manages which processes have access to the computer's resources. They do that by:
 
@@ -38,31 +38,31 @@ The kernel is a very simple smart contract. It keeps track of an Access Control 
 
 The kernel also knows where to find its installed apps and handles upgradeability of the apps, by keeping references to the actual code that apps run.
 
-[Reference documentation for the Kernel](/docs/aragonos-ref.html#2-kernel)
+#### Read more: [Reference documentation for the Kernel](/docs/aragonos-ref.html#2-kernel)
 
 ## Permission management
 
-In conventional operating systems, you usually have normal users, and admins. We thought about how to translate that into an OS for humans, and discovered it wasn't enough.
+In conventional operating systems, you just have normal users and admins. But for decentralized governance, you need much more.
 
-What we came up with was a much richer permissions systems.
+aragonOS contains a **rich permissions system**. Any resource or functionality can be assigned a **role**. Only entities that have permission to call that role can access that resource. Those permissions are all set in the [Access Control List](/docs/acl-intro.html).
 
-Thanks to aragonOS, any resource or functionality can be assigned a role. Only entities that have permission to call that role can access that resource. Those permissions are all set in the Access Control List.
+With aragonOS, permissions work the following way:
 
-With aragonOS, permissions are as follows:
-
-*Entity E can call Function F (Param P...) on App A, only if Z satisfies Rules R, and Permission Manager PM can revoke or reassign that permission*
+> *Entity E* can call *Function F* (*Param P*...) on *App A*, only if *Param P* satisfies *Rules R*, and *Permission Manager PM* can revoke or reassign that permission
 
 Which simplified would be:
 
-*An entity can call a function on an app, and its manager can revoke or reassign that permission*
+> An entity can call a function on an app, and its manager can revoke or reassign that permission
 
 This enables for virtually infinite combinations and functionality permissions-wise.
 
+#### Read more: [Intro to permissions](/docs/acl-intro.html)
+
 ## Permission escalation
 
-In a conventional OS, when you want to perform an action but you don't have permission to, you sudo.
+In a conventional OS, there is usually just one way to escalate permissions, by using tools like `sudo`.
 
-In our case, it's not that simple. Since permissions are so rich, there may be lots of paths to escalate permissions.
+With aragonOS, since permissions are so rich, there may be **many paths to escalate permissions**.
 
 For example, a token holder may have permission to create a voting, and the voting app may have permission to withdraw funds.
 
@@ -70,50 +70,32 @@ In that case, Aragon Core tells the user that option when they attempt to withdr
 
 ## Full sandboxing
 
-Permission management is key for allowing security at the smart contract level. That'd be the equal of kernel, filesystem and process security in a conventional OS.
+Permission management is key for allowing security at the smart contract level. That is similar to the kernel, filesystem and process security in a conventional OS.
 
-Yet Aragon Core being all about frontend too, security is also required in the UI environment. This is similar how many operating systems impose app sandboxing. An app shouldn't be able to access or tamper with another running app.
+Yet Aragon Core is a frontend too, so security is also required in the UI environment. This is similar how many operating systems impose **app sandboxing**. An app shouldn't be able to access or tamper with another running app.
 
-Sandboxing is very challenging to implement in the frontend. Our solution is a combination of sandboxed iframes, cross-origin messaging and platform APIs.
+Aragon Core's approach to frontend sandboxing is a combination of sandboxed iframes and cross-origin messaging.
 
-All apps run inside sandboxed iframes, and only communicate with Aragon Core using aragon.js. Aragon Core provides APIs for accessing smart contracts, displaying notifications and signing transactions. While signing transactions, a panel opens up in Aragon Core, not in the app. Apps cannot prompt users to sign transactions directly, and they cannot interact with the contracts of other apps. Thus all transactions are securely handled by Aragon Core, decreasing the surface attack.
+All apps run inside **sandboxed iframes**, and only communicate with Aragon Core using [aragon.js](/docs/aragonjs-ref.html). Aragon Core provides APIs for accessing smart contracts, displaying notifications and signing transactions. While signing transactions, a panel opens up in Aragon Core, not in the app. Apps cannot prompt users to sign transactions directly, and they cannot interact with the contracts of other apps. Thus all transactions are securely handled by Aragon Core, decreasing the surface attack.
+
+#### Read more: [The Aragon client](/docs/client.html)
 
 ## Cohesive UI
 
-Aren't iframes and third party apps bad user experience? Thanks to Aragon UI, all Aragon apps can look and behave the same. That's amazing for user experience. Operating systems have leveraged this for the last decades. Confusing and incoherent user experiences lead to more errors and less comfort.
+Aren't iframes and third party apps bad user experience? Thanks to [Aragon UI](/docs/aragonui-intro.html), all Aragon apps can look and behave the same, improving user experience.
 
-We have been inspired by Apple and how they built their ecosystem, both in [desktop](https://developer.apple.com/documentation/appkit) and [mobile](https://developer.apple.com/documentation/uikit). While I have been a Linux user and lover since I was 12, I recognize that UX-wise, Apple knows how it goes.
+#### Read more: [Intro to Aragon UI](/docs/aragonui-intro.html)
+
+---
 
 # The easiest way to create dapps
 
-Aragon Core is a complete platform for dapp development.
+Aragon Core is a complete platform for dapp development. It provides:
 
-Worried about upgradeability? Solved, thanks to APM.
+- Ugradeability, thanks to [APM](/docs/package-management.html).
+- Governance, thanks to [forwarders](/docs/forwarding-intro.html) and [permissions](/docs/acl-intro.html).
+- Interoperability, just install other apps and plug them to yours with the permission system!
+- Security, thanks to frontend sandboxing and smart contract permissions.
+- Good-looking UI, thanks to [Aragon UI](/docs/aragonui-intro.html).
 
-Worried about governance? Solved, thanks to forwarders and permissions.
-
-Worried about reinventing the wheel instead of leveraging existing apps? Solved, just install other apps and plug them to yours with the permission system!
-
-Worried about security: Solved, thanks to frontend sandboxing and smart contract permissions.
-
-Worried about creating a good-looking UI? Solved, use Aragon UI.
-
-If this inspired you to build on Aragon, check out our developer documentation!
-
-If this inspired you to build Aragon, check out open issues or look for open positions!
-
-
-
-For users, [Aragon Core](https://app.aragon.org) is the easiest way to create unstoppable organizations. The UI abstracts away technical details, and lets users focus on what matters.
-
-When using Aragon Core, users don't notice that:
-
-- They are interacting with many apps, created by different developers
-- The dapp always tries to find how the user can perform actions, even if they don't have direct permission to do so
-- The smart contracts and frontend of Aragon Core and its apps are fully upgradeable
-
-That can sound simple, but it isn't. There are many technical challenges. Creating an app platform with full sandboxing. Traversing the access control list so users can perform actions they don't have direct permission over. [Having decentralized and censorship-resistant upgradeability](https://blog.aragon.org/deploying-and-distributing-aragon-core-11e70cbc9b50/).
-
-From a technical perspective, Aragon Core is an operating system for human organization.
-
-
+You can continue reading about the stack, or [follow the tutorial](/docs/tutorial.html) to start creating an app.
