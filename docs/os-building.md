@@ -5,7 +5,7 @@ title: Developing with aragonOS
 
 In order to make apps upgradeable and having a generic governance interface, using aragonOS to its full potential requires taking into account several aspects when developing smart contracts.
 
-## The `AragonApp` contract
+## The AragonApp contract
 
 Contracts using aragonOS have to inherit from the `AragonApp` contract which makes available some functionality that is explained below in this guide.
 
@@ -144,8 +144,9 @@ contract MyApp is IForwarder, AragonApp {
     function forward(bytes _evmScript) public {
         require(canForward(msg.sender, _evmScript));
 
-        bytes memory input = new bytes(0); 
-        address[] memory blacklist = new address[](0); // an array of addresses that cannot be called from the script
+        bytes memory input = new bytes(0);
+        // an array of addresses that cannot be called from the script
+        address[] memory blacklist = new address[](0);
 
         // Either immediately run the script or save it for later execution
         runScript(_evmScript, input, blacklist); // actually executes script
