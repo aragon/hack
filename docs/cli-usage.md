@@ -131,7 +131,7 @@ The `dao install` command will create an instance of the app and assign permissi
 
 As explained in the [upgrade command](#dao-upgrade), all app instances of the same app in DAO must run the same version, so installing an app with a version will effectively upgrade all app instances to this version.
 
-### dao apps
+### `dao apps`
 
 ```console
 dao apps [dao-addr]
@@ -139,7 +139,7 @@ dao apps [dao-addr]
 
 Used to inspect all the installed apps in a DAO.
 
-### dao acl
+### `dao acl`
 
 
 ```console
