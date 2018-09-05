@@ -118,6 +118,14 @@ input#search_input_react::placeholder {
   box-shadow: none !important;
 }
 
+@media 
+  (-webkit-min-device-pixel-ratio: 2), 
+  (min-resolution: 192dpi) { 
+  .homeContainer {
+    background-image: url(/img/landing@2x.svg);
+  }
+}
+
 @media only screen and (max-width: 393px) {
   .homeContainer {
     background-image: none;
