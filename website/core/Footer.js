@@ -64,6 +64,7 @@ class Footer extends React.Component {
             <h5>More</h5>
             <a href="https://blog.aragon.org">Blog</a>
             <a href="https://github.com/aragon">GitHub</a>
+            <a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a>
           </div>
         </section>
       </FooterContainer>
