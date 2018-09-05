@@ -4,6 +4,8 @@ title: Using the Aragon CLI
 sidebar_label: Usage
 ---
 
+![](/docs/assets/brand/aragoncli.png)
+
 ### The Aragon CLI is used to create and develop Aragon apps
 ---
 
@@ -20,7 +22,7 @@ It can also be installed directly from source:
 ```console
 git clone https://github.com/aragon/aragon-cli.git
 cd aragon-cli
-npm install 
+npm install
 npm link
 ```
 
@@ -123,7 +125,7 @@ The `dao install` command installs an instance of an app in the DAO.
 dao install [dao-addr] [app-apm-repo] [repo-version]
 ```
 
-In aragonOS, an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO. 
+In aragonOS, an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO.
 
 The `dao install` command will create an instance of the app and assign permissions to the main account to perform all the protected actions in the app.
 
@@ -224,6 +226,6 @@ The workaround is to switch to a different network (e.g. Rinkeby) and then switc
 
 ### The `~/.aragon` directory
 
-The Aragon CLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon Core client. 
+The Aragon CLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon Core client.
 
 In case the client is not loading properly, deleting the `~/.aragon` directory will make `aragon run` recreate the environment the next time it is used and may solve the issue.
