@@ -13,12 +13,18 @@
 }
 
 .homeContainer {
-  background-image: linear-gradient(to top, #F7FBFD 0%, rgba(255,255,255,0.1) 100%), url(/img/bg.png);
+  background-image: url(/img/landing.svg);
   background-size: cover;
+  background-position: center 20%;
+  text-align: left !important;
 }
 
 .homeContainer .homeWrapper {
-  padding: 6em 10px !important;
+  padding: 10em 1.5em !important;
+}
+
+.promoSection {
+  flex-flow: nowrap !important;
 }
 
 .projectLogo img {
@@ -26,6 +32,10 @@
   left: 3rem;
   margin-top: 2rem;
   max-height: 200px !important;
+}
+
+.projectTitle small {
+  color: #1AB8CF !important;
 }
 
 .navigationSlider .slidingNav ul li.siteNavItemActive a {
@@ -90,15 +100,28 @@ footer {
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+  .homeContainer {
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
+  
 }
 
 @media only screen and (max-width: 1023px) {
+  .homeContainer {
+    background-size: 175%;
+    background-position: center 20%;
+  }
 }
 
 @media only screen and (min-width: 1400px) {
+  .homeContainer {
+    background-size: 150%;
+    background-position: center 20%;
+  }
 }
 
 @media only screen and (min-width: 1500px) {
