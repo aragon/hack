@@ -2,12 +2,12 @@
 id: cli-usage
 title: Using the Aragon CLI
 sidebar_label: Usage
+hide_title: true
 ---
 
 ![](/docs/assets/brand/aragoncli.png)
 
-### The Aragon CLI is used to create and develop Aragon apps
----
+The Aragon CLI is used to create and develop Aragon apps.
 
 ## Install
 

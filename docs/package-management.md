@@ -4,8 +4,6 @@ title: Package management
 sidebar_label: Package management
 ---
 
-![](/docs/assets/brand/aragonpm.png)
-
 ### Publishing and upgrading Aragon apps
 ---
 
