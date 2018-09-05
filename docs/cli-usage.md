@@ -176,19 +176,7 @@ dao apps [dao-addr]
 
 Used to inspect all the installed apps in a DAO.
 
-### `dao acl`
-
-
-```console
-dao acl [dao-addr]
-```
-
-- `dao-addr`: The main address of the DAO (Kernel).
-
-Used to inspect the ACL state in a DAO to check its permissions.
-
 ### `dao exec`
-
 
 ```console
 dao exec [dao-addr] [app-proxy-addr] [method] [argument1 ... argumentN]
@@ -200,6 +188,87 @@ dao exec [dao-addr] [app-proxy-addr] [method] [argument1 ... argumentN]
 - `app-proxy-addr`: The address of the app where the action is being performed. You can find the proxy address by checking [`dao apps`](#dao-apps)
 - `method`: Name of the method being executed in the app (e.g. `withdrawTokens`)
 - `arguments`: The arguments that the method will be executed with separated by a space.
+
+### `dao acl`
+
+
+```console
+dao acl [dao-addr]
+```
+
+- `dao-addr`: The main address of the DAO (Kernel).
+
+Used to inspect the ACL state in a DAO to check its permissions.
+
+### `dao acl create`
+
+
+```console
+dao acl create [dao-addr] [app-proxy-addr] [role] [entity] [manager]
+```
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-proxy-addr`: The address of the app whose permissions are being managed. You can find the proxy address by checking [`dao apps`](#dao-apps).
+- `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
+- `entity`: The address of the entity that is being granted the permission by creating it.
+- `manager`: The address of the entity that will be able to grant that permission or revoke it.
+
+Used to create a permission in the ACL. Can only be used if the permission hasn't been created before. The `manager` of the permission can use `dao acl grant` and `dao acl revoke` to manage the permission.
+
+### `dao acl grant`
+
+
+```console
+dao acl grant [dao-addr] [app-proxy-addr] [role] [entity]
+```
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-proxy-addr`: The address of the app whose permissions are being managed. You can find the proxy address by checking [`dao apps`](#dao-apps).
+- `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
+- `entity`: The address of entity that is being granted the permission.
+
+Used to grant a permission in the ACL.
+
+### `dao acl revoke`
+
+
+```console
+dao acl revoke [dao-addr] [app-proxy-addr] [role] [entity]
+```
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-proxy-addr`: The address of the app whose permissions are being managed. You can find the proxy address by checking [`dao apps`](#dao-apps).
+- `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
+- `entity`: The address of entity that is being revoked the permission.
+
+Used to revoke a permission in the ACL.
+
+### `dao acl set-manager`
+
+
+```console
+dao acl set-manager [dao-addr] [app-proxy-addr] [role] [manager]
+```
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-proxy-addr`: The address of the app whose permissions are being managed. You can find the proxy address by checking [`dao apps`](#dao-apps).
+- `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
+- `manager`: The new manager for the permission.
+
+Used to change the manager of a permission in the ACL.
+
+### `dao acl remove-manager`
+
+
+```console
+dao acl remove-manager [dao-addr] [app-proxy-addr] [role]
+```
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-proxy-addr`: The address of the app whose permissions are being managed. You can find the proxy address by checking [`dao apps`](#dao-apps).
+- `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
+
+Used to remove the manager of a permission in the ACL. The permission can be created again after removing its manager.
 
 ## APM commands
 
