@@ -14,6 +14,9 @@
     "Aragon CLI": [
       "cli-usage"
     ],
+    "Aragon Package Manager": [
+      "apm"
+    ],
     "aragonOS": [
       "aragonos-intro",
       "aragonos-ref"
