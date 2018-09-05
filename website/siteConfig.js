@@ -102,6 +102,12 @@ const siteConfig = {
     ]
   },
 
+  algolia: {
+    apiKey: '9dff0383c32107d6c174f15e259bb23a',
+    indexName: 'aragon',
+    algoliaOptions: {} // Optional, if provided by Algolia
+  },
+
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
   copyright:
     'Creative Commons ' +

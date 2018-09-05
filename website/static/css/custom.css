@@ -96,6 +96,22 @@ blockquote p {
   padding-top: 0px !important;
 }
 
+.navSearchWrapper::before,
+.navSearchWrapper::after {
+  display: none !important;
+}
+
+input#search_input_react {
+  background-color: white !important;
+  color: black !important;
+  line-height: 32px !important;
+  padding-left: 15px !important;
+}
+
+input#search_input_react::placeholder {
+  color: #3b3b3b !important;
+}
+
 #footer {
   background-image: url(/img/footerbg.svg);
   background-color: #353535 !important;
@@ -106,6 +122,10 @@ blockquote p {
   .homeContainer {
     background-image: none;
   }
+
+  input#search_input_react {
+    line-height: 20px !important;
+  }
 }
 
 @media only screen and (min-width: 394px) and (max-width: 551px) {
@@ -114,12 +134,20 @@ blockquote p {
     background-position: 50% -50%;
     background-repeat: no-repeat;
   }
+
+  input#search_input_react {
+    line-height: 20px !important;
+  }
 }
 
 @media only screen and (min-width: 552px) and (max-width: 781px) {
   .homeContainer {
     background-size: 300%;
     background-position: 50% 30%;
+  }
+
+  input#search_input_react {
+    line-height: 20px !important;
   }
 }
 
