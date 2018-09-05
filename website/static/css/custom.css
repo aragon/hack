@@ -96,7 +96,9 @@ blockquote p {
   padding-top: 0px !important;
 }
 
-footer {
+#footer {
+  background-image: url(/img/footerbg.svg);
+  background-color: #353535 !important;
   box-shadow: none !important;
 }
 
