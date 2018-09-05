@@ -178,7 +178,7 @@ const Intro = props => (
     <h2>Build DAOs, protocols and dapps</h2>
     <MarkdownBlock>
       Aragon is the most **powerful** and **modular** way to run [DAOs](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization).
-      But on our journey into creating DAOs, we discovered how to modularize individual components that can be used for creating **any dapp or crypto protocol**.
+      But on our journey creating DAOs, we discovered how to modularize individual components that can be used for creating **any dapp or crypto protocol**.
     </MarkdownBlock>
   </div>
 )
@@ -235,7 +235,7 @@ const UseCases = props => (
     <h2>For crypto protocols</h2>
     <MarkdownBlock>
       You can build any **governance mechanism to upgrade your crypto protocol** or its parameters.
-      Benefit from any of the existing governance mechanisms that are supported by aragonOS, or easily roll out your own.
+      Benefit from any of the existing governance mechanisms that support aragonOS, or easily roll out your own.
     </MarkdownBlock>
   </UseCasesContainer>
 )
