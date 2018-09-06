@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+      <script type="text/javascript">
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://arastats.eu/staats/";
+          _paq.push(['setTrackerUrl', u+'piwik.php']);
+          _paq.push(['setSiteId', '7']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+      <noscript><img src="https://arastats.eu/staats/piwik.php?idsite=7&amp;rec=1" style="border:0" alt="" /></noscript>
+      <html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Developing with aragonOS · Aragon Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Developing with aragonOS · Aragon Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://hack.aragon.org/index.html"/><meta property="og:description" content="In order to make apps upgradeable and having a generic governance interface, using aragonOS to its full potential requires taking into account several aspects when developing smart contracts."/><meta property="og:image" content="https://hack.aragon.org/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://hack.aragon.org/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible doc separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/isotype.svg" alt="Aragon Developer Portal"/><h2 class="headerTitleWithLogo">Aragon Developer Portal</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting-started.html" target="_self">Get started</a></li><li class=""><a href="/docs/tutorial.html" target="_self">Tutorial</a></li><li class="siteNavGroupActive"><a href="/docs/aragonos-intro.html" target="_self">aragonOS</a></li><li class="siteNavGroupActive"><a href="/docs/aragonjs-ref.html" target="_self">aragon.js</a></li><li class="siteNavGroupActive"><a href="/docs/aragonui-intro.html" target="_self">Aragon UI</a></li><li class=""><a href="/en/help.html" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>aragonOS</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>The basics</h3><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started.html">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/stack.html">The stack</a></li><li class="navListItem"><a class="navItem" href="/docs/acl-intro.html">Permissions</a></li><li class="navListItem"><a class="navItem" href="/docs/forwarding-intro.html">Forwarding</a></li><li class="navListItem"><a class="navItem" href="/docs/upgradeability-intro.html">Upgradeability</a></li><li class="navListItem"><a class="navItem" href="/docs/package-management.html">Package management</a></li><li class="navListItem"><a class="navItem" href="/docs/kits-intro.html">Kits</a></li><li class="navListItem"><a class="navItem" href="/docs/client.html">The Aragon client</a></li><li class="navListItem"><a class="navItem" href="/docs/human-readable-txs.html">Human readable transactions</a></li></ul></div><div class="navGroup navGroupActive"><h3>Aragon CLI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/cli-usage.html">Usage</a></li></ul></div><div class="navGroup navGroupActive"><h3>Aragon Package Manager</h3><ul><li class="navListItem"><a class="navItem" href="/docs/apm.html">Architecture</a></li></ul></div><div class="navGroup navGroupActive"><h3>aragonOS</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonos-intro.html">Introduction</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/aragonos-building.html">Developing with aragonOS</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-ref.html">Reference documentation</a></li></ul></div><div class="navGroup navGroupActive"><h3>aragon.js</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref.html">Reference documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-clients.html">Reference documentation for clients/wrappers</a></li></ul></div><div class="navGroup navGroupActive"><h3>Aragon UI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonui-intro.html">Introduction</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/os-building.md" target="_blank" rel="noreferrer noopener">Edit</a><h1>Developing with aragonOS</h1></header><article><div><span><p>In order to make apps upgradeable and having a generic governance interface, using aragonOS to its full potential requires taking into account several aspects when developing smart contracts.</p>
+<h2><a class="anchor" aria-hidden="true" id="the-aragonapp-contract"></a><a href="#the-aragonapp-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The AragonApp contract</h2>
+<p>Contracts using aragonOS have to inherit from the <code>AragonApp</code> contract which makes available some functionality that is explained below in this guide.</p>
+<p>The <code>AragonApp</code> contract manages two very important state variables in the app:</p>
+<ul>
+<li><code>kernel</code>: A reference to the Kernel contract. The <code>Kernel</code> manages upgradeability and access control for the app.</li>
+<li><code>appId</code>: An identifier for the app, which is the ENS name of the package repo of the app.</li>
+</ul>
+<p>These variables are set by <code>AppProxy</code> on its constructor and should never be modified by the app, as it could produce an unexpected state and leave the app unprotected or unaccessible.</p>
+<pre><code class="hljs css solidity"><span class="hljs-selector-tag">import</span> "@<span class="hljs-keyword">aragon</span>/<span class="hljs-keyword">os</span>/<span class="hljs-keyword">contracts</span>/<span class="hljs-keyword">apps</span>/<span class="hljs-keyword">AragonApp</span>.<span class="hljs-keyword">sol</span>";
+
+<span class="hljs-selector-tag">contract</span> <span class="hljs-selector-tag">MyApp</span> <span class="hljs-selector-tag">is</span> <span class="hljs-selector-tag">AragonApp</span> {
+
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="upgradeability-bases-and-proxies"></a><a href="#upgradeability-bases-and-proxies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Upgradeability: bases and proxies</h2>
+<p>The <a href="https://eips.ethereum.org/EIPS/eip-897">DelegateProxy</a> upgradeability pattern separates the contract implementation code or bases (the business logic) and the actual instances of the apps (thin proxies that use the base contract as their logic). The way upgradeability occurs is by changing the reference of the base contract in the proxy. Updating this reference effectively upgrades the logic that the proxy instances will execute when used.</p>
+<p>In the case of aragonOS, the Kernel keeps the references for the versions of all of its installed apps. Using the <code>kernel.newAppInstance(address appId, address base)</code> function, an app is registered in the Kernel and a proxy for that app is created. At any point the base contract of the app can be upgraded using <code>kernel.setApp</code>.</p>
+<p>Making an app available for use with upgradeable proxies requires deploying the contract to the network so its address can be used as a base. By default, if inheriting from <code>AragonApp</code>, the base contract is disabled on deployment and cannot be used directly (only behind proxies). This is a security feature to avoid scenarios when a contract that proxies rely on can be destructed and all proxies are rendered useless.</p>
+<h2><a class="anchor" aria-hidden="true" id="constructor-and-initialization"></a><a href="#constructor-and-initialization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constructor and initialization</h2>
+<p>The constructor of a contract is executed when a contract is created, therefore when using a proxy, the constructor code that is run is the proxies' constructor and not the one of the base contract.</p>
+<p>Because of this, aragonOS apps <strong>cannot use a constructor for initializing the contract</strong>. An initialization function needs to be implemented that can only be executed once (<code>onlyInit</code> protects a function from being called after <code>initialized()</code> has been done).</p>
+<p>The <code>isInitialized</code> modifier can be used for protecting against a function being used before the contract is initialized. In the following example, <code>sendFunds()</code> would transfer the ETH sent with the call to <code>address(0)</code> as it wasn't set, but by adding the <code>isInitialized</code> modifier, the function will fail until the contract has been initialized. It is a good practice to require all functions that modify state to be initialized before they can be used.</p>
+<pre><code class="hljs css solidity">import <span class="hljs-string">"@aragon/os/contracts/apps/AragonApp.sol"</span>;
+
+contract MyApp is AragonApp {
+   <span class="hljs-built_in"> address </span>receiver;
+
+    function initialize(address _receiver) onlyInit public {
+        initialized();
+        receiver = _receiver;
+    }
+
+    function sendFunds() payable isInitialized {
+        receiver.transfer(msg.value);
+    }
+}
+</code></pre>
+<p>It is important to note that using this pattern, <strong>anyone can initialize a proxy</strong> after it has been deployed. The initialization of a proxy should occur in the same transaction that deploys the proxy to prevent initialization being front-run by an adversary.</p>
+<ul>
+<li>The <a href="https://github.com/aragon/aragonOS/blob/dev/contracts/apps/AppProxyBase.sol">AppProxy</a> supports passing an initialization payload to its constructor. On creation, the proxy will perform a call with the provided initialization payload as the calldata to itself. This can be used to initialize the proxy in its constructor.</li>
+<li>If using a <a href="/docs/kits-intro.html">DAO kit</a>, the initialization of an app can be done right after the proxy is created.</li>
+</ul>
+<p>Another important note is that if the app uses the <a href="#roles-and-the-acl">ACL</a> for access control, <strong>all access control checks will fail unless the app has been initialized</strong>.</p>
+<h2><a class="anchor" aria-hidden="true" id="roles-and-the-acl"></a><a href="#roles-and-the-acl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Roles and the ACL</h2>
+<p>aragonOS comes with a powerful ACL that apps can use for managing the permissions to calling certain functions in an app. Rather than coding any custom access control logic into your app, such as the infamous <code>onlyOwner</code>, you can just protect functions in your app behind the ACL by adding the <code>auth</code> modifier.</p>
+<p>If the <code>auth</code> modifier is present in a function, prior to its execution, it will check with the Kernel's ACL whether the entity performing the call is allowed to perform the action in the app.</p>
+<p>Roles are identified by a <code>bytes32</code> value, this identifier can be a constant value so it doesn't take up any storage space. The recommended name for a role identifier is the <code>keccak256</code> hash of its name, as it makes integration with the tooling better.</p>
+<pre><code class="hljs css solidity"><span class="hljs-meta"><span class="hljs-meta-keyword">import</span> "@aragon/os/contracts/apps/AragonApp.sol";</span>
+
+contract MyApp <span class="hljs-keyword">is</span> AragonApp {
+    address receiver;
+
+    bytes32 <span class="hljs-keyword">public</span> constant SET_RECEIVER_ROLE = keccak256(<span class="hljs-string">"SET_RECEIVER_ROLE"</span>);
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span><span class="hljs-params">(address _receiver)</span> <span class="hljs-title">onlyInit</span> <span class="hljs-title">public</span> </span>{
+        initialized();
+        receiver = _receiver;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setReceiver</span><span class="hljs-params">(address _newReceiver)</span> <span class="hljs-title">auth</span><span class="hljs-params">(SET_RECEIVER_ROLE)</span> <span class="hljs-title">public</span> </span>{
+        receiver = _receiver;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendFunds</span><span class="hljs-params">()</span> <span class="hljs-title">payable</span> <span class="hljs-title">isInitialized</span> </span>{
+        receiver.transfer(msg.value);
+    }
+}
+</code></pre>
+<p>An important note is that the <code>auth</code> modifier will also check whether the app is initialized. If the <strong>app hasn't been initialized, the authentication check will fail</strong>.</p>
+<p>When adding a role to your app, it needs to be added to the <a href="/docs/cli-usage.html#the-arappjson-file"><code>arapp.json</code></a> file, with a description of what having the role allows an entity to do. You can check Aragon's <a href="https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json">Voting app arapp.json</a> for an example of role descriptions.</p>
+<pre><code class="hljs css json">{
+  ...,
+  roles: [
+    {
+      "name": "Set the receiver of funds",
+      "id": "SET_RECEIVER_ROLE",
+      "params": []
+    }
+  ]
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="forwarding"></a><a href="#forwarding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Forwarding</h2>
+<p>aragonOS introduces the concept of <a href="/docs/forwarding-intro.html">forwarding</a> which is a generic interface for apps sending an intent to other apps if some conditions met. For example, a Voting app can be a forwarder that only forwards the intent if a vote passes, or a Payroll app that forwards intents to all employees of an organization.</p>
+<p>Forwarders are passed an EVMScript that can be executed by the app. For the time being, the script executed is always an array of calls that will be performed one after the other.</p>
+<p>In order for an app to be a forwarder it needs to implement these 3 functions in the <code>IForwarder</code> interface:</p>
+<pre><code class="hljs css solidity"><span class="hljs-meta"><span class="hljs-meta-keyword">import</span> "@aragon/os/contracts/apps/AragonApp.sol";</span>
+<span class="hljs-meta"><span class="hljs-meta-keyword">import</span> "@aragon/os/contracts/common/IForwarder.sol";</span>
+
+contract MyApp <span class="hljs-keyword">is</span> IForwarder, AragonApp {
+    address receiver;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span><span class="hljs-params">(address _receiver)</span> <span class="hljs-title">onlyInit</span> <span class="hljs-title">public</span> </span>{
+        initialized();
+        receiver = _receiver;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isForwarder</span><span class="hljs-params">()</span> <span class="hljs-title">public</span> <span class="hljs-title">pure</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bool)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">canForward</span><span class="hljs-params">(address _sender, bytes _evmCallScript)</span> <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bool)</span> </span>{
+        <span class="hljs-comment">// arbitrary logic for deciding whether to forward a given intent</span>
+        <span class="hljs-keyword">return</span> _sender == receiver;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forward</span><span class="hljs-params">(bytes _evmScript)</span> <span class="hljs-title">public</span> </span>{
+        require(canForward(msg.sender, _evmScript));
+
+        bytes memory input = <span class="hljs-keyword">new</span> bytes(<span class="hljs-number">0</span>);
+        <span class="hljs-comment">// an array of addresses that cannot be called from the script</span>
+        address[] memory blacklist = <span class="hljs-keyword">new</span> address[](<span class="hljs-number">0</span>);
+
+        <span class="hljs-comment">// Either immediately run the script or save it for later execution</span>
+        runScript(_evmScript, input, blacklist); <span class="hljs-comment">// actually executes script</span>
+    }
+}
+</code></pre>
+<p>In the example above, this app will always forward an intent if the sender happens to be the <code>receiver</code> in the contract.</p>
+<p>An important note is that when a script is run, it will be able to perform calls from the app to addresses or contracts that are not in the address blacklist.</p>
+<h2><a class="anchor" aria-hidden="true" id="fund-recovery"></a><a href="#fund-recovery" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fund recovery</h2>
+<p>In order to prevent funds from being stuck in app proxies forever, aragonOS provides a way to recover tokens and ETH sent to apps that don't manage funds. When funds are sent to an app proxy, they can be recovered and sent to the DAOs default Vault unless this functionality has been explicitely disabled.</p>
+<p>If an app is intended to hold funds, this functionality can be disabled or customized to the tokens that can be recovered:</p>
+<pre><code class="hljs css solidity"><span class="hljs-meta"><span class="hljs-meta-keyword">import</span> "@aragon/os/contracts/apps/AragonApp.sol";</span>
+
+contract MyApp <span class="hljs-keyword">is</span> AragonApp {
+    address receiver;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span><span class="hljs-params">(address _receiver)</span> <span class="hljs-title">onlyInit</span> <span class="hljs-title">public</span> </span>{
+        initialized();
+        receiver = _receiver;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowRecoverability</span><span class="hljs-params">(address token)</span> <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bool)</span> </span>{
+        <span class="hljs-keyword">return</span> token != ETH; <span class="hljs-comment">// turns off fund recovery for ETH</span>
+    }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h2>
+<p>At Aragon we have built some Aragon apps ourselves that implement some basic functionality to manage DAOs. They are a good reference on how to build you Aragon app. You can check them in the <a href="https://github.com/aragon/aragon-apps">aragon/aragon-apps</a> repo.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="aragonos-intro.html">← aragonOS intro</a><a class="docs-next button" href="aragonos-ref.html">aragonOS reference documentation →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#the-aragonapp-contract">The AragonApp contract</a></li><li><a href="#upgradeability-bases-and-proxies">Upgradeability: bases and proxies</a></li><li><a href="#constructor-and-initialization">Constructor and initialization</a></li><li><a href="#roles-and-the-acl">Roles and the ACL</a></li><li><a href="#forwarding">Forwarding</a></li><li><a href="#fund-recovery">Fund recovery</a></li><li><a href="#examples">Examples</a></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bXwoTT" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/isotype.svg" alt="Aragon Developer Portal" width="66" height="58"/></a><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/aragonjs-ref.html">aragon.js</a><a href="/docs/aragonui-intro.html">Aragon UI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+              var search = docsearch({
+                
+                apiKey: '9dff0383c32107d6c174f15e259bb23a',
+                indexName: 'aragon',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script>
+      <style data-styled-components="bXwoTT">
+/* sc-component-id: sc-bdVaJa */
+.sc-bdVaJa {} .bXwoTT{background:#6D8088 !important;}
+/* sc-component-id: sc-global-3832733198 */
+@font-face{font-family:'overpass';src:url(/aragon-ui/cf790334a5a6d45c.woff2) format('woff2'),url(/aragon-ui/fd48a701d84ebf69.woff) format('woff');font-weight:400;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/32a3f11e7740ce58.woff2) format('woff2'),url(/aragon-ui/860b19d3e10736e7.woff) format('woff');font-weight:600;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/5cfe62515c2f9b42.woff2) format('woff2'),url(/aragon-ui/f8ba2d7a9af0db1f.woff) format('woff');font-weight:800;font-style:normal;} *,*:before,*:after{box-sizing:border-box;} html{min-height:100%;} body{font-family:overpass,sans-serif;font-size:15px;font-weight:400;line-height:1.5;color:#000000;background:#F7FBFD;} body,ul,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;} button,select,input,textarea,h1,h2,h3,h4,h5,h6{font-size:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;} a,button,select,input,textarea{color:inherit;} strong,b{font-weight:600;}</style>
+      </body></html>
