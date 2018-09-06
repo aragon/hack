@@ -2,6 +2,7 @@ const React = require('react')
 const { BaseStyles, PublicUrl } = require('@aragon/ui')
 const ServerStyleSheet = require('styled-components').ServerStyleSheet
 const renderToStaticMarkup = require('react-dom/server').renderToStaticMarkup
+const hljsDefineSolidity = require('highlightjs-solidity')
 
 /* List of projects/orgs using your project for the users page */
 const users = [
@@ -117,6 +118,9 @@ const siteConfig = {
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'atom-one-dark',
+    hljs: function(hljs) {
+      hljsDefineSolidity(hljs)
+    }
   },
 
   /* On page navigation for the current documentation page */
