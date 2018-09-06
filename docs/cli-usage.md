@@ -64,6 +64,27 @@ Some available options to customize the `run` command:
 - `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
 - `--client [true|false]`: Can be used to disable starting the Aragon Core client. Defaults to `true`.
 
+
+#### Running your app from a development HTTP server
+
+`aragon run` by default will replicate Aragon's production environment and publish you app using IPFS. However when developing the webapp part of you Aragon app, using IPFS would require you to repeat the entire publishing process every time you make a change and want to try it out.
+
+Using the HTTP mode for running your app requires starting an HTTP server is serving your app files before executing `aragon run` or `aragon apm publish`
+
+```console
+# start your app server before
+aragon run --http [server-uri] --http-served-from [path]
+```
+
+- `http`: This is the flag that indicates that you wish to run your app using HTTP. The URI of the server must be provided here (e.g. `localhost:4001`)
+- `http-served-from`: Path to the directory that the HTTP server exposes. Some artifacts are generated and placed in this directory during the publishing process of your app. The server needs serve these new files when they are created and the server is already running.
+
+If your HTTP server supports hot-reloading, your app's frontend will be hot-reloaded inside the Aragon Core client.
+
+However, when **making changes to the background script** of your app, a refresh of the client is required so the new script will be loaded when the app starts. Also depending on how the background script of your app is being built, you may need to manually trigger the compilation of the script.
+
+The [React boilerplate](https://github.com/aragon/aragon-react-boilerplate) supports serving your app using HTTP.
+
 ### `aragon devchain`
 
 The `devchain` command is used for starting a local development testnet with all the required components already deployed and ready to use. It uses [aragen](https://github.com/aragon/aragen) for setting up the snapshot from which the chain starts. At any point, `aragon devchain --reset` can be run which will reset the devchain to the original snapshot.
@@ -92,6 +113,16 @@ Running `aragon deploy` will compile your contracts using `truffle compile` and 
 
 The `--init` arguments need to be separated by a space, and they will be passed to the contract constructor on deploy. The `@ARAGON_ENS` alias can be used and it will be replaced by the address of the ENS registry in the devchain.
 
+### `aragon contracts`
+
+The `aragon contracts` command can be used to execute commands using the same [truffle](https://github.com/trufflesuite/truffle) version that the CLI uses behind the scenes to assist in compiling your app's contracts at some times when that is necessary.
+
+```console
+aragon contracts [command]
+```
+
+It is the equivalent to executing `npx truffle [command]`
+
 ## DAO commands
 
 The `aragon dao` commands can be used for interacting with your DAO directly from the command line. These commands are also available directly using the `dao` alias.
@@ -115,6 +146,10 @@ The `dao upgrade` command upgrades all instances of an app to a newer version.
 dao upgrade [dao-addr] [app-apm-repo] [repo-version]
 ```
 
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-apm-repo`: The repo name of the app being upgraded (e.g. `voting` or `voting.aragonpm.eth`)
+- `repo-version`: Version of the repo that the app will be upgraded to, can be a version number or `latest` for the newest published version (defaults to `latest`)
+
 aragonOS protects against having different instances of a particular app running with different versions (e.g. all the Voting app instances run the same version), so performing a `dao upgrade` will upgrade all instances of the app to the version specified.
 
 ### `dao install`
@@ -125,7 +160,12 @@ The `dao install` command installs an instance of an app in the DAO.
 dao install [dao-addr] [app-apm-repo] [repo-version]
 ```
 
-In aragonOS, an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO.
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-apm-repo`: The repo name of the app being installed (e.g. `voting` or `voting.aragonpm.eth`)
+- `repo-version`: Version of the repo that will be installed, can be a version number or `latest` for the newest published version (defaults to `latest`)
+
+In aragonOS, an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO. 
 
 The `dao install` command will create an instance of the app and assign permissions to the main account to perform all the protected actions in the app.
 
@@ -137,16 +177,97 @@ As explained in the [upgrade command](#dao-upgrade), all app instances of the sa
 dao apps [dao-addr]
 ```
 
+- `dao-addr`: The main address of the DAO (Kernel).
+
 Used to inspect all the installed apps in a DAO.
 
-### `dao acl`
+### `dao exec`
 
+```console
+dao exec [dao-addr] [app-proxy-addr] [method] [argument1 ... argumentN]
+```
+
+`dao exec` allows performing transactions in your DAO directly from the CLI. It supports [transaction pathing](forwarding-intro.md) so if your account cannot perform the action directly, it will try to find how to do it (e.g. creating a vote).
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-proxy-addr`: The address of the app where the action is being performed. You can find the proxy address by checking [`dao apps`](#dao-apps)
+- `method`: Name of the method being executed in the app (e.g. `withdrawTokens`)
+- `arguments`: The arguments that the method will be executed with separated by a space.
+
+### `dao acl`
 
 ```console
 dao acl [dao-addr]
 ```
 
+- `dao-addr`: The main address of the DAO (Kernel).
+
 Used to inspect the ACL state in a DAO to check its permissions.
+
+### `dao acl create`
+
+```console
+dao acl create [dao-addr] [app-proxy-addr] [role] [entity] [manager]
+```
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-proxy-addr`: The address of the app whose permissions are being managed. You can find the proxy address by checking [`dao apps`](#dao-apps).
+- `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
+- `entity`: The address of the entity that is being granted the permission by creating it.
+- `manager`: The address of the entity that will be able to grant that permission or revoke it.
+
+Used to create a permission in the ACL. Can only be used if the permission hasn't been created before. The `manager` of the permission can use `dao acl grant` and `dao acl revoke` to manage the permission.
+
+### `dao acl grant`
+
+```console
+dao acl grant [dao-addr] [app-proxy-addr] [role] [entity]
+```
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-proxy-addr`: The address of the app whose permissions are being managed. You can find the proxy address by checking [`dao apps`](#dao-apps).
+- `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
+- `entity`: The address of entity that is being granted the permission.
+
+Used to grant a permission in the ACL.
+
+### `dao acl revoke`
+
+```console
+dao acl revoke [dao-addr] [app-proxy-addr] [role] [entity]
+```
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-proxy-addr`: The address of the app whose permissions are being managed. You can find the proxy address by checking [`dao apps`](#dao-apps).
+- `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
+- `entity`: The address of entity that is being revoked the permission.
+
+Used to revoke a permission in the ACL.
+
+### `dao acl set-manager`
+
+```console
+dao acl set-manager [dao-addr] [app-proxy-addr] [role] [manager]
+```
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-proxy-addr`: The address of the app whose permissions are being managed. You can find the proxy address by checking [`dao apps`](#dao-apps).
+- `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
+- `manager`: The new manager for the permission.
+
+Used to change the manager of a permission in the ACL.
+
+### `dao acl remove-manager`
+
+```console
+dao acl remove-manager [dao-addr] [app-proxy-addr] [role]
+```
+
+- `dao-addr`: The main address of the DAO (Kernel).
+- `app-proxy-addr`: The address of the app whose permissions are being managed. You can find the proxy address by checking [`dao apps`](#dao-apps).
+- `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
+
+Used to remove the manager of a permission in the ACL. The permission can be created again after removing its manager.
 
 ## APM commands
 
@@ -183,6 +304,8 @@ The command allows some parametrization:
 - `--publish-dir`: The path to the directory where all the files and generated artifacts will be copied to before publishing. If it is not specified, it will create a temporary directory.
 - `--build [true|false]`: A flag to specify whether the webapp should be build while publishing. Defaults to `true`.
 - `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
+- `--http`: The URI for the HTTP server that will be serving your app files. See the [running from HTTP](#running-your-app-from-a-development-http-server) doc for more information on using HTTP.
+- `http-served-from`: Path to the directory that the HTTP server exposes. Some artifacts are generated and placed in this directory during the publishing process of your app.
 
 ## Global configuration
 
