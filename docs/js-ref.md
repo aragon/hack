@@ -179,9 +179,9 @@ None.
 
 Listens for events, passes them through `reducer`, caches the resulting state and re-emits that state for easy chaining.
 
-This is in fact suger on top of [`state`](#state), [`events`](#events) and [`cache`](#cache).
+This is in fact sugar on top of [`state`](#state), [`events`](#events) and [`cache`](#cache).
 
-The reducer takes the signature `(state, event)` a lá Redux. Note that is *must always* return a state, even if it is unaltered by the event.
+The reducer takes the signature `(state, event)` à la Redux. Note that is *must always* return a state, even if it is unaltered by the event.
 
 Also note that the initial state is always `null`, not `undefined`, because of JSONRPC limitations.
 
