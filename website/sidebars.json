@@ -2,6 +2,7 @@
   "docs": {
     "The basics": [
       "getting-started",
+      "stack",
       "acl-intro",
       "forwarding-intro",
       "upgradeability-intro",
@@ -12,6 +13,9 @@
     ],
     "Aragon CLI": [
       "cli-usage"
+    ],
+    "Aragon Package Manager": [
+      "apm"
     ],
     "aragonOS": [
       "aragonos-intro",

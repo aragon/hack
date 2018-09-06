@@ -1,10 +1,9 @@
 ---
 id: tutorial
-title: Tutorial
+title: Your first Aragon app
 ---
 
-# Your first Aragon app
-In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-ref.md), [aragon.js](js-ref.md), [Aragon UI](ui-intro.md) and [Aragon CLI](https://github.com/aragon/aragon-cli).
+In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), [aragon.js](js-ref.md), [Aragon UI](ui-intro.md) and [Aragon CLI](/docs/cli-usage.html).
 
 # Quickstart
 
@@ -48,9 +47,7 @@ Notice that we input a fully qualified [ENS](https://ens.domains/) name. We also
 
 Let's examine the ENS name we entered, because it is not entirely arbitrary.
 
-<center>
-    <img alt="Illustration of foo.aragonpm.eth" src="https://i.imgur.com/MQnYT6d.png" />
-</center>
+![Illustration of foo.aragonpm.eth](https://i.imgur.com/MQnYT6d.png)
 
 The first label in the ENS name is the name of our app. This can be anything you want, given that the full ENS name is not taken.
 
@@ -215,8 +212,10 @@ Internally, `store` will fetch the last known state (if any) and pass that in as
 
 The reducer function **must always** return a state, even if it is the same state as before.
 
-> **Note**: The state will start out as `null`, not `undefined` because of the JSONRPC specification.
+> **Note**<br>
+> The state will start out as `null`, not `undefined` because of the JSONRPC specification.
 
+<br>
 
 ### Displaying State
 
@@ -260,7 +259,7 @@ app.state().subscribe(
 
 That's it! Internally, `state` observes the `state` key in cache and emits every time a change occurs.
 
-
+<br>
 ### Sending transactions
 
 Our users need to be able to increment and decrement the counter. For this, we publish what is called an *intent* to the wrapper.
@@ -372,9 +371,10 @@ This will do a couple of things for you:
 
 After running this command a browser tab should pop up with your freshly created DAO, complete with permissions and your local app installed.
 
-[Screenshot of dapp](https://i.imgur.com/TMW7rlO.png)
+![Screenshot of dapp](/docs/assets/counter.png)
 
-> Caption: *It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the [React template](https://github.com/aragon/aragon-react-boilerplate)!*
+> **Note**<br>
+> It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the [React template](https://github.com/aragon/aragon-react-boilerplate)!
 
 
 ### Metamask

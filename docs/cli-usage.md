@@ -1,7 +1,11 @@
 ---
 id: cli-usage
 title: Using the Aragon CLI
+sidebar_label: Usage
+hide_title: true
 ---
+
+![](/docs/assets/brand/aragoncli.png)
 
 The Aragon CLI is used to create and develop Aragon apps.
 
@@ -18,7 +22,7 @@ It can also be installed directly from source:
 ```console
 git clone https://github.com/aragon/aragon-cli.git
 cd aragon-cli
-npm install 
+npm install
 npm link
 ```
 
@@ -156,6 +160,7 @@ The `dao install` command installs an instance of an app in the DAO.
 dao install [dao-addr] [app-apm-repo] [repo-version]
 ```
 
+
 - `dao-addr`: The main address of the DAO (Kernel).
 - `app-apm-repo`: The repo name of the app being installed (e.g. `voting` or `voting.aragonpm.eth`)
 - `repo-version`: Version of the repo that will be installed, can be a version number or `latest` for the newest published version (defaults to `latest`)
@@ -191,7 +196,6 @@ dao exec [dao-addr] [app-proxy-addr] [method] [argument1 ... argumentN]
 
 ### `dao acl`
 
-
 ```console
 dao acl [dao-addr]
 ```
@@ -201,7 +205,6 @@ dao acl [dao-addr]
 Used to inspect the ACL state in a DAO to check its permissions.
 
 ### `dao acl create`
-
 
 ```console
 dao acl create [dao-addr] [app-proxy-addr] [role] [entity] [manager]
@@ -217,7 +220,6 @@ Used to create a permission in the ACL. Can only be used if the permission hasn'
 
 ### `dao acl grant`
 
-
 ```console
 dao acl grant [dao-addr] [app-proxy-addr] [role] [entity]
 ```
@@ -230,7 +232,6 @@ dao acl grant [dao-addr] [app-proxy-addr] [role] [entity]
 Used to grant a permission in the ACL.
 
 ### `dao acl revoke`
-
 
 ```console
 dao acl revoke [dao-addr] [app-proxy-addr] [role] [entity]
@@ -245,7 +246,6 @@ Used to revoke a permission in the ACL.
 
 ### `dao acl set-manager`
 
-
 ```console
 dao acl set-manager [dao-addr] [app-proxy-addr] [role] [manager]
 ```
@@ -258,7 +258,6 @@ dao acl set-manager [dao-addr] [app-proxy-addr] [role] [manager]
 Used to change the manager of a permission in the ACL.
 
 ### `dao acl remove-manager`
-
 
 ```console
 dao acl remove-manager [dao-addr] [app-proxy-addr] [role]
@@ -350,6 +349,6 @@ The workaround is to switch to a different network (e.g. Rinkeby) and then switc
 
 ### The `~/.aragon` directory
 
-The Aragon CLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon Core client. 
+The Aragon CLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon Core client.
 
 In case the client is not loading properly, deleting the `~/.aragon` directory will make `aragon run` recreate the environment the next time it is used and may solve the issue.

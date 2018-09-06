@@ -1,6 +1,10 @@
 ---
 id: package-management
 title: Package management
+sidebar_label: Package management
+---
+
+### Publishing and upgrading Aragon apps
 ---
 
 To ease upgrades for Aragon apps, both app **smart contracts and frontend can be upgraded using the Aragon Package Manager**.
@@ -11,3 +15,4 @@ APM allows for multiple package registries to exist with different governance mo
 
 Different APM registries in which everyone can publish their packages are expected to be created by the community, and **you can create your own registry** and have full control over it!
 
+#### Read more: [Aragon Package Manager architecture](/docs/apm.html)

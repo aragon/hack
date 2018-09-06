@@ -43,7 +43,7 @@ class Help extends React.Component {
               <p>You can reach out to Aragon core contributors and community members</p>
             </header>
             <br/>
-            <h3>Join the community</h3>
+            <h3>Join the community chat</h3>
             <p>
                 Ask questions about the documentation, issues with the tooling or how to architect your app at the <a href="https://aragon.chat/channel/dev-help">#dev-help channel on the Aragon Chat</a>
             </p>

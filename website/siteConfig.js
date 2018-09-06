@@ -23,6 +23,30 @@ const users = [
     infoLink: 'https://altheamesh.com',
     pinned: true,
   },
+  {
+    caption: 'DAppNode',
+    image: '/img/users/dappnode.png',
+    infoLink: 'https://dappnode.io',
+    pinned: true,
+  },
+  {
+    caption: 'Pando',
+    image: '/img/users/pando.png',
+    infoLink: 'https://github.com/ryhope/pando',
+    pinned: true,
+  },
+  {
+    caption: 'Espresso',
+    image: '/img/users/espresso.png',
+    infoLink: 'https://github.com/espresso-org',
+    pinned: true,
+  },
+  {
+    caption: 'Giveth',
+    image: '/img/users/giveth.png',
+    infoLink: 'https://giveth.io',
+    pinned: true,
+  },
 ]
 
 const siteConfig = {
@@ -47,6 +71,12 @@ const siteConfig = {
     {page: 'help', label: 'Help'}
   ],
 
+  cleanUrl: true,
+
+  editUrl: 'https://github.com/aragon/hack/tree/master/docs/',
+
+  twitterUsername: 'AragonProject',
+
   users,
 
   /* path to images for header/footer */
@@ -70,6 +100,12 @@ const siteConfig = {
       "-apple-system",
       "system-ui"
     ]
+  },
+
+  algolia: {
+    apiKey: '9dff0383c32107d6c174f15e259bb23a',
+    indexName: 'aragon',
+    algoliaOptions: {} // Optional, if provided by Algolia
   },
 
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.

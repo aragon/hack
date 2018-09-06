@@ -1,6 +1,7 @@
 /* your custom css */
 .headerTitleWithLogo {
   white-space: nowrap;
+  margin-top: 0.25rem;
 }
 
 .mainContainer {
@@ -12,12 +13,19 @@
 }
 
 .homeContainer {
-  background-image: linear-gradient(to top, #F7FBFD 0%, rgba(255,255,255,0.1) 100%), url(/img/bg.png);
+  background-image: url(/img/landing.svg);
+  background-color: #EFF5F9;
   background-size: cover;
+  background-position: center 20%;
+  text-align: left !important;
 }
 
 .homeContainer .homeWrapper {
-  padding: 6em 10px !important;
+  padding: 10em 1.5em !important;
+}
+
+.promoSection {
+  flex-flow: nowrap !important;
 }
 
 .projectLogo img {
@@ -25,6 +33,10 @@
   left: 3rem;
   margin-top: 2rem;
   max-height: 200px !important;
+}
+
+.projectTitle small {
+  color: #1AB8CF !important;
 }
 
 .navigationSlider .slidingNav ul li.siteNavItemActive a {
@@ -35,6 +47,7 @@
   background-color: transparent !important;
   color: black !important;
   transition: all 0.25s ease-in-out 0s;
+  padding: 6px 20px !important;
 }
 
 .navigationSlider .slidingNav ul li a:hover {
@@ -43,14 +56,35 @@
 }
 
 .fixedHeaderContainer {
-  background-color: white;
-  -webkit-box-shadow: 0px 3px 66px -16px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 3px 66px -16px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 3px 66px -16px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255,255,255,0.95);
 }
 
 .fixedHeaderContainer header h2 {
   color: black;
+}
+
+.edit-page-link {
+  border: none;
+}
+
+.edit-page-link:hover {
+  background: none;
+  color: black;
+}
+
+hr {
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 0;
+  margin: 2.5rem 0;
+}
+
+code {
+  font-size: 1rem;
+  margin: 0 0.25rem;
+}
+
+blockquote, pre {
+  max-width: 50rem;
 }
 
 blockquote {
@@ -58,20 +92,103 @@ blockquote {
   background-color: #fff7d2;
 }
 
-footer {
+blockquote p {
+  padding-top: 0px !important;
+}
+
+.navSearchWrapper::before,
+.navSearchWrapper::after {
+  display: none !important;
+}
+
+input#search_input_react {
+  background-color: white !important;
+  color: black !important;
+  line-height: 32px !important;
+  padding-left: 15px !important;
+}
+
+input#search_input_react::placeholder {
+  color: #3b3b3b !important;
+}
+
+#footer {
+  background-image: url(/img/footerbg.svg);
+  background-color: #353535 !important;
   box-shadow: none !important;
 }
 
-@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+@media 
+  (-webkit-min-device-pixel-ratio: 2), 
+  (min-resolution: 192dpi) { 
+  .homeContainer {
+    background-image: url(/img/landing@2x.svg);
+  }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 393px) {
+  .homeContainer {
+    background-image: none;
+  }
+
+  input#search_input_react {
+    line-height: 20px !important;
+  }
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (min-width: 394px) and (max-width: 551px) {
+  .homeContainer {
+    background-size: 350%;
+    background-position: 50% -50%;
+    background-repeat: no-repeat;
+  }
+
+  input#search_input_react {
+    line-height: 20px !important;
+  }
 }
 
+@media only screen and (min-width: 552px) and (max-width: 781px) {
+  .homeContainer {
+    background-size: 300%;
+    background-position: 50% 30%;
+  }
+
+  input#search_input_react {
+    line-height: 20px !important;
+  }
+}
+
+/* 1024px-1279px */
+@media only screen and (min-width: 782px) and (max-width: 1023px) {
+  .homeContainer {
+    background-size: 200%;
+    background-position: 60% 20%;
+  }
+}
+
+/* 1024px-1279px */
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  .homeContainer {
+    background-size: 150%;
+    background-position: center 20%;
+  }
+}
+
+/* >1279px */
+@media only screen and (min-width: 1280px) and (max-width: 1399px) {
+  .homeContainer {
+    background-size: 150%;
+    background-position: center 20%;
+  }
+}
+
+/* >1400px */
 @media only screen and (min-width: 1400px) {
+  .homeContainer {
+    background-size: 110%;
+    background-position: center 20%;
+  }
 }
 
 @media only screen and (min-width: 1500px) {

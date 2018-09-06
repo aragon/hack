@@ -76,7 +76,7 @@ class HomeSplash extends React.Component {
       <SplashContainer>
         <div className="inner">
           <ProjectTitle />
-          <PromoSection>            
+          <PromoSection>
             <Button.Anchor mode="strong" href={docUrl('getting-started')}>
               Get started
             </Button.Anchor>
@@ -155,7 +155,7 @@ const BuildingBlocks = props => (
     <EmptyStateCard
       title="aragonOS"
       text="Solidity framework for governance"
-      actionButton={() => <GetStartedButton href={docUrl('aragonos-ref')}/>}
+      actionButton={() => <GetStartedButton href={docUrl('aragonos-intro')}/>}
       icon={() => <IconSettings /> }
     />
     <EmptyStateCard
@@ -178,7 +178,7 @@ const Intro = props => (
     <h2>Build DAOs, protocols and dapps</h2>
     <MarkdownBlock>
       Aragon is the most **powerful** and **modular** way to run [DAOs](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization).
-      But in our journey creating DAOs, we discovered how to modularize individual components that can be used for creating **any dapp or crypto protocol**.
+      But on our journey creating DAOs, we discovered how to modularize individual components that can be used for creating **any dapp or crypto protocol**.
     </MarkdownBlock>
   </div>
 )
@@ -217,12 +217,12 @@ const UseCases = props => (
     <br />
     <h2>For dapps</h2>
     <MarkdownBlock>
-      You can create **dapps that run into Aragon** (Aragon apps).
-      Aragon apps are interoperable between themselves, and can **forward actions** to one another, so you don't have to reinvent the wheel.
+      You can create **dapps that run within [Aragon Core](https://app.aragon.org)** (Aragon apps).
+      Aragon apps are interoperable between each other, and can **forward actions** to one another, so there's no need to reinvent the wheel.
     </MarkdownBlock>
     <MarkdownBlock>
-      An example is a voting app can forward the intent of a user to another app if the voting passes. You can just build an Aragon app that exposes some functionality, and then **any governance mechanism will be able to consume it without any additional changes**.
-      You can use the smart contract framework (aragonOS), the JavaScript library to consume their state (aragon.js) and the UI framework (Aragon UI) as you see fit.
+      An example is a voting app that can forward the intent of a user to another app if the voting passes. You can just build an Aragon app that exposes some functionality, and then **any governance mechanism will be able to consume it without any additional changes**.
+      You can use the smart contract framework ([aragonOS](https://hack.aragon.org/docs/aragonos-intro.html)), the JavaScript library to consume their state ([aragon.js](https://hack.aragon.org/docs/aragonjs-ref.html)) and the UI framework ([Aragon UI](https://hack.aragon.org/docs/aragonui-intro.html)) as you see fit.
     </MarkdownBlock>
     <MarkdownBlock>
       Some examples of Aragon apps:
@@ -235,7 +235,7 @@ const UseCases = props => (
     <h2>For crypto protocols</h2>
     <MarkdownBlock>
       You can build any **governance mechanism to upgrade your crypto protocol** or its parameters.
-      You can benefit from the existing governance mechanisms that support aragonOS, or roll out your own very easily.
+      Benefit from any of the existing governance mechanisms that support aragonOS, or easily roll out your own.
     </MarkdownBlock>
   </UseCasesContainer>
 )
