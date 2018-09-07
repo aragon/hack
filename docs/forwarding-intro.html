@@ -25,7 +25,7 @@
 <p>We explained how a <em>Token Manager</em> app may send an action to the <em>Voting</em> app, so if a vote passes, the <em>Voting</em> app can withdraw funds from the <em>Finance</em> app, for example.</p>
 <p>This is possible thanks to a concept called Forwarders. A <strong>Forwarder</strong> is a contract that, given some conditions, will pass along a certain action to other contract(s).</p>
 <p>This is an extract of our <em>Voting</em> app, and this is all the code required for making it a Forwarder:</p>
-<pre><code class="hljs css solidity">pragma solidity <span class="hljs-number">0.4</span><span class="hljs-number">.18</span>;
+<pre><code class="hljs css solidity">pragma solidity <span class="hljs-number">0.4</span><span class="hljs-number">.24</span>;
 
 import <span class="hljs-string">"@aragon/os/contracts/apps/AragonApp.sol"</span>;
 import <span class="hljs-string">"@aragon/os/contracts/common/IForwarder.sol"</span>;

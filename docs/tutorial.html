@@ -43,7 +43,7 @@ aragon run
 <p>To illustrate how easy it is to use aragonOS, we will build our app as a vanilla smart contract, without any Aragon-specific interfaces at all.</p>
 <p>Today, we will build a simple counter app — you can increment it, you can decrement it, and it will all be decentralized. Decentralized coffee counter, anyone?</p>
 <pre><code class="hljs css solidity"><span class="hljs-comment">// contracts/Counter.sol</span>
-pragma solidity <span class="hljs-number">0.4</span><span class="hljs-number">.18</span>;
+pragma solidity <span class="hljs-number">0.4</span><span class="hljs-number">.24</span>;
 
 contract Counter {
     <span class="hljs-comment">// Events</span>
@@ -83,9 +83,13 @@ contract Counter <span class="hljs-keyword">is</span> AragonApp {
     <span class="hljs-comment">// ...</span>
 }
 </code></pre>
-<p>Finally, guard the methods with the <code>auth</code> modifier that the <code>AragonApp</code> interface gives you:</p>
+<p>Finally, guard the methods with the <code>auth</code> modifier that the <code>AragonApp</code> interface gives you and add an initialize function to your contract:</p>
 <pre><code class="hljs css solidity">contract Counter <span class="hljs-keyword">is</span> AragonApp {
     <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span><span class="hljs-params">()</span> <span class="hljs-title">onlyInit</span> </span>{
+      initialized();
+    }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span><span class="hljs-params">()</span> <span class="hljs-title">auth</span><span class="hljs-params">(INCREMENT_ROLE)</span> <span class="hljs-title">external</span> </span>{
         <span class="hljs-comment">// ...</span>
@@ -129,25 +133,22 @@ contract Counter <span class="hljs-keyword">is</span> AragonApp {
 <pre><code class="hljs css js"><span class="hljs-comment">// app/script.js</span>
 <span class="hljs-keyword">import</span> Aragon <span class="hljs-keyword">from</span> <span class="hljs-string">'@aragon/client'</span>
 
-<span class="hljs-comment">// Initialize the app</span>
 <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Aragon()
 
-<span class="hljs-comment">// Listen for events and reduce them to a state</span>
-<span class="hljs-keyword">const</span> state$ = app.store(<span class="hljs-function">(<span class="hljs-params">state, event</span>) =&gt;</span> {
-  <span class="hljs-comment">// Initial state</span>
-  <span class="hljs-keyword">if</span> (state === <span class="hljs-literal">null</span>) state = <span class="hljs-number">0</span>
+<span class="hljs-keyword">const</span> initialState = {
+  <span class="hljs-attr">count</span>: <span class="hljs-number">0</span>
+}
+app.store(<span class="hljs-keyword">async</span> (state, event) =&gt; {
+  <span class="hljs-keyword">if</span> (state === <span class="hljs-literal">null</span>) state = initialState
 
-  <span class="hljs-comment">// Build state</span>
   <span class="hljs-keyword">switch</span> (event.event) {
-    <span class="hljs-keyword">case</span> <span class="hljs-string">'Decrement'</span>:
-      state--
-      <span class="hljs-keyword">break</span>
     <span class="hljs-keyword">case</span> <span class="hljs-string">'Increment'</span>:
-      state++
-      <span class="hljs-keyword">break</span>
+      <span class="hljs-keyword">return</span> { <span class="hljs-attr">count</span>: <span class="hljs-keyword">await</span> getValue() }
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'Decrement'</span>:
+      <span class="hljs-keyword">return</span> { <span class="hljs-attr">count</span>: <span class="hljs-keyword">await</span> getValue() }
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-keyword">return</span> state
   }
-
-  <span class="hljs-keyword">return</span> state
 })
 </code></pre>
 <p>If you've worked with <a href="https://redux.js.org/">Redux</a> before, this might look vaguely familiar.</p>
@@ -272,6 +273,13 @@ decrement.onclick = <span class="hljs-function"><span class="hljs-params">()</sp
 <p><strong>Note</strong><br>
 It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the <a href="https://github.com/aragon/aragon-react-boilerplate">React template</a>!</p>
 </blockquote>
+<h3><a class="anchor" aria-hidden="true" id="running-your-app-from-an-http-server"></a><a href="#running-your-app-from-an-http-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running your app from an HTTP server</h3>
+<p>Running your app using HTTP will allow for a faster development process of your app's front-end, as it can be hot-reloaded without the need to execute <code>aragon run</code> every time a change is made.</p>
+<ul>
+<li><p>First start your app's development server running <code>npm run start:app</code>, and keep that process running. By default it will rebuild the app and reload the server when changes to the source are made.</p></li>
+<li><p>After that, you can run <code>npm run start:aragon:http</code> which will compile your app's contracts, publish the app locally and create a DAO. You will need to stop it and run it again after making changes to your smart contracts.</p></li>
+</ul>
+<p>Changes to the app's background script (<code>app/script.js</code>) cannot be hot-reloaded, after making changes to the script, you will need to either restart the development server (<code>npm run start:app</code>) or rebuild the script <code>npm run build:script</code>.</p>
 <h3><a class="anchor" aria-hidden="true" id="metamask"></a><a href="#metamask" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metamask</h3>
 <p>At this point you are likely going to use <a href="https://metamask.io/">Metamask</a> to interact with your DAO. In order to do so, you must make sure that:</p>
 <ul>
@@ -293,7 +301,7 @@ It's not pretty, but it works. To see a more beautiful version of our counter ap
 <p>A good place to go from here would be to check out <a href="https://github.com/aragon/aragon-apps">our existing apps</a>. They are fairly self-contained and use some patterns you might find helpful.</p>
 <p>There is much more to aragonOS and aragon.js, and we even have our own <a href="https://github.com/aragon/aragon-ui">UI toolkit</a>. We encourage you to explore all 3 and provide us feedback.</p>
 <p>Join the conversation and ask questions on <a href="https://github.com/aragon">GitHub</a> and <a href="https://aragon.chat">Aragon Chat</a>, and make sure to tell us if you build something ara-mazing!</p>
-</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#why-build-an-aragon-app">Why build an Aragon app?</a></li><li><a href="#the-setup">The setup</a></li><li><a href="#writing-a-simple-contract">Writing a simple contract</a></li><li><a href="#3-steps-to-governance-and-upgradeability">3 steps to governance and upgradeability</a></li><li><a href="#descriptive-transactions">Descriptive transactions</a></li><li><a href="#building-the-frontend">Building the frontend</a><ul class="toc-headings"><li><a href="#background-workers-and-building-state">Background workers and building state</a></li><li><a href="#displaying-state">Displaying State</a></li><li><a href="#sending-transactions">Sending transactions</a></li><li><a href="#the-build-script">The build script</a></li></ul></li><li><a href="#writing-the-manifest-files">Writing the manifest files</a></li><li><a href="#running-your-app-locally">Running your app locally</a><ul class="toc-headings"><li><a href="#metamask">Metamask</a></li></ul></li><li><a href="#publishing">Publishing</a></li><li><a href="#more-cli-commands">More CLI commands</a></li><li><a href="#next-steps">Next steps</a></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bXwoTT" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/isotype.svg" alt="Aragon Developer Portal" width="66" height="58"/></a><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/aragonjs-ref.html">aragon.js</a><a href="/docs/aragonui-intro.html">Aragon UI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#why-build-an-aragon-app">Why build an Aragon app?</a></li><li><a href="#the-setup">The setup</a></li><li><a href="#writing-a-simple-contract">Writing a simple contract</a></li><li><a href="#3-steps-to-governance-and-upgradeability">3 steps to governance and upgradeability</a></li><li><a href="#descriptive-transactions">Descriptive transactions</a></li><li><a href="#building-the-frontend">Building the frontend</a><ul class="toc-headings"><li><a href="#background-workers-and-building-state">Background workers and building state</a></li><li><a href="#displaying-state">Displaying State</a></li><li><a href="#sending-transactions">Sending transactions</a></li><li><a href="#the-build-script">The build script</a></li></ul></li><li><a href="#writing-the-manifest-files">Writing the manifest files</a></li><li><a href="#running-your-app-locally">Running your app locally</a><ul class="toc-headings"><li><a href="#running-your-app-from-an-http-server">Running your app from an HTTP server</a></li><li><a href="#metamask">Metamask</a></li></ul></li><li><a href="#publishing">Publishing</a></li><li><a href="#more-cli-commands">More CLI commands</a></li><li><a href="#next-steps">Next steps</a></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bXwoTT" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/isotype.svg" alt="Aragon Developer Portal" width="66" height="58"/></a><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/aragonjs-ref.html">aragon.js</a><a href="/docs/aragonui-intro.html">Aragon UI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
               var search = docsearch({
                 
                 apiKey: '9dff0383c32107d6c174f15e259bb23a',
