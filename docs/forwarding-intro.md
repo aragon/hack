@@ -16,7 +16,7 @@ This is possible thanks to a concept called Forwarders. A **Forwarder** is a con
 This is an extract of our *Voting* app, and this is all the code required for making it a Forwarder:
 
 ```solidity
-pragma solidity 0.4.18;
+pragma solidity 0.4.24;
 
 import "@aragon/os/contracts/apps/AragonApp.sol";
 import "@aragon/os/contracts/common/IForwarder.sol";
