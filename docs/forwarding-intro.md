@@ -16,12 +16,12 @@ This is possible thanks to a concept called Forwarders. A **Forwarder** is a con
 This is an extract of our *Voting* app, and this is all the code required for making it a Forwarder:
 
 ```solidity
-pragma solidity 0.4.18;
+    pragma solidity 0.4.24;
 
-import "@aragon/os/contracts/apps/AragonApp.sol";
-import "@aragon/os/contracts/common/IForwarder.sol";
+    import "@aragon/os/contracts/apps/AragonApp.sol";
+    import "@aragon/os/contracts/common/IForwarder.sol";
 
-contract Voting is IForwarder, AragonApp {
+    contract Voting is IForwarder, AragonApp {
     /**
     * @notice Creates a vote to execute the desired action, and casts a support vote
     * @dev IForwarder interface conformance
@@ -30,6 +30,11 @@ contract Voting is IForwarder, AragonApp {
     function forward(bytes _evmScript) public {
         require(canForward(msg.sender, _evmScript));
         _newVote(_evmScript, "", true);
+    }
+
+    function canForward(address _sender, bytes _evmCallScript) public view returns (bool) {
+        return canPerform(_sender, CREATE_VOTES_ROLE, arr());
+    }
     }
 
     function canForward(address _sender, bytes _evmCallScript) public view returns (bool) {

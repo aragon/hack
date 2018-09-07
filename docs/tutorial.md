@@ -62,7 +62,7 @@ Today, we will build a simple counter app — you can increment it, you can decr
 
 ```solidity
 // contracts/Counter.sol
-pragma solidity 0.4.18;
+pragma solidity 0.4.24;
 
 contract Counter {
     // Events
@@ -114,11 +114,15 @@ contract Counter is AragonApp {
 }
 ```
 
-Finally, guard the methods with the `auth` modifier that the `AragonApp` interface gives you:
+Finally, guard the methods with the `auth` modifier that the `AragonApp` interface gives you and add an initialize function to your contract:
 
 ```solidity
 contract Counter is AragonApp {
     // ...
+
+    function initialize() onlyInit {
+      initialized();
+    }
 
     function increment() auth(INCREMENT_ROLE) external {
         // ...
@@ -182,25 +186,22 @@ Let's start by writing a background worker that listens for our `Increment` and 
 // app/script.js
 import Aragon from '@aragon/client'
 
-// Initialize the app
 const app = new Aragon()
 
-// Listen for events and reduce them to a state
-const state$ = app.store((state, event) => {
-  // Initial state
-  if (state === null) state = 0
+const initialState = {
+  count: 0
+}
+app.store(async (state, event) => {
+  if (state === null) state = initialState
 
-  // Build state
   switch (event.event) {
-    case 'Decrement':
-      state--
-      break
     case 'Increment':
-      state++
-      break
+      return { count: await getValue() }
+    case 'Decrement':
+      return { count: await getValue() }
+    default:
+      return state
   }
-
-  return state
 })
 ```
 
@@ -376,6 +377,15 @@ After running this command a browser tab should pop up with your freshly created
 > **Note**<br>
 > It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the [React template](https://github.com/aragon/aragon-react-boilerplate)!
 
+### Running your app from an HTTP server
+
+Running your app using HTTP will allow for a faster development process of your app's front-end, as it can be hot-reloaded without the need to execute `aragon run` every time a change is made.
+
+- First start your app's development server running `npm run start:app`, and keep that process running. By default it will rebuild the app and reload the server when changes to the source are made.
+
+- After that, you can run `npm run start:aragon:http` which will compile your app's contracts, publish the app locally and create a DAO. You will need to stop it and run it again after making changes to your smart contracts.
+
+Changes to the app's background script (`app/script.js`) cannot be hot-reloaded, after making changes to the script, you will need to either restart the development server (`npm run start:app`) or rebuild the script `npm run build:script`.
 
 ### Metamask
 
