@@ -300,6 +300,12 @@ That's it! Now whenever the user clicks one of either the increment or decrement
 
 Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use `parcel` because it is zero config, but you can use your favorite bundler.
 
+Inside the `app` folder, create a `package.json` file:
+
+```
+echo "{}" > package.json
+```
+
 Let's install Parcel first:
 
 ```
