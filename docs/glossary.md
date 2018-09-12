@@ -4,7 +4,7 @@ title: Glossary
 sidebar_label: Glossary
 ---
 
-### All terms you need to know
+### All Aragon terminology
 ---
 
 While creating tools for decentralized organization, we have built multiple components:
