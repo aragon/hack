@@ -41,4 +41,4 @@ All kits follow a similar structure:
 3. Create app instances for all the apps (`dao.newAppInstance(...)`)
 4. Initialize apps (`app.initialize(...)`)
 5. Set up permissions for the apps and the DAO.
-6. Clean up the permissions temporarily assinged to the kit.
+6. Clean up the permissions temporarily assigned to the kit.
