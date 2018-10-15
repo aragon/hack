@@ -7,13 +7,13 @@ sidebar_label: Forwarding
 ### Use forwarders to allow app interoperability and governance
 ---
 
-The ACL allows Aragon apps to be interoperable between them by creating and managing permissions.
+The ACL allows Aragon apps to be interoperable by creating and managing permissions.
 
-We explained how a *Token Manager* app may send an action to the *Voting* app, so if a vote passes, the *Voting* app can withdraw funds from the *Finance* app, for example.
+For example, a *Token Manager* app may send an action to the *Voting* app so if a vote passes the *Voting* app can withdraw funds from the *Finance* app.
 
-This is possible thanks to a concept called Forwarders. A **Forwarder** is a contract that, given some conditions, will pass along a certain action to other contract(s).
+This is possible thanks to Forwarders. A **Forwarder** is a contract that, given some conditions, will pass along a certain action to other contract(s).
 
-This is an extract of our *Voting* app, and this is all the code required for making it a Forwarder:
+Below is an extract of our *Voting* app and is all the code required to make it a Forwarder:
 
 ```solidity
 pragma solidity 0.4.24;
@@ -47,4 +47,4 @@ contract Voting is IForwarder, AragonApp {
 
 `forward` checks if a caller `canForward`, and if it can, it creates a new vote with an `_evmScript`.
 
-This `_evmScript` is the action that will be executed if the voting passes, which can be withdrawing some funds from a *Finance* app, for example. But it can be any other action, and you don't have to worry about the special cases. It's abstracted away so you don't have to worry about what the script actually does
+This `_evmScript` is the action that will be executed if the voting passes, which can be withdrawing some funds from a *Finance* app, for example, but it can be any other action.  The action is abstracted and doesn't need to be known in advance.
