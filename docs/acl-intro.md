@@ -11,7 +11,7 @@ As you may have guessed, **the OS in aragonOS stands for Operating System**. How
 
 A computer operating system manages how applications access the underlying resources of the computer, the hardware.
 
-aragonOS does the same for decentralized organizations. **aragonOS manages how apps and external entities may access the resources of the organization**.
+aragonOS does the same for decentralized organizations. **aragonOS manages how apps and external entities access the resources of the organization**.
 
 These resources can be things such as assets, cryptocurrencies, rights to claim a premium on a loan, or rights to upgrade a smart contract.
 
