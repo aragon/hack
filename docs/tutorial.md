@@ -7,6 +7,8 @@ In this guide, we will walk you through creating your first Aragon app using [ar
 
 # Quickstart
 
+Follow these instructions to immediately run the full tutorial:
+
 ```
 npm i -g @aragon/cli
 aragon init foo.aragonpm.eth react
@@ -17,6 +19,8 @@ aragon run
 This should open up the app in your browser!
 
 ## The setup
+
+Now we'll take things slower and step through and explain the code line by line.
 
 Let's first set up our project.
 
