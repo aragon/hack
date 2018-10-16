@@ -4,10 +4,9 @@ title: Glossary
 sidebar_label: Glossary
 ---
 
-### All terms you need to know
+### All Aragon terminology
 ---
 
-While creating tools for decentralized organization, we have built multiple components:
 - [**Aragon CLI**](/docs/cli-usage.html): Tool for creating, testing and publishing Aragon applications.
 - [**aragonOS**](/docs/aragonos-intro.html): Framework that enables flexible and upgradeable governance mechanisms by creating and assigning permissions to multiple entities.
 - [**Aragon Package Manager**](/docs/apm.html): Decentralized package manager based on aragonOS that handles upgreadability of smart contracts and arbitrary data blobs, such as webapps.
@@ -21,5 +20,3 @@ While creating tools for decentralized organization, we have built multiple comp
 - **Aragen**: Tool that automatically generates everything that is needed to run Aragon on a local Ethereum chain.
 - **Aragon apps**: Apps that use aragonOS, aragon.js, and integrate inside Aragon Core.
 
-Although these components are very powerful together, you can use them indivually.
-We will explore how to do both.
