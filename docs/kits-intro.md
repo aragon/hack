@@ -19,14 +19,14 @@ The [Aragon CLI](/docs/cli-usage.html) (>= v4.1.0) supports using kits to create
 
 To quickly get started developing your own kits:
 
-```sh
+```
 aragon init app react-kit
 ```
 
 That command will create a new Aragon app project with a sample kit in it ready to be used. The Kit (under `contracts/Kit.sol`) will create instances of a Token Manager, a Voting app and the [Counter example app](/docs/tutorial.html) and will wire the permissions so incrementing the Counter requires a vote to pass in the Voting app.
 
 In order to start the Aragon Core client with a DAO created by the kit, execute:
-```sh
+```
 aragon run --kit Kit --kit-init @ARAGON_ENS
 ```
 

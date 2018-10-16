@@ -7,6 +7,8 @@ In this guide, we will walk you through creating your first Aragon app using [ar
 
 # Quickstart
 
+Follow these instructions to immediately run the full tutorial:
+
 ```
 npm i -g @aragon/cli
 aragon init foo.aragonpm.eth react
@@ -16,18 +18,9 @@ aragon run
 
 This should open up the app in your browser!
 
-## Why build an Aragon app?
-
-Let's first talk a bit about why you might want to build an Aragon app.
-
-If you are building a protocol with some sort of curation mechanism or community involvement, or a dapp, Aragon gives you two things virtually for free: upgradeability and governance.
-
-There is a case to be made that upgradeability and governance are two sides of the same coin, since upgradeability without governance re-centralises authority in an otherwise decentralised system, because you have a single entity who decides what version of a contract you interact with.
-
-On the flipside, governance without upgradeability creates rigid systems, which is bad, because what works today, might not work tomorrow.
-
-
 ## The setup
+
+Now we'll take things slower and step through and explain the code line by line.
 
 Let's first set up our project.
 
@@ -101,9 +94,9 @@ contract Counter is AragonApp {
 }
 ```
 
-Second, define the roles that you want your app to have. A role can be assigned to other apps or people, and those entities will have access to methods guarded by that role.
+Second, define the roles that you want your app to have. A role can be assigned to other apps or people and those entities will have access to methods guarded by that role.
 
-In this example, we will define a role for incrementing, and a role for decrementing, but note that you can have a single role to guard all methods in your contract if you find that appropriate.
+In this example we will define a role for incrementing and a role for decrementing but note that you can have a single role to guard all methods in your contract if you find that appropriate.
 
 ```solidity
 contract Counter is AragonApp {
@@ -167,9 +160,9 @@ Apps are run inside an iframe, which means that it only has access to its own DO
 
 Then the client takes care of connecting to Ethereum via Web3, and also handles things like signing transactions, displaying notifications and more to the end-user.
 
-All of this is achieved by using aragon.js. aragon.js is split in two parts; one for clients and one for apps. The client portion of aragon.js reads *requests* from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).
+All of this is achieved by using aragon.js. aragon.js is split in two parts: one for clients and one for apps. The client portion of aragon.js reads *requests* from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).
 
-Because we're building is an app, all we need is `@aragon/client`, and our template already has that installed.
+Because we're building an app, all we need is `@aragon/client` and our template already has that installed.
 
 
 ### Background workers and building state
@@ -275,7 +268,7 @@ However, it is entirely possible that users can not perform actions directly. Fo
 
 We simply say that the only one (*who*) that can perform increments and decrements (*what*) on our app (*where*) is the voting app. This is not done at compile time, it is done at run time.
 
-This works because of a concept called [*forwarders*](forwarding-intro.md). A forwarder is simply an app that can execute transactions on someones behalf, if the ACL permits it, and that app can have its own *arbitrary conditions* under which it wants to execute your transaction! In the example of the voting app, the voting app will only execute your transaction if the vote passes. Cool, right?
+This works because of a concept called [*forwarders*](forwarding-intro.md). A forwarder is simply an app that can execute transactions on someone's behalf, if the ACL permits it, and that app can have its own *arbitrary conditions* under which it wants to execute your transaction! In the example of the voting app, the voting app will only execute your transaction if the vote passes.
 
 It's really simple to use. Let's add our intents to our app:
 
@@ -298,7 +291,7 @@ That's it! Now whenever the user clicks one of either the increment or decrement
 
 ### The build script
 
-Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use `parcel` because it is zero config, but you can use your favorite bundler.
+Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use `parcel` because it has zero config, but you can use your favorite bundler.
 
 Let's install Parcel first:
 
