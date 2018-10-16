@@ -27,12 +27,12 @@
 <h2><a class="anchor" aria-hidden="true" id="getting-started-with-kits-using-the-aragon-cli"></a><a href="#getting-started-with-kits-using-the-aragon-cli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting started with kits using the Aragon CLI</h2>
 <p>The <a href="/docs/cli-usage.html">Aragon CLI</a> (&gt;= v4.1.0) supports using kits to create a DAO to interact with the apps being developed.</p>
 <p>To quickly get started developing your own kits:</p>
-<pre><code class="hljs css sh">aragon init app react-kit
+<pre><code class="hljs"><span class="hljs-attribute">aragon init app react-kit</span>
 </code></pre>
 <p>That command will create a new Aragon app project with a sample kit in it ready to be used. The Kit (under <code>contracts/Kit.sol</code>) will create instances of a Token Manager, a Voting app and the <a href="/docs/tutorial.html">Counter example app</a> and will wire the permissions so incrementing the Counter requires a vote to pass in the Voting app.</p>
 <p>In order to start the Aragon Core client with a DAO created by the kit, execute:</p>
-<pre><code class="hljs css sh">aragon run --kit Kit --kit-init @ARAGON_ENS
-</code></pre>
+<pre><code class="hljs">aragon <span class="hljs-keyword">run</span><span class="bash"> --kit Kit --kit-init @ARAGON_ENS
+</span></code></pre>
 <p>When modifying the name of your contract or app name be sure to update those in <code>Kit.sol</code> otherwise running the kit will fail</p>
 <h2><a class="anchor" aria-hidden="true" id="kit-structure"></a><a href="#kit-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kit structure</h2>
 <p>All kits follow a similar structure:</p>
