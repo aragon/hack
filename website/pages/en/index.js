@@ -211,17 +211,17 @@ const UseCases = props => (
       You can create organizations that let entities (users, smart contracts) interact with each other and create rich **governance mechanisms** by using the [**Access Control List**](/docs/acl-intro.html).
     </MarkdownBlock>
     <MarkdownBlock>
-      You can also create templates, so other people will be able to create pre-configured organizations just by selecting your template in the setup process.
+      You can also create templates so other people will be able to create pre-configured organizations just by selecting your template in the setup process.
       This way, you can benefit from the existing stack for creating and managing decentralized organizations.
     </MarkdownBlock>
     <br />
     <h2>For dapps</h2>
     <MarkdownBlock>
       You can create **dapps that run within [Aragon Core](https://app.aragon.org)** (Aragon apps).
-      Aragon apps are interoperable between each other, and can **forward actions** to one another, so there's no need to reinvent the wheel.
+      Aragon apps are interoperable between each other and can **forward actions** to one another so there's no need to reinvent the wheel.
     </MarkdownBlock>
     <MarkdownBlock>
-      An example is a voting app that can forward the intent of a user to another app if the voting passes. You can just build an Aragon app that exposes some functionality, and then **any governance mechanism will be able to consume it without any additional changes**.
+      An example is a voting app that can forward the intent of a user to another app if the voting passes. You can just build an Aragon app that exposes some functionality and then **any governance mechanism will be able to consume it without any additional changes**.
       You can use the smart contract framework ([aragonOS](https://hack.aragon.org/docs/aragonos-intro.html)), the JavaScript library to consume their state ([aragon.js](https://hack.aragon.org/docs/aragonjs-ref.html)) and the UI framework ([Aragon UI](https://hack.aragon.org/docs/aragonui-intro.html)) as you see fit.
     </MarkdownBlock>
     <MarkdownBlock>
