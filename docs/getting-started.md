@@ -15,5 +15,4 @@ The Aragon stack helps you develop software for **human organization**. From the
 
 ![](/docs/assets/core.png)
 
-> **Caption**<br>
 > Example of a decentralized, censorship-resistant, good-looking voting app on Aragon
