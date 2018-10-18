@@ -54,7 +54,7 @@ To illustrate how easy it is to use aragonOS, we will build our app as a vanilla
 Today, we will build a simple counter app — you can increment it, you can decrement it, and it will all be decentralized. Decentralized coffee counter, anyone?
 
 ```solidity
-// contracts/Counter.sol
+// contracts/CounterApp.sol
 pragma solidity 0.4.24;
 
 contract Counter {
@@ -330,7 +330,7 @@ Let's modify `arapp.json` so that it knows about the roles we defined previously
       { "name": "Increment the counter", "id": "INCREMENT_ROLE", "params": [] },
       { "name": "Decrement the counter", "id": "DECREMENT_ROLE", "params": [] }
   ],
-  "path": "contracts/Counter.sol"
+  "path": "contracts/CounterApp.sol"
 }
 ```
 
