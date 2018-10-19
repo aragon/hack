@@ -39,7 +39,7 @@ aragon run
 <h2><a class="anchor" aria-hidden="true" id="writing-a-simple-contract"></a><a href="#writing-a-simple-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing a simple contract</h2>
 <p>To illustrate how easy it is to use aragonOS, we will build our app as a vanilla smart contract, without any Aragon-specific interfaces at all.</p>
 <p>Today, we will build a simple counter app — you can increment it, you can decrement it, and it will all be decentralized. Decentralized coffee counter, anyone?</p>
-<pre><code class="hljs css solidity"><span class="hljs-comment">// contracts/Counter.sol</span>
+<pre><code class="hljs css solidity"><span class="hljs-comment">// contracts/CounterApp.sol</span>
 pragma solidity <span class="hljs-number">0.4</span><span class="hljs-number">.24</span>;
 
 contract Counter {
@@ -241,7 +241,7 @@ decrement.onclick = <span class="hljs-function"><span class="hljs-params">()</sp
       { <span class="hljs-string">"name"</span>: <span class="hljs-string">"Increment the counter"</span>, <span class="hljs-string">"id"</span>: <span class="hljs-string">"INCREMENT_ROLE"</span>, <span class="hljs-string">"params"</span>: [] },
       { <span class="hljs-string">"name"</span>: <span class="hljs-string">"Decrement the counter"</span>, <span class="hljs-string">"id"</span>: <span class="hljs-string">"DECREMENT_ROLE"</span>, <span class="hljs-string">"params"</span>: [] }
   ],
-  <span class="hljs-string">"path"</span>: <span class="hljs-string">"contracts/Counter.sol"</span>
+  <span class="hljs-string">"path"</span>: <span class="hljs-string">"contracts/CounterApp.sol"</span>
 }
 </code></pre>
 <p><code>manifest.json</code> defines end-user specific things, like the human-readable name of your app, icons and a small description of your app. It also (optionally) defines background scripts, of which we have one.</p>

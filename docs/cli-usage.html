@@ -20,13 +20,13 @@
             nav.classList.toggle('docsSliderActive');
           };
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/cli-usage.md" target="_blank" rel="noreferrer noopener">Edit</a></header><article><div><span><p><img src="/docs/assets/brand/aragoncli.png" alt=""></p>
-<p>The Aragon CLI is used to create and develop Aragon apps.</p>
+<p>The Aragon CLI (Command Line Interface) is used to create and develop Aragon apps.</p>
 <h2><a class="anchor" aria-hidden="true" id="install"></a><a href="#install" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h2>
-<p>The Aragon CLI can be installed directly from NPM, which will download the newest version.</p>
-<pre><code class="hljs css console">npm install -g @aragon/cli
+<p>The Aragon CLI can be installed directly from NPM:</p>
+<pre><code class="hljs"><span class="hljs-built_in">npm</span> install -g @aragon/cli
 </code></pre>
 <p>It can also be installed directly from source:</p>
-<pre><code class="hljs css console">git clone https://github.com/aragon/aragon-cli.git
+<pre><code class="hljs">git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/aragon/aragon-cli.git
 cd aragon-cli
 npm install
 npm link
@@ -35,69 +35,69 @@ npm link
 <h2><a class="anchor" aria-hidden="true" id="main-commands"></a><a href="#main-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Main commands</h2>
 <h3><a class="anchor" aria-hidden="true" id="aragon-init"></a><a href="#aragon-init" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>aragon init</code></h3>
 <p>The <code>init</code> command will set up an Aragon app project so you can start building your app from a functional boilerplate.</p>
-<pre><code class="hljs css console">aragon init [app-name] [boilerplate]
+<pre><code class="hljs">aragon init <span class="hljs-string">[app-name]</span> <span class="hljs-string">[boilerplate]</span>
 </code></pre>
 <ul>
-<li><p><code>app-name</code>: The name or ENS domain name for your app in an APM Registry (e.g. <code>myapp</code> or <code>myapp.aragonpm.eth</code>). If only the name is provided, by default it will create your app on the default <code>aragonpm.eth</code> registry.</p></li>
+<li><p><code>app-name</code>: The name or ENS domain name for your app in an APM Registry (e.g. <code>myapp</code> or <code>myapp.aragonpm.eth</code>). If only the name is provided it will create your app on the default <code>aragonpm.eth</code> registry.</p></li>
 <li><p><code>boilerplate</code>: the Github repo name or alias for a boilerplate to set up your app. The currently available boilerplates are:</p>
 <ul>
-<li><code>react</code>: this boilerplate contains a very basic Counter app and a webapp for interacting with it. If using React for building your app's frontend using this boilerplate is the best option, as it showcases the end-to-end interaction with an Aragon app, from the contracts to the webapp.</li>
-<li><code>react-kit</code>: it is a variation of the <code>react</code> boilerplate, but also comes with a DAO Kit which will allow for using your app interacting with other Aragon apps like the Voting app. You can read more about DAO Kits <a href="/docs/kits-intro.html">here</a>.</li>
-<li><code>bare</code>: this boilerplate will just set up your app directory structure, but contains no functional code.</li>
+<li><code>react</code>: this boilerplate contains a very basic Counter app and a webapp for interacting with it. It showcases the end-to-end interaction with an Aragon app, from the contracts to the webapp.</li>
+<li><code>react-kit</code>: it is a variation of the <code>react</code> boilerplate that also comes with a DAO Kit which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Kits <a href="/docs/kits-intro.html">here</a>.</li>
+<li><code>bare</code>: this boilerplate will just set up your app directory structure but contains no functional code.</li>
 </ul></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="aragon-run"></a><a href="#aragon-run" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>aragon run</code></h3>
 <p>The <code>run</code> command takes care of completely setting up the environment needed for running your Aragon app. These are all the things that running <code>aragon run</code> will do for you:</p>
-<ul>
-<li>It checks whether <strong>IPFS</strong> and a local <strong>Ethereum development chain</strong> (devchain) are running, and if not it will start them. If <code>aragon run</code> started a devchain or IPFS, when it is stopped, they will both be stopped too.</li>
-<li>It will <strong>publish your app</strong> to the local APM registry running in your devchain. Every time <code>aragon run</code> is executed, it will automatically publish a major update to the APM repo of your app. This step executes the <code>aragon apm publish</code> internally, you can check the options and how the command works in depth <a href="#aragon-apm-publish">here</a>.</li>
-<li>Once the package is published, it will <strong>create a DAO</strong> with your app installed. If you are running your app without a Kit, it will grant permissions to the first account (address and private key printed in the console) to perform all the actions protected with by the ACL in your app.</li>
-<li>After the DAO is created, it will download the <a href="https://github.com/aragon/aragon">Aragon Core</a> client, install its dependencies and start it up so you can interact with your DAO.</li>
-</ul>
+<ol>
+<li>It checks whether <strong>IPFS</strong> and a local <strong>Ethereum development chain</strong> (devchain) are running and if not it will start them. Once aragon is terminated, any IPFS or dev chain it started will also be terminated.</li>
+<li>It will <strong>publish your app</strong> to the local APM registry running in your devchain. This step executes the <code>aragon apm publish</code> internally. You can check the options and how the command works in depth <a href="#aragon-apm-publish">here</a>.</li>
+<li>Once the package is published it will <strong>create a DAO</strong> with your app installed. If you are running your app without a Kit it will grant permissions to the first account printed in the console to perform all the actions protected by the ACL in your app.</li>
+<li>After the DAO is created it will download the <a href="https://github.com/aragon/aragon">Aragon Core</a> client, install its dependencies and start it up so you can interact with the DAO in your web browser.</li>
+</ol>
 <p>Some available options to customize the <code>run</code> command:</p>
 <ul>
-<li><code>--reset</code>: If reset is present, it will reset the devchain before running. The chain will then start from scratch and all published packages will need to be recreated.</li>
+<li><code>--reset</code>: If reset is present it will reset the devchain before running. The chain will then start from scratch and all published packages will need to be recreated.</li>
 <li><code>--port</code>: The port where the devchain will be started.</li>
-<li><code>--kit</code>: The name of the contract that will be deployed as the <a href="/docs/kits-intro.html">DAO kit</a> that will be used to create your DAO. If no Kit is provided, it will use a default Kit that sets up the DAO with just your app.</li>
-<li><code>--kit-init [argument1 ... argumentN]</code>: The constructor arguments for the Kit contract, separated by a space. See the <a href="#aragon-deploy">deploy command</a> for more information on constructor arguments.</li>
+<li><code>--kit</code>: The name of the contract that will be deployed as the <a href="/docs/kits-intro.html">DAO kit</a> that will be used to create your DAO. If no Kit is provided it will use a default Kit that sets up the DAO with just your app.</li>
+<li><code>--kit-init [argument1 ... argumentN]</code>: The constructor arguments for the Kit contract, each separated by a space. See the <a href="#aragon-deploy">deploy command</a> for more information on constructor arguments.</li>
 <li><code>--build-script</code>: The name of the NPM script in your app that will be used for building the webapp.</li>
 <li><code>--client [true|false]</code>: Can be used to disable starting the Aragon Core client. Defaults to <code>true</code>.</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="running-your-app-from-a-development-http-server"></a><a href="#running-your-app-from-a-development-http-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running your app from a development HTTP server</h4>
-<p><code>aragon run</code> by default will replicate Aragon's production environment and publish you app using IPFS. However when developing the webapp part of you Aragon app, using IPFS would require you to repeat the entire publishing process every time you make a change and want to try it out.</p>
-<p>Using the HTTP mode for running your app requires starting an HTTP server is serving your app files before executing <code>aragon run</code> or <code>aragon apm publish</code></p>
-<pre><code class="hljs css console"><span class="hljs-meta">#</span><span class="bash"> start your app server before</span>
-aragon run --http [server-uri] --http-served-from [path]
-</code></pre>
+<p><code>aragon run</code> by default will replicate Aragon's production environment and publish your app using IPFS. However, when developing the webapp part of your Aragon app, using IPFS would require you to repeat the entire publishing process every time you make a change and want to try it out.</p>
+<p>Using the HTTP mode for running your app requires starting an HTTP server to serve your app files before executing <code>aragon run</code> or <code>aragon apm publish</code></p>
+<pre><code class="hljs"><span class="hljs-comment"># start your app server before</span>
+aragon <span class="hljs-keyword">run</span><span class="bash"> --http [server-uri] --http-served-from [path]
+</span></code></pre>
 <ul>
 <li><code>http</code>: This is the flag that indicates that you wish to run your app using HTTP. The URI of the server must be provided here (e.g. <code>localhost:4001</code>)</li>
 <li><code>http-served-from</code>: Path to the directory that the HTTP server exposes. Some artifacts are generated and placed in this directory during the publishing process of your app. The server needs serve these new files when they are created and the server is already running.</li>
 </ul>
-<p>If your HTTP server supports hot-reloading, your app's frontend will be hot-reloaded inside the Aragon Core client.</p>
-<p>However, when <strong>making changes to the background script</strong> of your app, a refresh of the client is required so the new script will be loaded when the app starts. Also depending on how the background script of your app is being built, you may need to manually trigger the compilation of the script.</p>
+<p>If your HTTP server supports hot-reloading your app's frontend will be hot-reloaded inside the Aragon Core client.</p>
+<p>However, when <strong>making changes to the background script</strong> of your app, a refresh of the client is required so the new script can be loaded. Also, depending on how the background script of your app is being built, you may need to manually trigger the compilation of the script.</p>
 <p>The <a href="https://github.com/aragon/aragon-react-boilerplate">React boilerplate</a> supports serving your app using HTTP.</p>
 <h3><a class="anchor" aria-hidden="true" id="aragon-devchain"></a><a href="#aragon-devchain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>aragon devchain</code></h3>
-<p>The <code>devchain</code> command is used for starting a local development testnet with all the required components already deployed and ready to use. It uses <a href="https://github.com/aragon/aragen">aragen</a> for setting up the snapshot from which the chain starts. At any point, <code>aragon devchain --reset</code> can be run which will reset the devchain to the original snapshot.</p>
-<p>This snapshot contains a local instance of ENS, that is used an APM registry (<code>aragonpm.eth</code>) and <a href="https://github.com/aragon/aragon-id">aragon-id</a> (<code>aragonid.eth</code>), the first-party <a href="https://github.com/aragon/aragon-apps">Aragon apps</a> published to APM (e.g. <code>voting.aragonpm.eth</code> or <code>token-manager.aragonpm.eth</code>) and the first-party <a href="https://github.com/aragon/dao-kits">DAO Kits</a> (e.g. <code>bare-kit.aragonpm.eth</code>)</p>
-<p>Devchains started on different ports keep their own state of the chain in parallel. This can be used to have two chains at different states. Therefore when starting a devchain at a different port, the chain will start from the snapshot.</p>
+<p>The <code>devchain</code> command is used for starting a local development testnet with all the required components already deployed and ready to use. It uses <a href="https://github.com/aragon/aragen">aragen</a> for setting up the snapshot from which the chain starts. At any point <code>aragon devchain --reset</code> can be run which will reset the devchain to the original snapshot.</p>
+<p>This snapshot contains a local instance of ENS (used as an APM registry <code>aragonpm.eth</code> and <a href="https://github.com/aragon/aragon-id">aragon-id</a> <code>aragonid.eth</code>), the first-party <a href="https://github.com/aragon/aragon-apps">Aragon apps</a> published to APM (e.g. <code>voting.aragonpm.eth</code> or <code>token-manager.aragonpm.eth</code>) and the first-party <a href="https://github.com/aragon/dao-kits">DAO Kits</a> (e.g. <code>bare-kit.aragonpm.eth</code>)</p>
+<p>Devchains can be started on different ports and will keep their state independent from other chains.</p>
 <p>Options:</p>
 <ul>
 <li><code>--reset</code>: Resets the devchain to the snapshot.</li>
 <li><code>--port</code>: The port number where the devchain will be started.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="aragon-ipfs"></a><a href="#aragon-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>aragon ipfs</code></h3>
-<p>The <code>ipfs</code> command is used to start an IPFS daemon, and it adds some files that are needed for the first-party Aragon apps to work.</p>
+<p>The <code>ipfs</code> command is used to start an IPFS daemon. It adds some files that are needed for the first-party Aragon apps to work.</p>
 <h3><a class="anchor" aria-hidden="true" id="aragon-deploy"></a><a href="#aragon-deploy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>aragon deploy</code></h3>
 <p>The <code>deploy</code> command can be used for deploying an Ethereum contract to the devchain.</p>
-<pre><code class="hljs css console">aragon deploy [contract-name] [--init argument1 ... argumentN]
+<pre><code class="hljs">aragon <span class="hljs-keyword">deploy</span> [contract-name] [<span class="hljs-params">--init</span> argument1 <span class="hljs-string">...</span> argumentN]
 </code></pre>
-<p>Running <code>aragon deploy</code> will compile your contracts using <code>truffle compile</code> and then will deploy the contract with the constructor arguments provided.</p>
-<p>The <code>--init</code> arguments need to be separated by a space, and they will be passed to the contract constructor on deploy. The <code>@ARAGON_ENS</code> alias can be used and it will be replaced by the address of the ENS registry in the devchain.</p>
+<p>Running <code>aragon deploy</code> will compile your contracts using <code>truffle compile</code> and will deploy the contract with the constructor arguments provided.</p>
+<p>The <code>--init</code> arguments need to be separated by a space. They will be passed to the contract constructor on deploy. The <code>@ARAGON_ENS</code> alias can be used and it will be replaced by the address of the ENS registry in the devchain.</p>
 <h3><a class="anchor" aria-hidden="true" id="aragon-contracts"></a><a href="#aragon-contracts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>aragon contracts</code></h3>
-<p>The <code>aragon contracts</code> command can be used to execute commands using the same <a href="https://github.com/trufflesuite/truffle">truffle</a> version that the CLI uses behind the scenes to assist in compiling your app's contracts at some times when that is necessary.</p>
-<pre><code class="hljs css console">aragon contracts [command]
+<p>The <code>aragon contracts</code> command can be used to execute commands using the same <a href="https://github.com/trufflesuite/truffle">truffle</a> version that the CLI uses behind the scenes to assist in compiling your app's contracts.</p>
+<pre><code class="hljs">aragon contracts [<span class="hljs-keyword">command</span>]
 </code></pre>
-<p>It is the equivalent to executing <code>npx truffle [command]</code></p>
+<p>It is equivalent to executing <code>npx truffle [command]</code></p>
 <h2><a class="anchor" aria-hidden="true" id="dao-commands"></a><a href="#dao-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DAO commands</h2>
 <p>The <code>aragon dao</code> commands can be used for interacting with your DAO directly from the command line. These commands are also available directly using the <code>dao</code> alias.</p>
 <h3><a class="anchor" aria-hidden="true" id="dao-new"></a><a href="#dao-new" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dao new</code></h3>
@@ -112,52 +112,53 @@ aragon run --http [server-uri] --http-served-from [path]
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="dao-upgrade"></a><a href="#dao-upgrade" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dao upgrade</code></h3>
 <p>The <code>dao upgrade</code> command upgrades all instances of an app to a newer version.</p>
-<pre><code class="hljs css console">dao upgrade [dao-addr] [app-apm-repo] [repo-version]
+<pre><code class="hljs">dao<span class="hljs-built_in"> upgrade </span>[dao-addr] [app-apm-repo] [repo-version]
 </code></pre>
 <ul>
 <li><code>dao-addr</code>: The main address of the DAO (Kernel).</li>
-<li><code>app-apm-repo</code>: The repo name of the app being upgraded (e.g. <code>voting</code> or <code>voting.aragonpm.eth</code>)</li>
-<li><code>repo-version</code>: Version of the repo that the app will be upgraded to, can be a version number or <code>latest</code> for the newest published version (defaults to <code>latest</code>)</li>
+<li><code>app-apm-repo</code>: The repo name of the app being upgraded (e.g. <code>voting</code> or <code>voting.aragonpm.eth</code>).</li>
+<li><code>repo-version</code>: Version of the repo that the app will be upgraded to; can be a version number or <code>latest</code> for the newest published version (defaults to <code>latest</code>).</li>
 </ul>
-<p>aragonOS protects against having different instances of a particular app running with different versions (e.g. all the Voting app instances run the same version), so performing a <code>dao upgrade</code> will upgrade all instances of the app to the version specified.</p>
+<p>aragonOS protects against having different instances of a particular app running with different versions (e.g. all the Voting app instances run the same version).  Performing a <code>dao upgrade</code> will upgrade all instances of the app to the version specified.</p>
 <h3><a class="anchor" aria-hidden="true" id="dao-install"></a><a href="#dao-install" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dao install</code></h3>
 <p>The <code>dao install</code> command installs an instance of an app in the DAO.</p>
-<pre><code class="hljs css console">dao install [dao-addr] [app-apm-repo] [repo-version]
+<pre><code class="hljs">dao install <span class="hljs-string">[dao-addr]</span> <span class="hljs-string">[app-apm-repo]</span> <span class="hljs-string">[repo-version]</span>
 </code></pre>
 <ul>
 <li><code>dao-addr</code>: The main address of the DAO (Kernel).</li>
-<li><code>app-apm-repo</code>: The repo name of the app being installed (e.g. <code>voting</code> or <code>voting.aragonpm.eth</code>)</li>
-<li><code>repo-version</code>: Version of the repo that will be installed, can be a version number or <code>latest</code> for the newest published version (defaults to <code>latest</code>)</li>
+<li><code>app-apm-repo</code>: The repo name of the app being installed (e.g. <code>voting</code> or <code>voting.aragonpm.eth</code>).</li>
+<li><code>repo-version</code>: Version of the repo that will be installed; can be a version number or <code>latest</code> for the newest published version (defaults to <code>latest</code>).</li>
 </ul>
-<p>In aragonOS, an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO.</p>
+<p>In aragonOS an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO.</p>
 <p>The <code>dao install</code> command will create an instance of the app and assign permissions to the main account to perform all the protected actions in the app.</p>
 <p>As explained in the <a href="#dao-upgrade">upgrade command</a>, all app instances of the same app in DAO must run the same version, so installing an app with a version will effectively upgrade all app instances to this version.</p>
 <h3><a class="anchor" aria-hidden="true" id="dao-apps"></a><a href="#dao-apps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dao apps</code></h3>
-<pre><code class="hljs css console">dao apps [dao-addr]
+<p>Used to inspect all the installed apps in a DAO.</p>
+<pre><code class="hljs">dao apps <span class="hljs-string">[dao-addr]</span>
 </code></pre>
 <ul>
 <li><code>dao-addr</code>: The main address of the DAO (Kernel).</li>
 </ul>
-<p>Used to inspect all the installed apps in a DAO.</p>
 <h3><a class="anchor" aria-hidden="true" id="dao-exec"></a><a href="#dao-exec" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dao exec</code></h3>
-<pre><code class="hljs css console">dao exec [dao-addr] [app-proxy-addr] [method] [argument1 ... argumentN]
-</code></pre>
-<p><code>dao exec</code> allows performing transactions in your DAO directly from the CLI. It supports <a href="/docs/forwarding-intro.html">transaction pathing</a> so if your account cannot perform the action directly, it will try to find how to do it (e.g. creating a vote).</p>
+<p>Performs transactions in your DAO directly from the CLI. It supports <a href="/docs/forwarding-intro.html">transaction pathing</a> so if your account cannot perform the action directly it will try to find how to do it (e.g. creating a vote).</p>
+<pre><code class="hljs">dao exec [dao-addr] [app-proxy-addr] [<span class="hljs-function"><span class="hljs-keyword">method</span>] [<span class="hljs-title">argument1</span> ... <span class="hljs-title">argumentN</span>]
+</span></code></pre>
 <ul>
 <li><code>dao-addr</code>: The main address of the DAO (Kernel).</li>
-<li><code>app-proxy-addr</code>: The address of the app where the action is being performed. You can find the proxy address by checking <a href="#dao-apps"><code>dao apps</code></a></li>
-<li><code>method</code>: Name of the method being executed in the app (e.g. <code>withdrawTokens</code>)</li>
-<li><code>arguments</code>: The arguments that the method will be executed with separated by a space.</li>
+<li><code>app-proxy-addr</code>: The address of the app where the action is being performed. You can find the proxy address by checking <a href="#dao-apps"><code>dao apps</code></a>.</li>
+<li><code>method</code>: Name of the method being executed in the app (e.g. <code>withdrawTokens</code>).</li>
+<li><code>arguments</code>: The arguments that the method will be executed with (each separated by a space).</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="dao-acl"></a><a href="#dao-acl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dao acl</code></h3>
-<pre><code class="hljs css console">dao acl [dao-addr]
+<p>Used to inspect the ACL state in a DAO to check its permissions.</p>
+<pre><code class="hljs">dao acl <span class="hljs-string">[dao-addr]</span>
 </code></pre>
 <ul>
 <li><code>dao-addr</code>: The main address of the DAO (Kernel).</li>
 </ul>
-<p>Used to inspect the ACL state in a DAO to check its permissions.</p>
 <h3><a class="anchor" aria-hidden="true" id="dao-acl-create"></a><a href="#dao-acl-create" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dao acl create</code></h3>
-<pre><code class="hljs css console">dao acl create [dao-addr] [app-proxy-addr] [role] [entity] [manager]
+<p>Used to create a permission in the ACL. Can only be used if the permission hasn't been created before. The <code>manager</code> of the permission can use <code>dao acl grant</code> and <code>dao acl revoke</code> to manage the permission.</p>
+<pre><code class="hljs">dao acl create <span class="hljs-string">[dao-addr]</span> <span class="hljs-string">[app-proxy-addr]</span> <span class="hljs-string">[role]</span> <span class="hljs-string">[entity]</span> <span class="hljs-string">[manager]</span>
 </code></pre>
 <ul>
 <li><code>dao-addr</code>: The main address of the DAO (Kernel).</li>
@@ -166,9 +167,9 @@ aragon run --http [server-uri] --http-served-from [path]
 <li><code>entity</code>: The address of the entity that is being granted the permission by creating it.</li>
 <li><code>manager</code>: The address of the entity that will be able to grant that permission or revoke it.</li>
 </ul>
-<p>Used to create a permission in the ACL. Can only be used if the permission hasn't been created before. The <code>manager</code> of the permission can use <code>dao acl grant</code> and <code>dao acl revoke</code> to manage the permission.</p>
 <h3><a class="anchor" aria-hidden="true" id="dao-acl-grant"></a><a href="#dao-acl-grant" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dao acl grant</code></h3>
-<pre><code class="hljs css console">dao acl grant [dao-addr] [app-proxy-addr] [role] [entity]
+<p>Used to grant a permission in the ACL.</p>
+<pre><code class="hljs">dao acl grant <span class="hljs-string">[dao-addr]</span> <span class="hljs-string">[app-proxy-addr]</span> <span class="hljs-string">[role]</span> <span class="hljs-string">[entity]</span>
 </code></pre>
 <ul>
 <li><code>dao-addr</code>: The main address of the DAO (Kernel).</li>
@@ -176,9 +177,9 @@ aragon run --http [server-uri] --http-served-from [path]
 <li><code>role</code>: The identifier for the role. Can be the <code>bytes32</code> identifier of the role or its name (e.g. <code>INCREMENT_ROLE</code>).</li>
 <li><code>entity</code>: The address of entity that is being granted the permission.</li>
 </ul>
-<p>Used to grant a permission in the ACL.</p>
 <h3><a class="anchor" aria-hidden="true" id="dao-acl-revoke"></a><a href="#dao-acl-revoke" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dao acl revoke</code></h3>
-<pre><code class="hljs css console">dao acl revoke [dao-addr] [app-proxy-addr] [role] [entity]
+<p>Used to revoke a permission in the ACL.</p>
+<pre><code class="hljs">dao acl revoke <span class="hljs-string">[dao-addr]</span> <span class="hljs-string">[app-proxy-addr]</span> <span class="hljs-string">[role]</span> <span class="hljs-string">[entity]</span>
 </code></pre>
 <ul>
 <li><code>dao-addr</code>: The main address of the DAO (Kernel).</li>
@@ -186,9 +187,9 @@ aragon run --http [server-uri] --http-served-from [path]
 <li><code>role</code>: The identifier for the role. Can be the <code>bytes32</code> identifier of the role or its name (e.g. <code>INCREMENT_ROLE</code>).</li>
 <li><code>entity</code>: The address of entity that is being revoked the permission.</li>
 </ul>
-<p>Used to revoke a permission in the ACL.</p>
 <h3><a class="anchor" aria-hidden="true" id="dao-acl-set-manager"></a><a href="#dao-acl-set-manager" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dao acl set-manager</code></h3>
-<pre><code class="hljs css console">dao acl set-manager [dao-addr] [app-proxy-addr] [role] [manager]
+<p>Used to change the manager of a permission in the ACL.</p>
+<pre><code class="hljs"><span class="hljs-string">dao </span><span class="hljs-string">acl </span><span class="hljs-built_in">set-manager</span> [<span class="hljs-string">dao-addr]</span> [<span class="hljs-string">app-proxy-</span><span class="hljs-string">addr]</span> [<span class="hljs-string">role]</span> [<span class="hljs-string">manager]</span>
 </code></pre>
 <ul>
 <li><code>dao-addr</code>: The main address of the DAO (Kernel).</li>
@@ -196,44 +197,43 @@ aragon run --http [server-uri] --http-served-from [path]
 <li><code>role</code>: The identifier for the role. Can be the <code>bytes32</code> identifier of the role or its name (e.g. <code>INCREMENT_ROLE</code>).</li>
 <li><code>manager</code>: The new manager for the permission.</li>
 </ul>
-<p>Used to change the manager of a permission in the ACL.</p>
 <h3><a class="anchor" aria-hidden="true" id="dao-acl-remove-manager"></a><a href="#dao-acl-remove-manager" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dao acl remove-manager</code></h3>
-<pre><code class="hljs css console">dao acl remove-manager [dao-addr] [app-proxy-addr] [role]
+<p>Used to remove the manager of a permission in the ACL. The permission can be created again after removing its manager.</p>
+<pre><code class="hljs">dao acl remove-manager <span class="hljs-string">[dao-addr]</span> <span class="hljs-string">[app-proxy-addr]</span> <span class="hljs-string">[role]</span>
 </code></pre>
 <ul>
 <li><code>dao-addr</code>: The main address of the DAO (Kernel).</li>
 <li><code>app-proxy-addr</code>: The address of the app whose permissions are being managed. You can find the proxy address by checking <a href="#dao-apps"><code>dao apps</code></a>.</li>
 <li><code>role</code>: The identifier for the role. Can be the <code>bytes32</code> identifier of the role or its name (e.g. <code>INCREMENT_ROLE</code>).</li>
 </ul>
-<p>Used to remove the manager of a permission in the ACL. The permission can be created again after removing its manager.</p>
 <h2><a class="anchor" aria-hidden="true" id="apm-commands"></a><a href="#apm-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>APM commands</h2>
 <h3><a class="anchor" aria-hidden="true" id="aragon-apm-version"></a><a href="#aragon-apm-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>aragon apm version</code></h3>
-<pre><code class="hljs css console">aragon apm version [patch|minor|major]
+<p>The <code>aragon apm version</code> command bumps the version number in the <code>arapp.json</code> file. If you modified the contracts then you need to do a major upgrade or publishing will fail.</p>
+<pre><code class="hljs">aragon apm version [patch|<span class="hljs-type">minor</span>|<span class="hljs-type">major</span>]
 </code></pre>
-<p>The <code>aragon apm version</code> command bumps the version number in the <code>arapp.json</code> file. If you modified the contracts, then you need to do a major upgrade or publishing will fail.</p>
 <h3><a class="anchor" aria-hidden="true" id="aragon-apm-versions"></a><a href="#aragon-apm-versions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>aragon apm versions</code></h3>
 <p>The <code>aragon apm versions</code> command shows all the previously published versions of this package.</p>
 <h3><a class="anchor" aria-hidden="true" id="aragon-apm-publish"></a><a href="#aragon-apm-publish" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>aragon apm publish</code></h3>
-<p>The <code>aragon apm publish</code> command takes care of publishing a new version to the APM repo.</p>
-<pre><code class="hljs css console">aragon apm publish [contract-address|contract-name]
+<p>The <code>aragon apm publish</code> command publishes  a new version to the APM repo.</p>
+<pre><code class="hljs">aragon apm publish [<span class="hljs-built_in">contract</span>-address|<span class="hljs-built_in">contract</span>-name]
 </code></pre>
-<p>If a major version is being published, the contract address for your app has to be provided or the contract name so the contract can be deployed. If it is not provided, it will default to the contract specified in the <code>arapp.json</code> file.</p>
-<p>If a minor or patch version is being published, then the command can be run with the <code>--only-content</code> flag, which will just perform an update to the content of the app (the webapp and its artifacts).</p>
-<p>The command allows some parametrization:</p>
+<p>If a major version is being published then the contract address for your app has to be provided or the contract name so the contract can be deployed. If it is not provided it will default to the contract specified in the <code>arapp.json</code> file.</p>
+<p>If a minor or patch version is being published then the command can be run with the <code>--only-content</code> flag which will just perform an update to the content of the app (the webapp and its artifacts).</p>
+<p>The command has the following parameters:</p>
 <ul>
-<li><code>--only-content</code>: For minor and patch upgrades, avoids deploying contract</li>
+<li><code>--only-content</code>: For minor and patch upgrades; avoids deploying contract.</li>
 <li><code>--provider</code>: The provider where the files of the package will be published to. Defaults to <code>ipfs</code>.</li>
 <li><code>--files</code>: The path to the files that will be published. Defaults to the current directory.</li>
 <li><code>--ignore</code>: A gitignore pattern of files to ignore. Specify multiple times to add multiple patterns. Defaults to just the <code>node_modules</code> directory.</li>
 <li><code>--publish-dir</code>: The path to the directory where all the files and generated artifacts will be copied to before publishing. If it is not specified, it will create a temporary directory.</li>
-<li><code>--build [true|false]</code>: A flag to specify whether the webapp should be build while publishing. Defaults to <code>true</code>.</li>
+<li><code>--build [true|false]</code>: A flag to specify whether the webapp should be built while publishing. Defaults to <code>true</code>.</li>
 <li><code>--build-script</code>: The name of the NPM script in your app that will be used for building the webapp.</li>
-<li><code>--http</code>: The URI for the HTTP server that will be serving your app files. See the <a href="#running-your-app-from-a-development-http-server">running from HTTP</a> doc for more information on using HTTP.</li>
+<li><code>--http</code>: The URI for the HTTP server that will be serving your app files. See <a href="#running-your-app-from-a-development-http-server">instructions on running from HTTP</a> for more information.</li>
 <li><code>http-served-from</code>: Path to the directory that the HTTP server exposes. Some artifacts are generated and placed in this directory during the publishing process of your app.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="global-configuration"></a><a href="#global-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Global configuration</h2>
 <h3><a class="anchor" aria-hidden="true" id="the-arappjson-file"></a><a href="#the-arappjson-file" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The <code>arapp.json</code> file</h3>
-<p>The <code>arapp.json</code> file contains some metadata for your app. You can check an <a href="https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json">example <code>arapp.json</code></a> file to see what fields need to be present.</p>
+<p>The <code>arapp.json</code> file contains metadata for your app. You can check an <a href="https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json">example <code>arapp.json</code></a> file to see what fields need to be present:</p>
 <ul>
 <li><code>appName</code>: The ENS name of your app where the APM repo can be located.</li>
 <li><code>version</code>: The current version of the app.</li>
@@ -241,8 +241,8 @@ aragon run --http [server-uri] --http-served-from [path]
 <li><code>roles</code>: An array of all the roles that your app has. Each role has the following properties:
 <ul>
 <li><code>id</code>: The identifier of the role as it is defined in the contract.</li>
-<li><code>name</code>: A description of the role in the app</li>
-<li><code>params</code>: In case the role can be parametrized, the names of the parameters.</li>
+<li><code>name</code>: A description of the role in the app.</li>
+<li><code>params</code>: The names of any parameters for the role.</li>
 </ul></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="troubleshooting-faq"></a><a href="#troubleshooting-faq" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting/FAQ</h2>
@@ -254,13 +254,13 @@ aragon run --http [server-uri] --http-served-from [path]
 <ul>
 <li>It's unlocked</li>
 <li>Private network (<em>Localhost 8545</em>) is chosen</li>
-<li>The first account provided by <code>aragon run</code> or <code>aragon devchain</code> is imported and selected. To import the account, copy the private key (something like <code>a8a54b2d8197bc0b19bb8a084031be71835580a01e70a45a13babd16c9bc1563</code>), go to the accounts upper icon, to the left of the hamburguer button, scroll down, click on <code>Import account</code> and paste the value you copied.</li>
+<li>The first account provided by <code>aragon run</code> or <code>aragon devchain</code> is imported and selected. To import the account, copy the private key (something like <code>a8a54b2d8197bc0b19bb8a084031be71835580a01e70a45a13babd16c9bc1563</code>), go to the Metamask accounts upper icon (to the left of the hamburguer button), scroll down, click on &quot;Import account&quot; and paste the value you copied.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="issues-sending-transactions"></a><a href="#issues-sending-transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Issues sending transactions</h3>
 <p>Because of the way that Metamask caches the account nonces for the different networks, you may be getting the following error when interacting with your app:</p>
 <pre><code class="hljs"><span class="hljs-keyword">Error: </span>the tx doesn't have the correct nonce. account has nonce of: 157 tx has nonce of: 158
 </code></pre>
-<p>The workaround is to switch to a different network (e.g. Rinkeby) and then switch back to the <em>Localhost 8545</em> network, this will refresh Metamask's account nonce cache. Sending transactions should now succeed.</p>
+<p>The workaround is to switch to a different network (e.g. Rinkeby) and then switch back to the <em>Localhost 8545</em> network.  This will refresh Metamask's account nonce cache. Sending transactions should now succeed.</p>
 <h3><a class="anchor" aria-hidden="true" id="the-aragon-directory"></a><a href="#the-aragon-directory" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The <code>~/.aragon</code> directory</h3>
 <p>The Aragon CLI creates the <code>.aragon</code> directory under the user directory where it saves the state of the devchain and the Aragon Core client.</p>
 <p>In case the client is not loading properly, deleting the <code>~/.aragon</code> directory will make <code>aragon run</code> recreate the environment the next time it is used and may solve the issue.</p>
