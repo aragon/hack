@@ -272,14 +272,6 @@ dao acl remove-manager [dao-addr] [app-proxy-addr] [role]
 
 ## APM commands
 
-### `aragon apm version`
-
-The `aragon apm version` command bumps the version number in the `arapp.json` file. If you modified the contracts then you need to do a major upgrade or publishing will fail.
-
-```
-aragon apm version [patch|minor|major]
-```
-
 ### `aragon apm versions`
 
 The `aragon apm versions` command shows all the previously published versions of this package.
@@ -289,8 +281,10 @@ The `aragon apm versions` command shows all the previously published versions of
 The `aragon apm publish` command publishes  a new version to the APM repo.
 
 ```
-aragon apm publish [contract-address|contract-name]
+aragon apm publish <patch|minor|major|version_number> [contract-address|contract-name]
 ```
+
+The `aragon apm publish` command bumps the version number and publishes your app.
 
 If a major version is being published then the contract address for your app has to be provided or the contract name so the contract can be deployed. If it is not provided it will default to the contract specified in the `arapp.json` file.
 
@@ -314,21 +308,22 @@ The command has the following parameters:
 
 The `arapp.json` file contains metadata for your app. You can check an [example `arapp.json`](https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json) file to see what fields need to be present:
 
-- `appName`: The ENS name of your app where the APM repo can be located.
-- `version`: The current version of the app.
 - `path`: The path to the main contract in your app.
 - `roles`: An array of all the roles that your app has. Each role has the following properties:
   - `id`: The identifier of the role as it is defined in the contract.
   - `name`: A description of the role in the app.
   - `params`: The names of any parameters for the role.
+- `environments`: An object containing deploy environment configurations.
+  - `env_name`: An object containing the configuration for a specific environment. `env_name` can be any name you choose.
+    - `appName`: The ENS name of your app where the APM repo can be located.
+    - `network`: The network to use for this environment.
+    - `registry`: (optional) The address of the ENS registry for this environment. Defaults to the default ENS registry for this network.
 
 ## Troubleshooting/FAQ
 
 ### Resetting the devchain
 
 After upgrading the CLI, or if unexpected errors are being experienced, [resetting the devchain](#aragon-devchain) (by doing `aragon devchain --reset` or `aragon run --reset`) is sometimes useful as it will restart the chain from the snapshot.
-
-If you previously used `aragon apm publish`, you will likely need to reset the version of your app in its [`arapp.json`](#the-arappjson-file) file.
 
 ### Using Metamask
 
