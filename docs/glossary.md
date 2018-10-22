@@ -19,4 +19,4 @@ sidebar_label: Glossary
 - **Aragon ID**: Aragon ID is a lightweight identity system using [ENS](http://ens.domains).
 - **Aragen**: Tool that automatically generates everything that is needed to run Aragon on a local Ethereum chain.
 - **Aragon apps**: Apps that use aragonOS, aragon.js, and integrate inside Aragon Core.
-
+- **[Access Control List](/docs/acl-intro.html) (ACL)** The ACL is a mapping of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission.
