@@ -18,7 +18,7 @@ These resources can be things such as assets, cryptocurrencies, rights to claim 
 ## How does it work?
 The component that makes this resource management possible its called the ACL, or **Access Control List**.
 
-The ACL is a mapping of who has permission to execute an action in an Aragon app, and who can re-grant or revoke that permission. Most generally, an *Entity* can call a *Role* in an *App*, and this all is managed by *Manager*.
+The ACL is a mapping of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission. Most generally, an *Entity* can call a *Role* in an *App*, and this all is managed by *Manager*.
 
 
 ## Example
