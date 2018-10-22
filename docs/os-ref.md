@@ -52,7 +52,7 @@ What are namespaces? Namespaces are the three layers your DAO is made up of.
 <!-- AppProxies rely their upgradability to the kernel. -->
 
 ```javascript
-kernel.setup(kernel.APP_BASES_NAMESPACE(), votingAppId, newVotingAppCodeAddr);
+kernel.setup(kernel.APP_BASES_NAMESPACE(), votingAppId, newVotingAppCodeAddr)
 ```
 
 **Upgradeability**
@@ -115,19 +115,19 @@ The interpreter supports encoding complex rules in what would look almost like a
 ```js
    function testComplexCombination() {
         // if (oracle and block number > block number - 1) then arg 0 < 10 or oracle else false
-        Param[] memory params = new Param[](7);
-        params[0] = Param(LOGIC_OP_PARAM_ID, uint8(Op.IF_ELSE), encodeIfElse(1, 4, 6));
-        params[1] = Param(LOGIC_OP_PARAM_ID, uint8(Op.AND), encodeOperator(2, 3));
-        params[2] = Param(ORACLE_PARAM_ID, uint8(Op.EQ), uint240(new AcceptOracle()));
-        params[3] = Param(BLOCK_NUMBER_PARAM_ID, uint8(Op.GT), uint240(block.number - 1));
-        params[4] = Param(LOGIC_OP_PARAM_ID, uint8(Op.OR), encodeOperator(5, 2));
-        params[5] = Param(0, uint8(Op.LT), uint240(10));
-        params[6] = Param(PARAM_VALUE_PARAM_ID, uint8(Op.RET), 0);
+        Param[] memory params = new Param[](7)
+        params[0] = Param(LOGIC_OP_PARAM_ID, uint8(Op.IF_ELSE), encodeIfElse(1, 4, 6))
+        params[1] = Param(LOGIC_OP_PARAM_ID, uint8(Op.AND), encodeOperator(2, 3))
+        params[2] = Param(ORACLE_PARAM_ID, uint8(Op.EQ), uint240(new AcceptOracle()))
+        params[3] = Param(BLOCK_NUMBER_PARAM_ID, uint8(Op.GT), uint240(block.number - 1))
+        params[4] = Param(LOGIC_OP_PARAM_ID, uint8(Op.OR), encodeOperator(5, 2))
+        params[5] = Param(0, uint8(Op.LT), uint240(10))
+        params[6] = Param(PARAM_VALUE_PARAM_ID, uint8(Op.RET), 0)
 
-        assertEval(params, arr(uint256(10)), true);
+        assertEval(params, arr(uint256(10)), true)
 
-        params[4] = Param(LOGIC_OP_PARAM_ID, uint8(Op.AND), encodeOperator(5, 2));
-        assertEval(params, arr(uint256(10)), false);
+        params[4] = Param(LOGIC_OP_PARAM_ID, uint8(Op.AND), encodeOperator(5, 2))
+        assertEval(params, arr(uint256(10)), false)
     }
 ```
 
@@ -200,7 +200,7 @@ contract Vault is AragonApp {
 The transfer function needs to be exposed for the ACL contract to interact with it so we use the authP() parameter to tell it which parameters need to be passed to the ACL.
 
 ```js
-authP(TRANSFER_ROLE, arr(address(token), to, value));
+authP(TRANSFER_ROLE, arr(address(token), to, value))
 ```
 
 First we pass in the role this function will be assigned to, TRANSFER_ROLE. Using the arr() parameter we pass in the next set of parameters that are going to be sent to the ACL to determine is this action can go through. Lets say we deploy this contract and its address is 0x111.
@@ -210,44 +210,44 @@ Now that transfer() is exposed lets use it!
 Here is our Vault.js code
 
 ```js
-const ACL = artifacts.require("ACL");
-const Kernel = artifacts.require("Kernel");
+const ACL = artifacts.require("ACL")
+const Kernel = artifacts.require("Kernel")
 
 let kernel,
   app,
   factory,
-  acl = {};
+  acl = {}
 
-const permissionsRoot = accounts[0];
-const granted = accounts[1];
+const permissionsRoot = accounts[0]
+const granted = accounts[1]
 
-let role = null;
-const receipt = await factory.newDAO(permissionsRoot);
-app = receipt.logs.filter(l => l.event == "DeployDAO")[0].args.dao;
+let role = null
+const receipt = await factory.newDAO(permissionsRoot)
+app = receipt.logs.filter(l => l.event == "DeployDAO")[0].args.dao
 
-kernel = Kernel.at(app);
+kernel = Kernel.at(app)
 
-role = await kernel.APP_MANAGER_ROLE();
-acl = ACL.at(await kernel.acl());
+role = await kernel.APP_MANAGER_ROLE()
+acl = ACL.at(await kernel.acl())
 
 const test = async () => {
-  let userOne = accounts[3];
-  let userTwo = accounts[4];
-  let aclAddress = "0x3292"; // this is the acl address
-  let vaultApp = "0x111"; //vault app address
-  let roleAdd = "ADD_APPS"; // role to add applications
-  let roleTransfer = "TRANSFER_ROLE"; // role to add applications
+  let userOne = accounts[3]
+  let userTwo = accounts[4]
+  let aclAddress = "0x3292" // this is the acl address
+  let vaultApp = "0x111" //vault app address
+  let roleAdd = "ADD_APPS" // role to add applications
+  let roleTransfer = "TRANSFER_ROLE" // role to add applications
 
-  let baseNamespace = "0x1212"; //this is the Base namespace
+  let baseNamespace = "0x1212" //this is the Base namespace
 
   //grant userOne permission to add the vault app
-  await acl.grantPermissionP(userOne, app, roleAdd, { from: granted });
+  await acl.grantPermissionP(userOne, app, roleAdd, { from: granted })
 
   //now that userOne can add apps to the kernel we will add the vault app
-  await kernel.setApp(baseNamespace, vaultApp, aclAddress, { from: userOne });
+  await kernel.setApp(baseNamespace, vaultApp, aclAddress, { from: userOne })
 
   //we have the vault, lets add a permission to allow this userTwo to transfer funds
-  await acl.grantPermissionP(userTwo, vaultApp, roleTransfer, { from: userOne });
+  await acl.grantPermissionP(userTwo, vaultApp, roleTransfer, { from: userOne })
 };
 ```
 
@@ -260,7 +260,7 @@ Upgrading the kernel or an app is done by setting a new address for a key in the
 Upgrading the kernel of an organization is done by changing the Kernel appId in the Core namespace.
 
 ```js
-kernel.setApp(kernel.CORE_NAMESPACE(), kernel.KERNEL_APP_ID(), newKernelCodeAddr);
+kernel.setApp(kernel.CORE_NAMESPACE(), kernel.KERNEL_APP_ID(), newKernelCodeAddr)
 ```
 
 > Warning:
@@ -274,7 +274,7 @@ In a similar fashion to the Kernel, apps can share implementation code to save g
 Upgrading an app is done by setting a new app address for the appId and using Base namespace in the kernel.
 
 ```js
-kernel.setApp(kernel.APP_BASES_NAMESPACE(), votingAppId, newVotingAppCodeAddr);
+kernel.setApp(kernel.APP_BASES_NAMESPACE(), votingAppId, newVotingAppCodeAddr)
 ```
 
 There are two different types of proxies:
@@ -284,11 +284,11 @@ There are two different types of proxies:
 **PinnedAppProxy**: on contract creation it checks and saves the app code currently in the Kernel. This cannot be upgraded unless the app code has explicit logic to change that storage slot.
 
 ```js
-kernel.newAppInstance(votingAppId, votingApp);
+kernel.newAppInstance(votingAppId, votingApp)
 ```
 
 ```js
-kernel.newPinnedAppInstance(votingAppId, votingApp);
+kernel.newPinnedAppInstance(votingAppId, votingApp)
 ```
 
 ## Forwarder
@@ -310,7 +310,7 @@ EVMScriptExecutors must follow this interface:
 
 ```js
 interface IEVMScriptExecutor {
-    function execScript(bytes script, bytes input, address[] blacklist) external returns (bytes);
+    function execScript(bytes script, bytes input, address[] blacklist) external returns (bytes)
 }
 ```
 

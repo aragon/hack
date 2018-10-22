@@ -35,13 +35,13 @@ A Javascript library to interact with aragonOS by handling transaction pathing, 
 ES6
 
 ```js
-import AragonApp from "@aragon/client";
+import AragonApp from "@aragon/client"
 ```
 
 ES5 (CommonJS)
 
 ```js
-const AragonApp = require("@aragon/client").default;
+const AragonApp = require("@aragon/client").default
 ```
 
 ### AragonApp
@@ -61,7 +61,7 @@ const app = new AragonApp();
 
 // Sends an intent to the wrapper that we wish to invoke `increment` on our
 // app's smart contract
-app.increment();
+app.increment()
 ```
 
 **Parameters**
@@ -71,13 +71,13 @@ app.increment();
 **Example**
 
 ```js
-import AragonApp, { providers } from "@aragon/client";
+import AragonApp, { providers } from "@aragon/client"
 
 // The default provider should be used in background scripts
-const backgroundScriptOfApp = new AragonApp();
+const backgroundScriptOfApp = new AragonApp()
 
 // This instance uses a provider that should be used for front-ends
-const frontendOfApp = new AragonApp(new providers.WindowMessage(window.parent));
+const frontendOfApp = new AragonApp(new providers.WindowMessage(window.parent))
 ```
 
 ### accounts
@@ -136,13 +136,13 @@ Creates a handle to interact with an external contract (i.e. a contract that is 
 **Example**
 
 ```js
-const token = app.external(tokenAddress, tokenJsonInterface);
+const token = app.external(tokenAddress, tokenJsonInterface)
 
 // Retrieve the symbol of the token
-token.symbol().subscribe(symbol => console.log(`The token symbol is ${symbol}`));
+token.symbol().subscribe(symbol => console.log(`The token symbol is ${symbol}`))
 
 // Retrieve the token balance of an account
-token.balanceOf(someAccountAddress).subscribe(balance => console.log(`The balance of the account is ${balance}`));
+token.balanceOf(someAccountAddress).subscribe(balance => console.log(`The balance of the account is ${balance}`))
 ```
 
 ### cache
@@ -200,33 +200,33 @@ A simple reducer for a counter app
 ```js
 const state$ = app.store((state, event) => {
   // Initial state is always null
-  if (state === null) state = 0;
+  if (state === null) state = 0
 
   switch (event.event) {
     case "Increment":
-      state++;
-      return state;
+      state++
+      return state
     case "Decrement":
-      state--;
-      return state;
+      state--
+      return state
   }
 
   // We must always return a state, even if unaltered
-  return state;
-});
+  return state
+})
 ```
 
 A reducer that also reduces events from an external smart contract
 
 ```js
-const token = app.external(tokenAddress, tokenJsonInterface);
+const token = app.external(tokenAddress, tokenJsonInterface)
 
 const state$ = app.store(
   (state, event) => {
     // ...
   },
   [token.events()]
-);
+)
 ```
 
 ### call
@@ -246,7 +246,7 @@ Perform a call on the app's smart contract.
 
 ```js
 // Calls the smart contract's `balanceOf` method with the specified account address
-app.call("balanceOf", accountAddress).subscribe(balance => console.log(`The balance of the account is ${balance}`));
+app.call("balanceOf", accountAddress).subscribe(balance => console.log(`The balance of the account is ${balance}`))
 ```
 
 ### notify
@@ -332,12 +332,12 @@ A provider that communicates through the [`Window PostMessage API`](https://deve
 **Example**
 
 ```js
-const aragon = new Aragon("0xdeadbeef");
+const aragon = new Aragon("0xdeadbeef")
 
 // Initialises the wrapper and logs the installed apps
 aragon.init(() => {
-  aragon.apps.subscribe(apps => console.log(apps));
-});
+  aragon.apps.subscribe(apps => console.log(apps))
+})
 ```
 
 **API**
@@ -435,8 +435,8 @@ Furthermore, background scripts create a nice separation of concerns - your back
 First you need to instantiate an instance of the AragonApp class from @aragon/client.
 
 ```js
-import Aragon from "@aragon/client";
-const app = new Aragon();
+import Aragon from "@aragon/client"
+const app = new Aragon()
 ```
 
 Next, you need to specify that your app has a background script.
@@ -459,19 +459,19 @@ All of the AragonApp methods are available to you. We highly recommend that you 
 ```js
 const state$ = app.store((state, event) => {
   // Initial state is always null
-  if (state === null) state = 0;
+  if (state === null) state = 0
 
   switch (event.event) {
     case "Increment":
-      state++;
-      return state;
+      state++
+      return state
     case "Decrement":
-      state--;
-      return state;
+      state--
+      return state
   }
 
   // We must always return a state, even if unaltered
-  return state;
+  return state
 }
 ```
 
