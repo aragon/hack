@@ -3,7 +3,7 @@ id: aragonos-building
 title: Developing with aragonOS
 ---
 
-AragonOS enables apps to be upgradeable and share a generic governance interface.  To use it to its full potential, however, the following instructions need to be followed.
+aragonOS enables apps to be upgradeable and share a generic governance interface.  To use it to its full potential, however, the following instructions need to be followed.
 
 ## The AragonApp contract
 
