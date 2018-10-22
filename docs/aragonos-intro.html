@@ -21,14 +21,14 @@
           };
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/os-intro.md" target="_blank" rel="noreferrer noopener">Edit</a></header><article><div><span><p><img src="/docs/assets/brand/aragonos.png" alt=""></p>
 <p><strong>aragonOS</strong> is a <strong>smart contract framework</strong> for building DAOs, dapps and protocols.</p>
-<p>Its architecture is based on the idea of a decentralized organization being the aggregate of multiple components (called applications) and a pillar that is the <strong>Kernel</strong>, which governs <a href="/docs/acl-intro.html">how these applications can talk to each other</a> and how other entities can interact with them.</p>
-<p>aragonOS provides:</p>
+<p>Its architecture is based on the idea of a decentralized organization being the aggregate of multiple components (called applications) and a pillar that is the <strong>Kernel</strong> which governs <a href="/docs/acl-intro.html">how these applications can talk to each other</a> and how other entities can interact with them.</p>
+<p>aragonOS provides the following functionality:</p>
 <ul>
-<li><strong>Upgreadability</strong>: Smart contracts can be <strong>upgraded to a newer version</strong>. Example: <em>Fixing a bug or adding a feature</em></li>
-<li><strong>Permission control</strong>: By using the <code>auth</code> and <code>authP</code> modifiers, you can <strong>protect functionality</strong> so only other apps or entities can access it. Example: <em>Protecting a vault so only the DAO's Voting app can initiate an action to transfer funds</em></li>
-<li><strong>Forwarders</strong>: aragonOS apps can send their intent to perform an action to other apps, so that <strong>intent is forwarded if a set of requirements are met</strong>. Example: <em>Withdrawing funds from a vault if a voting passed and a time-lock expired</em></li>
+<li><strong>Upgreadability</strong>: Smart contracts can be <strong>upgraded to a newer version</strong>. Example: <em>Fixing a bug or adding a feature</em>.</li>
+<li><strong>Permission control</strong>: By using the <code>auth</code> and <code>authP</code> modifiers you can <strong>protect functionality</strong> so only other apps or entities can access it. Example: <em>Protecting a vault so only the DAO's Voting app can initiate an action to transfer funds</em>.</li>
+<li><strong>Forwarders</strong>: aragonOS apps can send their intent to perform an action to other apps so that <strong>intent is forwarded if a set of requirements are met</strong>. Example: <em>Withdrawing funds from a vault if a vote passed and a time-lock expired</em>.</li>
 </ul>
-<p>All the above makes it very simple for aragonOS apps to incorporate <strong>governance</strong>. You just need to add a voting app, plug permissions the right way, and you are ready to go!</p>
+<p>All the above makes it very simple for aragonOS apps to incorporate <strong>governance</strong>. You just need to add a voting app, configure permissions the right way, and you are ready to go!</p>
 <p>Useful reads:</p>
 <ul>
 <li><a href="/docs/tutorial.html">Your first Aragon app tutorial</a></li>
