@@ -40,7 +40,7 @@ class Help extends React.Component {
           <div className="post">
             <header className="postHeader">
               <h2>Need help?</h2>
-              <p>You can reach out to Aragon core contributors and community members</p>
+      <p>If you need help, please reach out to Aragon core contributors and community members.</p>
             </header>
             <br/>
             <h3>Join the community chat</h3>
@@ -49,15 +49,15 @@ class Help extends React.Component {
             </p>
             <br/>
             <h3>Open an issue</h3>
-            <p>If you found a bug or you have feedback, you can create an issue on GitHub. These are the issues pages for the following repos:</p>
+      <p>If you found a bug or you have feedback, you can create an issue on the relevant GitHub repo:</p>
             <ul>
-                <li><a href="https://github.com/aragon/hack/issues">aragon/hack</a>: Issues for this documentation</li>
-                <li><a href="https://github.com/aragon/aragon-cli/issues">aragon/aragon-cli</a>: Issues for the CLI</li>
-                <li><a href="https://github.com/aragon/aragonos/issues">aragon/aragonOS</a>: Issues for aragonOS</li>
-                <li><a href="https://github.com/aragon/aragon.js/issues">aragon/aragon.js</a>: Issues for aragon.js</li>
-                <li><a href="https://github.com/aragon/aragon-ui/issues">aragon/aragon-ui</a>: Issues for Aragon UI</li>
-                <li><a href="https://github.com/aragon/aragon/issues">aragon/aragon</a>: Issues for the dapp</li>
-                <li><a href="https://github.com/aragon/aragon-apps/issues">aragon/aragon-apps</a>: Issues with the apps, like the Token Manager, Finance, etc.</li>
+                <li><a href="https://github.com/aragon/hack/issues">aragon/hack</a>: This documentation website</li>
+                <li><a href="https://github.com/aragon/aragon-cli/issues">aragon/aragon-cli</a>: The Aragon CLI</li>
+                <li><a href="https://github.com/aragon/aragonos/issues">aragon/aragonOS</a>: aragonOS</li>
+                <li><a href="https://github.com/aragon/aragon.js/issues">aragon/aragon.js</a>: aragon.js</li>
+                <li><a href="https://github.com/aragon/aragon-ui/issues">aragon/aragon-ui</a>: Aragon UI</li>
+                <li><a href="https://github.com/aragon/aragon/issues">aragon/aragon</a>: The Aragon dapp</li>
+      <li><a href="https://github.com/aragon/aragon-apps/issues">aragon/aragon-apps</a>: Aragon apps: the Token Manager, Finance, etc.</li>
             </ul>
           </div>
         </Container>
