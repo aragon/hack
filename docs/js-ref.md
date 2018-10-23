@@ -35,13 +35,13 @@ A Javascript library to interact with aragonOS by handling transaction pathing, 
 ES6
 
 ```js
-import AragonApp from "@aragon/client"
+import AragonApp from '@aragon/client'
 ```
 
 ES5 (CommonJS)
 
 ```js
-const AragonApp = require("@aragon/client").default
+const AragonApp = require('@aragon/client').default
 ```
 
 ### AragonApp
@@ -71,7 +71,7 @@ app.increment()
 **Example**
 
 ```js
-import AragonApp, { providers } from "@aragon/client"
+import AragonApp, { providers } from '@aragon/client'
 
 // The default provider should be used in background scripts
 const backgroundScriptOfApp = new AragonApp()
@@ -203,10 +203,10 @@ const state$ = app.store((state, event) => {
   if (state === null) state = 0
 
   switch (event.event) {
-    case "Increment":
+    case 'Increment':
       state++
       return state
-    case "Decrement":
+    case 'Decrement':
       state--
       return state
   }
@@ -246,7 +246,7 @@ Perform a call on the app's smart contract.
 
 ```js
 // Calls the smart contract's `balanceOf` method with the specified account address
-app.call("balanceOf", accountAddress).subscribe(balance => console.log(`The balance of the account is ${balance}`))
+app.call('balanceOf', accountAddress).subscribe(balance => console.log(`The balance of the account is ${balance}`))
 ```
 
 ### notify
@@ -332,7 +332,7 @@ A provider that communicates through the [`Window PostMessage API`](https://deve
 **Example**
 
 ```js
-const aragon = new Aragon("0xdeadbeef")
+const aragon = new Aragon('0xdeadbeef')
 
 // Initialises the wrapper and logs the installed apps
 aragon.init(() => {
@@ -435,7 +435,7 @@ Furthermore, background scripts create a nice separation of concerns - your back
 First you need to instantiate an instance of the AragonApp class from @aragon/client.
 
 ```js
-import Aragon from "@aragon/client"
+import Aragon from '@aragon/client'
 const app = new Aragon()
 ```
 
@@ -448,7 +448,7 @@ For example, if our built background script was located at dist/script.js, we wo
 ```json
 {
   // name etc.
-  "script": "/dist/script.js"
+  'script': '/dist/script.js'
 }
 ```
 
@@ -462,10 +462,10 @@ const state$ = app.store((state, event) => {
   if (state === null) state = 0
 
   switch (event.event) {
-    case "Increment":
+    case 'Increment':
       state++
       return state
-    case "Decrement":
+    case 'Decrement':
       state--
       return state
   }

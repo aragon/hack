@@ -210,8 +210,8 @@ Now that transfer() is exposed lets use it!
 Here is our Vault.js code
 
 ```js
-const ACL = artifacts.require("ACL")
-const Kernel = artifacts.require("Kernel")
+const ACL = artifacts.require('ACL')
+const Kernel = artifacts.require('Kernel')
 
 let kernel,
   app,
@@ -223,7 +223,7 @@ const granted = accounts[1]
 
 let role = null
 const receipt = await factory.newDAO(permissionsRoot)
-app = receipt.logs.filter(l => l.event == "DeployDAO")[0].args.dao
+app = receipt.logs.filter(l => l.event == 'DeployDAO')[0].args.dao
 
 kernel = Kernel.at(app)
 
@@ -233,12 +233,12 @@ acl = ACL.at(await kernel.acl())
 const test = async () => {
   let userOne = accounts[3]
   let userTwo = accounts[4]
-  let aclAddress = "0x3292" // this is the acl address
-  let vaultApp = "0x111" //vault app address
-  let roleAdd = "ADD_APPS" // role to add applications
-  let roleTransfer = "TRANSFER_ROLE" // role to add applications
+  let aclAddress = '0x3292' // this is the acl address
+  let vaultApp = '0x111' //vault app address
+  let roleAdd = 'ADD_APPS' // role to add applications
+  let roleTransfer = 'TRANSFER_ROLE' // role to add applications
 
-  let baseNamespace = "0x1212" //this is the Base namespace
+  let baseNamespace = '0x1212' //this is the Base namespace
 
   //grant userOne permission to add the vault app
   await acl.grantPermissionP(userOne, app, roleAdd, { from: granted })
