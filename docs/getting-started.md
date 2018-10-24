@@ -4,7 +4,7 @@ title: Getting started
 sidebar_label: Getting started
 ---
 
-### What's Aragon and what it allows
+### What is Aragon and what does it do
 ---
 
 Aragon is a project to **empower freedom** by creating tools for **decentralized governance**.
@@ -16,3 +16,45 @@ The Aragon stack helps you develop software for **human organization**. From the
 ![](/docs/assets/core.png)
 
 > Example of a decentralized, censorship-resistant, good-looking voting app on Aragon
+
+
+What you need to get started building with Aragon:
+
+- [Environment setup](#environment-setup)
+- [Quick start](#quick-start)
+- [Next steps](#next)
+
+
+## Environment setup
+
+**Node version**
+
+Make sure you have at least Node v.8.0.
+
+**Metamask**
+
+We recommend using the [Metamask browser extentsion](https://metamask.io/) to send transactions to the blockchain.
+
+**Install the Aragon CLI**
+
+From the command line run:
+
+```
+npm i -g @aragon/cli
+```
+
+Once we have this package installed we can start building DAOs.
+
+## Quick start
+
+To create your first DAO run:
+
+```
+aragon init foo.aragonpm.eth
+```
+
+Congrats you have just created a DAO! It’s running on your local network and you can check it out by going to [localhost:3001](http://localhost:3001)
+
+## Next steps
+
+Now that you’ve built a DAO let's take a look at the docs or you can jump into the [tutorial](/docs/tutorial.html).
