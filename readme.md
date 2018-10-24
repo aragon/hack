@@ -1,4 +1,4 @@
-# Hack docs
+# Instructions for running these docs
 
 
 ### Running local instance of these docs
