@@ -20,16 +20,14 @@
             nav.classList.toggle('docsSliderActive');
           };
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/js-ref.md" target="_blank" rel="noreferrer noopener">Edit</a></header><article><div><span><p><img src="/docs/assets/brand/aragonjs.png" alt=""></p>
-<h2><a class="anchor" aria-hidden="true" id="top-level-exports"></a><a href="#top-level-exports" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Top-Level Exports</h2>
+<p>A Javascript library to interact with aragonOS by handling transaction pathing, upgradeability and state of the contracts.</p>
 <ul>
-<li><a href="#aragonapp">AragonApp([provider])</a></li>
-<li><a href="#providers">providers</a>
-<ul>
-<li><a href="#messageportmessage">MessagePortMessage([target])</a></li>
-<li><a href="#windowmessage">WindowMessage([target])</a></li>
-</ul></li>
+<li><a href="#client">Client</a></li>
+<li><a href="#wrapper">Wrapper</a></li>
+<li><a href="#state-1">State</a></li>
 </ul>
-<h2><a class="anchor" aria-hidden="true" id="app-api"></a><a href="#app-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>App API</h2>
+<h2><a class="anchor" aria-hidden="true" id="client"></a><a href="#client" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Client</h2>
+<p><strong>App API</strong></p>
 <ul>
 <li><a href="#aragonapp">AragonApp</a>
 <ul>
@@ -46,20 +44,20 @@
 <li><a href="#describescript">describeScript(script)</a></li>
 </ul></li>
 </ul>
-<h2><a class="anchor" aria-hidden="true" id="importing"></a><a href="#importing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Importing</h2>
-<h3><a class="anchor" aria-hidden="true" id="es6"></a><a href="#es6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ES6</h3>
+<h3><a class="anchor" aria-hidden="true" id="importing"></a><a href="#importing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Importing</h3>
+<p>ES6</p>
 <pre><code class="hljs css js"><span class="hljs-keyword">import</span> AragonApp <span class="hljs-keyword">from</span> <span class="hljs-string">'@aragon/client'</span>
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="es5-commonjs"></a><a href="#es5-commonjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ES5 (CommonJS)</h3>
+<p>ES5 (CommonJS)</p>
 <pre><code class="hljs css js"><span class="hljs-keyword">const</span> AragonApp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@aragon/client'</span>).default
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="aragonapp"></a><a href="#aragonapp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AragonApp</h2>
+<h3><a class="anchor" aria-hidden="true" id="aragonapp"></a><a href="#aragonapp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AragonApp</h3>
 <p>This class is used to communicate with the wrapper in which the app is run.</p>
 <p>Every method in this class sends an RPC message to the wrapper.</p>
 <p>The app communicates with the wrapper using a messaging provider. The default provider uses the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage">Worker PostMessage API</a>, but you may specify another provider to use (see the exported <a href="#providers">providers</a> to learn more about them).</p>
 <p>To send an intent to the wrapper (i.e. invoke a method on your smart contract), simply call it on the instance of this class as if it was a JavaScript function.</p>
 <p>For example, to invoke <code>increment</code> on your app's smart contract:</p>
-<pre><code class="hljs css js"><span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> AragonApp()
+<pre><code class="hljs css js"><span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> AragonApp();
 
 <span class="hljs-comment">// Sends an intent to the wrapper that we wish to invoke `increment` on our</span>
 <span class="hljs-comment">// app's smart contract</span>
@@ -76,9 +74,7 @@ app.increment()
 <span class="hljs-keyword">const</span> backgroundScriptOfApp = <span class="hljs-keyword">new</span> AragonApp()
 
 <span class="hljs-comment">// This instance uses a provider that should be used for front-ends</span>
-<span class="hljs-keyword">const</span> frontendOfApp = <span class="hljs-keyword">new</span> AragonApp(
-  <span class="hljs-keyword">new</span> providers.WindowMessage(<span class="hljs-built_in">window</span>.parent)
-)
+<span class="hljs-keyword">const</span> frontendOfApp = <span class="hljs-keyword">new</span> AragonApp(<span class="hljs-keyword">new</span> providers.WindowMessage(<span class="hljs-built_in">window</span>.parent))
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="accounts"></a><a href="#accounts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>accounts</h3>
 <p>Get an array of accounts that the user controls over time.</p>
@@ -115,12 +111,10 @@ app.increment()
 <pre><code class="hljs css js"><span class="hljs-keyword">const</span> token = app.external(tokenAddress, tokenJsonInterface)
 
 <span class="hljs-comment">// Retrieve the symbol of the token</span>
-token.symbol()
-    .subscribe(<span class="hljs-function">(<span class="hljs-params">symbol</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The token symbol is <span class="hljs-subst">${symbol}</span>`</span>))
+token.symbol().subscribe(<span class="hljs-function"><span class="hljs-params">symbol</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The token symbol is <span class="hljs-subst">${symbol}</span>`</span>))
 
 <span class="hljs-comment">// Retrieve the token balance of an account</span>
-token.balanceOf(someAccountAddress)
-    .subscribe(<span class="hljs-function">(<span class="hljs-params">balance</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The balance of the account is <span class="hljs-subst">${balance}</span>`</span>))
+token.balanceOf(someAccountAddress).subscribe(<span class="hljs-function"><span class="hljs-params">balance</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The balance of the account is <span class="hljs-subst">${balance}</span>`</span>))
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="cache"></a><a href="#cache" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cache</h3>
 <p>Set a value in the application cache.</p>
@@ -147,7 +141,7 @@ token.balanceOf(someAccountAddress)
 <p><strong>Parameters</strong></p>
 <ol>
 <li><code>reducer</code> (<code>Function</code>): A function that reduces events to a state. This can return a Promise that resolves to a new state.</li>
-<li>[<code>events</code>] (<code>Array&lt;Observable&gt;</code>): An optional array of observables to merge in with the internal events observable.</li>
+<li><a href="`Array&lt;Observable&gt;`"><code>events</code></a>: An optional array of observables to merge in with the internal events observable.</li>
 </ol>
 <p><strong>Returns</strong></p>
 <p>(<a href="https://github.com/tc39/proposal-observable"><code>Observable</code></a>): An observable of application states.</p>
@@ -156,7 +150,7 @@ token.balanceOf(someAccountAddress)
 <pre><code class="hljs css js"><span class="hljs-keyword">const</span> state$ = app.store(<span class="hljs-function">(<span class="hljs-params">state, event</span>) =&gt;</span> {
   <span class="hljs-comment">// Initial state is always null</span>
   <span class="hljs-keyword">if</span> (state === <span class="hljs-literal">null</span>) state = <span class="hljs-number">0</span>
-  
+
   <span class="hljs-keyword">switch</span> (event.event) {
     <span class="hljs-keyword">case</span> <span class="hljs-string">'Increment'</span>:
       state++
@@ -165,7 +159,7 @@ token.balanceOf(someAccountAddress)
       state--
       <span class="hljs-keyword">return</span> state
   }
-  
+
   <span class="hljs-comment">// We must always return a state, even if unaltered</span>
   <span class="hljs-keyword">return</span> state
 })
@@ -173,9 +167,12 @@ token.balanceOf(someAccountAddress)
 <p>A reducer that also reduces events from an external smart contract</p>
 <pre><code class="hljs css js"><span class="hljs-keyword">const</span> token = app.external(tokenAddress, tokenJsonInterface)
 
-<span class="hljs-keyword">const</span> state$ = app.store(<span class="hljs-function">(<span class="hljs-params">state, event</span>) =&gt;</span> {
-  <span class="hljs-comment">// ...</span>
-}, [token.events()])
+<span class="hljs-keyword">const</span> state$ = app.store(
+  <span class="hljs-function">(<span class="hljs-params">state, event</span>) =&gt;</span> {
+    <span class="hljs-comment">// ...</span>
+  },
+  [token.events()]
+)
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="call"></a><a href="#call" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>call</h3>
 <p>Perform a call on the app's smart contract.</p>
@@ -188,8 +185,7 @@ token.balanceOf(someAccountAddress)
 <p>(<a href="https://github.com/tc39/proposal-observable"><code>Observable</code></a>): An observable that emits the result of the call.</p>
 <p><strong>Example</strong></p>
 <pre><code class="hljs css js"><span class="hljs-comment">// Calls the smart contract's `balanceOf` method with the specified account address</span>
-app.call(<span class="hljs-string">'balanceOf'</span>, accountAddress)
-    .subscribe(<span class="hljs-function">(<span class="hljs-params">balance</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The balance of the account is <span class="hljs-subst">${balance}</span>`</span>))
+app.call(<span class="hljs-string">'balanceOf'</span>, accountAddress).subscribe(<span class="hljs-function"><span class="hljs-params">balance</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The balance of the account is <span class="hljs-subst">${balance}</span>`</span>))
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="notify"></a><a href="#notify" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>notify</h3>
 <p><strong>NOTE: This call is not currently handled by the wrapper</strong></p>
@@ -198,8 +194,8 @@ app.call(<span class="hljs-string">'balanceOf'</span>, accountAddress)
 <ol>
 <li><code>title</code> (<code>String</code>): The title of the notification.</li>
 <li><code>body</code> (<code>String</code>): The body of the notification.</li>
-<li>[<code>context</code>] (<code>Object</code>): An optional context that will be sent back to the app if the notification is clicked.</li>
-<li>[<code>date</code>] (<code>Date</code>): An optional date that specifies when the notification originally occured.</li>
+<li><a href="`Object`"><code>context</code></a>: An optional context that will be sent back to the app if the notification is clicked.</li>
+<li><a href="`Date`"><code>date</code></a>: An optional date that specifies when the notification originally occured.</li>
 </ol>
 <p><strong>Returns</strong></p>
 <p>None.</p>
@@ -214,6 +210,13 @@ app.call(<span class="hljs-string">'balanceOf'</span>, accountAddress)
 <p><strong>Returns</strong></p>
 <p>(<a href="https://github.com/tc39/proposal-observable"><code>Observable</code></a>): An observable that emits app contexts as they are received.</p>
 <h3><a class="anchor" aria-hidden="true" id="describescript"></a><a href="#describescript" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>describeScript</h3>
+<ul>
+<li><a href="#providers">providers</a>
+<ul>
+<li><a href="#messageportmessage">MessagePortMessage([target])</a></li>
+<li><a href="#windowmessage">WindowMessage([target])</a></li>
+</ul></li>
+</ul>
 <p>Decodes an EVM callscript and tries to describe the transaction path that the script encodes.</p>
 <p><strong>Parameters</strong></p>
 <ol>
@@ -226,15 +229,129 @@ app.call(<span class="hljs-string">'balanceOf'</span>, accountAddress)
 <p>A provider that communicates through the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage"><code>WebWorker PostMessage API</code></a>.</p>
 <p><strong>Parameters</strong></p>
 <ol>
-<li>[<code>target</code>] (<code>Object</code>): The object (that implements the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage">Worker PostMessage API</a>) to send messages to.</li>
+<li><a href="`Object`"><code>target</code></a>: The object (that implements the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage">Worker PostMessage API</a>) to send messages to.</li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="windowmessage"></a><a href="#windowmessage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WindowMessage</h3>
 <p>A provider that communicates through the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"><code>Window PostMessage API</code></a>.</p>
 <p><strong>Parameters</strong></p>
 <ol>
-<li>[<code>target</code>] (<code>Object</code>): The object (that implements the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage">Window PostMessage API</a>) to send messages to.</li>
+<li><a href="`Object`"><code>target</code></a>: The object (that implements the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage">Window PostMessage API</a>) to send messages to.</li>
 </ol>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="aragonos-ref.html">← aragonOS reference documentation</a><a class="docs-next button" href="aragonjs-ref-clients.html">aragon.js reference documentation for clients/wrappers →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#top-level-exports">Top-Level Exports</a></li><li><a href="#app-api">App API</a></li><li><a href="#importing">Importing</a><ul class="toc-headings"><li><a href="#es6">ES6</a></li><li><a href="#es5-commonjs">ES5 (CommonJS)</a></li></ul></li><li><a href="#aragonapp">AragonApp</a><ul class="toc-headings"><li><a href="#accounts">accounts</a></li><li><a href="#identify">identify</a></li><li><a href="#events">events</a></li><li><a href="#external">external</a></li><li><a href="#cache">cache</a></li><li><a href="#state">state</a></li><li><a href="#store">store</a></li><li><a href="#call">call</a></li><li><a href="#notify">notify</a></li><li><a href="#context">context</a></li><li><a href="#describescript">describeScript</a></li></ul></li><li><a href="#providers">Providers</a><ul class="toc-headings"><li><a href="#messageportmessage">MessagePortMessage</a></li><li><a href="#windowmessage">WindowMessage</a></li></ul></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bXwoTT" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/isotype.svg" alt="Aragon Developer Portal" width="66" height="58"/></a><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/aragonjs-ref.html">aragon.js</a><a href="/docs/aragonui-intro.html">Aragon UI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h2><a class="anchor" aria-hidden="true" id="wrapper"></a><a href="#wrapper" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wrapper</h2>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>daoAddress: string The address of the DAO.</li>
+<li>options Object Wrapper options. (optional, default {})
+<ul>
+<li>options.provider any The Web3 provider to use for blockchain communication (optional, default <a href="ws://rinkeby.aragon.network:8546">ws://rinkeby.aragon.network:8546</a>)</li>
+<li>options.ensRegistryAddress String The address of the ENS registry (optional, default null)</li>
+</ul></li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css js"><span class="hljs-keyword">const</span> aragon = <span class="hljs-keyword">new</span> Aragon(<span class="hljs-string">'0xdeadbeef'</span>)
+
+<span class="hljs-comment">// Initialises the wrapper and logs the installed apps</span>
+aragon.init(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  aragon.apps.subscribe(<span class="hljs-function"><span class="hljs-params">apps</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(apps))
+})
+</code></pre>
+<p><strong>API</strong></p>
+<p><strong>init</strong>
+Initialise the wrapper.</p>
+<p>Returns Promise<void></p>
+<p><strong>initAcl</strong>
+Initialise the ACL.</p>
+<p>Returns Promise<void></p>
+<p><strong>getAppProxyValues</strong>
+Get proxy metadata (appId, address of the kernel, ...).</p>
+<p>Parameters</p>
+<ul>
+<li>proxyAddress string The address of the proxy to get metadata from</li>
+<li>Returns Promise<code>&lt;Object&gt;</code></li>
+</ul>
+<p><strong>isApp</strong>
+Check if an object is an app.</p>
+<p>Parameters</p>
+<ul>
+<li>app Object</li>
+<li>Returns boolean</li>
+</ul>
+<p><strong>initApps</strong>
+Initialise apps observable.</p>
+<p>Returns void</p>
+<p><strong>initForwarders</strong>
+Initialise forwarder observable.</p>
+<p>Returns void</p>
+<p><strong>runApp</strong>
+Run an app.</p>
+<p>Parameters</p>
+<ul>
+<li><p>sandbox Object An object that is compatible with the PostMessage API.</p></li>
+<li><p>proxyAddress string The address of the app proxy.</p>
+<p>Returns Object</p></li>
+</ul>
+<p><strong>getAccounts</strong></p>
+<p>Get the available accounts for the current user.</p>
+<p>Returns Promise&lt;Array<string>&gt; An array of addresses</p>
+<p><strong>getTransactionPath</strong></p>
+<p>Calculate the transaction path for a transaction to destination that invokes methodName with params.</p>
+<p>Parameters</p>
+<ul>
+<li>destination string</li>
+<li>methodName string</li>
+<li>params Array<any></li>
+</ul>
+<p>Returns <code>Array&lt;Object&gt;</code> An array of Ethereum transactions that describe each step in the path</p>
+<p><strong>calculateTransactionPath</strong></p>
+<p>Calculate the transaction path for a transaction to destination that invokes methodName with params.</p>
+<p>Parameters</p>
+<ul>
+<li>sender string</li>
+<li>destination string</li>
+<li>methodName string</li>
+<li>params Array<any></li>
+</ul>
+<p>Returns <code>Array&lt;Object&gt;</code> An array of Ethereum transactions that describe each step in the path</p>
+<h2><a class="anchor" aria-hidden="true" id="state-1"></a><a href="#state-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>State</h2>
+<p>This document outlines how to write background scripts for your app and why you might want to do so.</p>
+<p>Background scripts are parts of your app that are always run as soon as the Aragon Dapp is opened.</p>
+<p>This is hugely useful if you want to keep your app up to date every time a user opens your app, since you can build out your application state in the background.</p>
+<p>Furthermore, background scripts create a nice separation of concerns - your background script handles all of the state building and your app front-end is simply presentational.</p>
+<p><strong>Setup</strong></p>
+<p>First you need to instantiate an instance of the AragonApp class from @aragon/client.</p>
+<pre><code class="hljs css js"><span class="hljs-keyword">import</span> Aragon <span class="hljs-keyword">from</span> <span class="hljs-string">'@aragon/client'</span>
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Aragon()
+</code></pre>
+<p>Next, you need to specify that your app has a background script.</p>
+<p>In your manifest.json file, simply specify the script key. The value should be the path to your built background script.</p>
+<p>For example, if our built background script was located at dist/script.js, we would specify it like so:</p>
+<pre><code class="hljs css json">{
+  // name etc.
+  'script': '/dist/script.js'
+}
+</code></pre>
+<p><strong>Building State</strong></p>
+<p>All of the AragonApp methods are available to you. We highly recommend that you use AragonApp#store as it handles state caching and events subscriptions for you.</p>
+<pre><code class="hljs css js"><span class="hljs-keyword">const</span> state$ = app.store(<span class="hljs-function">(<span class="hljs-params">state, event</span>) =&gt;</span> {
+  <span class="hljs-comment">// Initial state is always null</span>
+  <span class="hljs-keyword">if</span> (state === <span class="hljs-literal">null</span>) state = <span class="hljs-number">0</span>
+
+  <span class="hljs-keyword">switch</span> (event.event) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'Increment'</span>:
+      state++
+      <span class="hljs-keyword">return</span> state
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'Decrement'</span>:
+      state--
+      <span class="hljs-keyword">return</span> state
+  }
+
+  <span class="hljs-comment">// We must always return a state, even if unaltered</span>
+  <span class="hljs-keyword">return</span> state
+}
+</code></pre>
+<p><strong>Sharing State</strong></p>
+<p>If you use AragonApp#store, then state will be automatically shared with your front-end in real-time (via AragonApp#state).</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="aragonos-ref.html">← aragonOS reference documentation</a><a class="docs-next button" href="aragonjs-ref-clients.html">aragon.js reference documentation for clients/wrappers →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#client">Client</a><ul class="toc-headings"><li><a href="#importing">Importing</a></li><li><a href="#aragonapp">AragonApp</a></li><li><a href="#accounts">accounts</a></li><li><a href="#identify">identify</a></li><li><a href="#events">events</a></li><li><a href="#external">external</a></li><li><a href="#cache">cache</a></li><li><a href="#state">state</a></li><li><a href="#store">store</a></li><li><a href="#call">call</a></li><li><a href="#notify">notify</a></li><li><a href="#context">context</a></li><li><a href="#describescript">describeScript</a></li></ul></li><li><a href="#providers">Providers</a><ul class="toc-headings"><li><a href="#messageportmessage">MessagePortMessage</a></li><li><a href="#windowmessage">WindowMessage</a></li></ul></li><li><a href="#wrapper">Wrapper</a></li><li><a href="#state-1">State</a></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bXwoTT" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/isotype.svg" alt="Aragon Developer Portal" width="66" height="58"/></a><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/aragonjs-ref.html">aragon.js</a><a href="/docs/aragonui-intro.html">Aragon UI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
               var search = docsearch({
                 
                 apiKey: '9dff0383c32107d6c174f15e259bb23a',
