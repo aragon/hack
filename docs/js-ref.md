@@ -11,6 +11,7 @@ A Javascript library to interact with aragonOS by handling transaction pathing, 
 
 - [Client](#client)
 - [Wrapper](#wrapper)
+- [Providers](#providers)
 - [State](#state-1)
 
 ## Client
