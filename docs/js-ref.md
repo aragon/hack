@@ -11,6 +11,7 @@ A Javascript library to interact with aragonOS by handling transaction pathing, 
 
 - [Client](#client)
 - [Wrapper](#wrapper)
+- [Providers](#providers)
 - [State](#state-1)
 
 ## Client
@@ -30,6 +31,7 @@ A Javascript library to interact with aragonOS by handling transaction pathing, 
   - [context()](#context)
   - [describeScript(script)](#describescript)
 
+---
 ### Importing
 
 ES6
@@ -44,6 +46,7 @@ ES5 (CommonJS)
 const AragonApp = require('@aragon/client').default
 ```
 
+---
 ### AragonApp
 
 This class is used to communicate with the wrapper in which the app is run.
@@ -80,6 +83,7 @@ const backgroundScriptOfApp = new AragonApp()
 const frontendOfApp = new AragonApp(new providers.WindowMessage(window.parent))
 ```
 
+---
 ### accounts
 
 Get an array of accounts that the user controls over time.
@@ -92,6 +96,7 @@ None.
 
 ([`Observable`](https://github.com/tc39/proposal-observable)): An [RxJS observable](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) that emits an array of account addresses every time a change is detected.
 
+---
 ### identify
 
 Add an app identifier.
@@ -108,6 +113,7 @@ An example of a good app identifier would be the token symbol of the token that 
 
 None.
 
+---
 ### events
 
 Listens for events on your app's smart contract from the last unhandled block.
@@ -120,6 +126,7 @@ None.
 
 ([`Observable`](https://github.com/tc39/proposal-observable)): An [RxJS observable](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) that emits [Web3 events](https://web3js.readthedocs.io/en/1.0/glossary.html#specification).
 
+---
 ### external
 
 Creates a handle to interact with an external contract (i.e. a contract that is **not** your app's smart contract, such as a token).
@@ -145,6 +152,7 @@ token.symbol().subscribe(symbol => console.log(`The token symbol is ${symbol}`))
 token.balanceOf(someAccountAddress).subscribe(balance => console.log(`The balance of the account is ${balance}`))
 ```
 
+---
 ### cache
 
 Set a value in the application cache.
@@ -158,6 +166,7 @@ Set a value in the application cache.
 
 (`any`): This method passes through `value`
 
+---
 ### state
 
 Observe the cached application state over time.
@@ -172,6 +181,7 @@ None.
 
 ([`Observable`](https://github.com/tc39/proposal-observable)): An [RxJS observable](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) that emits the application state every time it changes. The type of the emitted values is application specific.
 
+---
 ### store
 
 Listens for events, passes them through `reducer`, caches the resulting state and re-emits that state for easy chaining.
@@ -229,6 +239,7 @@ const state$ = app.store(
 )
 ```
 
+---
 ### call
 
 Perform a call on the app's smart contract.
@@ -249,6 +260,7 @@ Perform a call on the app's smart contract.
 app.call('balanceOf', accountAddress).subscribe(balance => console.log(`The balance of the account is ${balance}`))
 ```
 
+---
 ### notify
 
 **NOTE: This call is not currently handled by the wrapper**
@@ -266,6 +278,7 @@ Sends a notification.
 
 None.
 
+---
 ### context
 
 **NOTE: The wrapper does not currently send contexts to apps**
@@ -286,6 +299,7 @@ None.
 
 ([`Observable`](https://github.com/tc39/proposal-observable)): An observable that emits app contexts as they are received.
 
+---
 ### describeScript
 
 - [providers](#providers)
@@ -302,8 +316,10 @@ Decodes an EVM callscript and tries to describe the transaction path that the sc
 
 ([`Observable`](https://github.com/tc39/proposal-observable)): An observable that emits the described transaction path. The emitted transaction path is an array of objects, where each item has a `destination`, `data` and `description` key.
 
+---
 ## Providers
 
+---
 ### MessagePortMessage
 
 A provider that communicates through the [`WebWorker PostMessage API`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage).
@@ -312,6 +328,7 @@ A provider that communicates through the [`WebWorker PostMessage API`](https://d
 
 1. [`target`](`Object`): The object (that implements the [Worker PostMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage)) to send messages to.
 
+---
 ### WindowMessage
 
 A provider that communicates through the [`Window PostMessage API`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
@@ -320,6 +337,7 @@ A provider that communicates through the [`Window PostMessage API`](https://deve
 
 1. [`target`](`Object`): The object (that implements the [Window PostMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)) to send messages to.
 
+---
 ## Wrapper
 
 **Parameters**
@@ -420,6 +438,7 @@ Parameters
 
 Returns `Array<Object>` An array of Ethereum transactions that describe each step in the path
 
+---
 ## State
 
 This document outlines how to write background scripts for your app and why you might want to do so.

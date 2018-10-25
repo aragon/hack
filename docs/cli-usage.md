@@ -9,6 +9,7 @@ hide_title: true
 
 The Aragon CLI (Command Line Interface) is used to create and develop Aragon apps.
 
+---
 ## Install
 
 The Aragon CLI can be installed directly from NPM:
@@ -28,9 +29,11 @@ npm link
 
 After installing, the main `aragon` executable will be available for use. It will also install the `dao` alias which is a shortcut for `aragon dao` commands.
 
+---
 ## Main commands
 
-### `aragon init`
+---
+### aragon init
 
 The `init` command will set up an Aragon app project so you can start building your app from a functional boilerplate.
 
@@ -46,7 +49,8 @@ aragon init [app-name] [boilerplate]
 	- `react-kit`: it is a variation of the `react` boilerplate that also comes with a DAO Kit which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Kits [here](kits-intro.md).
 	- `bare`: this boilerplate will just set up your app directory structure but contains no functional code.
 
-### `aragon run`
+---
+### aragon run
 
 The `run` command takes care of completely setting up the environment needed for running your Aragon app. These are all the things that running `aragon run` will do for you:
 
@@ -85,7 +89,8 @@ However, when **making changes to the background script** of your app, a refresh
 
 The [React boilerplate](https://github.com/aragon/aragon-react-boilerplate) supports serving your app using HTTP.
 
-### `aragon devchain`
+---
+### aragon devchain
 
 The `devchain` command is used for starting a local development testnet with all the required components already deployed and ready to use. It uses [aragen](https://github.com/aragon/aragen) for setting up the snapshot from which the chain starts. At any point `aragon devchain --reset` can be run which will reset the devchain to the original snapshot.
 
@@ -97,11 +102,13 @@ Options:
 - `--reset`: Resets the devchain to the snapshot.
 - `--port`: The port number where the devchain will be started.
 
-### `aragon ipfs`
+---
+### aragon ipfs
 
 The `ipfs` command is used to start an IPFS daemon. It adds some files that are needed for the first-party Aragon apps to work.
 
-### `aragon deploy`
+---
+### aragon deploy
 
 The `deploy` command can be used for deploying an Ethereum contract to the devchain.
 
@@ -113,7 +120,8 @@ Running `aragon deploy` will compile your contracts using `truffle compile` and 
 
 The `--init` arguments need to be separated by a space. They will be passed to the contract constructor on deploy. The `@ARAGON_ENS` alias can be used and it will be replaced by the address of the ENS registry in the devchain.
 
-### `aragon contracts`
+---
+### aragon contracts
 
 The `aragon contracts` command can be used to execute commands using the same [truffle](https://github.com/trufflesuite/truffle) version that the CLI uses behind the scenes to assist in compiling your app's contracts.
 
@@ -123,11 +131,13 @@ aragon contracts [command]
 
 It is equivalent to executing `npx truffle [command]`
 
+---
 ## DAO commands
 
 The `aragon dao` commands can be used for interacting with your DAO directly from the command line. These commands are also available directly using the `dao` alias.
 
-### `dao new`
+---
+### dao new
 
 Uses a DAO Kit to create a new DAO and prints its address.
 
@@ -138,7 +148,8 @@ Options:
 - `--fn-args`: The arguments that the function to create the kit is called with. Defaults to an array of arguments.
 - `--deploy-event`: The name of the event that is emitted when the DAO is created. The DAO address must be a return argument in the event log named `dao`. Defaults to `DeployInstance`.
 
-### `dao upgrade`
+---
+### dao upgrade
 
 The `dao upgrade` command upgrades all instances of an app to a newer version.
 
@@ -152,7 +163,8 @@ dao upgrade [dao-addr] [app-apm-repo] [repo-version]
 
 aragonOS protects against having different instances of a particular app running with different versions (e.g. all the Voting app instances run the same version).  Performing a `dao upgrade` will upgrade all instances of the app to the version specified.
 
-### `dao install`
+---
+### dao install
 
 The `dao install` command installs an instance of an app in the DAO.
 
@@ -171,7 +183,8 @@ The `dao install` command will create an instance of the app and assign permissi
 
 As explained in the [upgrade command](#dao-upgrade), all app instances of the same app in DAO must run the same version, so installing an app with a version will effectively upgrade all app instances to this version.
 
-### `dao apps`
+---
+### dao apps
 
 Used to inspect all the installed apps in a DAO.
 
@@ -181,8 +194,8 @@ dao apps [dao-addr]
 
 - `dao-addr`: The main address of the DAO (Kernel).
 
-
-### `dao exec`
+---
+### dao exec
 
 Performs transactions in your DAO directly from the CLI. It supports [transaction pathing](forwarding-intro.md) so if your account cannot perform the action directly it will try to find how to do it (e.g. creating a vote).
 
@@ -195,7 +208,8 @@ dao exec [dao-addr] [app-proxy-addr] [method] [argument1 ... argumentN]
 - `method`: Name of the method being executed in the app (e.g. `withdrawTokens`).
 - `arguments`: The arguments that the method will be executed with (each separated by a space).
 
-### `dao acl`
+---
+### dao acl
 
 Used to inspect the ACL state in a DAO to check its permissions.
 
@@ -204,7 +218,8 @@ dao acl [dao-addr]
 ```
 - `dao-addr`: The main address of the DAO (Kernel).
 
-### `dao acl create`
+---
+### dao acl create
 
 Used to create a permission in the ACL. Can only be used if the permission hasn't been created before. The `manager` of the permission can use `dao acl grant` and `dao acl revoke` to manage the permission.
 
@@ -218,7 +233,8 @@ dao acl create [dao-addr] [app-proxy-addr] [role] [entity] [manager]
 - `entity`: The address of the entity that is being granted the permission by creating it.
 - `manager`: The address of the entity that will be able to grant that permission or revoke it.
 
-### `dao acl grant`
+---
+### dao acl grant
 
 Used to grant a permission in the ACL.
 
@@ -231,7 +247,8 @@ dao acl grant [dao-addr] [app-proxy-addr] [role] [entity]
 - `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
 - `entity`: The address of entity that is being granted the permission.
 
-### `dao acl revoke`
+---
+### dao acl revoke
 
 Used to revoke a permission in the ACL.
 
@@ -244,7 +261,8 @@ dao acl revoke [dao-addr] [app-proxy-addr] [role] [entity]
 - `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
 - `entity`: The address of entity that is being revoked the permission.
 
-### `dao acl set-manager`
+---
+### dao acl set-manager
 
 Used to change the manager of a permission in the ACL.
 
@@ -257,7 +275,8 @@ dao acl set-manager [dao-addr] [app-proxy-addr] [role] [manager]
 - `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
 - `manager`: The new manager for the permission.
 
-### `dao acl remove-manager`
+---
+### dao acl remove-manager
 
 Used to remove the manager of a permission in the ACL. The permission can be created again after removing its manager.
 
@@ -269,14 +288,16 @@ dao acl remove-manager [dao-addr] [app-proxy-addr] [role]
 - `app-proxy-addr`: The address of the app whose permissions are being managed. You can find the proxy address by checking [`dao apps`](#dao-apps).
 - `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
 
+---
+## APM commands
 
-## APM commands
-
-### `aragon apm versions`
+---
+### aragon apm versions
 
 The `aragon apm versions` command shows all the previously published versions of this package.
 
-### `aragon apm publish`
+---
+### aragon apm publish
 
 The `aragon apm publish` command publishes  a new version to the APM repo.
 
@@ -302,11 +323,13 @@ The command has the following parameters:
 - `--http`: The URI for the HTTP server that will be serving your app files. See [instructions on running from HTTP](#running-your-app-from-a-development-http-server) for more information.
 - `http-served-from`: Path to the directory that the HTTP server exposes. Some artifacts are generated and placed in this directory during the publishing process of your app.
 
+---
 ## Global configuration
 
-### The `arapp.json` file
+---
+### The arapp.json file
 
-The `arapp.json` file contains metadata for your app. You can check an [example `arapp.json`](https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json) file to see what fields need to be present:
+The arapp.json file contains metadata for your app. You can check an [example arapp.json](https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json) file to see what fields need to be present:
 
 - `path`: The path to the main contract in your app.
 - `roles`: An array of all the roles that your app has. Each role has the following properties:
@@ -319,12 +342,15 @@ The `arapp.json` file contains metadata for your app. You can check an [example 
     - `network`: The network to use for this environment.
     - `registry`: (optional) The address of the ENS registry for this environment. Defaults to the default ENS registry for this network.
 
+---
 ## Troubleshooting/FAQ
 
+---
 ### Resetting the devchain
 
 After upgrading the CLI, or if unexpected errors are being experienced, [resetting the devchain](#aragon-devchain) (by doing `aragon devchain --reset` or `aragon run --reset`) is sometimes useful as it will restart the chain from the snapshot.
 
+---
 ### Using Metamask
 
 The easiets way to interact with your DAO is using [Metamask](https://metamask.io/). In order to do so, you must make sure that:
@@ -333,6 +359,7 @@ The easiets way to interact with your DAO is using [Metamask](https://metamask.i
 - Private network (_Localhost 8545_) is chosen
 - The first account provided by `aragon run` or `aragon devchain` is imported and selected. To import the account, copy the private key (something like `a8a54b2d8197bc0b19bb8a084031be71835580a01e70a45a13babd16c9bc1563`), go to the Metamask accounts upper icon (to the left of the hamburguer button), scroll down, click on "Import account" and paste the value you copied.
 
+---
 ### Issues sending transactions
 
 Because of the way that Metamask caches the account nonces for the different networks, you may be getting the following error when interacting with your app:
@@ -343,7 +370,8 @@ Error: the tx doesn't have the correct nonce. account has nonce of: 157 tx has n
 
 The workaround is to switch to a different network (e.g. Rinkeby) and then switch back to the _Localhost 8545_ network.  This will refresh Metamask's account nonce cache. Sending transactions should now succeed.
 
-### The `~/.aragon` directory
+---
+### The ~/.aragon directory
 
 The Aragon CLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon Core client.
 
