@@ -24,6 +24,7 @@
 <ul>
 <li><a href="#client">Client</a></li>
 <li><a href="#wrapper">Wrapper</a></li>
+<li><a href="#providers">Providers</a></li>
 <li><a href="#state-1">State</a></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="client"></a><a href="#client" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Client</h2>
@@ -44,6 +45,7 @@
 <li><a href="#describescript">describeScript(script)</a></li>
 </ul></li>
 </ul>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="importing"></a><a href="#importing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Importing</h3>
 <p>ES6</p>
 <pre><code class="hljs css js"><span class="hljs-keyword">import</span> AragonApp <span class="hljs-keyword">from</span> <span class="hljs-string">'@aragon/client'</span>
@@ -51,6 +53,7 @@
 <p>ES5 (CommonJS)</p>
 <pre><code class="hljs css js"><span class="hljs-keyword">const</span> AragonApp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@aragon/client'</span>).default
 </code></pre>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="aragonapp"></a><a href="#aragonapp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AragonApp</h3>
 <p>This class is used to communicate with the wrapper in which the app is run.</p>
 <p>Every method in this class sends an RPC message to the wrapper.</p>
@@ -76,12 +79,14 @@ app.increment()
 <span class="hljs-comment">// This instance uses a provider that should be used for front-ends</span>
 <span class="hljs-keyword">const</span> frontendOfApp = <span class="hljs-keyword">new</span> AragonApp(<span class="hljs-keyword">new</span> providers.WindowMessage(<span class="hljs-built_in">window</span>.parent))
 </code></pre>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="accounts"></a><a href="#accounts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>accounts</h3>
 <p>Get an array of accounts that the user controls over time.</p>
 <p><strong>Parameters</strong></p>
 <p>None.</p>
 <p><strong>Returns</strong></p>
 <p>(<a href="https://github.com/tc39/proposal-observable"><code>Observable</code></a>): An <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS observable</a> that emits an array of account addresses every time a change is detected.</p>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="identify"></a><a href="#identify" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>identify</h3>
 <p>Add an app identifier.</p>
 <p>This identifier is used to distinguish multiple instances of your app, so choose something that provides additional context to the app instance.</p>
@@ -92,12 +97,14 @@ app.increment()
 </ol>
 <p><strong>Returns</strong></p>
 <p>None.</p>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="events"></a><a href="#events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>events</h3>
 <p>Listens for events on your app's smart contract from the last unhandled block.</p>
 <p><strong>Parameters</strong></p>
 <p>None.</p>
 <p><strong>Returns</strong></p>
 <p>(<a href="https://github.com/tc39/proposal-observable"><code>Observable</code></a>): An <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS observable</a> that emits <a href="https://web3js.readthedocs.io/en/1.0/glossary.html#specification">Web3 events</a>.</p>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="external"></a><a href="#external" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>external</h3>
 <p>Creates a handle to interact with an external contract (i.e. a contract that is <strong>not</strong> your app's smart contract, such as a token).</p>
 <p><strong>Parameters</strong></p>
@@ -116,6 +123,7 @@ token.symbol().subscribe(<span class="hljs-function"><span class="hljs-params">s
 <span class="hljs-comment">// Retrieve the token balance of an account</span>
 token.balanceOf(someAccountAddress).subscribe(<span class="hljs-function"><span class="hljs-params">balance</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The balance of the account is <span class="hljs-subst">${balance}</span>`</span>))
 </code></pre>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="cache"></a><a href="#cache" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cache</h3>
 <p>Set a value in the application cache.</p>
 <p><strong>Parameters</strong></p>
@@ -125,6 +133,7 @@ token.balanceOf(someAccountAddress).subscribe(<span class="hljs-function"><span 
 </ol>
 <p><strong>Returns</strong></p>
 <p>(<code>any</code>): This method passes through <code>value</code></p>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="state"></a><a href="#state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>state</h3>
 <p>Observe the cached application state over time.</p>
 <p>This method is also used to share state between the background script and front-end of your application.</p>
@@ -132,6 +141,7 @@ token.balanceOf(someAccountAddress).subscribe(<span class="hljs-function"><span 
 <p>None.</p>
 <p><strong>Returns</strong></p>
 <p>(<a href="https://github.com/tc39/proposal-observable"><code>Observable</code></a>): An <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS observable</a> that emits the application state every time it changes. The type of the emitted values is application specific.</p>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="store"></a><a href="#store" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>store</h3>
 <p>Listens for events, passes them through <code>reducer</code>, caches the resulting state and re-emits that state for easy chaining.</p>
 <p>This is in fact sugar on top of <a href="#state"><code>state</code></a>, <a href="#events"><code>events</code></a> and <a href="#cache"><code>cache</code></a>.</p>
@@ -174,6 +184,7 @@ token.balanceOf(someAccountAddress).subscribe(<span class="hljs-function"><span 
   [token.events()]
 )
 </code></pre>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="call"></a><a href="#call" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>call</h3>
 <p>Perform a call on the app's smart contract.</p>
 <p><strong>Parameters</strong></p>
@@ -187,6 +198,7 @@ token.balanceOf(someAccountAddress).subscribe(<span class="hljs-function"><span 
 <pre><code class="hljs css js"><span class="hljs-comment">// Calls the smart contract's `balanceOf` method with the specified account address</span>
 app.call(<span class="hljs-string">'balanceOf'</span>, accountAddress).subscribe(<span class="hljs-function"><span class="hljs-params">balance</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The balance of the account is <span class="hljs-subst">${balance}</span>`</span>))
 </code></pre>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="notify"></a><a href="#notify" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>notify</h3>
 <p><strong>NOTE: This call is not currently handled by the wrapper</strong></p>
 <p>Sends a notification.</p>
@@ -199,6 +211,7 @@ app.call(<span class="hljs-string">'balanceOf'</span>, accountAddress).subscribe
 </ol>
 <p><strong>Returns</strong></p>
 <p>None.</p>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="context"></a><a href="#context" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>context</h3>
 <p><strong>NOTE: The wrapper does not currently send contexts to apps</strong></p>
 <p>Listen for app contexts.</p>
@@ -209,6 +222,7 @@ app.call(<span class="hljs-string">'balanceOf'</span>, accountAddress).subscribe
 <p>None.</p>
 <p><strong>Returns</strong></p>
 <p>(<a href="https://github.com/tc39/proposal-observable"><code>Observable</code></a>): An observable that emits app contexts as they are received.</p>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="describescript"></a><a href="#describescript" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>describeScript</h3>
 <ul>
 <li><a href="#providers">providers</a>
@@ -224,19 +238,23 @@ app.call(<span class="hljs-string">'balanceOf'</span>, accountAddress).subscribe
 </ol>
 <p><strong>Returns</strong></p>
 <p>(<a href="https://github.com/tc39/proposal-observable"><code>Observable</code></a>): An observable that emits the described transaction path. The emitted transaction path is an array of objects, where each item has a <code>destination</code>, <code>data</code> and <code>description</code> key.</p>
+<hr>
 <h2><a class="anchor" aria-hidden="true" id="providers"></a><a href="#providers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Providers</h2>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="messageportmessage"></a><a href="#messageportmessage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MessagePortMessage</h3>
 <p>A provider that communicates through the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage"><code>WebWorker PostMessage API</code></a>.</p>
 <p><strong>Parameters</strong></p>
 <ol>
 <li><a href="`Object`"><code>target</code></a>: The object (that implements the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage">Worker PostMessage API</a>) to send messages to.</li>
 </ol>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="windowmessage"></a><a href="#windowmessage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WindowMessage</h3>
 <p>A provider that communicates through the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"><code>Window PostMessage API</code></a>.</p>
 <p><strong>Parameters</strong></p>
 <ol>
 <li><a href="`Object`"><code>target</code></a>: The object (that implements the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage">Window PostMessage API</a>) to send messages to.</li>
 </ol>
+<hr>
 <h2><a class="anchor" aria-hidden="true" id="wrapper"></a><a href="#wrapper" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wrapper</h2>
 <p><strong>Parameters</strong></p>
 <ul>
@@ -312,6 +330,7 @@ Run an app.</p>
 <li>params Array<any></li>
 </ul>
 <p>Returns <code>Array&lt;Object&gt;</code> An array of Ethereum transactions that describe each step in the path</p>
+<hr>
 <h2><a class="anchor" aria-hidden="true" id="state-1"></a><a href="#state-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>State</h2>
 <p>This document outlines how to write background scripts for your app and why you might want to do so.</p>
 <p>Background scripts are parts of your app that are always run as soon as the Aragon Dapp is opened.</p>
