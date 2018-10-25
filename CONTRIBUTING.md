@@ -40,6 +40,7 @@ In our efforts to keep the docs clear and consistent throughout and as useful as
 2. Don’t include closing “;” at the end of statements in JS code blocks.
 3. Use single quotes in JS code blocks.
 4. “JS” should be capitalized.
+5. Pay attention to the correct naming for parts of the Aragon stack.  For example, it's "aragonOS" not "Aragon OS".
 
 
 ## Getting help
