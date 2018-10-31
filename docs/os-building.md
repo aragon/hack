@@ -84,7 +84,7 @@ contract MyApp is AragonApp {
     }
 
     function setReceiver(address _newReceiver) auth(SET_RECEIVER_ROLE) public {
-        receiver = _receiver;
+        receiver = _newReceiver;
     }
 
     function sendFunds() payable isInitialized {
