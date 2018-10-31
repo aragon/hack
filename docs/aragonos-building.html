@@ -79,7 +79,7 @@ contract MyApp <span class="hljs-keyword">is</span> AragonApp {
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setReceiver</span><span class="hljs-params">(address _newReceiver)</span> <span class="hljs-title">auth</span><span class="hljs-params">(SET_RECEIVER_ROLE)</span> <span class="hljs-title">public</span> </span>{
-        receiver = _receiver;
+        receiver = _newReceiver;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendFunds</span><span class="hljs-params">()</span> <span class="hljs-title">payable</span> <span class="hljs-title">isInitialized</span> </span>{
