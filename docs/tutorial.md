@@ -1,10 +1,76 @@
 ---
 id: tutorial
-title: Your first Aragon app
+title: Tutorial: Build a DAO with Aragon
 ---
+![](/docs/assets/dao_workshop01.png)
+In this tutorial we will walk you through creating an Aragon DAO using the Aragon stack: [aragonOS](os-intro.md), [aragon.js](js-ref.md), [Aragon UI](ui-intro.md) and [Aragon CLI](/docs/cli-usage.html).
 
-In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), [aragon.js](js-ref.md), [Aragon UI](ui-intro.md) and [Aragon CLI](/docs/cli-usage.html).
+No prior knowledge of Aragon is required though we do assume you have basic js and solidity experience???.  After completing the tutorial you should have the skills necessary to build your own DAO. If you get stuck, feel free to ping one of us in the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
 
+The tutorial is broken into chapters, each which you should be able to do in one sitting:
+1. [Getting started](#chapter-1-getting-started) - describes Aragon, how to install and explores what you get out of the box.
+2. Aragon for the real world - introduces a fictional person and organization and describes how we will build out Aragon to run the organization.
+3. ???
+
+## Chapter 1: Getting started
+
+### What is Aragon?
+Aragon is a project to empower freedom by creating tools for decentralized governance. These tools help people freely organize without borders or intermediaries. Instead of bureaucracy, subjectivity, and trust, smart contracts have opened the door to experiment with governance at the speed of software.
+
+The Aragon stack helps you develop software for human organization. From the smart contracts to the user interface, Aragon takes care of the most important pieces of infrastructure to deliver censorship-resistant, decentralized and upgradeable apps.
+
+![](/docs/assets/core.png)
+
+> Example of a decentralized, censorship-resistant, good-looking voting app on Aragon
+
+### What is a DAO?
+A DAO is a **Decentralized Autonomous Organization**. An Aragon DAO is an organization built on top of the Ethereum blockchain, a set of smart contracts that allow for organizations to operate following new governance models.  Here are some of the benefits of a DAO:
+- Can’t be censored
+- Can't be shut down
+- Has no central power in control and so can't be corrupted
+- Global in reach
+- Transparent transactions
+
+You can [read more about DAOs here](https://medium.com/@joselfgaray/nature-the-ugly-daockling-2-7b3371b55fcd).
+
+### Environment setup
+
+**Node version**
+
+Make sure you have at least Node v.8.0.
+
+**Metamask**
+
+We recommend using the [Metamask browser extentsion](https://metamask.io/) to send transactions to the blockchain. MetaMask allows you to interact with Ethereum Dapps (like Aragon) directly from Chrome, Firefox or Brave.
+
+**Install the Aragon CLI**
+
+From the command line run:
+
+```
+npm i -g @aragon/cli
+```
+
+### Create a DAO
+You are now ready to create your first DAO.
+
+
+
+
+
+
+
+
+---
+---
+---
+---
+---
+---
+---
+old tutorial below
+---
+---
 # Quickstart
 
 Follow these instructions to immediately run the full tutorial:
