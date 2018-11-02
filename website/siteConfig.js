@@ -64,7 +64,6 @@ const siteConfig = {
   organizationName: 'aragon',
 
   headerLinks: [
-    {doc: 'getting-started', label: 'Get started'},
     {doc: 'tutorial', label: 'Tutorial'},
     {doc: 'aragonos-intro', label: 'aragonOS'},
     {doc: 'aragonjs-ref', label: 'aragon.js'},
