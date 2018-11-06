@@ -8,8 +8,8 @@ In this tutorial we will walk you through creating an Aragon DAO using the Arago
 No prior knowledge of Aragon is required though we do assume you have basic js and solidity experience???.  After completing the tutorial you should have the skills necessary to build your own DAO. If you get stuck, feel free to ping one of us in the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
 
 The tutorial is broken into chapters, each which you should be able to do in one sitting:
-1. [Getting started](#chapter-1-getting-started) — describes Aragon, how to install and explores what you get out of the box.
-2. Aragon for the real world — introduces a fictional person and organization and describes how we will build out Aragon to run the organization.
+1. [Getting started](#chapter-1-getting-started) — describes Aragon, how to install it and explores what you get out of the box.
+2. Aragon for the real world — introduces an example use-case and describes how we will build out Aragon to run a fictional organization.
 3. ???
 
 ## Chapter 1: Getting started
@@ -21,7 +21,7 @@ The Aragon stack helps you develop software for human organization. From the sma
 
 ![](/docs/assets/core.png)
 
-> Example of a decentralized, censorship-resistant, good-looking voting app on Aragon
+> Example of a voting app on Aragon
 
 ### What is a DAO?
 A DAO is a **Decentralized Autonomous Organization**. An Aragon DAO is an organization built on top of the Ethereum blockchain.  Here are some of the benefits of a DAO:
@@ -29,7 +29,7 @@ A DAO is a **Decentralized Autonomous Organization**. An Aragon DAO is an organi
 - Can't be shut down
 - No single point of failure
 - Has no central power in control 
-- Global in reach
+- Globally accessible
 - Transparent transactions
 
 You can [read more about DAOs here](https://medium.com/@joselfgaray/nature-the-ugly-daockling-2-7b3371b55fcd).
@@ -43,7 +43,7 @@ Make sure you have at least [Node](https://nodejs.org/en/) v.8.0.
 
 **Metamask**
 
-We recommend using the [Metamask browser extentsion](https://metamask.io/) to send transactions to the blockchain. MetaMask allows you to interact with Ethereum Dapps (like Aragon) directly from Chrome, Firefox or Brave.
+We recommend using the [Metamask browser extentsion](https://metamask.io/) to send transactions to the blockchain. MetaMask allows you to interact with Ethereum Dapps directly from Chrome, Firefox or Brave.
 
 **Aragon CLI**
 
@@ -61,17 +61,17 @@ You are now ready to create your first DAO.
 ???
 
 ## Chapter 2: Aragon for the real world
-Before we get too far into our study of the Aragon stack, we should remember that we're learning about Aragon so that we can empower people to run real DAOs in the real world to accomplish something in particular.  To help keep this tutorial rooted, we'll introduce a fictional persona who will run a fictional organization that we will build in Aragon.
+Before we get too far into our study of the Aragon stack, we should remember that we're learning about Aragon so that we can empower people to run DAOs in the real world to accomplish something concrete.  To help keep this tutorial rooted, we'll introduce a fictional [persona](https://en.wikipedia.org/wiki/Persona_(user_experience)) who will run a fictional organization that we will build in Aragon.
 
 ### Introducing María
 ![](/docs/assets/maria.jpg)
 María is a 15 year-old precocious girl living in Venezuela.  Though her family is poor, her father has managed to get her a second-hand laptop when she was just 11.  Connecting to free resources on the internet via a 1MB/s connection, she teaches herself how to code.
 
-After 3 years — and a lot of school bullying and misogyny — she has started creating awesome software.  Most importantly, she has read about entrepreneurship and has developed a desire to use her abilities for the good. She's dreaming of founding a company. Employing people. Creating value. Getting her family out of poverty.
+After 3 years she has started creating awesome software.  Most importantly, she has read about entrepreneurship and has developed a desire to use her abilities to help people. She dreams of founding a company, employing people, creating value, and getting her family out of poverty.
 
-She knows how risky it is to become an entrepreneur in Venezuela. She knows stories of people being kidnapped.  She knows about businesses being expropriated.  She learns that it would take half a year to incorporate and that 34% of everything she earns would go to the corrupt government.  But she's brave and so she perists.  
+But she knows how risky it is to become an entrepreneur in Venezuela. She knows stories of people being kidnapped.  She knows about businesses being expropriated.  She learns that it would take half a year to incorporate and that 34% of everything she earns would go to the corrupt government.  
 
-Finally, however, she learns that she cannot form a company because she is simply too young.
+Finally she learns that she cannot form a company because she is simply too young.
 
 But, María is living in 2018, and so, sooner or later, someone tells her about Aragon...
 
@@ -79,11 +79,11 @@ But, María is living in 2018, and so, sooner or later, someone tells her about 
 
 
 ### Wifinet: María's organization
-María develops ideas for her company with her friends.  Plagued by the monopolistic practices of local Internet Service Providers and their poor service, they decide to set up a peer-to-peer wifi-sharing infrastructure for communities. They call it Wifinet.  Soon people from other developing countries find out about Wifinet and join the community to bring cheaper better wifi to their own communities.  Because Wifinet runs on Aragon and deals on with cryptocurrencies, doing business internationally is a non-issue.
+María develops ideas for her company with her friends.  Plagued by the monopolistic practices of local Internet Service Providers and their poor service, they decide to set up a peer-to-peer wifi-sharing infrastructure for communities. They call it Wifinet.  Soon people from other developing countries find out about Wifinet and want to join the community to bring cheaper better wifi to their own communities.  Because Wifinet runs on Aragon and deals with cryptocurrencies, doing business internationally is not an problem.
 
-All participants of Wifinet have a “stake” and are able to participate in its governance through voting etc.  Participants pay for use of the network through a native network token, a fraction of which goes back to a global network pot for development of the technology. 
+All participants of Wifinet have a “stake” and are able to participate in its governance through voting.  Participants pay for use of the network through a native network token, a fraction of which goes back to the Wifinet development team who are improving the technology. 
 
-Note: This company was inspired and simplified from [Althea](https://althea.org/).
+(Note: This company was inspired and simplified from [Althea](https://althea.org/).)
 
 ### How we want to build out Aragon for Wifinet
 
