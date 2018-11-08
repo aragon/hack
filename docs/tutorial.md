@@ -5,9 +5,11 @@ title: Tutorial: Build a DAO with Aragon
 ![](/docs/assets/dao_workshop01.png)
 In this tutorial we will walk you through creating an Aragon DAO using the Aragon stack: [aragonOS](os-intro.md), [aragon.js](js-ref.md), [Aragon UI](ui-intro.md) and [Aragon CLI](/docs/cli-usage.html).
 
-No prior knowledge of Aragon is required though we do assume you have basic js and solidity experience???.  After completing the tutorial you should have the skills necessary to build your own DAO. If you get stuck, feel free to ping one of us in the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
+No prior knowledge of Aragon is required though we do assume you have basic js and solidity experience???.  After completing the tutorial you should have the skills necessary to build your own DAO. 
 
-The tutorial is broken into chapters, each which you should be able to do in one sitting:
+If you get stuck, feel free to ping one of us in the [#dev-help channel in the Aragon Chat](https://aragon.chat/channel/dev-help). You can also file issues with the tutorial [in github](https://github.com/aragon/hack/issues).
+
+The tutorial is broken into chapters, each of which you should be able to do in one sitting:
 1. [Getting started](#chapter-1-getting-started) — describes Aragon, how to install it and explores what you get out of the box.
 2. Aragon for the real world — introduces an example use-case and describes how we will build out Aragon to run a fictional organization.
 3. ???
