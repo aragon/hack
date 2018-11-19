@@ -4,6 +4,8 @@ title: aragonOS reference documentation
 sidebar_label: Reference documentation
 ---
 
+*Documentation for [aragonOS](https://github.com/aragon/aragonOS) v4.0.1. Looking for [aragonOS 3 documentation?](/docs/aragonos-3-ref.html)*
+
 aragonOS A framework that enables flexible and upgradeable governance mechanisms by creating and assigning permissions to multiple entities. This doc assumes you have some knowledge about solidity, if not checkout [Solidity](https://solidity.readthedocs.io/) before you jump into AragonOS.
 
 - [Kernel](#kernel)

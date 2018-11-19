@@ -16,12 +16,15 @@
       "cli-usage"
     ],
     "Aragon Package Manager": [
-      "apm"
+      "apm",
+      "apm-ref"
     ],
     "aragonOS": [
       "aragonos-intro",
       "aragonos-building",
-      "aragonos-ref"
+      "aragonos-ref",
+      "aragonos-4-migration",
+      "aragonos-3-ref"
     ],
     "aragon.js": [
       "aragonjs-ref",
