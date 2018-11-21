@@ -12,13 +12,10 @@ const MarkdownBlock = CompLibrary.MarkdownBlock /* Used to read markdown */
 const Container = CompLibrary.Container
 const GridBlock = CompLibrary.GridBlock
 const {
-  AragonApp,
   Button,
   EmptyStateCard,
   IconSettings,
   IconBlank,
-  IconShare,
-  Card,
   Text,
   theme
 } = require('@aragon/ui')
