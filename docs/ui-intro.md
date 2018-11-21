@@ -4,18 +4,16 @@ title: Aragon UI intro
 sidebar_label: Introduction
 ---
 
-**Aragon UI** is an Aragon-native toolkit of UI components for decentralized apps. It will make your app look consistent with the whole look of the [Aragon client](client.md), in a way that it will not even look like the user is running apps from different developers. However, it is **not mandatory to create an Aragon app**.
+**Aragon UI** is an Aragon-native toolkit of UI components for decentralized apps. It follows the [Aragon client](client.md) design language and will make your app appear as a seamless part of the Aragon ecosystem. Using the Aragon UI for your app, however, is not mandatory.
 
-You can check the [gallery of UI components](http://ui.aragon.org/).
+Here is the [gallery of UI components](http://ui.aragon.org/).
 
-You can install it by doing:
+Use the following command to install Aragon UI:
 ```
 npm i @aragon/ui
 ```
 
-It comes with some assets, like fonts or images. These need to be copied where Aragon UI can access them.
-
-The path to the assets can then be communicated to Aragon UI using the global component `<AragonApp />`:
+The toolkit comes with some assets, like fonts or images, which need to be copied to a location that Aragon UI can access. The path to the assets can then be communicated to Aragon UI using the global component `<AragonApp />`:
 
 ```javascript
 import { AragonApp } from '@aragon/ui'
