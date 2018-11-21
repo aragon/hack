@@ -1,6 +1,6 @@
 ---
 id: apm-ref
-title: Aragon Package Manager reference documentation
+title: APM reference documentation
 sidebar_label: Reference documentation
 ---
 
