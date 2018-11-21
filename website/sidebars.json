@@ -21,6 +21,7 @@
     ],
     "aragonOS": [
       "aragonos-intro",
+      "aragonos-motivation",
       "aragonos-building",
       "aragonos-ref",
       "aragonos-4-migration",

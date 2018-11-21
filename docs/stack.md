@@ -12,7 +12,7 @@ Therefore, the Aragon stack can be thought of as an operating system, just like 
 
 A computer operating system manages which processes have access to the computer's resources. They do that by:
 
-- Implementing a kernel, which has drivers that let the software control the hardware
+- Implementing a Kernel, which has drivers that let the software control the hardware
 - Implementing a permission system, to manage which processes can access each resource
 - Implementing a self-upgrade system, for bugs and enhancements
 
@@ -31,13 +31,13 @@ The role of the OS, and in this case of the Aragon stack, is to create an enviro
 > This is a diagram of the Aragon stack, from the Ethereum Virtual Machine to the User Interface
 
 <br>
-## The kernel
+## The Kernel
 
-The kernel is a very simple smart contract. It keeps track of an Access Control List app which it uses for **permission management of the entire DAO**.
+The Kernel is a very simple smart contract. It keeps track of an Access Control List app which it uses for **permission management of the entire DAO**.
 
-The kernel also knows where to find its installed apps and handles upgradeability of the apps by keeping references to the actual code that apps run.
+The Kernel also knows where to find its installed apps and handles upgradeability of the apps by keeping references to the actual code that apps run.
 
-#### Read more: [Reference documentation for the Kernel](/docs/aragonos-ref.html#2-kernel)
+#### Read more: [Reference documentation for the Kernel](/docs/aragonos-ref.html#kernel)
 
 ## Permission management
 
@@ -65,17 +65,17 @@ With aragonOS, since permissions are so rich, there may be **many paths to escal
 
 For example, a token holder may have permission to create a vote, and the voting app may have permission to withdraw funds.
 
-In that case, Aragon Core tells the user that option when they attempt to withdraw funds. Users can show their intent for performing an action by trying to execute it directly without having to know the process for executing the action. By traversing the Access Control List, Aragon Core can automatically determine the path needed for executing the action.
+In that case, the Aragon client tells the user that option when they attempt to withdraw funds. Users can show their intent for performing an action by trying to execute it directly without having to know the process for executing the action. By traversing the Access Control List, Aragon can automatically determine the path needed for executing the action.
 
 ## Full sandboxing
 
-Permission management is key for allowing security at the smart contract level. That is similar to the kernel, filesystem and process security in a conventional OS.
+Permission management is key for allowing security at the smart contract level. That is similar to the Kernel, filesystem and process security in a conventional OS.
 
-Yet Aragon Core is a frontend too so security is also required in the UI environment. This is similar how many operating systems impose **app sandboxing**. An app shouldn't be able to access or tamper with another running app.
+Yet the Aragon client is a frontend too, so security is also paramount in the UI environment. This is similar how many operating systems impose **app sandboxing**. An app shouldn't be able to access or tamper with another running app. It would be disastrous if a malicious app could inject code or modify the frontend of another app.
 
-Aragon Core's approach to frontend sandboxing is a combination of sandboxed iframes and cross-origin messaging.
+Aragon's approach to frontend sandboxing is a combination of **sandboxed iframes** and **cross-origin messaging** through a custom RPC protocol built specifically for Aragon. Apps do not have direct access to Web3 or Ethereum.
 
-All apps run inside **sandboxed iframes** and only communicate with Aragon Core using [aragon.js](/docs/aragonjs-ref.html). Aragon Core provides APIs for accessing smart contracts, displaying notifications and signing transactions. When signing transactions, a panel opens up in Aragon Core, not in the app. Apps cannot prompt users to sign transactions directly and they cannot interact with the contracts of other apps. Thus all transactions are securely handled by Aragon Core, decreasing the attack surface.
+The Aragon client uses [aragon.js](/docs/aragonjs-ref.html) to provide apps APIs for accessing smart contracts, displaying notifications and signing transactions. When signing transactions, a panel opens up in the client, not in the app. Apps cannot prompt users to sign transactions directly and they cannot interact with the contracts of other apps–in reality, they can only send action "intents". Thus all transactions are securely handled by the Aragon client, decreasing the attack surface.
 
 #### Read more: [The Aragon client](/docs/client.html)
 

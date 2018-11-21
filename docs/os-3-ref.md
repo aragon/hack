@@ -8,41 +8,7 @@ sidebar_label: Reference (aragonOS 3)
 
 This document provides a technical overview about the architecture and can be used
 as a specification and developer guide. For a less technically-oriented introduction
-to aragonOS 3.0, you can check the [alpha release blog post](https://blog.aragon.org/introducing-aragonos-3-0-alpha-the-new-operating-system-for-protocols-and-dapps-348f7ac92cff).
-
-## 0. Motivation
-
-aragonOS was born in our path to developing modular and upgradeable smart contracts
-to power decentralized organizations.
-
-As the project was maturing and we started abstracting more and more, we ended up
-with a pretty generic framework that can be used by any protocol or decentralized
-application that needs upgradeability.
-
-**Upgradeability** is really important when developing high-stakes systems in
-platforms that are still evolving fast. Done well, it can allow for bug fixes
-and improvements with very little disruption and not causing problems at the
-protocol level. As a history lesson, if *The DAO* had had an effective
-upgradeability mechanism, no hard fork would have been required to fix the problem.
-which cost the community months of unproductive discussions, delays in the roadmap
-and billions lost in the market capitalization of the protocol due to loss of
-network effect because of the fork.
-
-But upgradeability is a double edged sword. It doesn't matter how secure or trustless
-a smart contract is, if it can be upgraded, the contract will effectively be whatever
-who/what can upgrade the contract decides. The guarantees of an upgradeable smart
-contract are only as strong as the **governance mechanism** that can upgrade it,
-making governance the most important aspect of upgradeability.
-
-In a similar way, you cannot have effective governance without a way for upgrading
-itself to a superior form of governance. Therefore we feel very strongly that
-**upgradeability** and **governance**, in the context of smart contract, are actually
-**two sides of the same coin**.
-
-At Aragon we are doing research in decentralized governance and all the
-results of our research will be made aragonOS compatible, meaning that by using
-aragonOS, any protocol can take advantage of our extensive research on governance
-for upgradeability or any other aspect of the protocol or application.
+to aragonOS 3, you can check the [alpha release blog post](https://blog.aragon.org/introducing-aragonos-3-0-alpha-the-new-operating-system-for-protocols-and-dapps-348f7ac92cff).
 
 ## 1. General architecture and design philosophy
 
@@ -161,16 +127,6 @@ the same time creating a new proxy. This function only sets the code the first t
 kernel.newAppInstance(votingAppId, votingApp)
 kernel.newPinnedAppInstance(votingAppId, votingApp)
 ```
-
-### 3.3 App sandbox (client side)
-
-It is of paramount importance that apps can not change the DOM of other apps in an attempt to mislead users. As such, all apps are sandboxed.
-
-This means that apps are run inside an iframe that only has access to itself, and in order to send transactions, calls, and more, it communicates with the Aragon dapp (the "wrapper") through a custom RPC protocol built specifically for Aragon. Apps do not have direct access to Web3.
-
-RPC calls are sent to the wrapper using the PostMessage API and the wrapper will use the information in the calls to perform specific actions, such as listen for events, cache values and calculate transaction paths.
-
-In practice, this means that apps only publish intents, and do not execute actions directly. Instead, all business logic is deffered to the wrapper.
 
 ## 4. ACL
 
@@ -397,7 +353,6 @@ SetPermission(address indexed from, address indexed to, bytes32 indexed role, bo
 ```solidity
 ChangePermissionManager(address indexed app, bytes32 indexed role, address indexed manager)
 ```
-
 
 ## 5. Forwarders and EVMScript
 
