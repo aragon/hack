@@ -6,357 +6,430 @@ sidebar_label: Reference documentation
 
 *Documentation for [aragonOS](https://github.com/aragon/aragonOS) v4.0.1. Looking for [aragonOS 3 documentation?](/docs/aragonos-3-ref.html)*
 
-aragonOS A framework that enables flexible and upgradeable governance mechanisms by creating and assigning permissions to multiple entities. This doc assumes you have some knowledge about solidity, if not checkout [Solidity](https://solidity.readthedocs.io/) before you jump into AragonOS.
+This document provides a technical overview of the framework's architecture and provides insight into its capabilities. It assumes the reader to have an understanding of [Solidity](https://solidity.readthedocs.io/). For a less technical introduction, visit the [introduction](/docs/aragonos-intro.html).
+
+## Design philosophy
+
+Using aragonOS allows you to write simpler code by **decoupling** the specific **business logic** of a protocol or application from its **authentication logic**.
+
+You shouldn't have to think about how to technically implement authentication or governance at all; simply inherit from the **AragonApp** base class and define actions that require authentication with a special modifier. The rest is taken care of by the components provided in aragonOS.
+
+Additionally, **upgradeability** capabilities are provided and are used by default. aragonOS implements the [DelegateProxy](https://eips.ethereum.org/EIPS/eip-897) pattern, and specifically a special implementation called [unstructured storage](https://blog.zeppelinos.org/upgradeability-using-unstructured-storage/). This pattern essentially splits an contract into two instances: a **base logic contract**, which is then depended upon by a simple, slim **proxy contract**. The proxy delegates all its logic to the linked base contract, and can modify its pointer to the base contract, effectively upgrading its logic.
+
+## Components:
 
 - [Kernel](#kernel)
 - [ACL](#acl)
-- [Proxy](#proxy)
+- [AragonApp](#aragonapp)
 - [Forwarder](#forwarder)
 
 ## Kernel
 
-The kernel is at the core of every organization there is only one instance per organization. Once you have a DAO you’ll want to add apps that help make your DAO effective. Keeping track of which apps that have been installed is done by using app mapping onto the namespace of the kernel. If we want to upgrade any of these apps we will do so by using proxies.
+### The app mapping
 
-> Tip
->
-> Apps are contracts that rely on use the kernel for their upgradeability and access control. Apps don’t need to implement any of those as they occur directly in the Kernel or ACL.
+At the core of the Kernel lives a mapping, called the `app` mapping. You can set and get apps using the following interfaces:
 
-<!-- DelegateProxies - a contract which delegates its logic to another contract -->
-
-**Apps**
-
-Aragon DAOs come with come with some basic apps pre-installed and users can add other apps. Apps can be manually add via setApp() or through the UI. Its important to keep in mind that apps run in different namespaces.
-
-To add an app to the DAO run:
-
-```javascript
-function setApp(bytes32 namespace, bytes appId, address app) public
+```solidity
+function setApp(bytes32 namespace, bytes appId, address app) public;
+function getApp(bytes32 namespace, bytes32 appId) public view returns (address);
 ```
 
-- **Namespace**: specifies what type of app record is being set.
-- **AppId**: used to identify what app is being set. It is the ENS namehash of the APM repo (e.g. namehash(‘voting.aragonpm.eth’)).
-- **App**: Address of a contract that can have different meaning depending on the namespace.
+- **namespace:** specifies what type of app record is being set.
+- **appId:** used to identify what app is being set. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the APM repo (e.g. `namehash('voting.aragonpm.eth')`).
+- **app:** Address of a contract that can have a different meaning depending on the [namespace](#namespaces).
 
-> Warning
+> **Warning**
 >
-> Modifying the kernel mapping can have completely destructive consequences and can result in loss of funds.
+> Modifying this mapping can have completely destructive consequences and can result in loss of funds. The permission to execute this action, `SET_APP_ROLE`, is **critical** and has to be well protected behind the ACL.
 
-**Namespaces**
+### Namespaces
 
-What are namespaces? Namespaces are the three layers your DAO is made up of.
+The Kernel implements three namespaces for installed apps to be registered into:
 
-- **Core** (keccak256('core')): in this namespace is where the core components of the kernel reside. The only thing in the core mapping is the reference to the kernel base contract.
-- **Base** namespace (keccak256('base')): keeps track of the base contracts for appIds.
-- **App** namespace (keccak256('app')): some apps use the app namespace as a way to reference other apps. For example this is used to store the reference to the ACL instance or the EVMScriptsRegistry.
+- **Core namespace** (`keccak256('core')`): the core components of the Kernel. The only contract set in the core mapping should be the reference to the Kernel's base contract.
+- **Base namespace** (`keccak256('base')`): the base contract addresses for proxy implementations.
+(e.g. .
+- **App namespace** (`keccak256('app')`): the "default" app address for an installed app. This is used when an app might need to reference another app in the organization, for example, the default ACL instance or the EVMScriptsRegistry.
 
-<!-- Every kernel instance is a kernel proxy. -->
+### App installation
 
-<!-- AppProxies rely their upgradability to the kernel. -->
+The notion of "installing" an application in aragonOS is somewhat tricky. Although the Kernel keeps information about apps and their bases, it does not actually keep every app instance stored within its `apps` mapping.
 
-```javascript
-kernel.setup(kernel.APP_BASES_NAMESPACE(), votingAppId, newVotingAppCodeAddr)
+As such, we attribute the "installation" of an app instance to the creation of its first permission in the [ACL](#acl). If an app has no permissions set, it is technically impossible to use, if developed correctly, and thus is considered uninstalled.
+
+While aragonOS is unopinionated about using base or proxy contracts as app instances, by default it prefers using proxies to allow for upgradeability.
+
+You can create new [app proxy](#appproxies-and-upgradeability) instances through the following interfaces:
+
+```solidity
+function newAppInstance(bytes32 appId, address appBase);
+function newPinnedAppInstance(bytes32 appId, address appBase);
 ```
 
-**Upgradeability**
+- **appId:** used to identify what app to link the proxy to. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the APM repo (e.g. `namehash('voting.aragonpm.eth')`).
+- **app:** Address of the base contract for the app instance. If this app has already been installed previous, this address **must** be the same as the one currently set (use `getApp(kernel.APP_BASES_NAMESPACE(), appId)` to check).
 
-What happens when a new version of an app that in your DAO uses is released? How do you upgrade it? Who gets to upgrade it? These are important questions. Aragon solves these issues using ACL and Proxies. The ACL (Access Control Lis) is what keeps track of who can do what and under what conditions. Proxies are a way of seperating the app logic and the app state into proxy contracts that can be swapped out without impacting the other, this solves upgrading. These topics are covered later in the section.
+Overloaded versions of the two functions with more options are available:
 
-**App sandbox**
+```solidity
+function newAppInstance(bytes32 appId, address appBase, bytes initializePayload, bool setDefault);
+function newPinnedAppInstance(bytes32 appId, address appBase, bytes initializePayload, bool setDefault);
+```
 
-It is of paramount importance that apps can not change the DOM of other apps in an attempt to mislead users. As such, all apps are sandboxed.
+- **initializePayload**: calldata to be used to immediately initialize the app proxy. Useful for atomically initializing the new app proxy in one transaction.
+- **setDefault**: set the new app as the default instance of the app in the Kernel (e.g. also set it in the **App** namespace).
 
-This means that apps are run inside an iframe that only has access to itself, and in order to send transactions, calls, and more, it communicates with the Aragon dapp (the "wrapper") through a custom RPC protocol built specifically for Aragon. Apps do not have direct access to Web3.
+### App permissioning
 
-RPC calls are sent to the wrapper using the PostMessage API and the wrapper will use the information in the calls to perform specific actions, such as listen for events, cache values and calculate transaction paths.
+For convenience, the Kernel exposes the following interfaces for getting the default ACL as well as whether an entity has permission to invoke a particular action on an app:
 
-In practice, this means that apps only publish intents, and do not execute actions directly. Instead, all business logic is deffered to the wrapper.
+```solidity
+function acl() public view returns (IACL);
+function hasPermission(address who, address where, bytes32 what, bytes how) public view returns (bool);
+```
 
-## ACL
+### Upgradeability
 
-The ACL (Access Control List) is what allows entities (apps, DAOs, humans) to perform actions in our system via permissions. For example, say you accidentally add a malicious calculator app to your DAO, just because it’s in your DAO doesn't mean it should have the ability that pulls funds out of your DAO’s Valut, this would be bad. The ACL makes it so if you didn't explicitly give an application permissions then it's not going to be able to perform unauthorized actions.
+Upgradeability of apps and the Kernel itself is done by setting a new address for a specific key in the `apps` mapping with either the **Core** or **Base** namespace.
 
-**What are permissions?**
+**Kernel upgradeability**
 
-Permissions allow entities to perform actions. Permissions can be grouped by roles and are specific to app instances. We say app instances because you can have multiple instances of the same app in your DAO, each having different permissions.
+Kernel instances for different organizations can share the same implementation. Every Kernel instance is a KernelProxy, allowing them to be upgradeable.
 
-For example, let's say you want take funds out of a DAOs wallet to cover the cost of pizza. In this case the DAO was set up so no member could withdraw funds from the wallet, instead every withdraw had be voted on, if the vote passes money is released, else the vote fails and nothing happens. Let's say you have a voting app in your DAO, and its been setup so that the permissions allow for the withdrawal of funds if a vote passes. When you make the request for fcks.
-  - id 00 - TIMESTAMP_PARAM_ID (id = 201): Sets comparison value to the timestamp of the current block at the time of execution. This allows for setting up timelocks on time. - id 01
-  - ORACLE_PARAM_ID (id = 203): Checks with an oracle at the address in the argument value and returns whether it returned true or false (no comparison with arg). - id 03
-  - LOGIC_OP_PARAM_ID (id = 204): Evaluates a logical operation and returns true or false depending on its result (no comparison with arg). - id 04
-  - PARAM_VALUE_PARAM_ID (id = 205): Uses value as return. Commonly used with the RET operation, to just return a value. If the value in the param is greater than 0, it will evaluate to true, otherwise it will return false. - id 05
+> **Warning**
+>
+> Be _extremely_ careful when upgrading the Kernel! The logic for upgrading to a new implementation is in the implementation itself, and so an upgrade to the Kernel could render it un-upgradeable or even unusable!
 
-- Operation type (uint8): Determines what operation is made to compare the value fetched using the argument ID or the argument value. For all comparisons, both valth a param = {id: 0, op: Op.GT, value: 10}, it will interpret whether the argument 0 is greater than 10. The implemented operation types are:
-  - None (Op.NONE): Always evaluates to false, regardless of parameter or arguments. Opcode value = 00
-  - Equals (Op.EQ): Evaluates to true if every byte matches between args[param.id] and param.value. Opcode value = 01
-  - Not equals (Op.NEQ): Evaluates to true if any byte doesn't match. Opcode value = 02
-  - Greater than (Op.GT): Evaluates to true if args[param.id] > param.value. Opcode value = 03
-  - Less than (Op.LT): Evaluates to true if args[param.id] < param.value. Opcode value = 04
-  - Greater than or equal (Op.GTE): Evaluates to true if args[param.id] >= param.value. Opcode value = 05
-  - Less than or equal (Op.LTE): Evaluates to true if args[param.id] <= param.value. Opcode value = 06
-  - Return (Op.RET): Evaluates to true if args[param.id] is greater than one. Used with PARAM_VALUE_PARAM_ID, it makes args[param.id] = param.value, so it returns the parameter associated value. Opcode value = 07
+Upgrading the Kernel of an organization is done by changing the **Kernel appId** in the **Core** namespace:
+
+```solidity
+kernel.setApp(kernel.CORE_NAMESPACE(), kernel.KERNEL_APP_ID(), newKernelBaseAddr);
+```
+
+**AppProxies and upgradeability**
+
+In a similar fashion to the Kernel, apps can share implementation code to save gas on deployment. AppProxies rely on the Kernel for their upgradeability. Note that separate app instances in an organization are all linked to the same base contract in the Kernel, and so upgrading the base contract would effectively upgrade all of that app's instances.
+
+Upgrading an app is done by setting a new base address for **that app's appId** in the **Base** namespace:
+
+```solidity
+kernel.setApp(kernel.APP_BASES_NAMESPACE(), votingAppId, newVotingAppBaseAddr);
+```
+
+aragonOS provides two different types of proxies for apps:
+
+- **AppProxyUpgradeable**: an upgradeable proxy. In every call to the proxy, it retrieves the current base contract address from the Kernel and forwards the call.
+
+- **AppProxyPinned**: a non-upgradeable proxy. On creation, it checks and saves the base contract address in the Kernel. This cannot be upgraded unless the base contract has explicit logic to change that storage slot.
+
+### Permissions
+
+`APP_MANAGER_ROLE` is required any time the `apps` mapping is modified.
+
+> **Warning**
+>
+> `APP_MANAGER_ROLE` can be used in malicious and dangerous ways. **Protect this permission.**
+
+### Events
+
+`SetApp` is fired any time the `app` mapping changes:
+
+```solidity
+SetPermission(address indexed from, address indexed to, bytes32 indexed role, bool allowed);
+```
+
+### Interface
+
+The Kernel implements the following interface:
+
+```solidity
+interface IVaultRecoverable {
+    function transferToVault(address token) external;
+
+    function allowRecoverability(address token) external view returns (bool);
+    function getRecoveryVault() external view returns (address);
+}
+
+contract IKernel is IVaultRecoverable {
+    event SetApp(bytes32 indexed namespace, bytes32 indexed appId, address app);
+
+    function acl() public view returns (IACL);
+    function hasPermission(address who, address where, bytes32 what, bytes how) public view returns (bool);
+
+    function setApp(bytes32 namespace, bytes32 appId, address app) public;
+    function getApp(bytes32 namespace, bytes32 appId) public view returns (address);
+}
+```
+
+## 4. ACL
+
+A **Permission** is defined as the ability to perform actions (grouped by **Roles**) in a certain app instance (identified by its address).
+
+We refer to a **permission instance** as an entity holding a certain permission. If it helps, you can think of a permission as an _manifestation_ of an app's role that is held by an entity.
+
+### The ACL as an Aragon app
+
+First of all, you can obtain the default ACL instance for a Kernel with:
+
+```solidity
+ACL acl = ACL(kernel.acl());
+```
+
+Then you can execute the following actions:
+
+**Create Permission**
+
+```solidity
+acl.createPermission(address entity, address app, bytes32 role, address manager);
+```
+
+- **entity**: entity to hold the permission.
+- **app**: app whose role will be allowed through the permission
+- **role**: role to allow
+- **manager**: manager of the role's permission instances
+
+> **Warning**
+>
+> `createPermission()` will fail if that role has pre-existing permission instances or a permission manager set.
+
+Grants `role` in `app` for an `entity` and set `manager` as the manager of the role's permission instances.
+
+This action is identical to `grantPermission()` except it allows the creation of the first permission instance of a role.
+
+> Note
+>
+> Creating permissions is mandatory for apps to work. Any permission checks on non-existent permissions are failed automatically.
+
+**Grant Permission**
+
+```solidity
+acl.grantPermission(address entity, address app, bytes32 role);
+```
+
+> **Warning**
+>
+> Only callable by the `manager` of the role's permission instances.
+
+Grants `role` in `app` for an `entity`. This `entity` would then be allowed to call all actions that their `role` can perform on that particular `app` until the permission manager revokes their role with `revokePermission()`.
+
+This action is identical to `grantPermission()` except it can only be used by the permission manager of the role.
+
+> Note
+>
+> The `grantPermission()` action doesn’t require protection with the ACL because only the permission manager of the role can make changes.
+
+**Revoke Permission**
+
+```solidity
+acl.revokePermission(address entity, address app, bytes32 role);
+```
+
+> **Warning**
+>
+> Only callable by the `manager` of the role's permission instances.
+
+Revokes `role` in `app` for an `entity`.
+
+> Note
+>
+> The `grantPermission()` action doesn’t require protection with the ACL because only the permission manager of the role can make changes.
+
+### Basic ACL example
+
+As an example, the following steps show a complete flow for user "Root" to create a new DAO with the basic permissions set so that a [Voting app](https://github.com/aragon/aragon-apps/tree/master/apps/voting) can manage the funds stored in a [Vault app](https://github.com/aragon/aragon-apps/tree/master/apps/vault):
+
+1. Deploy the Kernel and the ACL
+2. Executing `kernel.initialize(acl, rootAddress)`, which in turns calls `acl.initialize(rootAddress)`, creates the "permissions creator" permission under the hood `createPermission(rootAddress, aclAddress, CREATE_PERMISSIONS_ROLE, rootAddress)`
+3. Deploy the Voting app
+4. Grant the Voting app the ability to call `createPermission()`: `grantPermission(votingAppAddress, aclAddress, CREATE_PERMISSIONS_ROLE)` (must be executed by `rootAddress`)
+5. Deploy the Vault app, which has a action called `transfer()`
+6. Create a new vote via the Voting app to create the `TRANSFER_ROLE` permission: `createPermission(votingAppAddress, vaultAppAddress, TRANSFER_ROLE, votingAppAddress)`
+7. If the vote passes, the Voting app now has access to all actions in the Vault protected by `TRANSFER_ROLE`, which in this case is just `transfer()`
+8. Fund transfers from the Vault can now be controlled via votes from the Voting app. Each time a user wishes to transfer funds, they can create a new vote via the Voting app to propose an execution of the Vault's `transfer()` action. If, and only if, the vote passes, will the `transfer()` action be executed.
+
+Note that the Voting app is also able to revoke or regrant the `TRANSFER_ROLE` permission as it is that permission's manager of `TRANSFER_ROLE` on `vaultAppAddress`.
+
+### Permission managers
+
+As we have seen in [Basic ACL example](#basic-acl-example), when a permission is created, a **Permission Manager** is set for that specific role. The permission manager is able to grant or revoke permission instances for that role.
+
+**Getting a role's permission manager**
+
+```solidity
+acl.getPermissionManager(address app, bytes32 role)
+```
+
+**Change a permission manager**
+
+```solidity
+acl.setPermissionManager(address newManager, address app, bytes32 role);
+```
+
+> **Warning**
+>
+> Only callable by the `manager` of the role's permission instances.
+
+Changes the permission manager to `newManager`.
+
+The new permission manager replaces the old permission manager, resulting in the old manager losing any management power over that permission.
+
+`createPermission()` executes a special case of this action to set the initial manager for the newly created permission. From that point forward, the manager can only be changed with `setPermissionManager()`.
+
+### Parameter interpretation
+
+When a permission is granted to an entity by the permission manager, it can be assigned an array of parameters that will be evaluated every time the ACL is checked to see if the entity can perform the action.
+
+Parameters allow the ACL to perform certain computations with the arguments of a permission in order to decide whether to allow the action or not. This moves the ACL from being a purely binary access list, to a more sophisticated system that allows for fine-grained control.
+
+An ACL parameter is comprised of a data structure with 3 values:
+
+- **Argument Value** (`uint240`): the value to compare against, depending on the argument. It is a regular Ethereum memory word that loses its two most significant bytes of precision. The reason for this was to allow parameters to be saved in just one storage slot, saving significant gas.
+Even though `uint240`s are used, it can be used to store any integer up to `2^30 - 1`, addresses, and bytes32 (in the case of comparing hashes, losing 2 bytes of precision shouldn't be a dealbreaker if the hash algorithm is secure).
+- **Argument ID** (`uint8`): Determines how the comparison value is fetched. From 0 to 200 it refers to the argument index number passed to the role. After 200, there are some special *Argument IDs*:
+	- `BLOCK_NUMBER_PARAM_ID` (`id = 200`): sets comparison value to the block number at the time of execution. This allows for setting up timelocks depending on blocks.
+	- `TIMESTAMP_PARAM_ID` (`id = 201`): sets comparison value to the timestamp of the current block at the time of execution. This allows for setting up timelocks on time.
+	- `id = 202`: not currently in use.
+	- `ORACLE_PARAM_ID` (`id = 203`): checks with an oracle at the address in the `argument value` and returns whether it returned true or false (no comparison with arg).
+	- `LOGIC_OP_PARAM_ID` (`id = 204`): evaluates a logical operation and returns true or false depending on its result (no comparison with arg).
+	- `PARAM_VALUE_PARAM_ID` (`id = 205`): return `argument value`. Commonly used with the `RET` operation, to just return a value. If the value in the param is greater than 0, it will evaluate to true, otherwise it will return false.
+- **Operation type** (`uint8`): what operation should be done to compare the value fetched using the argument ID or the argument value. For all comparisons, both values are compared in the following order `args[param.id] <param.op> param.value`. Therefore, for a greater than operation, with `param = {id: 0, op: Op.GT, value: 10}`, it will interpret whether the argument 0 is greater than 10. The implemented operation types are:
+	- None (`Op.NONE`): always evaluates to `false`, regardless of parameter or arguments.
+	- Equals (`Op.EQ`): evaluates to true if every byte matches between `args[param.id]` and `param.value`.
+	- Not equals (`Op.NEQ`): evaluates to true if any byte doesn't match.
+	- Greater than (`Op.GT`): evaluates to true if `args[param.id] > param.value`.
+	- Less than (`Op.LT`): evaluates to true if `args[param.id] < param.value`.
+	- Greater than or equal (`Op.GTE`): evaluates to true if `args[param.id] >= param.value`.
+	- Less than or equal (`Op.LTE`): evaluates to true if `args[param.id] <= param.value`.
+	- Return (`Op.RET`): evaluates to true if `args[param.id]` is greater than one. Used with `PARAM_VALUE_PARAM_ID`, it makes `args[param.id] = param.value`, so it returns the associated value of the parameter.
+
+While also representing an operation, when the argument ID is `LOGIC_OP_PARAM_ID`, only the ops below are valid. These operations use the parameter's value to point to other parameter indices in the parameter array. Any values are encoded as `uint32` numbers, left-shifted 32 bits to the left each (for example, an op that
+takes two inputs with a value of `0x00....0000000200000001` would have input 1, 1, and input 2, 2, refering to params at index 1 and 2). Available logic ops:
+- Not (`Op.NOT`): takes 1 parameter index and evaluates to the opposite of what the linked parameter evaluates to.
+- And (`Op.AND`): takes 2 parameter indices and evaluates to true if both evaluate to true.
+- Or (`Op.OR`): takes 2 parameter indices and evaluates to true if either evaluate to true.
+- Exclusive or (`Op.XOR`): takes 2 parameter indices and evaluates to true if only one of the parameters evaluate to true.
+- If else (`Op.IF_ELSE`): takes 3 parameters, evaluates the first parameter and if true, evalutes as the second parameter's evaluation, or as the third parameter's evaluation if false.
 
 **Parameter execution**
 
-When evaluating a rule, the ACL will always evaluate the result of the first parameter. This first parameter can be an operation that links to other parameters and its evaluation depends on those parameter evaluation.
+When evaluating a rule, the ACL will always evaluate the result of the first parameter. This first parameter can be an operation that links to other parameters and its evaluation depends on those parameters' evaluation. Execution is recursive and the result evaluated is always the result of the evaluation of the first parameter.
 
-Execution is recursive and the result evaluated is always the result of the eval of the first parameter.
+**Examples of rules**
 
-**Parameter encoding**
+The interpreter supports encoding complex rules in what would look almost like a programming language. For example, let’s look at the following [test case](https://github.com/aragon/aragonOS/blob/63c4722b8629f78350586bcea7c0837ab5882a20/test/TestACLInterpreter.sol#L112-L126):
 
-To encode some logic operations (AND, OR, IF-ELSE) which link to other parameters, the following helpers are provided, where the function arguments always refer to parameter indexes in the Param array they belong to:
-If-Else (ternary) operation
-encodeIfElse(uint condition, uint success, uint failure)
+```solidity
+function testComplexCombination() {
+    // if (oracle and block number > block number - 1) then arg 0 < 10 or oracle else false
+    Param[] memory params = new Param[](7);
+    params[0] = Param(LOGIC_OP_PARAM_ID, uint8(Op.IF_ELSE), encodeIfElse(1, 4, 6));
+    params[1] = Param(LOGIC_OP_PARAM_ID, uint8(Op.AND), encodeOperator(2, 3));
+    params[2] = Param(ORACLE_PARAM_ID, uint8(Op.EQ), uint240(new AcceptOracle()));
+    params[3] = Param(BLOCK_NUMBER_PARAM_ID, uint8(Op.GT), uint240(block.number - 1));
+    params[4] = Param(LOGIC_OP_PARAM_ID, uint8(Op.OR), encodeOperator(5, 2));
+    params[5] = Param(0, uint8(Op.LT), uint240(10));
+    params[6] = Param(PARAM_VALUE_PARAM_ID, uint8(Op.RET), 0);
 
-Binary operations (And, Or)
-encodeOperator(uint param1, uint param2)
+    assertEval(params, arr(uint256(10)), true);
 
-**Rules**
-
-The interpreter supports encoding complex rules in what would look almost like a programming language, for example let’s look at the following test case:
-
-```js
-   function testComplexCombination() {
-        // if (oracle and block number > block number - 1) then arg 0 < 10 or oracle else false
-        Param[] memory params = new Param[](7)
-        params[0] = Param(LOGIC_OP_PARAM_ID, uint8(Op.IF_ELSE), encodeIfElse(1, 4, 6))
-        params[1] = Param(LOGIC_OP_PARAM_ID, uint8(Op.AND), encodeOperator(2, 3))
-        params[2] = Param(ORACLE_PARAM_ID, uint8(Op.EQ), uint240(new AcceptOracle()))
-        params[3] = Param(BLOCK_NUMBER_PARAM_ID, uint8(Op.GT), uint240(block.number - 1))
-        params[4] = Param(LOGIC_OP_PARAM_ID, uint8(Op.OR), encodeOperator(5, 2))
-        params[5] = Param(0, uint8(Op.LT), uint240(10))
-        params[6] = Param(PARAM_VALUE_PARAM_ID, uint8(Op.RET), 0)
-
-        assertEval(params, arr(uint256(10)), true)
-
-        params[4] = Param(LOGIC_OP_PARAM_ID, uint8(Op.AND), encodeOperator(5, 2))
-        assertEval(params, arr(uint256(10)), false)
-    }
-```
-
-When assigned to a permission, this rule will evaluate to true (and therefore allow the action) if an oracle accepts it and the block number is greater than the previous block number, and either the oracle allows it (again! testing redundancy too) or the first parameter of the rule is lower than 10. The possibilities for customizing organizations/DApps governance model are truly endless, without the need to write any actual Solidity.
-
-**Events**
-
-createPermission(), grantPermission(), and revokePermission() all fire the same SetPermission event that Aragon clients are expected to cache and process into a locally stored version of the ACL:
-
-```js
-SetPermission(address indexed from, address indexed to, bytes32 indexed role, bool allowed)
-```
-
-setPermissionManager() fires the following event:
-
-```js
-ChangePermissionManager(address indexed app, bytes32 indexed role, address indexed manager)
-```
-
-**Example**
-
-In this example we are going to have our give permission for a user to install a simple valut app and expose the ability to transfer funds to a users account.
-
-Vault contract
-
-```js
-pragma solidity 0.4.18;
-import "@aragon/os/contracts/apps/AragonApp.sol";
-import "@aragon/os/contracts/lib/zeppelin/token/ERC20.sol";
-import "@aragon/os/contracts/lib/misc/Migrations.sol";
-
-contract Vault is AragonApp {
-    bytes32 constant public TRANSFER_ROLE = keccak256("TRANSFER_ROLE");
-
-    /**
-    * @notice Transfer `value` `token` from the Vault to `to`
-    * @param token Address of the token being transferred
-    * @param to Address of the recipient of tokens
-    * @param value Amount of tokens being transferred
-    */
-    function transfer(address token, address to, uint256 value)
-        authP(TRANSFER_ROLE, arr(address(token), to, value))
-        external
-    {
-        transfer(token, to, value, new bytes(0));
-    }
-
-
-    function deposit(address token, address from, uint256 value) payable public {
-        require(value > 0);
-        require(msg.sender == from);
-        if (token == ETH) {
-            // Deposit is implicit in this case
-            require(msg.value == value);
-        } else {
-            require(ERC20(token).transferFrom(from, this, value));
-        }
-    }
-
-    function balance(address token) public view returns (uint256) {
-        if (token == ETH) {
-            return address(this).balance;
-        } else {
-            return ERC20(token).balanceOf(this);
-        }
-    }
+    params[4] = Param(LOGIC_OP_PARAM_ID, uint8(Op.AND), encodeOperator(5, 2));
+    assertEval(params, arr(uint256(10)), false);
 }
 ```
 
-The transfer function needs to be exposed for the ACL contract to interact with it so we use the authP() parameter to tell it which parameters need to be passed to the ACL.
+When assigned to a permission, this rule will **evaluate to true** (and therefore allow the action) only on the following conditions:
 
-```js
-authP(TRANSFER_ROLE, arr(address(token), to, value))
-```
+- If an oracle accepts it, and
+- The block number is greater than the previous block number, and
+- Either the oracle allows it (again! testing redundancy too) or the first parameter of the rule is lower than 10.
 
-First we pass in the role this function will be assigned to, TRANSFER_ROLE. Using the arr() parameter we pass in the next set of parameters that are going to be sent to the ACL to determine is this action can go through. Lets say we deploy this contract and its address is 0x111.
+The possibilities for customizing an organization or protocol's governance model are truly endless, without the need to write any actual Solidity.
 
-Now that transfer() is exposed lets use it!
+### Permissions
 
-Here is our Vault.js code
+`CREATE_PERMISSION_ROLE` protects `createPermission()`.
 
-```js
-const ACL = artifacts.require('ACL')
-const Kernel = artifacts.require('Kernel')
-
-let kernel,
-  app,
-  factory,
-  acl = {}
-
-const permissionsRoot = accounts[0]
-const granted = accounts[1]
-
-let role = null
-const receipt = await factory.newDAO(permissionsRoot)
-app = receipt.logs.filter(l => l.event == 'DeployDAO')[0].args.dao
-
-kernel = Kernel.at(app)
-
-role = await kernel.APP_MANAGER_ROLE()
-acl = ACL.at(await kernel.acl())
-
-const test = async () => {
-  let userOne = accounts[3]
-  let userTwo = accounts[4]
-  let aclAddress = '0x3292' // this is the acl address
-  let vaultApp = '0x111' //vault app address
-  let roleAdd = 'ADD_APPS' // role to add applications
-  let roleTransfer = 'TRANSFER_ROLE' // role to add applications
-
-  let baseNamespace = '0x1212' //this is the Base namespace
-
-  //grant userOne permission to add the vault app
-  await acl.grantPermissionP(userOne, app, roleAdd, { from: granted })
-
-  //now that userOne can add apps to the kernel we will add the vault app
-  await kernel.setApp(baseNamespace, vaultApp, aclAddress, { from: userOne })
-
-  //we have the vault, lets add a permission to allow this userTwo to transfer funds
-  await acl.grantPermissionP(userTwo, vaultApp, roleTransfer, { from: userOne })
-};
-```
-
-## Proxy
-
-Upgrading the kernel or an app is done by setting a new address for a key in the kernel using proxies.
-
-**Kernel Upgrade**
-
-Upgrading the kernel of an organization is done by changing the Kernel appId in the Core namespace.
-
-```js
-kernel.setApp(kernel.CORE_NAMESPACE(), kernel.KERNEL_APP_ID(), newKernelCodeAddr)
-```
-
-> Warning:
+> **Warning**
 >
-> An upgrade to the Kernel could render it un-upgradeable.
+> `CREATE_PERMISSION_ROLE` could be used in malicious and dangerous ways. This is initially assigned when when the Kernel is first initialized. **Protect this permission.**
 
-**App Upgrade**
+### Events
 
-In a similar fashion to the Kernel, apps can share implementation code to save gas on deployment. AppProxies rely their upgradeability to the Kernel.
+[`createPermission()`](#create-permission), [`grantPermission()`](#grant-permission), and [`revokePermission()`](#revoke-permission) all fire the same `SetPermission` event that Aragon clients are expected to cache and process into a locally stored version of the ACL:
 
-Upgrading an app is done by setting a new app address for the appId and using Base namespace in the kernel.
-
-```js
-kernel.setApp(kernel.APP_BASES_NAMESPACE(), votingAppId, newVotingAppCodeAddr)
+```solidity
+SetPermission(address indexed from, address indexed to, bytes32 indexed role, bool allowed);
 ```
 
-There are two different types of proxies:
+[`setPermissionManager()`](#set-permission-manager) fires the following event:
 
-**upgradeableAppProxy**: in every call to the proxy, it checks with the Kernel what the current code for that appId is and forwards the call. Not sure what this is doing - ?
-
-**PinnedAppProxy**: on contract creation it checks and saves the app code currently in the Kernel. This cannot be upgraded unless the app code has explicit logic to change that storage slot.
-
-```js
-kernel.newAppInstance(votingAppId, votingApp)
+```solidity
+ChangePermissionManager(address indexed app, bytes32 indexed role, address indexed manager);
 ```
 
-```js
-kernel.newPinnedAppInstance(votingAppId, votingApp)
-```
+## AragonApp
 
-## Forwarder
+### Adding Permissions
 
-Forwarders are one of the most important concepts of aragonOS. Rather than hardcoding the notion of a vote into each separate app’s functionality and ACL, one can instead use a generic Voting App, which implements the forwarding interface, to pass actions forward to other apps after successful votes. If the Voting App is set up to only allow a token’s holders to vote, that means any actions/calls being passed from it must have been approved by the token’s holders.
+Apps have the choice of which actions to protect behind the ACL, as some actions may make sense to be completely public. Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifier `auth` or `authP()` to the action. On executing the action, the `auth` / `authP` modifiers check with the Kernel whether the entity performing the call holds the required role or not.
 
-**Forwarding and transaction pathing**
+## Lifecycle of an aragonOS call
 
-The forwarding interface also allows the Aragon client through aragon.js to calculate what we call ‘forwarding paths’. If you wish to perform an action and the client determines you don’t have direct permission to do it, it will think of alternative paths for execution. For example, you might directly go to the Vault App wishing to perform a token transfer, and the client directly prompts you to create a vote, as you have permission to create votes, that will perform the transfer if successful, as illustrated in the animation below.
+![](/docs/assets/os-call.gif)
 
-We have designed our own scripting format, known as EVM scripts, to encode complex actions into a representation that can be stored and later executed by another entity. aragonOS 3.0 allows you to have multiple script executors that can be housed in your organization
+## Forwarders and EVMScripts
 
-**EVMScripts**
+Forwarders are one of the most important concepts of aragonOS. Rather than hardcoding the notion of a vote into each separate app’s functionality and ACL, one can instead use a generic Voting App, which implements the forwarding interface, to pass actions _forward_ to other apps after successful votes. If the Voting App is set up to only allow a token’s holders to vote, that means any actions/calls being passed from it must have also been approved by the token’s holders.
 
-Script executors are contracts that take a script and an input and return an output after execution. We have built three script executors for the initial release:
+### Forwarding and transaction pathing
 
-5.2.1 Script executors and EVMScriptRegistry
-EVMScriptExecutors must follow this interface:
+The forwarding interface also allows a frontend interface, like the Aragon client, to calculate "forwarding paths". If you wanted to perform an action but you don't have the required permissions, a client can think of alternative paths for execution. For example, you might be in the Vault app's interface wishing to perform a token transfer. If you only had the permission to create votes, the client would directly prompt you to create a vote rather than let you complete the transfer. The flow is illustrated in the following animation:
 
-```js
+![forwarding animation](/docs/assets/fwd.gif)
+(Governance model and characters are fictional)
+
+### EVMScripts
+
+We have designed our own scripting format, known as EVMScripts, to encode complex actions into a bytes representation that can be stored and later executed by another entity. EVMScripts can be installed on a per-organization basis, through a **EVMScriptRegistry**, and aragonOS comes complete with the ability to install multiple script executors in an organization.
+
+**EVMScript executors** are contracts that take a script and an input and return an output after execution.
+
+**EVMScript executors and EVMScriptRegistry**
+
+EVMScript executors must implement the following interface:
+
+```solidity
 interface IEVMScriptExecutor {
-    function execScript(bytes script, bytes input, address[] blacklist) external returns (bytes)
+    function execScript(bytes script, bytes input, address[] blacklist) external returns (bytes);
+    function executorType() external pure returns (bytes32);
 }
 ```
 
-Because script executors get are called with a delegatecall, in order to prevent self-destructs, IEVMScriptExecutor.execScript(...) MUST return at least 32 bytes so in case an executor selfdestructs it could be detected.
+> **Warning**
+>
+> EVMScript executors are called with a `delegatecall`, and operate in the context of the calling app. This **must** be taken into consideration when developing your own executor, as it could cause a security breach.
 
-CallsScript() -
-A simple way to concatenate multiple calls. It cancels the operation if any of the calls fail.
+aragonOS provides the `CallsScript` executor as a simple way to concatenate multiple calls. It cancels the operation if any of the calls fail.
 
-Script body: (See source code file for spec of the payload)
+- **Script body:** (See source code file for spec of the payload)
+- **Input:** None
+- **Output:** None.
+- **Blacklist:** Entire script reverts if a call to one of the addresses in the blacklist is performed.
 
-Input: None
+### 5.3 Making an app a Forwarder
 
-Output: None
+Apps can become Forwarders by simply implementing the following interface:
 
-Blacklist: Entire script reverts if a call to one of the addresses in the blacklist is performed.
+```solidity
+interface IForwarder {
+    function isForwarder() external pure returns (bool);
+    function canForward(address sender, bytes evmCallScript) public view returns (bool);
+    function forward(bytes evmCallScript) public;
+}
+```
 
-DelegateScript() - delegatecalls into a given contract, which basically allows for any arbitrary computation within the EVM in the caller’s context.
+Examples of forwarders can be found in the [aragon-apps repo](https://github.com/aragon/aragon-apps). Both the [Voting](https://github.com/aragon/aragon-apps/blob/master/apps/voting/contracts/Voting.sol) and [Token Manager](https://github.com/aragon/aragon-apps/blob/master/apps/token-manager/contracts/TokenManager.sol) apps are forwarders.
 
-Script body: Address of the contract to make the call to.
-
-Input: calldata for the delegatecall that will be performed.
-
-Output: raw return data of the call.
-
-Blacklist: impossible to enforce. If there are any addresses in the blacklist the script will revert as it is not possible to check whether a particular address will be called.
-
-DeployDelegateScript() - Is a superset of the DelegateScript, but it takes a contract’s initcode bytecode as its script body instead of just an address. On execution, it deploys the contract to the blockchain and executes it with a delegatecall.
-
-Script body:: initcode for contract being created.
-
-Input: calldata for the delegatecall that will be performed after contract creation.
-
-Output: raw return data of the call.
-
-Blacklist: impossible to enforce. If there are any addresses in the blacklist the script will revert as it is not possible to check whether a particular address will be called.
-
-**Making an app a Forwarder**
-
-Examples of forwarders can be found in the aragon-apps repo, both the Voting and the Token Manager are forwarders.
-
-**Warnings**
-
-EVMScripts can be too powerful. Providing forwarding functionality to an app
-
-Some things to have in mind when developing an app
-
-For example the Token Manager has the token address in its blacklist because otherwise any token holder that is allowed to forward through the Token Manager would effectively have control over the token in the same way the Token Manager has, which would allow to bypass it. By having it in the blacklist, the latter 2 script executors can’t be used, so it only works with CallsScripts that don’t make calls to the token address.
+> **Warning**
+>
+> EVMScripts can be too powerful. They may cause security breaches! For example, the Token Manager, which allows any token holder to forward actions, needs to have the token address in its blacklist as otherwise, any token holder would effectively have control over the token in the same way that the Token Manager does!

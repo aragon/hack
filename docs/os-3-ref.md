@@ -57,7 +57,7 @@ This results in purely technical benefits such as testability, but it is also ve
 
 ### 1.4 Lifecycle of an aragonOS call
 
-![](/docs/assets/os3.gif)
+![](/docs/assets/os-call.gif)
 
 ## 2. Kernel
 ### 2.1 The app mapping
