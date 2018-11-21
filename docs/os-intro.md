@@ -24,9 +24,9 @@ Its architecture is based on the idea of a decentralized organization or protoco
 --------
 
 aragonOS provides the following functionality:
-- **Upgreadability**: Smart contracts can be **upgraded to a newer version**. Example: *Fixing a bug or adding a feature*.
-- **Permission control**: By using the `auth` and `authP` modifiers you can **protect functionality** so only other apps or entities can access it only if given a permission. Example: *Protecting a vault so only the organization's Voting app can initiate an action to transfer funds*.
-- **Forwarders**: aragonOS apps can communicate with each other by sending their intent to perform an action to other apps. Example: *Withdrawing funds from a vault only on the passing of a vote and the expiring of a time-lock*.
+- **Upgreadability**: Smart contracts can be **upgraded to a newer version**. Example: fixing a bug or adding a feature.
+- **Permission control**: By using the `auth` and `authP` modifiers you can **protect functionality** so only other apps or entities can access it only if given a permission. Example: protecting a vault so only the organization's Voting app can initiate an action to transfer funds.
+- **Forwarders**: aragonOS apps can communicate with each other by sending their intent to perform an action to other apps. Example: withdrawing funds from a vault only on the passing of a vote and the expiring of a time-lock.
 
 All the above makes it very simple for aragonOS apps to incorporate **governance**. You just need to add a voting app, configure permissions the right way, and away you go!
 
