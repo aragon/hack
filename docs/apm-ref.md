@@ -108,7 +108,7 @@ repoVersion = repo.getBySemanticVersion([major, minor, patch]);
 
 **By latest contract address**
 
-Fetching the latest version by contract address allows clients to get the latest frontend package for an organization that may not have upgraded the smart contract code to the latest version:
+Fetching the latest version by contract address is useful for clients to easily fetch the latest minor or patch release associated with a particular major version. This makes it particularly easy for organizations to still be served the relevant frontends if they have not updated their smart contract code to the latest version.
 
 ```solidity
 repoVersion = repo.getLatestForContractAddress(contractCode);
