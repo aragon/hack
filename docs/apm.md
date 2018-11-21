@@ -21,7 +21,7 @@ We envision that many APM registries will be created for different purposes and 
 
 At the repo level, each repo can have **its own rules** that govern **how new versions can be published** using the aragonOS [Access Control List](/docs/acl-intro.html). This allows for setting up different types of processes depending on the importance of the repo or the nature of the upgrade (major, minor or patch).
 
-Both APM Registries and APM Repos are built as Aragon apps, and together, form a Decentralized Autonomous Organization (DAO) backed by [aragonOS](/docs/aragonos-intro.html). Because of this, any aragonOS-compatible application could be installed to help govern the process for creating and updating repos in each APM instance, greatly expanding the possibilities.
+Both APM Registries and APM Repos are built as Aragon apps and together form a Decentralized Autonomous Organization (DAO) backed by [aragonOS](/docs/aragonos-intro.html). Because of this, any aragonOS-compatible application could be installed to help govern the process for creating and updating repos in each APM instance, greatly expanding the possibilities.
 
 ![](https://blog.aragon.org/content/images/2018/08/0_THgdT5gn4P-WjT3d.png)
 
@@ -33,7 +33,7 @@ The smart contract code only applies to packages that have an on-chain contract 
 
 APM gives users **complete transparency** over all deployments and **traceability** of what the process of publishing a new version entailed.
 
-It is important to point out that APM acts as the reference to what the last version of a repo is, but **all upgrades are opt-in** and users of the repo, such as Aragon organizations, need to decide to upgrade or keep using an old version through their own governance mechanisms. Automatically upgrading all of users of a repo is extremely dangerous regardless of the upgrade governance mechanism. That's why all upgrades are opt-in and must be started by the user. Someone could, however, build an auto-update contract that users could allow to automatically update their dependencies.
+It is important to point out that APM acts as the reference to what the last version of a repo is but **all upgrades are opt-in** and users of the repo, such as Aragon organizations, need to decide to upgrade or keep using an old version through their own governance mechanisms. Automatically upgrading all users of a repo is extremely dangerous regardless of the upgrade governance mechanism. That's why all upgrades are opt-in and must be started by the user. Someone could, however, build an auto-update contract that users could allow to automatically update their dependencies.
 
 ## Interacting with APM: apm.js and Aragon CLI
 

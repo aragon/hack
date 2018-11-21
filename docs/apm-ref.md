@@ -19,9 +19,8 @@ Different APM registries in which everyone can publish their packages are expect
 be created by the community, and we have set up `open.aragonpm.eth` on both the main
 and Rinkeby networks as an open instance available for any one to publish to.
 
-This diagram tries to illustrate the architecture of an APM Registry DAO:
-
 ![](/docs/assets/apm-arch.jpeg)
+> This diagram tries to illustrate the architecture of an APM Registry DAO
 
 ## APMRegistry
 ### ENSSubdomainRegistrar
@@ -40,13 +39,13 @@ registry is enforced directly using the DAO's ACL.
 By default a new repo will set the creator (or `dev` param) as the owner of the
 repo and it is the only address that can create new versions in the repo. However,
 as the permission manager, this account can grant permission to other entities to
-create versions. These entities can be anything from another dev, to a multisig or
+create versions. These entities can be anything from another dev to a multisig or
 a full blown DAO.
 
 ## Repos
 
 After discovering an entity in the DAO by traversing the ACL that is an app (see
-section 2.3 *The apps of a DAO*), we can fetch its `app.appId()` and use ENS to
+section 2.3 *The apps of a DAO*) we can fetch its `app.appId()` and use ENS to
 resolve its Repo contract:
 
 ```solidity
@@ -61,7 +60,7 @@ Every individual Repo is an Aragon app that uses the APM DAO for its ACL.
 Depending on each APM registry governance, the process for creating new versions
 in the Repo or transferring ownership may vary.
 
-A Repo keeps versioned state over:
+A Repo keeps versioned state over the following components:
 
   - **Smart contract library code** (`contractAddress`): the app code is the address of
   the deployed contract version of the app. An organization's Kernel determines which
@@ -72,22 +71,20 @@ A Repo keeps versioned state over:
   content hash for fetching it. An `arapp.json` file is expected to be found in this
   package.
 
-A Repo does not need to contain both pieces; a repo can solely version either a contract
-or off-chain assets. While no problems will occur by using it this way, note that all the
+A Repo does not need to contain both components but, whatever the case, all the
 rules below still apply.
 
-By versioning both the app code address and the package content, we can add
+By versioning both the app code address and the package content we can add
 additional expectations for the what semantic versioning of Repos mean:
 
   - **Patch**: Minor changes to the package contents (e.g. frontend). Update can
   be performed silently for users.
-  - **Minor**: Major changes to the package contents, but still works with the
+  - **Minor**: Significant changes to the package contents but still works with the
   current smart contract code. Users should be notified of the update.
-  - **Major**: Any change to the smart contract app code with or without an
-  accompanying frontend upgrade. User interaction is needed to upgrade.
+  - **Major**: Any change to the smart contract app code that requires user interaction in order to upgrade.
 
 ### Version upgrade rules
-Before creating a new version in a repo, an ACL check is performed to see whether
+Before creating a new version in a repo an ACL check is performed to see whether
 the entity has permission to create a new version.
 
 After the ACL check, the Repo logic checks whether the version upgrade is allowed.
@@ -102,10 +99,10 @@ version (upgrading it to `M.0.0` by the above rule).
 
 The initial version of an app must be a valid bump from version `0.0.0`.
 
-By having this check performed at the smart contract level, we can load the correct
+By having this check performed at the smart contract level we can load the correct
 version of the frontend just by looking at an instance of an app. This is done by
 checking that the version of a smart contract is linked to a given app by getting
-its `appId` and `appCode` (see section [*By latest contract address*](#by-latest-contract-address).
+its `appId` and `appCode` (see section below [*By latest contract address*](#by-latest-contract-address).)
 
 ### Fetching Repo versions
 Repos offer multiple ways to fetch versions. By checking logs for the following
@@ -123,7 +120,7 @@ repoVersion = (uint16[3] semanticVersion, address contractAddress, bytes content
 
 #### By versionId
 Every version can be fetched with its `versionId` (which starts in `1` and is
-increments by `1` each version).
+incremented by `1` each version).
 
 ```solidity
 repoVersion = repo.getByVersionId(versionId)
@@ -136,21 +133,21 @@ lastVersionId = count - 1
 ```
 
 #### By semantic version
-Providing the exact semantic version.
+A version can be fetched by providing the exact semantic version.
 ```solidity
 repoVersion = repo.getBySemanticVersion([major, minor, patch])
 ```
 
 #### By latest contract address
 Fetching the latest version by contract address allows clients to get the latest
-frontend package for an organization that may have not upgraded the smart contract
+frontend package for an organization that may not have upgraded the smart contract
 code to the latest version.
 ```solidity
 repoVersion = repo.getLatestForContractAddress(contractCode)
 ```
 
 #### Latest version
-Pretty self-describing.
+The latest version of a Repo can be fetched as follows:
 ```solidity
 repoVersion = repo.getLatest()
 ```

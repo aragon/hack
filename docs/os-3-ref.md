@@ -6,17 +6,15 @@ sidebar_label: Reference (aragonOS 3)
 
 *Documentation for [aragonOS](https://github.com/aragon/aragonOS) v3.1.2*
 
-This document provides a technical overview about the architecture and can be used
-as a specification and developer guide. For a less technically-oriented introduction
-to aragonOS 3, you can check the [alpha release blog post](https://blog.aragon.org/introducing-aragonos-3-0-alpha-the-new-operating-system-for-protocols-and-dapps-348f7ac92cff).
+This document provides a technical overview of the architecture and can be used
+as a specification and developer guide. For a less technical introduction
+to aragonOS 3 you can check the [alpha release blog post](https://blog.aragon.org/introducing-aragonos-3-0-alpha-the-new-operating-system-for-protocols-and-dapps-348f7ac92cff).
 
 ## 1. General architecture and design philosophy
 
-Using aragonOS to build a system allows to **decouple** specific **business
-logic** of a protocol or application, from its **authentication logic**.
-
-It allows to code your application without thinking about authentication or
-governance at all, just by inheriting from the **AragonApp** base class and defining
+Using aragonOS to build a system allows for **decoupling** of specific **business
+logic** of a protocol or application from its **authentication logic**.  It allows you to code your application without thinking about authentication or
+governance at all. By inheriting from the **AragonApp** base class and defining
 actions that require authentication with a special modifier, aragonOS can handle
 authentication for the protocol.
 
@@ -25,7 +23,7 @@ authentication for the protocol.
 Before describing general ideas about the architecture, it is important to
 understand two concepts the entire framework builds upon:
 
-- **Proxy:** A Proxy is a very simple smart contract construct which consists on
+- **Proxy:** A Proxy is a very simple smart contract construct which consists of
 decoupling the instance of a particular smart contract with the location of its actual
 business logic. We call individual instances of contracts **Proxy** and the logic
 **base contracts**. A Proxy delegates all its logic on a base contract. Upgradeability

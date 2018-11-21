@@ -34,11 +34,11 @@ Making an app available for use with upgradeable proxies requires deploying the 
 
 ## Constructor and initialization
 
-The constructor of a contract is executed when a contract is created. However, when using a proxy, the constructor code that is run is the proxies' constructor and not the one of the base contract. Because of this, aragonOS apps **cannot use a constructor for initializing the contract**. An initialization function that can only be executed once is required to both be implemented and called before an app is usable.
+The constructor of a contract is executed when a contract is created. When using a proxy, however, the constructor code that is run is the proxy's constructor and not the one of the base contract. Because of this, aragonOS apps **cannot use a constructor for initializing the contract**. An initialization function that can only be executed once is required to both be implemented and called before an app is usable.
 
-`AragonApp` exposes the `onlyInit` modifier to protect a function from being called after `initialized()` has been completed, and the `auth`, `authP`, and `isInitialized` modifiers to protect against a function from being called before the initialization is complete.
+`AragonApp` exposes the `onlyInit` modifier to protect a function from being called after `initialized()` has been completed and the `auth`, `authP`, and `isInitialized` modifiers to protect against a function from being called before the initialization is complete.
 
-In the following example, if `sendFunds()` was called before initialization was complete, it would transfer the ETH sent with the call to `address(0)` as `receiver` wasn't set. By adding the `isInitialized` modifier, the function will fail until the contract has been initialized. It is a good practice to require all functions that modify state to be initialized before they can be used.
+In the following example, if `sendFunds()` was called before initialization was complete, it would transfer the ETH sent with the call to `address(0)` since `receiver` wasn't set. By adding the `isInitialized` modifier, the function will fail until the contract has been initialized. It is a good practice to require all functions that modify state to be initialized before they can be used.
 
 ```solidity
 import "@aragon/os/contracts/apps/AragonApp.sol";
@@ -68,9 +68,9 @@ Another important note is that if the app uses the [ACL](#roles-and-the-acl) for
 
 aragonOS comes with a powerful [Access Control List (ACL)](/docs/acl-intro.html) that apps can leverage for protecting functionality behind permissions. Rather than coding any custom access control logic into your app, such as the infamous `onlyOwner`, you can just protect functions by adding the `auth` or `authP` modifiers.
 
-If the `auth` modifier is present in a function, prior to its execution, it will check with the connected Kernel's ACL whether the entity performing the call is allowed to perform the action in the app.
+If the `auth` modifier is present in a function it will check with the connected Kernel's ACL whether the entity performing the call is allowed to perform the action in the app prior to its execution.
 
-Roles are identified by a `bytes32` value. This identifier can be a constant value so it doesn't take up any storage space. The standard name for a role identifier is the `keccak256` hash of its name as other tooling in the stack expect this to be the case.
+Roles are identified by a `bytes32` value. This identifier can be a constant value so it doesn't take up any storage space. The standard name for a role identifier is the `keccak256` hash of its name as other tooling in the stack expects this to be the case.
 
 ```solidity
 import "@aragon/os/contracts/apps/AragonApp.sol";
@@ -97,7 +97,7 @@ contract MyApp is AragonApp {
 
 An important note is that the `auth` and `authP` modifiers will also check whether the app is [initialized](#constructor-and-initialization). If the **app hasn't been initialized, the authentication check will fail**.
 
-When adding a role to your app, you will also need to add it to the [`arapp.json`](cli-usage.md#the-arappjson-file) file with a description of the functionality protected by the role. You can check Aragon's [Voting app arapp.json](https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json) for an example of role descriptions.
+When adding a role to your app you will also need to add it to the [`arapp.json`](cli-usage.md#the-arappjson-file) file with a description of the functionality protected by the role. You can check Aragon's [Voting app arapp.json](https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json) for an example of role descriptions.
 
 ```
 {
@@ -187,14 +187,14 @@ contract MyApp is AragonApp {
 
 ### UNIX philosophy
 
-The design philosophy we use when developing Aragon apps is very similar to the UNIX philosophy. We try to architect apps to do one thing and one thing well, and to respect and implement the few aragonOS interfaces so that they play nicely with the rest of the ecosystem.
+The design philosophy we use when developing Aragon apps is very similar to the UNIX philosophy. We try to architect apps to do one thing and one thing well and to respect and implement the few aragonOS interfaces so that they play nicely with the rest of the ecosystem.
 
 This results in purely technical benefits such as testability, but it also becomes very powerful when apps are combined and the output of one app becomes the input of an other one. You can think of forwarders resembling UNIX pipes in their philosophy.
 
 ### Permissioning
 
-We also recommend that all state-changing functionality in an application should be protected by a role, and that each separate action should have its own role. This allows one to create granular permissioning schemes and makes securing an application easier.
+We also recommend that all state-changing functionality in an application should be protected by a role and that each separate action should have its own role. This allows one to create granular permissioning schemes and makes securing an application easier.
 
 ## Examples
 
-We officially build and maintain a number of Aragon apps ourselves, that implement the basic functionalities to manage organizations. These apps are released alongside every Aragon release and are a good reference of how to build Aragon apps. You can view their code in the [aragon/aragon-apps](https://github.com/aragon/aragon-apps) repo.
+We officially build and maintain a number of Aragon apps ourselves that implement the basic functionalities to manage organizations. These apps are released alongside every Aragon release and are a good reference of how to build Aragon apps. You can view their code in the [aragon/aragon-apps](https://github.com/aragon/aragon-apps) repo.
