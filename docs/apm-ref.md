@@ -4,24 +4,6 @@ title: APM reference documentation
 sidebar_label: Reference documentation
 ---
 
-##  APM as an Aragon DAO
-
-The Aragon Package Manager (APM) is built on top of aragonOS. It is a Decentralized
-Autonomous Organization (DAO) running on the same Aragon that‘s used to build Aragon
-organizations (to take advantage of upgradeability and access control)!
-
-This allows for many APM registries to exist with different governance models for
-package creation and publishing new versions. There is an official Aragon curated
-instance, `aragonpm.eth`, which has high quality standards and strict restrictions on
-what can get published, that we use for publishing our core components.
-
-Different APM registries in which everyone can publish their packages are expected to
-be created by the community, and we have set up `open.aragonpm.eth` on both the main
-and Rinkeby networks as an open instance available for any one to publish to.
-
-![](/docs/assets/apm-arch.jpeg)
-> This diagram tries to illustrate the architecture of an APM Registry DAO
-
 ## APMRegistry
 ### ENSSubdomainRegistrar
 
