@@ -9,7 +9,7 @@ hide_title: true
 
 **Upgradeability** is one of the key features of [aragonOS](/docs/aragonos-intro.html).
 
-Because upgradeability implies there will be multiple versions of a package of software, we decided to build the Aragon Package Manager (APM) as the main way to **distribute different versions of the packages** that comprise the Aragon client. However, as we built it, we realized that its use cases could extend far beyond just ours as a publicly accessible piece of infrastructure living on Ethereum.
+Because upgradeability implies there will be multiple versions of a package of software, we decided to build the Aragon Package Manager (APM) as the main way to **distribute different versions of the packages** that comprise the Aragon client. As we built it, however, we realized that its use cases could extend far beyond just ours as a publicly accessible piece of infrastructure living on Ethereum.
 
 A package or **repository** (repo) in an APM registry keeps track of evolving versions of its contents (the webapp component typically) and smart contract code (if applicable).
 
@@ -22,7 +22,7 @@ Each APM registry is a smart contract that owns an [Ethereum Name Service](https
 
 We envision that many APM registries will be created for different purposes and types of packages. For Aragon, we use the `aragonpm.eth` registry to host our core components. We also have the `open.aragonpm.eth` registry for community developed packages, where anyone can create repos.
 
-At the repo level, each repo can have **its own rules** that govern **how new versions can be published** using [Access Control List](/docs/acl-intro.html) from aragonOS. This allows for setting up different types of processes depending on the importance of the repo or the nature of the upgrade (major, minor or patch).
+At the repo level, each repo can have **its own rules** that govern **how new versions can be published** using the [Access Control List](/docs/acl-intro.html) from aragonOS. This allows for setting up different types of processes depending on the importance of the repo or the nature of the upgrade (major, minor or patch).
 
 ![](/docs/assets/apm-repo.png)
 > A Repo is created in a Registry and can have many versions published over time
