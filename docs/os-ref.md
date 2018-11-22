@@ -369,13 +369,127 @@ ChangePermissionManager(address indexed app, bytes32 indexed role, address index
 
 ## AragonApp
 
-### Adding Permissions
+AragonApp is the base class for all aragonOS applications. It exposes a light layer of functionality to supplement an application's business logic and sets up the required storage to connect to a Kernel.
 
-Apps have the choice of which actions to protect behind the ACL, as some actions may make sense to be completely public. Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifier `auth` or `authP()` to the action. On executing the action, the `auth` / `authP` modifiers check with the Kernel whether the entity performing the call holds the required role or not.
+> **Note**
+>
+> We have outlined a number of recommended conventions to follow in the [aragonOS development guide](/docs/aragonos-building.html#conventions).
 
-## Lifecycle of an aragonOS call
+### Security recommendations and sane defaults
 
-![](/docs/assets/os-call.gif)
+While it is ultimately up to you to understand the concepts and sufficiently protect your business logic from flaws, AragonApp attempts to provide sane and secure defaults out of the box so you don't have to worry about potential security breaches from misconfiguration.
+
+Applications inheriting from AragonApp are required to be initialized, connected to a Kernel, and used with an [AppProxy](#upgradeability). By default, they are not meant to receive or hold funds and allow all tokens to be recovered through the fund recovery mechanism in case of an accidental token transfer.
+
+To secure an application, it is critical to ensure that all externally-accessible, state-changing functionality is protected by [authentication](#authentication). If the application is meant to receive, hold, or transfer funds, you will also have to carefully reason about the [fund recovery and depositable capabilities](#application-capabilities) and how they affect your application (alongside the [standard Ethereum security recommendations](https://github.com/ConsenSys/smart-contract-best-practices), of course!). If the app is a [forwarder or uses EVMScripts](#forwarders-and-evmscripts), you should also carefully understand the implications of allowing another application or entity to execute an action from your application's address.
+
+### Authentication
+
+**Adding roles**
+
+Declaring roles is simple and usually done as public `bytes32` declarations at the start of the contract file. By convention, the standard name for a role identifier is the `keccak256` hash of its name as other tooling in the stack expects this to be the case:
+
+```solidity
+bytes32 public CUSTOM_ACTION_ROLE = keccak256("CUSTOM_ACTION_ROLE");
+```
+
+**Protecting functionality**
+
+Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifiers `auth` or `authP()` to the action. On executing the action, the `auth` or `authP` modifier checks with the Kernel whether the entity performing the call holds the required role or not.
+
+`auth` is capable of defining a *binary* permission—either yes or no:
+
+```solidity
+function customAction() auth(CUSTOM_ACTION_ROLE) {
+}
+```
+
+`authP` allows you to pass a number of parameters, that can then be used in the [ACL's parameterization](#parameter-interpretation) for each permission. This allows you to define powerful permissions with highly granular controls based on the inputs of an action:
+
+```solidity
+bytes32 public TRANSFER_ROLE = keccak256("TRANSFER_ROLE");
+function transfer(uint256 amount) authP(TRANSFER_ROLE, arr(amount)) {
+}
+```
+
+`authP` takes a `uint256[]` as its second argument, and a number of `arr()` syntatical sugar helpers are exposed by default by AragonApp to help construct this array when using different argument types.
+
+Finally, AragonApp also exposes a public getter for checking if an entity can perform a certain action:
+
+```solidity
+function canPerform(address sender, bytes32 role, uint256[] params) public view returns (bool);
+```
+
+> **Note**
+>
+> Apps have the choice of which actions to protect behind the ACL, as some actions may make sense to be completely public. However, any publicly exposed state-changing function should *most likely* be protected.
+
+**Lifecycle of an AragonApp call requiring the ACL**
+
+![](/docs/assets/os-app-call.gif)
+
+### Application lifecycle guarantees
+
+The [DelegateProxy](https://eips.ethereum.org/EIPS/eip-897) pattern suffers from a particular weakness of the proxy contracts depending upon the survival of the base logic contracts. It is important to understand the lifecycles of these base and proxy contracts to ensure users' safety, and to avoid incidents like the unfortunate [second Parity multisig wallet vulnerability](https://www.parity.io/security-alert-2/).
+
+AragonApps can be in the lifecycle stages of **uninitialized**, **initialized**, or **petrified**. As an application contract is deployed, it begins in the **uninitialized** state and can go to either the **initialized** or **petrified** state.
+
+![](/docs/assets/app-lifecycle.png)
+
+AragonApp base logic contracts are **petrified** upon their deployment, can never be initialized, and are considered frozen in an uninitialized state forever. This also means that, if properly developed, there is no way for these contracts to be `selfdestruct`ed.
+
+The AppProxy contracts users deploy and link to the base logic contracts are expected ot be **initialized** by their users, and only made usable once this initialization is complete.
+
+### Application capabilities
+
+**Fund recovery**
+
+By default, all AragonApps have a fund recovery mechanism enabled for all tokens and ETH, to protect against the event of an accidental transfer of funds. In many parts, this is motivated a flaw in the ERC20 specification that does not allow contracts to prevent themselves from receiving tokens like they can with ETH.
+
+All AragonApps expose an externally-accessible fund recovery mechanism:
+
+```solidity
+function transferToVault(address token) external;
+```
+
+This capability is configurable through the overloadable hook:
+
+```solidity
+function allowRecoverability(address token) public view returns (bool);
+```
+
+The default implementation of `allowRecoverability()` is just to return true for all tokens, but your overload could choose to not allow certain tokens or even ETH.
+
+**Depositable proxies**
+
+AppProxies start off not being able to receive ETH through the native, gas-limited `.send()` and `.transfer()` methods.
+
+However, this can be explicitly enabled through:
+
+```solidity
+function setDepositable(bool depositable) internal;
+```
+
+When an app wants to allow itself (as the proxy instance) to recieve ETH from other contracts using `.send()` or `.transfer()`.
+
+An example use case would be a fundraising application, which would only enable its proxy instances to be capable of receiving ETH during an ongoing fundraise.
+
+**Forwarding and EVMScripts**
+
+See the following [Forwarders and EVMScripts](#forwarders-and-evmscripts) section.
+
+AragonApp exposes the following interface for running EVMScripts:
+
+```solidity
+function runScript(bytes script, bytes input, address[] blacklist) internal isInitialized protectState returns (bytes);
+```
+
+And some getters for information about EVMScripts:
+
+```solidity
+function getEVMScriptExecutor(bytes script) public view returns (IEVMScriptExecutor);
+function getEVMScriptRegistry() public view returns (IEVMScriptRegistry);
+```
 
 ## Forwarders and EVMScripts
 
@@ -416,7 +530,7 @@ aragonOS provides the `CallsScript` executor as a simple way to concatenate mult
 - **Output:** None.
 - **Blacklist:** Entire script reverts if a call to one of the addresses in the blacklist is performed.
 
-### 5.3 Making an app a Forwarder
+### Making an app a Forwarder
 
 Apps can become Forwarders by simply implementing the following interface:
 

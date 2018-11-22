@@ -185,6 +185,16 @@ contract MyApp is AragonApp {
 
 ## Recommendations
 
+### Conventions
+
+**Representing ETH as a token**
+
+If a function has a token parameter, but you would like to handle ETH as well as other token addresses in the same parameter, use `address(0)` as the address of ETH. aragonOS includes `EtherTokenConstant` to define `ETH = address(0)`.
+
+**Representing time**
+
+As it is unlikely we'll ever need to worry about `uint256`-precision for UNIX timestamps (in seconds) or blocks (in ~15s intervals), we generally cast these values down to `uint64`s so we can pack them to save gas. aragonOS provides `TimeHelpers` and `Uint256Helpers` as utility contracts for obtaining these values safely.
+
 ### UNIX philosophy
 
 The design philosophy we use when developing Aragon apps is very similar to the UNIX philosophy. We try to architect apps to do one thing and one thing well and to respect and implement the few aragonOS interfaces so that they play nicely with the rest of the ecosystem.
