@@ -76,7 +76,7 @@ function newPinnedAppInstance(bytes32 appId, address appBase, bytes initializePa
 ```
 
 - **initializePayload**: calldata to be used to immediately initialize the app proxy, useful for atomically initializing the new app proxy in one transaction.
-- **setDefault**: set the new app as the default instance of the app in the Kernel (e.g. also set it in the **App** namespace).
+- **setDefault**: set the new app as the default instance of the app in the Kernel (i.e. also set it in the **App** namespace).
 
 ### App permissioning
 
@@ -166,7 +166,9 @@ A **Permission** is defined as the ability to perform actions (grouped by **Role
 
 We refer to a **permission instance** as an entity holding a certain permission. If it helps, you can think of a permission as an _manifestation_ of an app's role that is held by an entity.
 
-### The ACL as an Aragon app
+The ACL is built entirely as an AragonApp and can be upgraded in the same way as any other application installed into an Kernel. Unlike other apps, however, the ACL is installed and initialized upon the Kernel's own initialization due to its importance.
+
+### Managing permissions
 
 First of all, you can obtain the default ACL instance for a Kernel with:
 
@@ -288,8 +290,8 @@ Even though `uint240`s are used, it can be used to store any integer up to `2^30
 	- `BLOCK_NUMBER_PARAM_ID` (`id = 200`): sets comparison value to the block number at the time of execution. This allows for setting up timelocks depending on blocks.
 	- `TIMESTAMP_PARAM_ID` (`id = 201`): sets comparison value to the timestamp of the current block at the time of execution. This allows for setting up timelocks on time.
 	- `id = 202`: not currently in use.
-	- `ORACLE_PARAM_ID` (`id = 203`): checks with an oracle at the address in the `argument value` and returns whether it returned true or false (no comparison with arg).
-	- `LOGIC_OP_PARAM_ID` (`id = 204`): evaluates a logical operation and returns true or false depending on its result (no comparison with arg).
+	- `ORACLE_PARAM_ID` (`id = 203`): checks with an oracle at the address in the `argument value` and returns whether it returned true or false (no comparison with the `argument value`).
+	- `LOGIC_OP_PARAM_ID` (`id = 204`): evaluates a logical operation and returns true or false depending on its result (no comparison with the `argument value`).
 	- `PARAM_VALUE_PARAM_ID` (`id = 205`): return `argument value`. Commonly used with the `RET` operation to just return a value. If the value in the param is greater than 0 it will evaluate to true, otherwise it will return false.
 - **Operation type** (`uint8`): what operation should be done to compare the value fetched using the argument ID or the argument value. For all comparisons, both values are compared in the following order `args[param.id] <param.op> param.value`. Therefore, for a greater than operation, with `param = {id: 0, op: Op.GT, value: 10}`, it will interpret whether the argument 0 is greater than 10. The implemented operation types are:
 	- None (`Op.NONE`): always evaluates to `false` regardless of parameter or arguments.
@@ -301,8 +303,7 @@ Even though `uint240`s are used, it can be used to store any integer up to `2^30
 	- Less than or equal (`Op.LTE`): evaluates to true if `args[param.id] <= param.value`.
 	- Return (`Op.RET`): evaluates to true if `args[param.id]` is greater than one. Used with `PARAM_VALUE_PARAM_ID`, it makes `args[param.id] = param.value`, so it returns the associated value of the parameter.
 
-While also representing an operation, when the argument ID is `LOGIC_OP_PARAM_ID` only the ops below are valid. These operations use the parameter's value to point to other parameter indices in the parameter array. Any values are encoded as `uint32` numbers, left-shifted 32 bits to the left each (for example, an op that
-takes two inputs with a value of `0x00....0000000200000001` would have input 1, 1, and input 2, 2, refering to params at index 1 and 2). Here are the available logic ops:
+While also representing an operation, when the argument ID is `LOGIC_OP_PARAM_ID` only the `Op`s below are valid. These operations use the parameter's value to point to other parameter indices in the parameter array. Any values are encoded as `uint32` numbers, each left-shifted 32 bits (for example, an `Op` that takes two inputs with a value of `0x00....0000000200000001` would have input 1, 1, and input 2, 2, refering to params at index 1 and 2). Here are the available logic `Op`s:
 - Not (`Op.NOT`): takes 1 parameter index and evaluates to the opposite of what the linked parameter evaluates to.
 - And (`Op.AND`): takes 2 parameter indices and evaluates to true if both evaluate to true.
 - Or (`Op.OR`): takes 2 parameter indices and evaluates to true if either evaluate to true.
@@ -506,8 +507,6 @@ We have designed our own scripting format, known as EVMScripts, to encode comple
 
 **EVMScript executors** are contracts that take a script and an input and return an output after execution.
 
-**EVMScript executors and EVMScriptRegistry**
-
 EVMScript executors must implement the following interface:
 
 ```solidity
@@ -523,7 +522,7 @@ interface IEVMScriptExecutor {
 
 aragonOS provides the `CallsScript` executor as a simple way to concatenate multiple calls. It cancels the operation if any of the calls fail.
 
-- **Script body:** (See source code file for spec of the payload)
+- **Script body:** See [`CallsScript` source code ](https://github.com/aragon/aragonOS/blob/v4.0.0/contracts/evmscript/executors/CallsScript.sol#L25) for spec of the payload.
 - **Input:** None
 - **Output:** None.
 - **Blacklist:** Entire script reverts if a call to one of the addresses in the blacklist is performed.
