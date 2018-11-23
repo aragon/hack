@@ -36,7 +36,7 @@ Making an app available for use with upgradeable proxies requires deploying the 
 
 The constructor of a contract is executed when a contract is created. When using a proxy, however, the constructor code that is run is the proxy's constructor and not the one of the base contract. Because of this, aragonOS apps **cannot use a constructor for initializing the contract**. An initialization function that can only be executed once is required to both be implemented and called before an app is usable.
 
-`AragonApp` exposes the `onlyInit` modifier to protect a function from being called after `initialized()` has been completed and the `auth`, `authP`, and `isInitialized` modifiers to protect against a function from being called before the initialization is complete.
+`AragonApp` exposes the `onlyInit` modifier to protect a function from being called after `initialized()` has been completed and the `auth()`, `authP()`, and `isInitialized` modifiers to protect against a function from being called before the initialization is complete.
 
 In the following example, if `sendFunds()` was called before initialization was complete, it would transfer the ETH sent with the call to `address(0)` since `receiver` wasn't set. By adding the `isInitialized` modifier, the function will fail until the contract has been initialized. It is a good practice to require all functions that modify state to be initialized before they can be used.
 
@@ -66,9 +66,9 @@ Another important note is that if the app uses the [ACL](#roles-and-the-acl) for
 
 ## Roles and the Access Control List
 
-aragonOS comes with a powerful [Access Control List (ACL)](/docs/acl-intro.html) that apps can leverage for protecting functionality behind permissions. Rather than coding any custom access control logic into your app, such as the infamous `onlyOwner`, you can just protect functions by adding the `auth` or `authP` modifiers.
+aragonOS comes with a powerful [Access Control List (ACL)](/docs/acl-intro.html) that apps can leverage for protecting functionality behind permissions. Rather than coding any custom access control logic into your app, such as the infamous `onlyOwner`, you can just protect functions by adding the `auth()` or `authP()` modifiers.
 
-If the `auth` modifier is present in a function it will check with the connected Kernel's ACL whether the entity performing the call is allowed to perform the action in the app prior to its execution.
+If the `auth()` modifier is present in a function it will check with the connected Kernel's ACL whether the entity performing the call is allowed to perform the action in the app prior to its execution.
 
 Roles are identified by a `bytes32` value. This identifier can be a constant value so it doesn't take up any storage space. The standard name for a role identifier is the `keccak256` hash of its name as other tooling in the stack expects this to be the case.
 
@@ -95,7 +95,7 @@ contract MyApp is AragonApp {
 }
 ```
 
-An important note is that the `auth` and `authP` modifiers will also check whether the app is [initialized](#constructor-and-initialization). If the **app hasn't been initialized, the authentication check will fail**.
+An important note is that the `auth()` and `authP()` modifiers will also check whether the app is [initialized](#constructor-and-initialization). If the **app hasn't been initialized, the authentication check will fail**.
 
 When adding a role to your app you will also need to add it to the [`arapp.json`](cli-usage.md#the-arappjson-file) file with a description of the functionality protected by the role. You can check Aragon's [Voting app arapp.json](https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json) for an example of role descriptions.
 

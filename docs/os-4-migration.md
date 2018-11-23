@@ -7,7 +7,7 @@ sidebar_label: Migrating to aragonOS 4 from aragonOS 3
 aragonOS 4 was designed to be as familiar as possible to users of aragonOS 3. In some cases an Aragon app might not even have to be changed when upgrading.
 
 For a more in-depth technical explaination of the changes in aragonOS 4, please see the
-[annoucement blog post](https://blog.aragon.org/releasing-aragonos-4) and [reference documentation](/docs/aragonos-ref.html).
+[annoucement blog post](https://blog.aragon.org/releasing-aragonos-4) and [reference documentation](/docs/aragonos-ref.html). An annotated list of commits between aragonOS 3 and aragonOS 4 is also [available](https://github.com/aragon/aragonOS/wiki/aragonOS-4:-Updates-to-aragonOS-and-aragon-apps#application-capabilities).
 
 ---
 ## Breaking interface changes
@@ -19,7 +19,8 @@ All contracts inheriting from `AragonApp` must now use at least `pragma solidity
 ### Initialization
 
 All `AragonApp`s must now be initialized before they can be used to prevent uninitialized
-contracts that may be maliciously initialized by someone else.
+contracts that may be maliciously initialized by someone else. Trying to access `auth()`
+or `authP()` protected functionality in uninitialized apps will now revert.
 
 If your app didn't already require initialization then you'll need to include
 the following function in your app:
@@ -89,12 +90,12 @@ instead.
 
 ### Stand-alone usage of AragonApps
 
-`AragonApp`s that use any functionality requiring a Kernel (e.g. `auth`, EVMScripts, or the
+`AragonApp`s that use any functionality requiring a Kernel (e.g. `auth()`, EVMScripts, or the
 recovery mechanism) now require the app instance to be connected to a Kernel. Frankly, if
 you're not using any of this functionality, you probably shouldn't be inheriting from
 `AragonApp`.
 
-The old behaviour used to be that functionality protected by the `auth` or `authP`
+The old behaviour used to be that functionality protected by the `auth()` or `authP()`
 modifiers could still be invoked if the app instance wasn't connected to a
 Kernel. This was unexpected and confusing behaviour, possibly leading to dangerous
 situations, and was removed.
@@ -167,7 +168,7 @@ period ends.
 
 ### auth provides isInitialized check
 
-The `auth` and `authP` modifiers now also check for `isInitialized()` so you don't have
+The `auth()` and `authP()` modifiers now also check for `isInitialized()` so you don't have
 to use both modifiers anymore.
 
 ### New utilities

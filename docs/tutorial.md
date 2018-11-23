@@ -107,7 +107,7 @@ contract Counter is AragonApp {
 }
 ```
 
-Finally, guard the methods with the `auth` modifier that the `AragonApp` interface gives you and add an initialize function to your contract:
+Finally, guard the methods with the `auth()` modifier that the `AragonApp` interface gives you and add an initialize function to your contract:
 
 ```solidity
 contract Counter is AragonApp {

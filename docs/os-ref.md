@@ -395,16 +395,16 @@ bytes32 public CUSTOM_ACTION_ROLE = keccak256("CUSTOM_ACTION_ROLE");
 
 **Protecting functionality**
 
-Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifiers `auth` or `authP()` to the action. On executing the action, the `auth` or `authP` modifier checks with the Kernel whether the entity performing the call holds the required role or not.
+Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifiers `auth()` or `authP()` to the action. On executing the action, the `auth()` or `authP()` modifier checks with the Kernel whether the entity performing the call holds the required role or not.
 
-`auth` is capable of defining a *binary* permission—either yes or no:
+`auth(bytes32 role)` is capable of defining a *binary* permission—either yes or no:
 
 ```solidity
 function customAction() auth(CUSTOM_ACTION_ROLE) {
 }
 ```
 
-`authP` allows you to pass a number of parameters that can then be used in the [ACL's parameterization](#parameter-interpretation) for each permission. This allows you to define powerful permissions with highly granular controls based on the inputs of an action:
+`authP(bytes32 role, uint256[] params)` allows you to pass a number of parameters that can then be used in the [ACL's parameterization](#parameter-interpretation) for each permission. This allows you to define powerful permissions with highly granular controls based on the inputs of an action:
 
 ```solidity
 bytes32 public TRANSFER_ROLE = keccak256("TRANSFER_ROLE");
@@ -412,7 +412,7 @@ function transfer(uint256 amount) authP(TRANSFER_ROLE, arr(amount)) {
 }
 ```
 
-`authP` takes a `uint256[]` as its second argument. A number of `arr()` syntatical sugar helpers are exposed by default by AragonApp to help construct this array when using different argument types.
+`authP()`'s second argument is a `uint256[]`, but aragonOS exposes a number of `arr()` syntatical sugar helpers by default from AragonApp to help construct this array when using different argument types.
 
 Finally, AragonApp also exposes a public getter for checking if an entity can perform a certain action:
 
