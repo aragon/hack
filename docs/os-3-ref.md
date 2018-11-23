@@ -26,7 +26,7 @@ understand two concepts the entire framework builds upon:
 - **Proxy:** A Proxy is a very simple smart contract construct which consists of
 decoupling the instance of a particular smart contract with the location of its actual
 business logic. We call individual instances of contracts **Proxy** and the logic
-**base contracts**. A Proxy delegates all its logic on a base contract. Upgradeability
+**base contracts**. A Proxy delegates all its logic to a base contract. Upgradeability
 is achieved because this link to the base contract can be modified, effectively
 updating the Proxy business logic. We created [ERC897](https://github.com/ethereum/EIPs/pull/897) to standardize Proxy interfaces
 for better interoperability in the ecosystem.
@@ -42,14 +42,14 @@ This helps with the decoupling of authentication and logic explained before.
 
 ### 1.2 Architecture: Kernel and apps
 
-An organization or protocol that is built with aragonOS is composed by a set of smart contracts of two types:
+An organization or protocol that is built with aragonOS is composed of two types of smart contracts:
 
-- **Kernel:** it is at the core of every organization, there is only one instance of it per organization. It manages one very important mapping to keep track of the different *base contract* address depending on the application, registered apps in the kernel (such as the ACL) or the kernel’s own *base contract*.
-- **Apps:** are contracts that rely on use the kernel for their upgradeability and access control. Apps don’t need to implement any of those as they occur directly in the Kernel or ACL.
+- **Kernel:** The kernel is at the core of every organization and there is only one instance of it per organization. It manages a very important mapping of *base contract* addresses of each application registered in the kernel (such as the ACL) or the kernel’s own *base contract*.
+- **Apps:** Apps are contracts that rely on the kernel for their upgradeability and access control. 
 
 ### 1.3 Design philosophy
 
-The design philosophy we use when developing Aragon apps is very similar to the UNIX philosophy, we try to architect them to do one thing and one thing well, and to respect and implement the few aragonOS interfaces so that they play nicely with the rest of the ecosystem.
+The design philosophy we use when developing Aragon apps is very similar to the UNIX philosophy: we try to architect them to do one thing and one thing well, and to respect and implement the few aragonOS interfaces so that they play nicely with the rest of the ecosystem.
 
 This results in purely technical benefits such as testability, but it is also very powerful when apps are combined and the output of one app becomes the input of an other one (forwarders resemble UNIX pipes in some way).
 
@@ -60,8 +60,7 @@ This results in purely technical benefits such as testability, but it is also ve
 ## 2. Kernel
 ### 2.1 The app mapping
 
-At the core of the kernel lives a mapping, called the `app` mapping, which is very
-critical.
+At the core of the kernel lives a critical mapping called the `app` mapping.
 
 Modifying this mapping can have completely destructive consequences and can result in loss of funds. The permission to execute this action has to be well protected behind the ACL.
 
@@ -100,7 +99,7 @@ kernel.setApp(kernel.CORE_NAMESPACE(), kernel.KERNEL_APP_ID(), newKernelCodeAddr
 ### 3.2 AppProxies and upgradeability
 
 In a similar fashion to the Kernel, apps can share implementation code to save
-gas on deployment. AppProxies rely their upgradeability to the Kernel.
+gas on deployment. AppProxies rely on the Kernel for their upgradeability.
 
 Upgrading an app is done by setting a new app address for the **appId** for the
 **Base namespace** in the kernel.
@@ -173,11 +172,11 @@ acl.revokePermission(address entity, address app, bytes32 role)
 
 Revokes `role` in `app` for an `entity`. Only callable by the `manager` of a certain permission.
 
-The `revokePermission()` action doesn’t need to be protected by the ACL either, as an entity can only make changes if it is the `manager` for a given permission.
+The `revokePermission()` action doesn’t need to be protected by the ACL either as an entity can only make changes if it is the `manager` for a given permission.
 
 #### Adding Permissions
 
-Apps have the choice of which actions to protect behind the ACL, as some actions may make sense to be completely public. Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifier [`auth()`](https://github.com/aragon/aragonOS/blob/4f4e89abaac6c70243c8288b27272003ecb63e1d/contracts/apps/AragonApp.sol#L10) or [`authP()`](https://github.com/aragon/aragonOS/blob/4f4e89abaac6c70243c8288b27272003ecb63e1d/contracts/apps/AragonApp.sol#L15)(passing the role required as a parameter) to the action. On executing the action, the `auth()`/`authP()` modifiers check with the Kernel whether the entity performing the call holds the required role or not.
+Apps have the choice of which actions to protect behind the ACL as some actions may make sense to be completely public. Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifier [`auth()`](https://github.com/aragon/aragonOS/blob/4f4e89abaac6c70243c8288b27272003ecb63e1d/contracts/apps/AragonApp.sol#L10) or [`authP()`](https://github.com/aragon/aragonOS/blob/4f4e89abaac6c70243c8288b27272003ecb63e1d/contracts/apps/AragonApp.sol#L15)(passing the role required as a parameter) to the action. On executing the action, the `auth()`/`authP()` modifiers check with the Kernel whether the entity performing the call holds the required role or not.
 
 
 ### 4.2 Basic ACL
@@ -193,15 +192,15 @@ As an example, the following steps show a complete flow for user "Root" to creat
 6. Create a new vote via the Voting app to create the `TRANSFER_TOKENS_ROLE` permission
 `createPermission(votingAppAddress, vaultAppAddress, TRANSFER_TOKENS_ROLE, votingAppAddress)`
 7. If the vote passes, the Voting app then has access to all actions in the Vault protected by `TRANSFER_TOKENS_ROLE`, which in this case is just `transferTokens()`
-8. Fund transfers from the Vault can now be controlled via votes from the Voting app. Each time a user wishes to transfer funds, they can create a new vote via the Voting app to propose an execution of the Vault's `transferTokens()` action. If, and only if, the vote passes, will the `transferTokens()` action be executed.
+8. Fund transfers from the Vault can now be controlled via votes from the Voting app. Each time a user wishes to transfer funds, they can create a new vote via the Voting app to propose an execution of the Vault's `transferTokens()` action. The `transferTokens()` action will be executed if and only if the vote passes.
 
 Note that the Voting app is also able to revoke or regrant the `TRANSFER_TOKENS_ROLE` permission as it is that permission's manager on `vaultAppAddress`.
 
 
 ### 4.3 Permission managers
-As we have seen, when a permission is created, a **Permission Manager** is set for that specific permission. The permission manager is able to grant or revoke permission instances for that permission.
+As we have seen, when a permission is created a **Permission Manager** is set for that specific permission. The permission manager is able to grant or revoke permission instances for that permission.
 
-The Permission Manager can be changed with:
+The Permission Manager can be changed with this command:
 
 ```solidity
 acl.setPermissionManager(address newManager, address app, bytes32 role)
@@ -209,7 +208,7 @@ acl.setPermissionManager(address newManager, address app, bytes32 role)
 
 Changes the permission manager to `newManager`. Only callable by the `manager` of a certain permission.
 
-The new permission manager replaces the old permission manager, resulting in the old manager losing any management power over that permission.
+The new permission manager replaces the old permission manager resulting in the old manager losing any management power over that permission.
 
 [`createPermission()`](#create-permission) executes a special case of this action to set the initial manager for the newly created permission. From that point forward, the manager can only be changed with `setPermissionManager()`.
 
@@ -220,25 +219,14 @@ acl.getPermissionManager(address app, bytes32 role)
 ```
 
 ### 4.4 Parameter interpretation
-When a permission is granted to an entity by the permission manager, it can be
-assigned an array of parameters that will be evaluated every time the ACL is checked
-to see if the entity can perform the action.
+When a permission is granted to an entity by the permission manager it can be assigned an array of parameters that will be evaluated every time the ACL is checked to see if the entity can perform the action.
 
-Parameters allow to perform certain computations with the arguments of a role in
-order to decide whether the action can be done or not. This moves the ACL for being
-a purely binary access list, to a more sophisticated system that allows way more
-granular control.
+Parameters allow the ACL to perform certain computations with the arguments of a permission in order to decide whether to allow the action or not. This moves the ACL from being a purely binary access list to a more sophisticated system that allows for fine-grained control.
 
 An ACL parameter is comprised of a data structure with 3 values:
 
-- **Argument Value** (`uint240`): It is the value to compare against depending on
-the argument. It is a regular Ethereum memory word, that looses it 2 most significant
-bytes of precision. The reason for this was to allow parameters to be saved in just
-one storage slot, saving significant gas.
-Even though `uint240`s are used, it can be used to store any integer up to `2^30 - 1`,
-addresses and bytes32 (in the case of comparing hashes, losing 2 bytes of precision
-shouldn't be a dealbreaker if the hash algorithm is secure). The only problem is
-when
+- **Argument Value** (`uint240`): the value to compare against, depending on the argument. It is a regular Ethereum memory word that loses its two most significant bytes of precision. The reason for this was to allow parameters to be saved in just one storage slot, saving significant gas.
+Even though `uint240`s are used, it can be used to store any integer up to `2^30 - 1`, addresses, and bytes32. In the case of comparing hashes, losing 2 bytes of precision shouldn't be a dealbreaker if the hash algorithm is secure.
 - **Argument ID** (`uint8`): Determines how the comparison value is fetched. From
 0 to 200 it refers to the argument index number passed to the role. After 200, there
 are some *special Argument IDs*:
@@ -249,13 +237,13 @@ are some *special Argument IDs*:
 	current block at the time of execution. This allows for setting up timelocks
 	on time.
 	- `SENDER_PARAM_ID` (`id = 202`): Sets comparison value to the sender of the call.
-	(Currently useless because of [this issue]())
+	(Currently useless)
 	- `ORACLE_PARAM_ID` (`id = 203`): Checks with an oracle at the address in the
-	*argument value* and returns whether it returned true or false (no comparison with arg).
+	*argument value* and returns whether it returned true or false (no comparison with the `argument value`).
 	- `LOGIC_OP_PARAM_ID` (`id = 204`): Evaluates a logical operation and returns
-	true or false depending on its result (no comparison with arg).
+	true or false depending on its result (no comparison with the `argument value`).
 	- `PARAM_VALUE_PARAM_ID` (`id = 205`): Uses value as return. Commonly used with
-	the `RET` operation, to just return a value. If the value in the param is greater
+	the `RET` operation to just return a value. If the value in the param is greater
 	than 0, it will evaluate to true, otherwise it will return false.
 - **Operation type** (`uint8`): Determines what operation is made to compare the
 value fetched using the argument ID or the argument value. For all comparisons,
@@ -263,7 +251,7 @@ both values are compared in the following order `args[param.id] <param.op> param
 Therefore for a greater than operation, with a `param = {id: 0, op: Op.GT, value: 10}`,
 it will interpret whether the argument 0 is greater than 10. The implemented
 operation types are:
-	- None (`Op.NONE`): Always evaluates to `false`, regardless of parameter or arguments.
+	- None (`Op.NONE`): Always evaluates to `false` regardless of parameter or arguments.
 	- Equals (`Op.EQ`): Evaluates to true if every byte matches between `args[param.id]` and
 	`param.value`.
 	- Not equals (`Op.NEQ`): Evaluates to true if any byte doesn't match.
@@ -275,32 +263,19 @@ operation types are:
 	Used with `PARAM_VALUE_PARAM_ID`, it makes `args[param.id] = param.value`, so it
 	returns the parameter associated value.
 
-While also representing an operation, when the id is `LOGIC_OP_PARAM_ID`, only the
-ops below are valid. These operations use the parameter's value to point to other
-parameters index in the parameter array. These values are encoded as `uint32`
-numbers, left-shifted 32 bits to the left each (example: for example, an op that
-takes two inputs value would be `0x00....0000000200000001`, would be input 1, 1,
-and input 2, 2, refering to params at index 1 and 2). Available logic ops:
-	- Not (`Op.NOT`): Takes 1 parameter index and evaluates to the opposite of what
-	the linked parameter evaluates to.
-	- And (`Op.AND`): Takes 2 parameter indices and evaluates to true if both
-	evaluate to true.
-	- Or (`Op.OR`): Takes 2 parameter indices and evaluates to true if any of them
-	evaluate to true.
-	- Exclusive or (`Op.XOR`): Takes 2 parameter indices and evaluates to true if
-	only one of the parameters evaluate to true.
-	- If else (`Op.IF_ELSE`): Takes 3 parameters, evaluates the first parameter
-	and if it evaluates to true, it evaluates to whatever the parameter second
-	parameter evaluates to, otherwise it evaluates to whatever the third parameter
-	does.
+While also representing an operation, when the argument ID is `LOGIC_OP_PARAM_ID` only the `Op`s below are valid. These operations use the parameter's value to point to other parameter indices in the parameter array. Any values are encoded as `uint32` numbers, each left-shifted 32 bits (for example, an `Op` that takes two inputs with a value of `0x00....0000000200000001` would have input 1, 1, and input 2, 2, refering to params at index 1 and 2). Here are the available logic `Op`s:
+- Not (`Op.NOT`): Takes 1 parameter index and evaluates to the opposite of what
+the linked parameter evaluates to.
+- And (`Op.AND`): Takes 2 parameter indices and evaluates to true if both
+evaluate to true.
+- Or (`Op.OR`): Takes 2 parameter indices and evaluates to true if any of them
+evaluate to true.
+- Exclusive or (`Op.XOR`): Takes 2 parameter indices and evaluates to true if
+only one of the parameters evaluate to true.
+- If else (`Op.IF_ELSE`): takes 3 parameters, evaluates the first parameter and if true, evalutes as the second parameter's evaluation, or as the third parameter's evaluation if false.
 
 ### 4.6 Parameter execution
-When evaluating a rule, the ACL will always evaluate the result of the first parameter.
-This first parameter can be an operation that links to other parameters and its
-evaluation depends on those parameter evaluation.
-
-Execution is recursive and the result evaluated is always the result of the eval
-of the first parameter.
+When evaluating a rule the ACL will always evaluate the result of the first parameter. This first parameter can be an operation that links to other parameters and its evaluation depends on those parameters' evaluation. Execution is recursive and the result evaluated is always the result of the evaluation of the first parameter.
 
 ### 4.7 Parameter encoding
 To encode some logic operations (AND, OR, IF-ELSE) which link to other parameters, the following helpers are provided, where the function arguments always refer to parameter indexes in the `Param` array they belong to:
@@ -316,7 +291,7 @@ encodeOperator(uint param1, uint param2)
 ```
 
 ### 4.8 Examples of rules
-The interpreter supports encoding complex rules in what would look almost like a programming language, for example let’s look at the following [test case](https://github.com/aragon/aragonOS/blob/63c4722b8629f78350586bcea7c0837ab5882a20/test/TestACLInterpreter.sol#L112-L126):
+The interpreter supports encoding complex rules in what would look almost like a programming language. For example let’s look at the following [test case](https://github.com/aragon/aragonOS/blob/63c4722b8629f78350586bcea7c0837ab5882a20/test/TestACLInterpreter.sol#L112-L126):
 
 ```solidity
     function testComplexCombination() {
@@ -337,7 +312,13 @@ The interpreter supports encoding complex rules in what would look almost like a
     }
 ```
 
-When assigned to a permission, this rule will **evaluate to true** (and therefore allow the action) if an oracle accepts it and the block number is greater than the previous block number, and either the oracle allows it (again! testing redundancy too) or the first parameter of the rule is lower than 10. The possibilities for customizing organizations/DApps governance model are truly endless, without the need to write any actual Solidity.
+When assigned to a permission, this rule will **evaluate to true** (and therefore allow the action) only on the following conditions:
+
+- If an oracle accepts it, and
+- The block number is greater than the previous block number, and
+- Either the oracle allows it (again! testing redundancy too) or the first parameter of the rule is lower than 10.
+
+The possibilities for customizing an organization or protocol's governance model are truly endless and there is no need to write any actual Solidity.
 
 ### 4.9 Events
 [`createPermission()`](#create-permission), [`grantPermission()`](#grant-permission), and [`revokePermission()`](#revoke-permission) all fire the same `SetPermission` event that Aragon clients are expected to cache and process into a locally stored version of the ACL:
@@ -354,24 +335,25 @@ ChangePermissionManager(address indexed app, bytes32 indexed role, address index
 
 ## 5. Forwarders and EVMScript
 
-Forwarders are one of the most important concepts of aragonOS. Rather than hardcoding the notion of a vote into each separate app’s functionality and ACL, one can instead use a generic Voting App, which implements the forwarding interface, to pass actions forward to other apps after successful votes. If the Voting App is set up to only allow a token’s holders to vote, that means any actions/calls being passed from it must have been approved by the token’s holders.
+Forwarders are one of the most important concepts of aragonOS. Rather than hardcoding the notion of a vote into each separate app’s functionality and ACL one can instead use a generic Voting App, which implements the forwarding interface, to pass actions _forward_ to other apps after successful votes. If the Voting App is set up to only allow a token’s holders to vote, that means any actions/calls being passed from it must have also been approved by the token’s holders.
 
 ### 5.1 Forwarding and transaction pathing
 
-The forwarding interface also allows the Aragon client through aragon.js to calculate what we call ‘forwarding paths’. If you wish to perform an action and the client determines you don’t have direct permission to do it, it will think of alternative paths for execution. For example, you might directly go to the Vault App wishing to perform a token transfer, and the client directly prompts you to create a vote, as you have permission to create votes, that will perform the transfer if successful, as illustrated in the animation below.
+The forwarding interface also allows a frontend interface, like the Aragon client, to calculate "forwarding paths". If you wanted to perform an action but you don't have the required permissions, a client can think of alternative paths for execution. For example, you might be in the Vault app's interface wishing to perform a token transfer. If you only had the permission to create votes, the client would directly prompt you to create a vote rather than let you complete the transfer. The flow is illustrated in the following animation:
 
 ![forwarding animation](/docs/assets/fwd.gif)
-(governance model and characters are fictional)
-
-We have designed our own scripting format, known as EVM scripts, to encode complex actions into a representation that can be stored and later executed by another entity. aragonOS 3.0 allows you to have multiple script executors that can be housed in your organization
+> Vote forwarding scenario.  (Please note that the governance model and characters are fictional.)
 
 ### 5.2 EVMScripts
 
-Script executors are contracts that take a script and an input and return an output after execution. We have built three script executors for the initial release:
+We have designed our own scripting format, known as EVMScripts, to encode complex actions into a bytes representation that can be stored and later executed by another entity. EVMScripts can be installed on a per-organization basis through a **EVMScriptRegistry** and aragonOS comes complete with the ability to install multiple script executors in an organization.
+
+**EVMScript executors** are contracts that take a script and an input and return an output after execution.
+
 
 #### 5.2.1 Script executors and EVMScriptRegistry
 
-EVMScriptExecutors must follow this interface:
+EVMScript executors must implement the following interface:
 
 ```solidity
 
@@ -385,15 +367,15 @@ self-destructs, `IEVMScriptExecutor.execScript(...)` MUST return
 at least 32 bytes so in case an executor `selfdestruct`s it could be detected.
 
 ##### 5.2.1.1 CallsScript
-A simple way to concatenate multiple calls. It cancels the operation if any of the calls fail.
+aragonOS provides the `CallsScript` executor as a simple way to concatenate multiple calls. It cancels the operation if any of the calls fail.
 
-- **Script body:** (See source code file for spec of the payload)
+- **Script body:** See [`CallsScript` source code ](https://github.com/aragon/aragonOS/blob/v3.0.0/contracts/evmscript/executors/CallsScript.sol#L20) for spec of the payload.
 - **Input:** None
 - **Output:** None.
 - **Blacklist:** Entire script reverts if a call to one of the addresses in the blacklist is performed.
 
 ##### 5.2.1.1 DelegateScript
-`delegatecalls` into a given contract, which basically allows for any arbitrary computation within the EVM in the caller’s context.
+`delegatecalls` into a given contract which basically allows for any arbitrary computation within the EVM in the caller’s context.
 
 - **Script body:** Address of the contract to make the call to.
 - **Input:** `calldata` for the `delegatecall` that will be performed.
@@ -402,7 +384,7 @@ A simple way to concatenate multiple calls. It cancels the operation if any of t
 
 ##### 5.2.1.3 DeployDelegateScript
 
-Is a superset of the DelegateScript, but it takes a contract’s initcode bytecode as its script body instead of just an address. On execution, it deploys the contract to the blockchain and executes it with a `delegatecall`.
+Is a superset of the DelegateScript but it takes a contract’s initcode bytecode as its script body instead of just an address. On execution, it deploys the contract to the blockchain and executes it with a `delegatecall`.
 
 - **Script body:**: initcode for contract being created.
 - **Input:** `calldata` for the `delegatecall` that will be performed after contract creation.
@@ -412,12 +394,8 @@ Is a superset of the DelegateScript, but it takes a contract’s initcode byteco
 
 ### 5.3 Making an app a Forwarder
 
-Examples of forwarders can be found in the aragon-apps repo, both the Voting and the Token Manager are forwarders.
+Examples of forwarders can be found in the aragon-apps repo. Both the Voting and the Token Manager are forwarders.
 
-### 5.3.1 Warnings
-
-EVMScripts can be too powerful. Providing forwarding functionality to an app
-
-Some things to have in mind when developing an app
-
-For example the Token Manager has the token address in its blacklist because otherwise any token holder that is allowed to forward through the Token Manager would effectively have control over the token in the same way the Token Manager has, which would allow to bypass it. By having it in the blacklist, the latter 2 script executors can’t be used, so it only works with CallsScripts that don’t make calls to the token address.
+> **Warning**
+>
+> EVMScripts are very powerful and risk causing security breaches! For example, the Token Manager, which allows any token holder to forward actions, needs to have the token address in its blacklist as otherwise any token holder would effectively have control over the token in the same way that the Token Manager does!
