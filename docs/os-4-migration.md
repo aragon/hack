@@ -118,6 +118,9 @@ The [Minime token](https://github.com/Giveth/minime/) and [Standard token](https
 implementations were removed. You should import these contracts into your own project if
 you would like to continue to use them.
 
+If you'd like to see what this looks like in practice, you can visit
+[`aragon-apps/shared/minime`](https://github.com/aragon/aragon-apps/blob/v4.0.0/shared/minime).
+
 ### aragon-apps
 
 All the apps in [aragon-apps](https://github.com/aragon/aragon-apps) were upgraded to

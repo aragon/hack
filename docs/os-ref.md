@@ -414,6 +414,10 @@ function transfer(uint256 amount) authP(TRANSFER_ROLE, arr(amount)) {
 
 `authP()`'s second argument is a `uint256[]`, but aragonOS exposes a number of `arr()` syntatical sugar helpers by default from AragonApp to help construct this array when using different argument types.
 
+> **Note**
+>
+> Both `auth()` and `authP()` check that the application instance is initialized before allowing the action. Trying to access a protected action in an uninitialized application will result in a revert.
+
 Finally, AragonApp also exposes a public getter for checking if an entity can perform a certain action:
 
 ```solidity
@@ -439,6 +443,13 @@ AragonApps can be in the lifecycle stages of **uninitialized**, **initialized**,
 AragonApp base logic contracts are **petrified** upon their deployment. They can never be initialized and are considered frozen in an uninitialized state forever. This also means that, if properly developed, there is no way for these contracts to be `selfdestruct`ed.
 
 The AppProxy contracts users deploy and link to the base logic contracts are expected to be **initialized** by their users and only made usable once this initialization is complete.
+
+You can check for an application instance's lifecycle state using the following:
+
+```solidity
+function hasInitialized() public view returns (bool);
+function isPetrified() public view returns (bool);
+```
 
 ### Application capabilities
 
