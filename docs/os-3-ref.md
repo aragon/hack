@@ -30,22 +30,22 @@ business logic. We call individual instances of contracts **Proxy** and the logi
 is achieved because this link to the base contract can be modified, effectively
 updating the Proxy business logic. We created [ERC897](https://github.com/ethereum/EIPs/pull/897) to standardize Proxy interfaces
 for better interoperability in the ecosystem.
-
 - **Forwarder:** A Forwarder is a contract that, given some conditions, will pass
 along a certain action to other contract(s).
+
 Thanks to the fact that proxies allow a certain instance of a contract to never
-have to change its address even if its underlying logic changes, this allows to
-identify a concept such as that an action has been approved in a voting with a
-certain support by a group of holders of a token, just by checking that the
-action **sender address is an instance of a Voting app with a particular address**.
-This helps with the decoupling of authentication and logic explained before.
+have to change its address even if its underlying logic changes, it's easy to
+identify a certain instance of a contract and helps with the decoupling of
+authentication and logic. For example, just by checking that an action's **sender
+address is an instance of a Voting app with a particular address**, we can know
+that the action must have been approved by a vote.
 
 ### 1.2 Architecture: Kernel and apps
 
 An organization or protocol that is built with aragonOS is composed of two types of smart contracts:
 
 - **Kernel:** The kernel is at the core of every organization and there is only one instance of it per organization. It manages a very important mapping of *base contract* addresses of each application registered in the kernel (such as the ACL) or the kernel’s own *base contract*.
-- **Apps:** Apps are contracts that rely on the kernel for their upgradeability and access control. 
+- **Apps:** Apps are contracts that rely on the kernel for their upgradeability and access control.
 
 ### 1.3 Design philosophy
 
@@ -55,7 +55,7 @@ This results in purely technical benefits such as testability, but it is also ve
 
 ### 1.4 Lifecycle of an aragonOS call
 
-![](/docs/assets/os-call.gif)
+![](/docs/assets/os-app-call.gif)
 
 ## 2. Kernel
 ### 2.1 The app mapping
@@ -131,7 +131,7 @@ A **Permission** is defined as the ability to perform actions (grouped by roles)
 
 We refer to a **Permission Instance** as an entity holding a certain permission.
 
-### 4.1 The ACL as an Aragon app, the Interface
+### 4.1 Managing permissions
 First of all, you need to define your base ACL instance for your kernel with:
 
 ```solidity
@@ -140,7 +140,7 @@ acl = ACL(kernel.acl())
 
 Then you can execute the following actions:
 
-#### Create Permission
+#### Create permission
 
 ```solidity
 acl.createPermission(address entity, address app, bytes32 role, address manager)
@@ -154,7 +154,7 @@ A role in the ACL protects access to `createPermission()` as this important func
 
 Note that creating permissions is made mandatory by the ACL: all actions requiring yet-to-be-created permissions are disallowed by default. Any permission checks on non-existent permissions are failed automatically.
 
-#### Grant Permission
+#### Grant permission
 
 ```solidity
 acl.grantPermission(address entity, address app, bytes32 role)
@@ -164,7 +164,7 @@ Grants `role` in `app` for an `entity`. Only callable by the `manager` of a cert
 
 The `grantPermission()` action doesn’t require protection with the ACL because an entity can only make changes to a permission if it is the permission's `manager`.
 
-#### Revoke Permission
+#### Revoke permission
 
 ```solidity
 acl.revokePermission(address entity, address app, bytes32 role)
@@ -174,7 +174,7 @@ Revokes `role` in `app` for an `entity`. Only callable by the `manager` of a cer
 
 The `revokePermission()` action doesn’t need to be protected by the ACL either as an entity can only make changes if it is the `manager` for a given permission.
 
-#### Adding Permissions
+#### Adding permissions
 
 Apps have the choice of which actions to protect behind the ACL as some actions may make sense to be completely public. Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifier [`auth()`](https://github.com/aragon/aragonOS/blob/4f4e89abaac6c70243c8288b27272003ecb63e1d/contracts/apps/AragonApp.sol#L10) or [`authP()`](https://github.com/aragon/aragonOS/blob/4f4e89abaac6c70243c8288b27272003ecb63e1d/contracts/apps/AragonApp.sol#L15)(passing the role required as a parameter) to the action. On executing the action, the `auth()`/`authP()` modifiers check with the Kernel whether the entity performing the call holds the required role or not.
 
