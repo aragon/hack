@@ -47,7 +47,7 @@ function getApp(bytes32 namespace, bytes32 appId) public view returns (address);
 The Kernel implements three namespaces in which installed apps can be registered:
 
 - **Core namespace** (`keccak256('core')`): the core components of the Kernel. The only contract set in the core mapping should be the reference to the Kernel's base contract.
-- **Base namespace** (`keccak256('base')`): the base contract addresses for proxy implementations.
+- **Base namespace** (`keccak256('base')`): the base contract addresses for proxy instances.
 - **App namespace** (`keccak256('app')`): the "default" app address for an installed app. This is used when an app might need to reference another app in the organization, for example, the default ACL instance or the EVMScriptsRegistry.
 
 ### App installation
