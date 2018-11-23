@@ -14,7 +14,7 @@ Using aragonOS allows you to write simpler code by **decoupling** the specific *
 
 With aragonOS, you don't have to think about how to implement authentication or governance at all. Simply inherit from the **AragonApp** base class and use a special modifier to mark actions that require authentication. 
 
-Additionally, **upgradeability** capabilities are provided and are used by default. aragonOS implements the [DelegateProxy](https://eips.ethereum.org/EIPS/eip-897) pattern known as  [unstructured storage](https://blog.zeppelinos.org/upgradeability-using-unstructured-storage/). This pattern essentially splits a contract into two instances: a **base logic contract**, which is then depended upon by a simple, slim **proxy contract**. The proxy delegates all its logic to the linked base contract and can modify its pointer to the base contract in order to upgrade its logic.
+Additionally, **upgradeability** capabilities are provided and are used by default. aragonOS implements the [DelegateProxy](https://eips.ethereum.org/EIPS/eip-897) pattern with a special implementation called  [unstructured storage](https://blog.zeppelinos.org/upgradeability-using-unstructured-storage/). This pattern essentially splits a contract into two instances: a **base logic contract**, which is then depended upon by a simple, slim **proxy contract**. The proxy delegates all its logic to the linked base contract and can modify its pointer to the base contract in order to upgrade its logic.
 
 ## Components:
 
@@ -462,9 +462,7 @@ The default implementation of `allowRecoverability()` is just to return true for
 
 **Depositable proxies**
 
-AppProxies start off not being able to receive ETH through the native, gas-limited `.send()` and `.transfer()` methods.
-
-This can be explicitly enabled through this function when an app wants to allow itself (as the proxy instance) to recieve ETH from other contracts using `.send()` or `.transfer()`:
+AppProxies start off not being able to receive ETH through the native, gas-limited `.send()` and `.transfer()` methods.  This can be explicitly enabled through the `setDepositable` function when an app wants to allow itself (as the proxy instance) to recieve ETH from other contracts:
 
 ```solidity
 function setDepositable(bool depositable) internal;
