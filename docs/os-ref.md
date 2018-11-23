@@ -40,7 +40,7 @@ function getApp(bytes32 namespace, bytes32 appId) public view returns (address);
 
 > **Warning**
 >
-> Modifying this mapping can have completely destructive consequences and can result in loss of funds. The permission to execute this action, `SET_APP_ROLE`, is **critical** and has to be well protected behind the ACL.
+> Modifying this mapping can have completely destructive consequences and can result in loss of funds. The permission to execute this action, `APP_MANAGER_ROLE`, is **critical** and has to be well protected behind the ACL.
 
 ### Namespaces
 
