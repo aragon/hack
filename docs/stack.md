@@ -45,7 +45,7 @@ aragonOS contains a **rich permissions system**. Any resource or functionality c
 
 With aragonOS, permissions work the following way:
 
-> *Entity E* can call *Function F* (*Param P*...) on *App A* only if *Param P* satisfies *Rules R* and *Permission Manager PM* can revoke or reassign that permission
+> _Entity **E**_ can call _Function **F**_ (protected by _Role **R**_ and parameterized by _Params **P**_...) on _App **A**_ only if _Entity **E**_ holds a permission for _Role **R**_ on _App **A**_ and their arguments to _Function **F**_ satisfy _Rules **R**_. A _Permission Manager **M**_ can revoke or reassign that permission.
 
 Which simplified would be:
 
