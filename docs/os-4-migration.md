@@ -89,7 +89,7 @@ Both `DelegateScript` and `DeployDelegateScript` were found to be insecure and h
 
 The [Minime token](https://github.com/Giveth/minime/) and [Standard token](https://github.com/aragon/aragonOS/blob/v3.1.12/contracts/lib/zeppelin/token/StandardToken.sol) implementations were removed. You should import these contracts into your own project if you would like to continue to use them.
 
-If you'd like to see what this looks like in practice, you can visit [`aragon-apps/shared/minime`](https://github.com/aragon/aragon-apps/blob/v4.0.0/shared/minime).
+If you'd like to see what this looks like in practice, you can visit [`aragon-apps/shared/minime`](https://github.com/aragon/aragon-apps/tree/f6df8d0b6304befeadb813864d6eaa2a7c17c579/shared/minime).
 
 ### aragon-apps
 
