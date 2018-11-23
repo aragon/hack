@@ -106,7 +106,7 @@ function setApp(bytes32 namespace, bytes appId, address app) public;
 ```
 
 - **Namespace:** specifies what type of app record is being set.
-- **AppId:** used to identify what app is being set. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the APM repo (e.g. `namehash('voting.aragonpm.eth')`).
+- **AppId:** used to identify what app is being set. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
 - **App:** Address of a contract that can have different meaning depending on the namespace.
 
 ### 2.2 Namespaces
@@ -405,7 +405,7 @@ Forwarders are one of the most important concepts of aragonOS. Rather than hardc
 
 ### 5.1 Forwarding and transaction pathing
 
-The forwarding interface also allows the Aragon client through aragon.js to calculate what we call ‘forwarding paths’. If you wish to perform an action and the client determines you don’t have direct permission to do it, it will think of alternative paths for execution. For example, you might directly go to the Vault App wishing to perform a token transfer, and the client directly prompts you to create a vote, as you have permission to create votes, that will perform the transfer if successful, as illustrated in the animation below.
+The forwarding interface also allows the Aragon client through aragonAPI to calculate what we call ‘forwarding paths’. If you wish to perform an action and the client determines you don’t have direct permission to do it, it will think of alternative paths for execution. For example, you might directly go to the Vault App wishing to perform a token transfer, and the client directly prompts you to create a vote, as you have permission to create votes, that will perform the transfer if successful, as illustrated in the animation below.
 
 ![forwarding animation](/docs/assets/fwd.gif)
 (governance model and characters are fictional)
@@ -469,21 +469,21 @@ Some things to have in mind when developing an app
 
 For example the Token Manager has the token address in its blacklist because otherwise any token holder that is allowed to forward through the Token Manager would effectively have control over the token in the same way the Token Manager has, which would allow to bypass it. By having it in the blacklist, the latter 2 script executors can’t be used, so it only works with CallsScripts that don’t make calls to the token address.
 
-##  6. The Aragon Package Manager
-###  6.1 APM as an Aragon DAO
-The Aragon Package Manager (APM) is built on top of aragonOS and is integrated as a
+##  6. aragonPM
+###  6.1 aragonPM as an Aragon DAO
+aragonPM is built on top of aragonOS and is integrated as a
 part of aragonOS. It is a DAO running on the same Aragon (taking advantage of
 upgradeability and access control), that‘s used to build Aragon DAOs!
 
-This allows for many APM registries to exist with different governance models for
+This allows for many aragonPM registries to exist with different governance models for
 package publishing and releasing new versions. There is an official Aragon curated one,
 aragonpm.eth, which has very strict restrictions of what gets published and
 very high quality standards, that we use for publishing our core components.
 
-Different APM registries in which everyone can publish their packages are expected to
+Different aragonPM registries in which everyone can publish their packages are expected to
 be created by the community.
 
-This diagram tries to illustrate the architecture of an APM Registry DAO:
+This diagram tries to illustrate the architecture of an aragonPM Registry DAO:
 
 ![](/docs/assets/apm-arch.jpeg)
 
@@ -521,8 +521,8 @@ or using ens.js:
 repo = Repo.at(await ens.addr(appId))
 ```
 
-Every individual Repo is an Aragon app that uses the APM DAO for its ACL.
-Depending on each APM registry governance, the process for creating new versions
+Every individual Repo is an Aragon app that uses the aragonPM DAO for its ACL.
+Depending on each aragonPM registry governance, the process for creating new versions
 in the Repo or transferring ownership may vary.
 
 A Repo keeps versioned state over:

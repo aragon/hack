@@ -65,25 +65,25 @@ With aragonOS, since permissions are so rich, there may be **many paths to escal
 
 For example, a token holder may have permission to create a vote, and the voting app may have permission to withdraw funds.
 
-In that case, Aragon Core tells the user that option when they attempt to withdraw funds. Users can show their intent for performing an action by trying to execute it directly without having to know the process for executing the action. By traversing the Access Control List, Aragon Core can automatically determine the path needed for executing the action.
+In that case, Aragon tells the user that option when they attempt to withdraw funds. Users can show their intent for performing an action by trying to execute it directly without having to know the process for executing the action. By traversing the Access Control List, Aragon can automatically determine the path needed for executing the action.
 
 ## Full sandboxing
 
 Permission management is key for allowing security at the smart contract level. That is similar to the kernel, filesystem and process security in a conventional OS.
 
-Yet Aragon Core is a frontend too so security is also required in the UI environment. This is similar how many operating systems impose **app sandboxing**. An app shouldn't be able to access or tamper with another running app.
+Yet Aragon is a frontend too so security is also required in the UI environment. This is similar how many operating systems impose **app sandboxing**. An app shouldn't be able to access or tamper with another running app.
 
-Aragon Core's approach to frontend sandboxing is a combination of sandboxed iframes and cross-origin messaging.
+Aragon's approach to frontend sandboxing is a combination of sandboxed iframes and cross-origin messaging.
 
-All apps run inside **sandboxed iframes** and only communicate with Aragon Core using [aragon.js](/docs/aragonjs-ref.html). Aragon Core provides APIs for accessing smart contracts, displaying notifications and signing transactions. When signing transactions, a panel opens up in Aragon Core, not in the app. Apps cannot prompt users to sign transactions directly and they cannot interact with the contracts of other apps. Thus all transactions are securely handled by Aragon Core, decreasing the attack surface.
+All apps run inside **sandboxed iframes** and only communicate with Aragon using [aragonAPI](/docs/aragonjs-ref.html). Aragon provides APIs for accessing smart contracts, displaying notifications and signing transactions. When signing transactions, a panel opens up in Aragon, not in the app. Apps cannot prompt users to sign transactions directly and they cannot interact with the contracts of other apps. Thus all transactions are securely handled by Aragon, decreasing the attack surface.
 
 #### Read more: [The Aragon client](/docs/client.html)
 
 ## Cohesive UI
 
-It is commonly thought that iframes degrade the user experience and are not best practice. Though [Aragon UI](/docs/aragonui-intro.html) uses iframes, it has been built to mitigate this issue. Additionally, it allows all apps to look and behave the same to provide a consistent experience for users across Aragon apps.
+It is commonly thought that iframes degrade the user experience and are not best practice. Though [aragonUI](/docs/aragonui-intro.html) uses iframes, it has been built to mitigate this issue. Additionally, it allows all apps to look and behave the same to provide a consistent experience for users across Aragon apps.
 
-#### Read more: [Intro to Aragon UI](/docs/aragonui-intro.html)
+#### Read more: [Intro to aragonUI](/docs/aragonui-intro.html)
 
 ---
 

@@ -1,18 +1,18 @@
 ---
 id: cli-usage
-title: Using the Aragon CLI
+title: Using the aragonCLI
 sidebar_label: Usage
 hide_title: true
 ---
 
 ![](/docs/assets/brand/aragoncli.png)
 
-The Aragon CLI (Command Line Interface) is used to create and develop Aragon apps.
+The aragonCLI (Command Line Interface) is used to create and develop Aragon apps.
 
 ---
 ## Install
 
-The Aragon CLI can be installed directly from NPM:
+The aragonCLI can be installed directly from NPM:
 
 ```
 npm install -g @aragon/cli
@@ -41,12 +41,12 @@ The `init` command will set up an Aragon app project so you can start building y
 aragon init [app-name] [boilerplate]
 ```
 
-- `app-name`: The name or ENS domain name for your app in an APM Registry (e.g. `myapp` or `myapp.aragonpm.eth`). If only the name is provided it will create your app on the default `aragonpm.eth` registry.
+- `app-name`: The name or ENS domain name for your app in an aragonPM Registry (e.g. `myapp` or `myapp.aragonpm.eth`). If only the name is provided it will create your app on the default `aragonpm.eth` registry.
 
 - `boilerplate`: the Github repo name or alias for a boilerplate to set up your app. The currently available boilerplates are:
 
 	- `react`: this boilerplate contains a very basic Counter app and a webapp for interacting with it. It showcases the end-to-end interaction with an Aragon app, from the contracts to the webapp.
-	- `react-kit`: it is a variation of the `react` boilerplate that also comes with a DAO Kit which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Kits [here](kits-intro.md).
+	- `react-kit`: it is a variation of the `react` boilerplate that also comes with a DAO Template which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Templates [here](kits-intro.md).
 	- `bare`: this boilerplate will just set up your app directory structure but contains no functional code.
 
 ---
@@ -55,18 +55,18 @@ aragon init [app-name] [boilerplate]
 The `run` command takes care of completely setting up the environment needed for running your Aragon app. These are all the things that running `aragon run` will do for you:
 
 1. It checks whether **IPFS** and a local **Ethereum development chain** (devchain) are running and if not it will start them. Once aragon is terminated, any IPFS or dev chain it started will also be terminated.
-2. It will **publish your app** to the local APM registry running in your devchain. This step executes the `aragon apm publish` internally. You can check the options and how the command works in depth [here](#aragon-apm-publish).
-3. Once the package is published it will **create a DAO** with your app installed. If you are running your app without a Kit it will grant permissions to the first account printed in the console to perform all the actions protected by the ACL in your app.
-4. After the DAO is created it will download the [Aragon Core](https://github.com/aragon/aragon) client, install its dependencies and start it up so you can interact with the DAO in your web browser.
+2. It will **publish your app** to the local aragonPM registry running in your devchain. This step executes the `aragon apm publish` internally. You can check the options and how the command works in depth [here](#aragon-apm-publish).
+3. Once the package is published it will **create a DAO** with your app installed. If you are running your app without a Template it will grant permissions to the first account printed in the console to perform all the actions protected by the ACL in your app.
+4. After the DAO is created it will download the [Aragon client](https://github.com/aragon/aragon) client, install its dependencies and start it up so you can interact with the DAO in your web browser.
 
 Some available options to customize the `run` command:
 
 - `--reset`: If reset is present it will reset the devchain before running. The chain will then start from scratch and all published packages will need to be recreated.
 - `--port`: The port where the devchain will be started.
-- `--kit`: The name of the contract that will be deployed as the [DAO kit](kits-intro.md) that will be used to create your DAO. If no Kit is provided it will use a default Kit that sets up the DAO with just your app.
-- `--kit-init [argument1 ... argumentN]`: The constructor arguments for the Kit contract, each separated by a space. See the [deploy command](#aragon-deploy) for more information on constructor arguments.
+- `--kit`: The name of the contract that will be deployed as the [DAO template](kits-intro.md) that will be used to create your DAO. If no Template is provided it will use a default Template that sets up the DAO with just your app.
+- `--kit-init [argument1 ... argumentN]`: The constructor arguments for the Template contract, each separated by a space. See the [deploy command](#aragon-deploy) for more information on constructor arguments.
 - `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
-- `--client [true|false]`: Can be used to disable starting the Aragon Core client. Defaults to `true`.
+- `--client [true|false]`: Can be used to disable starting the Aragon client. Defaults to `true`.
 
 
 #### Running your app from a development HTTP server
@@ -83,7 +83,7 @@ aragon run --http [server-uri] --http-served-from [path]
 - `http`: This is the flag that indicates that you wish to run your app using HTTP. The URI of the server must be provided here (e.g. `localhost:4001`)
 - `http-served-from`: Path to the directory that the HTTP server exposes. Some artifacts are generated and placed in this directory during the publishing process of your app. The server needs serve these new files when they are created and the server is already running.
 
-If your HTTP server supports hot-reloading your app's frontend will be hot-reloaded inside the Aragon Core client.
+If your HTTP server supports hot-reloading your app's frontend will be hot-reloaded inside the Aragon client.
 
 However, when **making changes to the background script** of your app, a refresh of the client is required so the new script can be loaded. Also, depending on how the background script of your app is being built, you may need to manually trigger the compilation of the script.
 
@@ -94,7 +94,7 @@ The [React boilerplate](https://github.com/aragon/aragon-react-boilerplate) supp
 
 The `devchain` command is used for starting a local development testnet with all the required components already deployed and ready to use. It uses [aragen](https://github.com/aragon/aragen) for setting up the snapshot from which the chain starts. At any point `aragon devchain --reset` can be run which will reset the devchain to the original snapshot.
 
-This snapshot contains a local instance of ENS (used as an APM registry `aragonpm.eth` and [aragon-id](https://github.com/aragon/aragon-id) `aragonid.eth`), the first-party [Aragon apps](https://github.com/aragon/aragon-apps) published to APM (e.g. `voting.aragonpm.eth` or `token-manager.aragonpm.eth`) and the first-party [DAO Kits](https://github.com/aragon/dao-kits) (e.g. `bare-kit.aragonpm.eth`)
+This snapshot contains a local instance of ENS (used as an aragonPM registry `aragonpm.eth` and [aragon-id](https://github.com/aragon/aragon-id) `aragonid.eth`), the first-party [Aragon apps](https://github.com/aragon/aragon-apps) published to aragonPM (e.g. `voting.aragonpm.eth` or `token-manager.aragonpm.eth`) and the first-party [DAO Templates](https://github.com/aragon/dao-kits) (e.g. `bare-kit.aragonpm.eth`)
 
 Devchains can be started on different ports and will keep their state independent from other chains.
 
@@ -139,13 +139,13 @@ The `aragon dao` commands can be used for interacting with your DAO directly fro
 ---
 ### dao new
 
-Uses a DAO Kit to create a new DAO and prints its address.
+Uses a DAO Template to create a new DAO and prints its address.
 
 Options:
-- `--kit`: The APM repo name of the kit that is used to create the DAO. Defaults to `bare-kit.aragonpm.eth`.
+- `--kit`: The aragonPM repo name of the template that is used to create the DAO. Defaults to `bare-kit.aragonpm.eth`.
 - `--kit-version [version-number|latest]`: The version of the repo that will be used to create the DAO. Defaults to `latest`.
-- `--fn`: The function on the kit that is called to create a new DAO. Defaults to the `newBareInstance` function for `bare-kit.aragonpm.eth`.
-- `--fn-args`: The arguments that the function to create the kit is called with. Defaults to an array of arguments.
+- `--fn`: The function on the template that is called to create a new DAO. Defaults to the `newBareInstance` function for `bare-kit.aragonpm.eth`.
+- `--fn-args`: The arguments that the function to create the template is called with. Defaults to an array of arguments.
 - `--deploy-event`: The name of the event that is emitted when the DAO is created. The DAO address must be a return argument in the event log named `dao`. Defaults to `DeployInstance`.
 
 ---
@@ -177,7 +177,7 @@ dao install [dao-addr] [app-apm-repo] [repo-version]
 - `app-apm-repo`: The repo name of the app being installed (e.g. `voting` or `voting.aragonpm.eth`).
 - `repo-version`: Version of the repo that will be installed; can be a version number or `latest` for the newest published version (defaults to `latest`).
 
-In aragonOS an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO. 
+In aragonOS an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO.
 
 The `dao install` command will create an instance of the app and assign permissions to the main account to perform all the protected actions in the app.
 
@@ -289,7 +289,7 @@ dao acl remove-manager [dao-addr] [app-proxy-addr] [role]
 - `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
 
 ---
-## APM commands
+## aragonPM commands
 
 ---
 ### aragon apm versions
@@ -299,7 +299,7 @@ The `aragon apm versions` command shows all the previously published versions of
 ---
 ### aragon apm publish
 
-The `aragon apm publish` command publishes  a new version to the APM repo.
+The `aragon apm publish` command publishes  a new version to the aragonPM repo.
 
 ```
 aragon apm publish <patch|minor|major|version_number> [contract-address|contract-name]
@@ -338,7 +338,7 @@ The arapp.json file contains metadata for your app. You can check an [example ar
   - `params`: The names of any parameters for the role.
 - `environments`: An object containing deploy environment configurations.
   - `env_name`: An object containing the configuration for a specific environment. `env_name` can be any name you choose.
-    - `appName`: The ENS name of your app where the APM repo can be located.
+    - `appName`: The ENS name of your app where the aragonPM repo can be located.
     - `network`: The network to use for this environment.
     - `registry`: (optional) The address of the ENS registry for this environment. Defaults to the default ENS registry for this network.
 
@@ -373,6 +373,6 @@ The workaround is to switch to a different network (e.g. Rinkeby) and then switc
 ---
 ### The ~/.aragon directory
 
-The Aragon CLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon Core client.
+The aragonCLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon client.
 
 In case the client is not loading properly, deleting the `~/.aragon` directory will make `aragon run` recreate the environment the next time it is used and may solve the issue.

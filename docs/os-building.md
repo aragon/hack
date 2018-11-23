@@ -34,7 +34,7 @@ Making an app available for use with upgradeable proxies requires deploying the 
 
 ## Constructor and initialization
 
-The constructor of a contract is executed when a contract is created. When using a proxy, the constructor code that is run is the proxies' constructor and not the one of the base contract. Because of this, aragonOS apps **cannot use a constructor for initializing the contract**. An initialization function needs to be implemented that can only be executed once (`onlyInit` protects a function from being called after `initialized()` has been done). 
+The constructor of a contract is executed when a contract is created. When using a proxy, the constructor code that is run is the proxies' constructor and not the one of the base contract. Because of this, aragonOS apps **cannot use a constructor for initializing the contract**. An initialization function needs to be implemented that can only be executed once (`onlyInit` protects a function from being called after `initialized()` has been done).
 
 The `isInitialized` modifier can be used for protecting against a function being used before the contract is initialized. In the following example, `sendFunds()` would transfer the ETH sent with the call to `address(0)` as `receiver` wasn't set.  By adding the `isInitialized` modifier, the function will fail until the contract has been initialized. It is a good practice to require all functions that modify state to be initialized before they can be used.
 
@@ -58,7 +58,7 @@ contract MyApp is AragonApp {
 It is important to note that, using this pattern, **anyone can initialize a proxy** after it has been deployed. The initialization of a proxy should occur in the same transaction that deploys the proxy to prevent initialization being front-run by an adversary.
 
 - The [AppProxy](https://github.com/aragon/aragonOS/blob/dev/contracts/apps/AppProxyBase.sol) supports passing an initialization payload to its constructor. On creation, the proxy will perform a call with the provided initialization payload as the calldata to itself. This can be used to initialize the proxy in its constructor.
-- If using a [DAO kit](kits-intro.md), the initialization of an app can be done right after the proxy is created.
+- If using a [DAO template](kits-intro.md), the initialization of an app can be done right after the proxy is created.
 
 Another important note is that if the app uses the [ACL](#roles-and-the-acl) for access control, **all access control checks will fail unless the app has been initialized**.
 

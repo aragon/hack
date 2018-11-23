@@ -3,7 +3,7 @@ id: tutorial
 title: Your first Aragon app
 ---
 
-In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), [aragon.js](js-ref.md), [Aragon UI](ui-intro.md) and [Aragon CLI](/docs/cli-usage.html).
+In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), [aragonAPI](js-ref.md), [aragonUI](ui-intro.md) and [aragonCLI](/docs/cli-usage.html).
 
 # Quickstart
 
@@ -34,9 +34,9 @@ Next, we bootstrap our project:
 aragon init foo.aragonpm.eth react
 ```
 
-This will create a new directory named `foo`, with files cloned from the official Aragon [react boilerplate](https://github.com/aragon/aragon-react-boilerplate). This particular boilerplate includes everything you need to get started — Truffle, aragonOS and aragon.js.
+This will create a new directory named `foo`, with files cloned from the official Aragon [react boilerplate](https://github.com/aragon/aragon-react-boilerplate). This particular boilerplate includes everything you need to get started — Truffle, aragonOS and aragonAPI.
 
-Notice that we input a fully qualified [ENS](https://ens.domains/) name. We also initialise the app from the [react template](https://github.com/aragon/aragon-react-boilerplate), so we get [Aragon UI](https://github.com/aragon/aragon-ui) included. You can use the `bare` template if you don't want to use it.
+Notice that we input a fully qualified [ENS](https://ens.domains/) name. We also initialise the app from the [react template](https://github.com/aragon/aragon-react-boilerplate), so we get [aragonUI](https://github.com/aragon/aragon-ui) included. You can use the `bare` template if you don't want to use it.
 
 Let's examine the ENS name we entered, because it is not entirely arbitrary.
 
@@ -44,7 +44,7 @@ Let's examine the ENS name we entered, because it is not entirely arbitrary.
 
 The first label in the ENS name is the name of our app. This can be anything you want, given that the full ENS name is not taken.
 
-The second and third label is the name of the [APM](package-management.md) (Aragon Package Manager) registry that your repository will be (or is) registered to. For the sake of simplicity, this guide assumes that you have rights to create repositories on aragonpm.eth, but you could deploy your own APM registry if you so desire.
+The second and third label is the name of the [aragonPM](package-management.md) registry that your repository will be (or is) registered to. For the sake of simplicity, this guide assumes that you have rights to create repositories on aragonpm.eth, but you could deploy your own aragonPM registry if you so desire.
 
 
 ## Writing a simple contract
@@ -160,7 +160,7 @@ Apps are run inside an iframe, which means that it only has access to its own DO
 
 Then the client takes care of connecting to Ethereum via Web3, and also handles things like signing transactions, displaying notifications and more to the end-user.
 
-All of this is achieved by using aragon.js. aragon.js is split in two parts: one for clients and one for apps. The client portion of aragon.js reads *requests* from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).
+All of this is achieved by using aragonAPI. aragonAPI is split in two parts: one for clients and one for apps. The client portion of aragonAPI reads *requests* from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).
 
 Because we're building an app, all we need is `@aragon/client` and our template already has that installed.
 
@@ -169,7 +169,7 @@ Because we're building an app, all we need is `@aragon/client` and our template 
 
 Apps usually want to listen to events using Web3 and build an application state from those events. This concept is also known as *event sourcing*.
 
-aragon.js was built with event sourcing in mind. To build state continually without having the app loaded indefinitely, though, we need to run a background script.
+aragonAPI was built with event sourcing in mind. To build state continually without having the app loaded indefinitely, though, we need to run a background script.
 
 Thankfully the [Aragon client](client.md) will run background scripts specified in the manifest files of our app (more on manifest files later).
 
@@ -202,7 +202,7 @@ If you've worked with [Redux](https://redux.js.org/) before, this might look vag
 
 The `store` method takes in a reducer function with the signature `(state, event) => state`, where `state` is whatever you want it to be (in this example it is an integer), and `event` is a [Web3 event](https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#contract-events).
 
-Internally, `store` will fetch the last known state (if any) and pass that in as the first argument, and then store the resulting state in cache. This state can be observed in the view portion of your app. Also note that the `store` method returns an observable of states. This is a recurring theme in aragon.js; almost everything is an [RxJS](http://reactivex.io/rxjs/) observable.
+Internally, `store` will fetch the last known state (if any) and pass that in as the first argument, and then store the resulting state in cache. This state can be observed in the view portion of your app. Also note that the `store` method returns an observable of states. This is a recurring theme in aragonAPI; almost everything is an [RxJS](http://reactivex.io/rxjs/) observable.
 
 The reducer function **must always** return a state, even if it is the same state as before.
 
@@ -316,9 +316,9 @@ You can now build the front-end of your app by running `npm run build`.
 
 ## Writing the manifest files
 
-In order for aragon.js to function, it needs some metadata about your app. This metadata is specified in two manifest files; `manifest.json` and `arapp.json`.
+In order for aragonAPI to function, it needs some metadata about your app. This metadata is specified in two manifest files; `manifest.json` and `arapp.json`.
 
-`arapp.json` defines smart contract and APM-specific things, like the roles in your app and the name and version of your app.
+`arapp.json` defines smart contract and aragonPM-specific things, like the roles in your app and the name and version of your app.
 
 Let's modify `arapp.json` so that it knows about the roles we defined previously:
 
@@ -350,7 +350,7 @@ Let's modify it accordingly:
 
 ## Running your app locally
 
-To test out your app without deploying a DAO yourself, installing apps, setting up permissions and setting up APM, you can simply run:
+To test out your app without deploying a DAO yourself, installing apps, setting up permissions and setting up aragonPM, you can simply run:
 
 ```
 aragon run
@@ -360,7 +360,7 @@ This will do a couple of things for you:
 
 - It will start a development chain you can interact with (it uses `ganache-core`, so it's a full testrpc instance)
 - It deploys an Aragon DAO with apps and development permissions (i.e. everyone can do everything)
-- It publishes your app to a local APM instance
+- It publishes your app to a local aragonPM instance
 - It installs your app
 
 After running this command a browser tab should pop up with your freshly created DAO, complete with permissions and your local app installed.
@@ -404,7 +404,7 @@ Now you just need to share the great news on Twitter and Reddit, to let people k
 
 ## More CLI commands
 
-You can check the '[Using the Aragon CLI](cli-usage.md)' guide for an in-depth description of how all the commands available in the CLI work.
+You can check the '[Using the aragonCLI](cli-usage.md)' guide for an in-depth description of how all the commands available in the CLI work.
 
 ## Next steps
 
@@ -412,6 +412,6 @@ The full source code of the application we've built in this guide is available o
 
 A good place to go from here would be to check out [our existing apps](https://github.com/aragon/aragon-apps). They are fairly self-contained and use some patterns you might find helpful.
 
-There is much more to aragonOS and aragon.js, and we even have our own [UI toolkit](https://github.com/aragon/aragon-ui). We encourage you to explore all 3 and provide us feedback.
+There is much more to aragonOS and aragonAPI, and we even have our own [UI toolkit](https://github.com/aragon/aragon-ui). We encourage you to explore all 3 and provide us feedback.
 
 Join the conversation and ask questions on [GitHub](https://github.com/aragon) and [Aragon Chat](https://aragon.chat), and make sure to tell us if you build something ara-mazing!

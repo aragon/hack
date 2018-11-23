@@ -1,6 +1,6 @@
 ---
 id: aragonjs-ref
-title: aragon.js reference documentation
+title: aragonAPI reference documentation
 sidebar_label: Reference documentation
 hide_title: true
 ---
