@@ -13,12 +13,20 @@ Because upgradeability implies there will be multiple versions of a package of s
 
 A package or **repository** (repo) in an APM registry keeps track of evolving versions of its contents (the webapp component typically) and smart contract code (if applicable).
 
+## APM as an Aragon DAO
+
+The Aragon Package Manager (APM) is built on top of [aragonOS](/docs/aragonos-intro.html). It is a Decentralized Autonomous Organization (DAO) running on the same Aragon that‘s used to build Aragon organizations (to take advantage of upgradeability and access control)!
+
+This allows for many APM registries to exist with different governance models for package creation and publishing new versions. There is an official Aragon curated instance, `aragonpm.eth`, which has high quality standards and strict restrictions on what can get published, that we use for publishing our core components.
+
+Different APM registries in which everyone can publish their packages are expected to be created by the community, and we have set up `open.aragonpm.eth` on both the main and Rinkeby networks as an open instance available for any one to publish to.
+
 ## Architecture: registries, repos and versions
 
 ![](/docs/assets/apm-arch.png)
 > The architecture of an APM DAO
 
-Each APM registry is a smart contract that owns an [Ethereum Name Service](https://ens.domains/) (ENS) domain and therefore can create subdomains for its repos. This gives users the ability to **find repos with human-readable names**.
+As a DAO, each APM registry includes a number of installed applications, including one APMRegistry, one ENSSubdomainRegistrar, and many Repo instances. The APM registry controls a [Ethereum Name Service](https://ens.domains/) (ENS) domain through its ENSSubdomainRegistrar, allowing each new created Repo to be assigned its own subdomain. This gives users the ability to **find repos with human-readable names**, such as `voting.aragonpm.eth`.
 
 We envision that many APM registries will be created for different purposes and types of packages. For Aragon, we use the `aragonpm.eth` registry to host our core components. We also have the `open.aragonpm.eth` registry for community developed packages, where anyone can create repos.
 
@@ -34,14 +42,6 @@ The smart contract code only applies to packages that have an on-chain contract 
 APM gives users **complete transparency** over all deployments and **traceability** of what the process of publishing a new version entailed.
 
 It is important to point out that APM acts as the reference to what the last version of a repo is but **all upgrades are opt-in** and users of the repo, such as Aragon organizations, need to decide to upgrade or keep using an old version through their own governance mechanisms. Automatically upgrading all users of a repo is extremely dangerous regardless of the upgrade governance mechanism. That's why all upgrades are opt-in and must be started by the user. Someone could, however, build an auto-update contract that users could allow to automatically update their dependencies.
-
-## APM as an Aragon DAO
-
-The Aragon Package Manager (APM) is built on top of [aragonOS](/docs/aragonos-intro.html). It is a Decentralized Autonomous Organization (DAO) running on the same Aragon that‘s used to build Aragon organizations (to take advantage of upgradeability and access control)!
-
-This allows for many APM registries to exist with different governance models for package creation and publishing new versions. There is an official Aragon curated instance, `aragonpm.eth`, which has high quality standards and strict restrictions on what can get published, that we use for publishing our core components.
-
-Different APM registries in which everyone can publish their packages are expected to be created by the community, and we have set up `open.aragonpm.eth` on both the main and Rinkeby networks as an open instance available for any one to publish to.
 
 ## Interacting with APM: apm.js and Aragon CLI
 

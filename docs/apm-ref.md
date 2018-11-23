@@ -7,9 +7,9 @@ sidebar_label: Reference documentation
 ## APMRegistry
 ### ENSSubdomainRegistrar
 
-Ownership of the ENS name that the APMRegistry operates has to be transferred to the ENSSubdomainRegistrar app that is part of the DAO.
+Upon initialization, ownership of the ENS name that the APMRegistry operates is transferred to the ENSSubdomainRegistrar app that is installed in the DAO. In our deployments, we ensure this is completed on deployment through a APMRegistryFactory contract that assigns the APMRegistry the ENSSubdomainRegistrar's `POINT_ROOTNODE_ROLE` and then calls `initialize()` on the APMRegistry.
 
-The APMRegistry needs to have permission on the ENSSubdomainRegistrar to create new names, which is done every time a repo is created.
+The APMRegistry also needs to have permissions for the ENSSubdomainRegistrar's `CREATE_NAME_ROLE` in order to create new names, which is done every time a repo is created.
 
 ---
 
