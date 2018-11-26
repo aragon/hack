@@ -13,468 +13,404 @@
         })();
       </script>
       <noscript><img src="https://arastats.eu/staats/piwik.php?idsite=7&amp;rec=1" style="border:0" alt="" /></noscript>
-      <html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>aragonOS reference documentation · Aragon Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="aragonOS reference documentation · Aragon Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://hack.aragon.org/index.html"/><meta property="og:description" content="*Documentation for [aragonOS](https://github.com/aragon/aragonOS) v3.1.2*"/><meta property="og:image" content="https://hack.aragon.org/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://hack.aragon.org/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible doc separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/isotype.svg" alt="Aragon Developer Portal"/><h2 class="headerTitleWithLogo">Aragon Developer Portal</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting-started.html" target="_self">Get started</a></li><li class=""><a href="/docs/tutorial.html" target="_self">Tutorial</a></li><li class="siteNavGroupActive"><a href="/docs/aragonos-intro.html" target="_self">aragonOS</a></li><li class="siteNavGroupActive"><a href="/docs/aragonjs-ref.html" target="_self">aragon.js</a></li><li class="siteNavGroupActive"><a href="/docs/aragonui-intro.html" target="_self">Aragon UI</a></li><li class=""><a href="/en/help.html" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>aragonOS</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>The basics</h3><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started.html">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/glossary.html">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/stack.html">The stack</a></li><li class="navListItem"><a class="navItem" href="/docs/acl-intro.html">Permissions</a></li><li class="navListItem"><a class="navItem" href="/docs/forwarding-intro.html">Forwarding</a></li><li class="navListItem"><a class="navItem" href="/docs/upgradeability-intro.html">Upgradeability</a></li><li class="navListItem"><a class="navItem" href="/docs/package-management.html">Package management</a></li><li class="navListItem"><a class="navItem" href="/docs/kits-intro.html">Kits</a></li><li class="navListItem"><a class="navItem" href="/docs/client.html">The Aragon client</a></li><li class="navListItem"><a class="navItem" href="/docs/human-readable-txs.html">Human readable transactions</a></li></ul></div><div class="navGroup navGroupActive"><h3>Aragon CLI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/cli-usage.html">Usage</a></li></ul></div><div class="navGroup navGroupActive"><h3>Aragon Package Manager</h3><ul><li class="navListItem"><a class="navItem" href="/docs/apm.html">Architecture</a></li></ul></div><div class="navGroup navGroupActive"><h3>aragonOS</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonos-intro.html">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-building.html">Developing with aragonOS</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/aragonos-ref.html">Reference documentation</a></li></ul></div><div class="navGroup navGroupActive"><h3>aragon.js</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref.html">Reference documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-clients.html">Reference documentation for clients/wrappers</a></li></ul></div><div class="navGroup navGroupActive"><h3>Aragon UI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonui-intro.html">Introduction</a></li></ul></div></div></section></div><script>
+      <html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>aragonOS reference documentation · Aragon Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="aragonOS reference documentation · Aragon Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://hack.aragon.org/index.html"/><meta property="og:description" content="*Documentation for [aragonOS](https://github.com/aragon/aragonOS) v4.0.1. Looking for [aragonOS 3 documentation?](/docs/aragonos-3-ref.html)*"/><meta property="og:image" content="https://hack.aragon.org/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://hack.aragon.org/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible doc separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/isotype.svg" alt="Aragon Developer Portal"/><h2 class="headerTitleWithLogo">Aragon Developer Portal</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting-started.html" target="_self">Get started</a></li><li class=""><a href="/docs/tutorial.html" target="_self">Tutorial</a></li><li class="siteNavGroupActive"><a href="/docs/aragonos-intro.html" target="_self">aragonOS</a></li><li class="siteNavGroupActive"><a href="/docs/aragonjs-ref.html" target="_self">aragon.js</a></li><li class="siteNavGroupActive"><a href="/docs/aragonui-intro.html" target="_self">Aragon UI</a></li><li class=""><a href="/en/help.html" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>aragonOS</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>The basics</h3><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started.html">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/glossary.html">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/stack.html">The stack</a></li><li class="navListItem"><a class="navItem" href="/docs/acl-intro.html">Permissions</a></li><li class="navListItem"><a class="navItem" href="/docs/forwarding-intro.html">Forwarding</a></li><li class="navListItem"><a class="navItem" href="/docs/upgradeability-intro.html">Upgradeability</a></li><li class="navListItem"><a class="navItem" href="/docs/package-management.html">Package management</a></li><li class="navListItem"><a class="navItem" href="/docs/kits-intro.html">Kits</a></li><li class="navListItem"><a class="navItem" href="/docs/client.html">The Aragon client</a></li><li class="navListItem"><a class="navItem" href="/docs/human-readable-txs.html">Human readable transactions</a></li></ul></div><div class="navGroup navGroupActive"><h3>Aragon CLI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/cli-usage.html">Usage</a></li></ul></div><div class="navGroup navGroupActive"><h3>Aragon Package Manager</h3><ul><li class="navListItem"><a class="navItem" href="/docs/apm.html">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/apm-ref.html">Reference documentation</a></li></ul></div><div class="navGroup navGroupActive"><h3>aragonOS</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonos-intro.html">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-motivation.html">Motivations</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-building.html">Developing with aragonOS</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/aragonos-ref.html">Reference documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-4-migration.html">Migrating to aragonOS 4 from aragonOS 3</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-3-ref.html">Reference (aragonOS 3)</a></li></ul></div><div class="navGroup navGroupActive"><h3>aragon.js</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref.html">Reference documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-clients.html">Reference documentation for clients/wrappers</a></li></ul></div><div class="navGroup navGroupActive"><h3>Aragon UI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonui-intro.html">Introduction</a></li></ul></div></div></section></div><script>
           var toggler = document.getElementById('navToggler');
           var nav = document.getElementById('docsNav');
           toggler.onclick = function() {
             nav.classList.toggle('docsSliderActive');
           };
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/os-ref.md" target="_blank" rel="noreferrer noopener">Edit</a><h1>aragonOS reference documentation</h1></header><article><div><span><p><em>Documentation for <a href="https://github.com/aragon/aragonOS">aragonOS</a> v3.1.2</em></p>
-<p>This document provides a technical overview about the architecture and can be used
-as a specification and developer guide. For a less technically-oriented introduction
-to aragonOS 3.0, you can check the <a href="https://blog.aragon.org/introducing-aragonos-3-0-alpha-the-new-operating-system-for-protocols-and-dapps-348f7ac92cff">alpha release blog post</a>.</p>
-<h2><a class="anchor" aria-hidden="true" id="0-motivation"></a><a href="#0-motivation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>0. Motivation</h2>
-<p>aragonOS was born in our path to developing modular and upgradeable smart contracts
-to power decentralized organizations.</p>
-<p>As the project was maturing and we started abstracting more and more, we ended up
-with a pretty generic framework that can be used by any protocol or decentralized
-application that needs upgradeability.</p>
-<p><strong>Upgradeability</strong> is really important when developing high-stakes systems in
-platforms that are still evolving fast. Done well, it can allow for bug fixes
-and improvements with very little disruption and not causing problems at the
-protocol level. As a history lesson, if <em>The DAO</em> had had an effective
-upgradeability mechanism, no hard fork would have been required to fix the problem.
-which cost the community months of unproductive discussions, delays in the roadmap
-and billions lost in the market capitalization of the protocol due to loss of
-network effect because of the fork.</p>
-<p>But upgradeability is a double edged sword. It doesn't matter how secure or trustless
-a smart contract is, if it can be upgraded, the contract will effectively be whatever
-who/what can upgrade the contract decides. The guarantees of an upgradeable smart
-contract are only as strong as the <strong>governance mechanism</strong> that can upgrade it,
-making governance the most important aspect of upgradeability.</p>
-<p>In a similar way, you cannot have effective governance without a way for upgrading
-itself to a superior form of governance. Therefore we feel very strongly that
-<strong>upgradeability</strong> and <strong>governance</strong>, in the context of smart contract, are actually
-<strong>two sides of the same coin</strong>.</p>
-<p>At Aragon we are doing research in decentralized governance and all the
-results of our research will be made aragonOS compatible, meaning that by using
-aragonOS, any protocol can take advantage of our extensive research on governance
-for upgradeability or any other aspect of the protocol or application.</p>
-<h2><a class="anchor" aria-hidden="true" id="1-general-architecture-and-design-philosophy"></a><a href="#1-general-architecture-and-design-philosophy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. General architecture and design philosophy</h2>
-<p>Using aragonOS to build a system allows to <strong>decouple</strong> specific <strong>business
-logic</strong> of a protocol or application, from its <strong>authentication logic</strong>.</p>
-<p>It allows to code your application without thinking about authentication or
-governance at all, just by inheriting from the <strong>AragonApp</strong> base class and defining
-actions that require authentication with a special modifier, aragonOS can handle
-authentication for the protocol.</p>
-<h3><a class="anchor" aria-hidden="true" id="11-basic-concepts-proxy-and-forwarder"></a><a href="#11-basic-concepts-proxy-and-forwarder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.1 Basic concepts: Proxy and Forwarder</h3>
-<p>Before describing general ideas about the architecture, it is important to
-understand two concepts the entire framework builds upon:</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/os-ref.md" target="_blank" rel="noreferrer noopener">Edit</a><h1>aragonOS reference documentation</h1></header><article><div><span><p><em>Documentation for <a href="https://github.com/aragon/aragonOS">aragonOS</a> v4.0.1. Looking for <a href="/docs/aragonos-3-ref.html">aragonOS 3 documentation?</a></em></p>
+<p>This document provides a technical overview of the framework's architecture and provides insight into its capabilities. It assumes the reader understands <a href="https://solidity.readthedocs.io/">Solidity</a>. For a less technical introduction, visit the <a href="/docs/aragonos-intro.html">introduction</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="design-philosophy"></a><a href="#design-philosophy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Design philosophy</h2>
+<p>Using aragonOS allows you to write simpler code by <strong>decoupling</strong> the specific <strong>business logic</strong> of a protocol or application from its <strong>authentication logic</strong>.</p>
+<p>With aragonOS, you don't have to think about how to implement authentication or governance at all. Simply inherit from the <strong>AragonApp</strong> base class and use a special modifier to mark actions that require authentication.</p>
+<p>Additionally, <strong>upgradeability</strong> capabilities are provided and are used by default. aragonOS implements the <a href="https://eips.ethereum.org/EIPS/eip-897">DelegateProxy</a> pattern with a special implementation called <a href="https://blog.zeppelinos.org/upgradeability-using-unstructured-storage/">unstructured storage</a>. This pattern essentially splits a contract into two instances: a <strong>base logic contract</strong>, which is then depended upon by a simple, slim <strong>proxy contract</strong>. The proxy delegates all its logic to the linked base contract and can modify its pointer to the base contract in order to upgrade its logic.</p>
+<h2><a class="anchor" aria-hidden="true" id="components"></a><a href="#components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components:</h2>
 <ul>
-<li><p><strong>Proxy:</strong> A Proxy is a very simple smart contract construct which consists on
-decoupling the instance of a particular smart contract with the location of its actual
-business logic. We call individual instances of contracts <strong>Proxy</strong> and the logic
-<strong>base contracts</strong>. A Proxy delegates all its logic on a base contract. Upgradeability
-is achieved because this link to the base contract can be modified, effectively
-updating the Proxy business logic. We created <a href="https://github.com/ethereum/EIPs/pull/897">ERC897</a> to standardize Proxy interfaces
-for better interoperability in the ecosystem.</p></li>
-<li><p><strong>Forwarder:</strong> A Forwarder is a contract that, given some conditions, will pass
-along a certain action to other contract(s).
-Thanks to the fact that proxies allow a certain instance of a contract to never
-have to change its address even if its underlying logic changes, this allows to
-identify a concept such as that an action has been approved in a voting with a
-certain support by a group of holders of a token, just by checking that the
-action <strong>sender address is an instance of a Voting app with a particular address</strong>.
-This helps with the decoupling of authentication and logic explained before.</p></li>
+<li><a href="#kernel">Kernel</a></li>
+<li><a href="#acl">ACL</a></li>
+<li><a href="#aragonapp">AragonApp</a></li>
+<li><a href="#forwarders-and-evmscripts">Forwarders and EVMScripts</a></li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="12-architecture-kernel-and-apps"></a><a href="#12-architecture-kernel-and-apps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.2 Architecture: Kernel and apps</h3>
-<p>An organization or protocol that is built with aragonOS is composed by a set of smart contracts of two types:</p>
-<ul>
-<li><strong>Kernel:</strong> it is at the core of every organization, there is only one instance of it per organization. It manages one very important mapping to keep track of the different <em>base contract</em> address depending on the application, registered apps in the kernel (such as the ACL) or the kernel’s own <em>base contract</em>.</li>
-<li><strong>Apps:</strong> are contracts that rely on use the kernel for their upgradeability and access control. Apps don’t need to implement any of those as they occur directly in the Kernel or ACL.</li>
-</ul>
-<h3><a class="anchor" aria-hidden="true" id="13-design-philosophy"></a><a href="#13-design-philosophy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.3 Design philosophy</h3>
-<p>The design philosophy we use when developing Aragon apps is very similar to the UNIX philosophy, we try to architect them to do one thing and one thing well, and to respect and implement the few aragonOS interfaces so that they play nicely with the rest of the ecosystem.</p>
-<p>This results in purely technical benefits such as testability, but it is also very powerful when apps are combined and the output of one app becomes the input of an other one (forwarders resemble UNIX pipes in some way).</p>
-<h3><a class="anchor" aria-hidden="true" id="14-lifecycle-of-an-aragonos-call"></a><a href="#14-lifecycle-of-an-aragonos-call" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.4 Lifecycle of an aragonOS call</h3>
-<p><img src="/docs/assets/os3.gif" alt=""></p>
-<h2><a class="anchor" aria-hidden="true" id="2-kernel"></a><a href="#2-kernel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Kernel</h2>
-<h3><a class="anchor" aria-hidden="true" id="21-the-app-mapping"></a><a href="#21-the-app-mapping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.1 The app mapping</h3>
-<p>At the core of the kernel lives a mapping, called the <code>app</code> mapping, which is very
-critical.</p>
-<p>Modifying this mapping can have completely destructive consequences and can result in loss of funds. The permission to execute this action has to be well protected behind the ACL.</p>
+<h2><a class="anchor" aria-hidden="true" id="kernel"></a><a href="#kernel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kernel</h2>
+<h3><a class="anchor" aria-hidden="true" id="the-app-mapping"></a><a href="#the-app-mapping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The app mapping</h3>
+<p>At the core of the Kernel lives a mapping called the <code>app</code> mapping. You can set and get apps using the following interfaces:</p>
 <pre><code class="hljs css solidity">function setApp(bytes32 namespace, bytes appId,<span class="hljs-built_in"> address </span>app) public;
+function getApp(bytes32 namespace, bytes32 appId) public view returns (address);
 </code></pre>
 <ul>
-<li><strong>Namespace:</strong> specifies what type of app record is being set.</li>
-<li><strong>AppId:</strong> used to identify what app is being set. It is the <a href="http://docs.ens.domains/en/latest/introduction.html#namehash">ENS <code>namehash</code></a> of the APM repo (e.g. <code>namehash('voting.aragonpm.eth')</code>).</li>
-<li><strong>App:</strong> Address of a contract that can have different meaning depending on the namespace.</li>
+<li><strong>namespace:</strong> specifies what type of app record is being set.</li>
+<li><strong>appId:</strong> used to identify what app is being set. It is the <a href="http://docs.ens.domains/en/latest/introduction.html#namehash">ENS <code>namehash</code></a> of the APM repo (e.g. <code>namehash('voting.aragonpm.eth')</code>).</li>
+<li><strong>app:</strong> Address of a contract that can have a different meaning depending on the <a href="#namespaces">namespace</a>.</li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="22-namespaces"></a><a href="#22-namespaces" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.2 Namespaces</h3>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>Modifying this mapping can have completely destructive consequences and can result in loss of funds. The permission to execute this action, <code>APP_MANAGER_ROLE</code>, is <strong>critical</strong> and has to be well protected behind the ACL.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="namespaces"></a><a href="#namespaces" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Namespaces</h3>
+<p>The Kernel implements three namespaces in which installed apps can be registered:</p>
 <ul>
-<li><strong>Core namespace</strong> (<code>keccak256('core')</code>): in this namespace is where the core components of the kernel reside. The only thing in the core mapping is the reference to the kernel base contract.</li>
-<li><strong>Base namespace</strong> (<code>keccak256('base')</code>): keeps track of the base contracts for appIds.</li>
-<li><strong>App namespace</strong> (<code>keccak256('app')</code>): some apps use the app namespace as a way to reference other apps. For example this is used to store the reference to the ACL instance or the EVMScriptsRegistry.</li>
+<li><strong>Core namespace</strong> (<code>keccak256('core')</code>): the core components of the Kernel. The only contract set in the core mapping should be the reference to the Kernel's base contract.</li>
+<li><strong>Base namespace</strong> (<code>keccak256('base')</code>): the base contract addresses for proxy instances.</li>
+<li><strong>App namespace</strong> (<code>keccak256('app')</code>): the &quot;default&quot; app address for an installed app. This is used when an app might need to reference another app in the organization, for example, the default ACL instance or the EVMScriptsRegistry.</li>
 </ul>
-<h2><a class="anchor" aria-hidden="true" id="3-upgradeability"></a><a href="#3-upgradeability" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Upgradeability</h2>
-<p>Upgradeability of apps and the kernel is done by setting a new address for a
-specific key in the <code>apps</code> mapping in the kernel.</p>
-<h3><a class="anchor" aria-hidden="true" id="31-kernel-upgradeability"></a><a href="#31-kernel-upgradeability" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.1 Kernel upgradeability</h3>
-<p>Kernel instances for different organizations can share the same implementation.
-Every Kernel instance is a KernelProxy . The logic for upgrading to a new implementation
-is in the implementation itself. An upgrade to the Kernel could render it un-upgradeable.</p>
-<p>Upgrading the kernel of an organization is done by changing the <strong>Kernel appId</strong>
-in the <strong>Core namespace</strong></p>
-<pre><code class="hljs css solidity"><span class="hljs-selector-tag">kernel</span><span class="hljs-selector-class">.setApp</span>(<span class="hljs-selector-tag">kernel</span><span class="hljs-selector-class">.CORE_NAMESPACE</span>(), <span class="hljs-selector-tag">kernel</span><span class="hljs-selector-class">.KERNEL_APP_ID</span>(), <span class="hljs-selector-tag">newKernelCodeAddr</span>)
+<h3><a class="anchor" aria-hidden="true" id="app-installation"></a><a href="#app-installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>App installation</h3>
+<p>The notion of &quot;installing&quot; an application in aragonOS is somewhat tricky. Although the Kernel keeps information about apps and their bases, it does not actually keep every app instance stored within its <code>apps</code> mapping.</p>
+<p>As such, we attribute the &quot;installation&quot; of an app instance to the creation of its first permission in the <a href="#acl">ACL</a>. If an app has no permissions set, it is technically impossible to use, if developed correctly, and is not considered installed.</p>
+<p>While aragonOS is unopinionated about using base or proxy contracts as app instances, by default it prefers using proxies to allow for upgradeability.</p>
+<p>You can create new <a href="#appproxies-and-upgradeability">app proxy</a> instances through the following interfaces:</p>
+<pre><code class="hljs css solidity">function newAppInstance(bytes32 appId,<span class="hljs-built_in"> address </span>appBase);
+function newPinnedAppInstance(bytes32 appId,<span class="hljs-built_in"> address </span>appBase);
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="32-appproxies-and-upgradeability"></a><a href="#32-appproxies-and-upgradeability" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.2 AppProxies and upgradeability</h3>
-<p>In a similar fashion to the Kernel, apps can share implementation code to save
-gas on deployment. AppProxies rely their upgradeability to the Kernel.</p>
-<p>Upgrading an app is done by setting a new app address for the <strong>appId</strong> for the
-<strong>Base namespace</strong> in the kernel.</p>
-<pre><code class="hljs css solidity"><span class="hljs-selector-tag">kernel</span><span class="hljs-selector-class">.setApp</span>(<span class="hljs-selector-tag">kernel</span><span class="hljs-selector-class">.APP_BASES_NAMESPACE</span>(), <span class="hljs-selector-tag">votingAppId</span>, <span class="hljs-selector-tag">newVotingAppCodeAddr</span>)
-</code></pre>
-<p>aragonOS provides two different types of App Proxies:</p>
 <ul>
-<li><p><strong>UpgradeableAppProxy</strong>: in every call to the proxy, it checks with the Kernel
-what the current code for that appId is and forwards the call.</p></li>
-<li><p><strong>PinnedAppProxy</strong>: on contract creation it checks and saves the app code currently
-in the Kernel. This cannot be upgraded unless the app code has explicit logic to
-change that storage slot.</p></li>
+<li><strong>appId:</strong> used to identify what app to link the proxy to. It is the <a href="http://docs.ens.domains/en/latest/introduction.html#namehash">ENS <code>namehash</code></a> of the APM repo (e.g. <code>namehash('voting.aragonpm.eth')</code>).</li>
+<li><strong>app:</strong> Address of the base contract for the app instance. If this app has already been installed previously, this address <strong>must</strong> be the same as the one currently set (use <code>getApp(kernel.APP_BASES_NAMESPACE(), appId)</code> to check).</li>
 </ul>
-<p>There is an extra function in the Kernel that allows for setting the app code and at
-the same time creating a new proxy. This function only sets the code the first time.</p>
-<pre><code class="hljs css solidity">kernel.<span class="hljs-keyword">new</span><span class="hljs-type">AppInstance</span>(votingAppId, votingApp)
-kernel.<span class="hljs-keyword">new</span><span class="hljs-type">PinnedAppInstance</span>(votingAppId, votingApp)
+<p>Overloaded versions of the two functions with more options are available:</p>
+<pre><code class="hljs css solidity">function newAppInstance(bytes32 appId,<span class="hljs-built_in"> address </span>appBase, bytes initializePayload, bool setDefault);
+function newPinnedAppInstance(bytes32 appId,<span class="hljs-built_in"> address </span>appBase, bytes initializePayload, bool setDefault);
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="33-app-sandbox-client-side"></a><a href="#33-app-sandbox-client-side" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.3 App sandbox (client side)</h3>
-<p>It is of paramount importance that apps can not change the DOM of other apps in an attempt to mislead users. As such, all apps are sandboxed.</p>
-<p>This means that apps are run inside an iframe that only has access to itself, and in order to send transactions, calls, and more, it communicates with the Aragon dapp (the &quot;wrapper&quot;) through a custom RPC protocol built specifically for Aragon. Apps do not have direct access to Web3.</p>
-<p>RPC calls are sent to the wrapper using the PostMessage API and the wrapper will use the information in the calls to perform specific actions, such as listen for events, cache values and calculate transaction paths.</p>
-<p>In practice, this means that apps only publish intents, and do not execute actions directly. Instead, all business logic is deffered to the wrapper.</p>
-<h2><a class="anchor" aria-hidden="true" id="4-acl"></a><a href="#4-acl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. ACL</h2>
-<p>A <strong>Permission</strong> is defined as the ability to perform actions (grouped by roles) in a certain app instance (identified by its address).</p>
-<p>We refer to a <strong>Permission Instance</strong> as an entity holding a certain permission.</p>
-<h3><a class="anchor" aria-hidden="true" id="41-the-acl-as-an-aragon-app-the-interface"></a><a href="#41-the-acl-as-an-aragon-app-the-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.1 The ACL as an Aragon app, the Interface</h3>
-<p>First of all, you need to define your base ACL instance for your kernel with:</p>
-<pre><code class="hljs css solidity">acl = ACL(<span class="hljs-name">kernel</span>.acl())
+<ul>
+<li><strong>initializePayload</strong>: calldata to be used to immediately initialize the app proxy, useful for atomically initializing the new app proxy in one transaction.</li>
+<li><strong>setDefault</strong>: set the new app as the default instance of the app in the Kernel (i.e. also set it in the <strong>App</strong> namespace).</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="app-permissioning"></a><a href="#app-permissioning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>App permissioning</h3>
+<p>For convenience, the Kernel exposes the following interfaces for getting the default ACL as well as whether an entity has permission to invoke a particular action on an app:</p>
+<pre><code class="hljs css solidity">function acl() public view returns (IACL);
+function hasPermission(address who,<span class="hljs-built_in"> address </span>where, bytes32 what, bytes how) public view returns (bool);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="upgradeability"></a><a href="#upgradeability" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Upgradeability</h3>
+<p>Upgradeability of apps and the Kernel itself is done by setting a new address for a specific key in the <code>apps</code> mapping with either the <strong>Core</strong> or <strong>Base</strong> namespace.</p>
+<p><strong>Kernel upgradeability</strong></p>
+<p>Kernel instances for different organizations can share the same implementation. Every Kernel instance is a KernelProxy, allowing them to be upgradeable.</p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>Be <em>extremely</em> careful when upgrading the Kernel! The logic for upgrading to a new implementation is in the implementation itself, and so an upgrade to the Kernel could render it un-upgradeable or even unusable!</p>
+</blockquote>
+<p>Upgrading the Kernel of an organization is done by changing the <strong>Kernel appId</strong> in the <strong>Core</strong> namespace:</p>
+<pre><code class="hljs css solidity"><span class="hljs-selector-tag">kernel</span><span class="hljs-selector-class">.setApp</span>(<span class="hljs-selector-tag">kernel</span><span class="hljs-selector-class">.CORE_NAMESPACE</span>(), <span class="hljs-selector-tag">kernel</span><span class="hljs-selector-class">.KERNEL_APP_ID</span>(), <span class="hljs-selector-tag">newKernelBaseAddr</span>);
+</code></pre>
+<p><strong>AppProxies and upgradeability</strong></p>
+<p>In a similar fashion to the Kernel, apps can share implementation code to save gas on deployment. AppProxies rely on the Kernel for their upgradeability. Note that separate app instances in an organization are all linked to the same base contract in the Kernel, and so upgrading the base contract would effectively upgrade all of that app's instances.</p>
+<p>Upgrading an app is done by setting a new base address for <strong>that app's appId</strong> in the <strong>Base</strong> namespace:</p>
+<pre><code class="hljs css solidity"><span class="hljs-selector-tag">kernel</span><span class="hljs-selector-class">.setApp</span>(<span class="hljs-selector-tag">kernel</span><span class="hljs-selector-class">.APP_BASES_NAMESPACE</span>(), <span class="hljs-selector-tag">votingAppId</span>, <span class="hljs-selector-tag">newVotingAppBaseAddr</span>);
+</code></pre>
+<p>aragonOS provides two different types of proxies for apps:</p>
+<ul>
+<li><p><strong>AppProxyUpgradeable</strong>: an upgradeable proxy. In every call to the proxy it retrieves the current base contract address from the Kernel and forwards the call.</p></li>
+<li><p><strong>AppProxyPinned</strong>: a non-upgradeable proxy. On creation, it checks and saves the base contract address in the Kernel. This cannot be upgraded unless the base contract has explicit logic to change that storage slot.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="permissions"></a><a href="#permissions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Permissions</h3>
+<p><code>APP_MANAGER_ROLE</code> is required any time the <code>apps</code> mapping is modified.</p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p><code>APP_MANAGER_ROLE</code> can be used in malicious and dangerous ways. <strong>Protect this permission.</strong></p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="events"></a><a href="#events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Events</h3>
+<p><code>SetApp</code> is fired any time the <code>app</code> mapping changes:</p>
+<pre><code class="hljs css solidity">SetPermission(address indexed <span class="hljs-keyword">from</span>,<span class="hljs-built_in"> address </span>indexed <span class="hljs-keyword">to</span>, bytes32 indexed role, bool allowed);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="interface"></a><a href="#interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interface</h3>
+<p>The Kernel implements the following interface:</p>
+<pre><code class="hljs css solidity"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IVaultRecoverable</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transferToVault</span><span class="hljs-params">(address token)</span> <span class="hljs-title">external</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowRecoverability</span><span class="hljs-params">(address token)</span> <span class="hljs-title">external</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bool)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRecoveryVault</span><span class="hljs-params">()</span> <span class="hljs-title">external</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(address)</span></span>;
+}
+
+contract IKernel <span class="hljs-keyword">is</span> IVaultRecoverable {
+    event SetApp(bytes32 indexed <span class="hljs-keyword">namespace</span>, bytes32 indexed appId, address app);
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">acl</span><span class="hljs-params">()</span> <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(IACL)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasPermission</span><span class="hljs-params">(address who, address where, bytes32 what, bytes how)</span> <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bool)</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setApp</span><span class="hljs-params">(bytes32 namespace, bytes32 appId, address app)</span> <span class="hljs-title">public</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getApp</span><span class="hljs-params">(bytes32 namespace, bytes32 appId)</span> <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(address)</span></span>;
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="api-documentation"></a><a href="#api-documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API documentation</h3>
+<p>See <a href="/docs/kernel_Kernel.html">Kernel</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="acl"></a><a href="#acl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ACL</h2>
+<p>A <strong>Permission</strong> is defined as the ability to perform actions (grouped by <strong>Roles</strong>) in a certain app instance (identified by its address).</p>
+<p>We refer to a <strong>permission instance</strong> as an entity holding a certain permission. If it helps, you can think of a permission as an <em>manifestation</em> of an app's role that is held by an entity.</p>
+<p>The ACL is built entirely as an AragonApp and can be upgraded in the same way as any other application installed into an Kernel. Unlike other apps, however, the ACL is installed and initialized upon the Kernel's own initialization due to its importance.</p>
+<h3><a class="anchor" aria-hidden="true" id="managing-permissions"></a><a href="#managing-permissions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Managing permissions</h3>
+<p>First of all, you can obtain the default ACL instance for a Kernel with:</p>
+<pre><code class="hljs css solidity">ACL acl = ACL(<span class="hljs-name">kernel</span>.acl())<span class="hljs-comment">;</span>
 </code></pre>
 <p>Then you can execute the following actions:</p>
-<h4><a class="anchor" aria-hidden="true" id="create-permission"></a><a href="#create-permission" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Permission</h4>
-<pre><code class="hljs css solidity">acl.createPermission(address entity,<span class="hljs-built_in"> address </span>app, bytes32 role,<span class="hljs-built_in"> address </span>manager)
+<p><strong>Create Permission</strong></p>
+<pre><code class="hljs css solidity">acl.createPermission(address entity,<span class="hljs-built_in"> address </span>app, bytes32 role,<span class="hljs-built_in"> address </span>manager);
 </code></pre>
-<p><code>createPermission()</code> will fail if that permission has pre-existing permission instances.</p>
-<p>This action is identical to <a href="#grant-permission"><code>grantPermission()</code></a> except it allows the creation of a new permission if it doesn’t exist yet.</p>
-<p>A role in the ACL protects access to <code>createPermission()</code> as this important function could be used in malicious ways. When the Kernel is initialized, it also creates the permission that grants the initializing address the ability to create new permissions.</p>
-<p>Note that creating permissions is made mandatory by the ACL: all actions requiring yet-to-be-created permissions are disallowed by default. Any permission checks on non-existent permissions are failed automatically.</p>
-<h4><a class="anchor" aria-hidden="true" id="grant-permission"></a><a href="#grant-permission" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Grant Permission</h4>
-<pre><code class="hljs css solidity">acl.grantPermission(address entity,<span class="hljs-built_in"> address </span>app, bytes32 role)
+<ul>
+<li><strong>entity</strong>: entity to hold the permission.</li>
+<li><strong>app</strong>: app whose role will be allowed through the permission</li>
+<li><strong>role</strong>: role to allow</li>
+<li><strong>manager</strong>: manager of the role's permission instances</li>
+</ul>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p><code>createPermission()</code> will fail if that role has pre-existing permission instances or a permission manager set.</p>
+</blockquote>
+<p>Grants <code>role</code> in <code>app</code> for an <code>entity</code> and set <code>manager</code> as the manager of the role's permission instances.</p>
+<p>This action is identical to <code>grantPermission()</code> except it allows the creation of the first permission instance of a role.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>Creating permissions is mandatory for apps to work. Any permission checks on non-existent permissions are failed automatically.</p>
+</blockquote>
+<p><strong>Grant Permission</strong></p>
+<pre><code class="hljs css solidity">acl.grantPermission(address entity,<span class="hljs-built_in"> address </span>app, bytes32 role);
 </code></pre>
-<p>Grants <code>role</code> in <code>app</code> for an <code>entity</code>. Only callable by the <code>manager</code> of a certain permission. This <code>entity</code> would then be allowed to call all actions that their <code>role</code> can perform on that particular <code>app</code> until the permission manager revokes their role with <a href="#revoke-permission"><code>revokePermission()</code></a>.</p>
-<p>The <code>grantPermission()</code> action doesn’t require protection with the ACL because an entity can only make changes to a permission if it is the permission's <code>manager</code>.</p>
-<h4><a class="anchor" aria-hidden="true" id="revoke-permission"></a><a href="#revoke-permission" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Revoke Permission</h4>
-<pre><code class="hljs css solidity">acl.revokePermission(address entity,<span class="hljs-built_in"> address </span>app, bytes32 role)
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>Only callable by the <code>manager</code> of the role's permission instances.</p>
+</blockquote>
+<p>Grants <code>role</code> in <code>app</code> for an <code>entity</code>. This <code>entity</code> would then be allowed to call all actions that their <code>role</code> can perform on that particular <code>app</code> until the permission manager revokes their role with <code>revokePermission()</code>.</p>
+<p>This action is identical to <code>createPermission()</code> except it can only be used by the permission manager of the role and does not set a new manager.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The <code>grantPermission()</code> action doesn’t require protection with the ACL because only the permission manager of the role can make changes.</p>
+</blockquote>
+<p><strong>Revoke Permission</strong></p>
+<pre><code class="hljs css solidity">acl.revokePermission(address entity,<span class="hljs-built_in"> address </span>app, bytes32 role);
 </code></pre>
-<p>Revokes <code>role</code> in <code>app</code> for an <code>entity</code>. Only callable by the <code>manager</code> of a certain permission.</p>
-<p>The <code>revokePermission()</code> action doesn’t need to be protected by the ACL either, as an entity can only make changes if it is the <code>manager</code> for a given permission.</p>
-<h4><a class="anchor" aria-hidden="true" id="adding-permissions"></a><a href="#adding-permissions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding Permissions</h4>
-<p>Apps have the choice of which actions to protect behind the ACL, as some actions may make sense to be completely public. Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifier <a href="https://github.com/aragon/aragonOS/blob/4f4e89abaac6c70243c8288b27272003ecb63e1d/contracts/apps/AragonApp.sol#L10"><code>auth()</code></a> or <a href="https://github.com/aragon/aragonOS/blob/4f4e89abaac6c70243c8288b27272003ecb63e1d/contracts/apps/AragonApp.sol#L15"><code>authP()</code></a>(passing the role required as a parameter) to the action. On executing the action, the <code>auth()</code>/<code>authP()</code> modifiers check with the Kernel whether the entity performing the call holds the required role or not.</p>
-<h3><a class="anchor" aria-hidden="true" id="42-basic-acl"></a><a href="#42-basic-acl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.2 Basic ACL</h3>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>Only callable by the <code>manager</code> of the role's permission instances.</p>
+</blockquote>
+<p>Revokes <code>role</code> in <code>app</code> for an <code>entity</code>.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The <code>revokePermission()</code> action doesn’t require protection with the ACL because only the permission manager of the role can make changes.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="basic-acl-example"></a><a href="#basic-acl-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic ACL example</h3>
 <p>As an example, the following steps show a complete flow for user &quot;Root&quot; to create a new DAO with the basic permissions set so that a <a href="https://github.com/aragon/aragon-apps/tree/master/apps/voting">Voting app</a> can manage the funds stored in a <a href="https://github.com/aragon/aragon-apps/tree/master/apps/vault">Vault app</a>:</p>
 <ol>
 <li>Deploy the Kernel and the ACL</li>
-<li>Executing <code>kernel.initialize(acl, rootAddress)</code> which in turns calls <code>acl.initialize(rootAddress)</code> creates the &quot;permissions creator&quot; permission under the hood:
-<code>createPermission(rootAddress, aclAddress, CREATE_PERMISSIONS_ROLE, rootAddress)</code></li>
+<li>Executing <code>kernel.initialize(acl, rootAddress)</code>, which in turns calls <code>acl.initialize(rootAddress)</code>, creates the &quot;permissions creator&quot; permission under the hood <code>createPermission(rootAddress, aclAddress, CREATE_PERMISSIONS_ROLE, rootAddress)</code></li>
 <li>Deploy the Voting app</li>
-<li>Grant the Voting app the ability to call <code>createPermission()</code>:
-<code>grantPermission(votingAppAddress, aclAddress, CREATE_PERMISSIONS_ROLE)</code> (must be executed by <code>rootAddress</code>)</li>
-<li>Deploy the Vault app, which has a action called <code>transferTokens()</code></li>
-<li>Create a new vote via the Voting app to create the <code>TRANSFER_TOKENS_ROLE</code> permission
-<code>createPermission(votingAppAddress, vaultAppAddress, TRANSFER_TOKENS_ROLE, votingAppAddress)</code></li>
-<li>If the vote passes, the Voting app then has access to all actions in the Vault protected by <code>TRANSFER_TOKENS_ROLE</code>, which in this case is just <code>transferTokens()</code></li>
-<li>Fund transfers from the Vault can now be controlled via votes from the Voting app. Each time a user wishes to transfer funds, they can create a new vote via the Voting app to propose an execution of the Vault's <code>transferTokens()</code> action. If, and only if, the vote passes, will the <code>transferTokens()</code> action be executed.</li>
+<li>Grant the Voting app the ability to call <code>createPermission()</code>: <code>grantPermission(votingAppAddress, aclAddress, CREATE_PERMISSIONS_ROLE)</code> (must be executed by <code>rootAddress</code>)</li>
+<li>Deploy the Vault app, which has an action called <code>transfer()</code></li>
+<li>Create a new vote via the Voting app to create the <code>TRANSFER_ROLE</code> permission: <code>createPermission(votingAppAddress, vaultAppAddress, TRANSFER_ROLE, votingAppAddress)</code></li>
+<li>If the vote passes, the Voting app now has access to all actions in the Vault protected by <code>TRANSFER_ROLE</code>, which in this case is just <code>transfer()</code></li>
+<li>Fund transfers from the Vault can now be controlled via votes from the Voting app. Each time a user wishes to transfer funds, they can create a new vote via the Voting app to propose an execution of the Vault's <code>transfer()</code> action. The <code>transfer()</code> action will be executed if and only if the vote passes.</li>
 </ol>
-<p>Note that the Voting app is also able to revoke or regrant the <code>TRANSFER_TOKENS_ROLE</code> permission as it is that permission's manager on <code>vaultAppAddress</code>.</p>
-<h3><a class="anchor" aria-hidden="true" id="43-permission-managers"></a><a href="#43-permission-managers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.3 Permission managers</h3>
-<p>As we have seen, when a permission is created, a <strong>Permission Manager</strong> is set for that specific permission. The permission manager is able to grant or revoke permission instances for that permission.</p>
-<p>The Permission Manager can be changed with:</p>
-<pre><code class="hljs css solidity">acl.setPermissionManager(address newManager,<span class="hljs-built_in"> address </span>app, bytes32 role)
-</code></pre>
-<p>Changes the permission manager to <code>newManager</code>. Only callable by the <code>manager</code> of a certain permission.</p>
-<p>The new permission manager replaces the old permission manager, resulting in the old manager losing any management power over that permission.</p>
-<p><a href="#create-permission"><code>createPermission()</code></a> executes a special case of this action to set the initial manager for the newly created permission. From that point forward, the manager can only be changed with <code>setPermissionManager()</code>.</p>
-<p>There's also a getter for the Permission Manager:</p>
+<p>Note that the Voting app is also able to revoke or regrant the <code>TRANSFER_ROLE</code> permission as it is that permission's manager of <code>TRANSFER_ROLE</code> on <code>vaultAppAddress</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="permission-managers"></a><a href="#permission-managers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Permission managers</h3>
+<p>As we have seen in the <a href="#basic-acl-example">Basic ACL example</a>, when a permission is created a <strong>Permission Manager</strong> is set for that specific role. The permission manager is able to grant or revoke permission instances for that role.</p>
+<p><strong>Getting a role's permission manager</strong></p>
 <pre><code class="hljs css solidity"><span class="hljs-symbol">acl.getPermissionManager</span>(<span class="hljs-keyword">address </span>app, <span class="hljs-keyword">bytes32 </span>role)
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="44-parameter-interpretation"></a><a href="#44-parameter-interpretation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.4 Parameter interpretation</h3>
-<p>When a permission is granted to an entity by the permission manager, it can be
-assigned an array of parameters that will be evaluated every time the ACL is checked
-to see if the entity can perform the action.</p>
-<p>Parameters allow to perform certain computations with the arguments of a role in
-order to decide whether the action can be done or not. This moves the ACL for being
-a purely binary access list, to a more sophisticated system that allows way more
-granular control.</p>
+<p><strong>Change a permission manager</strong></p>
+<pre><code class="hljs css solidity">acl.setPermissionManager(address newManager,<span class="hljs-built_in"> address </span>app, bytes32 role);
+</code></pre>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>Only callable by the <code>manager</code> of the role's permission instances.</p>
+</blockquote>
+<p>Changes the permission manager to <code>newManager</code>.</p>
+<p>The new permission manager replaces the old permission manager resulting in the old manager losing any management power over that permission.</p>
+<p><code>createPermission()</code> executes a special case of this action to set the initial manager for the newly created permission. From that point forward, the manager can only be changed with <code>setPermissionManager()</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="parameter-interpretation"></a><a href="#parameter-interpretation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameter interpretation</h3>
+<p>When a permission is granted to an entity by the permission manager it can be assigned an array of parameters that will be evaluated every time the ACL is checked to see if the entity can perform the action.</p>
+<p>Parameters allow the ACL to perform certain computations with the arguments of a permission in order to decide whether to allow the action or not. This moves the ACL from being a purely binary access list to a more sophisticated system that allows for fine-grained control.</p>
 <p>An ACL parameter is comprised of a data structure with 3 values:</p>
 <ul>
-<li><strong>Argument Value</strong> (<code>uint240</code>): It is the value to compare against depending on
-the argument. It is a regular Ethereum memory word, that looses it 2 most significant
-bytes of precision. The reason for this was to allow parameters to be saved in just
-one storage slot, saving significant gas.
-Even though <code>uint240</code>s are used, it can be used to store any integer up to <code>2^30 - 1</code>,
-addresses and bytes32 (in the case of comparing hashes, losing 2 bytes of precision
-shouldn't be a dealbreaker if the hash algorithm is secure). The only problem is
-when</li>
-<li><strong>Argument ID</strong> (<code>uint8</code>): Determines how the comparison value is fetched. From
-0 to 200 it refers to the argument index number passed to the role. After 200, there
-are some <em>special Argument IDs</em>:
+<li><strong>Argument Value</strong> (<code>uint240</code>): the value to compare against, depending on the argument. It is a regular Ethereum memory word that loses its two most significant bytes of precision. The reason for this was to allow parameters to be saved in just one storage slot, saving significant gas.
+Even though <code>uint240</code>s are used, it can be used to store any integer up to <code>2^30 - 1</code>, addresses, and bytes32. In the case of comparing hashes, losing 2 bytes of precision shouldn't be a dealbreaker if the hash algorithm is secure.</li>
+<li><strong>Argument ID</strong> (<code>uint8</code>): Determines how the comparison value is fetched. From 0 to 200 it refers to the argument index number passed to the role. After 200, there are some special <em>Argument IDs</em>:
 <ul>
-<li><code>BLOCK_NUMBER_PARAM_ID</code> (<code>id = 200</code>): Sets comparison value to the block number
-at the time of execution. This allows for setting up timelocks depending
-on blocks.</li>
-<li><code>TIMESTAMP_PARAM_ID</code> (<code>id = 201</code>): Sets comparison value to the timestamp of the
-current block at the time of execution. This allows for setting up timelocks
-on time.</li>
-<li><code>SENDER_PARAM_ID</code> (<code>id = 202</code>): Sets comparison value to the sender of the call.
-(Currently useless because of <a href="">this issue</a>)</li>
-<li><code>ORACLE_PARAM_ID</code> (<code>id = 203</code>): Checks with an oracle at the address in the
-<em>argument value</em> and returns whether it returned true or false (no comparison with arg).</li>
-<li><code>LOGIC_OP_PARAM_ID</code> (<code>id = 204</code>): Evaluates a logical operation and returns
-true or false depending on its result (no comparison with arg).</li>
-<li><code>PARAM_VALUE_PARAM_ID</code> (<code>id = 205</code>): Uses value as return. Commonly used with
-the <code>RET</code> operation, to just return a value. If the value in the param is greater
-than 0, it will evaluate to true, otherwise it will return false.</li>
+<li><code>BLOCK_NUMBER_PARAM_ID</code> (<code>id = 200</code>): sets comparison value to the block number at the time of execution. This allows for setting up timelocks depending on blocks.</li>
+<li><code>TIMESTAMP_PARAM_ID</code> (<code>id = 201</code>): sets comparison value to the timestamp of the current block at the time of execution. This allows for setting up timelocks on time.</li>
+<li><code>id = 202</code>: not currently in use.</li>
+<li><code>ORACLE_PARAM_ID</code> (<code>id = 203</code>): checks with an oracle at the address in the <code>argument value</code> and returns whether it returned true or false (no comparison with the <code>argument value</code>).</li>
+<li><code>LOGIC_OP_PARAM_ID</code> (<code>id = 204</code>): evaluates a logical operation and returns true or false depending on its result (no comparison with the <code>argument value</code>).</li>
+<li><code>PARAM_VALUE_PARAM_ID</code> (<code>id = 205</code>): return <code>argument value</code>. Commonly used with the <code>RET</code> operation to just return a value. If the value in the param is greater than 0 it will evaluate to true, otherwise it will return false.</li>
 </ul></li>
-<li><strong>Operation type</strong> (<code>uint8</code>): Determines what operation is made to compare the
-value fetched using the argument ID or the argument value. For all comparisons,
-both values are compared in the following order <code>args[param.id] &lt;param.op&gt; param.value</code>.
-Therefore for a greater than operation, with a <code>param = {id: 0, op: Op.GT, value: 10}</code>,
-it will interpret whether the argument 0 is greater than 10. The implemented
-operation types are:
+<li><strong>Operation type</strong> (<code>uint8</code>): what operation should be done to compare the value fetched using the argument ID or the argument value. For all comparisons, both values are compared in the following order <code>args[param.id] &lt;param.op&gt; param.value</code>. Therefore, for a greater than operation, with <code>param = {id: 0, op: Op.GT, value: 10}</code>, it will interpret whether the argument 0 is greater than 10. The implemented operation types are:
 <ul>
-<li>None (<code>Op.NONE</code>): Always evaluates to <code>false</code>, regardless of parameter or arguments.</li>
-<li>Equals (<code>Op.EQ</code>): Evaluates to true if every byte matches between <code>args[param.id]</code> and
-<code>param.value</code>.</li>
-<li>Not equals (<code>Op.NEQ</code>): Evaluates to true if any byte doesn't match.</li>
-<li>Greater than (<code>Op.GT</code>): Evaluates to true if <code>args[param.id] &gt; param.value</code>.</li>
-<li>Less than (<code>Op.LT</code>): Evaluates to true if <code>args[param.id] &lt; param.value</code>.</li>
-<li>Greater than or equal (<code>Op.GTE</code>): Evaluates to true if <code>args[param.id] &gt;= param.value</code>.</li>
-<li>Less than or equal (<code>Op.LTE</code>): Evaluates to true if <code>args[param.id] &lt;= param.value</code>.</li>
-<li>Return (<code>Op.RET</code>): Evaluates to true if <code>args[param.id]</code> is greater than one.
-Used with <code>PARAM_VALUE_PARAM_ID</code>, it makes <code>args[param.id] = param.value</code>, so it
-returns the parameter associated value.</li>
+<li>None (<code>Op.NONE</code>): always evaluates to <code>false</code> regardless of parameter or arguments.</li>
+<li>Equals (<code>Op.EQ</code>): evaluates to true if every byte matches between <code>args[param.id]</code> and <code>param.value</code>.</li>
+<li>Not equals (<code>Op.NEQ</code>): evaluates to true if any byte doesn't match.</li>
+<li>Greater than (<code>Op.GT</code>): evaluates to true if <code>args[param.id] &gt; param.value</code>.</li>
+<li>Less than (<code>Op.LT</code>): evaluates to true if <code>args[param.id] &lt; param.value</code>.</li>
+<li>Greater than or equal (<code>Op.GTE</code>): evaluates to true if <code>args[param.id] &gt;= param.value</code>.</li>
+<li>Less than or equal (<code>Op.LTE</code>): evaluates to true if <code>args[param.id] &lt;= param.value</code>.</li>
+<li>Return (<code>Op.RET</code>): evaluates to true if <code>args[param.id]</code> is greater than one. Used with <code>PARAM_VALUE_PARAM_ID</code>, it makes <code>args[param.id] = param.value</code>, so it returns the associated value of the parameter.</li>
 </ul></li>
 </ul>
-<p>While also representing an operation, when the id is <code>LOGIC_OP_PARAM_ID</code>, only the
-ops below are valid. These operations use the parameter's value to point to other
-parameters index in the parameter array. These values are encoded as <code>uint32</code>
-numbers, left-shifted 32 bits to the left each (example: for example, an op that
-takes two inputs value would be <code>0x00....0000000200000001</code>, would be input 1, 1,
-and input 2, 2, refering to params at index 1 and 2). Available logic ops:
-- Not (<code>Op.NOT</code>): Takes 1 parameter index and evaluates to the opposite of what
-the linked parameter evaluates to.
-- And (<code>Op.AND</code>): Takes 2 parameter indices and evaluates to true if both
-evaluate to true.
-- Or (<code>Op.OR</code>): Takes 2 parameter indices and evaluates to true if any of them
-evaluate to true.
-- Exclusive or (<code>Op.XOR</code>): Takes 2 parameter indices and evaluates to true if
-only one of the parameters evaluate to true.
-- If else (<code>Op.IF_ELSE</code>): Takes 3 parameters, evaluates the first parameter
-and if it evaluates to true, it evaluates to whatever the parameter second
-parameter evaluates to, otherwise it evaluates to whatever the third parameter
-does.</p>
-<h3><a class="anchor" aria-hidden="true" id="46-parameter-execution"></a><a href="#46-parameter-execution" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.6 Parameter execution</h3>
-<p>When evaluating a rule, the ACL will always evaluate the result of the first parameter.
-This first parameter can be an operation that links to other parameters and its
-evaluation depends on those parameter evaluation.</p>
-<p>Execution is recursive and the result evaluated is always the result of the eval
-of the first parameter.</p>
-<h3><a class="anchor" aria-hidden="true" id="47-parameter-encoding"></a><a href="#47-parameter-encoding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.7 Parameter encoding</h3>
-<p>To encode some logic operations (AND, OR, IF-ELSE) which link to other parameters, the following helpers are provided, where the function arguments always refer to parameter indexes in the <code>Param</code> array they belong to:</p>
-<h4><a class="anchor" aria-hidden="true" id="if-else-ternary-operation"></a><a href="#if-else-ternary-operation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>If-Else (ternary) operation</h4>
-<pre><code class="hljs css solidity">encodeIfElse(<span class="hljs-keyword">uint</span> condition, <span class="hljs-keyword">uint</span> success, <span class="hljs-keyword">uint</span> failure)
-</code></pre>
-<h4><a class="anchor" aria-hidden="true" id="binary-operations-and-or"></a><a href="#binary-operations-and-or" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Binary operations (And, Or)</h4>
-<pre><code class="hljs css solidity"><span class="hljs-function"><span class="hljs-title">encodeOperator</span><span class="hljs-params">(uint param1, uint param2)</span></span>
-</code></pre>
-<h3><a class="anchor" aria-hidden="true" id="48-examples-of-rules"></a><a href="#48-examples-of-rules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8 Examples of rules</h3>
-<p>The interpreter supports encoding complex rules in what would look almost like a programming language, for example let’s look at the following <a href="https://github.com/aragon/aragonOS/blob/63c4722b8629f78350586bcea7c0837ab5882a20/test/TestACLInterpreter.sol#L112-L126">test case</a>:</p>
-<pre><code class="hljs css solidity">    function testComplexCombination() {
-        <span class="hljs-comment">// if (oracle and block number &gt; block number - 1) then arg 0 &lt; 10 or oracle else false</span>
-        <span class="hljs-built_in">Param</span>[] memory <span class="hljs-built_in">params</span> = new <span class="hljs-built_in">Param</span>[](<span class="hljs-number">7</span>);
-        <span class="hljs-built_in">params</span>[<span class="hljs-number">0</span>] = <span class="hljs-built_in">Param</span>(LOGIC_OP_PARAM_ID, uint8(Op.IF_ELSE), encodeIfElse(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>));
-        <span class="hljs-built_in">params</span>[<span class="hljs-number">1</span>] = <span class="hljs-built_in">Param</span>(LOGIC_OP_PARAM_ID, uint8(Op.<span class="hljs-built_in">AND</span>), encodeOperator(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>));
-        <span class="hljs-built_in">params</span>[<span class="hljs-number">2</span>] = <span class="hljs-built_in">Param</span>(ORACLE_PARAM_ID, uint8(Op.EQ), uint240(new AcceptOracle()));
-        <span class="hljs-built_in">params</span>[<span class="hljs-number">3</span>] = <span class="hljs-built_in">Param</span>(BLOCK_NUMBER_PARAM_ID, uint8(Op.GT), uint240(block.number - <span class="hljs-number">1</span>));
-        <span class="hljs-built_in">params</span>[<span class="hljs-number">4</span>] = <span class="hljs-built_in">Param</span>(LOGIC_OP_PARAM_ID, uint8(Op.<span class="hljs-built_in">OR</span>), encodeOperator(<span class="hljs-number">5</span>, <span class="hljs-number">2</span>));
-        <span class="hljs-built_in">params</span>[<span class="hljs-number">5</span>] = <span class="hljs-built_in">Param</span>(<span class="hljs-number">0</span>, uint8(Op.LT), uint240(<span class="hljs-number">10</span>));
-        <span class="hljs-built_in">params</span>[<span class="hljs-number">6</span>] = <span class="hljs-built_in">Param</span>(PARAM_VALUE_PARAM_ID, uint8(Op.RET), <span class="hljs-number">0</span>);
+<p>While also representing an operation, when the argument ID is <code>LOGIC_OP_PARAM_ID</code> only the <code>Op</code>s below are valid. These operations use the parameter's value to point to other parameter indices in the parameter array. Any values are encoded as <code>uint32</code> numbers, each left-shifted 32 bits (for example, an <code>Op</code> that takes two inputs with a value of <code>0x00....0000000200000001</code> would have input 1, 1, and input 2, 2, refering to params at index 1 and 2). Here are the available logic <code>Op</code>s:</p>
+<ul>
+<li>Not (<code>Op.NOT</code>): takes 1 parameter index and evaluates to the opposite of what the linked parameter evaluates to.</li>
+<li>And (<code>Op.AND</code>): takes 2 parameter indices and evaluates to true if both evaluate to true.</li>
+<li>Or (<code>Op.OR</code>): takes 2 parameter indices and evaluates to true if either evaluate to true.</li>
+<li>Exclusive or (<code>Op.XOR</code>): takes 2 parameter indices and evaluates to true if only one of the parameters evaluate to true.</li>
+<li>If else (<code>Op.IF_ELSE</code>): takes 3 parameters, evaluates the first parameter and if true, evalutes as the second parameter's evaluation, or as the third parameter's evaluation if false.</li>
+</ul>
+<p><strong>Parameter execution</strong></p>
+<p>When evaluating a rule the ACL will always evaluate the result of the first parameter. This first parameter can be an operation that links to other parameters and its evaluation depends on those parameters' evaluation. Execution is recursive and the result evaluated is always the result of the evaluation of the first parameter.</p>
+<p><strong>Examples of rules</strong></p>
+<p>The interpreter supports encoding complex rules in what would look almost like a programming language. For example, let’s look at the following <a href="https://github.com/aragon/aragonOS/blob/63c4722b8629f78350586bcea7c0837ab5882a20/test/TestACLInterpreter.sol#L112-L126">test case</a>:</p>
+<pre><code class="hljs css solidity">function testComplexCombination() {
+    <span class="hljs-comment">// if (oracle and block number &gt; block number - 1) then arg 0 &lt; 10 or oracle else false</span>
+    <span class="hljs-built_in">Param</span>[] memory <span class="hljs-built_in">params</span> = new <span class="hljs-built_in">Param</span>[](<span class="hljs-number">7</span>);
+    <span class="hljs-built_in">params</span>[<span class="hljs-number">0</span>] = <span class="hljs-built_in">Param</span>(LOGIC_OP_PARAM_ID, uint8(Op.IF_ELSE), encodeIfElse(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>));
+    <span class="hljs-built_in">params</span>[<span class="hljs-number">1</span>] = <span class="hljs-built_in">Param</span>(LOGIC_OP_PARAM_ID, uint8(Op.<span class="hljs-built_in">AND</span>), encodeOperator(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>));
+    <span class="hljs-built_in">params</span>[<span class="hljs-number">2</span>] = <span class="hljs-built_in">Param</span>(ORACLE_PARAM_ID, uint8(Op.EQ), uint240(new AcceptOracle()));
+    <span class="hljs-built_in">params</span>[<span class="hljs-number">3</span>] = <span class="hljs-built_in">Param</span>(BLOCK_NUMBER_PARAM_ID, uint8(Op.GT), uint240(block.number - <span class="hljs-number">1</span>));
+    <span class="hljs-built_in">params</span>[<span class="hljs-number">4</span>] = <span class="hljs-built_in">Param</span>(LOGIC_OP_PARAM_ID, uint8(Op.<span class="hljs-built_in">OR</span>), encodeOperator(<span class="hljs-number">5</span>, <span class="hljs-number">2</span>));
+    <span class="hljs-built_in">params</span>[<span class="hljs-number">5</span>] = <span class="hljs-built_in">Param</span>(<span class="hljs-number">0</span>, uint8(Op.LT), uint240(<span class="hljs-number">10</span>));
+    <span class="hljs-built_in">params</span>[<span class="hljs-number">6</span>] = <span class="hljs-built_in">Param</span>(PARAM_VALUE_PARAM_ID, uint8(Op.RET), <span class="hljs-number">0</span>);
 
-        assertEval(<span class="hljs-built_in">params</span>, arr(uint256(<span class="hljs-number">10</span>)), <span class="hljs-literal">true</span>);
+    assertEval(<span class="hljs-built_in">params</span>, arr(uint256(<span class="hljs-number">10</span>)), <span class="hljs-literal">true</span>);
 
-        <span class="hljs-built_in">params</span>[<span class="hljs-number">4</span>] = <span class="hljs-built_in">Param</span>(LOGIC_OP_PARAM_ID, uint8(Op.<span class="hljs-built_in">AND</span>), encodeOperator(<span class="hljs-number">5</span>, <span class="hljs-number">2</span>));
-        assertEval(<span class="hljs-built_in">params</span>, arr(uint256(<span class="hljs-number">10</span>)), <span class="hljs-literal">false</span>);
-    }
-</code></pre>
-<p>When assigned to a permission, this rule will <strong>evaluate to true</strong> (and therefore allow the action) if an oracle accepts it and the block number is greater than the previous block number, and either the oracle allows it (again! testing redundancy too) or the first parameter of the rule is lower than 10. The possibilities for customizing organizations/DApps governance model are truly endless, without the need to write any actual Solidity.</p>
-<h3><a class="anchor" aria-hidden="true" id="49-events"></a><a href="#49-events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.9 Events</h3>
-<p><a href="#create-permission"><code>createPermission()</code></a>, <a href="#grant-permission"><code>grantPermission()</code></a>, and <a href="#revoke-permission"><code>revokePermission()</code></a> all fire the same <code>SetPermission</code> event that Aragon clients are expected to cache and process into a locally stored version of the ACL:</p>
-<pre><code class="hljs css solidity">SetPermission(address indexed <span class="hljs-keyword">from</span>,<span class="hljs-built_in"> address </span>indexed <span class="hljs-keyword">to</span>, bytes32 indexed role, bool allowed)
-</code></pre>
-<p><a href="#set-permission-manager"><code>setPermissionManager()</code></a> fires the following event:</p>
-<pre><code class="hljs css solidity">ChangePermissionManager(address indexed app, bytes32 indexed role,<span class="hljs-built_in"> address </span>indexed manager)
-</code></pre>
-<h2><a class="anchor" aria-hidden="true" id="5-forwarders-and-evmscript"></a><a href="#5-forwarders-and-evmscript" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. Forwarders and EVMScript</h2>
-<p>Forwarders are one of the most important concepts of aragonOS. Rather than hardcoding the notion of a vote into each separate app’s functionality and ACL, one can instead use a generic Voting App, which implements the forwarding interface, to pass actions forward to other apps after successful votes. If the Voting App is set up to only allow a token’s holders to vote, that means any actions/calls being passed from it must have been approved by the token’s holders.</p>
-<h3><a class="anchor" aria-hidden="true" id="51-forwarding-and-transaction-pathing"></a><a href="#51-forwarding-and-transaction-pathing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.1 Forwarding and transaction pathing</h3>
-<p>The forwarding interface also allows the Aragon client through aragon.js to calculate what we call ‘forwarding paths’. If you wish to perform an action and the client determines you don’t have direct permission to do it, it will think of alternative paths for execution. For example, you might directly go to the Vault App wishing to perform a token transfer, and the client directly prompts you to create a vote, as you have permission to create votes, that will perform the transfer if successful, as illustrated in the animation below.</p>
-<p><img src="/docs/assets/fwd.gif" alt="forwarding animation">
-(governance model and characters are fictional)</p>
-<p>We have designed our own scripting format, known as EVM scripts, to encode complex actions into a representation that can be stored and later executed by another entity. aragonOS 3.0 allows you to have multiple script executors that can be housed in your organization</p>
-<h3><a class="anchor" aria-hidden="true" id="52-evmscripts"></a><a href="#52-evmscripts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2 EVMScripts</h3>
-<p>Script executors are contracts that take a script and an input and return an output after execution. We have built three script executors for the initial release:</p>
-<h4><a class="anchor" aria-hidden="true" id="521-script-executors-and-evmscriptregistry"></a><a href="#521-script-executors-and-evmscriptregistry" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.1 Script executors and EVMScriptRegistry</h4>
-<p>EVMScriptExecutors must follow this interface:</p>
-<pre><code class="hljs css solidity"><span class="hljs-built_in">
-interface </span>IEVMScriptExecutor {
-    function execScript(bytes script, bytes input, address[] blacklist) external returns (bytes);
+    <span class="hljs-built_in">params</span>[<span class="hljs-number">4</span>] = <span class="hljs-built_in">Param</span>(LOGIC_OP_PARAM_ID, uint8(Op.<span class="hljs-built_in">AND</span>), encodeOperator(<span class="hljs-number">5</span>, <span class="hljs-number">2</span>));
+    assertEval(<span class="hljs-built_in">params</span>, arr(uint256(<span class="hljs-number">10</span>)), <span class="hljs-literal">false</span>);
 }
 </code></pre>
-<p>Because script executors get are called with a <code>delegatecall</code>, in order to prevent
-self-destructs, <code>IEVMScriptExecutor.execScript(...)</code> MUST return
-at least 32 bytes so in case an executor <code>selfdestruct</code>s it could be detected.</p>
-<h5><a class="anchor" aria-hidden="true" id="5211-callsscript"></a><a href="#5211-callsscript" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.1.1 CallsScript</h5>
-<p>A simple way to concatenate multiple calls. It cancels the operation if any of the calls fail.</p>
+<p>When assigned to a permission, this rule will <strong>evaluate to true</strong> (and therefore allow the action) only on the following conditions:</p>
 <ul>
-<li><strong>Script body:</strong> (See source code file for spec of the payload)</li>
+<li>If an oracle accepts it, and</li>
+<li>The block number is greater than the previous block number, and</li>
+<li>Either the oracle allows it (again! testing redundancy too) or the first parameter of the rule is lower than 10.</li>
+</ul>
+<p>The possibilities for customizing an organization or protocol's governance model are truly endless and there is no need to write any actual Solidity.</p>
+<h3><a class="anchor" aria-hidden="true" id="permissions-1"></a><a href="#permissions-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Permissions</h3>
+<p><code>CREATE_PERMISSION_ROLE</code> protects <code>createPermission()</code>.</p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p><code>CREATE_PERMISSION_ROLE</code> could be used in malicious and dangerous ways. This is initially assigned when the Kernel is first initialized. <strong>Protect this permission.</strong></p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="events-1"></a><a href="#events-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Events</h3>
+<p><a href="#create-permission"><code>createPermission()</code></a>, <a href="#grant-permission"><code>grantPermission()</code></a>, and <a href="#revoke-permission"><code>revokePermission()</code></a> all fire the same <code>SetPermission</code> event that Aragon clients are expected to cache and process into a locally stored version of the ACL:</p>
+<pre><code class="hljs css solidity">SetPermission(address indexed <span class="hljs-keyword">from</span>,<span class="hljs-built_in"> address </span>indexed <span class="hljs-keyword">to</span>, bytes32 indexed role, bool allowed);
+</code></pre>
+<p><a href="#set-permission-manager"><code>setPermissionManager()</code></a> fires the following event:</p>
+<pre><code class="hljs css solidity">ChangePermissionManager(address indexed app, bytes32 indexed role,<span class="hljs-built_in"> address </span>indexed manager);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="api-documentation-1"></a><a href="#api-documentation-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API documentation</h3>
+<p>See <a href="/docs/acl_ACL.html">ACL</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="aragonapp"></a><a href="#aragonapp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AragonApp</h2>
+<p>AragonApp is the base class for all aragonOS applications. It exposes a light layer of functionality to supplement an application's business logic and sets up the required storage to connect to a Kernel.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>We have outlined a number of recommended conventions to follow in the <a href="/docs/aragonos-building.html#conventions">aragonOS development guide</a>.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="security-recommendations-and-sane-defaults"></a><a href="#security-recommendations-and-sane-defaults" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Security recommendations and sane defaults</h3>
+<p>While it is ultimately up to you to understand the concepts and sufficiently protect your business logic from flaws, AragonApp attempts to provide sane and secure defaults out of the box so you don't have to worry about potential security breaches from misconfiguration.</p>
+<p>Applications inheriting from AragonApp are required to be initialized, connected to a Kernel, and used with an <a href="#upgradeability">AppProxy</a>. By default, they are not meant to receive or hold funds and allow all tokens to be recovered through the fund recovery mechanism in case of an accidental token transfer.</p>
+<p>To secure an application, it is critical to ensure that all externally-accessible, state-changing functionality is protected by <a href="#authentication">authentication</a>. If the application is meant to receive, hold, or transfer funds, you will also have to carefully reason about the <a href="#application-capabilities">fund recovery and depositable capabilities</a> and how they affect your application (alongside the <a href="https://github.com/ConsenSys/smart-contract-best-practices">standard Ethereum security recommendations</a> of course!) If the app is a <a href="#forwarders-and-evmscripts">forwarder or uses EVMScripts</a> you should also carefully understand the implications of allowing another application or entity to execute an action from your application's address.</p>
+<h3><a class="anchor" aria-hidden="true" id="authentication"></a><a href="#authentication" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Authentication</h3>
+<p><strong>Adding roles</strong></p>
+<p>Declaring roles is simple and usually done as public <code>bytes32</code> declarations at the start of the contract file. By convention, the standard name for a role identifier is the <code>keccak256</code> hash of its name as other tooling in the stack expects this to be the case:</p>
+<pre><code class="hljs css solidity"><span class="hljs-keyword">bytes32 </span>public CUSTOM_ACTION_ROLE = keccak256(<span class="hljs-string">"CUSTOM_ACTION_ROLE"</span>)<span class="hljs-comment">;</span>
+</code></pre>
+<p><strong>Protecting functionality</strong></p>
+<p>Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifiers <code>auth()</code> or <code>authP()</code> to the action. On executing the action, the <code>auth()</code> or <code>authP()</code> modifier checks with the Kernel whether the entity performing the call holds the required role or not.</p>
+<p><code>auth(bytes32 role)</code> is capable of defining a <em>binary</em> permission—either yes or no:</p>
+<pre><code class="hljs css solidity"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">customAction</span><span class="hljs-params">()</span> <span class="hljs-title">auth</span><span class="hljs-params">(CUSTOM_ACTION_ROLE)</span> </span>{
+}
+</code></pre>
+<p><code>authP(bytes32 role, uint256[] params)</code> allows you to pass a number of parameters that can then be used in the <a href="#parameter-interpretation">ACL's parameterization</a> for each permission. This allows you to define powerful permissions with highly granular controls based on the inputs of an action:</p>
+<pre><code class="hljs css solidity">bytes32 <span class="hljs-keyword">public</span> TRANSFER_ROLE = keccak256(<span class="hljs-string">"TRANSFER_ROLE"</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span><span class="hljs-params">(uint256 amount)</span> <span class="hljs-title">authP</span><span class="hljs-params">(TRANSFER_ROLE, arr<span class="hljs-params">(amount)</span>)</span> </span>{
+}
+</code></pre>
+<p><code>authP()</code>'s second argument is a <code>uint256[]</code>, but aragonOS exposes a number of <code>arr()</code> syntatical sugar helpers by default from AragonApp to help construct this array when using different argument types.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>Both <code>auth()</code> and <code>authP()</code> check that the application instance is initialized before allowing the action. Trying to access a protected action in an uninitialized application will result in a revert.</p>
+</blockquote>
+<p>Finally, AragonApp also exposes a public getter for checking if an entity can perform a certain action:</p>
+<pre><code class="hljs css solidity"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">canPerform</span><span class="hljs-params">(address sender, bytes32 role, uint256[] <span class="hljs-keyword">params</span>)</span> <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bool)</span>;</span>
+</code></pre>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>Apps have the choice of which actions to protect behind the ACL as some actions may make sense to be completely public. Any publicly exposed state-changing function should <em>most likely</em> be protected, however.</p>
+</blockquote>
+<p><strong>Lifecycle of an AragonApp call requiring the ACL</strong></p>
+<p><img src="/docs/assets/os-app-call.gif" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="application-lifecycle-guarantees"></a><a href="#application-lifecycle-guarantees" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Application lifecycle guarantees</h3>
+<p>The <a href="https://eips.ethereum.org/EIPS/eip-897">DelegateProxy</a> pattern suffers from a particular weakness of the proxy contracts depending upon the survival of the base logic contracts. It is important to understand the lifecycles of these base and proxy contracts to ensure users' safety and to avoid incidents like the unfortunate <a href="https://www.parity.io/security-alert-2/">second Parity multisig wallet vulnerability</a>.</p>
+<p>AragonApps can be in the lifecycle stages of <strong>uninitialized</strong>, <strong>initialized</strong>, or <strong>petrified</strong>. As an application contract is deployed it begins in the <strong>uninitialized</strong> state and can go to either the <strong>initialized</strong> or <strong>petrified</strong> state.</p>
+<p><img src="/docs/assets/app-lifecycle.png" alt=""></p>
+<p>AragonApp base logic contracts are <strong>petrified</strong> upon their deployment. They can never be initialized and are considered frozen in an uninitialized state forever. This also means that, if properly developed, there is no way for these contracts to be <code>selfdestruct</code>ed.</p>
+<p>The AppProxy contracts users deploy and link to the base logic contracts are expected to be <strong>initialized</strong> by their users and only made usable once this initialization is complete.</p>
+<p>You can check for an application instance's lifecycle state using the following:</p>
+<pre><code class="hljs css solidity"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasInitialized</span><span class="hljs-params">()</span> <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bool)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isPetrified</span><span class="hljs-params">()</span> <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bool)</span></span>;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="application-capabilities"></a><a href="#application-capabilities" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Application capabilities</h3>
+<p><strong>Fund recovery</strong></p>
+<p>By default, all AragonApps have a fund recovery mechanism enabled for all tokens and ETH to protect against the event of an accidental transfer of funds. This is partly motivated by a flaw in the ERC20 specification that does not allow contracts to prevent themselves from receiving tokens like they can with ETH.</p>
+<p>All AragonApps expose an externally-accessible fund recovery mechanism:</p>
+<pre><code class="hljs css solidity"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transferToVault</span><span class="hljs-params">(address token)</span> <span class="hljs-title">external</span></span>;
+</code></pre>
+<p>This capability is configurable through the overloadable hook:</p>
+<pre><code class="hljs css solidity"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowRecoverability</span><span class="hljs-params">(address token)</span> <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bool)</span></span>;
+</code></pre>
+<p>The default implementation of <code>allowRecoverability()</code> is just to return true for all tokens but your overload could choose to not allow certain tokens or even ETH.</p>
+<p><strong>Depositable proxies</strong></p>
+<p>AppProxies start off not being able to receive ETH through the native, gas-limited <code>.send()</code> and <code>.transfer()</code> methods. This can be explicitly enabled through the <code>setDepositable()</code> function when an app wants to allow itself (as the proxy instance) to recieve ETH from other contracts:</p>
+<pre><code class="hljs css solidity"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setDepositable</span><span class="hljs-params">(bool depositable)</span> <span class="hljs-title">internal</span></span>;
+</code></pre>
+<p>An example use case would be a fundraising application which would only enable its proxy instances to be capable of receiving ETH for the duration of a fundraiser.</p>
+<p><strong>EVMScripts</strong></p>
+<p>AragonApp exposes the following interface for running EVMScripts:</p>
+<pre><code class="hljs css solidity">function runScript(<span class="hljs-keyword">bytes </span><span class="hljs-keyword">script, </span><span class="hljs-keyword">bytes </span>input, <span class="hljs-keyword">address[] </span><span class="hljs-keyword">blacklist) </span>internal isInitialized protectState returns (<span class="hljs-keyword">bytes);
+</span></code></pre>
+<p>And some getters for information about EVMScripts:</p>
+<pre><code class="hljs css solidity"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getEVMScriptExecutor</span><span class="hljs-params">(bytes script)</span> <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(IEVMScriptExecutor)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getEVMScriptRegistry</span><span class="hljs-params">()</span> <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(IEVMScriptRegistry)</span></span>;
+</code></pre>
+<p>For more information on the use cases for EVMScripts, see the following <a href="#forwarders-and-evmscripts">Forwarders and EVMScripts</a> section.</p>
+<h3><a class="anchor" aria-hidden="true" id="api-documentation-2"></a><a href="#api-documentation-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API documentation</h3>
+<p>See <a href="/docs/apps_AragonApp.html">AragonApp</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="forwarders-and-evmscripts"></a><a href="#forwarders-and-evmscripts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Forwarders and EVMScripts</h2>
+<p>Forwarders are one of the most important concepts of aragonOS. Rather than hardcoding the notion of a vote into each separate app’s functionality and ACL one can instead use a generic Voting App, which implements the forwarding interface, to pass actions <em>forward</em> to other apps after successful votes. If the Voting App is set up to only allow a token’s holders to vote, that means any actions/calls being passed from it must have also been approved by the token’s holders.</p>
+<h3><a class="anchor" aria-hidden="true" id="forwarding-and-transaction-pathing"></a><a href="#forwarding-and-transaction-pathing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Forwarding and transaction pathing</h3>
+<p>The forwarding interface also allows a frontend interface, like the Aragon client, to calculate &quot;forwarding paths&quot;. If you wanted to perform an action but you don't have the required permissions, a client can think of alternative paths for execution. For example, you might be in the Vault app's interface wishing to perform a token transfer. If you only had the permission to create votes, the client would directly prompt you to create a vote rather than let you complete the transfer. The flow is illustrated in the following animation:</p>
+<p><img src="/docs/assets/fwd.gif" alt="forwarding animation"></p>
+<blockquote>
+<p>Vote forwarding scenario.  (Please note that the governance model and characters are fictional.)</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="evmscripts"></a><a href="#evmscripts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EVMScripts</h3>
+<p>We have designed our own scripting format, known as EVMScripts, to encode complex actions into a bytes representation that can be stored and later executed by another entity. EVMScripts can be installed on a per-organization basis through a <strong>EVMScriptRegistry</strong> and aragonOS comes complete with the ability to install multiple script executors in an organization.</p>
+<p><strong>EVMScript executors</strong> are contracts that take a script and an input and return an output after execution.</p>
+<p>EVMScript executors must implement the following interface:</p>
+<pre><code class="hljs css solidity"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IEVMScriptExecutor</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execScript</span><span class="hljs-params">(bytes script, bytes input, address[] blacklist)</span> <span class="hljs-title">external</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bytes)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">executorType</span><span class="hljs-params">()</span> <span class="hljs-title">external</span> <span class="hljs-title">pure</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bytes32)</span></span>;
+}
+</code></pre>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>EVMScript executors are called with a <code>delegatecall</code> and operate in the context of the calling app. This <strong>must</strong> be taken into consideration when developing your own executor as it could cause a security breach.</p>
+</blockquote>
+<p>aragonOS provides the <code>CallsScript</code> executor as a simple way to concatenate multiple calls. It cancels the operation if any of the calls fail.</p>
+<ul>
+<li><strong>Script body:</strong> See <a href="https://github.com/aragon/aragonOS/blob/v4.0.0/contracts/evmscript/executors/CallsScript.sol#L25"><code>CallsScript</code> source code </a> for spec of the payload.</li>
 <li><strong>Input:</strong> None</li>
 <li><strong>Output:</strong> None.</li>
 <li><strong>Blacklist:</strong> Entire script reverts if a call to one of the addresses in the blacklist is performed.</li>
 </ul>
-<h5><a class="anchor" aria-hidden="true" id="5211-delegatescript"></a><a href="#5211-delegatescript" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.1.1 DelegateScript</h5>
-<p><code>delegatecalls</code> into a given contract, which basically allows for any arbitrary computation within the EVM in the caller’s context.</p>
-<ul>
-<li><strong>Script body:</strong> Address of the contract to make the call to.</li>
-<li><strong>Input:</strong> <code>calldata</code> for the <code>delegatecall</code> that will be performed.</li>
-<li><strong>Output:</strong> raw return data of the call.</li>
-<li><strong>Blacklist:</strong> impossible to enforce. If there are any addresses in the blacklist the script will revert as it is not possible to check whether a particular address will be called.</li>
-</ul>
-<h5><a class="anchor" aria-hidden="true" id="5213-deploydelegatescript"></a><a href="#5213-deploydelegatescript" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.1.3 DeployDelegateScript</h5>
-<p>Is a superset of the DelegateScript, but it takes a contract’s initcode bytecode as its script body instead of just an address. On execution, it deploys the contract to the blockchain and executes it with a <code>delegatecall</code>.</p>
-<ul>
-<li><strong>Script body:</strong>: initcode for contract being created.</li>
-<li><strong>Input:</strong> <code>calldata</code> for the <code>delegatecall</code> that will be performed after contract creation.</li>
-<li><strong>Output:</strong> raw return data of the call.</li>
-<li><strong>Blacklist:</strong> impossible to enforce. If there are any addresses in the blacklist the script will revert as it is not possible to check whether a particular address will be called.</li>
-</ul>
-<h3><a class="anchor" aria-hidden="true" id="53-making-an-app-a-forwarder"></a><a href="#53-making-an-app-a-forwarder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.3 Making an app a Forwarder</h3>
-<p>Examples of forwarders can be found in the aragon-apps repo, both the Voting and the Token Manager are forwarders.</p>
-<h3><a class="anchor" aria-hidden="true" id="531-warnings"></a><a href="#531-warnings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.3.1 Warnings</h3>
-<p>EVMScripts can be too powerful. Providing forwarding functionality to an app</p>
-<p>Some things to have in mind when developing an app</p>
-<p>For example the Token Manager has the token address in its blacklist because otherwise any token holder that is allowed to forward through the Token Manager would effectively have control over the token in the same way the Token Manager has, which would allow to bypass it. By having it in the blacklist, the latter 2 script executors can’t be used, so it only works with CallsScripts that don’t make calls to the token address.</p>
-<h2><a class="anchor" aria-hidden="true" id="6-the-aragon-package-manager"></a><a href="#6-the-aragon-package-manager" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. The Aragon Package Manager</h2>
-<h3><a class="anchor" aria-hidden="true" id="61-apm-as-an-aragon-dao"></a><a href="#61-apm-as-an-aragon-dao" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.1 APM as an Aragon DAO</h3>
-<p>The Aragon Package Manager (APM) is built on top of aragonOS and is integrated as a
-part of aragonOS. It is a DAO running on the same Aragon (taking advantage of
-upgradeability and access control), that‘s used to build Aragon DAOs!</p>
-<p>This allows for many APM registries to exist with different governance models for
-package publishing and releasing new versions. There is an official Aragon curated one,
-aragonpm.eth, which has very strict restrictions of what gets published and
-very high quality standards, that we use for publishing our core components.</p>
-<p>Different APM registries in which everyone can publish their packages are expected to
-be created by the community.</p>
-<p>This diagram tries to illustrate the architecture of an APM Registry DAO:</p>
-<p><img src="/docs/assets/apm-arch.jpeg" alt=""></p>
-<h3><a class="anchor" aria-hidden="true" id="62-apmregistry"></a><a href="#62-apmregistry" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.2 APMRegistry</h3>
-<h4><a class="anchor" aria-hidden="true" id="621-enssubdomainregistrar"></a><a href="#621-enssubdomainregistrar" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.2.1 ENSSubdomainRegistrar</h4>
-<p>Ownership of the ENS name that the <code>APMRegistry</code> operates has to be transferred to
-the <code>ENSSubdomainRegistrar</code> app that is part of the DAO.</p>
-<p>The <code>APMRegistry</code> needs to have permission on the <code>ENSSubdomainRegistrar</code> to create
-new names, which is done every time a repo is created.</p>
-<h4><a class="anchor" aria-hidden="true" id="622-apmregistry-governance"></a><a href="#622-apmregistry-governance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.2.2 APMRegistry governance</h4>
-<p>Each instance of an APMRegistry can have different governance. Governance of a
-registry is enforced directly using the DAO's ACL.</p>
-<p>By default a new repo will set the creator (or <code>dev</code> param) as the owner of the
-repo and it is the only address that can create new versions in the repo. However,
-as the permission manager, this account can grant permission to other entities to
-create versions. These entities can be anything from another dev, to a multisig or
-a full blown DAO.</p>
-<h3><a class="anchor" aria-hidden="true" id="63-repos"></a><a href="#63-repos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.3 Repos</h3>
-<p>After discovering an entity in the DAO by traversing the ACL that is an app (see
-section 2.3 <em>The apps of a DAO</em>), we can fetch its <code>app.appId()</code> and use ENS to
-resolve its Repo contract:</p>
-<pre><code class="hljs css solidity">repo = Repo(<span class="hljs-name">Resolver</span>(<span class="hljs-name">ens</span>.resolver(<span class="hljs-name">appId</span>)).addr(<span class="hljs-name">appId</span>))
+<h3><a class="anchor" aria-hidden="true" id="making-an-app-a-forwarder"></a><a href="#making-an-app-a-forwarder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Making an app a Forwarder</h3>
+<p>Apps can become Forwarders by simply implementing the following interface:</p>
+<pre><code class="hljs css solidity"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IForwarder</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isForwarder</span><span class="hljs-params">()</span> <span class="hljs-title">external</span> <span class="hljs-title">pure</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bool)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">canForward</span><span class="hljs-params">(address sender, bytes evmCallScript)</span> <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> <span class="hljs-params">(bool)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forward</span><span class="hljs-params">(bytes evmCallScript)</span> <span class="hljs-title">public</span></span>;
+}
 </code></pre>
-<p>or using ens.js:</p>
-<pre><code class="hljs css js">repo = Repo.at(<span class="hljs-keyword">await</span> ens.addr(appId))
-</code></pre>
-<p>Every individual Repo is an Aragon app that uses the APM DAO for its ACL.
-Depending on each APM registry governance, the process for creating new versions
-in the Repo or transferring ownership may vary.</p>
-<p>A Repo keeps versioned state over:</p>
-<ul>
-<li><strong>Smart contract library code</strong> (<code>contractAddress</code>): the app code is the address of
-the deployed version of the app. The Kernel determines which version of the app
-it uses by pointing to the app code address associated with that version.</li>
-<li><strong>Package content</strong> (<code>contentURI</code>): defined by a location ID of where the other
-components of the package (e.g. frontend) are hosted (IPFS, Swarm, etc.) and
-the content hash for fetching it. Inside this package an <code>arapp.json</code> file is
-expected to be found.</li>
-</ul>
-<p>A Repo can be created that only versions one of the two. It is fine to use it that
-way but all the rules below still apply.</p>
-<p>By versioning both the app code address and the package content, we can add
-additional expectations for the what semantic versioning of Repos mean:</p>
-<ul>
-<li><strong>Patch</strong>: Minor changes to the package contents (e.g. frontend). Update can
-be performed silently for users.</li>
-<li><strong>Minor</strong>: Major changes to the package contents, but still works with the
-current smart contract code. Users should be notified of the update.</li>
-<li><strong>Major</strong>: Any change to the smart contract app code with or without an
-accompanying frontend upgrade. User interaction is needed to upgrade.</li>
-</ul>
-<h4><a class="anchor" aria-hidden="true" id="631-version-upgrade-rules"></a><a href="#631-version-upgrade-rules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.3.1 Version upgrade rules</h4>
-<p>Before creating a new version in a repo, an ACL check is performed to see whether
-the entity has permission to create a new version.</p>
-<p>After the ACL check, the Repo logic checks whether the version upgrade is allowed.
-A version bump for a package is defined by the following rules:</p>
-<ul>
-<li>Only one member of the version is increased by 1. The version components to the
-left of the raised member must stay the same and the components to the right must be 0.
-<ul>
-<li>Example: From <code>2.1.3</code> the only allowed bumps are to <code>3.0.0</code> (major version),
-<code>2.2.0</code> (minor version), and <code>2.1.4</code> (patch version).</li>
-</ul></li>
-<li>Changes to the app code address can only be done if the raise changes the major
-version (upgrading it to <code>M.0.0</code> by the above rule).</li>
-</ul>
-<p>The initial version of an app must be a valid bump from version <code>0.0.0</code>.</p>
-<p>By having this check performed at the smart contract level, we can load the correct
-version of the frontend just by looking at an instance of an app. This is done by
-checking that the version of a smart contract is linked to a given app by getting
-its <code>appId</code> and <code>appCode</code> (See section <em>6.3.2.3 By latest contract address</em>)</p>
-<h4><a class="anchor" aria-hidden="true" id="632-fetching-repo-versions"></a><a href="#632-fetching-repo-versions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.3.2 Fetching Repo versions</h4>
-<p>Repos offer multiple ways to fetch versions. By checking logs for the following
-event one can see all the versions ever created in a Repo:</p>
-<pre><code class="hljs css solidity">(<span class="hljs-name">Repo</span>) NewVersion(<span class="hljs-name">uint256</span> versionId, uint16[<span class="hljs-number">3</span>] semanticVersion)<span class="hljs-comment">;</span>
-</code></pre>
-<p>All different methods for fetching versions return the following tuple:</p>
-<pre><code class="hljs css solidity">repoVersion = (uint16[3] semanticVersion,<span class="hljs-built_in"> address </span>contractAddress, bytes contentURI)
-</code></pre>
-<h4><a class="anchor" aria-hidden="true" id="6321-by-versionid"></a><a href="#6321-by-versionid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.3.2.1 By versionId</h4>
-<p>Every version can be fetched with its <code>versionId</code> (which starts in <code>1</code> and is
-increments by <code>1</code> each version).</p>
-<pre><code class="hljs css solidity"><span class="hljs-attr">repoVersion</span> = repo.getByVersionId(versionId)
-</code></pre>
-<p>The total count of versions created in a Repo can be queried with:</p>
-<pre><code class="hljs css solidity"><span class="hljs-attr">count</span> = repo.getVersionsCount()
-<span class="hljs-attr">lastVersionId</span> = count - <span class="hljs-number">1</span>
-</code></pre>
-<h4><a class="anchor" aria-hidden="true" id="6322-by-semantic-version"></a><a href="#6322-by-semantic-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.3.2.2 By semantic version</h4>
-<p>Providing the exact semantic version.</p>
-<pre><code class="hljs css solidity"><span class="hljs-attr">repoVersion</span> = repo.getBySemanticVersion([major, minor, patch])
-</code></pre>
-<h4><a class="anchor" aria-hidden="true" id="6323-by-latest-contract-address"></a><a href="#6323-by-latest-contract-address" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.3.2.3 By latest contract address</h4>
-<p>Fetching the latest version by contract address allows clients to get the latest
-frontend package for an organization that may have not upgraded the smart contract
-code to the latest version.</p>
-<pre><code class="hljs css solidity"><span class="hljs-attr">repoVersion</span> = repo.getLatestForContractAddress(contractCode)
-</code></pre>
-<h4><a class="anchor" aria-hidden="true" id="6324-latest-version"></a><a href="#6324-latest-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.3.2.4 Latest version</h4>
-<p>Pretty self-describing.</p>
-<pre><code class="hljs css solidity"><span class="hljs-attr">repoVersion</span> = repo.getLatest()
-</code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="aragonos-building.html">← Developing with aragonOS</a><a class="docs-next button" href="aragonjs-ref.html">aragon.js reference documentation →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#0-motivation">0. Motivation</a></li><li><a href="#1-general-architecture-and-design-philosophy">1. General architecture and design philosophy</a><ul class="toc-headings"><li><a href="#11-basic-concepts-proxy-and-forwarder">1.1 Basic concepts: Proxy and Forwarder</a></li><li><a href="#12-architecture-kernel-and-apps">1.2 Architecture: Kernel and apps</a></li><li><a href="#13-design-philosophy">1.3 Design philosophy</a></li><li><a href="#14-lifecycle-of-an-aragonos-call">1.4 Lifecycle of an aragonOS call</a></li></ul></li><li><a href="#2-kernel">2. Kernel</a><ul class="toc-headings"><li><a href="#21-the-app-mapping">2.1 The app mapping</a></li><li><a href="#22-namespaces">2.2 Namespaces</a></li></ul></li><li><a href="#3-upgradeability">3. Upgradeability</a><ul class="toc-headings"><li><a href="#31-kernel-upgradeability">3.1 Kernel upgradeability</a></li><li><a href="#32-appproxies-and-upgradeability">3.2 AppProxies and upgradeability</a></li><li><a href="#33-app-sandbox-client-side">3.3 App sandbox (client side)</a></li></ul></li><li><a href="#4-acl">4. ACL</a><ul class="toc-headings"><li><a href="#41-the-acl-as-an-aragon-app-the-interface">4.1 The ACL as an Aragon app, the Interface</a></li><li><a href="#42-basic-acl">4.2 Basic ACL</a></li><li><a href="#43-permission-managers">4.3 Permission managers</a></li><li><a href="#44-parameter-interpretation">4.4 Parameter interpretation</a></li><li><a href="#46-parameter-execution">4.6 Parameter execution</a></li><li><a href="#47-parameter-encoding">4.7 Parameter encoding</a></li><li><a href="#48-examples-of-rules">4.8 Examples of rules</a></li><li><a href="#49-events">4.9 Events</a></li></ul></li><li><a href="#5-forwarders-and-evmscript">5. Forwarders and EVMScript</a><ul class="toc-headings"><li><a href="#51-forwarding-and-transaction-pathing">5.1 Forwarding and transaction pathing</a></li><li><a href="#52-evmscripts">5.2 EVMScripts</a></li><li><a href="#53-making-an-app-a-forwarder">5.3 Making an app a Forwarder</a></li><li><a href="#531-warnings">5.3.1 Warnings</a></li></ul></li><li><a href="#6-the-aragon-package-manager">6. The Aragon Package Manager</a><ul class="toc-headings"><li><a href="#61-apm-as-an-aragon-dao">6.1 APM as an Aragon DAO</a></li><li><a href="#62-apmregistry">6.2 APMRegistry</a></li><li><a href="#63-repos">6.3 Repos</a></li></ul></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bXwoTT" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/isotype.svg" alt="Aragon Developer Portal" width="66" height="58"/></a><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/aragonjs-ref.html">aragon.js</a><a href="/docs/aragonui-intro.html">Aragon UI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<p>Examples of forwarders can be found in the <a href="https://github.com/aragon/aragon-apps">aragon-apps repo</a>. Both the <a href="https://github.com/aragon/aragon-apps/blob/master/apps/voting/contracts/Voting.sol">Voting</a> and <a href="https://github.com/aragon/aragon-apps/blob/master/apps/token-manager/contracts/TokenManager.sol">Token Manager</a> apps are forwarders.</p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>EVMScripts are very powerful and risk causing security breaches! For example, the Token Manager, which allows any token holder to forward actions, needs to have the token address in its blacklist as otherwise any token holder would effectively have control over the token in the same way that the Token Manager does!</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="api-documentation-3"></a><a href="#api-documentation-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API documentation</h3>
+<p>See <a href="/docs/common_IForwarder.html">IForwarder</a> and <a href="/docs/evmscript_EVMScriptRunner.html">EVMScriptRunner</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="aragonos-building.html">← Developing with aragonOS</a><a class="docs-next button" href="aragonos-4-migration.html">aragonOS 4 migration guide →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#design-philosophy">Design philosophy</a></li><li><a href="#components">Components:</a></li><li><a href="#kernel">Kernel</a><ul class="toc-headings"><li><a href="#the-app-mapping">The app mapping</a></li><li><a href="#namespaces">Namespaces</a></li><li><a href="#app-installation">App installation</a></li><li><a href="#app-permissioning">App permissioning</a></li><li><a href="#upgradeability">Upgradeability</a></li><li><a href="#permissions">Permissions</a></li><li><a href="#events">Events</a></li><li><a href="#interface">Interface</a></li><li><a href="#api-documentation">API documentation</a></li></ul></li><li><a href="#acl">ACL</a><ul class="toc-headings"><li><a href="#managing-permissions">Managing permissions</a></li><li><a href="#basic-acl-example">Basic ACL example</a></li><li><a href="#permission-managers">Permission managers</a></li><li><a href="#parameter-interpretation">Parameter interpretation</a></li><li><a href="#permissions-1">Permissions</a></li><li><a href="#events-1">Events</a></li><li><a href="#api-documentation-1">API documentation</a></li></ul></li><li><a href="#aragonapp">AragonApp</a><ul class="toc-headings"><li><a href="#security-recommendations-and-sane-defaults">Security recommendations and sane defaults</a></li><li><a href="#authentication">Authentication</a></li><li><a href="#application-lifecycle-guarantees">Application lifecycle guarantees</a></li><li><a href="#application-capabilities">Application capabilities</a></li><li><a href="#api-documentation-2">API documentation</a></li></ul></li><li><a href="#forwarders-and-evmscripts">Forwarders and EVMScripts</a><ul class="toc-headings"><li><a href="#forwarding-and-transaction-pathing">Forwarding and transaction pathing</a></li><li><a href="#evmscripts">EVMScripts</a></li><li><a href="#making-an-app-a-forwarder">Making an app a Forwarder</a></li><li><a href="#api-documentation-3">API documentation</a></li></ul></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bXwoTT" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/isotype.svg" alt="Aragon Developer Portal" width="66" height="58"/></a><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/aragonjs-ref.html">aragon.js</a><a href="/docs/aragonui-intro.html">Aragon UI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
               var search = docsearch({
                 
                 apiKey: '9dff0383c32107d6c174f15e259bb23a',
