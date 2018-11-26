@@ -96,6 +96,10 @@ blockquote p {
   padding-top: 0px !important;
 }
 
+li .item h4 {
+  padding-top: 0px !important;
+}
+
 .navSearchWrapper::before,
 .navSearchWrapper::after {
   display: none !important;

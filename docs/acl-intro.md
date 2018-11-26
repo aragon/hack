@@ -4,21 +4,12 @@ title: Permissions
 sidebar_label: Permissions
 ---
 
-### Use the ACL to control who can access your app's functionality
+### Use the Access Control List (ACL) to control who can access your app's functionality
 ---
 
-As you may have guessed, **the OS in aragonOS stands for Operating System**. How so?
-
-A computer operating system manages how applications access the underlying resources of the computer, the hardware.
-
-aragonOS does the same for decentralized organizations. **aragonOS manages how apps and external entities access the resources of the organization**.
-
-These resources can be things such as assets, cryptocurrencies, rights to claim a premium on a loan, or rights to upgrade a smart contract.
 
 ## How does it work?
-The component that makes this resource management possible its called the ACL, or **Access Control List**.
-
-The ACL is a mapping of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission. Most generally, an *Entity* can call a *Role* in an *App*, and this all is managed by *Manager*.
+The ACL essentially just contains a set of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission. Most generally, an *Entity* can hold the permission to call a function protected by *Role* in an *App*, and their permission is managed by a *Manager*, who can revoke or regrant that permission.
 
 
 ## Example
@@ -28,10 +19,10 @@ Now let's say we have these 3 apps:
 - A *Voting* app, which executes any arbitrary action after a voting of BOB token holders passes
 - A *Finance* app, which controls the funds of the organization
 
-| Entity        | App           | Role     | Manager  |
-| ------------- | ------------- | -------- | -------- |
-| Token Manager | Voting        | openVote | Voting   |
-| Voting        | Finance       | withdraw | Voting   |
+| Entity        | App           | Role      | Manager  |
+| ------------- | ------------- | --------- | -------- |
+| Token Manager | Voting        | OPEN_VOTE | Voting   |
+| Voting        | Finance       | WITHDRAW  | Voting   |
 
 With the simple mapping in the table above, we have done the following:
 - Given permission to BOB token holders, using the *Token Manager*, to open votes in the *Voting* app

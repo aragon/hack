@@ -13,10 +13,10 @@ sidebar_label: Glossary
 - **APM Repository**: Smart contract deployed inside APM that keeps track of the versions for a package.
 - [**aragon.js**](/docs/aragonjs-intro.html): Javascript library to interact with aragonOS by handling transaction pathing, upgradeability and state of the contracts.
 - [**Aragon UI**](/docs/aragonui-intro.html): Aragon-native toolkit of UI components for decentralized apps.
-- [**Aragon Core**](http://app.aragon.org): Client to interact with aragonOS-powered decentralized organizations. It implements a signer with transaction pathing, notifications and a sandboxed environment for aragonOS-based apps using aragon.js.
+- [**Aragon client**](http://app.aragon.org): Client to interact with aragonOS-powered decentralized organizations. It implements a signer with transaction pathing, notifications and a sandboxed environment for aragonOS-based apps using aragon.js.
 - **DAO**: Stands for Decentralized Autonomous Organization. Here, a DAO means a set of aragonOS smart contracts.
 - [**DAO Kit**](/docs/kits-intro.html): Smart contracts that can be used as templates for creating pre-configured DAOs in just one transaction.
 - **Aragon ID**: Aragon ID is a lightweight identity system using [ENS](http://ens.domains).
 - **Aragen**: Tool that automatically generates everything that is needed to run Aragon on a local Ethereum chain.
-- **Aragon apps**: Apps that use aragonOS, aragon.js, and integrate inside Aragon Core.
+- **Aragon apps**: Apps that use aragonOS, aragon.js, and integrate inside the Aragon client.
 - **[Access Control List](/docs/acl-intro.html) (ACL)** The ACL is a mapping of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission.

@@ -57,7 +57,7 @@ The `run` command takes care of completely setting up the environment needed for
 1. It checks whether **IPFS** and a local **Ethereum development chain** (devchain) are running and if not it will start them. Once aragon is terminated, any IPFS or dev chain it started will also be terminated.
 2. It will **publish your app** to the local APM registry running in your devchain. This step executes the `aragon apm publish` internally. You can check the options and how the command works in depth [here](#aragon-apm-publish).
 3. Once the package is published it will **create a DAO** with your app installed. If you are running your app without a Kit it will grant permissions to the first account printed in the console to perform all the actions protected by the ACL in your app.
-4. After the DAO is created it will download the [Aragon Core](https://github.com/aragon/aragon) client, install its dependencies and start it up so you can interact with the DAO in your web browser.
+4. After the DAO is created it will download the [Aragon client](https://github.com/aragon/aragon), install its dependencies and start it up so you can interact with the DAO in your web browser.
 
 Some available options to customize the `run` command:
 
@@ -66,7 +66,7 @@ Some available options to customize the `run` command:
 - `--kit`: The name of the contract that will be deployed as the [DAO kit](kits-intro.md) that will be used to create your DAO. If no Kit is provided it will use a default Kit that sets up the DAO with just your app.
 - `--kit-init [argument1 ... argumentN]`: The constructor arguments for the Kit contract, each separated by a space. See the [deploy command](#aragon-deploy) for more information on constructor arguments.
 - `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
-- `--client [true|false]`: Can be used to disable starting the Aragon Core client. Defaults to `true`.
+- `--client [true|false]`: Can be used to disable starting the Aragon client. Defaults to `true`.
 
 
 #### Running your app from a development HTTP server
@@ -83,7 +83,7 @@ aragon run --http [server-uri] --http-served-from [path]
 - `http`: This is the flag that indicates that you wish to run your app using HTTP. The URI of the server must be provided here (e.g. `localhost:4001`)
 - `http-served-from`: Path to the directory that the HTTP server exposes. Some artifacts are generated and placed in this directory during the publishing process of your app. The server needs serve these new files when they are created and the server is already running.
 
-If your HTTP server supports hot-reloading your app's frontend will be hot-reloaded inside the Aragon Core client.
+If your HTTP server supports hot-reloading your app's frontend will be hot-reloaded inside the Aragon client.
 
 However, when **making changes to the background script** of your app, a refresh of the client is required so the new script can be loaded. Also, depending on how the background script of your app is being built, you may need to manually trigger the compilation of the script.
 
@@ -373,6 +373,6 @@ The workaround is to switch to a different network (e.g. Rinkeby) and then switc
 ---
 ### The ~/.aragon directory
 
-The Aragon CLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon Core client.
+The Aragon CLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon client.
 
 In case the client is not loading properly, deleting the `~/.aragon` directory will make `aragon run` recreate the environment the next time it is used and may solve the issue.
