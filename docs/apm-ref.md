@@ -5,6 +5,7 @@ sidebar_label: Reference documentation
 ---
 
 ## APMRegistry
+
 ### ENSSubdomainRegistrar
 
 Upon initialization, ownership of the ENS name that the APMRegistry operates is transferred to the ENSSubdomainRegistrar app that is installed in the DAO. In our deployments, we ensure this is completed on deployment through a APMRegistryFactory contract that assigns the APMRegistry the ENSSubdomainRegistrar's `POINT_ROOTNODE_ROLE` and then calls `initialize()` on the APMRegistry.
@@ -18,6 +19,12 @@ The APMRegistry also needs to have permissions for the ENSSubdomainRegistrar's `
 Each instance of an APMRegistry can have a different governance model. Governance of a registry is enforced directly using the DAO's ACL.
 
 By default a new repo will set the creator (or `dev` param) as the owner of the repo and it is the only address that can create new versions in the repo. However, as the permission manager, this account can grant the permission to create versions to other entities. These entities can be anything from another dev to a multisig or a full blown DAO.
+
+---
+
+### API documentation
+
+See [APMRegistry](/docs/apm_APMRegistry.html) and [ENSSubdomainRegistrar](/docs/ens_ENSSubdomainRegistrar.html).
 
 ---
 
@@ -121,3 +128,9 @@ The latest version of a Repo can be fetched as follows:
 ```solidity
 repoVersion = repo.getLatest();
 ```
+
+---
+
+### API documentation
+
+See [Repo](/docs/apm_Repo.html).

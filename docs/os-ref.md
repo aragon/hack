@@ -160,6 +160,10 @@ contract IKernel is IVaultRecoverable {
 }
 ```
 
+### API documentation
+
+See [Kernel](/docs/kernel_Kernel.html).
+
 ## ACL
 
 A **Permission** is defined as the ability to perform actions (grouped by **Roles**) in a certain app instance (identified by its address).
@@ -367,6 +371,10 @@ SetPermission(address indexed from, address indexed to, bytes32 indexed role, bo
 ChangePermissionManager(address indexed app, bytes32 indexed role, address indexed manager);
 ```
 
+### API documentation
+
+See [ACL](/docs/acl_ACL.html).
+
 ## AragonApp
 
 AragonApp is the base class for all aragonOS applications. It exposes a light layer of functionality to supplement an application's business logic and sets up the required storage to connect to a Kernel.
@@ -498,6 +506,10 @@ function getEVMScriptRegistry() public view returns (IEVMScriptRegistry);
 
 For more information on the use cases for EVMScripts, see the following [Forwarders and EVMScripts](#forwarders-and-evmscripts) section.
 
+### API documentation
+
+See [AragonApp](/docs/apps_AragonApp.html).
+
 ## Forwarders and EVMScripts
 
 Forwarders are one of the most important concepts of aragonOS. Rather than hardcoding the notion of a vote into each separate app’s functionality and ACL one can instead use a generic Voting App, which implements the forwarding interface, to pass actions _forward_ to other apps after successful votes. If the Voting App is set up to only allow a token’s holders to vote, that means any actions/calls being passed from it must have also been approved by the token’s holders.
@@ -553,3 +565,7 @@ Examples of forwarders can be found in the [aragon-apps repo](https://github.com
 > **Warning**
 >
 > EVMScripts are very powerful and risk causing security breaches! For example, the Token Manager, which allows any token holder to forward actions, needs to have the token address in its blacklist as otherwise any token holder would effectively have control over the token in the same way that the Token Manager does!
+
+### API documentation
+
+See [IForwarder](/docs/common_IForwarder.html) and [EVMScriptRunner](/docs/evmscript_EVMScriptRunner.html).
