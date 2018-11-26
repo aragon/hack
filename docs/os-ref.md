@@ -351,7 +351,7 @@ The possibilities for customizing an organization or protocol's governance model
 
 > **Warning**
 >
-> `CREATE_PERMISSION_ROLE` could be used in malicious and dangerous ways. This is initially assigned when when the Kernel is first initialized. **Protect this permission.**
+> `CREATE_PERMISSION_ROLE` could be used in malicious and dangerous ways. This is initially assigned when the Kernel is first initialized. **Protect this permission.**
 
 ### Events
 
