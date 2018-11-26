@@ -213,7 +213,7 @@ acl.grantPermission(address entity, address app, bytes32 role);
 
 Grants `role` in `app` for an `entity`. This `entity` would then be allowed to call all actions that their `role` can perform on that particular `app` until the permission manager revokes their role with `revokePermission()`.
 
-This action is identical to `grantPermission()` except it can only be used by the permission manager of the role.
+This action is identical to `createPermission()` except it can only be used by the permission manager of the role and does not set a new manager.
 
 > **Note**
 >
@@ -481,9 +481,7 @@ function setDepositable(bool depositable) internal;
 
 An example use case would be a fundraising application which would only enable its proxy instances to be capable of receiving ETH for the duration of a fundraiser.
 
-**Forwarding and EVMScripts**
-
-See the following [Forwarders and EVMScripts](#forwarders-and-evmscripts) section.
+**EVMScripts**
 
 AragonApp exposes the following interface for running EVMScripts:
 
@@ -497,6 +495,8 @@ And some getters for information about EVMScripts:
 function getEVMScriptExecutor(bytes script) public view returns (IEVMScriptExecutor);
 function getEVMScriptRegistry() public view returns (IEVMScriptRegistry);
 ```
+
+For more information on the use cases for EVMScripts, see the following [Forwarders and EVMScripts](#forwarders-and-evmscripts) section.
 
 ## Forwarders and EVMScripts
 
