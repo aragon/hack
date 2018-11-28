@@ -361,6 +361,18 @@ aragon.init(() => {
 ---
 **API**
 
+- [ini()](#ini)
+- [initAcl()](#initacl)
+- [getAppProxyValues(proxyAddress)](#getappproxyvalues)
+- [isApp(app)](#isapp)
+- [initApps()](#initapps)
+- [initForwarders()](#initforwarders)
+- [runApp(sandbox, proxyAddress)](#runapp)
+- [getAccounts()](#getaccounts)
+- [getTransactionPath(destination, methodName, params)](#gettransactionpath)
+- [calculateTransactionPath(sender, destination, methodName, params)](#calculatetransactionpath)
+
+---
 ### ini
 
 Initialise the wrapper.
