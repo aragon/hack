@@ -342,11 +342,11 @@ A provider that communicates through the [`Window PostMessage API`](https://deve
 
 **Parameters**
 
-- daoAddress: string The address of the DAO.
-- options Object Wrapper options. (optional, default {})
-  - options.provider any The Web3 provider to use for blockchain communication (optional, default ws://rinkeby.aragon.network:8546)
-  - options.ensRegistryAddress String The address of the ENS registry (optional, default null)
-
+1. `daoAddress` (`String`): The address of the DAO.
+2. `options` (`Object`): Wrapper options. (optional, default {})
+   1. `options.provider` any The Web3 provider to use for blockchain communication (optional, default ws://rinkeby.aragon.network:8546)
+   2. `options.ensRegistryAddress` (`String`) The address of the ENS registry (optional, default null)
+  
 **Example**
 
 ```js
@@ -358,85 +358,157 @@ aragon.init(() => {
 })
 ```
 
+---
 **API**
 
-**init**
+- [ini()](#ini)
+- [initAcl()](#initacl)
+- [getAppProxyValues(proxyAddress)](#getappproxyvalues)
+- [isApp(app)](#isapp)
+- [initApps()](#initapps)
+- [initForwarders()](#initforwarders)
+- [runApp(sandbox, proxyAddress)](#runapp)
+- [getAccounts()](#getaccounts)
+- [getTransactionPath(destination, methodName, params)](#gettransactionpath)
+- [calculateTransactionPath(sender, destination, methodName, params)](#calculatetransactionpath)
+
+---
+### ini
+
 Initialise the wrapper.
 
-Returns Promise<void>
+**Parameters**
 
-**initAcl**
+None.
+
+**Returns**
+
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;void>
+
+---
+### initAcl
+
 Initialise the ACL.
 
-Returns Promise<void>
+**Parameters**
 
-**getAppProxyValues**
+None.
+
+**Returns**
+
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;void>
+
+---
+### getAppProxyValues
+
 Get proxy metadata (appId, address of the kernel, ...).
 
-Parameters
+**Parameters**
 
-- proxyAddress string The address of the proxy to get metadata from
-- Returns Promise`<Object>`
+1. `proxyAddress` (`String`): The address of the proxy to get metadata from
 
-**isApp**
+**Returns**
+
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>
+
+---
+### isApp
+
 Check if an object is an app.
 
-Parameters
+**Parameters**
 
-- app Object
-- Returns boolean
+1. `app` (`Object`)
 
-**initApps**
+**Returns**
+
+[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
+
+---
+### initApps
+
 Initialise apps observable.
 
-Returns void
+**Parameters**
 
+None.
 
-**initForwarders**
+**Returns**
+
+`void`
+
+---
+### initForwarders
+
 Initialise forwarder observable.
 
-Returns void
+**Parameters**
 
-**runApp**
+None.
+
+**Returns**
+
+`void`
+
+---
+### runApp
+
 Run an app.
 
-Parameters
+**Parameters**
 
-- sandbox Object An object that is compatible with the PostMessage API.
-- proxyAddress string The address of the app proxy.
+1. `sandbox` (`Object`): An object that is compatible with the PostMessage API.
+2. `proxyAddress` (`String`): The address of the app proxy.
 
-  Returns Object
+**Returns**
 
-**getAccounts**
+[`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+---
+### getAccounts
 
 Get the available accounts for the current user.
 
-Returns Promise<Array<string>> An array of addresses
+**Parameters**
 
-**getTransactionPath**
+None.
 
-Calculate the transaction path for a transaction to destination that invokes methodName with params.
+**Returns**
 
-Parameters
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>>:  An array of addresses
 
-- destination string
-- methodName string
-- params Array<any>
-
-Returns `Array<Object>` An array of Ethereum transactions that describe each step in the path
-
-**calculateTransactionPath**
+---
+### getTransactionPath
 
 Calculate the transaction path for a transaction to destination that invokes methodName with params.
 
-Parameters
+**Parameters**
 
-- sender string
-- destination string
-- methodName string
-- params Array<any>
+1. `destination` (`String`)
+2. `methodName` (`String`)
+3. `params` (`Array<any>`)
 
-Returns `Array<Object>` An array of Ethereum transactions that describe each step in the path
+**Returns**
+
+[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>: An array of Ethereum transactions that describe each step in the path
+
+
+---
+### calculateTransactionPath
+
+Calculate the transaction path for a transaction to destination that invokes methodName with params.
+
+**Parameters**
+
+1. `sender` (`String`)
+2. `destination` (`String`)
+3. `methodName` (`String`)
+4. `params` (`Array<any>`)
+
+**Returns**
+
+[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>: An array of Ethereum transactions that describe each step in the path
+ An array of Ethereum transactions that describe each step in the path
 
 ---
 ## State
