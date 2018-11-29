@@ -344,8 +344,8 @@ A provider that communicates through the [`Window PostMessage API`](https://deve
 
 1. `daoAddress` (`String`): The address of the DAO.
 2. `options` (`Object`): Wrapper options. (optional, default {})
-   1. `options.provider` any The Web3 provider to use for blockchain communication (optional, default ws://rinkeby.aragon.network:8546)
-   2. `options.ensRegistryAddress` (`String`) The address of the ENS registry (optional, default null)
+   1. `options.provider`: any The Web3 provider to use for blockchain communication (optional, default ws://rinkeby.aragon.network:8546)
+   2. `options.ensRegistryAddress` (`String`): The address of the ENS registry (optional, default null)
   
 **Example**
 
@@ -361,7 +361,7 @@ aragon.init(() => {
 ---
 **API**
 
-- [ini()](#ini)
+- [init()](#init)
 - [initAcl()](#initacl)
 - [getAppProxyValues(proxyAddress)](#getappproxyvalues)
 - [isApp(app)](#isapp)
@@ -373,7 +373,7 @@ aragon.init(() => {
 - [calculateTransactionPath(sender, destination, methodName, params)](#calculatetransactionpath)
 
 ---
-### ini
+### init
 
 Initialise the wrapper.
 
