@@ -383,7 +383,7 @@ None.
 
 **Returns**
 
-[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;void>
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)`<void>`
 
 ---
 ### initAcl
@@ -396,7 +396,7 @@ None.
 
 **Returns**
 
-[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;void>
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)`<void>`
 
 ---
 ### getAppProxyValues
@@ -409,7 +409,7 @@ Get proxy metadata (appId, address of the kernel, ...).
 
 **Returns**
 
-[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)`<`[`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)`>`
 
 ---
 ### isApp
@@ -475,7 +475,7 @@ None.
 
 **Returns**
 
-[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>>:  An array of addresses
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)`<`[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`String`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>>`:  An array of addresses
 
 ---
 ### getTransactionPath
@@ -490,7 +490,7 @@ Calculate the transaction path for a transaction to destination that invokes met
 
 **Returns**
 
-[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>: An array of Ethereum transactions that describe each step in the path
+[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)`>`: An array of Ethereum transactions that describe each step in the path
 
 
 ---
@@ -507,7 +507,7 @@ Calculate the transaction path for a transaction to destination that invokes met
 
 **Returns**
 
-[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>: An array of Ethereum transactions that describe each step in the path
+[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)`>`: An array of Ethereum transactions that describe each step in the path
  An array of Ethereum transactions that describe each step in the path
 
 ---
