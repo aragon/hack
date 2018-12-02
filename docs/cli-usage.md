@@ -56,7 +56,7 @@ The `run` command takes care of completely setting up the environment needed for
 
 1. It checks whether **IPFS** and a local **Ethereum development chain** (devchain) are running and if not it will start them. Once aragon is terminated, any IPFS or dev chain it started will also be terminated.
 2. It will **publish your app** to the local APM registry running in your devchain. This step executes the `aragon apm publish` internally. You can check the options and how the command works in depth [here](#aragon-apm-publish).
-3. Once the package is published it will **create a DAO** with your app installed. If you are running your app without a Kit it will grant permissions to the first account printed in the console to perform all the actions protected by the ACL in your app.
+3. Once the package is published it will **create a DAO** with your app installed. If you are running your app without a Template it will grant permissions to the first account printed in the console to perform all the actions protected by the ACL in your app.
 4. After the DAO is created it will download the [Aragon client](https://github.com/aragon/aragon), install its dependencies and start it up so you can interact with the DAO in your web browser.
 
 Some available options to customize the `run` command:
@@ -64,7 +64,7 @@ Some available options to customize the `run` command:
 - `--reset`: If reset is present it will reset the devchain before running. The chain will then start from scratch and all published packages will need to be recreated.
 - `--port`: The port where the devchain will be started.
 - `--kit`: The name of the contract that will be deployed as the [DAO Template](kits-intro.md) that will be used to create your DAO. If none is provided it will use a default Template that sets up the DAO with just your app.
-- `--kit-init [argument1 ... argumentN]`: The constructor arguments for the Kit contract, each separated by a space. See the [deploy command](#aragon-deploy) for more information on constructor arguments.
+- `--kit-init [argument1 ... argumentN]`: The constructor arguments for the Template contract, each separated by a space. See the [deploy command](#aragon-deploy) for more information on constructor arguments.
 - `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
 - `--client [true|false]`: Can be used to disable starting the Aragon client. Defaults to `true`.
 
@@ -142,10 +142,10 @@ The `aragon dao` commands can be used for interacting with your DAO directly fro
 Uses a DAO Template to create a new DAO and prints its address.
 
 Options:
-- `--kit`: The APM repo name of the kit that is used to create the DAO. Defaults to `bare-kit.aragonpm.eth`.
+- `--kit`: The APM repo name of the template that is used to create the DAO. Defaults to `bare-kit.aragonpm.eth`.
 - `--kit-version [version-number|latest]`: The version of the repo that will be used to create the DAO. Defaults to `latest`.
-- `--fn`: The function on the kit that is called to create a new DAO. Defaults to the `newBareInstance` function for `bare-kit.aragonpm.eth`.
-- `--fn-args`: The arguments that the function to create the kit is called with. Defaults to an array of arguments.
+- `--fn`: The function on the template that is called to create a new DAO. Defaults to the `newBareInstance` function for `bare-kit.aragonpm.eth`.
+- `--fn-args`: The arguments that the function to create the template is called with. Defaults to an array of arguments.
 - `--deploy-event`: The name of the event that is emitted when the DAO is created. The DAO address must be a return argument in the event log named `dao`. Defaults to `DeployInstance`.
 
 ---
