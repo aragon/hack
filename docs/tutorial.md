@@ -318,7 +318,7 @@ You can now build the front-end of your app by running `npm run build`.
 
 In order for aragonAPI to function, it needs some metadata about your app. This metadata is specified in two manifest files; `manifest.json` and `arapp.json`.
 
-`arapp.json` defines smart contract and aragonPM-specific things, like the roles in your app and the name and version of your app.
+`arapp.json` defines smart contract and aragonPM-specific things like the roles in your app and the name and version of your app.
 
 Let's modify `arapp.json` so that it knows about the roles we defined previously:
 
@@ -334,7 +334,7 @@ Let's modify `arapp.json` so that it knows about the roles we defined previously
 }
 ```
 
-`manifest.json` defines end-user specific things, like the human-readable name of your app, icons and a small description of your app. It also (optionally) defines background scripts, of which we have one.
+`manifest.json` defines end-user specific things like the human-readable name of your app, icons, and a small description of your app. It also (optionally) defines background scripts, of which we have one.
 
 Let's modify it accordingly:
 
