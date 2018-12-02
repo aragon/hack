@@ -22,9 +22,9 @@
     "Glossary": "Glossary",
     "human-readable-txs": "Human readable transactions",
     "Human readable transactions": "Human readable transactions",
-    "aragonjs-ref-clients": "aragon.js reference documentation for clients/wrappers",
+    "aragonjs-ref-clients": "aragonAPI reference documentation for clients/wrappers",
     "Reference documentation for clients/wrappers": "Reference documentation for clients/wrappers",
-    "aragonjs-ref": "aragon.js reference documentation",
+    "aragonjs-ref": "aragonAPI reference documentation",
     "kits-intro": "Templates",
     "Kits": "Templates",
     "aragonos-3-ref": "aragonOS 3 reference documentation",
@@ -48,12 +48,12 @@
     "Get started": "Get started",
     "Tutorial": "Tutorial",
     "aragonOS": "aragonOS",
-    "aragon.js": "aragonAPI",
-    "Aragon UI": "aragonUI",
+    "aragonAPI": "aragonAPI",
+    "aragonUI": "aragonUI",
     "Help": "Help",
     "The basics": "The basics",
-    "Aragon CLI": "aragonCLI",
-    "Aragon Package Manager": "aragonPM"
+    "aragonCLI": "aragonCLI",
+    "aragonPM": "aragonPM"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",

@@ -52,7 +52,7 @@ class Help extends React.Component {
       <p>If you found a bug or you have feedback, you can create an issue on the relevant GitHub repo:</p>
             <ul>
                 <li><a href="https://github.com/aragon/hack/issues">aragon/hack</a>: This documentation website</li>
-                <li><a href="https://github.com/aragon/aragon-cli/issues">aragon/aragon-cli</a>: The Aragon CLI</li>
+                <li><a href="https://github.com/aragon/aragon-cli/issues">aragon/aragon-cli</a>: aragonCLI</li>
                 <li><a href="https://github.com/aragon/aragonos/issues">aragon/aragonOS</a>: aragonOS</li>
                 <li><a href="https://github.com/aragon/aragon.js/issues">aragon/aragon.js</a>: aragonAPI</li>
                 <li><a href="https://github.com/aragon/aragon-ui/issues">aragon/aragon-ui</a>: aragonUI</li>
