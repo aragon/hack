@@ -22,7 +22,7 @@ What you need to get started building with Aragon:
 
 - [Environment setup](#environment-setup)
 - [Quick start](#quick-start)
-- [Next steps](#next)
+- [Next steps](#next-steps)
 
 
 ## Environment setup
@@ -35,7 +35,7 @@ Make sure you have at least Node v.8.0.
 
 We recommend using the [Metamask browser extentsion](https://metamask.io/) to send transactions to the blockchain.
 
-**Install the Aragon CLI**
+**Install the aragonCLI**
 
 From the command line run:
 

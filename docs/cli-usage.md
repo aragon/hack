@@ -1,18 +1,18 @@
 ---
 id: cli-usage
-title: Using the Aragon CLI
+title: Using the aragonCLI
 sidebar_label: Usage
 hide_title: true
 ---
 
 ![](/docs/assets/brand/aragoncli.png)
 
-The Aragon CLI (Command Line Interface) is used to create and develop Aragon apps.
+The aragonCLI (Command Line Interface) is used to create and develop Aragon apps.
 
 ---
 ## Install
 
-The Aragon CLI can be installed directly from NPM:
+The aragonCLI can be installed directly from NPM:
 
 ```
 npm install -g @aragon/cli
@@ -46,7 +46,7 @@ aragon init [app-name] [boilerplate]
 - `boilerplate`: the Github repo name or alias for a boilerplate to set up your app. The currently available boilerplates are:
 
 	- `react`: this boilerplate contains a very basic Counter app and a webapp for interacting with it. It showcases the end-to-end interaction with an Aragon app, from the contracts to the webapp.
-	- `react-kit`: it is a variation of the `react` boilerplate that also comes with a DAO Kit which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Kits [here](kits-intro.md).
+	- `react-kit`: it is a variation of the `react` boilerplate that also comes with a DAO Template which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Templates [here](kits-intro.md).
 	- `bare`: this boilerplate will just set up your app directory structure but contains no functional code.
 
 ---
@@ -63,7 +63,7 @@ Some available options to customize the `run` command:
 
 - `--reset`: If reset is present it will reset the devchain before running. The chain will then start from scratch and all published packages will need to be recreated.
 - `--port`: The port where the devchain will be started.
-- `--kit`: The name of the contract that will be deployed as the [DAO kit](kits-intro.md) that will be used to create your DAO. If no Kit is provided it will use a default Kit that sets up the DAO with just your app.
+- `--kit`: The name of the contract that will be deployed as the [DAO Template](kits-intro.md) that will be used to create your DAO. If none is provided it will use a default Template that sets up the DAO with just your app.
 - `--kit-init [argument1 ... argumentN]`: The constructor arguments for the Kit contract, each separated by a space. See the [deploy command](#aragon-deploy) for more information on constructor arguments.
 - `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
 - `--client [true|false]`: Can be used to disable starting the Aragon client. Defaults to `true`.
@@ -94,7 +94,7 @@ The [React boilerplate](https://github.com/aragon/aragon-react-boilerplate) supp
 
 The `devchain` command is used for starting a local development testnet with all the required components already deployed and ready to use. It uses [aragen](https://github.com/aragon/aragen) for setting up the snapshot from which the chain starts. At any point `aragon devchain --reset` can be run which will reset the devchain to the original snapshot.
 
-This snapshot contains a local instance of ENS (used as an APM registry `aragonpm.eth` and [aragon-id](https://github.com/aragon/aragon-id) `aragonid.eth`), the first-party [Aragon apps](https://github.com/aragon/aragon-apps) published to APM (e.g. `voting.aragonpm.eth` or `token-manager.aragonpm.eth`) and the first-party [DAO Kits](https://github.com/aragon/dao-kits) (e.g. `bare-kit.aragonpm.eth`)
+This snapshot contains a local instance of ENS (used as an aragonPM registry `aragonpm.eth` and [aragon-id](https://github.com/aragon/aragon-id) `aragonid.eth`), the first-party [Aragon apps](https://github.com/aragon/aragon-apps) published to aragonPM (e.g. `voting.aragonpm.eth` or `token-manager.aragonpm.eth`) and the first-party [DAO Templates](https://github.com/aragon/dao-kits) (e.g. `bare-kit.aragonpm.eth`)
 
 Devchains can be started on different ports and will keep their state independent from other chains.
 
@@ -139,7 +139,7 @@ The `aragon dao` commands can be used for interacting with your DAO directly fro
 ---
 ### dao new
 
-Uses a DAO Kit to create a new DAO and prints its address.
+Uses a DAO Template to create a new DAO and prints its address.
 
 Options:
 - `--kit`: The APM repo name of the kit that is used to create the DAO. Defaults to `bare-kit.aragonpm.eth`.
@@ -373,6 +373,6 @@ The workaround is to switch to a different network (e.g. Rinkeby) and then switc
 ---
 ### The ~/.aragon directory
 
-The Aragon CLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon client.
+The aragonCLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon client.
 
 In case the client is not loading properly, deleting the `~/.aragon` directory will make `aragon run` recreate the environment the next time it is used and may solve the issue.

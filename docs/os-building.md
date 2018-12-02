@@ -60,7 +60,7 @@ contract MyApp is AragonApp {
 It is important to note that, using this pattern, **anyone can initialize a proxy** after it has been deployed. The initialization of a proxy should occur in the same transaction that deploys the proxy to prevent initialization from being front-run by an adversary.
 
 - The [AppProxy](https://github.com/aragon/aragonOS/blob/dev/contracts/apps/AppProxyBase.sol) supports passing an initialization payload to its constructor. On creation, the proxy will perform a call with the provided initialization payload as the calldata to itself. This can be used to initialize the proxy in its constructor.
-- If using a [DAO kit](kits-intro.md), the initialization of an app can be done right after the proxy is created.
+- If using a [DAO template](kits-intro.md), the initialization of an app can be done right after the proxy is created.
 
 Another important note is that if the app uses the [ACL](#roles-and-the-acl) for access control, **all access control checks will fail unless the app has been initialized**.
 

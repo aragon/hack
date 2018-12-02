@@ -1,6 +1,6 @@
 ---
 id: apm-ref
-title: APM reference documentation
+title: aragonPM reference documentation
 sidebar_label: Reference documentation
 ---
 

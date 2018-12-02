@@ -1,6 +1,6 @@
 ---
 id: aragonjs-ref-clients
-title: aragon.js reference documentation for clients/wrappers
+title: aragonAPI reference documentation for clients/wrappers
 sidebar_label: Reference documentation for clients/wrappers
 ---
 

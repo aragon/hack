@@ -73,15 +73,15 @@ Yet the Aragon client is a frontend too, so security is also paramount in the UI
 
 Aragon's approach to frontend sandboxing is a combination of **sandboxed iframes** and **cross-origin messaging** through a custom RPC protocol built specifically for Aragon. Apps do not have direct access to Web3 or Ethereum.
 
-The Aragon client uses [aragon.js](/docs/aragonjs-ref.html) to provide apps APIs for accessing smart contracts, displaying notifications and signing transactions. When signing transactions, a panel opens up in the client, not in the app. Apps cannot prompt users to sign transactions directly and they cannot interact with the contracts of other apps—in reality, they can only send action "intents". Thus all transactions are securely handled by the Aragon client, decreasing the attack surface.
+The Aragon client uses [aragonAPI](/docs/aragonjs-ref.html) to provide apps APIs for accessing smart contracts, displaying notifications and signing transactions. When signing transactions, a panel opens up in the client, not in the app. Apps cannot prompt users to sign transactions directly and they cannot interact with the contracts of other apps—in reality, they can only send action "intents". Thus all transactions are securely handled by the Aragon client, decreasing the attack surface.
 
 #### Read more: [The Aragon client](/docs/client.html)
 
 ## Cohesive UI
 
-It is commonly thought that iframes degrade the user experience and are not best practice. Though [Aragon UI](/docs/aragonui-intro.html) uses iframes, it has been built to mitigate this issue. Additionally, it allows all apps to look and behave the same to provide a consistent experience for users across Aragon apps.
+It is commonly thought that iframes degrade the user experience and are not best practice. Though [aragonUI](/docs/aragonui-intro.html) uses iframes, it has been built to mitigate this issue. Additionally, it allows all apps to look and behave the same to provide a consistent experience for users across Aragon apps.
 
-#### Read more: [Intro to Aragon UI](/docs/aragonui-intro.html)
+#### Read more: [Intro to aragonUI](/docs/aragonui-intro.html)
 
 ---
 
