@@ -15,7 +15,7 @@ sidebar_label: Glossary
 - [**aragonUI**](/docs/aragonui-intro.html): Aragon-native toolkit of UI components for decentralized apps.
 - [**Aragon client**](http://app.aragon.org): Client to interact with aragonOS-powered decentralized organizations. It implements a signer with transaction pathing, notifications and a sandboxed environment for aragonOS-based apps using aragonAPI.
 - **DAO**: Stands for Decentralized Autonomous Organization. Here, a DAO means a set of aragonOS smart contracts.
-- [**DAO Template**](/docs/kits-intro.html): Smart contracts that can be used as templates for creating pre-configured DAOs in just one transaction.
+- [**DAO Kit**](/docs/kits-intro.html): Smart contracts that can be used as templates for creating pre-configured DAOs in just one transaction.
 - **aragonID**: aragonID is a lightweight identity system using [ENS](http://ens.domains).
 - **Aragen**: Tool that automatically generates everything that is needed to run Aragon on a local Ethereum chain.
 - **Aragon apps**: Apps that use aragonOS, aragonAPI, and integrate inside the Aragon client.
