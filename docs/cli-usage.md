@@ -63,7 +63,7 @@ Some available options to customize the `run` command:
 
 - `--reset`: If reset is present it will reset the devchain before running. The chain will then start from scratch and all published packages will need to be recreated.
 - `--port`: The port where the devchain will be started.
-- `--kit`: The name of the contract that will be deployed as the [DAO Kit](kits-intro.md) that will be used to create your DAO. If no Kit is provided it will use a default Kit that sets up the DAO with just your app.
+- `--kit`: The name of the contract that will be deployed as the [DAO kit](kits-intro.md) that will be used to create your DAO. If no Kit is provided it will use a default Kit that sets up the DAO with just your app.
 - `--kit-init [argument1 ... argumentN]`: The constructor arguments for the Kit contract, each separated by a space. See the [deploy command](#aragon-deploy) for more information on constructor arguments.
 - `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
 - `--client [true|false]`: Can be used to disable starting the Aragon client. Defaults to `true`.
