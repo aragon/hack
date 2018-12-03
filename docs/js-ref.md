@@ -1,13 +1,13 @@
 ---
 id: aragonjs-ref
-title: aragonAPI reference documentation
-sidebar_label: Reference documentation
+title: aragonAPI Javascript reference documentation
+sidebar_label: Javascript reference documentation
 hide_title: true
 ---
 
 ![](/docs/assets/brand/aragonjs.png)
 
-A Javascript library to interact with aragonOS by handling transaction pathing, upgradeability and state of the contracts.
+A Javascript implementation of aragonAPI, used to interact with aragonOS by handling transaction pathing, upgradeability and state of the contracts.
 
 - [Client](#client)
 - [Wrapper](#wrapper)
