@@ -69,7 +69,7 @@ function setApp(bytes32 namespace, bytes appId, address app) public;
 ```
 
 - **Namespace:** specifies what type of app record is being set.
-- **AppId:** used to identify what app is being set. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the APM repo (e.g. `namehash('voting.aragonpm.eth')`).
+- **AppId:** used to identify what app is being set. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
 - **App:** Address of a contract that can have different meaning depending on the namespace.
 
 ### 2.2 Namespaces

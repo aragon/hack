@@ -15,14 +15,14 @@ Would you know what this transaction does? Not even a developer could tell. This
 
 Radspec is a secure alternative to Natspec. Natspec was supposed to be a way to describe transactions from a Natspec *expression* and some transaction data.
 
-The issue with Natspec, however, is that it is insecure. Any Javascript can execute in Natspec which opens up a lot of potential attacks, like cross-site scripting, which might successfully phish users.
+The issue with Natspec, however, is that it is insecure. Any JavaScript can execute in Natspec which opens up a lot of potential attacks, like cross-site scripting, which might successfully phish users.
 
 ## How to use Radspec
 
-It's as easy as adding `@notice` to functions in the smart contracts. 
+It's as easy as adding `@notice` to functions in the smart contracts.
 
 ```solidity
-contract Counter is AragonApp {    
+contract Counter is AragonApp {
     /**
      * @notice Increment the counter by `step`
      */

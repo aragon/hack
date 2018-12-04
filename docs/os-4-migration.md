@@ -114,7 +114,7 @@ By default, it is impossible to send ETH to an app proxy instance (assuming it i
 
 If your application would like its proxies to be able to directly receive ETH through `.send()` or `.transfer()`, however, you can use `AragonApp.setDepositable(true)` at some point to enable this functionality.
 
-Good example use cases of this are in applications that need to hold value, like a vault or fundraising contract. A vault would always want to accept direct transfers so it calls `setDepositable(true)` upon initialization. A fundraising application, however, would likely only want to enable it for the duration of the fundraising period, so it only calls `setDepositable(true)` as the period starts and calls `setDepositable(false)` when the period ends.
+Good example use cases of this are in applications that need to hold value like a vault or fundraising contract. A vault would always want to accept direct transfers so it calls `setDepositable(true)` upon initialization. A fundraising application, however, would likely only want to enable it for the duration of the fundraising period, so it only calls `setDepositable(true)` as the period starts and calls `setDepositable(false)` when the period ends.
 
 ### auth provides isInitialized check
 

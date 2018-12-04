@@ -156,13 +156,13 @@ const BuildingBlocks = props => (
       icon={() => <IconSettings /> }
     />
     <EmptyStateCard
-      title="aragon.js"
+      title="aragonAPI"
       text="Easily interact with your dapp's state"
       actionButton={() => <GetStartedButton href={docUrl('aragonjs-ref')}/>}
       icon={() => <IconTokens /> }
     />
     <EmptyStateCard
-      title="Aragon UI"
+      title="aragonUI"
       text="Create a beautiful UI for your dapp"
       actionButton={() => <GetStartedButton href={docUrl('aragonui-intro')}/>}
       icon={() => <IconBlank /> }
@@ -214,12 +214,12 @@ const UseCases = props => (
     <br />
     <h2>For dapps</h2>
     <MarkdownBlock>
-      You can create **dapps that run within [Aragon Core](https://app.aragon.org)** (Aragon apps).
+      You can create **dapps that run within the [Aragon client](https://app.aragon.org)** (Aragon apps).
       Aragon apps are interoperable between each other and can **forward actions** to one another so there's no need to reinvent the wheel.
     </MarkdownBlock>
     <MarkdownBlock>
       An example is a voting app that can forward the intent of a user to another app if the voting passes. You can just build an Aragon app that exposes some functionality and then **any governance mechanism will be able to consume it without any additional changes**.
-      You can use the smart contract framework ([aragonOS](https://hack.aragon.org/docs/aragonos-intro.html)), the JavaScript library to consume their state ([aragon.js](https://hack.aragon.org/docs/aragonjs-ref.html)) and the UI framework ([Aragon UI](https://hack.aragon.org/docs/aragonui-intro.html)) as you see fit.
+      You can use the smart contract framework ([aragonOS](https://hack.aragon.org/docs/aragonos-intro.html)), the JavaScript library to consume their state ([aragonAPI](https://hack.aragon.org/docs/aragonjs-ref.html)) and the UI framework ([aragonUI](https://hack.aragon.org/docs/aragonui-intro.html)) as you see fit.
     </MarkdownBlock>
     <MarkdownBlock>
       Some examples of Aragon apps:

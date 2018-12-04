@@ -12,10 +12,10 @@
       "client",
       "human-readable-txs"
     ],
-    "Aragon CLI": [
+    "aragonCLI": [
       "cli-usage"
     ],
-    "Aragon Package Manager": [
+    "aragonPM": [
       "apm",
       "apm-ref"
     ],
@@ -27,11 +27,11 @@
       "aragonos-4-migration",
       "aragonos-3-ref"
     ],
-    "aragon.js": [
+    "aragonAPI": [
       "aragonjs-ref",
       "aragonjs-ref-clients"
     ],
-    "Aragon UI": [
+    "aragonUI": [
       "aragonui-intro"
     ]
   }

@@ -35,7 +35,7 @@ function getApp(bytes32 namespace, bytes32 appId) public view returns (address);
 ```
 
 - **namespace:** specifies what type of app record is being set.
-- **appId:** used to identify what app is being set. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the APM repo (e.g. `namehash('voting.aragonpm.eth')`).
+- **appId:** used to identify what app is being set. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
 - **app:** Address of a contract that can have a different meaning depending on the [namespace](#namespaces).
 
 > **Warning**
@@ -65,7 +65,7 @@ function newAppInstance(bytes32 appId, address appBase);
 function newPinnedAppInstance(bytes32 appId, address appBase);
 ```
 
-- **appId:** used to identify what app to link the proxy to. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the APM repo (e.g. `namehash('voting.aragonpm.eth')`).
+- **appId:** used to identify what app to link the proxy to. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
 - **app:** Address of the base contract for the app instance. If this app has already been installed previously, this address **must** be the same as the one currently set (use `getApp(kernel.APP_BASES_NAMESPACE(), appId)` to check).
 
 Overloaded versions of the two functions with more options are available:

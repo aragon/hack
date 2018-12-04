@@ -1,8 +1,14 @@
 ---
 id: apm-ref
-title: APM reference documentation
+title: aragonPM reference documentation
 sidebar_label: Reference documentation
 ---
+
+aragonPM is built from three aragonOS-powered applications:
+
+- [APMRegistry](#apmregistry)
+- [ENSSubdomainRegistrar](#enssubdomainregistrar)
+- [Repo](#repo)
 
 ## APMRegistry
 
@@ -28,7 +34,7 @@ See [APMRegistry](/docs/apm_APMRegistry.html) and [ENSSubdomainRegistrar](/docs/
 
 ---
 
-## Repos
+## Repo
 
 After [discovering the apps of a DAO by traversing its ACL](/docs/aragonos-ref.html#app-installation), we can fetch their `app.appId()`s and use ENS to resolve their Repo contracts:
 
@@ -43,7 +49,7 @@ or using [`ethereum-ens`](https://github.com/ensdomains/ensjs):
 repo = Repo.at(await ens.addr(appId))
 ```
 
-Every individual Repo is an Aragon app that leverages the ACL in the APM DAO. Depending on each APM registry's governance model, the process for creating new versions in the Repo or transferring ownership may vary.
+Every individual Repo is an Aragon app that leverages the ACL in the aragonPM DAO. Depending on each aragonPM registry's governance model, the process for creating new versions in the Repo or transferring ownership may vary.
 
 A Repo keeps versioned state over the following components:
 
