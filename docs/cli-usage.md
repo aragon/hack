@@ -41,7 +41,7 @@ The `init` command will set up an Aragon app project so you can start building y
 aragon init [app-name] [boilerplate]
 ```
 
-- `app-name`: The name or ENS domain name for your app in an APM Registry (e.g. `myapp` or `myapp.aragonpm.eth`). If only the name is provided it will create your app on the default `aragonpm.eth` registry.
+- `app-name`: The name or ENS domain name for your app in an aragonPM Registry (e.g. `myapp` or `myapp.aragonpm.eth`). If only the name is provided it will create your app on the default `aragonpm.eth` registry.
 
 - `boilerplate`: the Github repo name or alias for a boilerplate to set up your app. The currently available boilerplates are:
 
@@ -55,7 +55,7 @@ aragon init [app-name] [boilerplate]
 The `run` command takes care of completely setting up the environment needed for running your Aragon app. These are all the things that running `aragon run` will do for you:
 
 1. It checks whether **IPFS** and a local **Ethereum development chain** (devchain) are running and if not it will start them. Once aragon is terminated, any IPFS or dev chain it started will also be terminated.
-2. It will **publish your app** to the local APM registry running in your devchain. This step executes the `aragon apm publish` internally. You can check the options and how the command works in depth [here](#aragon-apm-publish).
+2. It will **publish your app** to the local aragonPM registry running in your devchain. This step executes the `aragon apm publish` internally. You can check the options and how the command works in depth [here](#aragon-apm-publish).
 3. Once the package is published it will **create a DAO** with your app installed. If you are running your app without a Kit it will grant permissions to the first account printed in the console to perform all the actions protected by the ACL in your app.
 4. After the DAO is created it will download the [Aragon client](https://github.com/aragon/aragon), install its dependencies and start it up so you can interact with the DAO in your web browser.
 
@@ -142,7 +142,7 @@ The `aragon dao` commands can be used for interacting with your DAO directly fro
 Uses a DAO Kit to create a new DAO and prints its address.
 
 Options:
-- `--kit`: The APM repo name of the kit that is used to create the DAO. Defaults to `bare-kit.aragonpm.eth`.
+- `--kit`: The aragonPM repo name of the kit that is used to create the DAO. Defaults to `bare-kit.aragonpm.eth`.
 - `--kit-version [version-number|latest]`: The version of the repo that will be used to create the DAO. Defaults to `latest`.
 - `--fn`: The function on the kit that is called to create a new DAO. Defaults to the `newBareInstance` function for `bare-kit.aragonpm.eth`.
 - `--fn-args`: The arguments that the function to create the kit is called with. Defaults to an array of arguments.
@@ -177,7 +177,7 @@ dao install [dao-addr] [app-apm-repo] [repo-version]
 - `app-apm-repo`: The repo name of the app being installed (e.g. `voting` or `voting.aragonpm.eth`).
 - `repo-version`: Version of the repo that will be installed; can be a version number or `latest` for the newest published version (defaults to `latest`).
 
-In aragonOS an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO. 
+In aragonOS an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO.
 
 The `dao install` command will create an instance of the app and assign permissions to the main account to perform all the protected actions in the app.
 
@@ -289,7 +289,7 @@ dao acl remove-manager [dao-addr] [app-proxy-addr] [role]
 - `role`: The identifier for the role. Can be the `bytes32` identifier of the role or its name (e.g. `INCREMENT_ROLE`).
 
 ---
-## APM commands
+## aragonPM commands
 
 ---
 ### aragon apm versions
@@ -299,7 +299,7 @@ The `aragon apm versions` command shows all the previously published versions of
 ---
 ### aragon apm publish
 
-The `aragon apm publish` command publishes  a new version to the APM repo.
+The `aragon apm publish` command publishes  a new version to the aragonPM repo.
 
 ```
 aragon apm publish <patch|minor|major|version_number> [contract-address|contract-name]
@@ -338,7 +338,7 @@ The arapp.json file contains metadata for your app. You can check an [example ar
   - `params`: The names of any parameters for the role.
 - `environments`: An object containing deploy environment configurations.
   - `env_name`: An object containing the configuration for a specific environment. `env_name` can be any name you choose.
-    - `appName`: The ENS name of your app where the APM repo can be located.
+    - `appName`: The ENS name of your app where the aragonPM repo can be located.
     - `network`: The network to use for this environment.
     - `registry`: (optional) The address of the ENS registry for this environment. Defaults to the default ENS registry for this network.
 

@@ -43,7 +43,7 @@ or using [`ethereum-ens`](https://github.com/ensdomains/ensjs):
 repo = Repo.at(await ens.addr(appId))
 ```
 
-Every individual Repo is an Aragon app that leverages the ACL in the APM DAO. Depending on each APM registry's governance model, the process for creating new versions in the Repo or transferring ownership may vary.
+Every individual Repo is an Aragon app that leverages the ACL in the aragonPM DAO. Depending on each aragonPM registry's governance model, the process for creating new versions in the Repo or transferring ownership may vary.
 
 A Repo keeps versioned state over the following components:
 
