@@ -4,6 +4,12 @@ title: aragonPM reference documentation
 sidebar_label: Reference documentation
 ---
 
+aragonPM is built from three aragonOS-powered applications:
+
+- [APMRegistry](#apmregistry)
+- [ENSSubdomainRegistrar](#enssubdomainregistrar)
+- [Repo](#repo)
+
 ## APMRegistry
 
 ### ENSSubdomainRegistrar
@@ -28,7 +34,7 @@ See [APMRegistry](/docs/apm_APMRegistry.html) and [ENSSubdomainRegistrar](/docs/
 
 ---
 
-## Repos
+## Repo
 
 After [discovering the apps of a DAO by traversing its ACL](/docs/aragonos-ref.html#app-installation), we can fetch their `app.appId()`s and use ENS to resolve their Repo contracts:
 

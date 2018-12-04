@@ -3,7 +3,7 @@ id: tutorial
 title: Your first Aragon app
 ---
 
-In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), the Javascript implementation of [aragonAPI](js-ref.md), [aragonUI](ui-intro.md) and [aragonCLI](/docs/cli-usage.html).
+In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), the JavaScript implementation of [aragonAPI](js-ref.md), [aragonUI](ui-intro.md) and [aragonCLI](/docs/cli-usage.html).
 
 # Quickstart
 
@@ -202,7 +202,7 @@ If you've worked with [Redux](https://redux.js.org/) before, this might look vag
 
 The `store` method takes in a reducer function with the signature `(state, event) => state`, where `state` is whatever you want it to be (in this example it is an integer), and `event` is a [Web3 event](https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#contract-events).
 
-Internally, `store` will fetch the last known state (if any) and pass that in as the first argument, and then store the resulting state in cache. This state can be observed in the view portion of your app. Also note that the `store` method returns an observable of states. This is a recurring theme in the Javascript implementation of aragonAPI—almost everything is an [RxJS](http://reactivex.io/rxjs/) observable.
+Internally, `store` will fetch the last known state (if any) and pass that in as the first argument, and then store the resulting state in cache. This state can be observed in the view portion of your app. Also note that the `store` method returns an observable of states. This is a recurring theme in the JavaScript implementation of aragonAPI—almost everything is an [RxJS](http://reactivex.io/rxjs/) observable.
 
 The reducer function **must always** return a state, even if it is the same state as before.
 
