@@ -73,7 +73,7 @@ Yet the Aragon client is a frontend too, so security is also paramount in the UI
 
 Aragon's approach to frontend sandboxing is a combination of **sandboxed iframes** and **cross-origin messaging** through a custom RPC protocol built specifically for Aragon. Apps do not have direct access to Web3 or Ethereum.
 
-The Aragon client uses [aragonAPI](/docs/aragonjs-ref.html) to provide apps APIs for accessing smart contracts, displaying notifications and signing transactions. When signing transactions, a panel opens up in the client, not in the app. Apps cannot prompt users to sign transactions directly and they cannot interact with the contracts of other apps—in reality, they can only send action "intents". Thus all transactions are securely handled by the Aragon client, decreasing the attack surface.
+The Aragon client uses [aragonAPI](/docs/aragonjs-intro.html) to provide apps APIs for accessing smart contracts, displaying notifications and signing transactions. When signing transactions, a panel opens up in the client, not in the app. Apps cannot prompt users to sign transactions directly and they cannot interact with the contracts of other apps—in reality, they can only send action "intents". Thus all transactions are securely handled by the Aragon client, decreasing the attack surface.
 
 #### Read more: [The Aragon client](/docs/client.html)
 

@@ -28,8 +28,11 @@
       "aragonos-3-ref"
     ],
     "aragonAPI": [
-      "aragonjs-ref",
-      "aragonjs-ref-clients"
+      "aragonjs-intro",
+      "aragonjs-guide-bg-scripts",
+      "aragonjs-ref-app",
+      "aragonjs-ref-providers",
+      "aragonjs-ref-wrapper"
     ],
     "aragonUI": [
       "aragonui-intro"

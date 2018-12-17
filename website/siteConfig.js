@@ -67,7 +67,7 @@ const siteConfig = {
     {doc: 'getting-started', label: 'Get started'},
     {doc: 'tutorial', label: 'Tutorial'},
     {doc: 'aragonos-intro', label: 'aragonOS'},
-    {doc: 'aragonjs-ref', label: 'aragonAPI'},
+    {doc: 'aragonjs-intro', label: 'aragonAPI'},
     {doc: 'aragonui-intro', label: 'aragonUI'},
     {page: 'help', label: 'Help'}
   ],
