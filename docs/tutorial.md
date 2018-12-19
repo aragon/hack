@@ -407,8 +407,14 @@ Now that we're confident that our app will work and amaze the world, we should p
 To publish it, simply run:
 
 ```
-aragon apm publish
+aragon apm publish <minor|major> [contract-address|contract-name]
 ```
+
+The `aragon apm publish` command bumps the version number and publishes your app.
+
+If a major version is being published then the contract address for your app has to be provided or the contract name so the contract can be deployed. If it is not provided it will default to the contract specified in the `arapp.json` file.
+
+If a minor or patch version is being published then the command can be run with the `--only-content` flag which will just perform an update to the content of the app (the webapp and its artifacts).
 
 This will give you a transaction to sign that will either register the repository (if it does not exist) or publish a new version (if the repository exists). Furthermore, it will run your build script (if available) and publish your front-end and manifest files to IPFS.
 
