@@ -324,13 +324,25 @@ Let's modify `arapp.json` so that it knows about the roles we defined previously
 
 ```js
 {
-  "appName": "foo.aragonpm.eth",
-  "version": "1.0.0",
   "roles": [
-      { "name": "Increment the counter", "id": "INCREMENT_ROLE", "params": [] },
-      { "name": "Decrement the counter", "id": "DECREMENT_ROLE", "params": [] }
+    {
+      "name": "Increment the counter",
+      "id": "INCREMENT_ROLE",
+      "params": []
+    },
+    {
+      "name": "Decrement the counter",
+      "id": "DECREMENT_ROLE",
+      "params": []
+    }
   ],
-  "path": "contracts/CounterApp.sol"
+  "path": "contracts/CounterApp.sol",
+  "environments": {
+    "default": {
+      "network": "development",
+      "appName": "foo.aragonpm.eth"
+    }
+  }
 }
 ```
 
