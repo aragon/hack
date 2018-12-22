@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+      <script type="text/javascript">
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://arastats.eu/staats/";
+          _paq.push(['setTrackerUrl', u+'piwik.php']);
+          _paq.push(['setSiteId', '7']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+      <noscript><img src="https://arastats.eu/staats/piwik.php?idsite=7&amp;rec=1" style="border:0" alt="" /></noscript>
+      <html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>aragonPM reference documentation · Aragon Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="aragonPM reference documentation · Aragon Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://hack.aragon.org/index.html"/><meta property="og:description" content="aragonPM is built from three aragonOS-powered applications:"/><meta property="og:image" content="https://hack.aragon.org/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://hack.aragon.org/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible doc separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/isotype.svg" alt="Aragon Developer Portal"/><h2 class="headerTitleWithLogo">Aragon Developer Portal</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting-started.html" target="_self">Get started</a></li><li class=""><a href="/docs/tutorial.html" target="_self">Tutorial</a></li><li class="siteNavGroupActive"><a href="/docs/aragonos-intro.html" target="_self">aragonOS</a></li><li class="siteNavGroupActive"><a href="/docs/aragonjs-ref.html" target="_self">aragonAPI</a></li><li class="siteNavGroupActive"><a href="/docs/aragonui-intro.html" target="_self">aragonUI</a></li><li class=""><a href="/en/help.html" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>aragonPM</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>The basics</h3><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started.html">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/glossary.html">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/stack.html">The stack</a></li><li class="navListItem"><a class="navItem" href="/docs/acl-intro.html">Permissions</a></li><li class="navListItem"><a class="navItem" href="/docs/forwarding-intro.html">Forwarding</a></li><li class="navListItem"><a class="navItem" href="/docs/upgradeability-intro.html">Upgradeability</a></li><li class="navListItem"><a class="navItem" href="/docs/package-management.html">Package management</a></li><li class="navListItem"><a class="navItem" href="/docs/kits-intro.html">Kits</a></li><li class="navListItem"><a class="navItem" href="/docs/client.html">The Aragon client</a></li><li class="navListItem"><a class="navItem" href="/docs/human-readable-txs.html">Human readable transactions</a></li></ul></div><div class="navGroup navGroupActive"><h3>aragonCLI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/cli-usage.html">Usage</a></li></ul></div><div class="navGroup navGroupActive"><h3>aragonPM</h3><ul><li class="navListItem"><a class="navItem" href="/docs/apm.html">Architecture</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/apm-ref.html">Reference documentation</a></li></ul></div><div class="navGroup navGroupActive"><h3>aragonOS</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonos-intro.html">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-motivation.html">Motivations</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-building.html">Developing with aragonOS</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-ref.html">Reference documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-4-migration.html">Migrating to aragonOS 4 from aragonOS 3</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-3-ref.html">Reference (aragonOS 3)</a></li></ul></div><div class="navGroup navGroupActive"><h3>aragonAPI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref.html">JavaScript reference documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-clients.html">JavaScript reference documentation for clients/wrappers</a></li></ul></div><div class="navGroup navGroupActive"><h3>aragonUI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonui-intro.html">Introduction</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/apm-ref.md" target="_blank" rel="noreferrer noopener">Edit</a><h1>aragonPM reference documentation</h1></header><article><div><span><p>aragonPM is built from three aragonOS-powered applications:</p>
+<ul>
+<li><a href="#apmregistry">APMRegistry</a></li>
+<li><a href="#enssubdomainregistrar">ENSSubdomainRegistrar</a></li>
+<li><a href="#repo">Repo</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="apmregistry"></a><a href="#apmregistry" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>APMRegistry</h2>
+<h3><a class="anchor" aria-hidden="true" id="enssubdomainregistrar"></a><a href="#enssubdomainregistrar" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ENSSubdomainRegistrar</h3>
+<p>Upon initialization, ownership of the ENS name that the APMRegistry operates is transferred to the ENSSubdomainRegistrar app that is installed in the DAO. In our deployments, we ensure this is completed on deployment through a APMRegistryFactory contract that assigns the APMRegistry the ENSSubdomainRegistrar's <code>POINT_ROOTNODE_ROLE</code> and then calls <code>initialize()</code> on the APMRegistry.</p>
+<p>The APMRegistry also needs to have permissions for the ENSSubdomainRegistrar's <code>CREATE_NAME_ROLE</code> in order to create new names, which is done every time a repo is created.</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="apmregistry-governance"></a><a href="#apmregistry-governance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>APMRegistry governance</h3>
+<p>Each instance of an APMRegistry can have a different governance model. Governance of a registry is enforced directly using the DAO's ACL.</p>
+<p>By default a new repo will set the creator (or <code>dev</code> param) as the owner of the repo and it is the only address that can create new versions in the repo. However, as the permission manager, this account can grant the permission to create versions to other entities. These entities can be anything from another dev to a multisig or a full blown DAO.</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="api-documentation"></a><a href="#api-documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API documentation</h3>
+<p>See <a href="/docs/apm_APMRegistry.html">APMRegistry</a> and <a href="/docs/ens_ENSSubdomainRegistrar.html">ENSSubdomainRegistrar</a>.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="repo"></a><a href="#repo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Repo</h2>
+<p>After <a href="/docs/aragonos-ref.html#app-installation">discovering the apps of a DAO by traversing its ACL</a>, we can fetch their <code>app.appId()</code>s and use ENS to resolve their Repo contracts:</p>
+<pre><code class="hljs css solidity">repo = Repo(<span class="hljs-name">Resolver</span>(<span class="hljs-name">ens</span>.resolver(<span class="hljs-name">appId</span>)).addr(<span class="hljs-name">appId</span>))
+
+</code></pre>
+<p>or using <a href="https://github.com/ensdomains/ensjs"><code>ethereum-ens</code></a>:</p>
+<pre><code class="hljs css js">repo = Repo.at(<span class="hljs-keyword">await</span> ens.addr(appId))
+</code></pre>
+<p>Every individual Repo is an Aragon app that leverages the ACL in the aragonPM DAO. Depending on each aragonPM registry's governance model, the process for creating new versions in the Repo or transferring ownership may vary.</p>
+<p>A Repo keeps versioned state over the following components:</p>
+<ul>
+<li><strong>Smart contract library code</strong> (<code>contractAddress</code>): the app code is the address of the deployed contract version of the app. An organization's Kernel determines which version of the app it uses by pointing to the app code address associated with that version.</li>
+<li><strong>Package content</strong> (<code>contentURI</code>): defined by a location ID of where the other components of the package (e.g. frontend) are hosted (IPFS, Swarm, etc.) and the content hash for fetching it. An <code>arapp.json</code> file is expected to be found in this package.</li>
+</ul>
+<p>A Repo does not need to contain both components but, whatever the case, all the rules below still apply.</p>
+<p>By versioning both the app code address and the package content we can add additional expectations for the what semantic versioning of Repos mean:</p>
+<ul>
+<li><strong>Patch</strong>: Minor changes to the package contents (e.g. frontend). Update can be performed silently for users.</li>
+<li><strong>Minor</strong>: Significant changes to the package contents but still works with the current smart contract code. Users should be notified of the update.</li>
+<li><strong>Major</strong>: Any change to the smart contract app code that requires user interaction in order to upgrade.</li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="version-upgrade-rules"></a><a href="#version-upgrade-rules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Version upgrade rules</h3>
+<p>Before creating a new version in a repo an ACL check is performed to determine whether the entity has permission to create a new version.</p>
+<p>After the ACL check, the Repo logic checks whether the version upgrade is allowed. A version bump for a package is defined by the following rules:</p>
+<ul>
+<li>Only one member of the version is increased by 1. The version components to the left of the raised member must stay the same and the components to the right must be 0.
+<ul>
+<li>Example: From <code>2.1.3</code> the only allowed bumps are to <code>3.0.0</code> (major version), <code>2.2.0</code> (minor version), and <code>2.1.4</code> (patch version).</li>
+</ul></li>
+<li>Changes to the app code address can only be done if the raise changes the major version (upgrading it to <code>M.0.0</code> by the above rule).</li>
+</ul>
+<p>The initial version of an app must be a valid bump from version <code>0.0.0</code>.</p>
+<p>By having this check performed at the smart contract level we can load the correct version of the frontend just by looking at an instance of an app. This is done by checking that the version of a smart contract is linked to a given app by getting its <code>appId</code> and <code>appCode</code> (see section below <em>By latest contract address</em>).</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="fetching-repo-versions"></a><a href="#fetching-repo-versions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fetching Repo versions</h3>
+<p>Repos offer multiple ways to fetch versions. By checking the logs for the following event, one can see all the versions ever created in a Repo:</p>
+<pre><code class="hljs css solidity">(<span class="hljs-name">Repo</span>) NewVersion(<span class="hljs-name">uint256</span> versionId, uint16[<span class="hljs-number">3</span>] semanticVersion)<span class="hljs-comment">;</span>
+</code></pre>
+<p>All the different methods for fetching versions return the following tuple:</p>
+<pre><code class="hljs css solidity">repoVersion = (uint16[3] semanticVersion,<span class="hljs-built_in"> address </span>contractAddress, bytes contentURI);
+</code></pre>
+<p><strong>By versionId</strong></p>
+<p>Every version can be fetched with its <code>versionId</code> (which starts at <code>1</code> and is incremented by <code>1</code> on each new version).</p>
+<pre><code class="hljs css solidity"><span class="hljs-attribute">repoVersion</span> = repo.getByVersionId(versionId)<span class="hljs-comment">;</span>
+</code></pre>
+<p>The total count of versions created in a Repo can be queried with:</p>
+<pre><code class="hljs css solidity"><span class="hljs-attribute">count</span> = repo.getVersionsCount()<span class="hljs-comment">;</span>
+<span class="hljs-attribute">lastVersionId</span> = count - <span class="hljs-number">1</span><span class="hljs-comment">;</span>
+</code></pre>
+<p><strong>By semantic version</strong></p>
+<p>A version can be fetched by providing the exact semantic version:</p>
+<pre><code class="hljs css solidity"><span class="hljs-attribute">repoVersion</span> = repo.getBySemanticVersion([major, minor, patch]);
+</code></pre>
+<p><strong>By latest contract address</strong></p>
+<p>Fetching the latest version by contract address is useful for clients to easily fetch the latest minor or patch release associated with a particular major version. This makes it particularly easy for organizations to still be served the relevant frontends if they have not updated their smart contract code to the latest major version.</p>
+<pre><code class="hljs css solidity"><span class="hljs-attribute">repoVersion</span> = repo.getLatestForContractAddress(contractCode)<span class="hljs-comment">;</span>
+</code></pre>
+<p><strong>Latest version</strong></p>
+<p>The latest version of a Repo can be fetched as follows:</p>
+<pre><code class="hljs css solidity"><span class="hljs-attribute">repoVersion</span> = repo.getLatest()<span class="hljs-comment">;</span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="api-documentation-1"></a><a href="#api-documentation-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API documentation</h3>
+<p>See <a href="/docs/apm_Repo.html">Repo</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="apm.html">← aragonPM</a><a class="docs-next button" href="aragonos-intro.html">aragonOS intro →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#apmregistry">APMRegistry</a><ul class="toc-headings"><li><a href="#enssubdomainregistrar">ENSSubdomainRegistrar</a></li><li><a href="#apmregistry-governance">APMRegistry governance</a></li><li><a href="#api-documentation">API documentation</a></li></ul></li><li><a href="#repo">Repo</a><ul class="toc-headings"><li><a href="#version-upgrade-rules">Version upgrade rules</a></li><li><a href="#fetching-repo-versions">Fetching Repo versions</a></li><li><a href="#api-documentation-1">API documentation</a></li></ul></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bXwoTT" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/isotype.svg" alt="Aragon Developer Portal" width="66" height="58"/></a><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/aragonjs-ref.html">aragonAPI</a><a href="/docs/aragonui-intro.html">aragonUI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+              var search = docsearch({
+                
+                apiKey: '9dff0383c32107d6c174f15e259bb23a',
+                indexName: 'aragon',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script>
+      <style data-styled-components="bXwoTT">
+/* sc-component-id: sc-bdVaJa */
+.sc-bdVaJa {} .bXwoTT{background:#6D8088 !important;}
+/* sc-component-id: sc-global-3832733198 */
+@font-face{font-family:'overpass';src:url(/aragon-ui/cf790334a5a6d45c.woff2) format('woff2'),url(/aragon-ui/fd48a701d84ebf69.woff) format('woff');font-weight:400;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/32a3f11e7740ce58.woff2) format('woff2'),url(/aragon-ui/860b19d3e10736e7.woff) format('woff');font-weight:600;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/5cfe62515c2f9b42.woff2) format('woff2'),url(/aragon-ui/f8ba2d7a9af0db1f.woff) format('woff');font-weight:800;font-style:normal;} *,*:before,*:after{box-sizing:border-box;} html{min-height:100%;} body{font-family:overpass,sans-serif;font-size:15px;font-weight:400;line-height:1.5;color:#000000;background:#F7FBFD;} body,ul,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;} button,select,input,textarea,h1,h2,h3,h4,h5,h6{font-size:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;} a,button,select,input,textarea{color:inherit;} strong,b{font-weight:600;}</style>
+      </body></html>
