@@ -67,12 +67,12 @@ contract Counter {
 
     function increment() external {
         value += 1;
-        Increment(msg.sender);
+        emit Increment(msg.sender);
     }
 
     function decrement() external {
         value -= 1;
-        Decrement(msg.sender);
+        emit Decrement(msg.sender);
     }
 }
 ```
@@ -113,7 +113,7 @@ Finally, guard the methods with the `auth()` modifier that the `AragonApp` inter
 contract Counter is AragonApp {
     // ...
 
-    function initialize() onlyInit {
+    function initialize() onlyInit public {
       initialized();
     }
 
@@ -324,12 +324,24 @@ Let's modify `arapp.json` so that it knows about the roles we defined previously
 
 ```js
 {
-  "appName": "foo.aragonpm.eth",
-  "version": "1.0.0",
   "roles": [
-      { "name": "Increment the counter", "id": "INCREMENT_ROLE", "params": [] },
-      { "name": "Decrement the counter", "id": "DECREMENT_ROLE", "params": [] }
+    {
+      "name": "Increment the counter",
+      "id": "INCREMENT_ROLE",
+      "params": []
+    },
+    {
+      "name": "Decrement the counter",
+      "id": "DECREMENT_ROLE",
+      "params": []
+    }
   ],
+  "environments": {
+    "default": {
+      "network": "development",
+      "appName": "foo.aragonpm.eth"
+    }
+  },
   "path": "contracts/CounterApp.sol"
 }
 ```
@@ -395,8 +407,12 @@ Now that we're confident that our app will work and amaze the world, we should p
 To publish it, simply run:
 
 ```
-aragon apm publish
+aragon apm publish major
 ```
+
+The [`aragon apm publish`](https://hack.aragon.org/docs/cli-usage.html#aragon-apm-publish) command bumps the version number and publishes your app.
+
+When a major version is being published then the contract address for your app has to be provided or the contract name so the contract can be deployed. If it is not provided it will default to the contract specified in the `arapp.json` file as here.
 
 This will give you a transaction to sign that will either register the repository (if it does not exist) or publish a new version (if the repository exists). Furthermore, it will run your build script (if available) and publish your front-end and manifest files to IPFS.
 
