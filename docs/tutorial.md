@@ -67,12 +67,12 @@ contract Counter {
 
     function increment() external {
         value += 1;
-        Increment(msg.sender);
+        emit Increment(msg.sender);
     }
 
     function decrement() external {
         value -= 1;
-        Decrement(msg.sender);
+        emit Decrement(msg.sender);
     }
 }
 ```
@@ -113,7 +113,7 @@ Finally, guard the methods with the `auth()` modifier that the `AragonApp` inter
 contract Counter is AragonApp {
     // ...
 
-    function initialize() onlyInit {
+    function initialize() onlyInit public {
       initialized();
     }
 
@@ -336,13 +336,13 @@ Let's modify `arapp.json` so that it knows about the roles we defined previously
       "params": []
     }
   ],
-  "path": "contracts/CounterApp.sol",
   "environments": {
     "default": {
       "network": "development",
       "appName": "foo.aragonpm.eth"
     }
-  }
+  },
+  "path": "contracts/CounterApp.sol"
 }
 ```
 
