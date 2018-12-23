@@ -15,25 +15,25 @@ const PAGES = [
   {
     fileLocation: '/docs/js-ref-app.md',
     id: 'aragonjs-ref-app',
-    title: 'aragonAPI - App API Reference',
+    title: 'aragonAPI - App',
     hideTitle: true,
-    sidebarLabel: 'App API Reference',
+    sidebarLabel: 'App',
     contentURL: `https://raw.githubusercontent.com/aragon/aragon.js/${GIT_REF}/docs/APP.md`
   },
   {
     fileLocation: '/docs/js-ref-providers.md',
     id: 'aragonjs-ref-providers',
-    title: 'aragonAPI - Providers API Reference',
+    title: 'aragonAPI - Providers',
     hideTitle: true,
-    sidebarLabel: 'Providers API Reference',
+    sidebarLabel: 'Providers',
     contentURL: `https://raw.githubusercontent.com/aragon/aragon.js/${GIT_REF}/docs/PROVIDERS.md`
   },
   {
     fileLocation: '/docs/js-ref-wrapper.md',
     id: 'aragonjs-ref-wrapper',
-    title: 'aragonAPI - Wrapper API Reference',
+    title: 'aragonAPI - Wrapper',
     hideTitle: true,
-    sidebarLabel: 'Wrapper API Reference',
+    sidebarLabel: 'Wrapper',
     contentURL: `https://raw.githubusercontent.com/aragon/aragon.js/${GIT_REF}/docs/WRAPPER.md`
   },
   {

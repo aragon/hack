@@ -14,11 +14,11 @@ A JavaScript implementation of aragonAPI, used to interact with aragonOS by hand
 
 - [Background Scripts](/docs/aragonjs-guide-bg-scripts.html)
 
-## References
+## Docs
 
-- [App API Reference](/docs/aragonjs-ref-app.html)
-- [Wrapper API Reference](/docs/aragonjs-ref-wrapper.html)
-- [Providers API Reference](/docs/aragonjs-ref-providers.html)
+- [App](/docs/aragonjs-ref-app.html)
+- [Wrapper](/docs/aragonjs-ref-wrapper.html)
+- [Providers](/docs/aragonjs-ref-providers.html)
 
 ## Quick Start for apps
 
