@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
 const fs = require('fs')
 
-const GIT_REF = 'feat/generate-docs-from-sources' //TODO change to master
+const GIT_REF = 'master'
 
 const PAGES = [
   {
@@ -39,9 +39,9 @@ const PAGES = [
   {
     fileLocation: '/docs/js-guide-bg-scripts.md',
     id: 'aragonjs-guide-bg-scripts',
-    title: 'aragonAPI - Background Scripts guide',
+    title: 'aragonAPI - Background Scripts',
     hideTitle: true,
-    sidebarLabel: 'Background Scripts guide',
+    sidebarLabel: 'Background Scripts',
     contentURL: `https://raw.githubusercontent.com/aragon/aragon.js/${GIT_REF}/docs/BACKGROUND_SCRIPTS.md`
   }
 ]
