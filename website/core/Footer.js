@@ -44,7 +44,7 @@ class Footer extends React.Component {
             <a href={this.docUrl('getting-started')}>Get started</a>
             <a href={this.docUrl('tutorial')}>Tutorial</a>
             <a href={this.docUrl('aragonos-intro')}>aragonOS</a>
-            <a href={this.docUrl('aragonjs-ref')}>aragonAPI</a>
+            <a href={this.docUrl('aragonjs-intro')}>aragonAPI</a>
             <a href={this.docUrl('aragonui-intro')}>aragonUI</a>
           </div>
           <div>

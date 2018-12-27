@@ -5,8 +5,10 @@
     "hack_solidity_version": "find ./node_modules/@aragon/os/contracts -name \"*.sol\" -exec sed -i'' -e 's/pragma solidity 0.4.18/pragma solidity ^0.4.18/g' {} \\;",
     "hack_clean_os_lib_api": "rm -f ../docs/api_lib_*",
     "generate:os": "npm run hack_solidity_version && solidity-docgen --exclude lib node_modules/@aragon/os node_modules/@aragon/os/contracts ../ && npm run hack_clean_os_lib_api",
-    "start": "npm run generate:os && npm run sync-assets && docusaurus-start",
-    "build": "npm run generate:os && docusaurus-build",
+    "generate:js": "node ./scripts/sync-aragonjs-docs",
+    "generate": "npm run generate:os && npm run generate:js",
+    "start": "npm run generate && npm run sync-assets && docusaurus-start",
+    "build": "npm run generate && docusaurus-build",
     "publish-gh-pages": "npm run generate:os && USE_SSH=true docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
@@ -14,6 +16,7 @@
   },
   "devDependencies": {
     "@aragon/docusaurus": "^1.0.15",
+    "node-fetch": "^2.3.0",
     "opn": "^5.3.0",
     "solidity-docgen": "^0.1.0"
   },
