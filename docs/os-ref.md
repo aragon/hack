@@ -436,9 +436,11 @@ function canPerform(address sender, bytes32 role, uint256[] params) public view 
 >
 > Apps have the choice of which actions to protect behind the ACL as some actions may make sense to be completely public. Any publicly exposed state-changing function should *most likely* be protected, however.
 
-**Lifecycle of an AragonApp call requiring the ACL**
+<div id="bodymovin1"></div>
 
-![](/docs/assets/os-app-call.gif)
+> Lifecycle of an AragonApp call requiring the ACL
+
+
 
 ### Application lifecycle guarantees
 
@@ -446,7 +448,7 @@ The [DelegateProxy](https://eips.ethereum.org/EIPS/eip-897) pattern suffers from
 
 AragonApps can be in the lifecycle stages of **uninitialized**, **initialized**, or **petrified**. As an application contract is deployed it begins in the **uninitialized** state and can go to either the **initialized** or **petrified** state.
 
-![](/docs/assets/app-lifecycle.png)
+![](/docs/assets/app-lifecycle.svg)
 
 AragonApp base logic contracts are **petrified** upon their deployment. They can never be initialized and are considered frozen in an uninitialized state forever. This also means that, if properly developed, there is no way for these contracts to be `selfdestruct`ed.
 
@@ -518,9 +520,40 @@ Forwarders are one of the most important concepts of aragonOS. Rather than hardc
 
 The forwarding interface also allows a frontend interface, like the Aragon client, to calculate "forwarding paths". If you wanted to perform an action but you don't have the required permissions, a client can think of alternative paths for execution. For example, you might be in the Vault app's interface wishing to perform a token transfer. If you only had the permission to create votes, the client would directly prompt you to create a vote rather than let you complete the transfer. The flow is illustrated in the following animation:
 
-![forwarding animation](/docs/assets/fwd.gif)
+<div id="bodymovin2"></div>
 
 > Vote forwarding scenario.  (Please note that the governance model and characters are fictional.)
+
+
+<script>
+    var anim1;
+    var animData1 = {
+	container: document.getElementById('bodymovin1'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: true,
+        rendererSettings: {
+            progressiveLoad:false
+        },
+        path:'/docs/assets/os-app-call.json'
+    };
+    anim1 = bodymovin.loadAnimation(animData1);
+    anim1.setSpeed(1);
+    var anim2;
+    var animData2 = {
+	container: document.getElementById('bodymovin2'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: true,
+        rendererSettings: {
+            progressiveLoad:false
+        },
+        path:'/docs/assets/fwd.json'
+    };
+    anim2 = bodymovin.loadAnimation(animData2);
+    anim2.setSpeed(1);
+</script>
+
 
 ### EVMScripts
 

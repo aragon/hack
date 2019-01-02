@@ -23,7 +23,7 @@ Different aragonPM registries in which everyone can publish their packages are e
 
 ## Architecture: registries, repos and versions
 
-![](/docs/assets/apm-arch.png)
+![](/docs/assets/apm-arch.svg)
 > The architecture of an aragonPM DAO
 
 As a DAO, each aragonPM registry includes a number of installed applications, including one APMRegistry, one ENSSubdomainRegistrar, and many Repo instances. The aragonPM registry controls a [Ethereum Name Service](https://ens.domains/) (ENS) domain through its ENSSubdomainRegistrar, allowing each new created Repo to be assigned its own subdomain. This gives users the ability to **find repos with human-readable names**, such as `voting.aragonpm.eth`.
@@ -32,7 +32,7 @@ We envision that many aragonPM registries will be created for different purposes
 
 At the repo level, each repo can have **its own rules** that govern **how new versions can be published** using the [Access Control List](/docs/acl-intro.html) from aragonOS. This allows for setting up different types of processes depending on the importance of the repo or the nature of the upgrade (major, minor or patch).
 
-![](/docs/assets/apm-repo.png)
+![](/docs/assets/apm-repo.svg)
 > A Repo is created in a Registry and can have many versions published over time
 
 A repo keeps a versioned history of content and smart contract code tuples. The content is an on-chain reference to a blob of data that lives off-chain (we currently support IPFS or HTTP addressing). By using IPFS we have the assurance of the **integrity** of the data and that it hasn't changed since it was published. We recommend to always publish using a content-addressed network, like IPFS, but having HTTP is useful for testing or less critical code.

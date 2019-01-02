@@ -162,6 +162,7 @@ const siteConfig = {
           g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
         })();
       </script>
+      <script src="/docs/assets/js/bodymovin.js"></script>
       <noscript><img src="https://arastats.eu/staats/piwik.php?idsite=7&amp;rec=1" style="border:0" alt="" /></noscript>
       ${html.slice(0, insertStylesAt)}
       ${sheet.getStyleTags()}
