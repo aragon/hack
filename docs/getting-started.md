@@ -55,7 +55,7 @@ cd foo
 aragon run
 ```
 
-Congrats you have just created a DAO! It’s running on your local network and as soon as it's ready it will open in your browser!
+Congrats you have just created a DAO! It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
 
 ## Next steps
 
