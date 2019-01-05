@@ -29,11 +29,11 @@ What you need to get started building with Aragon:
 
 **Node version**
 
-Make sure you have at least Node v.8.0.
+Make sure you have at least Node.js `v8.0.0`.
 
 **Metamask**
 
-We recommend using the [Metamask browser extentsion](https://metamask.io/) to send transactions to the blockchain.
+We recommend using the [Metamask browser extension](https://metamask.io/) to send transactions to the blockchain.
 
 **Install the aragonCLI**
 
@@ -51,9 +51,11 @@ To create your first DAO run:
 
 ```
 aragon init foo.aragonpm.eth
+cd foo
+aragon run
 ```
 
-Congrats you have just created a DAO! It’s running on your local network and you can check it out by going to [localhost:3001](http://localhost:3001)
+Congrats you have just created a DAO! It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
 
 ## Next steps
 
