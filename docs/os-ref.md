@@ -291,21 +291,21 @@ An ACL parameter is comprised of a data structure with 3 values:
 - **Argument Value** (`uint240`): the value to compare against, depending on the argument. It is a regular Ethereum memory word that loses its two most significant bytes of precision. The reason for this was to allow parameters to be saved in just one storage slot, saving significant gas.
 Even though `uint240`s are used, it can be used to store any integer up to `2^30 - 1`, addresses, and bytes32. In the case of comparing hashes, losing 2 bytes of precision shouldn't be a dealbreaker if the hash algorithm is secure.
 - **Argument ID** (`uint8`): Determines how the comparison value is fetched. From 0 to 200 it refers to the argument index number passed to the role. After 200, there are some special *Argument IDs*:
-	- `BLOCK_NUMBER_PARAM_ID` (`id = 200`): sets comparison value to the block number at the time of execution. This allows for setting up timelocks depending on blocks.
-	- `TIMESTAMP_PARAM_ID` (`id = 201`): sets comparison value to the timestamp of the current block at the time of execution. This allows for setting up timelocks on time.
-	- `id = 202`: not currently in use.
-	- `ORACLE_PARAM_ID` (`id = 203`): checks with an oracle at the address in the `argument value` and returns whether it returned true or false (no comparison with the `argument value`).
-	- `LOGIC_OP_PARAM_ID` (`id = 204`): evaluates a logical operation and returns true or false depending on its result (no comparison with the `argument value`).
-	- `PARAM_VALUE_PARAM_ID` (`id = 205`): return `argument value`. Commonly used with the `RET` operation to just return a value. If the value in the param is greater than 0 it will evaluate to true, otherwise it will return false.
+  - `BLOCK_NUMBER_PARAM_ID` (`id = 200`): sets comparison value to the block number at the time of execution. This allows for setting up timelocks depending on blocks.
+  - `TIMESTAMP_PARAM_ID` (`id = 201`): sets comparison value to the timestamp of the current block at the time of execution. This allows for setting up timelocks on time.
+  - `id = 202`: not currently in use.
+  - `ORACLE_PARAM_ID` (`id = 203`): checks with an oracle at the address in the `argument value` and returns whether it returned true or false (no comparison with the `argument value`).
+  - `LOGIC_OP_PARAM_ID` (`id = 204`): evaluates a logical operation and returns true or false depending on its result (no comparison with the `argument value`).
+  - `PARAM_VALUE_PARAM_ID` (`id = 205`): return `argument value`. Commonly used with the `RET` operation to just return a value. If the value in the param is greater than 0 it will evaluate to true, otherwise it will return false.
 - **Operation type** (`uint8`): what operation should be done to compare the value fetched using the argument ID or the argument value. For all comparisons, both values are compared in the following order `args[param.id] <param.op> param.value`. Therefore, for a greater than operation, with `param = {id: 0, op: Op.GT, value: 10}`, it will interpret whether the argument 0 is greater than 10. The implemented operation types are:
-	- None (`Op.NONE`): always evaluates to `false` regardless of parameter or arguments.
-	- Equals (`Op.EQ`): evaluates to true if every byte matches between `args[param.id]` and `param.value`.
-	- Not equals (`Op.NEQ`): evaluates to true if any byte doesn't match.
-	- Greater than (`Op.GT`): evaluates to true if `args[param.id] > param.value`.
-	- Less than (`Op.LT`): evaluates to true if `args[param.id] < param.value`.
-	- Greater than or equal (`Op.GTE`): evaluates to true if `args[param.id] >= param.value`.
-	- Less than or equal (`Op.LTE`): evaluates to true if `args[param.id] <= param.value`.
-	- Return (`Op.RET`): evaluates to true if `args[param.id]` is greater than one. Used with `PARAM_VALUE_PARAM_ID`, it makes `args[param.id] = param.value`, so it returns the associated value of the parameter.
+  - None (`Op.NONE`): always evaluates to `false` regardless of parameter or arguments.
+  - Equals (`Op.EQ`): evaluates to true if every byte matches between `args[param.id]` and `param.value`.
+  - Not equals (`Op.NEQ`): evaluates to true if any byte doesn't match.
+  - Greater than (`Op.GT`): evaluates to true if `args[param.id] > param.value`.
+  - Less than (`Op.LT`): evaluates to true if `args[param.id] < param.value`.
+  - Greater than or equal (`Op.GTE`): evaluates to true if `args[param.id] >= param.value`.
+  - Less than or equal (`Op.LTE`): evaluates to true if `args[param.id] <= param.value`.
+  - Return (`Op.RET`): evaluates to true if `args[param.id]` is greater than one. Used with `PARAM_VALUE_PARAM_ID`, it makes `args[param.id] = param.value`, so it returns the associated value of the parameter.
 
 While also representing an operation, when the argument ID is `LOGIC_OP_PARAM_ID` only the `Op`s below are valid. These operations use the parameter's value to point to other parameter indices in the parameter array. Any values are encoded as `uint32` numbers, each left-shifted 32 bits (for example, an `Op` that takes two inputs with a value of `0x00....0000000200000001` would have input 1, 1, and input 2, 2, refering to params at index 1 and 2). Here are the available logic `Op`s:
 - Not (`Op.NOT`): takes 1 parameter index and evaluates to the opposite of what the linked parameter evaluates to.
@@ -436,7 +436,8 @@ function canPerform(address sender, bytes32 role, uint256[] params) public view 
 >
 > Apps have the choice of which actions to protect behind the ACL as some actions may make sense to be completely public. Any publicly exposed state-changing function should *most likely* be protected, however.
 
-<div id="bodymovin1"></div>
+<!-- Show animated svg equivalent of assets/os-app-call.gif -->
+<div id="app-call"></div>
 
 > Lifecycle of an AragonApp call requiring the ACL
 
@@ -520,40 +521,10 @@ Forwarders are one of the most important concepts of aragonOS. Rather than hardc
 
 The forwarding interface also allows a frontend interface, like the Aragon client, to calculate "forwarding paths". If you wanted to perform an action but you don't have the required permissions, a client can think of alternative paths for execution. For example, you might be in the Vault app's interface wishing to perform a token transfer. If you only had the permission to create votes, the client would directly prompt you to create a vote rather than let you complete the transfer. The flow is illustrated in the following animation:
 
-<div id="bodymovin2"></div>
+<!-- Show animated svg equivalent of assets/fwd.gif -->
+<div id="fwd-call"></div>
 
 > Vote forwarding scenario.  (Please note that the governance model and characters are fictional.)
-
-
-<script>
-    var anim1;
-    var animData1 = {
-	container: document.getElementById('bodymovin1'),
-	renderer: 'svg',
-	loop: true,
-	autoplay: true,
-        rendererSettings: {
-            progressiveLoad:false
-        },
-        path:'/docs/assets/os-app-call.json'
-    };
-    anim1 = bodymovin.loadAnimation(animData1);
-    anim1.setSpeed(1);
-    var anim2;
-    var animData2 = {
-	container: document.getElementById('bodymovin2'),
-	renderer: 'svg',
-	loop: true,
-	autoplay: true,
-        rendererSettings: {
-            progressiveLoad:false
-        },
-        path:'/docs/assets/fwd.json'
-    };
-    anim2 = bodymovin.loadAnimation(animData2);
-    anim2.setSpeed(1);
-</script>
-
 
 ### EVMScripts
 
@@ -602,3 +573,30 @@ Examples of forwarders can be found in the [aragon-apps repo](https://github.com
 ### API documentation
 
 See [IForwarder](/docs/common_IForwarder.html) and [EVMScriptRunner](/docs/evmscript_EVMScriptRunner.html).
+
+<!-- Bodymovin scripts for animated svgs (must be after the elements are defined, see above) -->
+<!-- Note that this script can't have any newlines 😂 -->
+<script>
+  var appCallAnimation = bodymovin.loadAnimation({
+    container: document.getElementById('app-call'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+        progressiveLoad:false
+    },
+    path:'/docs/assets/os-app-call.json'
+  })
+  appCallAnimation.setSpeed(1)
+  var fwdCallAnimation = bodymovin.loadAnimation({
+    container: document.getElementById('fwd-call'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+        progressiveLoad:false
+    },
+    path:'/docs/assets/fwd.json'
+  })
+  fwdCallAnimation.setSpeed(1);
+</script>
