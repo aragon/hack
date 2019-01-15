@@ -10,7 +10,7 @@ const { theme } = require('@aragon/ui')
 const styled = require('styled-components').default
 
 const FooterContainer = styled.footer`
-  background: ${theme.badgeInfoForeground} !important;
+
 `
 
 class Footer extends React.Component {
@@ -29,16 +29,16 @@ class Footer extends React.Component {
     return (
       <FooterContainer className="nav-footer" id="footer">
         <section className="sitemap">
-          <a href={this.props.config.baseUrl} className="nav-home">
-            {this.props.config.footerIcon && (
+          <div>
+            <a href={this.props.config.baseUrl} className="nav-home">
               <img
-                src={this.props.config.baseUrl + this.props.config.footerIcon}
-                alt={this.props.config.title}
-                width="66"
-                height="58"
-              />
-            )}
-          </a>
+                  src={this.props.config.baseUrl + this.props.config.footerIcon}
+                  alt={this.props.config.title}
+                  width="66"
+                  height="58"
+                />
+            </a>
+          </div>
           <div>
             <h5>Documentation</h5>
             <a href={this.docUrl('getting-started')}>Get started</a>

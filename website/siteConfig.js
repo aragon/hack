@@ -82,8 +82,11 @@ const siteConfig = {
 
   /* path to images for header/footer */
   headerIcon: 'img/isotype.svg',
-  footerIcon: 'img/isotype.svg',
+  footerIcon: 'img/footer.svg',
   favicon: 'img/favicon.png',
+  os: 'img/os.svg',
+  api: 'img/api.svg',
+  ui: 'img/ui.svg',
 
   /* colors for website */
   // #00c8e4
@@ -95,14 +98,14 @@ const siteConfig = {
   /* custom fonts for website */
   fonts: {
     myFont: [
-      "Overpass",
+      "HkGrotesk",
+      "Overpass"
     ],
     myOtherFont: [
       "-apple-system",
       "system-ui"
     ]
   },
-
   algolia: {
     apiKey: '9dff0383c32107d6c174f15e259bb23a',
     indexName: 'aragon',
@@ -149,6 +152,7 @@ const siteConfig = {
     const insertStylesAt = html.lastIndexOf('</body>')
     return `
       <!DOCTYPE html>
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css"/>
       <script type="text/javascript">
         var _paq = _paq || [];
         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
