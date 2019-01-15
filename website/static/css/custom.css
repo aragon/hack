@@ -161,6 +161,17 @@ footer.nav-footer .sitemap .nav-home, footer.nav-footer .sitemap .nav-home img{
   opacity: 1;
   width: auto;
 }
+@media only screen and (max-width: 735px) {
+  footer.nav-footer .sitemap .nav-home, footer.nav-footer .sitemap .nav-home img {
+      opacity: 1;
+      width: 120px;
+      padding: 10px 0;
+  }
+  footer.nav-footer .sitemap h5 {
+    margin-top: 30px;
+  }
+}
+
 footer.nav-footer .sitemap div {
   flex: none;
   min-width: 158px;
