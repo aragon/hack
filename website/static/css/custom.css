@@ -318,6 +318,7 @@ footer.nav-footer .sitemap h5 {
 
 /* Docs */
 .mainContainer .wrapper .post .postHeader h1 {
+  font-family: 'HankenGroteskRegular', sans-serif !important;
   font-size: 38px;
   font-weight: 500;
   font-style: normal;
@@ -325,6 +326,7 @@ footer.nav-footer .sitemap h5 {
   line-height: 1.2;
   letter-spacing: normal;
   color: #2d4051;
+  border-top: solid 0px transparent;
 }
 .mainContainer .wrapper .post h3 {
   font-family: 'HankenGroteskLight',sans-serif !important;
@@ -336,7 +338,7 @@ footer.nav-footer .sitemap h5 {
   letter-spacing: normal;
   color: #2d4051;
 }
-.mainContainer .wrapper .post h2 {
+.mainContainer .wrapper .post h2, .mainContainer .wrapper .post h1 {
   font-family: 'HankenGroteskLight',sans-serif !important;
   font-size: 38px;
   font-weight: 300;
@@ -409,5 +411,18 @@ nav.toc .toggleNav .navGroup h3 {
   color: #2d4051;
   font-size: 24px;
   padding-top: 10px;
+}
+.button {
+  font-family: 'HankenGroteskRegular', sans-serif !important;
+  margin: 4px 0 !important;
+  padding: 15px 0;
+  border: 0px solid transparent;
+  border-radius: 3px;
+  color: #00c2e8;
+  font-weight: bold !important;
+}
 
+.button:hover {
+  background: transparent;
+  color: #02a2c1;
 }
