@@ -464,6 +464,9 @@ nav.toc .toggleNav .navGroup h3 {
   padding: 0 30px;
   outline: 0;
 }
+.secondary-navbar a:hover {
+  opacity: 0.5;
+}
 .secondary-item {
   text-align: center;
   cursor: pointer;

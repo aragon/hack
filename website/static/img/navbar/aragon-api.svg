@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="67px" height="77px" viewBox="0 0 67 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>5AF07746-E914-4F54-BF57-605F7CF26226</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="3.74939946e-31%" id="linearGradient-1">
+            <stop stop-color="#FFCF71" offset="0%"></stop>
+            <stop stop-color="#24CFDD" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-10.8%" y="-11.7%" width="121.6%" height="123.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="0.6" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-10.8%" y="-11.7%" width="121.6%" height="123.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="0.6" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Developers@2x" transform="translate(-686.000000, -74.000000)">
+            <g id="Group-32" transform="translate(0.000000, 58.000000)">
+                <g id="Group-15">
+                    <g id="Group-18">
+                        <g id="ARAGON-API" transform="translate(670.000000, 16.000000)">
+                            <text id="aragonAPI" font-family="HKGrotesk-Regular, HK Grotesk" font-size="15" font-weight="normal" fill="#FFFFFF">
+                                <tspan x="16.1883645" y="73">aragonAPI</tspan>
+                            </text>
+                            <circle id="Oval-Copy-5" fill="url(#linearGradient-1)" cx="50" cy="25" r="25"></circle>
+                            <g id="009-abstract-3" transform="translate(37.000000, 12.000000)" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="0.6">
+                                <path d="M16.9634146,0 L6.49365854,0 L6.49365854,2.16465854 L16.9634146,2.16465854 C20.7450195,2.16465854 23.8099756,5.23094634 23.8099756,9.01223415 C23.8099756,12.7931415 20.7452732,15.8578439 16.9634146,15.8578439 L6.49365854,15.8578439 L6.49365854,18.0225024 L16.9634146,18.0225024 C21.9404488,18.0225024 25.9746341,13.9883171 25.9746341,9.01223415 C25.9746341,4.03545366 21.9404488,0 16.9634146,0 Z" id="Path"></path>
+                                <path d="M9.01121951,10.1167902 L19.4809756,10.1167902 L19.4809756,7.95213171 L9.01121951,7.95213171 C4.03418537,7.95213171 0,11.9863171 0,16.9624 C0,21.9391805 4.03418537,25.9746341 9.01121951,25.9746341 L19.4809756,25.9746341 L19.4809756,23.8099756 L9.01121951,23.8099756 C5.22961463,23.8099756 2.16465854,20.7429902 2.16465854,16.9624 C2.16465854,13.1814927 5.22936098,10.1167902 9.01121951,10.1167902 Z" id="Path"></path>
+                                <path d="M16.9634146,0 L6.49365854,0 L6.49365854,2.16465854 L16.9634146,2.16465854 C20.7450195,2.16465854 23.8099756,5.23094634 23.8099756,9.01223415 C23.8099756,12.7931415 20.7452732,15.8578439 16.9634146,15.8578439 L6.49365854,15.8578439 L6.49365854,18.0225024 L16.9634146,18.0225024 C21.9404488,18.0225024 25.9746341,13.9883171 25.9746341,9.01223415 C25.9746341,4.03545366 21.9404488,0 16.9634146,0 Z" id="Path-Copy-7" filter="url(#filter-2)"></path>
+                                <path d="M9.01121951,10.1167902 L19.4809756,10.1167902 L19.4809756,7.95213171 L9.01121951,7.95213171 C4.03418537,7.95213171 0,11.9863171 0,16.9624 C0,21.9391805 4.03418537,25.9746341 9.01121951,25.9746341 L19.4809756,25.9746341 L19.4809756,23.8099756 L9.01121951,23.8099756 C5.22961463,23.8099756 2.16465854,20.7429902 2.16465854,16.9624 C2.16465854,13.1814927 5.22936098,10.1167902 9.01121951,10.1167902 Z" id="Path-Copy-4" filter="url(#filter-3)"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

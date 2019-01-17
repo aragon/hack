@@ -294,25 +294,20 @@ const UseCaseCard = styled.div`
 const SecondaryNavbar = props => (
   <div class="secondary-navbar">
     <div class="secondary-container">
-      <a class="secondary-item" href="https://aragon.org/project/governance">
-        <img src={imgUrl('nav-cli.svg')} />
-        <h6>aragon SDK</h6>
+      <a class="secondary-item" href="http://localhost:3000/docs/cli-usage">
+        <img src={imgUrl('navbar/aragon-cli.svg')} />
       </a>
-      <a class="secondary-item" href="https://aragon.org/project/grants">
-        <img src={imgUrl('nav-os.svg')} />
-        <h6>aragon OS</h6>
+      <a class="secondary-item" href="http://localhost:3000/docs/aragonos-intro">
+        <img src={imgUrl('navbar/aragon-os.svg')} />
       </a>
-      <a class="secondary-item" href="https://aragon.org/project/contribute">
-        <img src={imgUrl('nav-api.svg')} />
-        <h6>aragon API</h6>
+      <a class="secondary-item" href="http://localhost:3000/docs/aragonjs-intro">
+        <img src={imgUrl('navbar/aragon-api.svg')} />
       </a>
-      <a class="secondary-item" href="https://blog.aragon.org/" target="_blank">
-        <img src={imgUrl('nav-ui.svg')} />
-        <h6>aragon UI</h6>
+      <a class="secondary-item" href="http://localhost:3000/docs/aragonui-intro/">
+        <img src={imgUrl('navbar/aragon-ui.svg')} />
       </a>
-      <a class="secondary-item" href="https://aracon.one/" target="_blank">
-        <img src={imgUrl('nav-cli.svg')} />
-        <h6>aragon CLI</h6>
+      <a class="secondary-item" href="http://localhost:3000/docs/cli-usage">
+        <img src={imgUrl('navbar/aragon-cli.svg')} />
       </a>
     </div>
   </div>
