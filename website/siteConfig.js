@@ -81,7 +81,7 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/isotype.svg',
+  headerIcon: 'img/navbar-logo.svg',
   footerIcon: 'img/footer.svg',
   favicon: 'img/favicon.png',
   os: 'img/os.svg',

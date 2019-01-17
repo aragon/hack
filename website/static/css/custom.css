@@ -406,7 +406,7 @@ nav.toc .toggleNav .navGroup h3 {
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1;
+  line-height: 2;
   letter-spacing: normal;
   color: #2d4051;
   font-size: 24px;
@@ -425,4 +425,81 @@ nav.toc .toggleNav .navGroup h3 {
 .button:hover {
   background: transparent;
   color: #02a2c1;
+}
+
+/* Secondary navbar
+/* ---------------------------------------------------------- */
+.secondary-navbar {
+  height: 107px;
+  background-color: #2d2e38;
+  margin-top: 14px;
+}
+.secondary-navbar h6 {
+  margin-top: 9px!important;
+  font-size: 15px;
+  line-height: 22px;
+  color: white;
+  font-weight: 400;
+}
+.secondary-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  color: white;
+  height: 107px;
+}
+.secondary-navbar svg {
+  width: 40px;
+}
+.secondary-navbar a {
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  outline: 0;
+}
+.secondary-item {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+}
+.secondary-item.active h6 {
+  color: #22e0ff;
+}
+.secondary-item.active svg .white {
+  fill: #22e0ff;
+}
+.secondary-item:hover h6 {
+    color: #22e0ff;
+    transition: all 0.25s ease-in-out;
+}
+.secondary-navbar a:hover .white {
+  fill: #22e0ff;
+  transition: all 0.25s ease-in-out;
+}
+.white:hover {
+  fill: #22e0ff;
+}
+
+
+@media (max-width: 745px) {
+  .secondary-navbar, .secondary-container {
+    height: 67px;
+  }
+  .secondary-navbar svg {
+    width: 25px;
+  }
+  .secondary-navbar a {
+    padding: 0 10px;
+  }
+  .secondary-item h6 {
+    display: none;
+  }
 }

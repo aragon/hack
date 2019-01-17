@@ -291,6 +291,33 @@ const UseCaseCard = styled.div`
 
 `
 
+const SecondaryNavbar = props => (
+  <div class="secondary-navbar">
+    <div class="secondary-container">
+      <a class="secondary-item" href="https://aragon.org/project/governance">
+        <img src={imgUrl('nav-cli.svg')} />
+        <h6>aragon SDK</h6>
+      </a>
+      <a class="secondary-item" href="https://aragon.org/project/grants">
+        <img src={imgUrl('nav-os.svg')} />
+        <h6>aragon OS</h6>
+      </a>
+      <a class="secondary-item" href="https://aragon.org/project/contribute">
+        <img src={imgUrl('nav-api.svg')} />
+        <h6>aragon API</h6>
+      </a>
+      <a class="secondary-item" href="https://blog.aragon.org/" target="_blank">
+        <img src={imgUrl('nav-ui.svg')} />
+        <h6>aragon UI</h6>
+      </a>
+      <a class="secondary-item" href="https://aracon.one/" target="_blank">
+        <img src={imgUrl('nav-cli.svg')} />
+        <h6>aragon CLI</h6>
+      </a>
+    </div>
+  </div>
+);
+
 const UseCases = props => (
   <UseCasesContainer className="grey-section">
     <UseCaseCard className="for-daos">
@@ -381,6 +408,7 @@ class Index extends React.Component {
 
     return (
       <IndexContainer className="home-section">
+        <SecondaryNavbar />
         <HomeSplash />
         <MainContainer className="mainContainer">
           <Hero />
@@ -392,7 +420,6 @@ class Index extends React.Component {
     )
   }
 }
-
 
 const IndexContainer = styled.div`
   .white-section {
