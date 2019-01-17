@@ -2,7 +2,10 @@
 id: aragonui-intro
 title: aragonUI intro
 sidebar_label: Introduction
+hide_title: true
 ---
+
+![](/docs/assets/brand/aragonui.png)
 
 **aragonUI** is an Aragon-native toolkit of UI components for decentralized apps. It follows the [Aragon client](client.md) design language and will make your app appear as a seamless part of the Aragon ecosystem. Using the aragonUI for your app, however, is not mandatory.
 
