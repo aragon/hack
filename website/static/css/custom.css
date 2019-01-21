@@ -49,6 +49,7 @@ body {
   line-height: 1;
   letter-spacing: normal;
   color: #ffffff;
+  margin-top: 0!important;
 }
 .homeContainer h2.projectTitle small {
   font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
@@ -161,6 +162,9 @@ footer.nav-footer .sitemap .nav-home, footer.nav-footer .sitemap .nav-home img{
   opacity: 1;
   width: auto;
 }
+footer.nav-footer .sitemap .nav-home img {
+  height: 200px;
+}
 @media only screen and (max-width: 735px) {
   footer.nav-footer .sitemap .nav-home, footer.nav-footer .sitemap .nav-home img {
       opacity: 1;
@@ -194,6 +198,7 @@ footer.nav-footer .sitemap h5 {
   line-height: 1.75;
   letter-spacing: 0.1px;
   color: #ffffff;
+  margin-top: 0!important;
 }
 
 @media
@@ -377,6 +382,7 @@ hr {
   letter-spacing: -0.1px;
   color: #2d4051;
   font-size: 14px;
+  padding: 0 10px;
 }
 
 .onPageNav a:hover {
@@ -476,9 +482,6 @@ nav.toc .toggleNav .navGroup h3 {
 .secondary-item.active h6 {
   color: #22e0ff;
 }
-.secondary-item.active svg .white {
-  fill: #22e0ff;
-}
 .secondary-item:hover h6 {
     color: #22e0ff;
     transition: all 0.25s ease-in-out;
@@ -496,13 +499,13 @@ nav.toc .toggleNav .navGroup h3 {
   .secondary-navbar, .secondary-container {
     height: 67px;
   }
-  .secondary-navbar svg {
-    width: 25px;
-  }
   .secondary-navbar a {
     padding: 0 10px;
   }
   .secondary-item h6 {
     display: none;
+  }
+  .secondary-navbar img {
+    width: 45px;
   }
 }

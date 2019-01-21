@@ -136,19 +136,19 @@ const GetStartedButton = ({ href }) => (
 const BuildingBlocks = props => (
   <BuildingBlocksContainer className="white-section">
     <BlocksCards
-      title="AragonOS"
+      title="aragonOS"
       text={<p>Solidity framework for governance</p>}
       actionButton={() => <GetStartedButton href={docUrl('aragonos-intro')}/>}
       icon={() => <img src={siteConfig.baseUrl + siteConfig.os} />}
     />
     <BlocksCards
-      title="AragonAPI"
+      title="aragonAPI"
       text={<p>Easily interact with your dapp's state</p>}
       actionButton={() => <GetStartedButton href={docUrl('aragonjs-intro')}/>}
       icon={() => <img src={siteConfig.baseUrl + siteConfig.api} />}
     />
     <BlocksCards
-      title="AragonUI"
+      title="aragonUI"
       text={<p>Create a beautiful UI for your dapp</p>}
       actionButton={() => <GetStartedButton href={docUrl('aragonui-intro')}/>}
       icon={() => <img src={siteConfig.baseUrl + siteConfig.ui} />}
@@ -294,8 +294,8 @@ const UseCaseCard = styled.div`
 const SecondaryNavbar = props => (
   <div class="secondary-navbar">
     <div class="secondary-container">
-      <a class="secondary-item" href="http://localhost:3000/docs/cli-usage">
-        <img src={imgUrl('navbar/aragon-cli.svg')} />
+      <a class="secondary-item" href="http://localhost:3000">
+        <img src={imgUrl('navbar/aragon-sdk.svg')} />
       </a>
       <a class="secondary-item" href="http://localhost:3000/docs/aragonos-intro">
         <img src={imgUrl('navbar/aragon-os.svg')} />
