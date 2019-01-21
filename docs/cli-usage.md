@@ -378,3 +378,20 @@ The workaround is to switch to a different network (e.g. Rinkeby) and then switc
 The aragonCLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon client.
 
 In case the client is not loading properly, deleting the `~/.aragon` directory will make `aragon run` recreate the environment the next time it is used and may solve the issue.
+
+---
+### Issues propagating your content hash to IPFS
+When publishing a package via `aragon apm publish`, you will get returned an ipfs content hash. For Aragon to work with the default IPFS gateway stored in the DAO's settings, this hash needs to be accessible at:
+
+`https://ipfs.eth.aragon.network/ipfs/<hash>`
+
+If you are running into issues with your hash being propagated to this URL, try the following steps.
+
+1. If you have `aragon ipfs` running, quite that daemon.
+2. Run the command `ipfs daemon --enable-namesys-pubsub`
+3. Request your hash at the following gateways and see if data is loading:
+  * `http://ipfs.infura.io/ipfs/<hash>`
+  * `http://ipfs.io/ipfs/`
+  * Feel free to [check this list](https://discuss.ipfs.io/t/curated-list-of-ipfs-gateways/620) for additional gateways if you are having trouble with propagating.
+4. Once successful with step 3, request your hash at the Aragon gateway to double check it has propagated:
+  * `https://ipfs.eth.aragon.network/ipfs/<hash>`
