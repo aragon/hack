@@ -387,7 +387,7 @@ When publishing a package via `aragon apm publish`, you will get returned an ipf
 
 If you are running into issues with your hash being propagated to this URL, try the following steps.
 
-1. If you have `aragon ipfs` running, quite that daemon.
+1. If you have `aragon ipfs` running, quit that daemon.
 2. Run the command `ipfs daemon --enable-namesys-pubsub`
 3. Request your hash at the following gateways and see if data is loading:
   * `http://ipfs.infura.io/ipfs/<hash>`
