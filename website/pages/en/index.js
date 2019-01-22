@@ -291,22 +291,23 @@ const UseCaseCard = styled.div`
 
 `
 
+
 const SecondaryNavbar = props => (
-  <div class="secondary-navbar">
-    <div class="secondary-container">
-      <a class="secondary-item" href="http://localhost:3000">
-        <img src={imgUrl('navbar/aragon-sdk.svg')} />
+  <div className="secondary-navbar">
+    <div className="secondary-container">
+      <a className="secondary-item" href={docUrl('apm')} >
+        <img src={imgUrl('navbar/aragon-pm.svg')} />
       </a>
-      <a class="secondary-item" href="http://localhost:3000/docs/aragonos-intro">
+      <a className="secondary-item" href={docUrl('aragonos-intro')} >
         <img src={imgUrl('navbar/aragon-os.svg')} />
       </a>
-      <a class="secondary-item" href="http://localhost:3000/docs/aragonjs-intro">
+      <a className="secondary-item" href={docUrl('aragonjs-intro')} >
         <img src={imgUrl('navbar/aragon-api.svg')} />
       </a>
-      <a class="secondary-item" href="http://localhost:3000/docs/aragonui-intro/">
+      <a className="secondary-item" href={docUrl('aragonui-intro')} >
         <img src={imgUrl('navbar/aragon-ui.svg')} />
       </a>
-      <a class="secondary-item" href="http://localhost:3000/docs/cli-usage">
+      <a className="secondary-item" href={docUrl('cli-usage')} >
         <img src={imgUrl('navbar/aragon-cli.svg')} />
       </a>
     </div>
@@ -316,7 +317,7 @@ const SecondaryNavbar = props => (
 const UseCases = props => (
   <UseCasesContainer className="grey-section">
     <UseCaseCard className="for-daos">
-      <div class="for-daos-img-div "><img src={imgUrl('for-daos.svg')} /></div>
+      <div className="for-daos-img-div "><img src={imgUrl('for-daos.svg')} /></div>
       <div>
       <h2 className="light">For DAOs</h2>
       <p>You can create organizations that let entities (users, smart contracts) interact with each other and create rich <b>governance mechanisms</b> by using the <a href="/docs/acl-intro.html">Access Control List</a>.</p>
