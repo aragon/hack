@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="981px" height="439px" viewBox="0 0 981 439" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 42</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#E6E9F0" offset="0%"></stop>
+            <stop stop-color="#EEF1F5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="3.74939946e-31%" id="linearGradient-2">
+            <stop stop-color="#FFCF71" offset="0%"></stop>
+            <stop stop-color="#24CFDD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-111.156839%" y1="149.595156%" x2="100%" y2="3.74939946e-31%" id="linearGradient-3">
+            <stop stop-color="#FFCF71" offset="0%"></stop>
+            <stop stop-color="#24CFDD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Developers@2x" transform="translate(-200.000000, -2399.000000)">
+            <g id="Group-9-Copy-2" transform="translate(165.000000, 2399.000000)">
+                <g id="right-copy">
+                    <g id="Group-42" transform="translate(0.000000, -108.000000)">
+                        <polygon id="top-copy-2" fill="url(#linearGradient-1)" points="895.710678 69 966.421356 109.832927 895.710678 150.665854 825 109.832927"></polygon>
+                        <polygon id="right-copy" fill="url(#linearGradient-2)" points="944.355339 514.237244 1015.07303 473.416463 1015.08004 555.07017 944.362352 595.890951"></polygon>
+                        <polygon id="right-copy-2" fill="url(#linearGradient-2)" transform="translate(70.717691, 81.653707) rotate(-60.000000) translate(-70.717691, -81.653707) " points="70.717691 40.8207802 141.428369 81.653707 70.717691 122.486634 0.00701286113 81.653707"></polygon>
+                        <polygon id="top" fill="url(#linearGradient-1)" points="233.710678 252 304.421356 292.832927 233.710678 333.665854 163 292.832927"></polygon>
+                        <polygon id="left" fill="url(#linearGradient-3)" transform="translate(198.717691, 353.653707) rotate(60.000000) translate(-198.717691, -353.653707) " points="198.717691 312.82078 269.428369 353.653707 198.717691 394.486634 128.007013 353.653707"></polygon>
+                        <polygon id="right" fill="url(#linearGradient-2)" points="233.355339 333.237244 304.07303 292.416463 304.080043 374.07017 233.362352 414.890951"></polygon>
+                        <polygon id="top" fill="url(#linearGradient-1)" points="233.710678 156 304.421356 196.832927 233.710678 237.665854 163 196.832927"></polygon>
+                        <polygon id="top-copy" fill="url(#linearGradient-1)" points="233.710678 429 304.421356 469.832927 233.710678 510.665854 163 469.832927"></polygon>
+                        <polygon id="right" fill="url(#linearGradient-2)" points="329.355339 333.237244 400.07303 292.416463 400.080043 374.07017 329.362352 414.890951"></polygon>
+                        <polygon id="left" fill="url(#linearGradient-2)" transform="translate(106.717691, 353.653707) rotate(60.000000) translate(-106.717691, -353.653707) " points="106.717691 312.82078 177.428369 353.653707 106.717691 394.486634 36.0070129 353.653707"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

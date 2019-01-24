@@ -1,3 +1,6 @@
+body {
+  font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
+}
 /* your custom css */
 .headerTitleWithLogo {
   white-space: nowrap;
@@ -13,15 +16,17 @@
 }
 
 .homeContainer {
-  background-image: url(/img/landing.svg);
-  background-color: #EFF5F9;
+  background-color: #17181d;
   background-size: cover;
   background-position: center 20%;
   text-align: left !important;
 }
 
 .homeContainer .homeWrapper {
-  padding: 10em 1.5em !important;
+  padding: 80px 5% !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .promoSection {
@@ -35,8 +40,39 @@
   max-height: 200px !important;
 }
 
-.projectTitle small {
-  color: #1AB8CF !important;
+.homeContainer h2.projectTitle {
+  font-family: 'HankenGroteskLight', 'HankenGroteskRegular', 'Overpass', sans-serif!important;
+  font-size: 52px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-top: 0!important;
+}
+.homeContainer h2.projectTitle small {
+  font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.36;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+a.take-tutorial {
+  font-size: 17px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  background-image: linear-gradient(83deg, #00dbe2, #01bfe3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .navigationSlider .slidingNav ul li.siteNavItemActive a {
@@ -88,8 +124,9 @@ blockquote, pre {
 }
 
 blockquote {
-  border-left: 5px solid #ffe563;
-  background-color: #fff7d2;
+  border-left: 7px solid #ffc668;
+  background-color: #fef5e7;
+  border-radius: 5px;
 }
 
 blockquote p {
@@ -116,17 +153,59 @@ input#search_input_react::placeholder {
   color: #3b3b3b !important;
 }
 
+/* Footer */
 #footer {
-  background-image: url(/img/footerbg.svg);
-  background-color: #353535 !important;
+  background-color: #262831;
   box-shadow: none !important;
 }
+footer.nav-footer .sitemap .nav-home, footer.nav-footer .sitemap .nav-home img{
+  opacity: 1;
+  width: auto;
+}
+footer.nav-footer .sitemap .nav-home img {
+  height: 200px;
+}
+@media only screen and (max-width: 735px) {
+  footer.nav-footer .sitemap .nav-home, footer.nav-footer .sitemap .nav-home img {
+      opacity: 1;
+      width: 120px;
+      padding: 10px 0;
+  }
+  footer.nav-footer .sitemap h5 {
+    margin-top: 30px;
+  }
+}
 
-@media 
-  (-webkit-min-device-pixel-ratio: 2), 
-  (min-resolution: 192dpi) { 
+footer.nav-footer .sitemap div {
+  flex: none;
+  min-width: 158px;
+}
+footer.nav-footer .sitemap a {
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.75;
+  letter-spacing: 0.1px;
+  color: #ffffff;
+  font-size: 16px;
+}
+footer.nav-footer .sitemap h5 {
+  opacity: 0.39;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.75;
+  letter-spacing: 0.1px;
+  color: #ffffff;
+  margin-top: 0!important;
+}
+
+@media
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
   .homeContainer {
-    background-image: url(/img/landing@2x.svg);
+    background-color: #17181d;
   }
 }
 
@@ -195,5 +274,238 @@ input#search_input_react::placeholder {
   }
 }
 
-@media only screen and (min-width: 1500px) {
+/* Use Cases */
+.crypto-protocol {
+  background-image: url(/img/crypto-protocols.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.for-dapps {
+  background-image: url(/img/for-dapps.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.for-daos {
+  align-items: center;
+}
+.for-daos-img-div {
+  width: calc(100% - 500px);
+}
+.for-daos-img-div img {
+  padding: 0 10%;
+}
+
+@media only screen and (max-width: 842px) {
+  .crypto-protocol, .for-dapps {
+    background-image: none;
+    align-items: flex-start !important;
+  }
+  .for-daos-img-div {
+    display: none;
+  }
+}
+
+/* Home */
+@media only screen and (max-width: 976px) {
+  .home-logo {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+.productShowcaseSection .logos img {
+    max-height: 74px !important;
+    width: 74px !important;
+    padding: 10px !important;
+  }
+}
+
+/* Docs */
+.mainContainer .wrapper .post .postHeader h1 {
+  font-family: 'HankenGroteskRegular', sans-serif !important;
+  font-size: 38px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: #2d4051;
+  border-top: solid 0px transparent;
+}
+.mainContainer .wrapper .post h3 {
+  font-family: 'HankenGroteskLight',sans-serif !important;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #2d4051;
+}
+.mainContainer .wrapper .post h2, .mainContainer .wrapper .post h1 {
+  font-family: 'HankenGroteskLight',sans-serif !important;
+  font-size: 38px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.63;
+  letter-spacing: normal;
+  border-top: solid 0.5px #979797d1;
+  color: #2d4051;
+}
+hr {
+  opacity: 0.17;
+  border: solid 0.5px #979797;
+}
+
+.mainContainer, .docMainWrapper.wrapper, .navPusher {
+  background: white;
+}
+.mainContainer .wrapper p, .blockElement p, .mainContainer .wrapper ul li, .mainContainer .wrapper ol li {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.7;
+  letter-spacing: 0.1px;
+  color: #363641;
+}
+.onPageNav > ul {
+  border-left: 3px solid #01bfe3;
+}
+.onPageNav a {
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.57;
+  letter-spacing: -0.1px;
+  color: #2d4051;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.onPageNav a:hover {
+  color: #000000;
+}
+
+nav.toc .toggleNav ul {
+  padding-left: 0;
+}
+
+nav.toc .toggleNav ul li a {
+  font-family: 'HankenGroteskRegular', sans-serif !important;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+  color: #7f8198;
+  font-size: 16px;
+}
+nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus, nav.toc .toggleNav ul li a.navItemActive {
+  color: #01c3e3;
+}
+
+nav.toc .toggleNav .navGroup h3 {
+  font-family: 'HankenGroteskLight',sans-serif !important;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  color: #2d4051;
+  font-size: 24px;
+  padding-top: 10px;
+}
+.button {
+  font-family: 'HankenGroteskRegular', sans-serif !important;
+  margin: 4px 0 !important;
+  padding: 15px 0;
+  border: 0px solid transparent;
+  border-radius: 3px;
+  color: #00c2e8;
+  font-weight: bold !important;
+}
+
+.button:hover {
+  background: transparent;
+  color: #02a2c1;
+}
+
+/* Secondary navbar
+/* ---------------------------------------------------------- */
+.secondary-navbar {
+  height: 107px;
+  background-color: #2d2e38;
+  margin-top: 13px;
+}
+.secondary-navbar h6 {
+  margin-top: 9px!important;
+  font-size: 15px;
+  line-height: 22px;
+  color: white;
+  font-weight: 400;
+}
+.secondary-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  color: white;
+  height: 107px;
+}
+.secondary-navbar svg {
+  width: 40px;
+}
+.secondary-navbar a {
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  outline: 0;
+}
+.secondary-navbar a:hover {
+  opacity: 0.5;
+}
+.secondary-item {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+}
+.secondary-item.active h6 {
+  color: #22e0ff;
+}
+.secondary-item:hover h6 {
+    color: #22e0ff;
+    transition: all 0.25s ease-in-out;
+}
+.secondary-navbar a:hover .white {
+  fill: #22e0ff;
+  transition: all 0.25s ease-in-out;
+}
+.white:hover {
+  fill: #22e0ff;
+}
+
+
+@media (max-width: 745px) {
+  .secondary-navbar, .secondary-container {
+    height: 67px;
+  }
+  .secondary-navbar a {
+    padding: 0 10px;
+  }
+  .secondary-item h6 {
+    display: none;
+  }
+  .secondary-navbar img {
+    width: 45px;
+  }
 }
