@@ -297,18 +297,23 @@ const SecondaryNavbar = props => (
     <div className="secondary-container">
       <a className="secondary-item" href={docUrl('apm')} >
         <img src={imgUrl('navbar/aragon-pm.svg')} />
+        <h6>aragonPM</h6>
       </a>
       <a className="secondary-item" href={docUrl('aragonos-intro')} >
         <img src={imgUrl('navbar/aragon-os.svg')} />
+        <h6>aragonOS</h6>
       </a>
       <a className="secondary-item" href={docUrl('aragonjs-intro')} >
         <img src={imgUrl('navbar/aragon-api.svg')} />
+        <h6>aragonAPI</h6>
       </a>
       <a className="secondary-item" href={docUrl('aragonui-intro')} >
         <img src={imgUrl('navbar/aragon-ui.svg')} />
+        <h6>aragonUI</h6>
       </a>
       <a className="secondary-item" href={docUrl('cli-usage')} >
         <img src={imgUrl('navbar/aragon-cli.svg')} />
+        <h6>aragonCLI</h6>
       </a>
     </div>
   </div>

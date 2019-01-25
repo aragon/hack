@@ -479,13 +479,7 @@ nav.toc .toggleNav .navGroup h3 {
   text-decoration: none;
   font-size: 15px;
 }
-.secondary-item.active h6 {
-  color: #22e0ff;
-}
-.secondary-item:hover h6 {
-    color: #22e0ff;
-    transition: all 0.25s ease-in-out;
-}
+
 .secondary-navbar a:hover .white {
   fill: #22e0ff;
   transition: all 0.25s ease-in-out;

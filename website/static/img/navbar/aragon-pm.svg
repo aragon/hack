@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="66px" height="77px" viewBox="0 0 66 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 66</title>
+    <title>Group 69</title>
     <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="141.870777%" y1="-9.69460227%" x2="0%" y2="100%" id="linearGradient-1">
@@ -20,24 +20,23 @@
         </filter>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Developers@2x" transform="translate(-310.000000, -74.000000)">
+        <g id="Developers@2x" transform="translate(-320.000000, -74.000000)">
             <g id="Group-32" transform="translate(0.000000, 58.000000)">
                 <g id="Group-15">
                     <g id="Group-18">
                         <g id="ARAGON-SDK" transform="translate(294.000000, 16.000000)">
                             <g id="Group-65">
                                 <g id="Group-66">
-                                    <text id="aragonPM" font-family="HKGrotesk-Regular, HK Grotesk" font-size="15" font-weight="normal" fill="#FFFFFF">
-                                        <tspan x="15.7756348" y="73">aragonPM</tspan>
-                                    </text>
-                                    <g id="Group-47" transform="translate(26.000000, 0.000000)" fill="url(#linearGradient-1)">
-                                        <circle id="Oval" cx="25" cy="25" r="25"></circle>
-                                    </g>
-                                    <g id="012-abstract" transform="translate(39.000000, 11.000000)" fill-rule="nonzero">
-                                        <polygon id="Path" stroke="#FFFFFF" stroke-width="0.620400012" points="11.9989955 0 0 7 0 21 2.28582589 22.3331445 2.28582589 8.35344727 11.9989955 2.68761719 21.7145089 8.35344727 21.7145089 19.6455273 11.9989955 25.3123828 6.85714286 22.3125 6.85714286 11.0613672 11.9989955 8.06189453 17.1428571 11.0613672 17.1428571 16.9371973 11.9989955 19.9370801 11.4287946 19.6045801 11.4287946 13.7700391 14.3026339 12.0928418 11.9989955 10.7495801 9.14296875 12.4165918 9.14296875 20.9580273 11.9989955 22.6246973 19.428683 18.2906445 19.428683 9.70791992 11.9989955 5.37530273 4.57165179 9.70791992 4.57165179 23.6659473 11.9989955 28 24 21 24 7"></polygon>
-                                        <g id="Path-Copy-8">
-                                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
-                                            <use stroke="#FFFFFF" stroke-width="0.620400012" xlink:href="#path-2"></use>
+                                    <g id="Group-47" transform="translate(26.000000, 0.000000)">
+                                        <g id="Group-69">
+                                            <circle id="Oval" fill="url(#linearGradient-1)" cx="25" cy="25" r="25"></circle>
+                                            <g id="012-abstract" transform="translate(13.000000, 11.000000)" fill-rule="nonzero">
+                                                <polygon id="Path" stroke="#FFFFFF" stroke-width="0.620400012" points="11.9989955 0 0 7 0 21 2.28582589 22.3331445 2.28582589 8.35344727 11.9989955 2.68761719 21.7145089 8.35344727 21.7145089 19.6455273 11.9989955 25.3123828 6.85714286 22.3125 6.85714286 11.0613672 11.9989955 8.06189453 17.1428571 11.0613672 17.1428571 16.9371973 11.9989955 19.9370801 11.4287946 19.6045801 11.4287946 13.7700391 14.3026339 12.0928418 11.9989955 10.7495801 9.14296875 12.4165918 9.14296875 20.9580273 11.9989955 22.6246973 19.428683 18.2906445 19.428683 9.70791992 11.9989955 5.37530273 4.57165179 9.70791992 4.57165179 23.6659473 11.9989955 28 24 21 24 7"></polygon>
+                                                <g id="Path-Copy-8">
+                                                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                                                    <use stroke="#FFFFFF" stroke-width="0.620400012" xlink:href="#path-2"></use>
+                                                </g>
+                                            </g>
                                         </g>
                                     </g>
                                 </g>

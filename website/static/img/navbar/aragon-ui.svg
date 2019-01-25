@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="59px" height="77px" viewBox="0 0 59 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
-    <title>D71BBC99-EE8F-4396-8392-674207682E71</title>
-    <desc>Created with sketchtool.</desc>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 72</title>
+    <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="0%" y1="100%" x2="100%" y2="3.74939946e-31%" id="linearGradient-1">
             <stop stop-color="#F19F73" offset="0%"></stop>
             <stop stop-color="#A74EB5" offset="100%"></stop>
         </linearGradient>
-        <filter x="-7.8%" y="-7.8%" width="115.6%" height="117.1%" filterUnits="objectBoundingBox" id="filter-2">
-            <feGaussianBlur stdDeviation="0.6" in="SourceGraphic"></feGaussianBlur>
+        <path d="M16.4988472,0 C10.2848262,0 5.24862748,5.0371875 5.24862748,11.2498901 L0.748737342,11.2498901 L0.748737342,27 L8.54366898,19.2050684 C10.5794795,21.2408789 13.3918697,22.5001099 16.4988472,22.5001099 C22.7115498,22.5001099 27.7487373,17.4625928 27.7487373,11.2498901 C27.7487373,5.0371875 22.7115498,0 16.4988472,0 Z M2.9988472,21.5682935 L2.9988472,13.5 L11.0671407,13.5 L2.9988472,21.5682935 Z M16.4988472,20.25 C14.0178926,20.25 11.7677828,19.2405322 10.1376314,17.611106 L16.4988472,11.2498901 L7.49873734,11.2498901 C7.49873734,6.28765137 11.5362788,2.24978027 16.4988472,2.24978027 C21.461086,2.24978027 25.4986275,6.28732178 25.4986275,11.2498901 C25.4986275,16.2124585 21.461086,20.25 16.4988472,20.25 Z" id="path-2"></path>
+        <filter x="-17.8%" y="-17.8%" width="135.6%" height="137.1%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="0.3" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Developers@2x" transform="translate(-877.000000, -74.000000)">
+        <g id="Developers@2x" transform="translate(-882.000000, -74.000000)">
             <g id="Group-32" transform="translate(0.000000, 58.000000)">
                 <g id="Group-15">
                     <g id="Group-18">
                         <g id="aragon-UI" transform="translate(863.000000, 16.000000)">
-                            <text id="aragonUI" font-family="HKGrotesk-Regular, HK Grotesk" font-size="15" font-weight="normal" fill="#FFFFFF">
-                                <tspan x="14.2947338" y="73">aragonUI</tspan>
-                            </text>
-                            <circle id="Oval-Copy-6" fill="url(#linearGradient-1)" cx="44" cy="25" r="25"></circle>
-                            <g id="004-abstract-8" transform="translate(44.324116, 25.324116) rotate(45.000000) translate(-44.324116, -25.324116) translate(30.324116, 11.824116)" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="0.6">
-                                <path d="M16.4988472,0 C10.2848262,0 5.24862748,5.0371875 5.24862748,11.2498901 L0.748737342,11.2498901 L0.748737342,27 L8.54366898,19.2050684 C10.5794795,21.2408789 13.3918697,22.5001099 16.4988472,22.5001099 C22.7115498,22.5001099 27.7487373,17.4625928 27.7487373,11.2498901 C27.7487373,5.0371875 22.7115498,0 16.4988472,0 Z M2.9988472,21.5682935 L2.9988472,13.5 L11.0671407,13.5 L2.9988472,21.5682935 Z M16.4988472,20.25 C14.0178926,20.25 11.7677828,19.2405322 10.1376314,17.611106 L16.4988472,11.2498901 L7.49873734,11.2498901 C7.49873734,6.28765137 11.5362788,2.24978027 16.4988472,2.24978027 C21.461086,2.24978027 25.4986275,6.28732178 25.4986275,11.2498901 C25.4986275,16.2124585 21.461086,20.25 16.4988472,20.25 Z" id="Shape"></path>
-                                <path d="M16.4988472,0 C10.2848262,0 5.24862748,5.0371875 5.24862748,11.2498901 L0.748737342,11.2498901 L0.748737342,27 L8.54366898,19.2050684 C10.5794795,21.2408789 13.3918697,22.5001099 16.4988472,22.5001099 C22.7115498,22.5001099 27.7487373,17.4625928 27.7487373,11.2498901 C27.7487373,5.0371875 22.7115498,0 16.4988472,0 Z M2.9988472,21.5682935 L2.9988472,13.5 L11.0671407,13.5 L2.9988472,21.5682935 Z M16.4988472,20.25 C14.0178926,20.25 11.7677828,19.2405322 10.1376314,17.611106 L16.4988472,11.2498901 L7.49873734,11.2498901 C7.49873734,6.28765137 11.5362788,2.24978027 16.4988472,2.24978027 C21.461086,2.24978027 25.4986275,6.28732178 25.4986275,11.2498901 C25.4986275,16.2124585 21.461086,20.25 16.4988472,20.25 Z" id="Shape-Copy-2" filter="url(#filter-2)"></path>
+                            <g id="Group-72" transform="translate(19.000000, 0.000000)">
+                                <circle id="Oval-Copy-6" fill="url(#linearGradient-1)" cx="25" cy="25" r="25"></circle>
+                                <g id="004-abstract-8" transform="translate(25.324116, 25.324116) rotate(45.000000) translate(-25.324116, -25.324116) translate(11.324116, 11.824116)" fill-rule="nonzero">
+                                    <g id="Shape">
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                                        <use stroke="#FFFFFF" stroke-width="0.6" xlink:href="#path-2"></use>
+                                    </g>
+                                </g>
                             </g>
                         </g>
                     </g>
