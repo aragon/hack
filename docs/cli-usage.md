@@ -378,7 +378,6 @@ The aragonCLI creates the `.aragon` directory under the user directory where it 
 
 In case the client is not loading properly, deleting the `~/.aragon` directory will make `aragon run` recreate the environment the next time it is used and may solve the issue.
 
----
 ### Propagating your content hash through IPFS
 When publishing a package via `aragon apm publish`, you will be returned an IPFS content (root) hash. For the Aragon client to load these files through its default IPFS configuration, this hash needs to be accessible at `https://ipfs.eth.aragon.network/ipfs/<hash>`.
 
