@@ -380,19 +380,25 @@ The aragonCLI creates the `.aragon` directory under the user directory where it 
 In case the client is not loading properly, deleting the `~/.aragon` directory will make `aragon run` recreate the environment the next time it is used and may solve the issue.
 
 ---
-### Issues propagating your content hash to IPFS
-When publishing a package via `aragon apm publish`, you will be returned an ipfs content (root) hash. For Aragon to work with the default IPFS gateway stored in the DAO's settings, this hash needs to be accessible at:
-
-`https://ipfs.eth.aragon.network/ipfs/<hash>`
+### Propagating your content hash through IPFS
+When publishing a package via `aragon apm publish`, you will be returned an IPFS content (root) hash. For the Aragon client to load these files through its default IPFS configuration, this hash needs to be accessible at `https://ipfs.eth.aragon.network/ipfs/<hash>`.
 
 If you are running into issues with your hash being propagated to this URL, try the following steps.
 
 1. If you have `aragon ipfs` running, quit that daemon.
-2. Run the command `ipfs daemon --enable-namesys-pubsub`
-3. a. Request your hash at the following gateways and see if data is loading:
-  * `http://ipfs.io/ipfs/<hash>`
-  * `http://ipfs.infura.io/ipfs/<hash>`
-  * Feel free to [check this list](https://discuss.ipfs.io/t/curated-list-of-ipfs-gateways/620) for additional gateways if you are having trouble with propagating.
-3. b. In addition to the root hash, it will be important to also manually request the `artifact.json` and `manifest.json` files since the gateways like to automatically load the index.html if it's available as part of the root dir. E.g. you should access `http://ipfs.io/ipfs/<hash>/manifest.json`
-4. Once successful with step 3, request your hash at the Aragon gateway to double check it has propagated:
-  * `https://ipfs.eth.aragon.network/ipfs/<hash>`
+2. Run the command `ipfs daemon --enable-namesys-pubsub`.
+3. Propagate your content through public gateways.
+    - Request your content hash at the following gateways. The `index.html` will automatically be loaded if it's available in the hash's root directory:
+      - `http://ipfs.io/ipfs/<hash>`
+      - `http://ipfs.infura.io/ipfs/<hash>`
+      - [Check this list](https://discuss.ipfs.io/t/curated-list-of-ipfs-gateways/620) for additional gateways if you are having trouble with propagating.
+    - If your content also includes an `artifact.json` or `manifest.json`, make sure to separately request these as they will usually not be requested by the `index.html`:
+      - `<gateway>/ipfs/<hash>/artifact.json`
+      - `<gateway>/ipfs/<hash>/manifest.json`
+    - Keep retrying if any files don't immediately become available.
+4. Once successful with step 3, request your hash at the Aragon gateway to double check it has propagated and is immediately accessible by the Aragon client:
+    - `https://ipfs.eth.aragon.network/ipfs/<hash>`
+    - (If applicable) `https://ipfs.eth.aragon.network/ipfs/<hash>/artifact.json`
+    - (If applicable) `https://ipfs.eth.aragon.network/ipfs/<hash>/manifest.json`
+
+Note that it is best practice to pin the content hash to an IPFS server you manage to ensure its future availability.
