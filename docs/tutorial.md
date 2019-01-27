@@ -11,7 +11,7 @@ Follow these instructions to immediately run the full tutorial:
 
 ```
 npm i -g @aragon/cli
-aragon init foo.aragonpm.eth react
+npx create-aragon-app foo.aragonpm.eth react
 cd foo
 aragon run
 ```
@@ -31,7 +31,7 @@ npm i -g @aragon/cli
 Next, we bootstrap our project:
 
 ```
-aragon init foo.aragonpm.eth react
+npx create-aragon-app foo.aragonpm.eth react
 ```
 
 This will create a new directory named `foo`, with files cloned from the official Aragon [react boilerplate](https://github.com/aragon/aragon-react-boilerplate). This particular boilerplate includes everything you need to get started — Truffle, aragonOS and aragonAPI.
