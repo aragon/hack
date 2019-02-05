@@ -221,6 +221,7 @@ const GreyText = styled.p`
   letter-spacing: 0.1px;
   text-align: center;
   color: #7f8198;
+  margin-bottom: 0!important;
 `
 
 const SectionTitle = styled.h2`
