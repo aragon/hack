@@ -325,6 +325,7 @@ const UseCases = props => (
     <UseCaseCard className="for-daos">
       <div className="for-daos-img-div "><img src={imgUrl('for-daos.svg')} /></div>
       <div>
+      <div className="use-case-mobile-div "><img src={imgUrl('for-daos-mobile.svg')} /></div>
       <h2 className="light">For DAOs</h2>
       <p>You can create organizations that let entities (users, smart contracts) interact with each other and create rich <b>governance mechanisms</b> by using the <a href="/docs/acl-intro.html">Access Control List</a>.</p>
       <p>You can also create templates so other people will be able to create pre-configured organizations just by selecting your template in the setup process. This way, you can benefit from the existing stack for creating and managing decentralized organizations.</p>
@@ -332,7 +333,9 @@ const UseCases = props => (
     </UseCaseCard>
     <br />
     <UseCaseCard className="for-dapps">
+
       <div>
+        <div className="use-case-mobile-div "><img src={imgUrl('for-dapps-mobile.svg')} /></div>
         <h2 className="light">For dapps</h2>
         <p>You can create <b>dapps that run within the <a href="https://app.aragon.org">Aragon client</a></b> (Aragon apps). Aragon apps are interoperable between each other and can forward actions to one another so there's no need to reinvent the wheel.</p>
         <p>An example is a voting app that can forward the intent of a user to another app if the voting passes. You can just build an Aragon app that exposes some functionality and then any governance mechanism will be able to consume it without any additional changes.</p>
@@ -340,6 +343,7 @@ const UseCases = props => (
     </UseCaseCard>
     <br />
     <UseCaseCard className="third crypto-protocol">
+        <div className="use-case-mobile-div "><img src={imgUrl('crypto-protocols-mobile.svg')} /></div>
         <h2 className="light">For crypto protocols</h2>
         <p>You can build any governance mechanism to upgrade your crypto protocol or its parameters. Benefit from any of the existing governance mechanisms that support aragonOS, or easily roll out your own.</p>
     </UseCaseCard>

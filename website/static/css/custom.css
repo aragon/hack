@@ -295,6 +295,9 @@ footer.nav-footer .sitemap h5 {
 .for-daos-img-div img {
   padding: 0 10%;
 }
+.use-case-mobile-div {
+  display: none;
+}
 
 @media only screen and (max-width: 842px) {
   .crypto-protocol, .for-dapps {
@@ -303,6 +306,10 @@ footer.nav-footer .sitemap h5 {
   }
   .for-daos-img-div {
     display: none;
+  }
+  .use-case-mobile-div {
+    display: block;
+    text-align: center;
   }
 }
 
