@@ -178,6 +178,9 @@ const BlocksCards = styled(EmptyStateCard)`
   justify-content: center;
   padding: 2rem 1rem;
   flex-wrap: wrap;
+  &:hover {
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.07);
+  }
 
   p {
     font-size: 19px;
