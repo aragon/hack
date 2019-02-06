@@ -162,14 +162,17 @@ footer.nav-footer .sitemap .nav-home, footer.nav-footer .sitemap .nav-home img{
   opacity: 1;
   width: auto;
 }
+footer.nav-footer {
+  padding-top: 3em;
+}
 footer.nav-footer .sitemap .nav-home img {
   height: 200px;
 }
 @media only screen and (max-width: 735px) {
   footer.nav-footer .sitemap .nav-home, footer.nav-footer .sitemap .nav-home img {
-      opacity: 1;
-      width: 120px;
-      padding: 10px 0;
+    opacity: 1;
+    width: 120px;
+    padding: 10px 0;
   }
   footer.nav-footer .sitemap h5 {
     margin-top: 30px;
@@ -285,6 +288,7 @@ footer.nav-footer .sitemap h5 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
+  padding-left: 81px!important;
 }
 .for-daos {
   align-items: center;
@@ -299,7 +303,7 @@ footer.nav-footer .sitemap h5 {
   display: none;
 }
 
-@media only screen and (max-width: 842px) {
+@media only screen and (max-width: 1026px) {
   .crypto-protocol, .for-dapps {
     background-image: none;
     align-items: flex-start !important;
@@ -310,6 +314,10 @@ footer.nav-footer .sitemap h5 {
   .use-case-mobile-div {
     display: block;
     text-align: center;
+    width: 100%;
+  }
+  .for-dapps {
+    padding-left: 30px !important;
   }
 }
 

@@ -19,6 +19,7 @@ const {
   Text,
   theme
 } = require('@aragon/ui')
+
 const styled = require('styled-components').default
 
 const style = { color: theme.textPrimary }
@@ -184,9 +185,9 @@ const BlocksCards = styled(EmptyStateCard)`
     font-style: normal;
     font-stretch: normal;
     line-height: 1.4;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.2px!important;
     text-align: center;
-    color: #7f8198;
+    color: #7f8198 !important;
   }
   h1 span {
     font-size: 40px !important;
@@ -253,10 +254,16 @@ const UseCaseCard = styled.div`
   background-color: #ffffff;
   padding: 30px;
   max-width: 85vw;
-  width: 1020px;
+  @media (min-width: 1026px) {
+    width: 1020px;
+  }
+  width: auto;
   min-height: 405px!important;
   margin: auto;
   display: flex;
+  &:hover {
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.07);
+  }
   &.third {
     flex-direction: column;
     justify-content: center;
@@ -268,6 +275,7 @@ const UseCaseCard = styled.div`
   }
   h2 {
     margin-top: 0 !important;
+    margin-bottom: 30px;
     padding-top: 0 !important;
     font-size: 46px !important;
     font-family: 'HankenGroteskLight', sans-serif !important;
@@ -285,8 +293,8 @@ const UseCaseCard = styled.div`
     font-style: normal;
     font-stretch: normal;
     line-height: 1.75;
-    letter-spacing: 0.1px;
-    color: #7f8198;
+    letter-spacing: 0.1px !important;
+    color: #7f8198 !important;
     max-width: 500px!important;
   }
 
