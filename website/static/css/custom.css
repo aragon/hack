@@ -46,12 +46,12 @@ body {
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1;
+  line-height: 1.4;
   letter-spacing: normal;
   color: #ffffff;
   margin-top: 0!important;
 }
-.homeContainer h2.projectTitle small {
+.homeContainer small.project-subtitle  {
   font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
   font-size: 22px;
   font-weight: normal;
@@ -349,14 +349,14 @@ footer.nav-footer .sitemap h5 {
   border-top: solid 0px transparent;
 }
 .mainContainer .wrapper .post h3 {
-  font-family: 'HankenGroteskLight',sans-serif !important;
+  font-family: 'HankenGrotesk',sans-serif !important;
   font-size: 24px;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1;
   letter-spacing: normal;
-  color: #2d4051;
+  line-height: 62px;
+  color: #2D4051;
 }
 .mainContainer .wrapper .post h2, .mainContainer .wrapper .post h1 {
   font-family: 'HankenGroteskLight',sans-serif !important;
@@ -370,8 +370,11 @@ footer.nav-footer .sitemap h5 {
   color: #2d4051;
 }
 hr {
-  opacity: 0.17;
+  opacity: 0;
   border: solid 0.5px #979797;
+}
+.mainContainer .wrapper ul {
+  padding-left: 19px;
 }
 
 .mainContainer, .docMainWrapper.wrapper, .navPusher {
@@ -382,9 +385,9 @@ hr {
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.7;
   letter-spacing: 0.1px;
-  color: #363641;
+  line-height: 28px;
+  color: #2D4051;
 }
 .onPageNav > ul {
   border-left: 3px solid #01bfe3;
