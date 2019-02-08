@@ -521,3 +521,11 @@ nav.toc .toggleNav .navGroup h3 {
     width: 45px;
   }
 }
+
+.hero-box {
+  background-image: url(/img/lines.svg), url(/img/lines-side.svg);
+  background-position: top left, right bottom;
+  background-repeat: no-repeat;
+  background-size: auto;
+  padding: 15px 0 0 15px;
+}

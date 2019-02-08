@@ -53,10 +53,12 @@ const Logo = props => (
 )
 
 const ProjectTitle = props => (
-  <h2 className="projectTitle">
-    {siteConfig.title}
-    <small>{siteConfig.tagline}</small>
-  </h2>
+  <div>
+    <h2 className="projectTitle">
+      {siteConfig.title}
+    </h2>
+    <small className="project-subtitle">{siteConfig.tagline}</small>
+  </div>
 )
 
 const PromoSection = props => (
@@ -72,7 +74,7 @@ class HomeSplash extends React.Component {
     let language = this.props.language || ''
     return (
       <SplashContainer>
-        <div className="inner">
+        <div className="inner hero-box">
           <ProjectTitle />
           <PromoSection>
             <Button.Anchor mode="strong" href={docUrl('getting-started')}>
