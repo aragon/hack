@@ -1,155 +1,146 @@
-const React = require('react')
-const { BaseStyles, PublicUrl } = require('@aragon/ui')
-const ServerStyleSheet = require('styled-components').ServerStyleSheet
-const renderToStaticMarkup = require('react-dom/server').renderToStaticMarkup
-const hljsDefineSolidity = require('highlightjs-solidity')
+const React = require("react");
+const { BaseStyles, PublicUrl } = require("@aragon/ui");
+const ServerStyleSheet = require("styled-components").ServerStyleSheet;
+const renderToStaticMarkup = require("react-dom/server").renderToStaticMarkup;
+const hljsDefineSolidity = require("highlightjs-solidity");
 
 /* List of projects/orgs using your project for the users page */
 const users = [
   {
-    caption: 'district0x',
-    image: '/img/users/district0x.svg',
-    infoLink: 'https://district0x.io',
-    pinned: true,
+    caption: "district0x",
+    image: "/img/users/district0x.svg",
+    infoLink: "https://district0x.io",
+    pinned: true
   },
   {
-    caption: 'Decentraland',
-    image: '/img/users/decentraland.png',
-    infoLink: 'https://decentraland.org',
-    pinned: true,
+    caption: "Decentraland",
+    image: "/img/users/decentraland.png",
+    infoLink: "https://decentraland.org",
+    pinned: true
   },
   {
-    caption: 'Althea',
-    image: '/img/users/althea.jpg',
-    infoLink: 'https://altheamesh.com',
-    pinned: true,
+    caption: "Althea",
+    image: "/img/users/althea.jpg",
+    infoLink: "https://altheamesh.com",
+    pinned: true
   },
   {
-    caption: 'DAppNode',
-    image: '/img/users/dappnode.png',
-    infoLink: 'https://dappnode.io',
-    pinned: true,
+    caption: "DAppNode",
+    image: "/img/users/dappnode.png",
+    infoLink: "https://dappnode.io",
+    pinned: true
   },
   {
-    caption: 'Pando',
-    image: '/img/users/pando.png',
-    infoLink: 'https://github.com/ryhope/pando',
-    pinned: true,
+    caption: "Pando",
+    image: "/img/users/pando.png",
+    infoLink: "https://github.com/ryhope/pando",
+    pinned: true
   },
   {
-    caption: 'Espresso',
-    image: '/img/users/espresso.png',
-    infoLink: 'https://github.com/espresso-org',
-    pinned: true,
+    caption: "Espresso",
+    image: "/img/users/espresso.png",
+    infoLink: "https://github.com/espresso-org",
+    pinned: true
   },
   {
-    caption: 'Giveth',
-    image: '/img/users/giveth.png',
-    infoLink: 'https://giveth.io',
-    pinned: true,
-  },
-]
+    caption: "Giveth",
+    image: "/img/users/giveth.png",
+    infoLink: "https://giveth.io",
+    pinned: true
+  }
+];
 
 const siteConfig = {
-  title: 'Aragon Developer Portal',
-  tagline: 'What you need to get started building with Aragon',
-  url: 'https://hack.aragon.org',
-  baseUrl: '/',
-  cname: 'hack.aragon.org',
+  title: "Aragon Developer Portal",
+  tagline: "What you need to get started building with Aragon",
+  url: "https://hack.aragon.org",
+  baseUrl: "/",
+  cname: "hack.aragon.org",
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
-  projectName: 'hack-docs',
-  organizationName: 'aragon',
+  projectName: "hack-docs",
+  organizationName: "aragon",
 
   headerLinks: [
-    {doc: 'getting-started', label: 'Get started'},
-    {doc: 'tutorial', label: 'Tutorial'},
-    {doc: 'aragonos-intro', label: 'aragonOS'},
-    {doc: 'aragonjs-intro', label: 'aragonAPI'},
-    {doc: 'aragonui-intro', label: 'aragonUI'},
-    {page: 'help', label: 'Help'}
+    { doc: "getting-started", label: "Get started" },
+    { doc: "tutorial", label: "Tutorial" },
+    { doc: "aragonos-intro", label: "aragonOS" },
+    { doc: "aragonjs-intro", label: "aragonAPI" },
+    { doc: "aragonui-intro", label: "aragonUI" },
+    { page: "help", label: "Help" }
   ],
 
   cleanUrl: true,
 
-  editUrl: 'https://github.com/aragon/hack/tree/master/docs/',
+  editUrl: "https://github.com/aragon/hack/tree/master/docs/",
 
-  twitterUsername: 'AragonProject',
+  twitterUsername: "AragonProject",
 
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/navbar-logo.svg',
-  footerIcon: 'img/footer.svg',
-  favicon: 'img/favicon.png',
-  os: 'img/os.svg',
-  api: 'img/api.svg',
-  ui: 'img/ui.svg',
+  headerIcon: "img/navbar-logo.svg",
+  footerIcon: "img/footer.svg",
+  favicon: "img/favicon.png",
+  os: "img/os.svg",
+  api: "img/api.svg",
+  ui: "img/ui.svg",
 
   /* colors for website */
   // #00c8e4
   colors: {
-    primaryColor: '#3b3b3b',
-    secondaryColor: '#00b4e6',
+    primaryColor: "#3b3b3b",
+    secondaryColor: "#00b4e6"
   },
 
   /* custom fonts for website */
   fonts: {
-    myFont: [
-      "HkGrotesk",
-      "Overpass"
-    ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
-    ]
+    myFont: ["HkGrotesk", "Overpass"],
+    myOtherFont: ["-apple-system", "system-ui"]
   },
   algolia: {
-    apiKey: '9dff0383c32107d6c174f15e259bb23a',
-    indexName: 'aragon',
+    apiKey: "9dff0383c32107d6c174f15e259bb23a",
+    indexName: "aragon",
     algoliaOptions: {} // Optional, if provided by Algolia
   },
 
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
-  copyright:
-    'Creative Commons ' +
-    new Date().getFullYear() +
-    ' Aragon Project',
+  copyright: "Creative Commons " + new Date().getFullYear() + " Aragon Project",
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
-    theme: 'atom-one-dark',
+    theme: "atom-one-dark",
     hljs: function(hljs) {
-      hljsDefineSolidity(hljs)
+      hljsDefineSolidity(hljs);
     }
   },
 
   /* On page navigation for the current documentation page */
-  onPageNav: 'separate',
+  onPageNav: "separate",
 
   /* Open Graph and Twitter card images */
-  ogImage: 'img/docusaurus.png',
-  twitterImage: 'img/docusaurus.png',
+  ogImage: "img/docusaurus.png",
+  twitterImage: "img/docusaurus.png",
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   //   repoUrl: 'https://github.com/facebook/test-site',
 
   renderToString: element => {
-    const sheet = new ServerStyleSheet()
+    const sheet = new ServerStyleSheet();
     const html = renderToStaticMarkup(
       sheet.collectStyles(
         React.createElement(
           PublicUrl.Provider,
-          { url: '/aragon-ui/' },
+          { url: "/aragon-ui/" },
           React.createElement(BaseStyles, { enableLegacyFonts: true }),
           element
         )
       )
-    )
-    const insertStylesAt = html.lastIndexOf('</body>')
+    );
+    const insertStylesAt = html.lastIndexOf("</body>");
     return `
       <!DOCTYPE html>
       <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css"/>
@@ -171,8 +162,8 @@ const siteConfig = {
       ${html.slice(0, insertStylesAt)}
       ${sheet.getStyleTags()}
       ${html.slice(insertStylesAt)}
-    `.trim()
-  },
-}
+    `.trim();
+  }
+};
 
-module.exports = siteConfig
+module.exports = siteConfig;

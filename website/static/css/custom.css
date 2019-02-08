@@ -1,5 +1,5 @@
 body {
-  font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
+  font-family: "HankenGroteskRegular", "Overpass", sans-serif !important;
 }
 /* your custom css */
 .headerTitleWithLogo {
@@ -8,10 +8,11 @@ body {
 }
 
 .mainContainer {
-  background: #F7FBFD;
+  background: #f7fbfd;
 }
 
-.mainContainer .wrapper a, .inner .projectIntro a {
+.mainContainer .wrapper a,
+.inner .projectIntro a {
   text-decoration: underline;
 }
 
@@ -41,7 +42,8 @@ body {
 }
 
 .homeContainer h2.projectTitle {
-  font-family: 'HankenGroteskLight', 'HankenGroteskRegular', 'Overpass', sans-serif!important;
+  font-family: "HankenGroteskLight", "HankenGroteskRegular", "Overpass",
+    sans-serif !important;
   font-size: 52px;
   font-weight: 300;
   font-style: normal;
@@ -49,10 +51,10 @@ body {
   line-height: 1.4;
   letter-spacing: normal;
   color: #ffffff;
-  margin-top: 0!important;
+  margin-top: 0 !important;
 }
-.homeContainer small.project-subtitle  {
-  font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
+.homeContainer small.project-subtitle {
+  font-family: "HankenGroteskRegular", "Overpass", sans-serif !important;
   font-size: 22px;
   font-weight: normal;
   font-style: normal;
@@ -88,11 +90,11 @@ a.take-tutorial {
 
 .navigationSlider .slidingNav ul li a:hover {
   background-color: transparent !important;
-  color: rgb(75,75,75) !important;
+  color: rgb(75, 75, 75) !important;
 }
 
 .fixedHeaderContainer {
-  background-color: rgba(255,255,255,0.95);
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .fixedHeaderContainer header h2 {
@@ -119,7 +121,8 @@ code {
   margin: 0 0.25rem;
 }
 
-blockquote, pre {
+blockquote,
+pre {
   max-width: 50rem;
 }
 
@@ -158,7 +161,8 @@ input#search_input_react::placeholder {
   background-color: #262831;
   box-shadow: none !important;
 }
-footer.nav-footer .sitemap .nav-home, footer.nav-footer .sitemap .nav-home img{
+footer.nav-footer .sitemap .nav-home,
+footer.nav-footer .sitemap .nav-home img {
   opacity: 1;
   width: auto;
 }
@@ -169,7 +173,8 @@ footer.nav-footer .sitemap .nav-home img {
   height: 200px;
 }
 @media only screen and (max-width: 735px) {
-  footer.nav-footer .sitemap .nav-home, footer.nav-footer .sitemap .nav-home img {
+  footer.nav-footer .sitemap .nav-home,
+  footer.nav-footer .sitemap .nav-home img {
     opacity: 1;
     width: 120px;
     padding: 10px 0;
@@ -201,12 +206,10 @@ footer.nav-footer .sitemap h5 {
   line-height: 1.75;
   letter-spacing: 0.1px;
   color: #ffffff;
-  margin-top: 0!important;
+  margin-top: 0 !important;
 }
 
-@media
-  (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .homeContainer {
     background-color: #17181d;
   }
@@ -288,7 +291,7 @@ footer.nav-footer .sitemap h5 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
-  padding-left: 81px!important;
+  padding-left: 81px !important;
 }
 .for-daos {
   align-items: center;
@@ -304,7 +307,8 @@ footer.nav-footer .sitemap h5 {
 }
 
 @media only screen and (max-width: 1026px) {
-  .crypto-protocol, .for-dapps {
+  .crypto-protocol,
+  .for-dapps {
     background-image: none;
     align-items: flex-start !important;
   }
@@ -329,7 +333,7 @@ footer.nav-footer .sitemap h5 {
 }
 
 @media only screen and (max-width: 735px) {
-.productShowcaseSection .logos img {
+  .productShowcaseSection .logos img {
     max-height: 74px !important;
     width: 74px !important;
     padding: 10px !important;
@@ -338,7 +342,7 @@ footer.nav-footer .sitemap h5 {
 
 /* Docs */
 .mainContainer .wrapper .post .postHeader h1 {
-  font-family: 'HankenGroteskRegular', sans-serif !important;
+  font-family: "HankenGroteskRegular", sans-serif !important;
   font-size: 38px;
   font-weight: 500;
   font-style: normal;
@@ -349,17 +353,18 @@ footer.nav-footer .sitemap h5 {
   border-top: solid 0px transparent;
 }
 .mainContainer .wrapper .post h3 {
-  font-family: 'HankenGrotesk',sans-serif !important;
+  font-family: "HankenGrotesk", sans-serif !important;
   font-size: 24px;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
   letter-spacing: normal;
   line-height: 62px;
-  color: #2D4051;
+  color: #2d4051;
 }
-.mainContainer .wrapper .post h2, .mainContainer .wrapper .post h1 {
-  font-family: 'HankenGroteskLight',sans-serif !important;
+.mainContainer .wrapper .post h2,
+.mainContainer .wrapper .post h1 {
+  font-family: "HankenGroteskLight", sans-serif !important;
   font-size: 38px;
   font-weight: 300;
   font-style: normal;
@@ -377,17 +382,22 @@ hr {
   padding-left: 19px;
 }
 
-.mainContainer, .docMainWrapper.wrapper, .navPusher {
+.mainContainer,
+.docMainWrapper.wrapper,
+.navPusher {
   background: white;
 }
-.mainContainer .wrapper p, .blockElement p, .mainContainer .wrapper ul li, .mainContainer .wrapper ol li {
+.mainContainer .wrapper p,
+.blockElement p,
+.mainContainer .wrapper ul li,
+.mainContainer .wrapper ol li {
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0.1px;
   line-height: 28px;
-  color: #2D4051;
+  color: #2d4051;
 }
 .onPageNav > ul {
   border-left: 3px solid #01bfe3;
@@ -412,7 +422,7 @@ nav.toc .toggleNav ul {
 }
 
 nav.toc .toggleNav ul li a {
-  font-family: 'HankenGroteskRegular', sans-serif !important;
+  font-family: "HankenGroteskRegular", sans-serif !important;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -421,12 +431,15 @@ nav.toc .toggleNav ul li a {
   color: #7f8198;
   font-size: 16px;
 }
-nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus, nav.toc .toggleNav ul li a.navItemActive, .toc .toggleNav ul li.navListItemActive a {
+nav.toc .toggleNav ul li a:hover,
+nav.toc .toggleNav ul li a:focus,
+nav.toc .toggleNav ul li a.navItemActive,
+.toc .toggleNav ul li.navListItemActive a {
   color: #01c3e3;
 }
 
 nav.toc .toggleNav .navGroup h3 {
-  font-family: 'HankenGroteskLight',sans-serif !important;
+  font-family: "HankenGroteskLight", sans-serif !important;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -437,7 +450,7 @@ nav.toc .toggleNav .navGroup h3 {
   padding-top: 10px;
 }
 .button {
-  font-family: 'HankenGroteskRegular', sans-serif !important;
+  font-family: "HankenGroteskRegular", sans-serif !important;
   margin: 4px 0 !important;
   padding: 15px 0;
   border: 0px solid transparent;
@@ -459,7 +472,7 @@ nav.toc .toggleNav .navGroup h3 {
   margin-top: 13px;
 }
 .secondary-navbar h6 {
-  margin-top: 9px!important;
+  margin-top: 9px !important;
   font-size: 15px;
   line-height: 22px;
   color: white;
@@ -506,9 +519,9 @@ nav.toc .toggleNav .navGroup h3 {
   fill: #22e0ff;
 }
 
-
 @media (max-width: 745px) {
-  .secondary-navbar, .secondary-container {
+  .secondary-navbar,
+  .secondary-container {
     height: 67px;
   }
   .secondary-navbar a {
