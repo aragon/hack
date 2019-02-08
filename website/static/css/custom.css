@@ -421,7 +421,7 @@ nav.toc .toggleNav ul li a {
   color: #7f8198;
   font-size: 16px;
 }
-nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus, nav.toc .toggleNav ul li a.navItemActive {
+nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus, nav.toc .toggleNav ul li a.navItemActive, .toc .toggleNav ul li.navListItemActive a {
   color: #01c3e3;
 }
 
