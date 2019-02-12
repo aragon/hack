@@ -149,7 +149,6 @@ input#search_input_react {
   background-color: white !important;
   color: black !important;
   line-height: 32px !important;
-  padding-left: 15px !important;
 }
 
 input#search_input_react::placeholder {

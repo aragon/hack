@@ -87,6 +87,8 @@ const siteConfig = {
   os: "img/os.svg",
   api: "img/api.svg",
   ui: "img/ui.svg",
+  menumore: "img/menumore.svg",
+  menubar: "img/menubar.svg",
 
   /* colors for website */
   // #00c8e4
