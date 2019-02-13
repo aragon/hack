@@ -5,43 +5,43 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const React = require("react");
+const React = require('react')
 
-const CompLibrary = require("../../core/CompLibrary.js");
-const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
-const Container = CompLibrary.Container;
-const GridBlock = CompLibrary.GridBlock;
+const CompLibrary = require('../../core/CompLibrary.js')
+const MarkdownBlock = CompLibrary.MarkdownBlock /* Used to read markdown */
+const Container = CompLibrary.Container
+const GridBlock = CompLibrary.GridBlock
 const {
   Button,
   EmptyStateCard,
   IconSettings,
   IconBlank,
   Text,
-  theme
-} = require("@aragon/ui");
+  theme,
+} = require('@aragon/ui')
 
-const styled = require("styled-components").default;
+const styled = require('styled-components').default
 
-const style = { color: theme.textPrimary };
+const style = { color: theme.textPrimary }
 
-const siteConfig = require(process.cwd() + "/siteConfig.js");
+const siteConfig = require(process.cwd() + '/siteConfig.js')
 
 function imgUrl(img) {
-  return siteConfig.baseUrl + "img/" + img;
+  return siteConfig.baseUrl + 'img/' + img
 }
 
 function docUrl(doc, language) {
   return (
     siteConfig.baseUrl +
-    "docs/" +
-    (language ? language + "/" : "") +
+    'docs/' +
+    (language ? language + '/' : '') +
     doc +
-    ".html"
-  );
+    '.html'
+  )
 }
 
 function pageUrl(page, language) {
-  return siteConfig.baseUrl + (language ? language + "/" : "") + page + ".html";
+  return siteConfig.baseUrl + (language ? language + '/' : '') + page + '.html'
 }
 
 const SplashContainer = props => (
@@ -50,20 +50,20 @@ const SplashContainer = props => (
       <div className="wrapper homeWrapper">{props.children}</div>
     </div>
   </div>
-);
+)
 
 const Logo = props => (
   <div className="projectLogo">
     <img src={props.img_src} alt="" />
   </div>
-);
+)
 
 const ProjectTitle = props => (
   <div>
     <h2 className="projectTitle">{siteConfig.title}</h2>
     <small className="project-subtitle">{siteConfig.tagline}</small>
   </div>
-);
+)
 
 const PromoSection = props => (
   <div className="section promoSection">
@@ -71,46 +71,46 @@ const PromoSection = props => (
       <div className="pluginRowBlock">{props.children}</div>
     </div>
   </div>
-);
+)
 
 class HomeSplash extends React.Component {
   render() {
-    let language = this.props.language || "";
+    let language = this.props.language || ''
     return (
       <SplashContainer>
         <div className="inner hero-box">
           <ProjectTitle />
           <PromoSection>
-            <Button.Anchor mode="strong" href={docUrl("getting-started")}>
+            <Button.Anchor mode="strong" href={docUrl('getting-started')}>
               Get started
             </Button.Anchor>
             &nbsp;&nbsp;
             <Button.Anchor
               mode="text"
               className="take-tutorial"
-              href={docUrl("tutorial")}
+              href={docUrl('tutorial')}
             >
               Take the tutorial >
             </Button.Anchor>
           </PromoSection>
         </div>
         <div className="home-logo">
-          <img src={imgUrl("hero.svg")} />
+          <img src={imgUrl('hero.svg')} />
         </div>
       </SplashContainer>
-    );
+    )
   }
 }
 
 const Block = props => (
   <Container
-    padding={["bottom", "top"]}
+    padding={['bottom', 'top']}
     id={props.id}
     background={props.background}
   >
     <GridBlock align="center" contents={props.children} layout={props.layout} />
   </Container>
-);
+)
 
 const TextContainer = styled.div`
   display: flex;
@@ -119,7 +119,7 @@ const TextContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   white-space: nowrap;
-`;
+`
 
 const IconTokens = () => (
   <svg width="22" height="22" viewBox="0 0 22 22">
@@ -134,41 +134,41 @@ const IconTokens = () => (
       </g>
     </g>
   </svg>
-);
+)
 
 const StyledGetStartedButton = styled(Button.Anchor)`
   width: 150px;
   margin-top: 20px;
-`;
+`
 
 const GetStartedButton = ({ href }) => (
   <StyledGetStartedButton mode="strong" href={href}>
     Get started
   </StyledGetStartedButton>
-);
+)
 
 const BuildingBlocks = props => (
   <BuildingBlocksContainer className="white-section">
     <BlocksCards
       title="aragonOS"
       text={<p>Solidity framework for governance</p>}
-      actionButton={() => <GetStartedButton href={docUrl("aragonos-intro")} />}
+      actionButton={() => <GetStartedButton href={docUrl('aragonos-intro')} />}
       icon={() => <img src={siteConfig.baseUrl + siteConfig.os} />}
     />
     <BlocksCards
       title="aragonAPI"
       text={<p>Easily interact with your dapp's state</p>}
-      actionButton={() => <GetStartedButton href={docUrl("aragonjs-intro")} />}
+      actionButton={() => <GetStartedButton href={docUrl('aragonjs-intro')} />}
       icon={() => <img src={siteConfig.baseUrl + siteConfig.api} />}
     />
     <BlocksCards
       title="aragonUI"
       text={<p>Create a beautiful UI for your dapp</p>}
-      actionButton={() => <GetStartedButton href={docUrl("aragonui-intro")} />}
+      actionButton={() => <GetStartedButton href={docUrl('aragonui-intro')} />}
       icon={() => <img src={siteConfig.baseUrl + siteConfig.ui} />}
     />
   </BuildingBlocksContainer>
-);
+)
 
 const BuildingBlocksContainer = styled.div`
   display: flex;
@@ -176,7 +176,7 @@ const BuildingBlocksContainer = styled.div`
   justify-content: center;
   padding: 2rem 1rem;
   flex-wrap: wrap;
-`;
+`
 
 const BlocksCards = styled(EmptyStateCard)`
   border-radius: 6px;
@@ -207,7 +207,7 @@ const BlocksCards = styled(EmptyStateCard)`
   }
   h1 span {
     font-size: 40px !important;
-    font-family: "HankenGroteskLight", sans-serif !important;
+    font-family: 'HankenGroteskLight', sans-serif !important;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
@@ -216,7 +216,7 @@ const BlocksCards = styled(EmptyStateCard)`
     text-align: center;
     color: #2d4051;
   }
-`;
+`
 
 const Hero = props => (
   <div className="productShowcaseSection paddingTop white-section">
@@ -224,7 +224,7 @@ const Hero = props => (
       Build DAOs, protocols and dapps
     </SectionTitle>
     <GreyText>
-      Aragon is the most powerful and modular way to run{" "}
+      Aragon is the most powerful and modular way to run{' '}
       <a
         href="https://en.wikipedia.org/wiki/Decentralized_autonomous_organization"
         target="_blank"
@@ -236,7 +236,7 @@ const Hero = props => (
       protocol.
     </GreyText>
   </div>
-);
+)
 
 const GreyText = styled.p`
   font-size: 16px;
@@ -248,11 +248,11 @@ const GreyText = styled.p`
   text-align: center;
   color: #7f8198;
   margin-bottom: 0 !important;
-`;
+`
 
 const SectionTitle = styled.h2`
   font-size: 42px !important;
-  font-family: "HankenGroteskLight" !important;
+  font-family: 'HankenGroteskLight' !important;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -261,7 +261,7 @@ const SectionTitle = styled.h2`
   text-align: center;
   padding: 0 !important ;
   color: #2d4051 !important;
-`;
+`
 
 const UseCasesContainer = styled(Container)`
   flex: auto;
@@ -272,7 +272,7 @@ const UseCasesContainer = styled(Container)`
   align-items: center;
   justify-content: center;
   padding: 60px 0 !important;
-`;
+`
 const UseCaseCard = styled.div`
   border-radius: 6px;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.08);
@@ -304,7 +304,7 @@ const UseCaseCard = styled.div`
     margin-bottom: 30px;
     padding-top: 0 !important;
     font-size: 46px !important;
-    font-family: "HankenGroteskLight", sans-serif !important;
+    font-family: 'HankenGroteskLight', sans-serif !important;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
@@ -323,50 +323,50 @@ const UseCaseCard = styled.div`
     color: #7f8198 !important;
     max-width: 500px !important;
   }
-`;
+`
 
 const SecondaryNavbar = props => (
   <div className="secondary-navbar">
     <div className="secondary-container">
-      <a className="secondary-item" href={docUrl('apm')} >
+      <a className="secondary-item" href={docUrl('apm')}>
         <img src={imgUrl('navbar/aragon-pm.svg')} />
         <h6>aragonPM</h6>
       </a>
-      <a className="secondary-item" href={docUrl('aragonos-intro')} >
+      <a className="secondary-item" href={docUrl('aragonos-intro')}>
         <img src={imgUrl('navbar/aragon-os.svg')} />
         <h6>aragonOS</h6>
       </a>
-      <a className="secondary-item" href={docUrl('aragonjs-intro')} >
+      <a className="secondary-item" href={docUrl('aragonjs-intro')}>
         <img src={imgUrl('navbar/aragon-api.svg')} />
         <h6>aragonAPI</h6>
       </a>
-      <a className="secondary-item" href={docUrl('aragonui-intro')} >
+      <a className="secondary-item" href={docUrl('aragonui-intro')}>
         <img src={imgUrl('navbar/aragon-ui.svg')} />
         <h6>aragonUI</h6>
       </a>
-      <a className="secondary-item" href={docUrl('cli-usage')} >
+      <a className="secondary-item" href={docUrl('cli-usage')}>
         <img src={imgUrl('navbar/aragon-cli.svg')} />
         <h6>aragonCLI</h6>
       </a>
     </div>
   </div>
-);
+)
 
 const UseCases = props => (
   <UseCasesContainer className="grey-section">
     <UseCaseCard className="for-daos">
       <div className="for-daos-img-div ">
-        <img src={imgUrl("for-daos.svg")} />
+        <img src={imgUrl('for-daos.svg')} />
       </div>
       <div>
         <div className="use-case-mobile-div ">
-          <img src={imgUrl("for-daos-mobile.svg")} />
+          <img src={imgUrl('for-daos-mobile.svg')} />
         </div>
         <h2 className="light">For DAOs</h2>
         <p>
           You can create organizations that let entities (users, smart
-          contracts) interact with each other and create rich{" "}
-          <b>governance mechanisms</b> by using the{" "}
+          contracts) interact with each other and create rich{' '}
+          <b>governance mechanisms</b> by using the{' '}
           <a href="/docs/acl-intro.html">Access Control List</a>.
         </p>
         <p>
@@ -381,15 +381,15 @@ const UseCases = props => (
     <UseCaseCard className="for-dapps">
       <div>
         <div className="use-case-mobile-div ">
-          <img src={imgUrl("for-dapps-mobile.svg")} />
+          <img src={imgUrl('for-dapps-mobile.svg')} />
         </div>
         <h2 className="light">For dapps</h2>
         <p>
-          You can create{" "}
+          You can create{' '}
           <b>
-            dapps that run within the{" "}
+            dapps that run within the{' '}
             <a href="https://app.aragon.org">Aragon client</a>
-          </b>{" "}
+          </b>{' '}
           (Aragon apps). Aragon apps are interoperable between each other and
           can forward actions to one another so there's no need to reinvent the
           wheel.
@@ -405,7 +405,7 @@ const UseCases = props => (
     <br />
     <UseCaseCard className="third crypto-protocol">
       <div className="use-case-mobile-div ">
-        <img src={imgUrl("crypto-protocols-mobile.svg")} />
+        <img src={imgUrl('crypto-protocols-mobile.svg')} />
       </div>
       <h2 className="light">For crypto protocols</h2>
       <p>
@@ -415,23 +415,23 @@ const UseCases = props => (
       </p>
     </UseCaseCard>
   </UseCasesContainer>
-);
+)
 
 const TrustedBy = props => {
   if ((siteConfig.users || []).length === 0) {
-    return null;
+    return null
   }
   const showcase = siteConfig.users
     .filter(user => {
-      return user.pinned;
+      return user.pinned
     })
     .map((user, i) => {
       return (
         <a href={user.infoLink} key={i}>
           <img src={user.image} alt={user.caption} title={user.caption} />
         </a>
-      );
-    });
+      )
+    })
 
   return (
     <TrustedByContainer className="productShowcaseSection paddingBottom white-section">
@@ -448,8 +448,8 @@ const TrustedBy = props => {
         </a>
       </div>
     </TrustedByContainer>
-  );
-};
+  )
+}
 
 const TrustedByContainer = styled.div`
   padding-bottom: 60px;
@@ -473,15 +473,15 @@ const TrustedByContainer = styled.div`
     background-image: linear-gradient(84deg, #028084, #007e96);
     transition: all 0.25s ease-in-out;
   }
-`;
+`
 
 const MainContainer = styled.div`
   background-color: ${theme.mainBackground};
-`;
+`
 
 class Index extends React.Component {
   render() {
-    let language = this.props.language || "";
+    let language = this.props.language || ''
 
     return (
       <IndexContainer className="home-section">
@@ -494,7 +494,7 @@ class Index extends React.Component {
           <TrustedBy />
         </MainContainer>
       </IndexContainer>
-    );
+    )
   }
 }
 
@@ -511,10 +511,10 @@ const IndexContainer = styled.div`
   span,
   a,
   button {
-    font-family: "HankenGroteskRegular", "Overpass", sans-serif !important;
+    font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
   }
   h2.light {
-    font-family: "HankenGroteskLight", sans-serif !important;
+    font-family: 'HankenGroteskLight', sans-serif !important;
   }
-`;
-module.exports = Index;
+`
+module.exports = Index
