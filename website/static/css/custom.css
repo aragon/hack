@@ -1,7 +1,11 @@
 body {
   font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
+  overflow-x: hidden;
 }
 /* your custom css */
+.navPusher {
+  width: 100vw;
+}
 .headerTitleWithLogo {
   white-space: nowrap;
   margin-top: 0.25rem;
