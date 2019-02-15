@@ -28,7 +28,7 @@ body {
 }
 
 .homeContainer .homeWrapper {
-  padding: 80px 5% !important;
+  padding: 80px 0%;
   display: flex;
   align-items: center;
   justify-content: space-between;

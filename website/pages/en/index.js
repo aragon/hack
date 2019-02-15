@@ -59,10 +59,10 @@ const Logo = props => (
 )
 
 const ProjectTitle = props => (
-  <div>
+  <React.Fragment>
     <h2 className="projectTitle">{siteConfig.title}</h2>
     <small className="project-subtitle">{siteConfig.tagline}</small>
-  </div>
+  </React.Fragment>
 )
 
 const PromoSection = props => (
