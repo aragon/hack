@@ -4,7 +4,7 @@ body {
 }
 /* your custom css */
 .navPusher {
-  width: 100vw;
+  width: 100%;
 }
 .headerTitleWithLogo {
   white-space: nowrap;
@@ -47,7 +47,7 @@ body {
 
 .homeContainer h2.projectTitle {
   font-family: 'HankenGroteskLight', 'HankenGroteskRegular', 'Overpass',
-    sans-serif !important;
+    sans-serif;
   font-size: 52px;
   font-weight: 300;
   font-style: normal;
@@ -58,7 +58,8 @@ body {
   margin-top: 0 !important;
 }
 .homeContainer small.project-subtitle {
-  font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
+  font-family: 'HankenGroteskLight', 'HankenGroteskRegular', 'Overpass',
+    sans-serif;
   font-size: 22px;
   font-weight: normal;
   font-style: normal;
@@ -345,7 +346,7 @@ footer.nav-footer .sitemap h5 {
 
 /* Docs */
 .mainContainer .wrapper .post .postHeader h1 {
-  font-family: 'HankenGroteskRegular', sans-serif !important;
+  font-family: 'HankenGroteskRegular', sans-serif;
   font-size: 38px;
   font-weight: 500;
   font-style: normal;
@@ -356,7 +357,6 @@ footer.nav-footer .sitemap h5 {
   border-top: solid 0px transparent;
 }
 .mainContainer .wrapper .post h3 {
-  font-family: 'HankenGrotesk', sans-serif !important;
   font-size: 24px;
   font-weight: 300;
   font-style: normal;
@@ -367,7 +367,7 @@ footer.nav-footer .sitemap h5 {
 }
 .mainContainer .wrapper .post h2,
 .mainContainer .wrapper .post h1 {
-  font-family: 'HankenGroteskLight', sans-serif !important;
+  font-family: 'HankenGroteskLight', sans-serif;
   font-size: 38px;
   font-weight: 300;
   font-style: normal;

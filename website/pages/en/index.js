@@ -207,7 +207,7 @@ const BlocksCards = styled(EmptyStateCard)`
   }
   h1 span {
     font-size: 40px !important;
-    font-family: 'HankenGroteskLight', sans-serif !important;
+    font-family: 'HankenGroteskLight', sans-serif;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
@@ -252,7 +252,7 @@ const GreyText = styled.p`
 
 const SectionTitle = styled.h2`
   font-size: 42px !important;
-  font-family: 'HankenGroteskLight' !important;
+  font-family: 'HankenGroteskLight';
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -304,7 +304,7 @@ const UseCaseCard = styled.div`
     margin-bottom: 30px;
     padding-top: 0 !important;
     font-size: 46px !important;
-    font-family: 'HankenGroteskLight', sans-serif !important;
+    font-family: 'HankenGroteskLight', sans-serif;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
@@ -511,7 +511,7 @@ const IndexContainer = styled.div`
   span,
   a,
   button {
-    font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
+    font-family: 'HankenGroteskRegular', 'Overpass', sans-serif;
   }
   h2.light {
     font-family: 'HankenGroteskLight', sans-serif !important;
