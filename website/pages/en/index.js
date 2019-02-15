@@ -157,7 +157,7 @@ const BuildingBlocks = props => (
     />
     <BlocksCards
       title="aragonAPI"
-      text={<p>Easily interact with your dapp's state</p>}
+      text={<p>Easily interact with your dapp&#39;s state</p>}
       actionButton={() => <GetStartedButton href={docUrl('aragonjs-intro')} />}
       icon={() => <img src={siteConfig.baseUrl + siteConfig.api} />}
     />
