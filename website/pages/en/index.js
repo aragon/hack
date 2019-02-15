@@ -391,7 +391,7 @@ const UseCases = props => (
             <a href="https://app.aragon.org">Aragon client</a>
           </b>{' '}
           (Aragon apps). Aragon apps are interoperable between each other and
-          can forward actions to one another so there's no need to reinvent the
+          can forward actions to one another so there&#39;s no need to reinvent the
           wheel.
         </p>
         <p>
