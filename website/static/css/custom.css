@@ -344,6 +344,35 @@ footer.nav-footer .sitemap h5 {
   .home-logo {
     display: none;
   }
+  .hero-box {
+    margin: 0 auto;
+    max-width: 88%;
+  }
+  .promoSection {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .pluginRowBlock {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 15px;
+  }
+  small.project-subtitle {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    justify-content: CENTER;
+    align-items: center;
+    display: flex;
+    padding: 30px;
+    padding-right: 45px;
+  }
+  h2.projectTitle {
+    text-align: center;
+    padding-right: 15px;
+  }
 }
 
 @media only screen and (max-width: 735px) {
