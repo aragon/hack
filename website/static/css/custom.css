@@ -3,6 +3,9 @@ body {
   overflow-x: hidden;
 }
 /* your custom css */
+a:hover {
+  transition: all 0.25s ease-in-out 0s;
+}
 .navPusher {
   width: 100%;
 }
@@ -80,6 +83,10 @@ a.take-tutorial {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+a.take-tutorial:hover {
+  background-image: linear-gradient(83deg, #02a2c1, #0492ad);
+  transition: all 0.25s ease-in-out;
 }
 
 .navigationSlider .slidingNav ul li.siteNavItemActive a {
@@ -200,6 +207,9 @@ footer.nav-footer .sitemap a {
   letter-spacing: 0.1px;
   color: #ffffff;
   font-size: 16px;
+}
+footer.nav-footer .sitemap a:hover {
+  opacity: 0.39;
 }
 footer.nav-footer .sitemap h5 {
   opacity: 0.39;
@@ -503,6 +513,7 @@ nav.toc .toggleNav .navGroup h3 {
   align-items: center;
   padding: 0 30px;
   outline: 0;
+  min-width: 140px;
 }
 .secondary-navbar a:hover {
   opacity: 0.5;
@@ -529,6 +540,7 @@ nav.toc .toggleNav .navGroup h3 {
   }
   .secondary-navbar a {
     padding: 0 10px;
+    min-width: auto;
   }
   .secondary-item h6 {
     display: none;
