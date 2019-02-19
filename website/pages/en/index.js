@@ -17,8 +17,9 @@ const {
   IconSettings,
   IconBlank,
   Text,
-  theme
+  theme,
 } = require('@aragon/ui')
+
 const styled = require('styled-components').default
 
 const style = { color: theme.textPrimary }
@@ -30,7 +31,13 @@ function imgUrl(img) {
 }
 
 function docUrl(doc, language) {
-  return siteConfig.baseUrl + 'docs/' + (language ? language + '/' : '') + doc + '.html'
+  return (
+    siteConfig.baseUrl +
+    'docs/' +
+    (language ? language + '/' : '') +
+    doc +
+    '.html'
+  )
 }
 
 function pageUrl(page, language) {
@@ -52,10 +59,10 @@ const Logo = props => (
 )
 
 const ProjectTitle = props => (
-  <h2 className="projectTitle">
-    {siteConfig.title}
-    <small>{siteConfig.tagline}</small>
-  </h2>
+  <React.Fragment>
+    <h2 className="projectTitle">{siteConfig.title}</h2>
+    <small className="project-subtitle">{siteConfig.tagline}</small>
+  </React.Fragment>
 )
 
 const PromoSection = props => (
@@ -71,14 +78,18 @@ class HomeSplash extends React.Component {
     let language = this.props.language || ''
     return (
       <SplashContainer>
-        <div className="inner">
+        <div className="inner hero-box">
           <ProjectTitle />
           <PromoSection>
             <Button.Anchor mode="strong" href={docUrl('getting-started')}>
               Get started
             </Button.Anchor>
             &nbsp;&nbsp;
-            <Button.Anchor mode="text" className="take-tutorial" href={docUrl('tutorial')}>
+            <Button.Anchor
+              mode="text"
+              className="take-tutorial"
+              href={docUrl('tutorial')}
+            >
               Take the tutorial >
             </Button.Anchor>
           </PromoSection>
@@ -95,7 +106,8 @@ const Block = props => (
   <Container
     padding={['bottom', 'top']}
     id={props.id}
-    background={props.background}>
+    background={props.background}
+  >
     <GridBlock align="center" contents={props.children} layout={props.layout} />
   </Container>
 )
@@ -130,7 +142,9 @@ const StyledGetStartedButton = styled(Button.Anchor)`
 `
 
 const GetStartedButton = ({ href }) => (
-  <StyledGetStartedButton mode="strong" href={href}>Get started</StyledGetStartedButton>
+  <StyledGetStartedButton mode="strong" href={href}>
+    Get started
+  </StyledGetStartedButton>
 )
 
 const BuildingBlocks = props => (
@@ -138,19 +152,19 @@ const BuildingBlocks = props => (
     <BlocksCards
       title="aragonOS"
       text={<p>Solidity framework for governance</p>}
-      actionButton={() => <GetStartedButton href={docUrl('aragonos-intro')}/>}
+      actionButton={() => <GetStartedButton href={docUrl('aragonos-intro')} />}
       icon={() => <img src={siteConfig.baseUrl + siteConfig.os} />}
     />
     <BlocksCards
       title="aragonAPI"
-      text={<p>Easily interact with your dapp's state</p>}
-      actionButton={() => <GetStartedButton href={docUrl('aragonjs-intro')}/>}
+      text={<p>Easily interact with your dapp&#39;s state</p>}
+      actionButton={() => <GetStartedButton href={docUrl('aragonjs-intro')} />}
       icon={() => <img src={siteConfig.baseUrl + siteConfig.api} />}
     />
     <BlocksCards
       title="aragonUI"
       text={<p>Create a beautiful UI for your dapp</p>}
-      actionButton={() => <GetStartedButton href={docUrl('aragonui-intro')}/>}
+      actionButton={() => <GetStartedButton href={docUrl('aragonui-intro')} />}
       icon={() => <img src={siteConfig.baseUrl + siteConfig.ui} />}
     />
   </BuildingBlocksContainer>
@@ -177,6 +191,9 @@ const BlocksCards = styled(EmptyStateCard)`
   justify-content: center;
   padding: 2rem 1rem;
   flex-wrap: wrap;
+  &:hover {
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.07);
+  }
 
   p {
     font-size: 19px;
@@ -184,13 +201,13 @@ const BlocksCards = styled(EmptyStateCard)`
     font-style: normal;
     font-stretch: normal;
     line-height: 1.4;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.2px !important;
     text-align: center;
-    color: #7f8198;
+    color: #7f8198 !important;
   }
   h1 span {
     font-size: 40px !important;
-    font-family: 'HankenGroteskLight', sans-serif !important;
+    font-family: 'HankenGroteskLight', sans-serif;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
@@ -199,15 +216,24 @@ const BlocksCards = styled(EmptyStateCard)`
     text-align: center;
     color: #2d4051;
   }
-
 `
 
 const Hero = props => (
   <div className="productShowcaseSection paddingTop white-section">
-    <SectionTitle className="light">Build DAOs, protocols and dapps</SectionTitle>
+    <SectionTitle className="light">
+      Build DAOs, protocols and dapps
+    </SectionTitle>
     <GreyText>
-      Aragon is the most powerful and modular way to run <a href="https://en.wikipedia.org/wiki/Decentralized_autonomous_organization" target="_blank">DAOs</a>.
-      But on our journey creating DAOs, we discovered how to modularize individual components that can be used for creating any dapp or crypto protocol.
+      Aragon is the most powerful and modular way to run{' '}
+      <a
+        href="https://en.wikipedia.org/wiki/Decentralized_autonomous_organization"
+        target="_blank"
+      >
+        DAOs
+      </a>
+      . But on our journey creating DAOs, we discovered how to modularize
+      individual components that can be used for creating any dapp or crypto
+      protocol.
     </GreyText>
   </div>
 )
@@ -221,11 +247,12 @@ const GreyText = styled.p`
   letter-spacing: 0.1px;
   text-align: center;
   color: #7f8198;
+  margin-bottom: 0 !important;
 `
 
 const SectionTitle = styled.h2`
   font-size: 42px !important;
-  font-family: 'HankenGroteskLight'!important;
+  font-family: 'HankenGroteskLight';
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -244,7 +271,7 @@ const UseCasesContainer = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 0!important;
+  padding: 60px 0 !important;
 `
 const UseCaseCard = styled.div`
   border-radius: 6px;
@@ -252,31 +279,39 @@ const UseCaseCard = styled.div`
   background-color: #ffffff;
   padding: 30px;
   max-width: 85vw;
-  width: 1020px;
-  min-height: 405px!important;
+  @media (min-width: 1026px) {
+    width: 1020px;
+  }
+  width: auto;
+  min-height: 405px !important;
   margin: auto;
   display: flex;
+  &:hover {
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.07);
+  }
   &.third {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    h2,p {
+    h2,
+    p {
       width: 500px;
-      max-width: 100%!important;
+      max-width: 100% !important;
     }
   }
   h2 {
     margin-top: 0 !important;
+    margin-bottom: 30px;
     padding-top: 0 !important;
     font-size: 46px !important;
-    font-family: 'HankenGroteskLight', sans-serif !important;
+    font-family: 'HankenGroteskLight', sans-serif;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.35 !important;
     letter-spacing: normal;
     color: #2d4051;
-    max-width: 500px!important;
+    max-width: 500px !important;
   }
   p {
     font-size: 16px;
@@ -284,63 +319,100 @@ const UseCaseCard = styled.div`
     font-style: normal;
     font-stretch: normal;
     line-height: 1.75;
-    letter-spacing: 0.1px;
-    color: #7f8198;
-    max-width: 500px!important;
+    letter-spacing: 0.1px !important;
+    color: #7f8198 !important;
+    max-width: 500px !important;
   }
-
 `
-
 
 const SecondaryNavbar = props => (
   <div className="secondary-navbar">
     <div className="secondary-container">
-      <a className="secondary-item" href={docUrl('apm')} >
+      <a className="secondary-item" href={docUrl('apm')}>
         <img src={imgUrl('navbar/aragon-pm.svg')} />
         <h6>aragonPM</h6>
       </a>
-      <a className="secondary-item" href={docUrl('aragonos-intro')} >
+      <a className="secondary-item" href={docUrl('aragonos-intro')}>
         <img src={imgUrl('navbar/aragon-os.svg')} />
         <h6>aragonOS</h6>
       </a>
-      <a className="secondary-item" href={docUrl('aragonjs-intro')} >
+      <a className="secondary-item" href={docUrl('aragonjs-intro')}>
         <img src={imgUrl('navbar/aragon-api.svg')} />
         <h6>aragonAPI</h6>
       </a>
-      <a className="secondary-item" href={docUrl('aragonui-intro')} >
+      <a className="secondary-item" href={docUrl('aragonui-intro')}>
         <img src={imgUrl('navbar/aragon-ui.svg')} />
         <h6>aragonUI</h6>
       </a>
-      <a className="secondary-item" href={docUrl('cli-usage')} >
+      <a className="secondary-item" href={docUrl('cli-usage')}>
         <img src={imgUrl('navbar/aragon-cli.svg')} />
         <h6>aragonCLI</h6>
       </a>
     </div>
   </div>
-);
+)
 
 const UseCases = props => (
   <UseCasesContainer className="grey-section">
     <UseCaseCard className="for-daos">
-      <div className="for-daos-img-div "><img src={imgUrl('for-daos.svg')} /></div>
+      <div className="for-daos-img-div ">
+        <img src={imgUrl('for-daos.svg')} />
+      </div>
       <div>
-      <h2 className="light">For DAOs</h2>
-      <p>You can create organizations that let entities (users, smart contracts) interact with each other and create rich <b>governance mechanisms</b> by using the <a href="/docs/acl-intro.html">Access Control List</a>.</p>
-      <p>You can also create templates so other people will be able to create pre-configured organizations just by selecting your template in the setup process. This way, you can benefit from the existing stack for creating and managing decentralized organizations.</p>
+        <div className="use-case-mobile-div ">
+          <img src={imgUrl('for-daos-mobile.svg')} />
+        </div>
+        <h2 className="light">For DAOs</h2>
+        <p>
+          You can create organizations that let entities (users, smart
+          contracts) interact with each other and create rich{' '}
+          <b>governance mechanisms</b> by using the{' '}
+          <a href="/docs/acl-intro.html">Access Control List</a>.
+        </p>
+        <p>
+          You can also create templates so other people will be able to create
+          pre-configured organizations just by selecting your template in the
+          setup process. This way, you can benefit from the existing stack for
+          creating and managing decentralized organizations.
+        </p>
       </div>
     </UseCaseCard>
     <br />
     <UseCaseCard className="for-dapps">
       <div>
+        <div className="use-case-mobile-div ">
+          <img src={imgUrl('for-dapps-mobile.svg')} />
+        </div>
         <h2 className="light">For dapps</h2>
-        <p>You can create <b>dapps that run within the <a href="https://app.aragon.org">Aragon client</a></b> (Aragon apps). Aragon apps are interoperable between each other and can forward actions to one another so there's no need to reinvent the wheel.</p>
-        <p>An example is a voting app that can forward the intent of a user to another app if the voting passes. You can just build an Aragon app that exposes some functionality and then any governance mechanism will be able to consume it without any additional changes.</p>
+        <p>
+          You can create{' '}
+          <b>
+            dapps that run within the{' '}
+            <a href="https://app.aragon.org">Aragon client</a>
+          </b>{' '}
+          (Aragon apps). Aragon apps are interoperable between each other and
+          can forward actions to one another so there&#39;s no need to reinvent the
+          wheel.
+        </p>
+        <p>
+          An example is a voting app that can forward the intent of a user to
+          another app if the voting passes. You can just build an Aragon app
+          that exposes some functionality and then any governance mechanism will
+          be able to consume it without any additional changes.
+        </p>
       </div>
     </UseCaseCard>
     <br />
     <UseCaseCard className="third crypto-protocol">
-        <h2 className="light">For crypto protocols</h2>
-        <p>You can build any governance mechanism to upgrade your crypto protocol or its parameters. Benefit from any of the existing governance mechanisms that support aragonOS, or easily roll out your own.</p>
+      <div className="use-case-mobile-div ">
+        <img src={imgUrl('crypto-protocols-mobile.svg')} />
+      </div>
+      <h2 className="light">For crypto protocols</h2>
+      <p>
+        You can build any governance mechanism to upgrade your crypto protocol
+        or its parameters. Benefit from any of the existing governance
+        mechanisms that support aragonOS, or easily roll out your own.
+      </p>
     </UseCaseCard>
   </UseCasesContainer>
 )
@@ -367,7 +439,11 @@ const TrustedBy = props => {
       <GreyText>Projects like these leverage the Aragon stack</GreyText>
       <div className="logos">{showcase}</div>
       <div className="more-users">
-        <a className="button" href="http://wiki.aragon.org/projects/" target="_blank">
+        <a
+          className="button"
+          href="http://wiki.aragon.org/projects/"
+          target="_blank"
+        >
           More Aragon users
         </a>
       </div>
@@ -394,13 +470,13 @@ const TrustedByContainer = styled.div`
     border: solid 0 transparent;
   }
   .more-users a:hover {
-    background-image: linear-gradient(84deg,#028084,#007e96);
+    background-image: linear-gradient(84deg, #028084, #007e96);
     transition: all 0.25s ease-in-out;
   }
 `
 
 const MainContainer = styled.div`
-  background-color: ${theme.mainBackground}
+  background-color: ${theme.mainBackground};
 `
 
 class Index extends React.Component {
@@ -429,8 +505,13 @@ const IndexContainer = styled.div`
   .grey-section {
     background-color: #f9fafc;
   }
-  h1, h2, p, span, a, button {
-    font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
+  h1,
+  h2,
+  p,
+  span,
+  a,
+  button {
+    font-family: 'HankenGroteskRegular', 'Overpass', sans-serif;
   }
   h2.light {
     font-family: 'HankenGroteskLight', sans-serif !important;

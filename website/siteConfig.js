@@ -64,12 +64,12 @@ const siteConfig = {
   organizationName: 'aragon',
 
   headerLinks: [
-    {doc: 'getting-started', label: 'Get started'},
-    {doc: 'tutorial', label: 'Tutorial'},
-    {doc: 'aragonos-intro', label: 'aragonOS'},
-    {doc: 'aragonjs-intro', label: 'aragonAPI'},
-    {doc: 'aragonui-intro', label: 'aragonUI'},
-    {page: 'help', label: 'Help'}
+    { doc: 'getting-started', label: 'Get started' },
+    { doc: 'tutorial', label: 'Tutorial' },
+    { doc: 'aragonos-intro', label: 'aragonOS' },
+    { doc: 'aragonjs-intro', label: 'aragonAPI' },
+    { doc: 'aragonui-intro', label: 'aragonUI' },
+    { page: 'help', label: 'Help' },
   ],
 
   cleanUrl: true,
@@ -87,6 +87,8 @@ const siteConfig = {
   os: 'img/os.svg',
   api: 'img/api.svg',
   ui: 'img/ui.svg',
+  menumore: 'img/menumore.svg',
+  menubar: 'img/menubar.svg',
 
   /* colors for website */
   // #00c8e4
@@ -97,33 +99,24 @@ const siteConfig = {
 
   /* custom fonts for website */
   fonts: {
-    myFont: [
-      "HkGrotesk",
-      "Overpass"
-    ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
-    ]
+    myFont: ['HkGrotesk', 'Overpass'],
+    myOtherFont: ['-apple-system', 'system-ui'],
   },
   algolia: {
     apiKey: '9dff0383c32107d6c174f15e259bb23a',
     indexName: 'aragon',
-    algoliaOptions: {} // Optional, if provided by Algolia
+    algoliaOptions: {}, // Optional, if provided by Algolia
   },
 
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
-  copyright:
-    'Creative Commons ' +
-    new Date().getFullYear() +
-    ' Aragon Project',
+  copyright: 'Creative Commons ' + new Date().getFullYear() + ' Aragon Project',
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'atom-one-dark',
     hljs: function(hljs) {
       hljsDefineSolidity(hljs)
-    }
+    },
   },
 
   /* On page navigation for the current documentation page */

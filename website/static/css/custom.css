@@ -1,17 +1,25 @@
 body {
   font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
+  overflow-x: hidden;
 }
 /* your custom css */
+a:hover {
+  transition: all 0.25s ease-in-out 0s;
+}
+.navPusher {
+  width: 100%;
+}
 .headerTitleWithLogo {
   white-space: nowrap;
   margin-top: 0.25rem;
 }
 
 .mainContainer {
-  background: #F7FBFD;
+  background: #f7fbfd;
 }
 
-.mainContainer .wrapper a, .inner .projectIntro a {
+.mainContainer .wrapper a,
+.inner .projectIntro a {
   text-decoration: underline;
 }
 
@@ -23,7 +31,7 @@ body {
 }
 
 .homeContainer .homeWrapper {
-  padding: 80px 5% !important;
+  padding: 80px 0%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,18 +49,20 @@ body {
 }
 
 .homeContainer h2.projectTitle {
-  font-family: 'HankenGroteskLight', 'HankenGroteskRegular', 'Overpass', sans-serif!important;
+  font-family: 'HankenGroteskLight', 'HankenGroteskRegular', 'Overpass',
+    sans-serif;
   font-size: 52px;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1;
+  line-height: 1.4;
   letter-spacing: normal;
   color: #ffffff;
-  margin-top: 0!important;
+  margin-top: 0 !important;
 }
-.homeContainer h2.projectTitle small {
-  font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
+.homeContainer small.project-subtitle {
+  font-family: 'HankenGroteskLight', 'HankenGroteskRegular', 'Overpass',
+    sans-serif;
   font-size: 22px;
   font-weight: normal;
   font-style: normal;
@@ -62,7 +72,7 @@ body {
   color: #ffffff;
 }
 a.take-tutorial {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -73,6 +83,10 @@ a.take-tutorial {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+a.take-tutorial:hover {
+  background-image: linear-gradient(83deg, #02a2c1, #0492ad);
+  transition: all 0.25s ease-in-out;
 }
 
 .navigationSlider .slidingNav ul li.siteNavItemActive a {
@@ -88,11 +102,11 @@ a.take-tutorial {
 
 .navigationSlider .slidingNav ul li a:hover {
   background-color: transparent !important;
-  color: rgb(75,75,75) !important;
+  color: rgb(75, 75, 75) !important;
 }
 
 .fixedHeaderContainer {
-  background-color: rgba(255,255,255,0.95);
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .fixedHeaderContainer header h2 {
@@ -119,7 +133,8 @@ code {
   margin: 0 0.25rem;
 }
 
-blockquote, pre {
+blockquote,
+pre {
   max-width: 50rem;
 }
 
@@ -146,7 +161,6 @@ input#search_input_react {
   background-color: white !important;
   color: black !important;
   line-height: 32px !important;
-  padding-left: 15px !important;
 }
 
 input#search_input_react::placeholder {
@@ -158,18 +172,23 @@ input#search_input_react::placeholder {
   background-color: #262831;
   box-shadow: none !important;
 }
-footer.nav-footer .sitemap .nav-home, footer.nav-footer .sitemap .nav-home img{
+footer.nav-footer .sitemap .nav-home,
+footer.nav-footer .sitemap .nav-home img {
   opacity: 1;
   width: auto;
+}
+footer.nav-footer {
+  padding-top: 3em;
 }
 footer.nav-footer .sitemap .nav-home img {
   height: 200px;
 }
 @media only screen and (max-width: 735px) {
-  footer.nav-footer .sitemap .nav-home, footer.nav-footer .sitemap .nav-home img {
-      opacity: 1;
-      width: 120px;
-      padding: 10px 0;
+  footer.nav-footer .sitemap .nav-home,
+  footer.nav-footer .sitemap .nav-home img {
+    opacity: 1;
+    width: 120px;
+    padding: 10px 0;
   }
   footer.nav-footer .sitemap h5 {
     margin-top: 30px;
@@ -189,6 +208,9 @@ footer.nav-footer .sitemap a {
   color: #ffffff;
   font-size: 16px;
 }
+footer.nav-footer .sitemap a:hover {
+  opacity: 0.39;
+}
 footer.nav-footer .sitemap h5 {
   opacity: 0.39;
   font-size: 16px;
@@ -198,12 +220,10 @@ footer.nav-footer .sitemap h5 {
   line-height: 1.75;
   letter-spacing: 0.1px;
   color: #ffffff;
-  margin-top: 0!important;
+  margin-top: 0 !important;
 }
 
-@media
-  (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .homeContainer {
     background-color: #17181d;
   }
@@ -285,6 +305,7 @@ footer.nav-footer .sitemap h5 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
+  padding-left: 81px !important;
 }
 .for-daos {
   align-items: center;
@@ -295,14 +316,26 @@ footer.nav-footer .sitemap h5 {
 .for-daos-img-div img {
   padding: 0 10%;
 }
+.use-case-mobile-div {
+  display: none;
+}
 
-@media only screen and (max-width: 842px) {
-  .crypto-protocol, .for-dapps {
+@media only screen and (max-width: 1026px) {
+  .crypto-protocol,
+  .for-dapps {
     background-image: none;
     align-items: flex-start !important;
   }
   .for-daos-img-div {
     display: none;
+  }
+  .use-case-mobile-div {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  .for-dapps {
+    padding-left: 30px !important;
   }
 }
 
@@ -311,10 +344,39 @@ footer.nav-footer .sitemap h5 {
   .home-logo {
     display: none;
   }
+  .hero-box {
+    margin: 0 auto;
+    max-width: 88%;
+  }
+  .promoSection {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .pluginRowBlock {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 15px;
+  }
+  small.project-subtitle {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    justify-content: CENTER;
+    align-items: center;
+    display: flex;
+    padding: 30px;
+    padding-right: 45px;
+  }
+  h2.projectTitle {
+    text-align: center;
+    padding-right: 15px;
+  }
 }
 
 @media only screen and (max-width: 735px) {
-.productShowcaseSection .logos img {
+  .productShowcaseSection .logos img {
     max-height: 74px !important;
     width: 74px !important;
     padding: 10px !important;
@@ -323,7 +385,7 @@ footer.nav-footer .sitemap h5 {
 
 /* Docs */
 .mainContainer .wrapper .post .postHeader h1 {
-  font-family: 'HankenGroteskRegular', sans-serif !important;
+  font-family: 'HankenGroteskRegular', sans-serif;
   font-size: 38px;
   font-weight: 500;
   font-style: normal;
@@ -334,17 +396,17 @@ footer.nav-footer .sitemap h5 {
   border-top: solid 0px transparent;
 }
 .mainContainer .wrapper .post h3 {
-  font-family: 'HankenGroteskLight',sans-serif !important;
   font-size: 24px;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1;
   letter-spacing: normal;
+  line-height: 62px;
   color: #2d4051;
 }
-.mainContainer .wrapper .post h2, .mainContainer .wrapper .post h1 {
-  font-family: 'HankenGroteskLight',sans-serif !important;
+.mainContainer .wrapper .post h2,
+.mainContainer .wrapper .post h1 {
+  font-family: 'HankenGroteskLight', sans-serif;
   font-size: 38px;
   font-weight: 300;
   font-style: normal;
@@ -355,21 +417,29 @@ footer.nav-footer .sitemap h5 {
   color: #2d4051;
 }
 hr {
-  opacity: 0.17;
+  opacity: 0;
   border: solid 0.5px #979797;
 }
+.mainContainer .wrapper ul {
+  padding-left: 19px;
+}
 
-.mainContainer, .docMainWrapper.wrapper, .navPusher {
+.mainContainer,
+.docMainWrapper.wrapper,
+.navPusher {
   background: white;
 }
-.mainContainer .wrapper p, .blockElement p, .mainContainer .wrapper ul li, .mainContainer .wrapper ol li {
+.mainContainer .wrapper p,
+.blockElement p,
+.mainContainer .wrapper ul li,
+.mainContainer .wrapper ol li {
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.7;
   letter-spacing: 0.1px;
-  color: #363641;
+  line-height: 28px;
+  color: #2d4051;
 }
 .onPageNav > ul {
   border-left: 3px solid #01bfe3;
@@ -403,12 +473,15 @@ nav.toc .toggleNav ul li a {
   color: #7f8198;
   font-size: 16px;
 }
-nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus, nav.toc .toggleNav ul li a.navItemActive {
+nav.toc .toggleNav ul li a:hover,
+nav.toc .toggleNav ul li a:focus,
+nav.toc .toggleNav ul li a.navItemActive,
+.toc .toggleNav ul li.navListItemActive a {
   color: #01c3e3;
 }
 
 nav.toc .toggleNav .navGroup h3 {
-  font-family: 'HankenGroteskLight',sans-serif !important;
+  font-family: 'HankenGroteskLight', sans-serif !important;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -441,7 +514,7 @@ nav.toc .toggleNav .navGroup h3 {
   margin-top: 13px;
 }
 .secondary-navbar h6 {
-  margin-top: 9px!important;
+  margin-top: 9px !important;
   font-size: 15px;
   line-height: 22px;
   color: white;
@@ -469,6 +542,7 @@ nav.toc .toggleNav .navGroup h3 {
   align-items: center;
   padding: 0 30px;
   outline: 0;
+  min-width: 140px;
 }
 .secondary-navbar a:hover {
   opacity: 0.5;
@@ -488,13 +562,14 @@ nav.toc .toggleNav .navGroup h3 {
   fill: #22e0ff;
 }
 
-
 @media (max-width: 745px) {
-  .secondary-navbar, .secondary-container {
+  .secondary-navbar,
+  .secondary-container {
     height: 67px;
   }
   .secondary-navbar a {
     padding: 0 10px;
+    min-width: auto;
   }
   .secondary-item h6 {
     display: none;
@@ -502,4 +577,12 @@ nav.toc .toggleNav .navGroup h3 {
   .secondary-navbar img {
     width: 45px;
   }
+}
+
+.hero-box {
+  background-image: url(/img/lines.svg), url(/img/lines-side.svg);
+  background-position: top left, right bottom;
+  background-repeat: no-repeat;
+  background-size: auto;
+  padding: 15px 0 0 15px;
 }

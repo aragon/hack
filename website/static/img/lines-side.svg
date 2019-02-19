@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="17px" viewBox="0 0 16 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>Group 75</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="192.167597%" y1="50%" x2="-49.1861979%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#5BCFE8" offset="0%"></stop>
+            <stop stop-color="#2CB2E1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="197.851562%" y1="50%" x2="-49.1861979%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#5BCFE8" offset="2.30084899%"></stop>
+            <stop stop-color="#2CB2E1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Developers@2x" transform="translate(-150.000000, -235.000000)" fill-rule="nonzero">
+            <g id="Group-48" transform="translate(150.000000, 235.000000)">
+                <g id="Group-49">
+                    <g id="Group-53">
+                        <g id="Group-74">
+                            <g id="Group-75" transform="translate(8.000000, 8.161123) rotate(-180.000000) translate(-8.000000, -8.161123) translate(0.000000, 0.161123)">
+                                <path d="M14.465,0 L15.535,0 L15.535,2.46100044 L14.465,2.46100044 L14.465,0 Z M14.465,4.92200089 L15.535,4.92200089 L15.535,7.38300133 L14.465,7.38300133 L14.465,4.92200089 Z M14.465,9.84400177 L15.535,9.84400177 L15.535,12.3050022 L14.465,12.3050022 L14.465,9.84400177 Z" id="Line-4" fill="url(#linearGradient-1)"></path>
+                                <path d="M0,15.535 L0,14.465 L2.46100044,14.465 L2.46100044,15.535 L0,15.535 Z M4.92200089,15.535 L4.92200089,14.465 L7.38300133,14.465 L7.38300133,15.535 L4.92200089,15.535 Z M9.84400177,15.535 L9.84400177,14.465 L12.3050022,14.465 L12.3050022,15.535 L9.84400177,15.535 Z" id="Line-4-Copy" fill="url(#linearGradient-2)"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
