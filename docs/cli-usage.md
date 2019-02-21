@@ -354,7 +354,7 @@ After upgrading the CLI, or if unexpected errors are being experienced, [resetti
 
 ### Using Metamask
 
-The easiets way to interact with your DAO is using [Metamask](https://metamask.io/). In order to do so, you must make sure that:
+The easiest way to interact with your DAO is using [Metamask](https://metamask.io/). In order to do so, you must make sure that:
 
 - It's unlocked
 - Private network (_Localhost 8545_) is chosen
