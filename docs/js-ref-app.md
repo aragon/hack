@@ -139,8 +139,7 @@ Returns **Observable** An [RxJS observable](http://reactivex.io/rxjs/class/es6/O
 
 ### external
 
-Creates a handle to interact with an external contract
-(i.e. a contract that is **not** your app's smart contract, such as a token). Though, sending transactions to these external contracts is not yet supported as some additional security and disclosure enhancements in the signing panel are required.
+Creates a handle to interact with an external contract (i.e. a contract that is **not** your app's smart contract, such as a token). Sending transactions to these external contracts is not yet supported as additional security and disclosure enhancements are required in frontend clients (this is quite a large attack vector for malicious applications to invoke dangerous functionality).
 
 #### Parameters
 
