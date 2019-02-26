@@ -387,6 +387,7 @@ If you are running into issues with your hash being propagated to this URL, try 
 2. Run the command `ipfs daemon --enable-namesys-pubsub`.
 3. Propagate your content through public gateways.
     - Request your content hash at the following gateways. The `index.html` will automatically be loaded if it's available in the hash's root directory:
+      - `https://ipfs.eth.aragon.network/ipfs/<hash>`
       - `https://ipfs.io/ipfs/<hash>`
       - `https://ipfs.infura.io/ipfs/<hash>`
       - [Check this list](https://discuss.ipfs.io/t/curated-list-of-ipfs-gateways/620) for additional gateways if you are having trouble with propagating.
