@@ -9,7 +9,7 @@
     "generate": "npm run generate:os && npm run generate:js",
     "start": "npm run generate && npm run sync-assets && docusaurus-start",
     "build": "npm run generate && docusaurus-build",
-    "publish-gh-pages": "npm run generate:os && USE_SSH=true docusaurus-publish",
+    "publish-gh-pages": "npm run generate && USE_SSH=true docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version"
