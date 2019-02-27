@@ -12,8 +12,17 @@
       "client",
       "human-readable-txs"
     ],
+    "Guides": [
+      "guides-publish",
+      "guides-custom-deploy",
+      "guides-use-frame"
+    ],
     "aragonCLI": [
-      "cli-usage"
+      "cli-intro",
+      "cli-main-commands",
+      "cli-dao-commands",
+      "cli-apm-commands",
+      "cli-global-confg"
     ],
     "aragonPM": [
       "apm",

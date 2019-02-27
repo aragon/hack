@@ -1,0 +1,105 @@
+---
+id: cli-main-commands
+title: Main commands
+sidebar_label: Main commands
+---
+
+[//]: # "TODO: create-aragon-app"
+
+### aragon init
+
+The `init` command will set up an Aragon app project so you can start building your app from a functional boilerplate.
+
+```
+aragon init [app-name] [boilerplate]
+```
+
+- `app-name`: The name or ENS domain name for your app in an aragonPM Registry (e.g. `myapp` or `myapp.aragonpm.eth`). If only the name is provided it will create your app on the default `aragonpm.eth` registry.
+
+- `boilerplate`: the Github repo name or alias for a boilerplate to set up your app. The currently available boilerplates are:
+
+	- `react`: this boilerplate contains a very basic Counter app and a webapp for interacting with it. It showcases the end-to-end interaction with an Aragon app, from the contracts to the webapp.
+	- `react-kit`: it is a variation of the `react` boilerplate that also comes with a DAO Kit which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Kits [here](kits-intro.md).
+	- `bare`: this boilerplate will just set up your app directory structure but contains no functional code.
+
+
+### aragon run
+
+The `run` command takes care of completely setting up the environment needed for running your Aragon app. These are all the things that running `aragon run` will do for you:
+
+1. It checks whether **IPFS** and a local **Ethereum development chain** (devchain) are running and if not it will start them. Once aragon is terminated, any IPFS or dev chain it started will also be terminated.
+2. It will **publish your app** to the local aragonPM registry running in your devchain. This step executes the `aragon apm publish` internally. You can check the options and how the command works in depth [here](#aragon-apm-publish).
+3. Once the package is published it will **create a DAO** with your app installed. If you are running your app without a Kit it will grant permissions to the first account printed in the console to perform all the actions protected by the ACL in your app.
+4. After the DAO is created it will download the [Aragon client](https://github.com/aragon/aragon), install its dependencies and start it up so you can interact with the DAO in your web browser.
+
+Some available options to customize the `run` command:
+
+- `--reset`: If reset is present it will reset the devchain before running. The chain will then start from scratch and all published packages will need to be recreated.
+- `--port`: The port where the devchain will be started.
+- `--kit`: The name of the contract that will be deployed as the [DAO kit](kits-intro.md) that will be used to create your DAO. If no Kit is provided it will use a default Kit that sets up the DAO with just your app.
+- `--kit-init [argument1 ... argumentN]`: The constructor arguments for the Kit contract, each separated by a space. See the [deploy command](#aragon-deploy) for more information on constructor arguments.
+- `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
+- `--client [true|false]`: Can be used to disable starting the Aragon client. Defaults to `true`.
+
+
+#### Running your app from a development HTTP server
+
+`aragon run` by default will replicate Aragon's production environment and publish your app using IPFS. However, when developing the webapp part of your Aragon app, using IPFS would require you to repeat the entire publishing process every time you make a change and want to try it out.
+
+Using the HTTP mode for running your app requires starting an HTTP server to serve your app files before executing `aragon run` or `aragon apm publish`
+
+```
+# start your app server before
+aragon run --http [server-uri] --http-served-from [path]
+```
+
+- `http`: This is the flag that indicates that you wish to run your app using HTTP. The URI of the server must be provided here (e.g. `localhost:4001`)
+- `http-served-from`: Path to the directory that the HTTP server exposes. Some artifacts are generated and placed in this directory during the publishing process of your app. The server needs serve these new files when they are created and the server is already running.
+
+If your HTTP server supports hot-reloading your app's frontend will be hot-reloaded inside the Aragon client.
+
+However, when **making changes to the background script** of your app, a refresh of the client is required so the new script can be loaded. Also, depending on how the background script of your app is being built, you may need to manually trigger the compilation of the script.
+
+The [React boilerplate](https://github.com/aragon/aragon-react-boilerplate) supports serving your app using HTTP.
+
+
+### aragon devchain
+
+The `devchain` command is used for starting a local development testnet with all the required components already deployed and ready to use. It uses [aragen](https://github.com/aragon/aragen) for setting up the snapshot from which the chain starts. At any point `aragon devchain --reset` can be run which will reset the devchain to the original snapshot.
+
+This snapshot contains a local instance of ENS (used as an aragonPM registry `aragonpm.eth` and [aragon-id](https://github.com/aragon/aragon-id) `aragonid.eth`), the first-party [Aragon apps](https://github.com/aragon/aragon-apps) published to aragonPM (e.g. `voting.aragonpm.eth` or `token-manager.aragonpm.eth`) and the first-party [DAO Kits](https://github.com/aragon/dao-kits) (e.g. `bare-kit.aragonpm.eth`)
+
+Devchains can be started on different ports and will keep their state independent from other chains.
+
+Options:
+- `--reset`: Resets the devchain to the snapshot.
+- `--port`: The port number where the devchain will be started.
+
+
+### aragon ipfs
+
+The `ipfs` command is used to start an IPFS daemon. It adds some files that are needed for the first-party Aragon apps to work.
+
+
+### aragon deploy
+
+The `deploy` command can be used for deploying an Ethereum contract to the devchain.
+
+```
+aragon deploy [contract-name] [--init argument1 ... argumentN]
+```
+
+Running `aragon deploy` will compile your contracts using `truffle compile` and will deploy the contract with the constructor arguments provided.
+
+The `--init` arguments need to be separated by a space. They will be passed to the contract constructor on deploy. The `@ARAGON_ENS` alias can be used and it will be replaced by the address of the ENS registry in the devchain.
+
+
+### aragon contracts
+
+The `aragon contracts` command can be used to execute commands using the same [truffle](https://github.com/trufflesuite/truffle) version that the CLI uses behind the scenes to assist in compiling your app's contracts.
+
+```
+aragon contracts [command]
+```
+
+It is equivalent to executing `npx truffle [command]`
