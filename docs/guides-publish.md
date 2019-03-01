@@ -6,8 +6,6 @@ sidebar_label: Publish
 
 [//]: # "TODO: edit to fit in documentation"
 
-## Publish
-
 This app has 3 environments defined in `arapp.json`:
 
 | Environment   | Network   |

@@ -3,7 +3,6 @@ id: tutorial
 title: Your first Aragon app
 sidebar_label: Your first Aragon app
 ---
-[//]: # "TODO: update link to new template"
 
 In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), the JavaScript implementation of [aragonAPI](js-intro.md), [aragonUI](ui-intro.md) and [aragonCLI](/docs/cli-intro.html).
 
@@ -15,7 +14,7 @@ Let's first set up and bootstrap our project:
 npx create-aragon-app foo.aragonpm.eth tutorial
 ```
 
-This will create a new directory named `foo`, with files cloned from [your first Aragon app template](https://github.com/0xGabi/your-first-aragon-app). This particular boilerplate includes everything you need to get started — Truffle, aragonOS and aragonAPI.
+This will create a new directory named `foo`, with files cloned from [your first Aragon app template](https://github.com/aragon/your-first-aragon-app). This particular boilerplate includes everything you need to get started — Truffle, aragonOS and aragonAPI.
 
 Notice that we input a fully qualified [ENS](https://ens.domains/) name. Let's examine the ENS name we entered, because it is not entirely arbitrary.
 
@@ -382,11 +381,11 @@ Now that we're confident that our app will work and amaze the world, we should p
 
 ## Use Frame
 
-At this point you likely want to interact with your DAO. Check the [guide about use Frame](guides-use-frame.md) to learn how.
+At this point you likely want to interact with your DAO. Check the [guide on how to use Frame](guides-use-frame.md) to learn how.
 
 ## More CLI commands
 
-You can check the '[aragonCLI documentation](cli-main-commands.md)' for an in-depth description of how all the commands available in the CLI work.
+You can check the [aragonCLI documentation](cli-main-commands.md) for an in-depth description of how all the commands available in the CLI work.
 
 ## Next steps
 
