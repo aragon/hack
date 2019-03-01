@@ -4,14 +4,12 @@ title: Main commands
 sidebar_label: Main commands
 ---
 
-[//]: # "TODO: create-aragon-app"
+### create-aragon-app
 
-### aragon init
-
-The `init` command will set up an Aragon app project so you can start building your app from a functional boilerplate.
+Will set up an Aragon app project so you can start building your app from a functional boilerplate.
 
 ```
-aragon init [app-name] [boilerplate]
+create-aragon-app <app-name> [boilerplate]
 ```
 
 - `app-name`: The name or ENS domain name for your app in an aragonPM Registry (e.g. `myapp` or `myapp.aragonpm.eth`). If only the name is provided it will create your app on the default `aragonpm.eth` registry.
@@ -19,7 +17,7 @@ aragon init [app-name] [boilerplate]
 - `boilerplate`: the Github repo name or alias for a boilerplate to set up your app. The currently available boilerplates are:
 
 	- `react`: this boilerplate contains a very basic Counter app and a webapp for interacting with it. It showcases the end-to-end interaction with an Aragon app, from the contracts to the webapp.
-	- `react-kit`: it is a variation of the `react` boilerplate that also comes with a DAO Kit which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Kits [here](kits-intro.md).
+	- `react-kit`: it is a variation of the `react` boilerplate that also comes with a DAO Kit which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Kits [here](https://github.com/aragon/hack/blob/master/docs/kits-intro.md).
 	- `bare`: this boilerplate will just set up your app directory structure but contains no functional code.
 
 
