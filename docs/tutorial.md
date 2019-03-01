@@ -381,7 +381,7 @@ Now that we're confident that our app will work and amaze the world, we should p
 
 ## Use Frame
 
-At this point you likely want to interact with your DAO. Check the [guide on how to use Frame](guides-use-frame.md) to learn how.
+At this point you likely want to interact with your DAO. Check the [guide on how to use Frame](guides-use-frame.md).
 
 ## More CLI commands
 

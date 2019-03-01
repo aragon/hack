@@ -344,7 +344,7 @@ const SecondaryNavbar = props => (
         <img src={imgUrl('navbar/aragon-ui.svg')} />
         <h6>aragonUI</h6>
       </a>
-      <a className="secondary-item" href={docUrl('cli-usage')}>
+      <a className="secondary-item" href={docUrl('cli-intro')}>
         <img src={imgUrl('navbar/aragon-cli.svg')} />
         <h6>aragonCLI</h6>
       </a>
