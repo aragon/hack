@@ -15,7 +15,7 @@ Kits can also be thought of as **DAO templates** as every kit can create a DAO w
 
 ## Getting started with kits using the aragonCLI
 
-The [aragonCLI](/docs/cli-usage.html) (>= v4.1.0) supports using kits to create a DAO to interact with the apps being developed.
+The [aragonCLI](/docs/cli-intro.html) (>= v4.1.0) supports using kits to create a DAO to interact with the apps being developed.
 
 To quickly get started developing your own kits:
 

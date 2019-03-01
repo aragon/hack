@@ -21,7 +21,7 @@ It can also be installed directly from source:
 
 ```
 git clone https://github.com/aragon/aragon-cli.git
-cd aragon-cli
+cd packages/aragon-cli
 npm install
 npm link
 ```

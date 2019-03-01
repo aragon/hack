@@ -47,7 +47,7 @@ It is important to point out that aragonPM acts as the reference to what the las
 
 In order to interact with aragonPM registries, we have built [apm.js](https://github.com/aragon/apm.js) as a standalone JS library to inspect aragonPM repos, get their different versions, and fetch the referenced content. The library also allows interaction with aragonPM contracts for creating new repos or versions.
 
-The [aragonCLI](/docs/cli-usage.html) also uses apm.js to provide a great developer experience for creating and publishing new versions of Aragon apps as aragonPM repos. The CLI's aragonPM commands, accessible through `aragon apm`, are the easiest way to manage aragonPM repos.
+The [aragonCLI](/docs/cli-intro.html) also uses apm.js to provide a great developer experience for creating and publishing new versions of Aragon apps as aragonPM repos. The CLI's aragonPM commands, accessible through `aragon apm`, are the easiest way to manage aragonPM repos.
 
 ![](/docs/assets/apm-publish.png)
 >  Using the aragonCLI to publish a version to an aragonPM repo and inspect it

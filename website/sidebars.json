@@ -13,6 +13,7 @@
       "human-readable-txs"
     ],
     "Guides": [
+      "tutorial",
       "guides-publish",
       "guides-custom-deploy",
       "guides-use-frame"

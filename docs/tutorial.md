@@ -1,44 +1,23 @@
 ---
 id: tutorial
 title: Your first Aragon app
+sidebar_label: Your first Aragon app
 ---
+[//]: # "TODO: update link to new template"
 
-In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), the JavaScript implementation of [aragonAPI](js-intro.md), [aragonUI](ui-intro.md) and [aragonCLI](/docs/cli-usage.html).
-
-# Quick start
-
-Follow these instructions to immediately run the full tutorial:
-
-```
-npm i -g @aragon/cli
-aragon init foo.aragonpm.eth react
-cd foo
-aragon run
-```
-
-This should open up the app in your browser!
+In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), the JavaScript implementation of [aragonAPI](js-intro.md), [aragonUI](ui-intro.md) and [aragonCLI](/docs/cli-intro.html).
 
 ## The setup
 
-Now we'll take things slower and step through and explain the code line by line.
-
-Let's first set up our project.
+Let's first set up and bootstrap our project:
 
 ```
-npm i -g @aragon/cli
+npx create-aragon-app foo.aragonpm.eth tutorial
 ```
 
-Next, we bootstrap our project:
+This will create a new directory named `foo`, with files cloned from [your first Aragon app template](https://github.com/0xGabi/your-first-aragon-app). This particular boilerplate includes everything you need to get started — Truffle, aragonOS and aragonAPI.
 
-```
-aragon init foo.aragonpm.eth react
-```
-
-This will create a new directory named `foo`, with files cloned from the official Aragon [react boilerplate](https://github.com/aragon/aragon-react-boilerplate). This particular boilerplate includes everything you need to get started — Truffle, aragonOS and aragonAPI.
-
-Notice that we input a fully qualified [ENS](https://ens.domains/) name. We also initialise the app from the [react template](https://github.com/aragon/aragon-react-boilerplate), so we get [aragonUI](https://github.com/aragon/aragon-ui) included. You can use the `bare` template if you don't want to use it.
-
-Let's examine the ENS name we entered, because it is not entirely arbitrary.
+Notice that we input a fully qualified [ENS](https://ens.domains/) name. Let's examine the ENS name we entered, because it is not entirely arbitrary.
 
 ![Illustration of foo.aragonpm.eth](https://i.imgur.com/MQnYT6d.png)
 
@@ -57,7 +36,7 @@ Today, we will build a simple counter app — you can increment it, you can decr
 // contracts/CounterApp.sol
 pragma solidity 0.4.24;
 
-contract Counter {
+contract CounterApp {
     // Events
     event Increment(address entity);
     event Decrement(address entity);
@@ -89,7 +68,7 @@ First, inherit from the Aragon app smart contract, like so:
 ```solidity
 import "@aragon/os/contracts/apps/AragonApp.sol";
 
-contract Counter is AragonApp {
+contract CounterApp is AragonApp {
     // ...
 }
 ```
@@ -99,7 +78,7 @@ Second, define the roles that you want your app to have. A role can be assigned 
 In this example we will define a role for incrementing and a role for decrementing but note that you can have a single role to guard all methods in your contract if you find that appropriate.
 
 ```solidity
-contract Counter is AragonApp {
+contract CounterApp is AragonApp {
     // ...
     bytes32 constant public INCREMENT_ROLE = keccak256("INCREMENT_ROLE");
     bytes32 constant public DECREMENT_ROLE = keccak256("DECREMENT_ROLE");
@@ -107,14 +86,14 @@ contract Counter is AragonApp {
 }
 ```
 
-Finally, guard the methods with the `auth()` modifier that the `AragonApp` interface gives you and add an initialize function to your contract:
+Finally, guard the methods with the `auth()` modifier that the `AragonApp` interface gives you and add an [initialize function](/docs/aragonos-building.html#constructor-and-initialization) to your contract:
 
 ```solidity
-contract Counter is AragonApp {
+contract CounterApp is AragonApp {
     // ...
 
     function initialize() onlyInit public {
-      initialized();
+        initialized();
     }
 
     function increment() auth(INCREMENT_ROLE) external {
@@ -135,7 +114,7 @@ That's it. In 3 steps, you now have an Aragon app, with full upgradeability and 
 Aragon wants to be as user friendly as possible, so it provides an easy way for developers to describe what their smart contracts do in a human readable way. It's called [Radspec](human-readable-txs.md). It works by putting `@notice` statements alongside a human readable description for the function.
 
 ```solidity
-contract Counter is AragonApp {    
+contract CounterApp is AragonApp {    
     /**
      * @notice Increment the counter by 1
      */
@@ -209,8 +188,6 @@ The reducer function **must always** return a state, even if it is the same stat
 > **Note**<br>
 > The state will start out as `null`, not `undefined` because of the JSONRPC specification.
 
-<br>
-
 ### Displaying State
 
 Now let's write the view portion of our app. In our case, this is a simple HTML file, and a simple JavaScript file that observes the state that our background worker builds for us.
@@ -253,7 +230,6 @@ app.state().subscribe(
 
 That's it! Internally, `state` observes the `state` key in cache and emits every time a change occurs.
 
-<br>
 ### Sending transactions
 
 Our users need to be able to increment and decrement the counter. For this, we publish what is called an *intent* to the wrapper.
@@ -274,7 +250,8 @@ It's really simple to use. Let's add our intents to our app:
 
 ```js
 // app/app.js
-const view = document.getElementById('view')
+
+// ...
 const increment = document.getElementById('increment')
 const decrement = document.getElementById('decrement')
 
@@ -284,6 +261,7 @@ increment.onclick = () => {
 decrement.onclick = () => {
   app.decrement()
 }
+// ...
 ```
 
 That's it! Now whenever the user clicks one of either the increment or decrement buttons, an intent is sent to the wrapper, and it will show the user a transaction to sign.
@@ -293,19 +271,13 @@ That's it! Now whenever the user clicks one of either the increment or decrement
 
 Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use `parcel` because it has zero config, but you can use your favorite bundler.
 
-Let's install Parcel first:
-
-```
-npm i parcel-bundler -D
-```
-
-Next, let's add the build script to `package.json`:
+Let's add the build script to `package.json`:
 
 ```js
 {
   // ...
   "scripts": {
-    "build": "parcel build app/script.js -d dist/ && parcel build app/index.html -d dist/ --public-url '.'"
+    "build": "parcel build app/script.js -d dist/ && parcel build app/index.html -d dist/ --public-url \".\""
   }
   // ...
 }
@@ -318,9 +290,9 @@ You can now build the front-end of your app by running `npm run build`.
 
 In order for aragonAPI to function, it needs some metadata about your app. This metadata is specified in two manifest files; `manifest.json` and `arapp.json`.
 
-`arapp.json` defines smart contract and aragonPM-specific things like the roles in your app and the name and version of your app.
+`arapp.json` defines smart contract and aragonPM-specific things like the roles in your app or diferent environments.
 
-Let's modify `arapp.json` so that it knows about the roles we defined previously:
+Let's modify `arapp.json` so that it knows about the roles we defined previously and use the development environment:
 
 ```js
 {
@@ -359,13 +331,12 @@ Let's modify it accordingly:
 }
 ```
 
-
 ## Running your app locally
 
 To test out your app without deploying a DAO yourself, installing apps, setting up permissions and setting up aragonPM, you can simply run:
 
 ```
-aragon run
+npx aragon run
 ```
 
 This will do a couple of things for you:
@@ -386,48 +357,43 @@ After running this command a browser tab should pop up with your freshly created
 
 Running your app using HTTP will allow for a faster development process of your app's front-end, as it can be hot-reloaded without the need to execute `aragon run` every time a change is made.
 
+Let's add the scripts we need to `package.json`:
+
+```js
+{
+  // ...
+  "scripts": {
+    "start:app": "npm run build -- --no-minify && parcel serve app/index.html -p 8001 --out-dir dist/ --no-cache",
+    "start:aragon:http": "npx aragon run --http localhost:8001 --http-served-from ./dist"
+  }
+  // ...
+}
+```
+
 - First start your app's development server running `npm run start:app`, and keep that process running. By default it will rebuild the app and reload the server when changes to the source are made.
 
 - After that, you can run `npm run start:aragon:http` which will compile your app's contracts, publish the app locally and create a DAO. You will need to stop it and run it again after making changes to your smart contracts.
 
-Changes to the app's background script (`app/script.js`) cannot be hot-reloaded, after making changes to the script, you will need to either restart the development server (`npm run start:app`) or rebuild the script `npm run build:script`.
-
-### Metamask
-
-At this point you are likely going to use [Metamask](https://metamask.io/) to interact with your DAO. In order to do so, you must make sure that:
-
-- It's unlocked
-- Private network (_Localhost 8545_) is chosen
-- The first account provided by `aragon run` is imported and selected. To import the account, copy the private key (something like `a8a54b2d8197bc0b19bb8a084031be71835580a01e70a45a13babd16c9bc1563`), go to the accounts upper icon, to the left of the hamburguer button, scroll down, click on `Import account` and paste the value you copied.
+Changes to the app's background script (`app/script.js`) cannot be hot-reloaded, after making changes to the script, you will need to either restart the development server (`npm run start:app`) or rebuild the script `npm run build`.
 
 ## Publishing
 
-Now that we're confident that our app will work and amaze the world, we should publish it.
+Now that we're confident that our app will work and amaze the world, we should publish it. You can follow the publish guide to learn [how to publish in diferent environments](guides-publish.md).
 
-To publish it, simply run:
+## Use Frame
 
-```
-aragon apm publish major
-```
-
-The [`aragon apm publish`](https://hack.aragon.org/docs/cli-usage.html#aragon-apm-publish) command bumps the version number and publishes your app.
-
-When a major version is being published then the contract address for your app has to be provided or the contract name so the contract can be deployed. If it is not provided it will default to the contract specified in the `arapp.json` file as here.
-
-This will give you a transaction to sign that will either register the repository (if it does not exist) or publish a new version (if the repository exists). Furthermore, it will run your build script (if available) and publish your front-end and manifest files to IPFS.
-
-Now you just need to share the great news on Twitter and Reddit, to let people know that you've built something great!
+At this point you likely want to interact with your DAO. Check the [guide about use Frame](guides-use-frame.md) to learn how.
 
 ## More CLI commands
 
-You can check the '[Using the aragonCLI](cli-usage.md)' guide for an in-depth description of how all the commands available in the CLI work.
+You can check the '[aragonCLI documentation](cli-main-commands.md)' for an in-depth description of how all the commands available in the CLI work.
 
 ## Next steps
-
-The full source code of the application we've built in this guide is available on [our GitHub](https://github.com/aragon/aragon-example-application).
 
 A good place to go from here would be to check out [our existing apps](https://github.com/aragon/aragon-apps). They are fairly self-contained and use some patterns you might find helpful.
 
 There is much more to aragonOS and aragonAPI, and we even have our own [UI toolkit](https://github.com/aragon/aragon-ui). We encourage you to explore all 3 and provide us feedback.
 
 Join the conversation and ask questions on [GitHub](https://github.com/aragon) and [Aragon Chat](https://aragon.chat), and make sure to tell us if you build something ara-mazing!
+
+Now you just need to share the great news on Twitter and Reddit, to let people know that you've built something great!

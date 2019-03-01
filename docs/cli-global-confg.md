@@ -4,7 +4,7 @@ title: Global configuration
 sidebar_label: Global configuration
 ---
 
-[//]: # "TODO: --environment and manifest.json"
+[//]: # "TODO: --environment, manifest.json"
 
 ### The arapp.json file
 
