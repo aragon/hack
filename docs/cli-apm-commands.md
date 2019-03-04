@@ -4,14 +4,14 @@ title: aragonPM commands
 sidebar_label: aragonPM commands
 ---
 
-[//]: # "TODO: apm grant"
+[//]: # "TODO: apm grant write and add commands use case"
 
-### aragon apm versions
+## aragon apm versions
 
 The `aragon apm versions` command shows all the previously published versions of this package.
 
 
-### aragon apm publish
+## aragon apm publish
 
 The `aragon apm publish` command publishes  a new version to the aragonPM repo.
 
@@ -36,3 +36,8 @@ The command has the following parameters:
 - `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
 - `--http`: The URI for the HTTP server that will be serving your app files. See [instructions on running from HTTP](#running-your-app-from-a-development-http-server) for more information.
 - `http-served-from`: Path to the directory that the HTTP server exposes. Some artifacts are generated and placed in this directory during the publishing process of your app.
+
+
+## aragon apm grant
+
+aragon apm grant grants permissions to publish versions in a repo by interacting directly with the ACL, without performing transaction pathing.

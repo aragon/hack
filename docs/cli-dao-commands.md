@@ -4,14 +4,18 @@ title: DAO commands
 sidebar_label: DAO commands
 ---
 
-[//]: # "TODO: dao act and dao token"
+[//]: # "TODO: dao act and dao token content"
 
 The `aragon dao` commands can be used for interacting with your DAO directly from the command line. These commands are also available directly using the `dao` alias.
 
 
-### dao new
+## dao new
 
 Uses a DAO Kit to create a new DAO and prints its address.
+
+```
+dao new
+```
 
 Options:
 - `--kit`: The aragonPM repo name of the kit that is used to create the DAO. Defaults to `bare-kit.aragonpm.eth`.
@@ -20,28 +24,25 @@ Options:
 - `--fn-args`: The arguments that the function to create the kit is called with. Defaults to an array of arguments.
 - `--deploy-event`: The name of the event that is emitted when the DAO is created. The DAO address must be a return argument in the event log named `dao`. Defaults to `DeployInstance`.
 
+## dao apps
 
-### dao upgrade
-
-The `dao upgrade` command upgrades all instances of an app to a newer version.
+Used to inspect all the installed apps in a DAO.
 
 ```
-dao upgrade [dao-addr] [app-apm-repo] [repo-version]
+dao apps [dao-addr]
 ```
 
 - `dao-addr`: The main address of the DAO (Kernel).
-- `app-apm-repo`: The repo name of the app being upgraded (e.g. `voting` or `voting.aragonpm.eth`).
-- `repo-version`: Version of the repo that the app will be upgraded to; can be a version number or `latest` for the newest published version (defaults to `latest`).
 
-aragonOS protects against having different instances of a particular app running with different versions (e.g. all the Voting app instances run the same version).  Performing a `dao upgrade` will upgrade all instances of the app to the version specified.
+Options:
+- `--all`: To include apps without permissions in the report. 
 
-
-### dao install
+## dao install
 
 The `dao install` command installs an instance of an app in the DAO.
 
 ```
-dao install [dao-addr] [app-apm-repo] [repo-version]
+dao install <dao-addr> <app-apm-repo> [repo-version]
 ```
 
 
@@ -58,23 +59,27 @@ By default it will initialize the app using `initialize` function, which can be 
 As explained in the [upgrade command](#dao-upgrade), all app instances of the same app in DAO must run the same version, so installing an app with a version will effectively upgrade all app instances to this version.
 
 
-### dao apps
+## dao upgrade
 
-Used to inspect all the installed apps in a DAO.
+The `dao upgrade` command upgrades all instances of an app to a newer version.
 
 ```
-dao apps [dao-addr]
+dao upgrade <dao-addr> <app-apm-repo> [repo-version]
 ```
 
 - `dao-addr`: The main address of the DAO (Kernel).
+- `app-apm-repo`: The repo name of the app being upgraded (e.g. `voting` or `voting.aragonpm.eth`).
+- `repo-version`: Version of the repo that the app will be upgraded to; can be a version number or `latest` for the newest published version (defaults to `latest`).
+
+aragonOS protects against having different instances of a particular app running with different versions (e.g. all the Voting app instances run the same version).  Performing a `dao upgrade` will upgrade all instances of the app to the version specified.
 
 
-### dao exec
+## dao exec
 
 Performs transactions in your DAO directly from the CLI. It supports [transaction pathing](forwarding-intro.md) so if your account cannot perform the action directly it will try to find how to do it (e.g. creating a vote).
 
 ```
-dao exec [dao-addr] [app-proxy-addr] [method] [argument1 ... argumentN]
+dao exec <dao-addr> <app-proxy-addr> <method> [argument1 ... argumentN]
 ```
 
 - `dao-addr`: The main address of the DAO (Kernel).
@@ -83,7 +88,47 @@ dao exec [dao-addr] [app-proxy-addr] [method] [argument1 ... argumentN]
 - `arguments`: The arguments that the method will be executed with (each separated by a space).
 
 
-### dao acl
+## dao act
+
+Provides some syntax sugar over dao exec for executing actions using [Agent app](https://blog.aragon.one/aragon-agent-beta-release/) instances in a DAO.
+
+```
+dao act <agent-proxy> <target-addr> <method> [argument1 ... argumentN]
+```
+
+- `agent-proxy`: Address of the Agent app proxy.
+- `target-addr`: Address where the action is being executed.
+- `method`: Name of the method being executed in the app (e.g. `withdrawTokens`).
+- `arguments`: The arguments that the method will be executed with (each separated by a space).
+
+
+## dao token
+
+Commands used to create
+
+### dao token new
+
+```
+dao token new <token-name> <symbol> [decimal-units] [transfer-enabled]
+```
+- `token-name`: 
+- `symbol`: 
+- `decimal-units`: 
+- `transfer-enabled`: 
+
+
+### dao token change-controller
+
+Used to set the token-manager instances as the token-controller on our token.
+
+```
+dao token change-controller <token-addr> <new-controller-addr>
+```
+
+- `token-addr`: Address of the token.
+- `new-controller-addr`: Address of the new controller.
+
+## dao acl
 
 Used to inspect the ACL state in a DAO to check its permissions.
 

@@ -93,3 +93,24 @@ Sample output:
  ✔ 1.1.1: 0xE636bcA5B95e94F749F63E322a04DB59362299F1 ipfs:QmUYv9cjyNVxCyAJGK2YXjkbzh6u4iW2ak81Z9obdefM1q
  ✔ 2.0.0: 0x74CBbbC932d7C344FCd789Eba24BfD40e52980c9 ipfs:Qmadb3hzwLDKtb93fF367Vg1epkdsLZF4dhpapNYynjgZF
 ```
+
+<!-- Now you are ready to install the app in your dao, see how [here](#install-the-app-in-a-dao). -->
+
+<!-- #### Install the app in a DAO
+To install this app on a rinkeby DAO, e.g: `test.aragonid.eth`, first you need to make sure
+the account you are installing with has the `Manage apps` permission on the `Kernel` app.
+
+Run:
+```
+dao install test app.open.aragonpm.eth --environment staging
+```
+
+Sample output:
+```
+
+```
+
+#### Upgrade
+```
+dao upgrade test app.open.aragonpm.eth --environment staging
+``` -->

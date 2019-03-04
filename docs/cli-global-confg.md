@@ -4,8 +4,6 @@ title: Global configuration
 sidebar_label: Global configuration
 ---
 
-[//]: # "TODO: --environment, manifest.json"
-
 ## The arapp.json file
 
 The arapp.json file contains metadata for your app. This are the fields need to be present:
