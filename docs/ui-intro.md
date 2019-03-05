@@ -12,11 +12,18 @@ hide_title: true
 Here is the [gallery of UI components](https://ui.aragon.org/).
 
 Use the following command to install aragonUI:
+
 ```
-npm i @aragon/ui
+npm install --save @aragon/ui
 ```
 
-And wrap your app in the `Main` component:
+Copy the aragonUI assets into your public directory:
+
+```
+npx copy-aragon-ui-assets ./public
+```
+
+Wrap your app in the `Main` component:
 
 ```javascript
 import { Main } from '@aragon/ui'
