@@ -9,23 +9,30 @@ hide_title: true
 
 **aragonUI** is an Aragon-native toolkit of UI components for decentralized apps. It follows the [Aragon client](client.md) design language and will make your app appear as a seamless part of the Aragon ecosystem. Using the aragonUI for your app, however, is not mandatory.
 
-Here is the [gallery of UI components](http://ui.aragon.org/).
+Here is the [gallery of UI components](https://ui.aragon.org/).
 
 Use the following command to install aragonUI:
+
 ```
-npm i @aragon/ui
+npm install --save @aragon/ui
 ```
 
-The toolkit comes with some assets, like fonts or images, which need to be copied to a location that aragonUI can access. The path to the assets can then be communicated to aragonUI using the global component `<AragonApp />`:
+Copy the aragonUI assets into your public directory:
+
+```
+npx copy-aragon-ui-assets ./public
+```
+
+Wrap your app in the `Main` component:
 
 ```javascript
-import { AragonApp } from '@aragon/ui'
+import { Main } from '@aragon/ui'
 
 const App = () => (
-  <AragonApp publicUrl="/">
+  <Main>
     {/* Your app goes here */}
-  </AragonApp>
+  </Main>
 )
 ```
 
-To get the path of the directory from where the assets need to be copied, use `path.dirname(require.resolve('@aragon/ui'))`.
+[Check the project on GitHub](https://github.com/aragon/aragon-ui#getting-started) for more information.
