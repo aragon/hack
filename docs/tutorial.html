@@ -52,12 +52,12 @@ contract Counter {
     <span class="hljs-comment">// State</span>
     <span class="hljs-keyword">int</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">value</span>;
 
-    <span class="hljs-function">function <span class="hljs-title">increment</span>(<span class="hljs-params"></span>) external </span>{
+    <span class="hljs-function">function <span class="hljs-title">increment</span>(<span class="hljs-params"></span>) external</span> {
         <span class="hljs-keyword">value</span> += <span class="hljs-number">1</span>;
         <span class="hljs-function">emit <span class="hljs-title">Increment</span>(<span class="hljs-params">msg.sender</span>)</span>;
     }
 
-    <span class="hljs-function">function <span class="hljs-title">decrement</span>(<span class="hljs-params"></span>) external </span>{
+    <span class="hljs-function">function <span class="hljs-title">decrement</span>(<span class="hljs-params"></span>) external</span> {
         <span class="hljs-keyword">value</span> -= <span class="hljs-number">1</span>;
         <span class="hljs-function">emit <span class="hljs-title">Decrement</span>(<span class="hljs-params">msg.sender</span>)</span>;
     }
