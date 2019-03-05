@@ -30,7 +30,7 @@ In order to start the Aragon client with a DAO created by the kit, execute:
 aragon run --kit Kit --kit-init @ARAGON_ENS
 ```
 
-When modifying the name of your contract or app name be sure to update those in `Kit.sol` otherwise running the kit will fail
+When modifying the name of your contract or setting the app name to anything other than 'app', be sure to update those in `Kit.sol` otherwise running the kit will fail
 
 ## Kit structure
 
