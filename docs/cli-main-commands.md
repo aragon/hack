@@ -4,9 +4,7 @@ title: Main commands
 sidebar_label: Main commands
 ---
 
-This commands are general porpuse commands.
-
-[//]: # "TODO: write better introduction and review all options are included"
+This are general purpose commands that will help you to set up and interact with your development environment.
 
 ## aragon run
 
@@ -19,18 +17,25 @@ aragon run
 These are all the things that running `aragon run` will do for you:
 
 1. It checks whether **IPFS** and a local **Ethereum development chain** (devchain) are running and if not it will start them. Once aragon is terminated, any IPFS or dev chain it started will also be terminated.
-2. It will **publish your app** to the local aragonPM registry running in your devchain. This step executes the `aragon apm publish` internally. You can check the options and how the command works in depth [here](#aragon-apm-publish).
+2. It will **publish your app** to the local aragonPM registry running in your devchain. This step executes the `aragon apm publish` internally. You can check the options and how the command works in depth [here](cli-apm-commands.md).
 3. Once the package is published it will **create a DAO** with your app installed. If you are running your app without a Kit it will grant permissions to the first account printed in the console to perform all the actions protected by the ACL in your app.
 4. After the DAO is created it will download the [Aragon client](https://github.com/aragon/aragon), install its dependencies and start it up so you can interact with the DAO in your web browser.
 
-Some available options to customize the `run` command:
+Available options to customize the `run` command:
 
 - `--reset`: If reset is present it will reset the devchain before running. The chain will then start from scratch and all published packages will need to be recreated.
 - `--port`: The port where the devchain will be started.
 - `--kit`: The name of the contract that will be deployed as the [DAO kit](kits-intro.md) that will be used to create your DAO. If no Kit is provided it will use a default Kit that sets up the DAO with just your app.
 - `--kit-init [argument1 ... argumentN]`: The constructor arguments for the Kit contract, each separated by a space. See the [deploy command](#aragon-deploy) for more information on constructor arguments.
+- `kit-deploy-event`: Arguments to be passed to the kit constructor. Defaults to `newDAO.BARE_KIT_DEPLOY_EVENT`.
 - `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
-- `--client [true|false]`: Can be used to disable starting the Aragon client. Defaults to `true`.
+- `--client`: Can be used to disable starting the Aragon client. Defaults to `true`.
+- `--client-version`: Version of Aragon client used to run your sandboxed app.
+- `--client-port`: Port being used by Aragon client.
+- `--client-path`: A path pointing to an existing Aragon client installation.
+- `--app-init`: Name of the function that will be called to initialize an app. Defaults to `initialize`.
+- `--app-init-args`: Arguments for calling the app init function.
+- `--files`: Path(s) to directories containing files to publish. Specify multiple times to include multiple files.
 
 
 ### Running your app from a development HTTP server
@@ -64,18 +69,22 @@ aragon devchain
 
 It uses [aragen](https://github.com/aragon/aragen) for setting up the snapshot from which the chain starts. At any point `aragon devchain --reset` can be run which will reset the devchain to the original snapshot.
 
-This snapshot contains a local instance of ENS (used as an aragonPM registry `aragonpm.eth` and [aragon-id](https://github.com/aragon/aragon-id) `aragonid.eth`), the first-party [Aragon apps](https://github.com/aragon/aragon-apps) published to aragonPM (e.g. `voting.aragonpm.eth` or `token-manager.aragonpm.eth`) and the first-party [DAO Kits](https://github.com/aragon/dao-kits) (e.g. `bare-kit.aragonpm.eth`)
+This snapshot contains a local instance of ENS, the first-party [Aragon apps](https://github.com/aragon/aragon-apps) published to aragonPM (e.g. `voting.aragonpm.eth` or `token-manager.aragonpm.eth`) and the first-party [DAO Kits](https://github.com/aragon/dao-kits) (e.g. `bare-kit.aragonpm.eth`).
 
 Devchains can be started on different ports and will keep their state independent from other chains.
 
 Options:
 - `--reset`: Resets the devchain to the snapshot.
 - `--port`: The port number where the devchain will be started.
+- `--verbose`: Enable verbose output. Similar to ganache-cli.
+
+> **Note**<br>
+> The ENS instance is both used as an aragonPM registry `aragonpm.eth` and [aragon-id](https://github.com/aragon/aragon-id) `aragonid.eth`
 
 
 ## aragon ipfs
 
-The `ipfs` command is used to start an IPFS daemon. It adds some files that are needed for the first-party Aragon apps to work.
+The `ipfs` command is used to start an [IPFS](https://docs.ipfs.io/introduction/overview/) daemon. It adds some files that are needed for the first-party Aragon apps to work.
 
 ```
 aragon ipfs
@@ -86,20 +95,23 @@ aragon ipfs
 The `deploy` command can be used for deploying an Ethereum contract to the devchain.
 
 ```
-aragon deploy [contract-name] [--init argument1 ... argumentN]
+aragon deploy [contract-name] --init [argument1 ... argumentN]
 ```
+
+The `contract-name` defaults to the contract at the path in arapp.json.
 
 Running `aragon deploy` will compile your contracts using `truffle compile` and will deploy the contract with the constructor arguments provided.
 
-The `--init` arguments need to be separated by a space. They will be passed to the contract constructor on deploy. The `@ARAGON_ENS` alias can be used and it will be replaced by the address of the ENS registry in the devchain.
+Options:
 
+- `--init`: Arguments to be passed to contract constructor on deploy. Need to be separated by a space. The `@ARAGON_ENS` alias can be used and it will be replaced by the address of the ENS registry in the devchain.
 
 ## aragon contracts
 
-The `aragon contracts` command can be used to execute commands using the same [truffle](https://github.com/trufflesuite/truffle) version that the CLI uses behind the scenes to assist in compiling your app's contracts.
+The `aragon contracts` command can be used to execute commands using the same [truffle](https://github.com/trufflesuite/truffle) version that aragonCLI uses behind the scenes to assist in compiling your app's contracts.
 
 ```
-aragon contracts [command]
+aragon contracts <command>
 ```
 
-It is equivalent to executing `npx truffle [command]`
+It is equivalent to executing `npx truffle <command>`

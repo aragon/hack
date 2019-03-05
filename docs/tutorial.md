@@ -375,24 +375,28 @@ Let's add the scripts we need to `package.json`:
 
 Changes to the app's background script (`app/script.js`) cannot be hot-reloaded, after making changes to the script, you will need to either restart the development server (`npm run start:app`) or rebuild the script `npm run build`.
 
-## Publishing
+## Next steps
+
+### Publishing
 
 Now that we're confident that our app will work and amaze the world, we should publish it. You can follow the publish guide to learn [how to publish in diferent environments](guides-publish.md).
 
-## Use Frame
+### Use Frame
 
-At this point you likely want to interact with your DAO. Check the [guide on how to use Frame](guides-use-frame.md).
+At this point you likely want to interact with your DAO. Check the guide on [how to use Frame](guides-use-frame.md).
 
-## More CLI commands
+### More CLI commands
 
 You can check the [aragonCLI documentation](cli-main-commands.md) for an in-depth description of how all the commands available in the CLI work.
 
-## Next steps
+### Documentation
 
 A good place to go from here would be to check out [our existing apps](https://github.com/aragon/aragon-apps). They are fairly self-contained and use some patterns you might find helpful.
 
-There is much more to aragonOS and aragonAPI, and we even have our own [UI toolkit](https://github.com/aragon/aragon-ui). We encourage you to explore all 3 and provide us feedback.
+There is much more to [aragonOS](os-intro.md) and [aragonAPI](ui-intro.md), and we even have our own [UI toolkit](https://github.com/aragon/aragon-ui). We encourage you to explore all 3 and provide us feedback.
 
-Join the conversation and ask questions on [GitHub](https://github.com/aragon) and [Aragon Chat](https://aragon.chat), and make sure to tell us if you build something ara-mazing!
+### Community
+
+Join the conversation and ask questions on [GitHub](https://github.com/aragon), [Aragon Forum](https://forum.aragon.org) and [Aragon Chat](https://aragon.chat), and make sure to tell us if you build something ara-mazing!
 
 Now you just need to share the great news on Twitter and Reddit, to let people know that you've built something great!

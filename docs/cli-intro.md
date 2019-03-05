@@ -5,8 +5,6 @@ sidebar_label: Introduction
 hide_title: true
 ---
 
-[//]: # "TODO: write global options"
-
 ![](/docs/assets/brand/aragoncli.png)
 
 The aragonCLI (Command Line Interface) is used to create and develop Aragon apps.
@@ -32,9 +30,21 @@ After installing, the main `aragon` executable will be available for use. It wil
 
 ## Global options
 
-Global options we can pass to anycommand to setup diferent configurations.
+Options that change the behaviour of the command:
 
-- Silent, Debug, cwd, use-frame, environment, apm.ens-registry (Address of the ENS registry. This will be overwritten if the selected '--environment' from your arapp.json includes a `registry` property), apm.ipfs.rpc, eth-rpc(?)
+- `--silent`: Silence output to terminal.
+- `--debug`: Show more output to terminal.
+- `--cwd`: Project working directory.
+- `--use-frame`: Use frame as a signing provider and web3 provider.
+- `--environment`: The [environment](/docs/cli-global-confg.html#the-arappjson-file) in your arapp.json that you want to use.
+- `--apm.ens-registry`: Address of the ENS registry. This will be overwritten if the selected environment from your arapp.json includes a `registry` property.
+- `--apm.ipfs.rpc`: An URI to the IPFS node used to publish files.
+
+### Example 
+
+```
+aragon <command> --environment aragon:mainnet --use-frame --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs` --debug
+```
 
 
 ## create-aragon-app
@@ -54,5 +64,5 @@ npx create-aragon-app <app-name> [boilerplate]
 	- `bare`: this boilerplate will just set up your app directory structure but contains no functional code.
 
 > **Note**<br>
-> This is an independent package so it's not necessary to have `@aragon/cli` installed to use it.
+> This is an independent package, it's not necessary to have `@aragon/cli` installed to use it.
 > [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+. If you use npm 5.1 or earlier, you can't use `npx`. Instead, install `create-aragon-app` globally.

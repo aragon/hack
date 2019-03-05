@@ -4,8 +4,6 @@ title: DAO commands
 sidebar_label: DAO commands
 ---
 
-[//]: # "TODO: dao act and dao token content"
-
 The `aragon dao` commands can be used for interacting with your DAO directly from the command line. These commands are also available directly using the `dao` alias.
 
 
@@ -23,13 +21,15 @@ Options:
 - `--fn`: The function on the kit that is called to create a new DAO. Defaults to the `newBareInstance` function for `bare-kit.aragonpm.eth`.
 - `--fn-args`: The arguments that the function to create the kit is called with. Defaults to an array of arguments.
 - `--deploy-event`: The name of the event that is emitted when the DAO is created. The DAO address must be a return argument in the event log named `dao`. Defaults to `DeployInstance`.
+- `--ipfs-check`: Whether to have start IPFS if not started. Defaults to `true`.
+
 
 ## dao apps
 
 Used to inspect all the installed apps in a DAO.
 
 ```
-dao apps [dao-addr]
+dao apps <dao-addr>
 ```
 
 - `dao-addr`: The main address of the DAO (Kernel).
@@ -45,19 +45,21 @@ The `dao install` command installs an instance of an app in the DAO.
 dao install <dao-addr> <app-apm-repo> [repo-version]
 ```
 
-
 - `dao-addr`: The main address of the DAO (Kernel).
 - `app-apm-repo`: The repo name of the app being installed (e.g. `voting` or `voting.aragonpm.eth`).
-- `repo-version`: Version of the repo that will be installed; can be a version number or `latest` for the newest published version (defaults to `latest`).
+- `repo-version`: (optional) Version of the repo that will be installed; can be a version number or `latest` for the newest published version. Defaults to `latest`.
 
-In aragonOS an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO.
+In [aragonOS](/docs/aragonos-ref.html#app-installation) an app is considered to be installed in a DAO if it uses the DAO Kernel as its Kernel and there are references to the app in the ACL of the DAO.
 
 The `dao install` command will create an instance of the app and assign permissions to the main account to perform all the protected actions in the app.
 
-By default it will initialize the app using `initialize` function, which can be changed with `--app-init` option, and with arguments provided in `--app-init-args`. If you want to skip app initialization (which is not generally recommended), you can do it by setting `--app-init` to `none`.
+Options:
+- `--app-init`: Name of the function that will be called to initialize an app. If you want to skip app initialization (which is not generally recommended), you can do it by set it to `none`. By default it will initialize the app using `initialize` function.
+- `--app-init-args`: Arguments for calling the app init function.
+- `--set-permissions`: Whether to set permissions in the app. Set it to `open` to allow `ANY_ENTITY` on all roles.
 
-As explained in the [upgrade command](#dao-upgrade), all app instances of the same app in DAO must run the same version, so installing an app with a version will effectively upgrade all app instances to this version.
-
+> **Note**<br>
+> All app instances of the same app in a DAO must run the same version, so installing an app with a version will effectively upgrade all app instances to this version.
 
 ## dao upgrade
 
@@ -76,7 +78,7 @@ aragonOS protects against having different instances of a particular app running
 
 ## dao exec
 
-Performs transactions in your DAO directly from the CLI. It supports [transaction pathing](forwarding-intro.md) so if your account cannot perform the action directly it will try to find how to do it (e.g. creating a vote).
+Performs transactions in your DAO directly from aragonCLI. It supports [transaction pathing](forwarding-intro.md) so if your account cannot perform the action directly it will try to find how to do it (e.g. creating a vote).
 
 ```
 dao exec <dao-addr> <app-proxy-addr> <method> [argument1 ... argumentN]
@@ -90,7 +92,7 @@ dao exec <dao-addr> <app-proxy-addr> <method> [argument1 ... argumentN]
 
 ## dao act
 
-Provides some syntax sugar over dao exec for executing actions using [Agent app](https://blog.aragon.one/aragon-agent-beta-release/) instances in a DAO.
+Provides some syntax sugar over `dao exec` for executing actions using [Agent app](https://blog.aragon.one/aragon-agent-beta-release/) instances in a DAO.
 
 ```
 dao act <agent-proxy> <target-addr> <method> [argument1 ... argumentN]
@@ -98,28 +100,30 @@ dao act <agent-proxy> <target-addr> <method> [argument1 ... argumentN]
 
 - `agent-proxy`: Address of the Agent app proxy.
 - `target-addr`: Address where the action is being executed.
-- `method`: Name of the method being executed in the app (e.g. `withdrawTokens`).
+- `method`: Name of the method being executed in the app (e.g. `transfer`).
 - `arguments`: The arguments that the method will be executed with (each separated by a space).
 
 
 ## dao token
 
-Commands used to create
+Commands used to create and interact with the tokens your DAO will use.
 
 ### dao token new
+
+Create a new [MiniMe](https://github.com/Giveth/minime) token.
 
 ```
 dao token new <token-name> <symbol> [decimal-units] [transfer-enabled]
 ```
-- `token-name`: 
-- `symbol`: 
-- `decimal-units`: 
-- `transfer-enabled`: 
+- `token-name`: Full name of the new Token.
+- `symbol`: Symbol of the new Token.
+- `decimal-units`: Total decimal units the new token will use. Defaults to `18`.
+- `transfer-enabled`: Whether the new token will have transfers enabled. Defaults to `true`.
 
 
 ### dao token change-controller
 
-Used to set the token-manager instances as the token-controller on our token.
+Change the controller of a MiniMe token.
 
 ```
 dao token change-controller <token-addr> <new-controller-addr>
@@ -133,7 +137,7 @@ dao token change-controller <token-addr> <new-controller-addr>
 Used to inspect the ACL state in a DAO to check its permissions.
 
 ```
-dao acl [dao-addr]
+dao acl <dao-addr>
 ```
 - `dao-addr`: The main address of the DAO (Kernel).
 
@@ -143,7 +147,7 @@ dao acl [dao-addr]
 Used to create a permission in the ACL. Can only be used if the permission hasn't been created before. The `manager` of the permission can use `dao acl grant` and `dao acl revoke` to manage the permission.
 
 ```
-dao acl create [dao-addr] [app-proxy-addr] [role] [entity] [manager]
+dao acl create <dao-addr> <app-proxy-addr> <role> <entity> <manager>
 ```
 
 - `dao-addr`: The main address of the DAO (Kernel).
@@ -158,7 +162,7 @@ dao acl create [dao-addr] [app-proxy-addr] [role] [entity] [manager]
 Used to grant a permission in the ACL.
 
 ```
-dao acl grant [dao-addr] [app-proxy-addr] [role] [entity]
+dao acl grant <dao-addr> <app-proxy-addr> <role> <entity>
 ```
 
 - `dao-addr`: The main address of the DAO (Kernel).
@@ -172,7 +176,7 @@ dao acl grant [dao-addr] [app-proxy-addr] [role] [entity]
 Used to revoke a permission in the ACL.
 
 ```
-dao acl revoke [dao-addr] [app-proxy-addr] [role] [entity]
+dao acl revoke <dao-addr> <app-proxy-addr> <role> <entity>
 ```
 
 - `dao-addr`: The main address of the DAO (Kernel).
@@ -186,7 +190,7 @@ dao acl revoke [dao-addr] [app-proxy-addr] [role] [entity]
 Used to change the manager of a permission in the ACL.
 
 ```
-dao acl set-manager [dao-addr] [app-proxy-addr] [role] [manager]
+dao acl set-manager <dao-addr> <app-proxy-addr> <role> <manager>
 ```
 
 - `dao-addr`: The main address of the DAO (Kernel).
@@ -200,7 +204,7 @@ dao acl set-manager [dao-addr] [app-proxy-addr] [role] [manager]
 Used to remove the manager of a permission in the ACL. The permission can be created again after removing its manager.
 
 ```
-dao acl remove-manager [dao-addr] [app-proxy-addr] [role]
+dao acl remove-manager <dao-addr> <app-proxy-addr> <role>
 ```
 
 - `dao-addr`: The main address of the DAO (Kernel).

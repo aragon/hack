@@ -31,9 +31,9 @@ What you need to get started building with Aragon:
 
 Make sure you have at least Node.js `v8.0.0`.
 
-**Metamask**
+**Signing and web3 provider**
 
-We recommend using the [Metamask browser extension](https://metamask.io/) to send transactions to the blockchain.
+We recommend using [Frame](https://frame.sh) to send transactions to the blockchain. You can use [Metamask browser extension](https://metamask.io/) as alternative.
 
 **Install the aragonCLI**
 
@@ -50,9 +50,9 @@ Once we have this package installed we can start building DAOs.
 To create your first DAO run:
 
 ```
-aragon init foo.aragonpm.eth
+npx create-aragon-app foo.aragonpm.eth
 cd foo
-aragon run
+npx aragon run
 ```
 
 Congrats you have just created a DAO! It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
