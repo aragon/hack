@@ -4,12 +4,41 @@ title: Troubleshooting/FAQ
 sidebar_label: Troubleshooting
 ---
 
-### Resetting the devchain
+## Windows considerations
+
+## IPFS
+
+## How to verify a contract
+
+## Set a private key
+Using a different Ethereum account
+
+To deploy from a different account, you can:
+
+- define a `~/.aragon/mnemonic.json` file
+  ```
+  {
+      "mnemonic": "explain tackle mirror kit ..."
+  }
+  ```
+  or
+- define a `~/.aragon/${network_name}_key.json` file, for example: `~/.aragon/rinkeby_key.json`
+  ```
+  {
+      "keys": [
+          "a8a54b2d8197bc0b19bb8a084031be71835580a01e70a45a13babd16c9bc1563"
+      ]
+  }
+  ```
+  
+## Global variables in apps
+
+## Resetting the devchain
 
 After upgrading the CLI, or if unexpected errors are being experienced, [resetting the devchain](#aragon-devchain) (by doing `aragon devchain --reset` or `aragon run --reset`) is sometimes useful as it will restart the chain from the snapshot.
 
 
-### Using Metamask
+## Using Metamask
 
 The easiest way to interact with your DAO is using [Metamask](https://metamask.io/). In order to do so, you must make sure that:
 
@@ -18,7 +47,7 @@ The easiest way to interact with your DAO is using [Metamask](https://metamask.i
 - The first account provided by `aragon run` or `aragon devchain` is imported and selected. To import the account, copy the private key (something like `a8a54b2d8197bc0b19bb8a084031be71835580a01e70a45a13babd16c9bc1563`), go to the Metamask accounts upper icon (to the left of the hamburguer button), scroll down, click on "Import account" and paste the value you copied.
 
 
-### Issues sending transactions
+## Issues sending transactions
 
 Because of the way that Metamask caches the account nonces for the different networks, you may be getting the following error when interacting with your app:
 
@@ -29,13 +58,13 @@ Error: the tx doesn't have the correct nonce. account has nonce of: 157 tx has n
 The workaround is to switch to a different network (e.g. Rinkeby) and then switch back to the _Localhost 8545_ network.  This will refresh Metamask's account nonce cache. Sending transactions should now succeed.
 
 
-### The ~/.aragon directory
+## The ~/.aragon directory
 
 The aragonCLI creates the `.aragon` directory under the user directory where it saves the state of the devchain and the Aragon client.
 
 In case the client is not loading properly, deleting the `~/.aragon` directory will make `aragon run` recreate the environment the next time it is used and may solve the issue.
 
-### Propagating your content hash through IPFS
+## Propagating your content hash through IPFS
 When publishing a package via `aragon apm publish`, you will be returned an IPFS content (root) hash. For the Aragon client to load these files through its default IPFS configuration, this hash needs to be accessible at `https://ipfs.eth.aragon.network/ipfs/<hash>`.
 
 If you are running into issues with your hash being propagated to this URL, try the following steps.

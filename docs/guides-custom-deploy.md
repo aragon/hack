@@ -4,54 +4,70 @@ title: Custom Aragon Organization Deployment using the CLI
 sidebar_label: Custom deploy with aragonCLI
 ---
 
-[//]: # "TODO: edit to fit in documentation and convert to md"
+This guide will show you the process to deploy a blank organization and configure it as a custom organization for a cooperative.
 
-The following steps are intended to document the process I used to deploy a blank organization and configure it to meet the needs of the Aragon Cooperative 8. I plan to write a more extensive guide on deploying custom organizations using the CLI soon, but figured this may be helpful information for others in the mean time. Give it a shot, and let me know if something doesn’t work or just doesn’t make sense.
-
-Major shoutout to @danielconstantin @galactusss @bingen @Quazia for work on the CLI to make this possible, and for supporting me as I learned all the new features!
+We assume you have a general understanding of Aragon stack.
 
 In order to get started you will need the latest version of the CLI installed so open a terminal and enter the following:
 
+
+```
 npm install -g @aragon/cli
 
-Note: the features used in this are brand new, and some may still be a bit buggy, i’ll make some notes where I think there may be an unresolved issue
+```
 
-In order to deploy to rinkeby or mainnet using the CLI you will either need to use a hardware wallet with Frame or configure CLI sign transactions using a private key (would love to link to documentation on this but don’t see it anywhere on hack.aragon.org 1).
+> **Note**<br>
+>The features used in this are brand new, and some may still be a bit buggy, i’ll make some notes where I think there may be an unresolved issue
 
-If you decide to use frame, just add --use-frame to any of these commands.
+## General considerations
+
+In order to deploy to rinkeby or mainnet using the CLI you will either need to use a hardware wallet with [Frame](https://frame.sh) or configure aragonCLI to [sign transactions using a private key](/docs/cli-faq.html#set-a-private-key).
+
+If you decide to [use frame](guides-use-frame.md), just add `--use-frame` to any of these commands.
+
+For any deploy always remember to have in a separate terminal the [IPFS](https://docs.ipfs.io/introduction/overview/) daemon running, use `aragon ipfs` to start it.
 
 If you are testing locally:
 
-in a separate terminal run aragon devchain
-in a separate terminal run aragon ipfs
-if you are deploying to rinkeby:
+- In a separate terminal run: `aragon devchain`
 
-add --environment aragon:rinkeby to each of these commands
-if you are deploying to mainnet:
+If you are deploying to rinkeby:
 
-add --environment aragon:mainnet to each of these commands
-Creating a blank organization
+- Add `--environment aragon:rinkeby` to each of these commands
+
+If you are deploying to mainnet:
+
+- Add `--environment aragon:mainnet` to each of these commands
+
+## Creating a blank organization
+
+```
 dao new
+```
 
-This will create a new organization based on default “bare-kit” it won’t have a token manager, vault, finance, or voting instance installed. Make a note of the deployed DAO address as we will need it for subsequent commands.
+This will create a new organization based on default [`bare-kit`](https://github.com/aragon/dao-kits/blob/master/kits/bare/contracts/BareKit.sol) it won’t have a token manager, vault, finance, or voting instance installed. Make a note of the deployed DAO address as we will need it for subsequent commands.
 
-Note: there appears to be an issue with this command on rinkeby/mainnet that causes it to fail with a gasLimit error sometimes. github issue 1
+### Adding a Token and Token Manager instance
 
-Adding a Token and Token Manager instance
 Aragon uses tokens to represent groups, token balances can be capped to a certain amount per account made non-transferrable. The following are 3 common scenarios:
 
-Membership: A non-transferrable token limited to 1 per account
-Reputation: A non-transferrable token without balance restriction
-Equity: A transferrable token without balance restriction
+- `Membership`: A non-transferrable token limited to 1 per account
+- `Reputation`: A non-transferrable token without balance restriction
+- `Equity`: A transferrable token without balance restriction
 
 For the cooperative we want to start with a membership token.
 
-First we need to deploy a minime token, using the dao new token command. The syntax is as follows:
+First we need to deploy a [MiniMe](https://github.com/Giveth/minime) token, using the [`dao new token`](/docs/cli-dao-commands.html#dao-token-new) command. 
+
+```
 dao token new <token-name> <symbol> [decimal-units] [transfer-enabled]
+```
 
-For a membership token we want to set decimal units to 0 (default is 18), we can leave [tranfer-enabled] as default, as we will restrict transferability using the token-manager in a subsequent step. So we end up with:
+For a membership token we want to set `decimal-units` to 0 (default is 18), we can leave `tranfer-enabled` as default (true), as we will restrict transferability using the token-manager in a subsequent step. So we end up with:
 
+```
 dao token new "Member" "MBR" 0
+```
 
 Make a note of the token address as we will need it later!
 
