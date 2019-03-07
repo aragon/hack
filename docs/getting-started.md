@@ -4,7 +4,8 @@ title: Getting started
 sidebar_label: Getting started
 ---
 
-### What is Aragon and what does it do
+## What is Aragon and what does it do
+
 ---
 
 Aragon is a project to **empower freedom** by creating tools for **decentralized governance**.
@@ -27,15 +28,15 @@ What you need to get started building with Aragon:
 
 ## Environment setup
 
-**Node version**
+### Node version
 
 Make sure you have at least Node.js `v8.0.0`.
 
-**Signing and web3 provider**
+### Signing and web3 provider
 
-We recommend using [Frame](https://frame.sh) to send transactions to the blockchain. You can use [Metamask browser extension](https://metamask.io/) as alternative.
+We recommend using [Frame](https://frame.sh) to send transactions to the blockchain. Otherwise you can use [Metamask browser extension](https://metamask.io/).
 
-**Install the aragonCLI**
+### Install the aragonCLI
 
 From the command line run:
 
@@ -44,6 +45,17 @@ npm i -g @aragon/cli
 ```
 
 Once we have this package installed we can start building DAOs.
+
+### Note on Git
+
+You might need to have [Git](https://git-scm.com) installed.
+
+### Windows considerations
+
+You need to run the shell with administrator rights when installing aragonCLI.
+
+If you have problems during the instalation of aragonCLI or any other dependencies. You probably need to install [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) or similar package.
+
 
 ## Quick start
 

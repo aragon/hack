@@ -16,7 +16,8 @@
       "tutorial",
       "guides-publish",
       "guides-use-frame",
-      "guides-custom-deploy"
+      "guides-custom-deploy",
+      "guides-faq"
     ],
     "aragonCLI": [
       "cli-intro",

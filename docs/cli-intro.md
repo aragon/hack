@@ -28,6 +28,7 @@ npm link
 
 After installing, the main `aragon` executable will be available for use. It will also install the `dao` alias which is a shortcut for `aragon dao` commands.
 
+
 ## Global options
 
 Options that change the behaviour of the command:
