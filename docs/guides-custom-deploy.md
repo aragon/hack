@@ -1,6 +1,6 @@
 ---
 id: guides-custom-deploy
-title: Custom Aragon Organization Deployment using the CLI
+title: Custom Aragon Organization Deployment using aragonCLI
 sidebar_label: Custom deploy with aragonCLI
 ---
 

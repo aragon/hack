@@ -4,7 +4,19 @@ title: Publish
 sidebar_label: Publish
 ---
 
-[//]: # "TODO: edit to fit in documentation"
+This guide will show you how to publish your app in different environments.
+
+## Setup
+
+We'll start from the [React boilerplate](https://github.com/aragon/aragon-react-boilerplate).
+
+```
+npx create-aragon-app publish react
+```
+
+This will create a new directory named `publish`, with everything you need.
+
+## Introduction to environments
 
 This app has 3 environments defined in `arapp.json`:
 
@@ -14,31 +26,25 @@ This app has 3 environments defined in `arapp.json`:
 | staging       | rinkeby   |
 | production    | mainnet   |
 
-Prerequisites:
-- ENS Registry address
-
-Note: the `default` environment which points to `localhost` does not have an ENS Registry address specified because the `@aragon/cli` will default the value to `0xB9462EF3441346dBc6E49236Edbb0dF207db09B7` (the ENS Registry pre-deployed on the local development chain).
-
-### Introduction to environments
+Is a prerequisite to have a ENS Registry address defined. 
 
 Environments are defined in `arapp.json`, for example `staging` points to:
-- an ENS registry (`0x314159265dd8dbb310642f98f50c066173c1259b`)
-- an APM registry (`open.aragonpm.eth`)
-- an APM repository (`app`)
-- an Ethereum network (`rinkeby`)
-- an Ethereum websockets provider (`wss://rinkeby.eth.aragon.network/ws` - to **read** from the blockchain)
+- an ENS registry: `0x314159265dd8dbb310642f98f50c066173c1259b`
+- an APM registry: `open.aragonpm.eth`
+- an APM repository: `app`
+- an Ethereum network: `rinkeby`
+- an Ethereum websockets provider: `wss://rinkeby.eth.aragon.network/ws` - to **read** from the blockchain
 
-The `rinkeby` network is further defined in `truffle.js`, and has:
-- an Ethereum provider (to **write** to the blockchain):
-    - an address (`https://rinkeby.infura.io`)
-    - an Ethereum Account (`0xb4124cEB3451635DAcedd11767f004d8a28c6eE7`)
-    (which is the first account generated from the `DEFAULT_MNEMONIC` variable, to use a different account see [here](#Using-a-different-Ethereum-account))
+The `rinkeby` network is further defined in `truffle.js`, an has an Ethereum provider (to **write** to the blockchain), which define:
+- an address: `https://rinkeby.infura.io`
+- an Ethereum account: `0xb41...6eE7` (which is the first account generated from the `DEFAULT_MNEMONIC` variable, to use a different account see the [troubleshooting guide](/docs/guides-faq.html/set-a-private-key)
 
-### Major version: content + contract
+## Major version: content + contract
 
 Command:
+
 ```
-npm run publish:major -- --environment staging
+npm run publish:major --environment staging
 ```
 
 This will:
@@ -56,10 +62,11 @@ Sample output:
  ℹ Transaction hash: 0x3d752db29cc106e9ff98b260a90615921eb32471425a29ead8cbb830fb224d8
 ```
 
-Note: the contract location is defined in `arapp.json` under `path`.
-Note: you can also deploy a major version with only frontend changes by passing `--only-content`.
+> **Note**<br>
+> You can also deploy a major version with only frontend changes by passing `--only-content`. 
+> The contract location is defined in `arapp.json` under `path`.
 
-### Minor/patch version: content only
+## Minor/patch version: content only
 
 Command:
 ```
@@ -78,7 +85,7 @@ Sample output:
  ℹ Transaction hash: 0x57864d8efd8d439008621b494b19a3e8f876a8a46b38475f9626802f0a1403c2
 ```
 
-### Check published versions
+## Check published versions
 
 Command:
 ```
@@ -94,23 +101,18 @@ Sample output:
  ✔ 2.0.0: 0x74CBbbC932d7C344FCd789Eba24BfD40e52980c9 ipfs:Qmadb3hzwLDKtb93fF367Vg1epkdsLZF4dhpapNYynjgZF
 ```
 
-<!-- Now you are ready to install the app in your dao, see how [here](#install-the-app-in-a-dao). -->
+## More about environments
 
-<!-- #### Install the app in a DAO
-To install this app on a rinkeby DAO, e.g: `test.aragonid.eth`, first you need to make sure
-the account you are installing with has the `Manage apps` permission on the `Kernel` app.
+The default environments used by aragonCLI are defined in [`environments.default.json`](https://github.com/aragon/aragon-cli/blob/master/packages/aragon-cli/config/environments.default.json). This file has 4 environments:
 
-Run:
-```
-dao install test app.open.aragonpm.eth --environment staging
-```
+| Environment       | Network   |
+|---                |---        |
+| aragon:local      | localhost |
+| aragon:rinkeby    | rinkeby   |
+| aragon:staging    | rinkeby   |
+| aragon:mainnet    | mainnet   |
 
-Sample output:
-```
+In case you have an `arapp.json` file in your app directory, aragonCLI will use your local configuration over the default.
 
-```
-
-#### Upgrade
-```
-dao upgrade test app.open.aragonpm.eth --environment staging
-``` -->
+> **Note**<br>
+> The `aragon:local ` environment which points to `localhost` does not have an ENS Registry address specified because aragonCLI will default the value to `0xB9462EF3441346dBc6E49236Edbb0dF207db09B7` (the ENS Registry pre-deployed on the local development chain).
