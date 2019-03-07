@@ -25,17 +25,16 @@ Available options to customize the `run` command:
 
 - `--reset`: If reset is present it will reset the devchain before running. The chain will then start from scratch and all published packages will need to be recreated.
 - `--port`: The port where the devchain will be started.
-- `--kit`: The name of the contract that will be deployed as the [DAO kit](kits-intro.md) that will be used to create your DAO. If no Kit is provided it will use a default Kit that sets up the DAO with just your app.
+- `--kit`: The name of the contract that will be deployed as the [DAO kit](kits-intro.md) that will be used to create your DAO. If no Kit is provided it will use a default Kit that sets up the DAO with just your app (`bare-kit.aragonpm.eth`).
 - `--kit-init [argument1 ... argumentN]`: The constructor arguments for the Kit contract, each separated by a space. See the [deploy command](#aragon-deploy) for more information on constructor arguments.
-- `kit-deploy-event`: Arguments to be passed to the kit constructor. Defaults to `newDAO.BARE_KIT_DEPLOY_EVENT`.
+- `--kit-deploy-event`: Arguments to be passed to the kit constructor. Defaults to `DeployInstance`.
 - `--build-script`: The name of the NPM script in your app that will be used for building the webapp.
-- `--client`: Can be used to disable starting the Aragon client. Defaults to `true`.
+- `--client`: Whether to start the Aragon client or not. Defaults to `true`.
 - `--client-version`: Version of Aragon client used to run your sandboxed app.
 - `--client-port`: Port being used by Aragon client.
 - `--client-path`: A path pointing to an existing Aragon client installation.
 - `--app-init`: Name of the function that will be called to initialize an app. Defaults to `initialize`.
 - `--app-init-args`: Arguments for calling the app init function.
-- `--files`: Path(s) to directories containing files to publish. Specify multiple times to include multiple files.
 
 
 ### Running your app from a development HTTP server
@@ -79,7 +78,7 @@ Options:
 - `--verbose`: Enable verbose output. Similar to ganache-cli.
 
 > **Note**<br>
-> The ENS instance is both used as an aragonPM registry `aragonpm.eth` and [aragon-id](https://github.com/aragon/aragon-id) `aragonid.eth`
+> The ENS instance is used both for the aragonPM registry `aragonpm.eth` and for the [aragon-id](https://github.com/aragon/aragon-id) `aragonid.eth`.
 
 
 ## aragon ipfs

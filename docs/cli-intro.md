@@ -43,7 +43,7 @@ Options that change the behaviour of the command:
 ### Example 
 
 ```
-aragon <command> --environment aragon:mainnet --use-frame --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs` --debug
+aragon <command> --environment aragon:mainnet --use-frame --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs --debug
 ```
 
 
