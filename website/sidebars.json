@@ -15,7 +15,6 @@
     "Guides": [
       "tutorial",
       "guides-publish",
-      "guides-use-frame",
       "guides-custom-deploy",
       "guides-faq"
     ],
@@ -40,10 +39,10 @@
     ],
     "aragonAPI": [
       "aragonjs-intro",
-      "aragonjs-guide-bg-scripts",
       "aragonjs-ref-app",
       "aragonjs-ref-providers",
-      "aragonjs-ref-wrapper"
+      "aragonjs-ref-wrapper",
+      "aragonjs-guide-bg-scripts"
     ],
     "aragonUI": [
       "aragonui-intro"
