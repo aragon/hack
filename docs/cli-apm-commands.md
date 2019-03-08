@@ -40,6 +40,12 @@ aragon apm publish <bump> [contract]
 
 If a minor or patch version is being published then the command can be run with the `--only-content` flag which will skip compiling the contracts.
 
+You can target a particular directory to publish, using `--files`. We always publish apps with:
+
+```
+aragon apm publish <version> --environment <environment> --files app/build
+```
+
 The command has the following parameters:
 
 - `--only-content`: For minor and patch upgrades; whether to skip contract compilation, deployment and contract artifact generation.

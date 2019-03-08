@@ -83,7 +83,7 @@ Options:
 
 ## aragon ipfs
 
-The `ipfs` command is used to start an [IPFS](https://docs.ipfs.io/introduction/overview/) daemon. It adds some files that are needed for the first-party Aragon apps to work.
+The `ipfs` command is used to start an [IPFS](https://docs.ipfs.io/introduction/overview/) daemon. It adds from [aragen](https://github.com/aragon/aragen) some required files for the first-party Aragon apps to work, so it doesn't have to try and fetch them over the network.
 
 ```
 aragon ipfs
