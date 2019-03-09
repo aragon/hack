@@ -11,7 +11,7 @@ We assume you have a general understanding of Aragon stack.
 In order to get started you will need the latest version of the CLI installed so open a terminal and enter the following:
 
 
-```
+```sh
 npm install -g @aragon/cli
 
 ```
@@ -38,7 +38,7 @@ If you are deploying to mainnet:
 
 ## Creating a blank organization
 
-```
+```sh
 dao new
 ```
 
@@ -56,13 +56,13 @@ For the cooperative we want to start with a membership token.
 
 First we need to deploy a [MiniMe](https://github.com/Giveth/minime) token, using the `dao new token` command. 
 
-```
+```sh
 dao token new <token-name> <symbol> [decimal-units] [transfer-enabled]
 ```
 
 For a membership token we want to set `decimal-units` to 0 (default is 18), we can leave `tranfer-enabled` as default (true), as we will restrict transferability using the token-manager in a subsequent step. So we end up with:
 
-```
+```sh
 dao token new "Member" "MBR" 0
 ```
 
@@ -70,13 +70,13 @@ Make a note of the token address as we will need it later!
 
 Next we need to deploy an instance of the token-manager app which will serve as the token-controller for the minime token we just deployed. The token-manager cannot be initialized unless it is already the controller of a minime token, so we want to use `dao install` command with the `--app-init none` argument, that way we can perform some actions before we initialize it.
 
-```
+```sh
 dao install <dao-address> token-manager --app-init none
 ```
 
 In order to get the token-manager address we need to run the following command:
 
-```
+```sh
 dao apps <dao-address> --all
 ```
 
@@ -84,13 +84,13 @@ You should see a list of apps, and a token-manager instance listed under permiss
 
 Next we want to set the token-manager instances as the token-controller on our token.
 
-```
+```sh
 dao token change-controller <token-address> <token-manager-address>
 ```
 
 Next we want create a permission for the token-manager.
 
-```
+```sh
 dao acl create <dao-address> <token-manager-address> MINT_ROLE <your-address> <your-address>
 ```
 
@@ -98,7 +98,7 @@ Now we can actually initialize the token manager using the `dao exec` command. T
 
 For a membership token we would initialize like this:
 
-```
+```sh
 dao exec <dao-address> <token-manager-address> initialize [token-address] false 1
 ```
 
@@ -121,13 +121,13 @@ The voting app requires the following initialization parameters:
 
 So if we want a voting app instances with a support requirement of 60% and min accept quorum of 25% and a voting period of 7 days we would use the following command.
 
-```
+```sh
 dao install <dao-address> voting --app-init-args [token-address] 600000000000000000 250000000000000000 604800
 ```
 
 Next you will need to assign the create votes permission, if you want all token holders to be able to create votes, we can assign the `CREATE_VOTES_ROLE` to the `token-manager-address`, you can also set permissions to the voting app itself. The following command grants token holders the ability to create votes, and requires a vote to manage changes to the permission.
 
-```
+```sh
 dao acl create <dao-address> <voting-app-address> CREATE_VOTES_ROLE <token-manager-address> <voting-app-address>
 ```
 
@@ -139,7 +139,7 @@ The Vault is intended to securely store and manage funds but does not have its o
 
 The vault can be installed and does not require passing any specific initialization parameters
 
-```
+```sh
 dao install <dao-address> vault
 ```
 
@@ -151,19 +151,19 @@ For a given budget period P, a budget B can be set for asset A. The total volume
 
 Lets set install a finance instances with a budget period of 30 days:
 
-```
+```sh
 dao install <dao-address> finance --app-init-args [vault-address] 2592000
 ```
 
 Now we want to create a permission that grants the finance app the transfer role on the vault, we will make have voting be required to manage the permission.
 
-```
+```sh
 dao acl create <dao-address> <vault-address> TRANSFER_ROLE <finance-address> <voting-address>
 ```
 
 We also want to grant some permissions on the finance app to the voting app:
 
-```
+```sh
 dao acl create <dao-address> <finance-address> CREATE_PAYMENTS_ROLE <voting-address> <voting-address> 
 
 dao acl create <dao-address> <finance-address> EXECUTE_PAYMENTS_ROLE <voting-address> <voting-address>
@@ -181,7 +181,7 @@ While we have a mostly functional DAO the permissions need to be cleaned up beca
 
 We can see what permissions are currently assigned using the dao acl command
 
-```
+```sh
 dao acl <dao-address>
 ```
 
@@ -189,18 +189,18 @@ You will notice that some key permissions have been granted and are managed by t
 
 You’ll want to grant permissions which are currently only assigned to your address to another entity (eg. `voting-address`):
 
-```
+```sh
 dao acl grant <dao-address> <app-address> <ROLE> <entity-address>
 ```
 
 You’ll want to revoke permissions for yourself once they have been granted to another entity:
 
-```
+```sh
 dao acl revoke <dao-address> <app-address> <ROLE> [your-address]
 ```
 
 You’ll want change the permission manager for permissions from your address to another entity (eg. `voting-address`):
 
-```
+```sh
 dao acl set-manager <dao-address> <app-address> <ROLE> <entity-address>
 ```

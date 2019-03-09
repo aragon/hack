@@ -10,7 +10,7 @@ The `aragon apm` commands are the easiest way to manage aragonPM repositories.
 
 The `aragon apm versions` command shows all the previously published versions of your package (defined in `arapp.json`).
 
-```
+```sh
 aragon apm versions
 ```
 
@@ -18,7 +18,7 @@ aragon apm versions
 
 Grant an address or a group of addresses the permission to create new versions in your package (defined in `arapp.json`), by interacting directly with the ACL, without performing transaction pathing.
 
-```
+```sh
 aragon apm grant [addr1 ... addrN]
 ```
 
@@ -28,7 +28,7 @@ aragon apm grant [addr1 ... addrN]
 
 The `aragon apm publish` command publishes a new version to the aragonPM repo.
 
-```
+```sh
 aragon apm publish <bump> [contract]
 ```
 
@@ -42,7 +42,7 @@ If a minor or patch version is being published then the command can be run with 
 
 You can target a particular directory to publish, using `--files`. We always publish apps with:
 
-```
+```sh
 aragon apm publish <version> --environment <environment> --files app/build
 ```
 

@@ -12,7 +12,7 @@ hide_title: true
 Here is the [gallery of UI components](http://ui.aragon.org/).
 
 Use the following command to install aragonUI:
-```
+```sh
 npm i @aragon/ui
 ```
 

@@ -24,7 +24,7 @@ The arapp.json file contains metadata for your app. This are the fields need to 
 
 This is the arapp.json of the app build in the [tutorial](tutorial.md) configure with rinkeby and mainnet environments.
 
-```js
+```json
 {
   "roles": [
     {

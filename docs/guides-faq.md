@@ -19,7 +19,7 @@ In case the client is not loading properly, deleting the `~/.aragon` directory w
 
 For interacting with aragonCLI you can configure a private key in `~/.aragon`. Create a file `<network>_key.json` (eg. `rinkeby_key.json`) with this structure:
 
-```
+```json
 {
   "rpc": "https://<network>.infura.io",
   "keys": [
@@ -32,31 +32,9 @@ Then if you use `--environment aragon:<network>` when using the aragonCLI comman
 
 You can also define a `~/.aragon/mnemonic.json` file like:
 
-```
+```json
 {
     "mnemonic": "explain tackle mirror kit ..."
-}
-```
-
-## Global variables in apps
-
-Because of our use of Proxies, child contracts won't initialize global variables when created. For example:
-
-```.js
-contract MyFancyApp is App {
-  uint initialState = 1;
-}
-```
-
-In the above example, when used behind a proxy, `initialState` will be 0, even though the expectation reading the code is that it will be 1.
-
-The correct way to handle this situation is to make it something like: 
-
-```.js
-contract MyFancyApp is App {
-  uint initialState;
-
-  function initialize() onlyInit { initialState = 1; }
 }
 ```
 
@@ -64,7 +42,7 @@ contract MyFancyApp is App {
 
 To be sure you are trying to verify the correct smart contract be sure to check what app version is installed in you DAO with:
 
-```
+```sh
 dao apps <dao-address>
 ```
 
@@ -128,7 +106,7 @@ To interact with your DAO using [Metamask](https://metamask.io/) you must make s
 
 Because of the way that Metamask caches the account nonces for the different networks, you may be getting the following error when interacting with your app:
 
-```
+```sh
 Error: the tx doesn't have the correct nonce. account has nonce of: 157 tx has nonce of: 158
 ```
 

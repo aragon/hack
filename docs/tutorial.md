@@ -10,7 +10,7 @@ In this guide, we will walk you through creating your first Aragon app using [ar
 
 Let's first set up and bootstrap our project:
 
-```
+```sh
 npx create-aragon-app foo.aragonpm.eth tutorial
 ```
 
@@ -272,7 +272,7 @@ Since we're importing Node.js modules in our front-end, we need a build script. 
 
 Let's add the build script to `package.json`:
 
-```js
+```json
 {
   // ...
   "scripts": {
@@ -293,7 +293,7 @@ In order for aragonAPI to function, it needs some metadata about your app. This 
 
 Let's modify `arapp.json` so that it knows about the roles we defined previously and use the development environment:
 
-```js
+```json
 {
   "roles": [
     {
@@ -334,7 +334,7 @@ Let's modify it accordingly:
 
 To test out your app without deploying a DAO yourself, installing apps, setting up permissions and setting up aragonPM, you can simply run:
 
-```
+```sh
 npx aragon run
 ```
 
@@ -358,7 +358,7 @@ Running your app using HTTP will allow for a faster development process of your 
 
 Let's add the scripts we need to `package.json`:
 
-```js
+```json
 {
   // ...
   "scripts": {

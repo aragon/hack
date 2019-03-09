@@ -40,7 +40,7 @@ We recommend using [Frame](https://frame.sh) to send transactions to the blockch
 
 From the command line run:
 
-```
+```sh
 npm i -g @aragon/cli
 ```
 
@@ -61,7 +61,7 @@ If you have problems during the instalation of aragonCLI or any other dependenci
 
 To create your first DAO run:
 
-```
+```sh
 npx create-aragon-app foo.aragonpm.eth
 cd foo
 npx aragon run

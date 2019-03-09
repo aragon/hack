@@ -10,7 +10,7 @@ This are general purpose commands that will help you to set up and interact with
 
 The `run` command takes care of completely setting up the environment needed for running your Aragon app. 
 
-```
+```sh
 aragon run
 ```
 
@@ -43,7 +43,7 @@ Available options to customize the `run` command:
 
 Using the HTTP mode for running your app requires starting an HTTP server to serve your app files before executing `aragon run` or `aragon apm publish`
 
-```
+```sh
 # start your app server before
 aragon run --http [server-uri] --http-served-from [path]
 ```
@@ -62,7 +62,7 @@ The [React boilerplate](https://github.com/aragon/aragon-react-boilerplate) supp
 
 The `devchain` command is used for starting a local development testnet with all the required components already deployed and ready to use. 
 
-```
+```sh
 aragon devchain
 ```
 
@@ -85,7 +85,7 @@ Options:
 
 The `ipfs` command is used to start an [IPFS](https://docs.ipfs.io/introduction/overview/) daemon. It adds from [aragen](https://github.com/aragon/aragen) some required files for the first-party Aragon apps to work, so it doesn't have to try and fetch them over the network.
 
-```
+```sh
 aragon ipfs
 ```
 
@@ -93,7 +93,7 @@ aragon ipfs
 
 The `deploy` command can be used for deploying an Ethereum contract to the devchain.
 
-```
+```sh
 aragon deploy [contract-name] --init [argument1 ... argumentN]
 ```
 
@@ -109,7 +109,7 @@ Options:
 
 The `aragon contracts` command can be used to execute commands using the same [truffle](https://github.com/trufflesuite/truffle) version that aragonCLI uses behind the scenes to assist in compiling your app's contracts.
 
-```
+```sh
 aragon contracts <command>
 ```
 

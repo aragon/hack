@@ -11,7 +11,7 @@ The `aragon dao` commands can be used for interacting with your DAO directly fro
 
 Uses a DAO Kit to create a new DAO and prints its address.
 
-```
+```sh
 dao new
 ```
 
@@ -28,7 +28,7 @@ Options:
 
 Used to inspect all the installed apps in a DAO.
 
-```
+```sh
 dao apps <dao-addr>
 ```
 
@@ -41,7 +41,7 @@ Options:
 
 The `dao install` command installs an instance of an app in the DAO.
 
-```
+```sh
 dao install <dao-addr> <app-apm-repo> [repo-version]
 ```
 
@@ -65,7 +65,7 @@ Options:
 
 The `dao upgrade` command upgrades all instances of an app to a newer version.
 
-```
+```sh
 dao upgrade <dao-addr> <app-apm-repo> [repo-version]
 ```
 
@@ -80,7 +80,7 @@ aragonOS protects against having different instances of a particular app running
 
 Performs transactions in your DAO directly from aragonCLI. It supports [transaction pathing](forwarding-intro.md) so if your account cannot perform the action directly it will try to find how to do it (e.g. creating a vote).
 
-```
+```sh
 dao exec <dao-addr> <app-proxy-addr> <method> [argument1 ... argumentN]
 ```
 
@@ -94,7 +94,7 @@ dao exec <dao-addr> <app-proxy-addr> <method> [argument1 ... argumentN]
 
 Provides some syntax sugar over `dao exec` for executing actions using [Agent app](https://blog.aragon.one/aragon-agent-beta-release/) instances in a DAO.
 
-```
+```sh
 dao act <agent-proxy> <target-addr> <method> [argument1 ... argumentN]
 ```
 
@@ -112,7 +112,7 @@ Commands used to create and interact with the tokens your DAO will use.
 
 Create a new [MiniMe](https://github.com/Giveth/minime) token.
 
-```
+```sh
 dao token new <token-name> <symbol> [decimal-units] [transfer-enabled]
 ```
 - `token-name`: Full name of the new Token.
@@ -125,7 +125,7 @@ dao token new <token-name> <symbol> [decimal-units] [transfer-enabled]
 
 Change the controller of a MiniMe token.
 
-```
+```sh
 dao token change-controller <token-addr> <new-controller-addr>
 ```
 
@@ -136,7 +136,7 @@ dao token change-controller <token-addr> <new-controller-addr>
 
 Used to inspect the ACL state in a DAO to check its permissions.
 
-```
+```sh
 dao acl <dao-addr>
 ```
 - `dao-addr`: The main address of the DAO (Kernel).
@@ -146,7 +146,7 @@ dao acl <dao-addr>
 
 Used to create a permission in the ACL. Can only be used if the permission hasn't been created before. The `manager` of the permission can use `dao acl grant` and `dao acl revoke` to manage the permission.
 
-```
+```sh
 dao acl create <dao-addr> <app-proxy-addr> <role> <entity> <manager>
 ```
 
@@ -161,7 +161,7 @@ dao acl create <dao-addr> <app-proxy-addr> <role> <entity> <manager>
 
 Used to grant a permission in the ACL.
 
-```
+```sh
 dao acl grant <dao-addr> <app-proxy-addr> <role> <entity>
 ```
 
@@ -175,7 +175,7 @@ dao acl grant <dao-addr> <app-proxy-addr> <role> <entity>
 
 Used to revoke a permission in the ACL.
 
-```
+```sh
 dao acl revoke <dao-addr> <app-proxy-addr> <role> <entity>
 ```
 
@@ -189,7 +189,7 @@ dao acl revoke <dao-addr> <app-proxy-addr> <role> <entity>
 
 Used to change the manager of a permission in the ACL.
 
-```
+```sh
 dao acl set-manager <dao-addr> <app-proxy-addr> <role> <manager>
 ```
 
@@ -203,7 +203,7 @@ dao acl set-manager <dao-addr> <app-proxy-addr> <role> <manager>
 
 Used to remove the manager of a permission in the ACL. The permission can be created again after removing its manager.
 
-```
+```sh
 dao acl remove-manager <dao-addr> <app-proxy-addr> <role>
 ```
 

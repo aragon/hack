@@ -10,7 +10,7 @@ This guide will show you how to publish your app in different environments.
 
 We'll start from the [React boilerplate](https://github.com/aragon/aragon-react-boilerplate).
 
-```
+```sh
 npx create-aragon-app publish react
 ```
 
@@ -43,7 +43,7 @@ The `rinkeby` network is further defined in `truffle.js`, an has an Ethereum pro
 
 Command:
 
-```
+```sh
 npm run publish:major --environment staging
 ```
 
@@ -53,7 +53,7 @@ This will:
 3. publish the app to the **staging** environment.
 
 Sample output:
-```
+```sh
  > aragon apm publish major "--environment" "staging"
 
  ✔ Successfully published app.open.aragonpm.eth v1.0.0: 
@@ -69,7 +69,7 @@ Sample output:
 ## Minor/patch version: content only
 
 Command:
-```
+```sh
 npm run publish:patch -- --environment staging
 ```
 
@@ -78,7 +78,7 @@ This will:
 2. publish the app to the **staging** environment.
 
 Sample output:
-```
+```sh
  ✔ Successfully published app.open.aragonpm.eth v1.1.1: 
  ℹ Contract address: 0xE636bcA5B95e94F749F63E322a04DB59362299F1
  ℹ Content (ipfs): QmUYv9cjyNVxCyAJGK2YXjkbzh6u4iW2ak81Z9obdefM1q
@@ -88,12 +88,12 @@ Sample output:
 ## Check published versions
 
 Command:
-```
+```sh
 npm run versions -- --environment staging
 ```
 
 Sample output:
-```
+```sh
  ℹ app.open.aragonpm.eth has 4 published versions
  ✔ 1.0.0: 0xE636bcA5B95e94F749F63E322a04DB59362299F1 ipfs:QmR695Wu5KrHNec7pRP3kPvwYihABDAyVYdX5D5vwLgxCn
  ✔ 1.1.0: 0xE636bcA5B95e94F749F63E322a04DB59362299F1 ipfs:QmSwjUZFpv2c2e9fLoxtgFrAsAmBN4DyQGJp4RcqQcW3z3

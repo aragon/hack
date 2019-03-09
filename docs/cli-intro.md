@@ -13,13 +13,13 @@ The aragonCLI (Command Line Interface) is used to create and develop Aragon apps
 
 The aragonCLI can be installed directly from NPM:
 
-```
+```sh
 npm install -g @aragon/cli
 ```
 
 It can also be installed directly from source:
 
-```
+```sh
 git clone https://github.com/aragon/aragon-cli.git
 cd packages/aragon-cli
 npm install
@@ -43,7 +43,7 @@ Options that change the behaviour of the command:
 
 ### Example 
 
-```
+```sh
 aragon <command> --environment aragon:mainnet --use-frame --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs --debug
 ```
 
@@ -52,7 +52,7 @@ aragon <command> --environment aragon:mainnet --use-frame --apm.ipfs.rpc https:/
 
 This command will set up an Aragon app project so you can start building your app from a functional boilerplate.
 
-```
+```sh
 npx create-aragon-app <app-name> [boilerplate]
 ```
 
