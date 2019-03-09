@@ -381,9 +381,6 @@ Changes to the app's background script (`app/script.js`) cannot be hot-reloaded,
 
 Now that we're confident that our app will work and amaze the world, we should publish it. You can follow the publish guide to learn [how to publish in diferent environments](guides-publish.md).
 
-### Use Frame
-
-At this point you likely want to interact with your DAO. Check the guide on [how to use Frame](guides-use-frame.md).
 
 ### More CLI commands
 

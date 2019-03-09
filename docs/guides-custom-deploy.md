@@ -20,7 +20,7 @@ npm install -g @aragon/cli
 
 In order to deploy to rinkeby or mainnet using the CLI you will either need to use a hardware wallet with [Frame](https://frame.sh) or configure aragonCLI to [sign transactions using a private key](/docs/cli-faq.html#set-a-private-key).
 
-If you decide to [use frame](guides-use-frame.md), just add `--use-frame` to any of these commands.
+If you decide to use frame, just add `--use-frame` to any of these commands.
 
 For any deploy always remember to have in a separate terminal the [IPFS](https://docs.ipfs.io/introduction/overview/) daemon running, use `aragon ipfs` to start it.
 
