@@ -123,8 +123,7 @@ When adding a role to your app you will also need to add it to the [`arapp.json`
 
 ```json
 {
-  ...,
-  roles: [
+  "roles": [
     {
       "name": "Set the receiver of funds",
       "id": "SET_RECEIVER_ROLE",

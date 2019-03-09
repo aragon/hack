@@ -360,12 +360,12 @@ Let's add the scripts we need to `package.json`:
 
 ```json
 {
-  // ...
+
   "scripts": {
     "start:app": "npm run build -- --no-minify && parcel serve app/index.html -p 8001 --out-dir dist/ --no-cache",
     "start:aragon:http": "npx aragon run --http localhost:8001 --http-served-from ./dist"
   }
-  // ...
+
 }
 ```
 
