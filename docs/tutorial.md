@@ -289,7 +289,7 @@ You can now build the front-end of your app by running `npm run build`.
 
 In order for aragonAPI to function, it needs some metadata about your app. This metadata is specified in two manifest files; `manifest.json` and `arapp.json`.
 
-`arapp.json` defines smart contract and aragonPM-specific things like the roles in your app or diferent environments.
+`arapp.json` defines smart contract and aragonPM-specific things like the roles in your app or different environments.
 
 Let's modify `arapp.json` so that it knows about the roles we defined previously and use the development environment:
 
@@ -379,7 +379,7 @@ Changes to the app's background script (`app/script.js`) cannot be hot-reloaded,
 
 ### Publishing
 
-Now that we're confident that our app will work and amaze the world, we should publish it. You can follow the publish guide to learn [how to publish in diferent environments](guides-publish.md).
+Now that we're confident that our app will work and amaze the world, we should publish it. You can follow the publish guide to learn [how to publish in different environments](guides-publish.md).
 
 
 ### More CLI commands

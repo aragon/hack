@@ -20,7 +20,7 @@ npm install -g @aragon/cli
 
 In order to deploy to rinkeby or mainnet using the CLI you will either need to use a hardware wallet with [Frame](https://frame.sh) or configure aragonCLI to [sign transactions using a private key](/docs/cli-faq.html#set-a-private-key).
 
-If you decide to use frame, just add `--use-frame` to any of these commands.
+If you decide to use Frame, just add `--use-frame` to any of these commands.
 
 For any deploy always remember to have in a separate terminal the [IPFS](https://docs.ipfs.io/introduction/overview/) daemon running, use `aragon ipfs` to start it.
 
@@ -42,7 +42,7 @@ If you are deploying to mainnet:
 dao new
 ```
 
-This will create a new organization based on default [`bare-kit`](https://github.com/aragon/dao-kits/blob/master/kits/bare/contracts/BareKit.sol) it won’t have a token manager, vault, finance, or voting instance installed. Make a note of the deployed DAO address as we will need it for subsequent commands.
+This will create a new organization based on the default [`bare-kit`](https://github.com/aragon/dao-kits/blob/master/kits/bare/contracts/BareKit.sol). It won’t have a token manager, vault, finance, or voting instance installed. Make a note of the deployed DAO address as we will need it for subsequent commands.
 
 ## Adding a Token and Token Manager instance
 

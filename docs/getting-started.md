@@ -52,7 +52,7 @@ You might need to have [Git](https://git-scm.com) installed.
 
 ### Windows considerations
 
-You need to run the shell with administrator rights when installing aragonCLI.
+You might need to run the shell with administrator rights when installing the aragonCLI, because our `go-ipfs` dependency will need to create a symlink to work correctly.
 
 If you have problems during the instalation of aragonCLI or any other dependencies. You probably need to install [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) or similar package.
 
