@@ -12,8 +12,18 @@
       "client",
       "human-readable-txs"
     ],
+    "Guides": [
+      "tutorial",
+      "guides-publish",
+      "guides-custom-deploy",
+      "guides-faq"
+    ],
     "aragonCLI": [
-      "cli-usage"
+      "cli-intro",
+      "cli-main-commands",
+      "cli-dao-commands",
+      "cli-apm-commands",
+      "cli-global-confg"
     ],
     "aragonPM": [
       "apm",
@@ -29,10 +39,10 @@
     ],
     "aragonAPI": [
       "aragonjs-intro",
-      "aragonjs-guide-bg-scripts",
       "aragonjs-ref-app",
       "aragonjs-ref-providers",
-      "aragonjs-ref-wrapper"
+      "aragonjs-ref-wrapper",
+      "aragonjs-guide-bg-scripts"
     ],
     "aragonUI": [
       "aragonui-intro"

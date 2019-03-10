@@ -64,6 +64,28 @@ It is important to note that, using this pattern, **anyone can initialize a prox
 
 Another important note is that if the app uses the [ACL](#roles-and-the-acl) for access control, **all access control checks will fail unless the app has been initialized**.
 
+### Global variables in apps
+
+Because of our use of Proxies, child contracts won't initialize global variables when created. For example:
+
+```js
+contract MyFancyApp is App {
+  uint initialState = 1;
+}
+```
+
+In the above example, when used behind a proxy, `initialState` will be 0, even though the expectation reading the code is that it will be 1.
+
+The correct way to handle this situation is to make it something like: 
+
+```js
+contract MyFancyApp is App {
+  uint initialState;
+
+  function initialize() onlyInit { initialState = 1; }
+}
+```
+
 ## Roles and the Access Control List
 
 aragonOS comes with a powerful [Access Control List (ACL)](/docs/acl-intro.html) that apps can leverage for protecting functionality behind permissions. Rather than coding any custom access control logic into your app, such as the infamous `onlyOwner`, you can just protect functions by adding the `auth()` or `authP()` modifiers.
@@ -97,12 +119,11 @@ contract MyApp is AragonApp {
 
 An important note is that the `auth()` and `authP()` modifiers will also check whether the app is [initialized](#constructor-and-initialization). If the **app hasn't been initialized, the authentication check will fail**.
 
-When adding a role to your app you will also need to add it to the [`arapp.json`](cli-usage.md#the-arappjson-file) file with a description of the functionality protected by the role. You can check Aragon's [Voting app arapp.json](https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json) for an example of role descriptions.
+When adding a role to your app you will also need to add it to the [`arapp.json`](cli-global-confg#the-arappjson-file) file with a description of the functionality protected by the role. You can check Aragon's [Voting app arapp.json](https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json) for an example of role descriptions.
 
-```
+```json
 {
-  ...,
-  roles: [
+  "roles": [
     {
       "name": "Set the receiver of funds",
       "id": "SET_RECEIVER_ROLE",

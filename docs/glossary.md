@@ -7,7 +7,7 @@ sidebar_label: Glossary
 ### All Aragon terminology
 ---
 
-- [**aragonCLI**](/docs/cli-usage.html): Tool for creating, testing and publishing Aragon applications.
+- [**aragonCLI**](/docs/cli-intro.html): Tool for creating, testing and publishing Aragon applications.
 - [**aragonOS**](/docs/aragonos-intro.html): Framework that enables flexible and upgradeable governance mechanisms by creating and assigning permissions to multiple entities.
 - [**aragonPM**](/docs/apm.html): Decentralized package manager based on aragonOS that handles upgreadability of smart contracts and arbitrary data blobs, such as webapps.
 - **aragonPM Repository**: Smart contract deployed inside aragonPM that keeps track of the versions for a package.

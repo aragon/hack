@@ -13,13 +13,13 @@ Here is the [gallery of UI components](https://ui.aragon.org/).
 
 Use the following command to install aragonUI:
 
-```
+```sh
 npm install --save @aragon/ui
 ```
 
 Copy the aragonUI assets into your public directory:
 
-```
+```sh
 npx copy-aragon-ui-assets ./public
 ```
 
