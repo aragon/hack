@@ -119,7 +119,7 @@ contract MyApp is AragonApp {
 
 An important note is that the `auth()` and `authP()` modifiers will also check whether the app is [initialized](#constructor-and-initialization). If the **app hasn't been initialized, the authentication check will fail**.
 
-When adding a role to your app you will also need to add it to the [`arapp.json`](cli-usage.md#the-arappjson-file) file with a description of the functionality protected by the role. You can check Aragon's [Voting app arapp.json](https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json) for an example of role descriptions.
+When adding a role to your app you will also need to add it to the [`arapp.json`](cli-global-confg#the-arappjson-file) file with a description of the functionality protected by the role. You can check Aragon's [Voting app arapp.json](https://github.com/aragon/aragon-apps/blob/master/apps/voting/arapp.json) for an example of role descriptions.
 
 ```json
 {
