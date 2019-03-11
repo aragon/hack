@@ -229,8 +229,6 @@ const initializeApp = () => {
   )
 
   const view = document.getElementById('view')
-  const increment = document.getElementById('increment')
-  const decrement = document.getElementById('decrement')
 
   app.state().subscribe(
     (state) => {
@@ -242,13 +240,6 @@ const initializeApp = () => {
       console.log(err)
     }
   )
-
-  increment.onclick = () => {
-    app.increment()
-  }
-  decrement.onclick = () => {
-    app.decrement()
-  }
 }
 
 const sendMessageToWrapper = (name, value) => {
