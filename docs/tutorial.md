@@ -155,6 +155,7 @@ Let's start by writing a background worker that listens for our `Increment` and 
 
 ```js
 // app/script.js
+import '@babel/polyfill'
 import Aragon from '@aragon/client'
 
 const app = new Aragon()
@@ -174,6 +175,17 @@ app.store(async (state, event) => {
       return state
   }
 })
+
+function getValue() {
+  // Get current value from the contract by calling the public getter
+  return new Promise(resolve => {
+    app
+      .call('value')
+      .first()
+      .map(value => parseInt(value, 10))
+      .subscribe(resolve)
+  })
+}
 ```
 
 If you've worked with [Redux](https://redux.js.org/) before, this might look vaguely familiar.
@@ -211,20 +223,40 @@ Now let's write the view portion of our app. In our case, this is a simple HTML 
 // app/app.js
 import Aragon, { providers } from '@aragon/client'
 
-const app = new Aragon(
-  new providers.WindowMessage(window.parent)
-)
-const view = document.getElementById('view')
+const initializeApp = () => {
+  const app = new Aragon(
+    new providers.WindowMessage(window.parent)
+  )
 
-app.state().subscribe(
-  (state) => {
-    view.innerHTML = `The counter is ${state || 0}`
-  },
-  (err) => {
-    view.innerHTML = 'An error occured, check the console'
-    console.log(err)
+  const view = document.getElementById('view')
+
+  app.state().subscribe(
+    (state) => {
+      // the state is null in the beginning, when there are no event emitted from the contract
+      view.innerHTML = `The counter is ${state ? state.count : 0}`
+    },
+    (err) => {
+      view.innerHTML = 'An error occured, check the console'
+      console.log(err)
+    }
+  )
+}
+
+const sendMessageToWrapper = (name, value) => {
+  window.parent.postMessage({ from: 'app', name, value }, '*')
+}
+
+// handshake between Aragon Core and the iframe,
+// since iframes can lose messages that were sent before they were ready
+window.addEventListener('message', ({ data }) => {
+  if (data.from !== 'wrapper') {
+    return
   }
-)
+  if (data.name === 'ready') {
+    sendMessageToWrapper('ready', true)
+    initializeApp()
+  }
+})
 ```
 
 That's it! Internally, `state` observes the `state` key in cache and emits every time a change occurs.
@@ -249,18 +281,19 @@ It's really simple to use. Let's add our intents to our app:
 
 ```js
 // app/app.js
+const initializeApp = () => {
+  // ...
+  const increment = document.getElementById('increment')
+  const decrement = document.getElementById('decrement')
 
-// ...
-const increment = document.getElementById('increment')
-const decrement = document.getElementById('decrement')
-
-increment.onclick = () => {
-  app.increment()
+  increment.onclick = () => {
+    app.increment()
+  }
+  decrement.onclick = () => {
+    app.decrement()
+  }
+  // ...
 }
-decrement.onclick = () => {
-  app.decrement()
-}
-// ...
 ```
 
 That's it! Now whenever the user clicks one of either the increment or decrement buttons, an intent is sent to the wrapper, and it will show the user a transaction to sign.
@@ -352,7 +385,7 @@ After running this command a browser tab should pop up with your freshly created
 > **Note**<br>
 > It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the [React template](https://github.com/aragon/aragon-react-boilerplate)!
 
-### Running your app from an HTTP server
+### Running your app from an HTTP server
 
 Running your app using HTTP will allow for a faster development process of your app's front-end, as it can be hot-reloaded without the need to execute `aragon run` every time a change is made.
 
@@ -373,7 +406,8 @@ Let's add the scripts we need to `package.json`:
 
 - After that, you can run `npm run start:aragon:http` which will compile your app's contracts, publish the app locally and create a DAO. You will need to stop it and run it again after making changes to your smart contracts.
 
-Changes to the app's background script (`app/script.js`) cannot be hot-reloaded, after making changes to the script, you will need to either restart the development server (`npm run start:app`) or rebuild the script `npm run build`.
+> **Note**<br>
+> Changes to the app's background script (`app/script.js`) cannot be hot-reloaded, after making changes to the script, you will need to either restart the development server (`npm run start:app`) or rebuild the script `npm run build`.
 
 ## Next steps
 
