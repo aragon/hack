@@ -8,11 +8,32 @@ The `aragon apm` commands are the easiest way to manage aragonPM repositories.
 
 ## aragon apm versions
 
-The `aragon apm versions` command shows all the previously published versions of your package (defined in `arapp.json`).
+Shows all the previously published versions of your package (defined in `arapp.json`).
 
 ```sh
 aragon apm versions
 ```
+
+## aragon apm packages
+
+Lists all the packages in a apm registry.
+
+```sh
+aragon apm packages [apmRegistry]
+```
+
+- `apmRegistry`: The registry to inspect. Defaults to `aragonpm.eth`.
+
+## aragon apm info
+
+Shows information about a repository.
+
+```sh
+aragon apm info <apmRepo> [apmRepoVersion]
+```
+
+- `apmRepo`: Name of the APM repo.
+- `apmRepoVersion`: Version of the repo. Defaults to `latest`.
 
 ## aragon apm grant
 
