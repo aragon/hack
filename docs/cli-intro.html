@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css"/>
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hkgrotesklight" type="text/css">
+      <script type="text/javascript">
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://arastats.eu/staats/";
+          _paq.push(['setTrackerUrl', u+'piwik.php']);
+          _paq.push(['setSiteId', '7']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+      <noscript><img src="https://arastats.eu/staats/piwik.php?idsite=7&amp;rec=1" style="border:0" alt="" /></noscript>
+      <html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Using the aragonCLI · Aragon Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="![](/docs/assets/brand/aragoncli.png)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Using the aragonCLI · Aragon Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://hack.aragon.org/index.html"/><meta property="og:description" content="![](/docs/assets/brand/aragoncli.png)"/><meta property="og:image" content="https://hack.aragon.org/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://hack.aragon.org/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div><div class="aragon-navbar"><div class="center"><ul><li><a href="https://aragon.org/discover">Discover</a></li><li><a class="active">Developers</a></li><li class="logo-li"><a class="logo-link" href="https://aragon.org"><img class="logo" src="/img/navbar-logo.svg" alt="Aragon Developer Portal"/></a></li><li><a href="https://aragon.org/project">Project</a></li><li><a href="https://aragon.org/network">Network</a></li></ul></div></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="back-to-home"><div><a href="/">← Back to home</a></div></div><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><span><a href="/">home</a></span><i>›</i><span>aragonCLI</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">The basics</h3><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/stack">The stack</a></li><li class="navListItem"><a class="navItem" href="/docs/acl-intro">Permissions</a></li><li class="navListItem"><a class="navItem" href="/docs/forwarding-intro">Forwarding</a></li><li class="navListItem"><a class="navItem" href="/docs/upgradeability-intro">Upgradeability</a></li><li class="navListItem"><a class="navItem" href="/docs/package-management">Package management</a></li><li class="navListItem"><a class="navItem" href="/docs/kits-intro">Kits</a></li><li class="navListItem"><a class="navItem" href="/docs/client">The Aragon client</a></li><li class="navListItem"><a class="navItem" href="/docs/human-readable-txs">Human readable transactions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides</h3><ul><li class="navListItem"><a class="navItem" href="/docs/tutorial">Your first Aragon app</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-publish">Publish</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-custom-deploy">Custom deploy with aragonCLI</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-faq">Troubleshooting</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonCLI</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/cli-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-main-commands">Main commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-dao-commands">DAO commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-apm-commands">aragonPM commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-global-confg">Global configuration</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonPM</h3><ul><li class="navListItem"><a class="navItem" href="/docs/apm">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/apm-ref">Reference documentation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonOS</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonos-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-motivation">Motivations</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-building">Developing with aragonOS</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-ref">Reference documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-4-migration">Migrating to aragonOS 4 from aragonOS 3</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-3-ref">Reference (aragonOS 3)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonAPI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonjs-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-app">App</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-providers">Providers</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-wrapper">Wrapper</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-guide-bg-scripts">Background Scripts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonUI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonui-intro">Introduction</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/cli-intro.md" target="_blank" rel="noreferrer noopener">Edit</a></header><article><div><span><p><img src="/docs/assets/brand/aragoncli.png" alt=""></p>
+<p>The aragonCLI (Command Line Interface) is used to create and develop Aragon apps.</p>
+<h2><a class="anchor" aria-hidden="true" id="install"></a><a href="#install" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h2>
+<p>The aragonCLI can be installed directly from NPM:</p>
+<pre><code class="hljs css language-sh">npm install -g @aragon/cli
+</code></pre>
+<p>It can also be installed directly from source:</p>
+<pre><code class="hljs css language-sh">git <span class="hljs-built_in">clone</span> https://github.com/aragon/aragon-cli.git
+<span class="hljs-built_in">cd</span> packages/aragon-cli
+npm install
+npm link
+</code></pre>
+<p>After installing, the main <code>aragon</code> executable will be available for use. It will also install the <code>dao</code> alias which is a shortcut for <code>aragon dao</code> commands.</p>
+<h2><a class="anchor" aria-hidden="true" id="global-options"></a><a href="#global-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Global options</h2>
+<p>Options that change the behaviour of the command:</p>
+<ul>
+<li><code>--silent</code>: Silence output to terminal.</li>
+<li><code>--debug</code>: Show more output to terminal.</li>
+<li><code>--cwd</code>: Project working directory.</li>
+<li><code>--use-frame</code>: Use frame as a signing provider and web3 provider.</li>
+<li><code>--environment</code>: The <a href="/docs/cli-global-confg.html#the-arappjson-file">environment</a> in your arapp.json that you want to use.</li>
+<li><code>--apm.ens-registry</code>: Address of the ENS registry. This will be overwritten if the selected environment from your arapp.json includes a <code>registry</code> property.</li>
+<li><code>--apm.ipfs.rpc</code>: An URI to the IPFS node used to publish files.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<pre><code class="hljs css language-sh">aragon &lt;<span class="hljs-built_in">command</span>&gt; --environment aragon:mainnet --use-frame --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs --debug
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="create-aragon-app"></a><a href="#create-aragon-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>create-aragon-app</h2>
+<p>This command will set up an Aragon app project so you can start building your app from a functional boilerplate.</p>
+<pre><code class="hljs css language-sh">npx create-aragon-app &lt;app-name&gt; [boilerplate]
+</code></pre>
+<ul>
+<li><p><code>app-name</code>: The name or ENS domain name for your app in an aragonPM Registry (e.g. <code>myapp</code> or <code>myapp.aragonpm.eth</code>). If only the name is provided it will create your app on the default <code>aragonpm.eth</code> registry.</p></li>
+<li><p><code>boilerplate</code>: (optional) the Github repo name or alias for a boilerplate to set up your app. The currently available boilerplates are:</p>
+<ul>
+<li><code>react</code>: this boilerplate contains a very basic Counter app and a webapp for interacting with it. It showcases the end-to-end interaction with an Aragon app, from the contracts to the webapp.</li>
+<li><code>react-kit</code>: it is a variation of the <code>react</code> boilerplate that also comes with a DAO Kit which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Kits <a href="https://github.com/aragon/hack/blob/master/docs/kits-intro.md">here</a>.</li>
+<li><code>bare</code>: this boilerplate will just set up your app directory structure but contains no functional code.</li>
+</ul></li>
+</ul>
+<blockquote>
+<p><strong>Note</strong><br>
+This is an independent package, it's not necessary to have <code>@aragon/cli</code> installed to use it.
+<a href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">npx</a> comes with npm 5.2+. If you use npm 5.1 or earlier, you can't use <code>npx</code>. Instead, install <code>create-aragon-app</code> globally.</p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/guides-faq">← Troubleshooting and FAQ</a><a class="docs-next button" href="/docs/cli-main-commands">Main commands →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#install">Install</a></li><li><a href="#global-options">Global options</a><ul class="toc-headings"><li><a href="#example">Example</a></li></ul></li><li><a href="#create-aragon-app">create-aragon-app</a></li></ul></nav></div><footer class="nav-footer sc-bdVaJa eAwGjB" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/footer.svg" alt="Aragon Developer Portal" width="66" height="58"/></a></div><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/aragonjs-intro.html">aragonAPI</a><a href="/docs/aragonui-intro.html">aragonUI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+              var search = docsearch({
+                
+                apiKey: '9dff0383c32107d6c174f15e259bb23a',
+                indexName: 'aragon',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script>
+      <style data-styled-components="eAwGjB">
+/* sc-component-id: sc-bdVaJa */
+.sc-bdVaJa {}
+/* sc-component-id: sc-global-3832733198 */
+@font-face{font-family:'overpass';src:url(/aragon-ui/cf790334a5a6d45c.woff2) format('woff2'),url(/aragon-ui/fd48a701d84ebf69.woff) format('woff');font-weight:400;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/32a3f11e7740ce58.woff2) format('woff2'),url(/aragon-ui/860b19d3e10736e7.woff) format('woff');font-weight:600;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/5cfe62515c2f9b42.woff2) format('woff2'),url(/aragon-ui/f8ba2d7a9af0db1f.woff) format('woff');font-weight:800;font-style:normal;} *,*:before,*:after{box-sizing:border-box;} html{min-height:100%;} body{font-family:overpass,sans-serif;font-size:15px;font-weight:400;line-height:1.5;color:#000000;background:#F7FBFD;} body,ul,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;} button,select,input,textarea,h1,h2,h3,h4,h5,h6{font-size:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;} a,button,select,input,textarea{color:inherit;} strong,b{font-weight:600;}</style>
+      </body></html>

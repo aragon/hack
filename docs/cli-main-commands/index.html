@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css"/>
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hkgrotesklight" type="text/css">
+      <script type="text/javascript">
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://arastats.eu/staats/";
+          _paq.push(['setTrackerUrl', u+'piwik.php']);
+          _paq.push(['setSiteId', '7']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+      <noscript><img src="https://arastats.eu/staats/piwik.php?idsite=7&amp;rec=1" style="border:0" alt="" /></noscript>
+      <html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Main commands · Aragon Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This are general purpose commands that will help you to set up and interact with your development environment."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Main commands · Aragon Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://hack.aragon.org/index.html"/><meta property="og:description" content="This are general purpose commands that will help you to set up and interact with your development environment."/><meta property="og:image" content="https://hack.aragon.org/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://hack.aragon.org/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div><div class="aragon-navbar"><div class="center"><ul><li><a href="https://aragon.org/discover">Discover</a></li><li><a class="active">Developers</a></li><li class="logo-li"><a class="logo-link" href="https://aragon.org"><img class="logo" src="/img/navbar-logo.svg" alt="Aragon Developer Portal"/></a></li><li><a href="https://aragon.org/project">Project</a></li><li><a href="https://aragon.org/network">Network</a></li></ul></div></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="back-to-home"><div><a href="/">← Back to home</a></div></div><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><span><a href="/">home</a></span><i>›</i><span>aragonCLI</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">The basics</h3><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/stack">The stack</a></li><li class="navListItem"><a class="navItem" href="/docs/acl-intro">Permissions</a></li><li class="navListItem"><a class="navItem" href="/docs/forwarding-intro">Forwarding</a></li><li class="navListItem"><a class="navItem" href="/docs/upgradeability-intro">Upgradeability</a></li><li class="navListItem"><a class="navItem" href="/docs/package-management">Package management</a></li><li class="navListItem"><a class="navItem" href="/docs/kits-intro">Kits</a></li><li class="navListItem"><a class="navItem" href="/docs/client">The Aragon client</a></li><li class="navListItem"><a class="navItem" href="/docs/human-readable-txs">Human readable transactions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides</h3><ul><li class="navListItem"><a class="navItem" href="/docs/tutorial">Your first Aragon app</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-publish">Publish</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-custom-deploy">Custom deploy with aragonCLI</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-faq">Troubleshooting</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonCLI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/cli-intro">Introduction</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/cli-main-commands">Main commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-dao-commands">DAO commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-apm-commands">aragonPM commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-global-confg">Global configuration</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonPM</h3><ul><li class="navListItem"><a class="navItem" href="/docs/apm">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/apm-ref">Reference documentation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonOS</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonos-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-motivation">Motivations</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-building">Developing with aragonOS</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-ref">Reference documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-4-migration">Migrating to aragonOS 4 from aragonOS 3</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-3-ref">Reference (aragonOS 3)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonAPI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonjs-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-app">App</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-providers">Providers</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-wrapper">Wrapper</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-guide-bg-scripts">Background Scripts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonUI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonui-intro">Introduction</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/cli-main-commands.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Main commands</h1></header><article><div><span><p>This are general purpose commands that will help you to set up and interact with your development environment.</p>
+<h2><a class="anchor" aria-hidden="true" id="aragon-run"></a><a href="#aragon-run" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>aragon run</h2>
+<p>The <code>run</code> command takes care of completely setting up the environment needed for running your Aragon app.</p>
+<pre><code class="hljs css language-sh">aragon run
+</code></pre>
+<p>These are all the things that running <code>aragon run</code> will do for you:</p>
+<ol>
+<li>It checks whether <strong>IPFS</strong> and a local <strong>Ethereum development chain</strong> (devchain) are running and if not it will start them. Once aragon is terminated, any IPFS or dev chain it started will also be terminated.</li>
+<li>It will <strong>publish your app</strong> to the local aragonPM registry running in your devchain. This step executes the <code>aragon apm publish</code> internally. You can check the options and how the command works in depth <a href="/docs/cli-apm-commands">here</a>.</li>
+<li>Once the package is published it will <strong>create a DAO</strong> with your app installed. If you are running your app without a Kit it will grant permissions to the first account printed in the console to perform all the actions protected by the ACL in your app.</li>
+<li>After the DAO is created it will download the <a href="https://github.com/aragon/aragon">Aragon client</a>, install its dependencies and start it up so you can interact with the DAO in your web browser.</li>
+</ol>
+<p>Available options to customize the <code>run</code> command:</p>
+<ul>
+<li><code>--reset</code>: If reset is present it will reset the devchain before running. The chain will then start from scratch and all published packages will need to be recreated.</li>
+<li><code>--port</code>: The port where the devchain will be started.</li>
+<li><code>--kit</code>: The name of the contract that will be deployed as the <a href="/docs/kits-intro">DAO kit</a> that will be used to create your DAO. If no Kit is provided it will use a default Kit that sets up the DAO with just your app (<code>bare-kit.aragonpm.eth</code>).</li>
+<li><code>--kit-init [argument1 ... argumentN]</code>: The constructor arguments for the Kit contract, each separated by a space. See the <a href="#aragon-deploy">deploy command</a> for more information on constructor arguments.</li>
+<li><code>--kit-deploy-event</code>: Arguments to be passed to the kit constructor. Defaults to <code>DeployInstance</code>.</li>
+<li><code>--build-script</code>: The name of the NPM script in your app that will be used for building the webapp.</li>
+<li><code>--client</code>: Whether to start the Aragon client or not. Defaults to <code>true</code>.</li>
+<li><code>--client-version</code>: Version of Aragon client used to run your sandboxed app.</li>
+<li><code>--client-port</code>: Port being used by Aragon client.</li>
+<li><code>--client-path</code>: A path pointing to an existing Aragon client installation.</li>
+<li><code>--app-init</code>: Name of the function that will be called to initialize an app. Defaults to <code>initialize</code>.</li>
+<li><code>--app-init-args</code>: Arguments for calling the app init function.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="running-your-app-from-a-development-http-server"></a><a href="#running-your-app-from-a-development-http-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running your app from a development HTTP server</h3>
+<p><code>aragon run</code> by default will replicate Aragon's production environment and publish your app using IPFS. However, when developing the webapp part of your Aragon app, using IPFS would require you to repeat the entire publishing process every time you make a change and want to try it out.</p>
+<p>Using the HTTP mode for running your app requires starting an HTTP server to serve your app files before executing <code>aragon run</code> or <code>aragon apm publish</code></p>
+<pre><code class="hljs css language-sh"><span class="hljs-comment"># start your app server before</span>
+aragon run --http [server-uri] --http-served-from [path]
+</code></pre>
+<ul>
+<li><code>http</code>: This is the flag that indicates that you wish to run your app using HTTP. The URI of the server must be provided here (e.g. <code>localhost:4001</code>)</li>
+<li><code>http-served-from</code>: Path to the directory that the HTTP server exposes. Some artifacts are generated and placed in this directory during the publishing process of your app. The server needs serve these new files when they are created and the server is already running.</li>
+</ul>
+<p>If your HTTP server supports hot-reloading your app's frontend will be hot-reloaded inside the Aragon client.</p>
+<p>However, when <strong>making changes to the background script</strong> of your app, a refresh of the client is required so the new script can be loaded. Also, depending on how the background script of your app is being built, you may need to manually trigger the compilation of the script.</p>
+<p>The <a href="https://github.com/aragon/aragon-react-boilerplate">React boilerplate</a> supports serving your app using HTTP.</p>
+<h2><a class="anchor" aria-hidden="true" id="aragon-devchain"></a><a href="#aragon-devchain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>aragon devchain</h2>
+<p>The <code>devchain</code> command is used for starting a local development testnet with all the required components already deployed and ready to use.</p>
+<pre><code class="hljs css language-sh">aragon devchain
+</code></pre>
+<p>It uses <a href="https://github.com/aragon/aragen">aragen</a> for setting up the snapshot from which the chain starts. At any point <code>aragon devchain --reset</code> can be run which will reset the devchain to the original snapshot.</p>
+<p>This snapshot contains a local instance of ENS, the first-party <a href="https://github.com/aragon/aragon-apps">Aragon apps</a> published to aragonPM (e.g. <code>voting.aragonpm.eth</code> or <code>token-manager.aragonpm.eth</code>) and the first-party <a href="https://github.com/aragon/dao-kits">DAO Kits</a> (e.g. <code>bare-kit.aragonpm.eth</code>).</p>
+<p>Devchains can be started on different ports and will keep their state independent from other chains.</p>
+<p>Options:</p>
+<ul>
+<li><code>--reset</code>: Resets the devchain to the snapshot.</li>
+<li><code>--port</code>: The port number where the devchain will be started.</li>
+<li><code>--verbose</code>: Enable verbose output. Similar to ganache-cli.</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong><br>
+The ENS instance is used both for the aragonPM registry <code>aragonpm.eth</code> and for the <a href="https://github.com/aragon/aragon-id">aragon-id</a> <code>aragonid.eth</code>.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="aragon-ipfs"></a><a href="#aragon-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>aragon ipfs</h2>
+<p>The <code>ipfs</code> command is used to start an <a href="https://docs.ipfs.io/introduction/overview/">IPFS</a> daemon. It adds from <a href="https://github.com/aragon/aragen">aragen</a> some required files for the first-party Aragon apps to work, so it doesn't have to try and fetch them over the network.</p>
+<pre><code class="hljs css language-sh">aragon ipfs
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="aragon-deploy"></a><a href="#aragon-deploy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>aragon deploy</h2>
+<p>The <code>deploy</code> command can be used for deploying an Ethereum contract to the devchain.</p>
+<pre><code class="hljs css language-sh">aragon deploy [contract-name] --init [argument1 ... argumentN]
+</code></pre>
+<p>The <code>contract-name</code> defaults to the contract at the path in arapp.json.</p>
+<p>Running <code>aragon deploy</code> will compile your contracts using <code>truffle compile</code> and will deploy the contract with the constructor arguments provided.</p>
+<p>Options:</p>
+<ul>
+<li><code>--init</code>: Arguments to be passed to contract constructor on deploy. Need to be separated by a space. The <code>@ARAGON_ENS</code> alias can be used and it will be replaced by the address of the ENS registry in the devchain.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="aragon-contracts"></a><a href="#aragon-contracts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>aragon contracts</h2>
+<p>The <code>aragon contracts</code> command can be used to execute commands using the same <a href="https://github.com/trufflesuite/truffle">truffle</a> version that aragonCLI uses behind the scenes to assist in compiling your app's contracts.</p>
+<pre><code class="hljs css language-sh">aragon contracts &lt;<span class="hljs-built_in">command</span>&gt;
+</code></pre>
+<p>It is equivalent to executing <code>npx truffle &lt;command&gt;</code></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/cli-intro">← Using the aragonCLI</a><a class="docs-next button" href="/docs/cli-dao-commands">DAO commands →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#aragon-run">aragon run</a><ul class="toc-headings"><li><a href="#running-your-app-from-a-development-http-server">Running your app from a development HTTP server</a></li></ul></li><li><a href="#aragon-devchain">aragon devchain</a></li><li><a href="#aragon-ipfs">aragon ipfs</a></li><li><a href="#aragon-deploy">aragon deploy</a></li><li><a href="#aragon-contracts">aragon contracts</a></li></ul></nav></div><footer class="nav-footer sc-bdVaJa eAwGjB" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/footer.svg" alt="Aragon Developer Portal" width="66" height="58"/></a></div><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/aragonjs-intro.html">aragonAPI</a><a href="/docs/aragonui-intro.html">aragonUI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+              var search = docsearch({
+                
+                apiKey: '9dff0383c32107d6c174f15e259bb23a',
+                indexName: 'aragon',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script>
+      <style data-styled-components="eAwGjB">
+/* sc-component-id: sc-bdVaJa */
+.sc-bdVaJa {}
+/* sc-component-id: sc-global-3832733198 */
+@font-face{font-family:'overpass';src:url(/aragon-ui/cf790334a5a6d45c.woff2) format('woff2'),url(/aragon-ui/fd48a701d84ebf69.woff) format('woff');font-weight:400;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/32a3f11e7740ce58.woff2) format('woff2'),url(/aragon-ui/860b19d3e10736e7.woff) format('woff');font-weight:600;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/5cfe62515c2f9b42.woff2) format('woff2'),url(/aragon-ui/f8ba2d7a9af0db1f.woff) format('woff');font-weight:800;font-style:normal;} *,*:before,*:after{box-sizing:border-box;} html{min-height:100%;} body{font-family:overpass,sans-serif;font-size:15px;font-weight:400;line-height:1.5;color:#000000;background:#F7FBFD;} body,ul,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;} button,select,input,textarea,h1,h2,h3,h4,h5,h6{font-size:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;} a,button,select,input,textarea{color:inherit;} strong,b{font-weight:600;}</style>
+      </body></html>

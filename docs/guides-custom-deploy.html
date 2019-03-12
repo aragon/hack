@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css"/>
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hkgrotesklight" type="text/css">
+      <script type="text/javascript">
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://arastats.eu/staats/";
+          _paq.push(['setTrackerUrl', u+'piwik.php']);
+          _paq.push(['setSiteId', '7']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+      <noscript><img src="https://arastats.eu/staats/piwik.php?idsite=7&amp;rec=1" style="border:0" alt="" /></noscript>
+      <html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Custom Aragon Organization Deployment using aragonCLI · Aragon Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This guide will show you the process to deploy a blank organization and configure it as a custom organization for a cooperative."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Custom Aragon Organization Deployment using aragonCLI · Aragon Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://hack.aragon.org/index.html"/><meta property="og:description" content="This guide will show you the process to deploy a blank organization and configure it as a custom organization for a cooperative."/><meta property="og:image" content="https://hack.aragon.org/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://hack.aragon.org/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div><div class="aragon-navbar"><div class="center"><ul><li><a href="https://aragon.org/discover">Discover</a></li><li><a class="active">Developers</a></li><li class="logo-li"><a class="logo-link" href="https://aragon.org"><img class="logo" src="/img/navbar-logo.svg" alt="Aragon Developer Portal"/></a></li><li><a href="https://aragon.org/project">Project</a></li><li><a href="https://aragon.org/network">Network</a></li></ul></div></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="back-to-home"><div><a href="/">← Back to home</a></div></div><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><span><a href="/">home</a></span><i>›</i><span>Guides</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">The basics</h3><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/stack">The stack</a></li><li class="navListItem"><a class="navItem" href="/docs/acl-intro">Permissions</a></li><li class="navListItem"><a class="navItem" href="/docs/forwarding-intro">Forwarding</a></li><li class="navListItem"><a class="navItem" href="/docs/upgradeability-intro">Upgradeability</a></li><li class="navListItem"><a class="navItem" href="/docs/package-management">Package management</a></li><li class="navListItem"><a class="navItem" href="/docs/kits-intro">Kits</a></li><li class="navListItem"><a class="navItem" href="/docs/client">The Aragon client</a></li><li class="navListItem"><a class="navItem" href="/docs/human-readable-txs">Human readable transactions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides</h3><ul><li class="navListItem"><a class="navItem" href="/docs/tutorial">Your first Aragon app</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-publish">Publish</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/guides-custom-deploy">Custom deploy with aragonCLI</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-faq">Troubleshooting</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonCLI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/cli-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-main-commands">Main commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-dao-commands">DAO commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-apm-commands">aragonPM commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-global-confg">Global configuration</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonPM</h3><ul><li class="navListItem"><a class="navItem" href="/docs/apm">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/apm-ref">Reference documentation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonOS</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonos-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-motivation">Motivations</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-building">Developing with aragonOS</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-ref">Reference documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-4-migration">Migrating to aragonOS 4 from aragonOS 3</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-3-ref">Reference (aragonOS 3)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonAPI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonjs-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-app">App</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-providers">Providers</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-wrapper">Wrapper</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-guide-bg-scripts">Background Scripts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonUI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/aragonui-intro">Introduction</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/guides-custom-deploy.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Custom Aragon Organization Deployment using aragonCLI</h1></header><article><div><span><p>This guide will show you the process to deploy a blank organization and configure it as a custom organization for a cooperative.</p>
+<p>We assume you have a general understanding of Aragon stack.</p>
+<p>In order to get started you will need the latest version of the CLI installed so open a terminal and enter the following:</p>
+<pre><code class="hljs css language-sh">npm install -g @aragon/cli
+
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="general-considerations"></a><a href="#general-considerations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>General considerations</h2>
+<p>In order to deploy to rinkeby or mainnet using the CLI you will either need to use a hardware wallet with <a href="https://frame.sh">Frame</a> or configure aragonCLI to <a href="/docs/cli-faq.html#set-a-private-key">sign transactions using a private key</a>.</p>
+<p>If you decide to use Frame, just add <code>--use-frame</code> to any of these commands.</p>
+<p>For any deploy always remember to have in a separate terminal the <a href="https://docs.ipfs.io/introduction/overview/">IPFS</a> daemon running, use <code>aragon ipfs</code> to start it.</p>
+<p>If you are testing locally:</p>
+<ul>
+<li>In a separate terminal run: <code>aragon devchain</code></li>
+</ul>
+<p>If you are deploying to rinkeby:</p>
+<ul>
+<li>Add <code>--environment aragon:rinkeby</code> to each of these commands</li>
+</ul>
+<p>If you are deploying to mainnet:</p>
+<ul>
+<li>Add <code>--environment aragon:mainnet</code> to each of these commands</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="creating-a-blank-organization"></a><a href="#creating-a-blank-organization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a blank organization</h2>
+<pre><code class="hljs css language-sh">dao new
+</code></pre>
+<p>This will create a new organization based on the default <a href="https://github.com/aragon/dao-kits/blob/master/kits/bare/contracts/BareKit.sol"><code>bare-kit</code></a>. It won’t have a token manager, vault, finance, or voting instance installed. Make a note of the deployed DAO address as we will need it for subsequent commands.</p>
+<h2><a class="anchor" aria-hidden="true" id="adding-a-token-and-token-manager-instance"></a><a href="#adding-a-token-and-token-manager-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding a Token and Token Manager instance</h2>
+<p>Aragon uses tokens to represent groups, token balances can be capped to a certain amount per account made non-transferrable. The following are 3 common scenarios:</p>
+<ul>
+<li><code>Membership</code>: A non-transferrable token limited to 1 per account</li>
+<li><code>Reputation</code>: A non-transferrable token without balance restriction</li>
+<li><code>Equity</code>: A transferrable token without balance restriction</li>
+</ul>
+<p>For the cooperative we want to start with a membership token.</p>
+<p>First we need to deploy a <a href="https://github.com/Giveth/minime">MiniMe</a> token, using the <code>dao new token</code> command.</p>
+<pre><code class="hljs css language-sh">dao token new &lt;token-name&gt; &lt;symbol&gt; [decimal-units] [transfer-enabled]
+</code></pre>
+<p>For a membership token we want to set <code>decimal-units</code> to 0 (default is 18), we can leave <code>tranfer-enabled</code> as default (true), as we will restrict transferability using the token-manager in a subsequent step. So we end up with:</p>
+<pre><code class="hljs css language-sh">dao token new <span class="hljs-string">"Member"</span> <span class="hljs-string">"MBR"</span> 0
+</code></pre>
+<p>Make a note of the token address as we will need it later!</p>
+<p>Next we need to deploy an instance of the token-manager app which will serve as the token-controller for the minime token we just deployed. The token-manager cannot be initialized unless it is already the controller of a minime token, so we want to use <code>dao install</code> command with the <code>--app-init none</code> argument, that way we can perform some actions before we initialize it.</p>
+<pre><code class="hljs css language-sh">dao install &lt;dao-address&gt; token-manager --app-init none
+</code></pre>
+<p>In order to get the token-manager address we need to run the following command:</p>
+<pre><code class="hljs css language-sh">dao apps &lt;dao-address&gt; --all
+</code></pre>
+<p>You should see a list of apps, and a token-manager instance listed under permissionless apps, make a note of this address as we will need it later.</p>
+<p>Next we want to set the token-manager instances as the token-controller on our token.</p>
+<pre><code class="hljs css language-sh">dao token change-controller &lt;token-address&gt; &lt;token-manager-address&gt;
+</code></pre>
+<p>Next we want create a permission for the token-manager.</p>
+<pre><code class="hljs css language-sh">dao acl create &lt;dao-address&gt; &lt;token-manager-address&gt; MINT_ROLE &lt;your-address&gt; &lt;your-address&gt;
+</code></pre>
+<p>Now we can actually initialize the token manager using the <code>dao exec</code> command. The token-manager’s initialize function takes 3 parameters, the address of a minimetoken, a boolean indicating if the token should be transferrable, and an uint determining max number of tokens an address can control (use 0 if you do not want to restrict balances).</p>
+<p>For a membership token we would initialize like this:</p>
+<pre><code class="hljs css language-sh">dao <span class="hljs-built_in">exec</span> &lt;dao-address&gt; &lt;token-manager-address&gt; initialize [token-address] <span class="hljs-literal">false</span> 1
+</code></pre>
+<p>At this point if you open your DAO in a web browser you should see the token manager app installed, and should be able to mint tokens from <code>your-address</code>. Find your DAO UI here: <code>https://&lt;network&gt;.aragon.org/#/&lt;DAO Address&gt;</code></p>
+<p>Even though we have initialized the token manager as <code>transferrable = false</code>, and token transfers fail, there is what appears to be a UI bug where the token manager will list the token as transferrable even though it is not. <a href="https://github.com/aragon/aragon-apps/issues/630">GitHub issue</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="adding-a-voting-instance"></a><a href="#adding-a-voting-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding a Voting instance</h2>
+<p>Adding a voting app allows actions to be protected by a vote, each instance is associated with a token, but you can have multiple voting instances per token, with each instance having different parameters. A common case might be to have some actions require a simple majority, while other require a super-majority. We will create on voting app instance, but the process can be repeated as many times as required.</p>
+<p>Since we already have a token and token manager deployed all we have to do is install the app, this can be done in one step using the <code>dao install</code> command and passing arguments via <code>--app-init-args</code>.</p>
+<p>The voting app requires the following initialization parameters:</p>
+<ul>
+<li><code>minime token</code>: address of a minime token</li>
+<li><code>support required percentage</code>: Percentage of yeas in casted votes for a vote to succeed (expressed as a percentage of <code>10^18</code>; eg. <code>10^16 = 1%</code>, <code>10^18 = 100%</code>)</li>
+<li><code>min accept quorum</code>: Percentage of yeas in total possible votes for a vote to succeed (expressed as a percentage of <code>10^18</code>; eg. <code>10^16 = 1%</code>, <code>10^18 = 100%</code>)</li>
+<li><code>vote time</code>: Seconds that a vote will be open for token holders to vote (unless enough yeas or nays have been cast to make an early decision)</li>
+</ul>
+<p>So if we want a voting app instances with a support requirement of 60% and min accept quorum of 25% and a voting period of 7 days we would use the following command.</p>
+<pre><code class="hljs css language-sh">dao install &lt;dao-address&gt; voting --app-init-args [token-address] 600000000000000000 250000000000000000 604800
+</code></pre>
+<p>Next you will need to assign the create votes permission, if you want all token holders to be able to create votes, we can assign the <code>CREATE_VOTES_ROLE</code> to the <code>token-manager-address</code>, you can also set permissions to the voting app itself. The following command grants token holders the ability to create votes, and requires a vote to manage changes to the permission.</p>
+<pre><code class="hljs css language-sh">dao acl create &lt;dao-address&gt; &lt;voting-app-address&gt; CREATE_VOTES_ROLE &lt;token-manager-address&gt; &lt;voting-app-address&gt;
+</code></pre>
+<p>At this point you should be able to open your organization and create votes :clap:</p>
+<h2><a class="anchor" aria-hidden="true" id="adding-a-vault-and-finance-instance"></a><a href="#adding-a-vault-and-finance-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding a Vault and Finance instance</h2>
+<p>The Vault is intended to securely store and manage funds but does not have its own user interface. The Finance app provides an interface and provides some limited budgeting capabilities. In the future, it may make sense to install the vault app without the finance app, or the finance app with a different version of the vault app, but for now these two apps generally make sense to install as a pair.</p>
+<p>The vault can be installed and does not require passing any specific initialization parameters</p>
+<pre><code class="hljs css language-sh">dao install &lt;dao-address&gt; vault
+</code></pre>
+<p>The finance app requires two initialization parameters: a <code>vault instance address</code> and <code>budgeting period</code> (in seconds). If you are familiar with the finance app in the UI, you may have noticed that there is not way to configure or set a budget, however, the contracts allow you to set a per-asset budget which is reset each time period.</p>
+<p>Eventually the UI will be updated to support these functions. If you don’t intend to use any of the budgetting functionallity the budget period parameter doesnt matter but it does need to be passed. If you do plan on using the budgeting functionality here is the how it works:</p>
+<p>For a given budget period P, a budget B can be set for asset A. The total volume of transfers of A cannot exceed its budget within a period P. So for example, if we initialize P as 1 Month, we could set a budget for DAI of 1000, and even if the vault contains more than 1000 DAI it will not be able to spend more than 1000 DAI per month. Keep in mind that the budget is not exposed in the UI, so transactions which exceed the budget will just fail.</p>
+<p>Lets set install a finance instances with a budget period of 30 days:</p>
+<pre><code class="hljs css language-sh">dao install &lt;dao-address&gt; finance --app-init-args [vault-address] 2592000
+</code></pre>
+<p>Now we want to create a permission that grants the finance app the transfer role on the vault, we will make have voting be required to manage the permission.</p>
+<pre><code class="hljs css language-sh">dao acl create &lt;dao-address&gt; &lt;vault-address&gt; TRANSFER_ROLE &lt;finance-address&gt; &lt;voting-address&gt;
+</code></pre>
+<p>We also want to grant some permissions on the finance app to the voting app:</p>
+<pre><code class="hljs css language-sh">dao acl create &lt;dao-address&gt; &lt;finance-address&gt; CREATE_PAYMENTS_ROLE &lt;voting-address&gt; &lt;voting-address&gt; 
+
+dao acl create &lt;dao-address&gt; &lt;finance-address&gt; EXECUTE_PAYMENTS_ROLE &lt;voting-address&gt; &lt;voting-address&gt;
+
+dao acl create &lt;dao-address&gt; &lt;finance-address&gt; MANAGE_PAYMENTS_ROLE &lt;voting-address&gt; &lt;voting-address&gt;
+</code></pre>
+<p>For more information on what each of these roles do as well as additional roles made available by the finance app, see <a href="https://wiki.aragon.org/dev/apps/finance/">the wiki</a></p>
+<p>At this point you should be able to open your dao, manage tokens, create votes, and manage funds using vault and finance apps.</p>
+<h2><a class="anchor" aria-hidden="true" id="review-finalize-permissions"></a><a href="#review-finalize-permissions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Review &amp; Finalize Permissions</h2>
+<p>While we have a mostly functional DAO the permissions need to be cleaned up because we do not want our personal address to have root authority in the organization. These steps can be done using the CLI as described bellow, or if you prefer you can do it using the permissions UI.</p>
+<p>We can see what permissions are currently assigned using the dao acl command</p>
+<pre><code class="hljs css language-sh">dao acl &lt;dao-address&gt;
+</code></pre>
+<p>You will notice that some key permissions have been granted and are managed by the address you used to perform these commands. By following these steps you are transferring authority as the creator of the organization to other applications and entities defined above, it is an inreversible process, so be careful not to revoke a permission before granting it to an appropriate entity.</p>
+<p>You’ll want to grant permissions which are currently only assigned to your address to another entity (eg. <code>voting-address</code>):</p>
+<pre><code class="hljs css language-sh">dao acl grant &lt;dao-address&gt; &lt;app-address&gt; &lt;ROLE&gt; &lt;entity-address&gt;
+</code></pre>
+<p>You’ll want to revoke permissions for yourself once they have been granted to another entity:</p>
+<pre><code class="hljs css language-sh">dao acl revoke &lt;dao-address&gt; &lt;app-address&gt; &lt;ROLE&gt; [your-address]
+</code></pre>
+<p>You’ll want change the permission manager for permissions from your address to another entity (eg. <code>voting-address</code>):</p>
+<pre><code class="hljs css language-sh">dao acl <span class="hljs-built_in">set</span>-manager &lt;dao-address&gt; &lt;app-address&gt; &lt;ROLE&gt; &lt;entity-address&gt;
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/guides-publish">← Publish</a><a class="docs-next button" href="/docs/guides-faq">Troubleshooting and FAQ →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#general-considerations">General considerations</a></li><li><a href="#creating-a-blank-organization">Creating a blank organization</a></li><li><a href="#adding-a-token-and-token-manager-instance">Adding a Token and Token Manager instance</a></li><li><a href="#adding-a-voting-instance">Adding a Voting instance</a></li><li><a href="#adding-a-vault-and-finance-instance">Adding a Vault and Finance instance</a></li><li><a href="#review-finalize-permissions">Review &amp; Finalize Permissions</a></li></ul></nav></div><footer class="nav-footer sc-bdVaJa eAwGjB" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/footer.svg" alt="Aragon Developer Portal" width="66" height="58"/></a></div><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/aragonjs-intro.html">aragonAPI</a><a href="/docs/aragonui-intro.html">aragonUI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+              var search = docsearch({
+                
+                apiKey: '9dff0383c32107d6c174f15e259bb23a',
+                indexName: 'aragon',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script>
+      <style data-styled-components="eAwGjB">
+/* sc-component-id: sc-bdVaJa */
+.sc-bdVaJa {}
+/* sc-component-id: sc-global-3832733198 */
+@font-face{font-family:'overpass';src:url(/aragon-ui/cf790334a5a6d45c.woff2) format('woff2'),url(/aragon-ui/fd48a701d84ebf69.woff) format('woff');font-weight:400;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/32a3f11e7740ce58.woff2) format('woff2'),url(/aragon-ui/860b19d3e10736e7.woff) format('woff');font-weight:600;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/5cfe62515c2f9b42.woff2) format('woff2'),url(/aragon-ui/f8ba2d7a9af0db1f.woff) format('woff');font-weight:800;font-style:normal;} *,*:before,*:after{box-sizing:border-box;} html{min-height:100%;} body{font-family:overpass,sans-serif;font-size:15px;font-weight:400;line-height:1.5;color:#000000;background:#F7FBFD;} body,ul,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;} button,select,input,textarea,h1,h2,h3,h4,h5,h6{font-size:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;} a,button,select,input,textarea{color:inherit;} strong,b{font-weight:600;}</style>
+      </body></html>
