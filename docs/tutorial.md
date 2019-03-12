@@ -281,18 +281,19 @@ It's really simple to use. Let's add our intents to our app:
 
 ```js
 // app/app.js
+const initializeApp = () => {
+  // ...
+  const increment = document.getElementById('increment')
+  const decrement = document.getElementById('decrement')
 
-// ...
-const increment = document.getElementById('increment')
-const decrement = document.getElementById('decrement')
-
-increment.onclick = () => {
-  app.increment()
+  increment.onclick = () => {
+    app.increment()
+  }
+  decrement.onclick = () => {
+    app.decrement()
+  }
+  // ...
 }
-decrement.onclick = () => {
-  app.decrement()
-}
-// ...
 ```
 
 That's it! Now whenever the user clicks one of either the increment or decrement buttons, an intent is sent to the wrapper, and it will show the user a transaction to sign.
@@ -384,7 +385,7 @@ After running this command a browser tab should pop up with your freshly created
 > **Note**<br>
 > It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the [React template](https://github.com/aragon/aragon-react-boilerplate)!
 
-### Running your app from an HTTP server
+### Running your app from an HTTP server
 
 Running your app using HTTP will allow for a faster development process of your app's front-end, as it can be hot-reloaded without the need to execute `aragon run` every time a change is made.
 
@@ -405,7 +406,8 @@ Let's add the scripts we need to `package.json`:
 
 - After that, you can run `npm run start:aragon:http` which will compile your app's contracts, publish the app locally and create a DAO. You will need to stop it and run it again after making changes to your smart contracts.
 
-Changes to the app's background script (`app/script.js`) cannot be hot-reloaded, after making changes to the script, you will need to either restart the development server (`npm run start:app`) or rebuild the script `npm run build`.
+> **Note**<br>
+> Changes to the app's background script (`app/script.js`) cannot be hot-reloaded, after making changes to the script, you will need to either restart the development server (`npm run start:app`) or rebuild the script `npm run build`.
 
 ## Next steps
 
