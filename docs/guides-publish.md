@@ -37,7 +37,7 @@ Environments are defined in `arapp.json`, for example `staging` points to:
 
 The `rinkeby` network is further defined in `truffle.js`, an has an Ethereum provider (to **write** to the blockchain), which define:
 - an address: `https://rinkeby.infura.io`
-- an Ethereum account: `0xb41...6eE7` (which is the first account generated from the `DEFAULT_MNEMONIC` variable, to use a different account see the [troubleshooting guide](/docs/guides-faq.html/set-a-private-key)
+- an Ethereum account: `0xb41...6eE7` (which is the first account generated from the `DEFAULT_MNEMONIC` variable, to use a different account see the [troubleshooting guide](/docs/guides-faq.html#set-a-private-key)
 
 ## Major version: content + contract
 

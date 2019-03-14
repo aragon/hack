@@ -18,7 +18,7 @@ npm install -g @aragon/cli
 
 ## General considerations
 
-In order to deploy to rinkeby or mainnet using the CLI you will either need to use a hardware wallet with [Frame](https://frame.sh) or configure aragonCLI to [sign transactions using a private key](/docs/cli-faq.html#set-a-private-key).
+In order to deploy to rinkeby or mainnet using the CLI you will either need to use a hardware wallet with [Frame](https://frame.sh) or configure aragonCLI to [sign transactions using a private key](/docs/guides-faq.html#set-a-private-key).
 
 If you decide to use Frame, just add `--use-frame` to any of these commands.
 
