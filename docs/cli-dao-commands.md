@@ -24,7 +24,7 @@ Options:
 - `--ipfs-check`: Whether to have start IPFS if not started. Defaults to `true`.
 
 > **Note**<br>
-> The `kits` has been deprecated and `templates` should be used instead. You may find the `kits` notation in some places while we made the transition.
+> The `kits` has been deprecated and `templates` should be used instead. You may find the `kits` notation in some places while we make the transition.
 
 ## dao apps
 

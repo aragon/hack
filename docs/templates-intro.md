@@ -21,7 +21,7 @@ The [aragonCLI](/docs/cli-intro.html) (>= v4.1.0) supports using templates to cr
 To quickly get started developing your own templates:
 
 ```sh
-npx create-aragon-app app react-template
+npx create-aragon-app app
 ```
 
 That command will create a new Aragon app project with a sample template in it ready to be used. The Template (under `contracts/Template.sol`) will create instances of a Token Manager, a Voting app and the [Counter example app](/docs/tutorial.html) and will wire the permissions so incrementing the Counter requires a vote to pass in the Voting app.

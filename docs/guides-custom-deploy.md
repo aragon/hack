@@ -15,7 +15,6 @@ npm install -g @aragon/cli
 
 ```
 
-av
 
 ## General considerations
 

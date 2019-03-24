@@ -58,7 +58,7 @@ However, when **making changes to the background script** of your app, a refresh
 The [React boilerplate](https://github.com/aragon/aragon-react-boilerplate) supports serving your app using HTTP.
 
 > **Note**<br>
-> The `kits` has been deprecated and `templates` should be used instead. You may find the `kits` notation in some places while we made the transition.
+> The `kits` has been deprecated and `templates` should be used instead. You may find the `kits` notation in some places while we make the transition.
 
 ## aragon devchain
 
