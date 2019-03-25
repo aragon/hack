@@ -74,7 +74,6 @@
 <url> <loc>https://hack.aragon.org/docs/aragonjs-ref-app</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/aragonjs-ref-app" /> </url>
 <url> <loc>https://hack.aragon.org/docs/aragonjs-ref-providers</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/aragonjs-ref-providers" /> </url>
 <url> <loc>https://hack.aragon.org/docs/aragonjs-ref-wrapper</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/aragonjs-ref-wrapper" /> </url>
-<url> <loc>https://hack.aragon.org/docs/kits-intro</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/kits-intro" /> </url>
 <url> <loc>https://hack.aragon.org/docs/aragonos-3-ref</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/aragonos-3-ref" /> </url>
 <url> <loc>https://hack.aragon.org/docs/aragonos-4-migration</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/aragonos-4-migration" /> </url>
 <url> <loc>https://hack.aragon.org/docs/aragonos-building</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/aragonos-building" /> </url>
@@ -83,6 +82,7 @@
 <url> <loc>https://hack.aragon.org/docs/aragonos-ref</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/aragonos-ref" /> </url>
 <url> <loc>https://hack.aragon.org/docs/package-management</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/package-management" /> </url>
 <url> <loc>https://hack.aragon.org/docs/stack</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/stack" /> </url>
+<url> <loc>https://hack.aragon.org/docs/templates-intro</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/templates-intro" /> </url>
 <url> <loc>https://hack.aragon.org/docs/tutorial</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/tutorial" /> </url>
 <url> <loc>https://hack.aragon.org/docs/aragonui-intro</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/aragonui-intro" /> </url>
 <url> <loc>https://hack.aragon.org/docs/upgradeability-intro</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/upgradeability-intro" /> </url>
