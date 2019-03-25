@@ -58,8 +58,8 @@ npx create-aragon-app <app-name> [boilerplate]
 
 - `boilerplate`: (optional) the Github repo name or alias for a boilerplate to set up your app. The currently available boilerplates are:
 
-      	- `react`: this boilerplate contains a very basic Counter app and a webapp for interacting with it. It showcases the end-to-end interaction with an Aragon app, from the contracts to the webapp. Also comes with a DAO Template which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Template [here](template-intro.md).
-      	- `bare`: this boilerplate will just set up your app directory structure but contains no functional code.
+	- `react`: this boilerplate contains a very basic Counter app and a webapp for interacting with it. It showcases the end-to-end interaction with an Aragon app, from the contracts to the webapp. Also comes with a DAO Template which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Template [here](templates-intro.md).
+	- `bare`: this boilerplate will just set up your app directory structure but contains no functional code.
 
 > **Note**<br>
 > This is an independent package, it's not necessary to have `@aragon/cli` installed to use it.
