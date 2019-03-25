@@ -14,6 +14,9 @@ For these reasons, **the recommended way of creating Aragon DAOs** is using what
 
 Templates can also be thought of as **DAO templates** as every template can create a DAO with specific settings for an organization type. The two DAO configurations that one can choose from when using the [Aragon client](http://app.aragon.org) correspond to the beta templates ([Democracy](https://github.com/aragon/dao-kits/blob/ce62d132d944951dc200df8aa74e42db8e70a094/kits/democracy/contracts/DemocracyKit.sol) and [Multisig](https://github.com/aragon/dao-kits/blob/ce62d132d944951dc200df8aa74e42db8e70a094/kits/multisig/contracts/MultisigKit.sol)) available in the [DAO templates repository](https://github.com/aragon/dao-kits).
 
+> **Note**<br>
+> The `kits` has been deprecated and `templates` should be used instead. You may find the `kits` notation in some places while we made the transition.
+
 ## Getting started with templates using the aragonCLI
 
 The [aragonCLI](/docs/cli-intro.html) (>= v4.1.0) supports using templates to create a DAO to interact with the apps being developed.
@@ -44,6 +47,3 @@ All templates follow a similar structure:
 4. Initialize apps (`app.initialize(...)`).
 5. Set up permissions for the apps and the DAO.
 6. Clean up the permissions temporarily assigned to the template.
-
-> **Note**<br>
-> The `kits` has been deprecated and `templates` should be used instead. You may find the `kits` notation in some places while we made the transition.
