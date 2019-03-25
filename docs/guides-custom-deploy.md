@@ -10,11 +10,11 @@ We assume you have a general understanding of Aragon stack.
 
 In order to get started you will need the latest version of the CLI installed so open a terminal and enter the following:
 
-
 ```sh
 npm install -g @aragon/cli
 
 ```
+
 
 ## General considerations
 
@@ -42,7 +42,10 @@ If you are deploying to mainnet:
 dao new
 ```
 
-This will create a new organization based on the default [`bare-kit`](https://github.com/aragon/dao-kits/blob/master/kits/bare/contracts/BareKit.sol). It won’t have a token manager, vault, finance, or voting instance installed. Make a note of the deployed DAO address as we will need it for subsequent commands.
+This will create a new organization based on the default [`bare-template`](https://github.com/aragon/dao-templates/blob/master/templates/bare/contracts/BareTemplate.sol). It won’t have a token manager, vault, finance, or voting instance installed. Make a note of the deployed DAO address as we will need it for subsequent commands.
+
+> **Note**<br>
+> The `bare-kit` has been deprecated and `bare-template` should be used instead. To learn more about templates check the [introduction about them](templates-intro.md).
 
 ## Adding a Token and Token Manager instance
 
@@ -54,7 +57,7 @@ Aragon uses tokens to represent groups, token balances can be capped to a certai
 
 For the cooperative we want to start with a membership token.
 
-First we need to deploy a [MiniMe](https://github.com/Giveth/minime) token, using the `dao new token` command. 
+First we need to deploy a [MiniMe](https://github.com/Giveth/minime) token, using the `dao new token` command.
 
 ```sh
 dao token new <token-name> <symbol> [decimal-units] [transfer-enabled]
@@ -143,7 +146,7 @@ The vault can be installed and does not require passing any specific initializat
 dao install <dao-address> vault
 ```
 
-The finance app requires two initialization parameters: a `vault instance address` and `budgeting period` (in seconds). If you are familiar with the finance app in the UI, you may have noticed that there is not way to configure or set a budget, however, the contracts allow you to set a per-asset budget which is reset each time period. 
+The finance app requires two initialization parameters: a `vault instance address` and `budgeting period` (in seconds). If you are familiar with the finance app in the UI, you may have noticed that there is not way to configure or set a budget, however, the contracts allow you to set a per-asset budget which is reset each time period.
 
 Eventually the UI will be updated to support these functions. If you don’t intend to use any of the budgetting functionallity the budget period parameter doesnt matter but it does need to be passed. If you do plan on using the budgeting functionality here is the how it works:
 
@@ -164,7 +167,7 @@ dao acl create <dao-address> <vault-address> TRANSFER_ROLE <finance-address> <vo
 We also want to grant some permissions on the finance app to the voting app:
 
 ```sh
-dao acl create <dao-address> <finance-address> CREATE_PAYMENTS_ROLE <voting-address> <voting-address> 
+dao acl create <dao-address> <finance-address> CREATE_PAYMENTS_ROLE <voting-address> <voting-address>
 
 dao acl create <dao-address> <finance-address> EXECUTE_PAYMENTS_ROLE <voting-address> <voting-address>
 

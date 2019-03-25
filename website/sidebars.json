@@ -8,7 +8,7 @@
       "forwarding-intro",
       "upgradeability-intro",
       "package-management",
-      "kits-intro",
+      "templates-intro",
       "client",
       "human-readable-txs"
     ],
@@ -25,10 +25,7 @@
       "cli-apm-commands",
       "cli-global-confg"
     ],
-    "aragonPM": [
-      "apm",
-      "apm-ref"
-    ],
+    "aragonPM": ["apm", "apm-ref"],
     "aragonOS": [
       "aragonos-intro",
       "aragonos-motivation",
@@ -44,8 +41,6 @@
       "aragonjs-ref-wrapper",
       "aragonjs-guide-bg-scripts"
     ],
-    "aragonUI": [
-      "aragonui-intro"
-    ]
+    "aragonUI": ["aragonui-intro"]
   }
 }
