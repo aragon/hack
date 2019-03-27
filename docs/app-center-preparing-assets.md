@@ -5,7 +5,7 @@ sidebar_label: Preparing assets
 ---
 
 
-## Preparing assets for publishing your Aragon app
+##### Preparing assets for publishing your Aragon app
 
 Before you publish your Aragon app in the App Center, you need to prepare a few types of assets to display it correctly, and differentiate from other apps.
 
@@ -20,6 +20,7 @@ Before you publish your Aragon app in the App Center, you need to prepare a few 
 <br>
 In the next sections we will go through these one by one, as well as link to some templates so it’s easy to for you to prepare everything that you need.
 
+<br>
 
 > To get started with creating your own assets, check out the Figma asset template.
 
