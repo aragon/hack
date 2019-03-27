@@ -10,6 +10,8 @@
     "Reference documentation": "Reference documentation",
     "apm": "aragonPM",
     "Architecture": "Architecture",
+    "app-center-preparing-assets": "App Center",
+    "Preparing assets": "Preparing assets",
     "cli-apm-commands": "aragonPM commands",
     "aragonPM commands": "aragonPM commands",
     "cli-dao-commands": "DAO commands",
@@ -76,7 +78,8 @@
     "The basics": "The basics",
     "Guides": "Guides",
     "aragonCLI": "aragonCLI",
-    "aragonPM": "aragonPM"
+    "aragonPM": "aragonPM",
+    "App Center": "App Center"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
