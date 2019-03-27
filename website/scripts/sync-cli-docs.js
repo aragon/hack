@@ -1,6 +1,6 @@
 const { syncPages } = require('./sync-util')
 
-const GIT_REF = 'feat/docs-from-hack'
+const GIT_REF = 'master'
 const REPO = 'aragon-cli'
 const BASE_CONTENT_URL = `https://raw.githubusercontent.com/aragon/${REPO}/${GIT_REF}/docs`
 
