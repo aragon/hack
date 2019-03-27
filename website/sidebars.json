@@ -41,6 +41,7 @@
       "aragonjs-ref-wrapper",
       "aragonjs-guide-bg-scripts"
     ],
-    "aragonUI": ["aragonui-intro"]
+    "aragonUI": ["aragonui-intro"],
+    "App Center": ["app-center-preparing-assets"]
   }
 }

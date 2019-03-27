@@ -2,9 +2,19 @@ body {
   font-family: 'HankenGroteskRegular', 'Overpass', sans-serif !important;
   overflow-x: hidden;
 }
+@font-face {
+ font-family: 'HankenGroteskBold';
+ src: url('../fonts/HKGrotesk-Bold.ttf') format('opentype');
+}
 /* your custom css */
+strong, b {
+  font-family: 'HankenGroteskBold';
+}
 a:hover {
   transition: all 0.25s ease-in-out 0s;
+}
+p img {
+  display: inline;
 }
 .navPusher {
   width: 100%;
@@ -396,7 +406,8 @@ footer.nav-footer .sitemap h5 {
   border-top: solid 0px transparent;
 }
 .mainContainer .wrapper .post h3 {
-  font-size: 24px;
+  font-family: 'HankenGroteskLight', sans-serif;
+  font-size: 30px;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -415,6 +426,16 @@ footer.nav-footer .sitemap h5 {
   letter-spacing: normal;
   border-top: solid 0.5px #979797d1;
   color: #2d4051;
+}
+.mainContainer .wrapper .post h4 {
+  font-family: 'HankenGroteskLight', sans-serif;
+  font-size: 22px;
+  line-height: 62px;
+  color: #2D4051;
+}
+.mainContainer .wrapper .post span img {
+  display: inline;
+  padding-right: 10px;
 }
 hr {
   opacity: 0;
