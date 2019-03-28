@@ -22,7 +22,6 @@ In the next sections we will go through these one by one, as well as link to som
 
 <br>
 
-> To get started with creating your own assets, check out the Figma asset template.
 
 ## Icons
 
