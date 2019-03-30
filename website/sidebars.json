@@ -35,11 +35,19 @@
       "aragonos-3-ref"
     ],
     "aragonAPI": [
-      "aragonjs-intro",
-      "aragonjs-ref-app",
-      "aragonjs-ref-providers",
-      "aragonjs-ref-wrapper",
-      "aragonjs-guide-bg-scripts"
+      "api-intro",
+      {
+        "type": "subcategory",
+        "label": "aragonJS",
+        "ids": [
+          "aragonjs-quick-start",
+          "aragonjs-ref-app",
+          "aragonjs-ref-wrapper",
+          "aragonjs-ref-providers",
+          "aragonjs-ref-hooks",
+          "aragonjs-guide-bg-scripts"
+        ]
+      }
     ],
     "aragonUI": ["aragonui-intro"]
   }

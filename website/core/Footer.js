@@ -5,38 +5,36 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const React = require('react');
+const React = require('react')
 const { theme } = require('@aragon/ui')
 const styled = require('styled-components').default
 
-const FooterContainer = styled.footer`
-
-`
+const FooterContainer = styled.footer``
 
 class Footer extends React.Component {
   docUrl(doc, language) {
-    const baseUrl = this.props.config.baseUrl;
-    return baseUrl + 'docs/' + (language ? language + '/' : '') + doc + '.html';
+    const baseUrl = this.props.config.baseUrl
+    return baseUrl + 'docs/' + (language ? language + '/' : '') + doc + '.html'
   }
 
   pageUrl(doc, language) {
-    const baseUrl = this.props.config.baseUrl;
-    return baseUrl + (language ? language + '/' : '') + doc + '.html';
+    const baseUrl = this.props.config.baseUrl
+    return baseUrl + (language ? language + '/' : '') + doc + '.html'
   }
 
   render() {
-    const currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear()
     return (
       <FooterContainer className="nav-footer" id="footer">
         <section className="sitemap">
           <div>
             <a href={this.props.config.baseUrl} className="nav-home">
               <img
-                  src={this.props.config.baseUrl + this.props.config.footerIcon}
-                  alt={this.props.config.title}
-                  width="66"
-                  height="58"
-                />
+                src={this.props.config.baseUrl + this.props.config.footerIcon}
+                alt={this.props.config.title}
+                width="66"
+                height="58"
+              />
             </a>
           </div>
           <div>
@@ -44,7 +42,7 @@ class Footer extends React.Component {
             <a href={this.docUrl('getting-started')}>Get started</a>
             <a href={this.docUrl('tutorial')}>Tutorial</a>
             <a href={this.docUrl('aragonos-intro')}>aragonOS</a>
-            <a href={this.docUrl('aragonjs-intro')}>aragonAPI</a>
+            <a href={this.docUrl('api-intro')}>aragonAPI</a>
             <a href={this.docUrl('aragonui-intro')}>aragonUI</a>
           </div>
           <div>
@@ -52,11 +50,14 @@ class Footer extends React.Component {
             <a href="http://wiki.aragon.org/projects/" target="_blank">
               User showcase
             </a>
-            <a href="https://aragon.chat" target="_blank">Community chat</a>
+            <a href="https://aragon.chat" target="_blank">
+              Community chat
+            </a>
             <a
               href="https://twitter.com/AragonProject"
               target="_blank"
-              rel="noreferrer noopener">
+              rel="noreferrer noopener"
+            >
               Twitter
             </a>
           </div>
@@ -64,12 +65,14 @@ class Footer extends React.Component {
             <h5>More</h5>
             <a href="https://blog.aragon.org">Blog</a>
             <a href="https://github.com/aragon">GitHub</a>
-            <a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a>
+            <a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">
+              Privacy policy
+            </a>
           </div>
         </section>
       </FooterContainer>
-    );
+    )
   }
 }
 
-module.exports = Footer;
+module.exports = Footer

@@ -158,7 +158,7 @@ const BuildingBlocks = props => (
     <BlocksCards
       title="aragonAPI"
       text={<p>Easily interact with your dapp&#39;s state</p>}
-      actionButton={() => <GetStartedButton href={docUrl('aragonjs-intro')} />}
+      actionButton={() => <GetStartedButton href={docUrl('api-intro')} />}
       icon={() => <img src={siteConfig.baseUrl + siteConfig.api} />}
     />
     <BlocksCards
@@ -336,7 +336,7 @@ const SecondaryNavbar = props => (
         <img src={imgUrl('navbar/aragon-os.svg')} />
         <h6>aragonOS</h6>
       </a>
-      <a className="secondary-item" href={docUrl('aragonjs-intro')}>
+      <a className="secondary-item" href={docUrl('api-intro')}>
         <img src={imgUrl('navbar/aragon-api.svg')} />
         <h6>aragonAPI</h6>
       </a>
@@ -391,8 +391,8 @@ const UseCases = props => (
             <a href="https://app.aragon.org">Aragon client</a>
           </b>{' '}
           (Aragon apps). Aragon apps are interoperable between each other and
-          can forward actions to one another so there&#39;s no need to reinvent the
-          wheel.
+          can forward actions to one another so there&#39;s no need to reinvent
+          the wheel.
         </p>
         <p>
           An example is a voting app that can forward the intent of a user to
