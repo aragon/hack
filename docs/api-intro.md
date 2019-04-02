@@ -11,11 +11,11 @@ Standard set of APIs and specifications used to interact with aragonOS-powered c
 
 ## Reference implementations in specific languages
 
-### aragonJS
+### JavaScript
 
 A JavaScript implementation of aragonAPI, used to interact with aragonOS by handling transaction pathing, upgradeability, identity providers and state of the contracts.
 
-Some of the things you can do with aragonJS are:
+Some of the things you can do with the JavaScript implementation are:
 
 - Connect contracts to front-end
 - Interact with the EVM and [aragonOS](os-intro.md) when using the full Aragon System
