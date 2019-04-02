@@ -38,13 +38,14 @@
       "api-intro",
       {
         "type": "subcategory",
-        "label": "aragonJS",
+        "label": "JavaScript",
         "ids": [
           "aragonjs-quick-start",
           "aragonjs-ref-app",
+          "aragonjs-ref-react",
           "aragonjs-ref-wrapper",
           "aragonjs-ref-providers",
-          "aragonjs-ref-hooks",
+          "aragonjs-ref-architecture",
           "aragonjs-guide-bg-scripts"
         ]
       }

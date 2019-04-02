@@ -11,11 +11,11 @@ Standard set of APIs and specifications used to interact with aragonOS-powered c
 
 ## Reference implementations in specific languages
 
-### aragonJS
+### JavaScript
 
 A JavaScript implementation of aragonAPI, used to interact with aragonOS by handling transaction pathing, upgradeability, identity providers and state of the contracts.
 
-Some of the things you can do with aragonJS are:
+Some of the things you can do with the JavaScript implementation are:
 
 - Connect contracts to front-end
 - Interact with the EVM and [aragonOS](os-intro.md) when using the full Aragon System
@@ -23,14 +23,18 @@ Some of the things you can do with aragonJS are:
 - Use a store method wich mantains the application state using caching
 - Pull [Radspec](human-readable-txs.md) notices from contracts
 
+#### Quick Start
+
+- [Quick Start for apps](js-quick-start.md)
+
 #### Docs
 
 - [App API](js-ref-app.md)
 - [Wrapper API](js-ref-wrapper.md)
+- [React API](js-ref-react.md)
 - [Providers](js-ref-providers.md)
-- [React Hooks](js-ref-hooks.md)
+- [Architecture of Aragon apps and their communication channels](js-ref-architecture.md)
 
 #### Guides
 
-- [Quick Start for apps](js-quick-start.md)
 - [Background Scripts](js-guide-bg-scripts.md)
