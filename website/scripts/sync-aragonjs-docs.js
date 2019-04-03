@@ -1,8 +1,8 @@
 const { syncPages } = require('./sync-util')
 
-const GIT_REF = 'docs/update-api'
+const GIT_REF = 'master'
 const REPO = 'aragon.js'
-const BASE_CONTENT_URL = `https://raw.githubusercontent.com/0xGabi/${REPO}/${GIT_REF}/docs`
+const BASE_CONTENT_URL = `https://raw.githubusercontent.com/aragon/${REPO}/${GIT_REF}/docs`
 
 const pages = [
   {
