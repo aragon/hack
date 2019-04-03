@@ -13,14 +13,14 @@ Standard set of APIs and specifications used to interact with aragonOS-powered c
 
 ### JavaScript
 
-A JavaScript implementation of aragonAPI, used to interact with aragonOS by handling transaction pathing, upgradeability, identity providers and state of the contracts.
+A JavaScript implementation of the aragonAPI, used to interact with aragonOS by handling transaction pathing, upgradeability, identity providers and state of the contracts.
 
 Some of the things you can do with the JavaScript implementation are:
 
 - Connect contracts to front-end
 - Interact with the EVM and [aragonOS](os-intro.md) when using the full Aragon System
-- Abstract Web3 so a direct Web3 connection isn't exposed to the browser
-- Use a store method wich mantains the application state using caching
+- Interact with contracts directly – an abstraction over web3.js
+- Get access to application state with built in client-side caching
 - Pull [Radspec](human-readable-txs.md) notices from contracts
 
 #### Quick Start
