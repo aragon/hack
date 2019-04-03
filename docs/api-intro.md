@@ -29,9 +29,9 @@ Some of the things you can do with the JavaScript implementation are:
 
 #### Docs
 
+- [React API](js-ref-react.md)
 - [App API](js-ref-app.md)
 - [Wrapper API](js-ref-wrapper.md)
-- [React API](js-ref-react.md)
 - [Providers](js-ref-providers.md)
 - [Architecture of Aragon apps and their communication channels](js-ref-architecture.md)
 
