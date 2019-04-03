@@ -9,32 +9,31 @@ hide_title: true
 
 Standard set of APIs and specifications used to interact with aragonOS-powered contracts by handling transaction pathing, upgradeability, and contract state without depending of a centralized service.
 
-## Reference implementations in specific languages
+# Reference implementations in specific languages
 
-### JavaScript
+## JavaScript
 
 A JavaScript implementation of the aragonAPI, used to interact with aragonOS by handling transaction pathing, upgradeability, identity providers and state of the contracts.
 
 Some of the things you can do with the JavaScript implementation are:
 
 - Connect contracts to front-end
-- Interact with the EVM and [aragonOS](os-intro.md) when using the full Aragon System
-- Interact with contracts directly – an abstraction over web3.js
+- Interact with [aragonOS](os-intro.md) and aragonOS-powered applications directly through an abstraction over web3.js
 - Get access to application state with built in client-side caching
-- Pull [Radspec](human-readable-txs.md) notices from contracts
+- Create human-readable transaction descriptions for your smart contracts through [Radspec](human-readable-txs.md)
 
-#### Quick Start
+### Quick Start
 
 - [Quick Start for apps](js-quick-start.md)
 
-#### Docs
+### Docs
 
-- [React API](js-ref-react.md)
 - [App API](js-ref-app.md)
-- [Wrapper API](js-ref-wrapper.md)
+  - [React API](js-ref-react.md)
+- [Aragon client implementations (wrapper)](js-ref-wrapper.md)
 - [Providers](js-ref-providers.md)
 - [Architecture of Aragon apps and their communication channels](js-ref-architecture.md)
 
-#### Guides
+### Guides
 
 - [Background Scripts](js-guide-bg-scripts.md)

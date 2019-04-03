@@ -25,7 +25,7 @@ const pages = [
     fileLocation: '/docs/js-ref-wrapper.md',
     id: 'aragonjs-ref-wrapper',
     title: 'aragonAPI for wrapper',
-    sidebarLabel: 'Wrappers API',
+    sidebarLabel: 'Wrapper',
     hideTitle: true,
     contentURL: `${BASE_CONTENT_URL}/WRAPPER.md`,
   },

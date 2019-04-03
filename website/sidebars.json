@@ -41,8 +41,8 @@
         "label": "JavaScript",
         "ids": [
           "aragonjs-quick-start",
-          "aragonjs-ref-react",
           "aragonjs-ref-app",
+          "aragonjs-ref-react",
           "aragonjs-ref-wrapper",
           "aragonjs-ref-providers",
           "aragonjs-ref-architecture",
