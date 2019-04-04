@@ -24,7 +24,7 @@ Some of the things you can do with the JavaScript implementation are:
 
 ### Quick Start
 
-- [Quick Start for apps](js-quick-start.md)
+- [Quick Start for apps](api-quick-start.md)
 
 ### Docs
 
