@@ -5,6 +5,7 @@ sidebar_label: The stack
 ---
 
 ### For creating DAOs, dapps and protocols
+
 ---
 
 From a technical perspective, Aragon can be seen as an **operating system for human organization**.
@@ -23,9 +24,11 @@ The role of the OS, and in this case of the Aragon stack, is to create an enviro
 ---
 
 # The layers of the stack
+
 <br><br><br>
 ![The Aragon stack](/docs/assets/architecture.svg)
 <br>
+
 > This is a diagram of the Aragon stack, from the Ethereum Virtual Machine to the User Interface
 
 <br>
@@ -73,7 +76,7 @@ Yet the Aragon client is a frontend too, so security is also paramount in the UI
 
 Aragon's approach to frontend sandboxing is a combination of **sandboxed iframes** and **cross-origin messaging** through a custom RPC protocol built specifically for Aragon. Apps do not have direct access to Web3 or Ethereum.
 
-The Aragon client uses [aragonAPI](/docs/aragonjs-intro.html) to provide apps APIs for accessing smart contracts, displaying notifications and signing transactions. When signing transactions, a panel opens up in the client, not in the app. Apps cannot prompt users to sign transactions directly and they cannot interact with the contracts of other apps—in reality, they can only send action "intents". Thus all transactions are securely handled by the Aragon client, decreasing the attack surface.
+The Aragon client uses [aragonAPI](/docs/api-intro.html) to provide apps APIs for accessing smart contracts, displaying notifications and signing transactions. When signing transactions, a panel opens up in the client, not in the app. Apps cannot prompt users to sign transactions directly and they cannot interact with the contracts of other apps—in reality, they can only send action "intents". Thus all transactions are securely handled by the Aragon client, decreasing the attack surface.
 
 #### Read more: [The Aragon client](/docs/client.html)
 
