@@ -4,7 +4,7 @@ title: Your first Aragon app
 sidebar_label: Your first Aragon app
 ---
 
-In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), the JavaScript implementation of [aragonAPI](js-intro.md), [aragonUI](ui-intro.md) and [aragonCLI](/docs/cli-intro.html).
+In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), the JavaScript implementation of [aragonAPI](api-intro.md), [aragonUI](ui-intro.md) and [aragonCLI](/docs/cli-intro.html).
 
 ## The setup
 
