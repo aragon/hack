@@ -586,3 +586,19 @@ nav.toc .toggleNav .navGroup h3 {
   background-size: auto;
   padding: 15px 0 0 15px;
 }
+
+.toc .toggleNav .navGroup .navGroupSubcategoryTitle {
+  font-family: 'HankenGroteskBold', sans-serif !important;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+  font-size: 17px;
+  color: #2d4051;
+  margin-top: 0!important;
+}
+
+nav.toc .toggleNav .subNavGroup ul {
+  padding-left: 12px;
+}

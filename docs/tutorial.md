@@ -24,7 +24,6 @@ The first label in the ENS name is the name of our app. This can be anything you
 
 The second and third label is the name of the [aragonPM](package-management.md) (aragonPM) registry that your repository will be (or is) registered to. For the sake of simplicity, this guide assumes that you have rights to create repositories on aragonpm.eth, but you could deploy your own aragonPM registry if you so desire.
 
-
 ## Writing a simple contract
 
 To illustrate how easy it is to use aragonOS, we will build our app as a vanilla smart contract, without any Aragon-specific interfaces at all.
@@ -56,7 +55,6 @@ contract CounterApp {
 ```
 
 Pretty simple, right? You might wonder why we would bother adding events to this smart contract, but it comes in handy later for illustration purposes — and we can also create an activity feed from it, if we wanted to.
-
 
 ## 3 steps to governance and upgradeability
 
@@ -107,13 +105,12 @@ contract CounterApp is AragonApp {
 
 That's it. In 3 steps, you now have an Aragon app, with full upgradeability and modular governance.
 
-
 ## Descriptive transactions
 
 Aragon wants to be as user friendly as possible, so it provides an easy way for developers to describe what their smart contracts do in a human readable way. It's called [Radspec](human-readable-txs.md). It works by putting `@notice` statements alongside a human readable description for the function.
 
 ```solidity
-contract CounterApp is AragonApp {    
+contract CounterApp is AragonApp {
     /**
      * @notice Increment the counter by 1
      */
@@ -138,14 +135,13 @@ Apps are run inside an iframe, which means that it only has access to its own DO
 
 Then the client takes care of connecting to Ethereum via Web3, and also handles things like signing transactions, displaying notifications and more to the end-user.
 
-All of this is achieved by using aragonAPI. aragonAPI is split in two parts: one for clients and one for apps. The client portion of aragonAPI reads *requests* from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).
+All of this is achieved by using aragonAPI. aragonAPI is split in two parts: one for clients and one for apps. The client portion of aragonAPI reads _requests_ from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).
 
 Because we're building an app, all we need is `@aragon/client` and our template already has that installed.
 
-
 ### Background workers and building state
 
-Apps usually want to listen to events using Web3 and build an application state from those events. This concept is also known as *event sourcing*.
+Apps usually want to listen to events using Web3 and build an application state from those events. This concept is also known as _event sourcing_.
 
 aragonAPI was built with event sourcing in mind. To build state continually without having the app loaded indefinitely, though, we need to run a background script.
 
@@ -161,7 +157,7 @@ import Aragon from '@aragon/client'
 const app = new Aragon()
 
 const initialState = {
-  count: 0
+  count: 0,
 }
 app.store(async (state, event) => {
   if (state === null) state = initialState
@@ -205,17 +201,17 @@ Now let's write the view portion of our app. In our case, this is a simple HTML 
 
 ```html
 <!-- app/index.html !-->
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Counter App</title>
-</head>
-<body>
+  </head>
+  <body>
     <button id="decrement">-</button>
     <div id="view">...</div>
     <button id="increment">+</button>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
 ```
 
@@ -224,18 +220,16 @@ Now let's write the view portion of our app. In our case, this is a simple HTML 
 import Aragon, { providers } from '@aragon/client'
 
 const initializeApp = () => {
-  const app = new Aragon(
-    new providers.WindowMessage(window.parent)
-  )
+  const app = new Aragon(new providers.WindowMessage(window.parent))
 
   const view = document.getElementById('view')
 
   app.state().subscribe(
-    (state) => {
+    state => {
       // the state is null in the beginning, when there are no event emitted from the contract
       view.innerHTML = `The counter is ${state ? state.count : 0}`
     },
-    (err) => {
+    err => {
       view.innerHTML = 'An error occured, check the console'
       console.log(err)
     }
@@ -263,19 +257,19 @@ That's it! Internally, `state` observes the `state` key in cache and emits every
 
 ### Sending transactions
 
-Our users need to be able to increment and decrement the counter. For this, we publish what is called an *intent* to the wrapper.
+Our users need to be able to increment and decrement the counter. For this, we publish what is called an _intent_ to the wrapper.
 
-An intent is an action you would like to occur on a specific contract. This intent is handled by the client, which will calculate a *transaction path* using the ACL of our DAO.
+An intent is an action you would like to occur on a specific contract. This intent is handled by the client, which will calculate a _transaction path_ using the ACL of our DAO.
 
 To understand transaction paths, we must first understand a little bit about how the ACL works.
 
-The [ACL (Access Control List)](acl-intro.md) is a simple mapping of *who* can perform *what* actions *where*. In our case, *someone* can perform an action guarded by a specific role (the *what*) on our app (the *where*).
+The [ACL (Access Control List)](acl-intro.md) is a simple mapping of _who_ can perform _what_ actions _where_. In our case, _someone_ can perform an action guarded by a specific role (the _what_) on our app (the _where_).
 
 However, it is entirely possible that users can not perform actions directly. For example, in order to increment the counter, we might want a decision making process, such as a vote. The beauty of aragonOS is that we never need to specify this directly, as this is handled by the ACL.
 
-We simply say that the only one (*who*) that can perform increments and decrements (*what*) on our app (*where*) is the voting app. This is not done at compile time, it is done at run time.
+We simply say that the only one (_who_) that can perform increments and decrements (_what_) on our app (_where_) is the voting app. This is not done at compile time, it is done at run time.
 
-This works because of a concept called [*forwarders*](forwarding-intro.md). A forwarder is simply an app that can execute transactions on someone's behalf, if the ACL permits it, and that app can have its own *arbitrary conditions* under which it wants to execute your transaction! In the example of the voting app, the voting app will only execute your transaction if the vote passes.
+This works because of a concept called [_forwarders_](forwarding-intro.md). A forwarder is simply an app that can execute transactions on someone's behalf, if the ACL permits it, and that app can have its own _arbitrary conditions_ under which it wants to execute your transaction! In the example of the voting app, the voting app will only execute your transaction if the vote passes.
 
 It's really simple to use. Let's add our intents to our app:
 
@@ -298,7 +292,6 @@ const initializeApp = () => {
 
 That's it! Now whenever the user clicks one of either the increment or decrement buttons, an intent is sent to the wrapper, and it will show the user a transaction to sign.
 
-
 ### The build script
 
 Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use `parcel` because it has zero config, but you can use your favorite bundler.
@@ -316,7 +309,6 @@ Let's add the build script to `package.json`:
 ```
 
 You can now build the front-end of your app by running `npm run build`.
-
 
 ## Writing the manifest files
 
@@ -393,12 +385,10 @@ Let's add the scripts we need to `package.json`:
 
 ```json
 {
-
   "scripts": {
     "start:app": "npm run build -- --no-minify && parcel serve app/index.html -p 8001 --out-dir dist/ --no-cache",
     "start:aragon:http": "npx aragon run --http localhost:8001 --http-served-from ./dist"
   }
-
 }
 ```
 
@@ -414,7 +404,6 @@ Let's add the scripts we need to `package.json`:
 ### Publishing
 
 Now that we're confident that our app will work and amaze the world, we should publish it. You can follow the publish guide to learn [how to publish in different environments](guides-publish.md).
-
 
 ### More CLI commands
 

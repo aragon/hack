@@ -1,15 +1,22 @@
 const fetch = require('node-fetch')
 const fs = require('fs')
 
-async function syncPages (pages, locationReferenceMap) {
+async function syncPages(pages, locationReferenceMap) {
   Promise.all(pages.map(page => syncPage(page, locationReferenceMap)))
 }
 
-async function syncPage ({ id, title, hideTitle, sidebarLabel, contentURL, fileLocation }, locationReferenceMap) {
+async function syncPage(
+  { id, title, hideTitle, sidebarLabel, contentURL, fileLocation },
+  locationReferenceMap
+) {
   const response = await fetch(contentURL)
   let remoteText = await response.text()
   // Fix the links
-  if(locationReferenceMap && locationReferenceMap.length) {
+  if (
+    locationReferenceMap &&
+    Object.keys(locationReferenceMap).length !== 0 &&
+    locationReferenceMap.constructor === Object
+  ) {
     remoteText = replaceAll(remoteText, locationReferenceMap)
   }
 
@@ -26,11 +33,11 @@ hide_title: ${hideTitle || false}
   fs.writeFileSync(`../${fileLocation}`, result)
 }
 
-function replaceAll (string, mapObject) {
+function replaceAll(string, mapObject) {
   const regex = new RegExp(Object.keys(mapObject).join('|'), 'gi')
   return string.replace(regex, matched => mapObject[matched])
 }
 
 module.exports = {
-  syncPages
+  syncPages,
 }
