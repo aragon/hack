@@ -112,7 +112,7 @@ This is shown on the App Center cards - it will be the first impression of your 
 
 #### Long description
 
-This is shown on the App Center view about your app. The best kind of description is a concise, informative paragraph followed by a short list of main features. Potential users will skim through this so make it easy to digest.
+The long description will be shown in your app's expanded App Center page. We recommend using a concise, informative paragraph followed by a short list of main features. Potential users will likely skim through this, so make it easy to digest.
 <br>
 <br>
 <span>![*](/docs/assets/check.svg)Maximum character count 400</span>
