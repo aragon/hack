@@ -44,7 +44,7 @@ This icon is used on the left hand app navigation panel of the Aragon client.
 
 ### Large app icon
 
-The large app icon will be used on the Aragon App Center, and unique icons help users to visually differentiate between apps. The large app icons can be displayed in various sizes, so you should target at least 192x192px when designing the icon.
+The large app icon will be displayed in the Aragon client's App Center, and unique icons will help users to visually differentiate between apps. The large app icons may be displayed in various sizes, so you should target at least 192x192px when designing the icon.
 <br>
 <br>
 <span>![*](/docs/assets/check.svg) Try to have some visual similarity to the App menu icon - otherwise users can be confused    </span>
