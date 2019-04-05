@@ -12,7 +12,7 @@ Before you publish your Aragon app in the App Center, you will need to prepare a
  The main assets are: 
 - App menu icon (SVG)
 - Large app icon (SVG or PNG)
-- App Badge Icon (SVG or PNG)
+- App badge icon (SVG or PNG)
 - Screenshots (PNG)
 - Short description (text only)
 - Long description (Markdown or text)
