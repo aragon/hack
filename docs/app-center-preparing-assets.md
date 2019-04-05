@@ -49,7 +49,7 @@ The large app icon will be displayed in the Aragon client's App Center, and uniq
 <br>
 <span>![*](/docs/assets/check.svg) Try to have some visual similarity to the App menu icon - otherwise users may be confused after installing the app    </span>
 
-<span>![*](/docs/assets/check.svg) The default Aragon apps have a **gradient background** and a **white cutout shape** - but it’s up to you to choose the branding and style for your app icon  </span>
+<span>![*](/docs/assets/check.svg) The core Aragon apps (Finance, Token Manager, and Voting) have a **gradient background** and a **white cutout shape** - but it’s up to you to choose the branding and style for your app icon  </span>
 
 <span>![*](/docs/assets/check.svg) Export to **SVG** or high res (192x192px) **PNG** for App Center submissions  </span>
 
