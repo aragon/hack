@@ -85,7 +85,7 @@ The screenshots will be shown in your app's expanded App Center page, to show us
 
 <span>![*](/docs/assets/check.svg) Desktop (landscape) screenshots should be 16:10 aspect ratio, minimum resolution  **2560 px × 1600 px**  (they will be automatically resized)</span>
 
-<span>![*](/docs/assets/check.svg) Mobile (portrait) screenshots should be 9:16 aspect ratio, minimum resolution  **1080 px x 1920 px** (we will resize these to the final resolution)</span>
+<span>![*](/docs/assets/check.svg) Mobile (portrait) screenshots should be 9:16 aspect ratio, minimum resolution  **1080 px x 1920 px** (they will be automatically resized)</span>
 
 <span>![*](/docs/assets/check.svg) Export to **PNG** for App Center submissions</span>
 
