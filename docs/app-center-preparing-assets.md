@@ -76,7 +76,7 @@ The app badge icon can be used in the UI whenever the app is referenced in other
 
 ### Screenshots
 
-The screenshots of your app will be used in the App Center view for your app, so that users can quickly see how your app looks before deciding to install it.
+The screenshots will be shown in your app's expanded App Center page, to show users a preview of your app before deciding to install it.
 <br>
 <br>
 <span>![*](/docs/assets/check.svg) Include 2-8 main screens of your app - so it’s easy to see what it does</span>
