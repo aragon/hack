@@ -93,7 +93,7 @@ The screenshots will be shown in your app's expanded App Center page, to show us
 
 ### App description
 
-The description of your app is very important for users to quickly understand what it does. The App Center uses two descriptions.
+The description of your app is very important for users to quickly understand what it does. The App Center can render two descriptions: a short preview and a longer, detailed description.
 
 #### Short description
 
