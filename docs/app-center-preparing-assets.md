@@ -18,7 +18,7 @@ Before you publish your Aragon app in the App Center, you will need to prepare a
 - Long description (Markdown or text)
 
 <br>
-In the next sections we will go through these one by one, as well as link to some templates so it’s easy for you to prepare everything that you need.
+In the next sections we will describe the requirements for each asset one by one. Templates are also provided to help you prepare everything.
 
 <br>
 
