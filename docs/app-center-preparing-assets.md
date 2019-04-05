@@ -7,7 +7,7 @@ sidebar_label: Preparing assets
 
 ##### Preparing assets for publishing your Aragon app
 
-Before you publish your Aragon app in the App Center, you need to prepare a few types of assets to display it correctly, and differentiate from other apps.
+Before you publish your Aragon app in the App Center, you will need to prepare a few types of assets to display it correctly, and differentiate from other apps.
 
  The main assets are: 
 - App Menu Icon (SVG)
