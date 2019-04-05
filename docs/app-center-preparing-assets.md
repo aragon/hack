@@ -32,7 +32,7 @@ This icon is used on the left hand app navigation panel of the Aragon client.
 <br>
 <span>![*](/docs/assets/check.svg) **Size** of the icon, including padding, is **22x22 px**. The padding should be at least 3px or more on each side, depending on the icon shape</span>
 
-<span>![*](/docs/assets/check.svg) **Color** of the icon should be **#888888** so that we can automatically colorize the icon for you correctly in the Aragon client for various icon states</span>
+<span>![*](/docs/assets/check.svg) **Color** of the icon should be **#888888** so that the Aragon client can automatically colorize the icon in different app states</span>
 
  <span>![*](/docs/assets/check.svg) **Line width** of the icon shape should be 1px so your app icon will look consistent with others. Sticking to the pixel grid is also recommended for sharp rendering</span>
 
