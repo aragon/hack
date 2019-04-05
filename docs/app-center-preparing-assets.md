@@ -53,7 +53,7 @@ The large app icon will be displayed in the Aragon client's App Center, and uniq
 
 <span>![*](/docs/assets/check.svg) Export to **SVG** or high res (192x192px) **PNG** for App Center submissions  </span>
 
-<span>![*](/docs/assets/check.svg) The exported icon shoueld be **square**. We will apply a mask with rounded edges - don’t export with rounded edges already applied in the design</span>
+<span>![*](/docs/assets/check.svg) The exported icon should be **square**. The Aragon client will automatically apply a mask with rounded edges</span>
 
 <br>
 
