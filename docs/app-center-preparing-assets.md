@@ -68,7 +68,7 @@ The app badge icon can be used in the UI whenever the app is referenced in other
 
 <span>![*](/docs/assets/check.svg) Export to **SVG** or high res (48x48px) **PNG** for App Center submissions</span>
 
-<span>![*](/docs/assets/check.svg) The exported icon should be **square**. We will apply a mask with rounded edges - don’t export with rounded edges already applied in the design</span>
+<span>![*](/docs/assets/check.svg) The exported icon should be **square**. The Aragon client will automatically apply a mask with rounded edges</span>
 
 <br>
 
