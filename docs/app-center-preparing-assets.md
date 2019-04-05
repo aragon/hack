@@ -10,7 +10,7 @@ sidebar_label: Preparing assets
 Before you publish your Aragon app in the App Center, you will need to prepare a few types of assets to display it correctly, and differentiate from other apps.
 
  The main assets are: 
-- App Menu Icon (SVG)
+- App menu icon (SVG)
 - Large app icon (SVG or PNG)
 - App Badge Icon (SVG or PNG)
 - Screenshots (PNG)
