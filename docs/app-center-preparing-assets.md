@@ -97,7 +97,7 @@ The description of your app is very important for users to quickly understand wh
 
 #### Short description
 
-This is shown on the App Center cards - it will be the first impression of your app so make it count!
+This is shown on your app's card in the App Center - it will be the first impression of your app, so make it count!
 <br>
 <br>
 <span>![*](/docs/assets/check.svg)Maximum 3 lines of text, max character count 60</span>
