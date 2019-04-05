@@ -61,7 +61,7 @@ The large app icon will be displayed in the Aragon client's App Center, and uniq
 
 ### App badge icons
 
-The app badge icon can be used in the UI whenever the app is referenced in other apps.  The badge is a default aragonUI component, and has some neat extra features, like being able to click on it to show the contract address and app version quickly.
+The app badge icon can be used in the UI whenever the app is referenced in other apps.  The badge is a default aragonUI component, and has some neat extra features, like being able to view the contract address and version of an app quickly.
 <br>
 <br>
 <span>![*](/docs/assets/check.svg) This should be visually the same icon as the Large app icon. However, if your Large app icon has a lot of detail, you may want to reduce the level of detail for the app badge icon as it’s smaller</span>
