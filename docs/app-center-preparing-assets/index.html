@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css"/>
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hkgrotesklight" type="text/css">
+      <script type="text/javascript">
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://arastats.eu/staats/";
+          _paq.push(['setTrackerUrl', u+'piwik.php']);
+          _paq.push(['setSiteId', '7']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+      <noscript><img src="https://arastats.eu/staats/piwik.php?idsite=7&amp;rec=1" style="border:0" alt="" /></noscript>
+      <html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>App Center · Aragon Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h5&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;preparing-assets-for-publishing-your-aragon-app&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#preparing-assets-for-publishing-your-aragon-app&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Preparing assets for publishing your Aragon app&lt;/h5&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="App Center · Aragon Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://hack.aragon.org/"/><meta property="og:description" content="&lt;h5&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;preparing-assets-for-publishing-your-aragon-app&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#preparing-assets-for-publishing-your-aragon-app&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Preparing assets for publishing your Aragon app&lt;/h5&gt;
+"/><meta property="og:image" content="https://hack.aragon.org/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://hack.aragon.org/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div><div class="aragon-navbar"><div class="center"><ul><li><a href="https://aragon.org/discover">Discover</a></li><li><a class="active">Developers</a></li><li class="logo-li"><a class="logo-link" href="https://aragon.org"><img class="logo" src="/img/navbar-logo.svg" alt="Aragon Developer Portal"/></a></li><li><a href="https://aragon.org/project">Project</a></li><li><a href="https://aragon.org/network">Network</a></li></ul></div></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="back-to-home"><div><a href="/">← Back to home</a></div></div><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><img alt="menu" src="/img/menubar.svg"/></div><h2><span><a href="/">home</a></span><i>-</i><span>App Center</span></h2><div class="tocToggler" id="tocToggler"><img alt="menu" src="/img/menumore.svg"/></div></div><div class="navGroups"><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><div class="navGroup"><h3 class="navGroupCategoryTitle">The basics</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/getting-started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/stack">The stack</a></li><li class="navListItem"><a class="navItem" href="/docs/acl-intro">Permissions</a></li><li class="navListItem"><a class="navItem" href="/docs/forwarding-intro">Forwarding</a></li><li class="navListItem"><a class="navItem" href="/docs/upgradeability-intro">Upgradeability</a></li><li class="navListItem"><a class="navItem" href="/docs/package-management">Package management</a></li><li class="navListItem"><a class="navItem" href="/docs/templates-intro">Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/client">The Aragon client</a></li><li class="navListItem"><a class="navItem" href="/docs/human-readable-txs">Human readable transactions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/tutorial">Your first Aragon app</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-publish">Publish</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-custom-deploy">Custom deploy with aragonCLI</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-faq">Troubleshooting</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonCLI</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cli-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-main-commands">Main commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-dao-commands">DAO commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-apm-commands">aragonPM commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-global-confg">Global configuration</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonPM</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/apm">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/apm-ref">Reference documentation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonOS</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/aragonos-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-motivation">Motivations</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-building">Developing with aragonOS</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-ref">Reference documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-4-migration">Migrating to aragonOS 4 from aragonOS 3</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-3-ref">Reference (aragonOS 3)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonAPI</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/api-intro">Introduction</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JavaScript</h4><ul><li class="navListItem"><a class="navItem" href="/docs/aragonjs-quick-start">Quick Start</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-app">App API</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-react">React API</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-wrapper">Wrapper</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-providers">Providers</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-ref-architecture">Architecture of apps</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonjs-guide-bg-scripts">Background Scripts</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">aragonUI</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/aragonui-intro">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">App Center</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/app-center-preparing-assets">Preparing assets</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/app-center-preparing-assets.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">App Center</h1></header><article><div><span><h5><a class="anchor" aria-hidden="true" id="preparing-assets-for-publishing-your-aragon-app"></a><a href="#preparing-assets-for-publishing-your-aragon-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Preparing assets for publishing your Aragon app</h5>
+<p>Before you publish your Aragon app in the App Center, you will need to prepare a few types of assets to display it correctly, and differentiate from other apps.</p>
+<p>The main assets are:</p>
+<ul>
+<li>App menu icon (SVG)</li>
+<li>Large app icon (SVG or PNG)</li>
+<li>App badge icon (SVG or PNG)</li>
+<li>Screenshots (PNG)</li>
+<li>Short description (text only)</li>
+<li>Long description (Markdown or text)</li>
+</ul>
+<p><br>
+In the next sections we will describe the requirements for each asset one by one. Templates are also provided to help you prepare everything.</p>
+<p><br></p>
+<h2><a class="anchor" aria-hidden="true" id="icons"></a><a href="#icons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Icons</h2>
+<h3><a class="anchor" aria-hidden="true" id="menu-icon"></a><a href="#menu-icon" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Menu icon</h3>
+<p>This icon is used on the left hand app navigation panel of the Aragon client.
+<br>
+<br>
+<span><img src="/docs/assets/check.svg" alt="*"> <strong>Size</strong> of the icon, including padding, is <strong>22x22 px</strong>. The padding should be at least 3px or more on each side, depending on the icon shape</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*"> <strong>Color</strong> of the icon should be <strong>#888888</strong> so that the Aragon client can automatically colorize the icon in different app states</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*"> <strong>Line width</strong> of the icon shape should be 1px so your app icon will look consistent with others. Sticking to the pixel grid is also recommended for sharp rendering</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*"> Export to <strong>SVG</strong> for App Center submissions</span></p>
+<p><br></p>
+<p><center> <img src="/docs/assets/app-center-1.svg" alt="Do"> <img src="/docs/assets/app-center-2.svg" alt="Dont"> </center></p>
+<h3><a class="anchor" aria-hidden="true" id="large-app-icon"></a><a href="#large-app-icon" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Large app icon</h3>
+<p>The large app icon will be displayed in the Aragon client's App Center, and unique icons will help users to visually differentiate between apps. The large app icons may be displayed in various sizes, so you should target at least 192x192px when designing the icon.
+<br>
+<br>
+<span><img src="/docs/assets/check.svg" alt="*"> Try to have some visual similarity to the App menu icon - otherwise users may be confused after installing the app</p>
+<p></span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*"> The core Aragon apps (Finance, Token Manager, and Voting) have a <strong>gradient background</strong> and a <strong>white cutout shape</strong> - but it’s up to you to choose the branding and style for your app icon</p>
+<p></span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*"> Export to <strong>SVG</strong> or high res (192x192px) <strong>PNG</strong> for App Center submissions
+</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*"> The exported icon should be <strong>square</strong>. The Aragon client will automatically apply a mask with rounded edges</span></p>
+<p><br></p>
+<p><center> <img src="/docs/assets/app-center-3.svg" alt="Do"> <img src="/docs/assets/app-center-4.svg" alt="Dont"> </center></p>
+<h3><a class="anchor" aria-hidden="true" id="app-badge-icons"></a><a href="#app-badge-icons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>App badge icons</h3>
+<p>The app badge icon can be used in the UI whenever the app is referenced in other apps.
+The badge is a default aragonUI component, and has some neat extra features, like being able to view the contract address and version of an app quickly.
+<br>
+<br>
+<span><img src="/docs/assets/check.svg" alt="*"> This should be visually the same icon as the Large app icon. However, if your Large app icon has a lot of detail, you may want to reduce the level of detail for the app badge icon as it’s smaller</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*"> Export to <strong>SVG</strong> or high res (48x48px) <strong>PNG</strong> for App Center submissions</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*"> The exported icon should be <strong>square</strong>. The Aragon client will automatically apply a mask with rounded edges</span></p>
+<p><br></p>
+<p><center> <img src="/docs/assets/app-center-5.svg" alt="Do"> <img src="/docs/assets/app-center-6.svg" alt="Dont"> </center></p>
+<h3><a class="anchor" aria-hidden="true" id="screenshots"></a><a href="#screenshots" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Screenshots</h3>
+<p>The screenshots will be shown in your app's expanded App Center page, to show users a preview of your app before deciding to install it.
+<br>
+<br>
+<span><img src="/docs/assets/check.svg" alt="*"> Include 2-8 main screens of your app - so it’s easy to see what it does</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*"> You can include both desktop and mobile (portrait) screenshots</p>
+<p></span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*"> Desktop (landscape) screenshots should be 16:10 aspect ratio, minimum resolution
+<strong>2560 px × 1600 px</strong>  (they will be automatically resized)</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*"> Mobile (portrait) screenshots should be 9:16 aspect ratio, minimum resolution
+<strong>1080 px x 1920 px</strong> (they will be automatically resized)</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*"> Export to <strong>PNG</strong> for App Center submissions</span></p>
+<p><br></p>
+<h3><a class="anchor" aria-hidden="true" id="app-description"></a><a href="#app-description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>App description</h3>
+<p>The description of your app is very important for users to quickly understand what it does. The App Center can render two descriptions: a short preview and a longer, detailed description.</p>
+<h4><a class="anchor" aria-hidden="true" id="short-description"></a><a href="#short-description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Short description</h4>
+<p>This is shown on your app's card in the App Center - it will be the first impression of your app, so make it count!
+<br>
+<br>
+<span><img src="/docs/assets/check.svg" alt="*">Maximum 3 lines of text, max character count 60</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*">Keep it very easy to understand at a glance</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*">Don’t repeat the app name in the short description</span></p>
+<p><br></p>
+<p><center> <img src="/docs/assets/app-center-7.svg" alt="Do"> <img src="/docs/assets/app-center-8.svg" alt="Dont"> </center></p>
+<h4><a class="anchor" aria-hidden="true" id="long-description"></a><a href="#long-description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Long description</h4>
+<p>The long description will be shown in your app's expanded App Center page. We recommend using a concise, informative paragraph followed by a short list of main features. Potential users will likely skim through this, so make it easy to digest.
+<br>
+<br>
+<span><img src="/docs/assets/check.svg" alt="*">Maximum character count 400</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*">Ideally a short paragraph about the main app function, then a list of features</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*">Keep it simple to understand for all types of users</span></p>
+<p><span><img src="/docs/assets/check.svg" alt="*">You can use Markdown for rich text</span></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/aragonui-intro"><span class="arrow-prev">← </span><span>Introduction</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#icons">Icons</a><ul class="toc-headings"><li><a href="#menu-icon">Menu icon</a></li><li><a href="#large-app-icon">Large app icon</a></li><li><a href="#app-badge-icons">App badge icons</a></li><li><a href="#screenshots">Screenshots</a></li><li><a href="#app-description">App description</a></li></ul></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bDWFJH" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/footer.svg" alt="Aragon Developer Portal" width="66" height="58"/></a></div><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/api-intro.html">aragonAPI</a><a href="/docs/aragonui-intro.html">aragonUI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '9dff0383c32107d6c174f15e259bb23a',
+                indexName: 'aragon',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script>
+      <style data-styled-components="bDWFJH">
+/* sc-component-id: sc-bdVaJa */
+.sc-bdVaJa {}
+/* sc-component-id: sc-global-3832733198 */
+@font-face{font-family:'overpass';src:url(/aragon-ui/cf790334a5a6d45c.woff2) format('woff2'),url(/aragon-ui/fd48a701d84ebf69.woff) format('woff');font-weight:400;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/32a3f11e7740ce58.woff2) format('woff2'),url(/aragon-ui/860b19d3e10736e7.woff) format('woff');font-weight:600;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/5cfe62515c2f9b42.woff2) format('woff2'),url(/aragon-ui/f8ba2d7a9af0db1f.woff) format('woff');font-weight:800;font-style:normal;} *,*:before,*:after{box-sizing:border-box;} html{min-height:100%;} body{font-family:overpass,sans-serif;font-size:15px;font-weight:400;line-height:1.5;color:#000000;background:#F7FBFD;} body,ul,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;} button,select,input,textarea,h1,h2,h3,h4,h5,h6{font-size:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;} a,button,select,input,textarea{color:inherit;} strong,b{font-weight:600;}</style>
+      </body></html>

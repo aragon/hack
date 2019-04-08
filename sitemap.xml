@@ -59,6 +59,7 @@
 <url> <loc>https://hack.aragon.org/docs/aragonjs-quick-start</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/aragonjs-quick-start" /> </url>
 <url> <loc>https://hack.aragon.org/docs/apm-ref</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/apm-ref" /> </url>
 <url> <loc>https://hack.aragon.org/docs/apm</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/apm" /> </url>
+<url> <loc>https://hack.aragon.org/docs/app-center-preparing-assets</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/app-center-preparing-assets" /> </url>
 <url> <loc>https://hack.aragon.org/docs/cli-apm-commands</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/cli-apm-commands" /> </url>
 <url> <loc>https://hack.aragon.org/docs/cli-dao-commands</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/cli-dao-commands" /> </url>
 <url> <loc>https://hack.aragon.org/docs/cli-global-confg</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/cli-global-confg" /> </url>
