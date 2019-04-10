@@ -23,7 +23,7 @@ Its architecture is based on the idea of a decentralized organization or protoco
 
 --------
 
-aragonOS provides the following functionality:
+#### aragonOS provides the following functionality:
 - **Upgradability**: Smart contracts can be **upgraded to a newer version**. Example: fixing a bug or adding a feature.
 - **Permission control**: By using the `auth()` and `authP()` modifiers you can **protect functionality** such that they're only accessible by other apps or entities if given permission. This completely abstracts the authentication logic from an app, allowing you to focus on your app's business logic. Example: protecting a vault so only the organization's Voting app can initiate an action to transfer funds.
 - **Forwarders**: aragonOS apps can communicate with each other by sending their intent to perform an action to other apps. Example: withdrawing funds from a vault only on the passing of a vote and the expiring of a time-lock.
@@ -32,8 +32,9 @@ All the above makes it very simple for aragonOS apps to incorporate **governance
 
 --------
 
-Useful reads:
-- [Your first Aragon app tutorial](/docs/tutorial.html)
-- [aragonOS reference](/docs/aragonos-ref.html)
-- [aragonOS API](/docs/kernel_Kernel.html)
-- [Introducing aragonOS 3.0](https://blog.aragon.org/introducing-aragonos-3-0-alpha-the-new-operating-system-for-protocols-and-dapps-348f7ac92cff/)
+#### Useful reads:
+
+<span>![*](/docs/assets/check.svg) [Your first Aragon app tutorial](/docs/tutorial.html)</span><br>
+<span>![*](/docs/assets/check.svg) [aragonOS reference](/docs/aragonos-ref.html)</span><br>
+<span>![*](/docs/assets/check.svg) [aragonOS API](/docs/kernel_Kernel.html)</span><br>
+<span>![*](/docs/assets/check.svg) [Introducing aragonOS 3.0](https://blog.aragon.org/introducing-aragonos-3-0-alpha-the-new-operating-system-for-protocols-and-dapps-348f7ac92cff/)</span><br>

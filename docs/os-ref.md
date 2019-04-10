@@ -4,7 +4,11 @@ title: aragonOS reference documentation
 sidebar_label: Reference documentation
 ---
 
-*Documentation for [aragonOS](https://github.com/aragon/aragonOS) v4.0.1. Looking for [aragonOS 3 documentation?](/docs/aragonos-3-ref.html)*
+##### Documentation for [aragonOS](https://github.com/aragon/aragonOS) v4.0.1.
+
+*Looking for [aragonOS 3 documentation?](/docs/aragonos-3-ref.html)*
+
+<br>
 
 This document provides a technical overview of the framework's architecture and provides insight into its capabilities. It assumes the reader understands [Solidity](https://solidity.readthedocs.io/). For a less technical introduction, visit the [introduction](/docs/aragonos-intro.html).
 
@@ -91,7 +95,7 @@ function hasPermission(address who, address where, bytes32 what, bytes how) publ
 
 Upgradeability of apps and the Kernel itself is done by setting a new address for a specific key in the `apps` mapping with either the **Core** or **Base** namespace.
 
-**Kernel upgradeability**
+#### Kernel upgradeability
 
 Kernel instances for different organizations can share the same implementation. Every Kernel instance is a KernelProxy, allowing them to be upgradeable.
 
@@ -105,7 +109,7 @@ Upgrading the Kernel of an organization is done by changing the **Kernel appId**
 kernel.setApp(kernel.CORE_NAMESPACE(), kernel.KERNEL_APP_ID(), newKernelBaseAddr);
 ```
 
-**AppProxies and upgradeability**
+#### AppProxies and upgradeability
 
 In a similar fashion to the Kernel, apps can share implementation code to save gas on deployment. AppProxies rely on the Kernel for their upgradeability. Note that separate app instances in an organization are all linked to the same base contract in the Kernel, and so upgrading the base contract would effectively upgrade all of that app's instances.
 
@@ -182,7 +186,7 @@ ACL acl = ACL(kernel.acl());
 
 Then you can execute the following actions:
 
-**Create Permission**
+#### Create Permission
 
 ```solidity
 acl.createPermission(address entity, address app, bytes32 role, address manager);
@@ -205,7 +209,7 @@ This action is identical to `grantPermission()` except it allows the creation of
 >
 > Creating permissions is mandatory for apps to work. Any permission checks on non-existent permissions are failed automatically.
 
-**Grant Permission**
+#### Grant Permission
 
 ```solidity
 acl.grantPermission(address entity, address app, bytes32 role);
@@ -223,7 +227,7 @@ This action is identical to `createPermission()` except it can only be used by t
 >
 > The `grantPermission()` action doesn’t require protection with the ACL because only the permission manager of the role can make changes.
 
-**Revoke Permission**
+#### Revoke Permission
 
 ```solidity
 acl.revokePermission(address entity, address app, bytes32 role);
@@ -258,13 +262,13 @@ Note that the Voting app is also able to revoke or regrant the `TRANSFER_ROLE` p
 
 As we have seen in the [Basic ACL example](#basic-acl-example), when a permission is created a **Permission Manager** is set for that specific role. The permission manager is able to grant or revoke permission instances for that role.
 
-**Getting a role's permission manager**
+#### Getting a role's permission manager
 
 ```solidity
 acl.getPermissionManager(address app, bytes32 role)
 ```
 
-**Change a permission manager**
+#### Change a permission manager
 
 ```solidity
 acl.setPermissionManager(address newManager, address app, bytes32 role);
@@ -314,11 +318,11 @@ While also representing an operation, when the argument ID is `LOGIC_OP_PARAM_ID
 - Exclusive or (`Op.XOR`): takes 2 parameter indices and evaluates to true if only one of the parameters evaluate to true.
 - If else (`Op.IF_ELSE`): takes 3 parameters, evaluates the first parameter and if true, evalutes as the second parameter's evaluation, or as the third parameter's evaluation if false.
 
-**Parameter execution**
+#### Parameter execution
 
 When evaluating a rule the ACL will always evaluate the result of the first parameter. This first parameter can be an operation that links to other parameters and its evaluation depends on those parameters' evaluation. Execution is recursive and the result evaluated is always the result of the evaluation of the first parameter.
 
-**Examples of rules**
+#### Examples of rules
 
 The interpreter supports encoding complex rules in what would look almost like a programming language. For example, let’s look at the following [test case](https://github.com/aragon/aragonOS/blob/63c4722b8629f78350586bcea7c0837ab5882a20/test/TestACLInterpreter.sol#L112-L126):
 
@@ -393,7 +397,7 @@ To secure an application, it is critical to ensure that all externally-accessibl
 
 ### Authentication
 
-**Adding roles**
+#### Adding roles
 
 Declaring roles is simple and usually done as public `bytes32` declarations at the start of the contract file. By convention, the standard name for a role identifier is the `keccak256` hash of its name as other tooling in the stack expects this to be the case:
 
@@ -401,7 +405,7 @@ Declaring roles is simple and usually done as public `bytes32` declarations at t
 bytes32 public CUSTOM_ACTION_ROLE = keccak256("CUSTOM_ACTION_ROLE");
 ```
 
-**Protecting functionality**
+#### Protecting functionality
 
 Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifiers `auth()` or `authP()` to the action. On executing the action, the `auth()` or `authP()` modifier checks with the Kernel whether the entity performing the call holds the required role or not.
 
@@ -436,7 +440,7 @@ function canPerform(address sender, bytes32 role, uint256[] params) public view 
 >
 > Apps have the choice of which actions to protect behind the ACL as some actions may make sense to be completely public. Any publicly exposed state-changing function should *most likely* be protected, however.
 
-**Lifecycle of an AragonApp call requiring the ACL**
+#### Lifecycle of an AragonApp call requiring the ACL
 
 ![](/docs/assets/os-app-call.gif)
 
@@ -461,7 +465,7 @@ function isPetrified() public view returns (bool);
 
 ### Application capabilities
 
-**Fund recovery**
+#### Fund recovery
 
 By default, all AragonApps have a fund recovery mechanism enabled for all tokens and ETH to protect against the event of an accidental transfer of funds. This is partly motivated by a flaw in the ERC20 specification that does not allow contracts to prevent themselves from receiving tokens like they can with ETH.
 
@@ -479,7 +483,7 @@ function allowRecoverability(address token) public view returns (bool);
 
 The default implementation of `allowRecoverability()` is just to return true for all tokens but your overload could choose to not allow certain tokens or even ETH.
 
-**Depositable proxies**
+#### Depositable proxies
 
 AppProxies start off not being able to receive ETH through the native, gas-limited `.send()` and `.transfer()` methods. This can be explicitly enabled through the `setDepositable()` function when an app wants to allow itself (as the proxy instance) to recieve ETH from other contracts:
 
@@ -489,7 +493,7 @@ function setDepositable(bool depositable) internal;
 
 An example use case would be a fundraising application which would only enable its proxy instances to be capable of receiving ETH for the duration of a fundraiser.
 
-**EVMScripts**
+#### EVMScripts
 
 AragonApp exposes the following interface for running EVMScripts:
 

@@ -4,9 +4,8 @@ title: Templates
 sidebar_label: Templates
 ---
 
-### Create templates for easy DAO setup
+##### Create templates for easy DAO setup
 
----
 
 Creating a DAO with all the desired apps and permissions requires multiple operations that must be properly orchestated. In the context of Ethereum, performing all these operations would require sending many transactions. This would not only be very costly, as every transaction needs to pay for gas, also the integrity of the deployment depends on all operations occurring in the right order.
 

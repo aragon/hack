@@ -4,7 +4,7 @@ title: Quick Start
 sidebar_label: Quick Start
 ---
 
-## Quick Start for apps
+##### Quick Start for apps
 
 ```sh
 npm i @aragon/api

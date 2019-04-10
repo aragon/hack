@@ -1,8 +1,10 @@
 ---
 id: guides-custom-deploy
-title: Custom Aragon Organization Deployment using aragonCLI
+title: Custom Deploy
 sidebar_label: Custom deploy with aragonCLI
 ---
+
+##### Aragon Organization deployment using aragonCLI
 
 This guide will show you the process to deploy a blank organization and configure it as a custom organization for a cooperative.
 

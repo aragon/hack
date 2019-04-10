@@ -4,7 +4,7 @@ title: Motivations
 sidebar_label: Motivations
 ---
 
-### Why we built aragonOS
+##### Why we built aragonOS
 ---
 
 aragonOS was born on our path to developing modular and upgradeable smart contracts to power decentralized organizations.

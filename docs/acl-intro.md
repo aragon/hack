@@ -4,9 +4,7 @@ title: Permissions
 sidebar_label: Permissions
 ---
 
-### Use the Access Control List (ACL) to control who can access your app's functionality
----
-
+##### Use the Access Control List (ACL) to control who can access your app's functionality
 
 ## How does it work?
 The ACL essentially just contains a set of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission. Most generally, an *Entity* can hold the permission to call a function protected by *Role* in an *App*, and their permission is managed by a *Manager*, who can revoke or regrant that permission.

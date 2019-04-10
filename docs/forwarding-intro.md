@@ -4,8 +4,8 @@ title: Forwarding
 sidebar_label: Forwarding
 ---
 
-### Use forwarders to allow app interoperability and governance
----
+##### Use forwarders to allow app interoperability and governance
+
 
 The ACL allows Aragon apps to be interoperable by creating and managing permissions.
 

@@ -4,13 +4,13 @@ title: aragonOS 3 reference documentation
 sidebar_label: Reference (aragonOS 3)
 ---
 
-*Documentation for [aragonOS](https://github.com/aragon/aragonOS) v3.1.2*
+##### Documentation for [aragonOS](https://github.com/aragon/aragonOS) v3.1.2
 
 This document provides a technical overview of the architecture and can be used
 as a specification and developer guide. For a less technical introduction
 to aragonOS 3 you can check the [alpha release blog post](https://blog.aragon.org/introducing-aragonos-3-0-alpha-the-new-operating-system-for-protocols-and-dapps-348f7ac92cff).
 
-## 1. General architecture and design philosophy
+## General architecture and design philosophy
 
 Using aragonOS to build a system allows for **decoupling** of specific **business
 logic** of a protocol or application from its **authentication logic**.  It allows you to code your application without thinking about authentication or
@@ -18,19 +18,22 @@ governance at all. By inheriting from the **AragonApp** base class and defining
 actions that require authentication with a special modifier, aragonOS can handle
 authentication for the protocol.
 
-### 1.1 Basic concepts: Proxy and Forwarder
+### Basic concepts: Proxy and Forwarder
 
 Before describing general ideas about the architecture, it is important to
 understand two concepts the entire framework builds upon:
 
-- **Proxy:** A Proxy is a very simple smart contract construct which consists of
+#### Proxy
+A Proxy is a very simple smart contract construct which consists of
 decoupling the instance of a particular smart contract with the location of its actual
 business logic. We call individual instances of contracts **Proxy** and the logic
 **base contracts**. A Proxy delegates all its logic to a base contract. Upgradeability
 is achieved because this link to the base contract can be modified, effectively
 updating the Proxy business logic. We created [ERC897](https://github.com/ethereum/EIPs/pull/897) to standardize Proxy interfaces
 for better interoperability in the ecosystem.
-- **Forwarder:** A Forwarder is a contract that, given some conditions, will pass
+
+#### Forwarder
+A Forwarder is a contract that, given some conditions, will pass
 along a certain action to other contract(s).
 
 Thanks to the fact that proxies allow a certain instance of a contract to never
@@ -40,25 +43,29 @@ authentication and logic. For example, just by checking that an action's **sende
 address is an instance of a Voting app with a particular address**, we can know
 that the action must have been approved by a vote.
 
-### 1.2 Architecture: Kernel and apps
+### Architecture: Kernel and apps
 
 An organization or protocol that is built with aragonOS is composed of two types of smart contracts:
 
-- **Kernel:** The kernel is at the core of every organization and there is only one instance of it per organization. It manages a very important mapping of *base contract* addresses of each application registered in the kernel (such as the ACL) or the kernel’s own *base contract*.
-- **Apps:** Apps are contracts that rely on the kernel for their upgradeability and access control.
+#### Kernel
+The kernel is at the core of every organization and there is only one instance of it per organization. It manages a very important mapping of *base contract* addresses of each application registered in the kernel (such as the ACL) or the kernel’s own *base contract*.
 
-### 1.3 Design philosophy
+#### Apps
+Apps are contracts that rely on the kernel for their upgradeability and access control.
+
+
+### Design philosophy
 
 The design philosophy we use when developing Aragon apps is very similar to the UNIX philosophy: we try to architect them to do one thing and one thing well, and to respect and implement the few aragonOS interfaces so that they play nicely with the rest of the ecosystem.
 
 This results in purely technical benefits such as testability, but it is also very powerful when apps are combined and the output of one app becomes the input of an other one (forwarders resemble UNIX pipes in some way).
 
-### 1.4 Lifecycle of an aragonOS call
+### Lifecycle of an aragonOS call
 
 ![](/docs/assets/os-app-call.gif)
 
-## 2. Kernel
-### 2.1 The app mapping
+## Kernel
+### The app mapping
 
 At the core of the kernel lives a critical mapping called the `app` mapping.
 
@@ -72,18 +79,18 @@ function setApp(bytes32 namespace, bytes appId, address app) public;
 - **AppId:** used to identify what app is being set. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
 - **App:** Address of a contract that can have different meaning depending on the namespace.
 
-### 2.2 Namespaces
+### Namespaces
 
 - **Core namespace** (`keccak256('core')`): in this namespace is where the core components of the kernel reside. The only thing in the core mapping is the reference to the kernel base contract.
 - **Base namespace** (`keccak256('base')`): keeps track of the base contracts for appIds.
 - **App namespace** (`keccak256('app')`): some apps use the app namespace as a way to reference other apps. For example this is used to store the reference to the ACL instance or the EVMScriptsRegistry.
 
-## 3. Upgradeability
+## Upgradeability
 
 Upgradeability of apps and the kernel is done by setting a new address for a
 specific key in the `apps` mapping in the kernel.
 
-### 3.1 Kernel upgradeability
+### Kernel upgradeability
 
 Kernel instances for different organizations can share the same implementation.
 Every Kernel instance is a KernelProxy . The logic for upgrading to a new implementation
@@ -96,7 +103,7 @@ in the **Core namespace**
 kernel.setApp(kernel.CORE_NAMESPACE(), kernel.KERNEL_APP_ID(), newKernelCodeAddr)
 ```
 
-### 3.2 AppProxies and upgradeability
+### AppProxies and upgradeability
 
 In a similar fashion to the Kernel, apps can share implementation code to save
 gas on deployment. AppProxies rely on the Kernel for their upgradeability.
@@ -125,13 +132,13 @@ kernel.newAppInstance(votingAppId, votingApp)
 kernel.newPinnedAppInstance(votingAppId, votingApp)
 ```
 
-## 4. ACL
+## ACL
 
 A **Permission** is defined as the ability to perform actions (grouped by roles) in a certain app instance (identified by its address).
 
 We refer to a **Permission Instance** as an entity holding a certain permission.
 
-### 4.1 Managing permissions
+### Managing permissions
 First of all, you need to define your base ACL instance for your kernel with:
 
 ```solidity
@@ -179,7 +186,7 @@ The `revokePermission()` action doesn’t need to be protected by the ACL either
 Apps have the choice of which actions to protect behind the ACL as some actions may make sense to be completely public. Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifier [`auth()`](https://github.com/aragon/aragonOS/blob/4f4e89abaac6c70243c8288b27272003ecb63e1d/contracts/apps/AragonApp.sol#L10) or [`authP()`](https://github.com/aragon/aragonOS/blob/4f4e89abaac6c70243c8288b27272003ecb63e1d/contracts/apps/AragonApp.sol#L15)(passing the role required as a parameter) to the action. On executing the action, the `auth()`/`authP()` modifiers check with the Kernel whether the entity performing the call holds the required role or not.
 
 
-### 4.2 Basic ACL
+### Basic ACL
 As an example, the following steps show a complete flow for user "Root" to create a new DAO with the basic permissions set so that a [Voting app](https://github.com/aragon/aragon-apps/tree/master/apps/voting) can manage the funds stored in a [Vault app](https://github.com/aragon/aragon-apps/tree/master/apps/vault):
 
 1. Deploy the Kernel and the ACL
@@ -197,7 +204,7 @@ As an example, the following steps show a complete flow for user "Root" to creat
 Note that the Voting app is also able to revoke or regrant the `TRANSFER_TOKENS_ROLE` permission as it is that permission's manager on `vaultAppAddress`.
 
 
-### 4.3 Permission managers
+### Permission managers
 As we have seen, when a permission is created a **Permission Manager** is set for that specific permission. The permission manager is able to grant or revoke permission instances for that permission.
 
 The Permission Manager can be changed with this command:
@@ -218,7 +225,7 @@ There's also a getter for the Permission Manager:
 acl.getPermissionManager(address app, bytes32 role)
 ```
 
-### 4.4 Parameter interpretation
+### Parameter interpretation
 When a permission is granted to an entity by the permission manager it can be assigned an array of parameters that will be evaluated every time the ACL is checked to see if the entity can perform the action.
 
 Parameters allow the ACL to perform certain computations with the arguments of a permission in order to decide whether to allow the action or not. This moves the ACL from being a purely binary access list to a more sophisticated system that allows for fine-grained control.
@@ -274,10 +281,10 @@ evaluate to true.
 only one of the parameters evaluate to true.
 - If else (`Op.IF_ELSE`): takes 3 parameters, evaluates the first parameter and if true, evalutes as the second parameter's evaluation, or as the third parameter's evaluation if false.
 
-### 4.6 Parameter execution
+### Parameter execution
 When evaluating a rule the ACL will always evaluate the result of the first parameter. This first parameter can be an operation that links to other parameters and its evaluation depends on those parameters' evaluation. Execution is recursive and the result evaluated is always the result of the evaluation of the first parameter.
 
-### 4.7 Parameter encoding
+### Parameter encoding
 To encode some logic operations (AND, OR, IF-ELSE) which link to other parameters, the following helpers are provided, where the function arguments always refer to parameter indexes in the `Param` array they belong to:
 
 #### If-Else (ternary) operation
@@ -290,7 +297,7 @@ encodeIfElse(uint condition, uint success, uint failure)
 encodeOperator(uint param1, uint param2)
 ```
 
-### 4.8 Examples of rules
+### Examples of rules
 The interpreter supports encoding complex rules in what would look almost like a programming language. For example let’s look at the following [test case](https://github.com/aragon/aragonOS/blob/63c4722b8629f78350586bcea7c0837ab5882a20/test/TestACLInterpreter.sol#L112-L126):
 
 ```solidity
@@ -320,7 +327,7 @@ When assigned to a permission, this rule will **evaluate to true** (and therefor
 
 The possibilities for customizing an organization or protocol's governance model are truly endless and there is no need to write any actual Solidity.
 
-### 4.9 Events
+### Events
 [`createPermission()`](#create-permission), [`grantPermission()`](#grant-permission), and [`revokePermission()`](#revoke-permission) all fire the same `SetPermission` event that Aragon clients are expected to cache and process into a locally stored version of the ACL:
 
 ```solidity
@@ -333,25 +340,25 @@ SetPermission(address indexed from, address indexed to, bytes32 indexed role, bo
 ChangePermissionManager(address indexed app, bytes32 indexed role, address indexed manager)
 ```
 
-## 5. Forwarders and EVMScript
+## Forwarders and EVMScript
 
 Forwarders are one of the most important concepts of aragonOS. Rather than hardcoding the notion of a vote into each separate app’s functionality and ACL one can instead use a generic Voting App, which implements the forwarding interface, to pass actions _forward_ to other apps after successful votes. If the Voting App is set up to only allow a token’s holders to vote, that means any actions/calls being passed from it must have also been approved by the token’s holders.
 
-### 5.1 Forwarding and transaction pathing
+### Forwarding and transaction pathing
 
 The forwarding interface also allows a frontend interface, like the Aragon client, to calculate "forwarding paths". If you wanted to perform an action but you don't have the required permissions, a client can think of alternative paths for execution. For example, you might be in the Vault app's interface wishing to perform a token transfer. If you only had the permission to create votes, the client would directly prompt you to create a vote rather than let you complete the transfer. The flow is illustrated in the following animation:
 
 ![forwarding animation](/docs/assets/fwd.gif)
 > Vote forwarding scenario.  (Please note that the governance model and characters are fictional.)
 
-### 5.2 EVMScripts
+### EVMScripts
 
 We have designed our own scripting format, known as EVMScripts, to encode complex actions into a bytes representation that can be stored and later executed by another entity. EVMScripts can be installed on a per-organization basis through a **EVMScriptRegistry** and aragonOS comes complete with the ability to install multiple script executors in an organization.
 
 **EVMScript executors** are contracts that take a script and an input and return an output after execution.
 
 
-#### 5.2.1 Script executors and EVMScriptRegistry
+#### Script executors and EVMScriptRegistry
 
 EVMScript executors must implement the following interface:
 
@@ -366,7 +373,9 @@ Because script executors get are called with a `delegatecall`, in order to preve
 self-destructs, `IEVMScriptExecutor.execScript(...)` MUST return
 at least 32 bytes so in case an executor `selfdestruct`s it could be detected.
 
-##### 5.2.1.1 CallsScript
+<br>
+**CallsScript**
+
 aragonOS provides the `CallsScript` executor as a simple way to concatenate multiple calls. It cancels the operation if any of the calls fail.
 
 - **Script body:** See [`CallsScript` source code ](https://github.com/aragon/aragonOS/blob/v3.0.0/contracts/evmscript/executors/CallsScript.sol#L20) for spec of the payload.
@@ -374,7 +383,7 @@ aragonOS provides the `CallsScript` executor as a simple way to concatenate mult
 - **Output:** None.
 - **Blacklist:** Entire script reverts if a call to one of the addresses in the blacklist is performed.
 
-##### 5.2.1.1 DelegateScript
+**DelegateScript**
 `delegatecalls` into a given contract which basically allows for any arbitrary computation within the EVM in the caller’s context.
 
 - **Script body:** Address of the contract to make the call to.
@@ -382,7 +391,8 @@ aragonOS provides the `CallsScript` executor as a simple way to concatenate mult
 - **Output:** raw return data of the call.
 - **Blacklist:** impossible to enforce. If there are any addresses in the blacklist the script will revert as it is not possible to check whether a particular address will be called.
 
-##### 5.2.1.3 DeployDelegateScript
+<br>
+**DeployDelegateScript**
 
 Is a superset of the DelegateScript but it takes a contract’s initcode bytecode as its script body instead of just an address. On execution, it deploys the contract to the blockchain and executes it with a `delegatecall`.
 
@@ -392,7 +402,7 @@ Is a superset of the DelegateScript but it takes a contract’s initcode bytecod
 - **Blacklist:** impossible to enforce. If there are any addresses in the blacklist the script will revert as it is not possible to check whether a particular address will be called.
 
 
-### 5.3 Making an app a Forwarder
+### Making an app a Forwarder
 
 Examples of forwarders can be found in the aragon-apps repo. Both the Voting and the Token Manager are forwarders.
 

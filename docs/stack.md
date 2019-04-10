@@ -4,9 +4,8 @@ title: The Aragon stack
 sidebar_label: The stack
 ---
 
-### For creating DAOs, dapps and protocols
+##### For creating DAOs, dapps and protocols
 
----
 
 From a technical perspective, Aragon can be seen as an **operating system for human organization**.
 Therefore, the Aragon stack can be thought of as an operating system, just like macOS or Linux.
@@ -21,9 +20,7 @@ You wouldn't want a Tetris app to own full control over your computer's RAM. Tha
 
 The role of the OS, and in this case of the Aragon stack, is to create an environment in which **apps can abstract over the underlying resources**, while ensuring security.
 
----
-
-# The layers of the stack
+### The layers of the stack
 
 <br><br><br>
 ![The Aragon stack](/docs/assets/architecture.svg)

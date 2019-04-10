@@ -4,8 +4,8 @@ title: The Aragon client
 sidebar_label: The Aragon client
 ---
 
-### How the user experiences an Aragon DAO
----
+##### How the user experiences an Aragon DAO
+
 
 The [Aragon client](https://github.com/aragon/aragon) is a full dapp that can create and manage decentralized organizations by running Aragon apps inside it.
 

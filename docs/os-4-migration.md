@@ -4,6 +4,8 @@ title: aragonOS 4 migration guide
 sidebar_label: Migrating to aragonOS 4 from aragonOS 3
 ---
 
+#####
+
 aragonOS 4 was designed to be as familiar as possible to users of aragonOS 3. In some cases an Aragon app might not even have to be changed when upgrading.
 
 For a more in-depth technical explaination of the changes in aragonOS 4, please see the [annoucement blog post](https://blog.aragon.org/releasing-aragonos-4) and [reference documentation](/docs/aragonos-ref.html). An annotated list of commits between aragonOS 3 and aragonOS 4 is also [available](https://github.com/aragon/aragonOS/wiki/aragonOS-4:-Updates-to-aragonOS-and-aragon-apps#application-capabilities).
