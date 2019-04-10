@@ -49,6 +49,7 @@ p img {
 
 .promoSection {
   flex-flow: nowrap !important;
+  margin-top: 40px;
 }
 
 .projectLogo img {
