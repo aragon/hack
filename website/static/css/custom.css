@@ -460,6 +460,9 @@ footer.nav-footer .sitemap h5 {
   margin-top: 0!important;
   margin-bottom: 30px;
 }
+.mainContainer .wrapper ul li, .mainContainer .wrapper ol li {
+  margin-bottom: 16px;
+}
 .mainContainer .wrapper .post span img {
   display: inline;
   padding-right: 10px;
