@@ -4,6 +4,8 @@ title: Troubleshooting and FAQ
 sidebar_label: Troubleshooting
 ---
 
+#####
+
 ## Resetting the devchain
 
 After upgrading aragonCLI, or if unexpected errors are being experienced, [resetting the devchain](/docs/cli-main-commands.html#aragon-devchain) (by doing `aragon devchain --reset` or `aragon run --reset`) is sometimes useful as it will restart the chain from the snapshot.
@@ -111,7 +113,3 @@ Error: the tx doesn't have the correct nonce. account has nonce of: 157 tx has n
 ```
 
 The workaround is to switch to a different network (e.g. Rinkeby) and then switch back to the _Localhost 8545_ network.  This will refresh Metamask's account nonce cache. Sending transactions should now succeed.
-
-
-
-

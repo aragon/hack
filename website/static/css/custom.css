@@ -49,6 +49,7 @@ p img {
 
 .promoSection {
   flex-flow: nowrap !important;
+  margin-top: 40px;
 }
 
 .projectLogo img {
@@ -404,6 +405,7 @@ footer.nav-footer .sitemap h5 {
   letter-spacing: normal;
   color: #2d4051;
   border-top: solid 0px transparent;
+  margin-top: 10px !important;
 }
 
 .mainContainer .wrapper .post h1 {
@@ -420,20 +422,19 @@ footer.nav-footer .sitemap h5 {
   color: #2d4051;
 }
 .mainContainer .wrapper .post h2 {
-  font-family: 'HankenGroteskLight', sans-serif;
+  font-family: 'HankenGroteskRegular', sans-serif;
   font-size: 38px;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.63;
   letter-spacing: normal;
-  border-top: solid 0.5px #cccccc;
   color: #2d4051;
-  padding-top: 60px;
+  padding-top: 30px;
   color: #2d4051;
 }
 .mainContainer .wrapper .post h3 {
-  font-family: 'HankenGroteskLight', sans-serif;
+  font-family: 'HankenGroteskRegular', sans-serif;
   font-size: 30px;
   font-weight: 300;
   font-style: normal;
@@ -441,6 +442,7 @@ footer.nav-footer .sitemap h5 {
   letter-spacing: normal;
   line-height: 62px;
   color: #2d4051;
+  margin-bottom: 10px;
 }
 .mainContainer .wrapper .post h4 {
   font-family: 'HankenGroteskLight', sans-serif;
@@ -451,12 +453,15 @@ footer.nav-footer .sitemap h5 {
 .mainContainer .wrapper .post h5 {
   font-family: 'HankenGroteskLight', sans-serif;
   font-size: 24px;
-  line-height: 62px;
+  line-height: 1.5;
   color: #2D4051;
   padding-bottom: 30px;
   border-bottom: solid 0.5px #ddd;
   margin-top: 0!important;
   margin-bottom: 30px;
+}
+.mainContainer .wrapper ul li, .mainContainer .wrapper ol li {
+  margin-bottom: 16px;
 }
 .mainContainer .wrapper .post span img {
   display: inline;
@@ -489,6 +494,8 @@ hr {
 }
 .onPageNav > ul {
   border-left: 3px solid #01bfe3;
+  padding: 0px 0 2px 15px!important;
+  margin-top: 10px;
 }
 .onPageNav a {
   font-weight: normal;

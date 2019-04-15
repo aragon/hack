@@ -4,6 +4,8 @@ title: Publish
 sidebar_label: Publish
 ---
 
+#####
+
 This guide will show you how to publish your app to an [aragonPM](/docs/package-management) instance on different environments.
 
 > **Note**<br>

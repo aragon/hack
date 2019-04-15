@@ -3,6 +3,8 @@ id: aragonos-building
 title: Developing with aragonOS
 ---
 
+#####
+
 aragonOS enables apps to be upgradeable and share a generic governance interface. To use it to its full potential, however, the following instructions need to be followed.
 
 ## The AragonApp contract
@@ -76,7 +78,7 @@ contract MyFancyApp is App {
 
 In the above example, when used behind a proxy, `initialState` will be 0, even though the expectation reading the code is that it will be 1.
 
-The correct way to handle this situation is to make it something like: 
+The correct way to handle this situation is to make it something like:
 
 ```js
 contract MyFancyApp is App {
@@ -208,11 +210,11 @@ contract MyApp is AragonApp {
 
 ### Conventions
 
-**Representing ETH as a token**
+#### Representing ETH as a token
 
 If a function has a token parameter, but you would like to handle ETH as well as other token addresses in the same parameter, use `address(0)` as the address of ETH. aragonOS includes `EtherTokenConstant` to define `ETH = address(0)`.
 
-**Representing time**
+#### Representing time
 
 As it is unlikely we'll ever need to worry about `uint256`-precision for UNIX timestamps (in seconds) or blocks (in ~15s intervals), we generally cast these values down to `uint64`s so we can pack them to save gas. aragonOS provides `TimeHelpers` and `Uint256Helpers` as utility contracts for obtaining these values safely.
 

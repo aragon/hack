@@ -4,11 +4,13 @@ title: aragonPM reference documentation
 sidebar_label: Reference documentation
 ---
 
+#####
+
 aragonPM is built from three aragonOS-powered applications:
 
-- [APMRegistry](#apmregistry)
-- [ENSSubdomainRegistrar](#enssubdomainregistrar)
-- [Repo](#repo)
+<span>![*](/docs/assets/check.svg) [APMRegistry](#apmregistry)</span><br>
+<span>![*](/docs/assets/check.svg) [ENSSubdomainRegistrar](#enssubdomainregistrar)</span><br>
+<span>![*](/docs/assets/check.svg) [Repo](#repo)</span><br>
 
 ## APMRegistry
 

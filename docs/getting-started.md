@@ -4,9 +4,8 @@ title: Getting started
 sidebar_label: Getting started
 ---
 
-## What is Aragon and what does it do
+##### What is Aragon and what does it do
 
----
 
 Aragon is a project to **empower freedom** by creating tools for **decentralized governance**.
 

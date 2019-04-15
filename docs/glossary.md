@@ -4,9 +4,8 @@ title: Glossary
 sidebar_label: Glossary
 ---
 
-### All Aragon terminology
+##### All Aragon terminology
 
----
 
 - [**aragonCLI**](/docs/cli-intro.html): Tool for creating, testing and publishing Aragon applications.
 - [**aragonOS**](/docs/aragonos-intro.html): Framework that enables flexible and upgradeable governance mechanisms by creating and assigning permissions to multiple entities.
