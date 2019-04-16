@@ -31,14 +31,13 @@ What you need to get started building with Aragon:
 
 Make sure you have at least Node.js `v8.0.0`.
 
-To see what version of node you have installed, run
+To see what version of node you have installed, from the command line run:
+
 ```sh
 node -v
 ```
-from the command line.
 
-To download the latest version, [see here] (https://nodejs.org/en/download/).
-
+To download the latest version, [see here](https://nodejs.org/en/download/).
 
 
 ### Signing and web3 provider
