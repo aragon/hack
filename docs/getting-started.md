@@ -56,11 +56,29 @@ From the command line run:
 npm i -g @aragon/cli
 ```
 
-Once we have this package installed we can start building DAOs.
+Once we have this package installed we can start building DAOs. If you're having trouble with this step, see the relevant operating system considerations below.
 
 ### Note on Git
 
 You might need to have [Git](https://git-scm.com) installed.
+
+### Mac considerations
+
+If you're seeing one or more errors that look like:
+
+```sh
+EACCES: permission denied
+```
+
+It's probably because you originally installed Node with root permissions. Because of this, writing to your npm directory (```npm -i -g```) requires root permissions too.
+
+One way to quickly give yourself root permissions is to run the slightly modified command:
+
+```sh
+sudo npm i -g --unsafe-perm @aragon/cli
+```
+
+An arguably better way to fix the problem is to follow the steps outlined in this [stackoverflow answer.](https://stackoverflow.com/a/24404451)
 
 ### Windows considerations
 
