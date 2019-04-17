@@ -31,7 +31,7 @@ What you need to get started building with Aragon:
 
 Make sure you have at least Node.js `v8.0.0`.
 
-To see what version of node you have installed, from the command line run:
+To see what version of Node you have installed, from the command line run:
 
 ```sh
 node -v
@@ -96,6 +96,7 @@ npx create-aragon-app foo.aragonpm.eth
 cd foo
 npx aragon run
 ```
+If you're unsure what the difference is between ```npx``` and ```npm```, we recommend you read through this [stackoverflow post.](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm) Don't worry if you don't completely understand what the rest of the first line is doing. We'll cover this in the [tutorial](https://hack.aragon.org/docs/tutorial.html) coming up. 
 
 Congrats you have just created a DAO! It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
 
