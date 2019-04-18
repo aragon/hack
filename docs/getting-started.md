@@ -17,34 +17,17 @@ The Aragon stack helps you develop software for **human organization**. From the
 
 > Example of a decentralized, censorship-resistant, good-looking voting app on Aragon
 
-One way to think of Aragon is as a new operating system (OS) for setting up decentralized companies (DAOs). One that's far more efficient than the existing OS we're used to dealing with (lawyers, administrative headaches, etc).
+### Introduction
 
-The sorts of things DAOs can enable:
+Many of us have  gone through the pain of setting up a corporate entity. Or felt like we've lacked the tools to collaborate with people all around the world when we're building stuff we want to see in the world.
 
-- 
--
--
--
+Right now, the current system simply doesn't work. If you want to setup an organisation you have to go to lawyers, pay thousands of dollars, and all you get in return is a set of unintelligible pieces of paper that cost you more than months of development. On top of this, these pieces of paper don't enforce anything by themselves: they're more like an idea, or a concept.
 
-DAO killer apps:
+If you try to explain this to a kid, or to younger generations that have spent most of their lives interacting in a borderless digital world, you quickly realise how mad the current system seems to them. When you think about it, it's really impressive that the world functions the way it does with this sort of legacy framework and operating system underneath.
 
--
--
--
--
--
--
+We believe that decentralized autonomous organizations (or  DAOs) are the solution to this problem. What is a DAO? Like the parable of the blind man and the elephant... For our purposes, you can think of DAOs as flexible, global, uncensorable, permissionless, free, online organizations.
 
-Trends around the world accelerating DAO adoption:
-
--
--
--
--
--
--
-
-Imagine what the #MeToo, Occupy Wallstreet, or Arab Spring movements could have done if they had DAOs...
+Where does Aragon fit in? Aragon makes it easy to build DAOs (by providing you with, and allowing you to easily combine, decentralized applications that meet your organisations every need). One way to think of Aragon is as a new operating system (OS) for setting up organizations. One that is far more efficient than existing OS (lawyers, administrative headaches etc...)
 
 
 Now that we've got you all excited, here's what you need to get started building with Aragon:
