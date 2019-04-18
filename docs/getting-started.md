@@ -93,7 +93,7 @@ We recommend using [Frame](https://frame.sh) to send transactions to the blockch
 
 If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why doesn't the decentralized application (dapp) just do it itself?
 
-In short, doing it this way allows you to interact with a dapp without necessarily trusting it with your funds. Additionally, since dapps never get access to your funds, dapp developers don't need to deal with all the security headaches that come with handling money.
+In short, doing it this way allows you to interact with a dapp without necessarily trusting it with your funds. And since dapps never get access to your funds, dapp developers are spared from all the security headaches that come with handling money.
 
 ### Install the aragonCLI
 
