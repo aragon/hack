@@ -27,7 +27,7 @@ If you try to explain this to a kid, or to younger generations that have spent m
 
 We believe that decentralized autonomous organizations (or  DAOs) are the solution to this problem. What is a DAO? Like the parable of the blind man and the elephant... For our purposes, you can think of DAOs as flexible, global, uncensorable, permissionless, free, online organizations.
 
-Where does Aragon fit in? Aragon makes it easy to build DAOs (by providing you with, and allowing you to easily combine, decentralized applications that meet your organisations every need). One way to think of Aragon is as a new operating system (OS) for setting up organizations. One that is far more efficient than existing OS (lawyers, administrative headaches etc...)
+Where does Aragon fit in? Aragon apps can be thought of as the basic modules that make up a DAO. In other words, Aragon makes it easy to build DAOs (by providing you with, and allowing you to easily combine, decentralized applications that meet your organisations every need). One way to think of Aragon is as a new operating system (OS) for setting up organizations. One that is far more efficient than the existing OS (lawyers, administrative headaches, etc) we are used to dealing with.
 
 ### More on DAOs
 
