@@ -17,7 +17,7 @@ The Aragon stack helps you develop software for **human organization**. From the
 
 > Example of a decentralized, censorship-resistant, good-looking voting app on Aragon
 
-### Introduction
+# Introduction
 
 Many of us have  gone through the pain of setting up a corporate entity. Or felt like we've lacked the tools to collaborate with people all around the world when we're building stuff we want to see in the world.
 
@@ -29,6 +29,14 @@ We believe that decentralized autonomous organizations (or  DAOs) are the soluti
 
 Where does Aragon fit in? Aragon makes it easy to build DAOs (by providing you with, and allowing you to easily combine, decentralized applications that meet your organisations every need). One way to think of Aragon is as a new operating system (OS) for setting up organizations. One that is far more efficient than existing OS (lawyers, administrative headaches etc...)
 
+### More on DAOs
+...
+
+### Web3
+...
+
+
+# Up and running
 
 Now that we've got you all excited, here's what you need to get started building with Aragon:
 
@@ -36,7 +44,6 @@ Now that we've got you all excited, here's what you need to get started building
 - [Environment setup](#environment-setup)
 - [Quick start](#quick-start)
 - [Next steps](#next-steps)
-
 
 ## Environment setup
 
