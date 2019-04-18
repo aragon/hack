@@ -35,6 +35,9 @@ Where does Aragon fit in? Aragon makes it easy to build DAOs (by providing you w
 ### Web3
 ...
 
+### Further reading
+...
+
 
 # Up and running
 
