@@ -65,18 +65,14 @@ Where does Aragon fit in? Aragon makes it easy to build DAOs (by providing you w
 
 # Up and running
 
-Now that we've got you all excited, here's what you need to get started building with Aragon:
+Now that we've got you all excited, let's go through what you need to get started building with Aragon...
 
-
-- [Environment setup](#environment-setup)
-- [Quick start](#quick-start)
-- [Next steps](#next-steps)
 
 ## Environment setup
 
 ### Node version
 
-Make sure you have at least Node.js `v8.0.0`.
+You'll need Node.js. Make sure you have a recent version, at least Node.js `v8.0.0`.
 
 To see what version of Node you have installed, from the command line run:
 
@@ -89,15 +85,26 @@ To download the latest version, [see here](https://nodejs.org/en/download/).
 
 ### Signing and web3 provider
 
-We recommend using [Frame](https://frame.sh) to send transactions to the blockchain. Otherwise you can use [Metamask browser extension](https://metamask.io/).
+You'll need what we call a web3 provider to actually sign and send transactions to the blockchain.
 
 If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why doesn't the decentralized application (dapp) just do it itself?
 
 In short, doing it this way allows you to interact with a dapp without necessarily trusting it with your funds. And since dapps never get access to your funds, dapp developers are spared from all the security headaches that come with handling money.
 
-### Install the aragonCLI
+We recommend using [Frame](https://frame.sh) to send transactions to the blockchain. Otherwise you can use [Metamask browser extension](https://metamask.io/).
 
-From the command line run:
+#### Metamask ####
+...
+
+#### Frame ####
+...
+
+
+### The aragonCLI
+
+The aragonCLI is....
+
+To install it from the command line run:
 
 ```sh
 npm i -g @aragon/cli
