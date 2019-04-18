@@ -9,7 +9,7 @@ sidebar_label: Getting started
 
 Aragon is a project to **empower freedom** by creating tools for **decentralized governance**.
 
-These tools help people freely organize **without borders or intermediaries**. Instead of bureaucracy, subjectivity, and trust, smart contracts have opened the door to **experiment with governance at the speed of software**.
+These tools help people freely organize **across borders** and **without intermediaries**. Instead of bureaucracy, subjectivity, and trust, smart contracts have opened the door to **experiment with governance at the speed of software**.
 
 The Aragon stack helps you develop software for **human organization**. From the smart contracts to the user interface, Aragon takes care of the most important pieces of infrastructure to deliver censorship-resistant, decentralized and upgradeable apps.
 
@@ -17,8 +17,38 @@ The Aragon stack helps you develop software for **human organization**. From the
 
 > Example of a decentralized, censorship-resistant, good-looking voting app on Aragon
 
+One way to think of Aragon is as a new operating system (OS) for setting up decentralized companies (DAOs). One that's far more efficient than the existing OS we're used to dealing with (lawyers, administrative headaches, etc).
 
-What you need to get started building with Aragon:
+The sorts of things DAOs can enable:
+
+- 
+-
+-
+-
+
+DAO killer apps:
+
+-
+-
+-
+-
+-
+-
+
+Trends around the world accelerating DAO adoption:
+
+-
+-
+-
+-
+-
+-
+
+Imagine what the #MeToo, Occupy Wallstreet, or Arab Spring movements could have done if they had DAOs...
+
+
+Now that we've got you all excited, here's what you need to get started building with Aragon:
+
 
 - [Environment setup](#environment-setup)
 - [Quick start](#quick-start)
