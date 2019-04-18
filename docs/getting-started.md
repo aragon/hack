@@ -30,7 +30,31 @@ We believe that decentralized autonomous organizations (or  DAOs) are the soluti
 Where does Aragon fit in? Aragon makes it easy to build DAOs (by providing you with, and allowing you to easily combine, decentralized applications that meet your organisations every need). One way to think of Aragon is as a new operating system (OS) for setting up organizations. One that is far more efficient than existing OS (lawyers, administrative headaches etc...)
 
 ### More on DAOs
-...
+
+#### DAOs can enable: ####
+
+- Shared bank accounts with custom rules and permissions
+- Payroll that automatically runs by itself
+- Built-in voting on important topics
+- The creation and distribution of governance tokens
+
+#### DAO use cases: ####
+
+- Part-time projects with friends or strangers
+- Future of work: people working part time on multiple things for short periods of time
+- Temporary pop-up companies
+- Companies in authoritarian jurisdictions
+- Global, distributed teams
+
+#### Trends around the world accelerating DAO adoption: ####
+
+- The rise of populist authoritarians
+- The future of work (remote and distributed)
+- The growing de-platforming problem
+- The rise of decentralized finance
+- The [increasing](https://medium.com/complex-systems-channel/teams-a-manifesto-7490eab144fa) [complexity](https://necsi.edu/complexity-rising-from-human-beings-to-human-civilization-a-complexity-profile) of human civilization
+
+
 
 ### Web3
 ...
