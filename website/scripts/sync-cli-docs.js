@@ -1,55 +1,54 @@
 const { syncPages } = require('./sync-util')
 
 const GIT_REF = 'master'
-const REPO = 'aragon-cli'
-const BASE_CONTENT_URL = `https://raw.githubusercontent.com/aragon/${REPO}/${GIT_REF}/docs`
+const REPO = 'aragon/aragon-cli'
 
 const pages = [
   {
-    fileLocation: '/docs/cli-intro.md',
+    destination: '/docs/cli-intro.md',
     id: 'cli-intro',
     title: 'Using the aragonCLI',
     sidebarLabel: 'Introduction',
     hideTitle: true,
-    contentURL: `${BASE_CONTENT_URL}/Intro.md`,
+    contentLocation: 'docs/Intro.md'
   },
   {
-    fileLocation: '/docs/cli-main-commands.md',
+    destination: '/docs/cli-main-commands.md',
     id: 'cli-main-commands',
     title: 'Main commands',
     sidebarLabel: 'Main commands',
-    contentURL: `${BASE_CONTENT_URL}/Main-commands.md`,
+    contentLocation: 'docs/Main-commands.md'
   },
   {
-    fileLocation: '/docs/cli-apm-commands.md',
+    destination: '/docs/cli-apm-commands.md',
     id: 'cli-apm-commands',
     title: 'aragonPM commands',
-    sidebarLabel: 'APM commands',
-    contentURL: `${BASE_CONTENT_URL}/Apm-commands.md`,
+    sidebarLabel: 'aragonPM commands',
+    contentLocation: 'docs/Apm-commands.md'
   },
   {
-    fileLocation: '/docs/cli-dao-commands.md',
+    destination: '/docs/cli-dao-commands.md',
     id: 'cli-dao-commands',
     title: 'DAO commands',
     sidebarLabel: 'DAO commands',
-    contentURL: `${BASE_CONTENT_URL}/Dao-commands.md`,
+    contentLocation: 'docs/Dao-commands.md'
   },
   {
     fileLocation: '/docs/cli-ipfs-commands.md',
     id: 'cli-ipfs-commands',
     title: 'IPFS commands',
     sidebarLabel: 'IPFS commands',
-    contentURL: `${BASE_CONTENT_URL}/Ipfs-commands.md`,
+    contentURL: 'docs/Ipfs-commands.md',
   },
   {
-    fileLocation: '/docs/cli-global-confg.md',
+    destination: '/docs/cli-global-confg.md',
     id: 'cli-global-confg',
     title: 'Global configuration',
     sidebarLabel: 'Global configuration',
-    contentURL: `${BASE_CONTENT_URL}/Global-confg.md`,
-  },
+    contentLocation: 'docs/Global-confg.md'
+  }
 ]
 
 const locationReferenceMap = {}
 
-syncPages(pages, locationReferenceMap)
+syncPages(pages, locationReferenceMap, GIT_REF, REPO)
