@@ -4,82 +4,185 @@
     "next": "Next",
     "previous": "Previous",
     "tagline": "What you need to get started building with Aragon",
-    "acl-intro": "Permissions",
-    "Permissions": "Permissions",
-    "apm-ref": "aragonPM reference documentation",
-    "Reference documentation": "Reference documentation",
-    "apm": "aragonPM",
-    "Architecture": "Architecture",
-    "app-center-preparing-assets": "App Center",
-    "Preparing assets": "Preparing assets",
-    "cli-apm-commands": "aragonPM commands",
-    "aragonPM commands": "aragonPM commands",
-    "cli-dao-commands": "DAO commands",
-    "DAO commands": "DAO commands",
-    "cli-global-confg": "Global configuration",
-    "Global configuration": "Global configuration",
-    "cli-intro": "Using the aragonCLI",
-    "Introduction": "Introduction",
-    "cli-main-commands": "Main commands",
-    "Main commands": "Main commands",
-    "client": "The Aragon client",
-    "The Aragon client": "The Aragon client",
-    "forwarding-intro": "Forwarding",
-    "Forwarding": "Forwarding",
-    "getting-started": "Getting started",
-    "Getting started": "Getting started",
-    "glossary": "Glossary",
-    "Glossary": "Glossary",
-    "guides-custom-deploy": "Custom Aragon Organization Deployment using aragonCLI",
-    "Custom deploy with aragonCLI": "Custom deploy with aragonCLI",
-    "guides-faq": "Troubleshooting and FAQ",
-    "Troubleshooting": "Troubleshooting",
-    "guides-publish": "Publish",
-    "Publish": "Publish",
-    "guides-use-frame": "How to use Frame",
-    "How to use Frame": "How to use Frame",
-    "human-readable-txs": "Human readable transactions",
-    "Human readable transactions": "Human readable transactions",
-    "aragonjs-guide-bg-scripts": "aragonAPI - Background Scripts",
-    "Background Scripts": "Background Scripts",
-    "aragonjs-intro": "aragonAPI - Introduction",
-    "aragonjs-ref-app": "aragonAPI - App",
-    "App": "App",
-    "aragonjs-ref-providers": "aragonAPI - Providers",
-    "Providers": "Providers",
-    "aragonjs-ref-wrapper": "aragonAPI - Wrapper",
-    "Wrapper": "Wrapper",
-    "kits-intro": "Kits",
-    "Kits": "Kits",
-    "aragonos-3-ref": "aragonOS 3 reference documentation",
-    "Reference (aragonOS 3)": "Reference (aragonOS 3)",
-    "aragonos-4-migration": "aragonOS 4 migration guide",
-    "Migrating to aragonOS 4 from aragonOS 3": "Migrating to aragonOS 4 from aragonOS 3",
-    "aragonos-building": "Developing with aragonOS",
-    "aragonos-intro": "aragonOS intro",
-    "aragonos-motivation": "Motivations",
-    "Motivations": "Motivations",
-    "aragonos-ref": "aragonOS reference documentation",
-    "package-management": "Package management",
-    "Package management": "Package management",
-    "stack": "The Aragon stack",
-    "The stack": "The stack",
-    "tutorial": "Your first Aragon app",
-    "Your first Aragon app": "Your first Aragon app",
-    "aragonui-intro": "aragonUI intro",
-    "upgradeability-intro": "Upgradeability",
-    "Upgradeability": "Upgradeability",
-    "Get started": "Get started",
-    "Tutorial": "Tutorial",
-    "aragonOS": "aragonOS",
-    "aragonAPI": "aragonAPI",
-    "aragonUI": "aragonUI",
-    "Help": "Help",
-    "The basics": "The basics",
-    "Guides": "Guides",
-    "aragonCLI": "aragonCLI",
-    "aragonPM": "aragonPM",
-    "App Center": "App Center"
+    "docs": {
+      "acl-intro": {
+        "title": "Permissions",
+        "sidebar_label": "Permissions"
+      },
+      "api-intro": {
+        "title": "aragonAPI Introduction",
+        "sidebar_label": "Introduction"
+      },
+      "aragonjs-quick-start": {
+        "title": "Quick Start",
+        "sidebar_label": "Quick Start"
+      },
+      "apm-ref": {
+        "title": "aragonPM reference documentation",
+        "sidebar_label": "Reference documentation"
+      },
+      "apm": {
+        "title": "aragonPM",
+        "sidebar_label": "Architecture"
+      },
+      "app-center-preparing-assets": {
+        "title": "App Center",
+        "sidebar_label": "Preparing assets"
+      },
+      "cli-apm-commands": {
+        "title": "aragonPM commands",
+        "sidebar_label": "APM commands"
+      },
+      "cli-dao-commands": {
+        "title": "DAO commands",
+        "sidebar_label": "DAO commands"
+      },
+      "cli-global-confg": {
+        "title": "Global configuration",
+        "sidebar_label": "Global configuration"
+      },
+      "cli-intro": {
+        "title": "Using the aragonCLI",
+        "sidebar_label": "Introduction"
+      },
+      "cli-ipfs-commands": {
+        "title": "IPFS commands",
+        "sidebar_label": "IPFS commands"
+      },
+      "cli-main-commands": {
+        "title": "Main commands",
+        "sidebar_label": "Main commands"
+      },
+      "client": {
+        "title": "The Aragon client",
+        "sidebar_label": "The Aragon client"
+      },
+      "forwarding-intro": {
+        "title": "Forwarding",
+        "sidebar_label": "Forwarding"
+      },
+      "getting-started": {
+        "title": "Getting started",
+        "sidebar_label": "Getting started"
+      },
+      "glossary": {
+        "title": "Glossary",
+        "sidebar_label": "Glossary"
+      },
+      "guides-custom-deploy": {
+        "title": "Custom Deploy",
+        "sidebar_label": "Custom deploy with aragonCLI"
+      },
+      "guides-faq": {
+        "title": "Troubleshooting and FAQ",
+        "sidebar_label": "Troubleshooting"
+      },
+      "guides-publish": {
+        "title": "Publish",
+        "sidebar_label": "Publish"
+      },
+      "guides-use-frame": {
+        "title": "How to use Frame",
+        "sidebar_label": "How to use Frame"
+      },
+      "human-readable-txs": {
+        "title": "Human readable transactions",
+        "sidebar_label": "Human readable transactions"
+      },
+      "aragonjs-guide-bg-scripts": {
+        "title": "Background Scripts",
+        "sidebar_label": "Background Scripts"
+      },
+      "aragonjs-ref-app": {
+        "title": "aragonAPI for Javascript",
+        "sidebar_label": "App API"
+      },
+      "aragonjs-ref-architecture": {
+        "title": "aragonAPI for architecture",
+        "sidebar_label": "Architecture of apps"
+      },
+      "aragonjs-ref-hooks": {
+        "title": "aragonJS - React Hooks",
+        "sidebar_label": "React Hooks"
+      },
+      "aragonjs-ref-providers": {
+        "title": "aragonAPI for providers",
+        "sidebar_label": "Providers"
+      },
+      "aragonjs-ref-react": {
+        "title": "aragonAPI for React",
+        "sidebar_label": "React API"
+      },
+      "aragonjs-ref-wrapper": {
+        "title": "aragonAPI for wrapper",
+        "sidebar_label": "Wrapper"
+      },
+      "aragonos-3-ref": {
+        "title": "aragonOS 3 reference documentation",
+        "sidebar_label": "Reference (aragonOS 3)"
+      },
+      "aragonos-4-migration": {
+        "title": "aragonOS 4 migration guide",
+        "sidebar_label": "Migrating to aragonOS 4 from aragonOS 3"
+      },
+      "aragonos-building": {
+        "title": "Developing with aragonOS"
+      },
+      "aragonos-intro": {
+        "title": "aragonOS intro",
+        "sidebar_label": "Introduction"
+      },
+      "aragonos-motivation": {
+        "title": "Motivations",
+        "sidebar_label": "Motivations"
+      },
+      "aragonos-ref": {
+        "title": "aragonOS reference documentation",
+        "sidebar_label": "Reference documentation"
+      },
+      "package-management": {
+        "title": "Package management",
+        "sidebar_label": "Package management"
+      },
+      "stack": {
+        "title": "The Aragon stack",
+        "sidebar_label": "The stack"
+      },
+      "templates-intro": {
+        "title": "Templates",
+        "sidebar_label": "Templates"
+      },
+      "tutorial": {
+        "title": "Your first Aragon app",
+        "sidebar_label": "Your first Aragon app"
+      },
+      "aragonui-intro": {
+        "title": "aragonUI intro",
+        "sidebar_label": "Introduction"
+      },
+      "upgradeability-intro": {
+        "title": "Upgradeability",
+        "sidebar_label": "Upgradeability"
+      }
+    },
+    "links": {
+      "Get started": "Get started",
+      "Tutorial": "Tutorial",
+      "aragonOS": "aragonOS",
+      "aragonAPI": "aragonAPI",
+      "aragonUI": "aragonUI",
+      "Help": "Help"
+    },
+    "categories": {
+      "The basics": "The basics",
+      "Guides": "Guides",
+      "aragonCLI": "aragonCLI",
+      "aragonPM": "aragonPM",
+      "aragonOS": "aragonOS",
+      "aragonAPI": "aragonAPI",
+      "aragonUI": "aragonUI",
+      "App Center": "App Center"
+    }
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
