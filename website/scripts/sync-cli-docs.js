@@ -35,6 +35,13 @@ const pages = [
     contentURL: `${BASE_CONTENT_URL}/Dao-commands.md`
   },
   {
+    fileLocation: '/docs/cli-ipfs-commands.md',
+    id: 'cli-ipfs-commands',
+    title: 'IPFS commands',
+    sidebarLabel: 'IPFS commands',
+    contentURL: `${BASE_CONTENT_URL}/Ipfs-commands.md`
+  },
+  {
     fileLocation: '/docs/cli-global-confg.md',
     id: 'cli-global-confg',
     title: 'Global configuration',
