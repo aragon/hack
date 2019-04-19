@@ -1,6 +1,7 @@
 ---
 id: aragonjs-ref-wrapper
 title: aragonAPI for wrapper
+custom_edit_url: https://github.com/aragon/aragon.js/blob/master/docs/WRAPPER.md
 sidebar_label: Wrapper
 hide_title: true
 ---

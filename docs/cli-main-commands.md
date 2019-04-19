@@ -1,6 +1,7 @@
 ---
 id: cli-main-commands
 title: Main commands
+custom_edit_url: https://github.com/aragon/aragon-cli/blob/master/docs/Main-commands.md
 sidebar_label: Main commands
 hide_title: false
 ---
@@ -83,15 +84,6 @@ Options:
 
 > **Note**<br>
 > The ENS instance is used both for the aragonPM registry `aragonpm.eth` and for the [aragon-id](https://github.com/aragon/aragon-id) `aragonid.eth`.
-
-
-## aragon ipfs
-
-The `ipfs` command is used to start an [IPFS](https://docs.ipfs.io/introduction/overview/) daemon. It adds from [aragen](https://github.com/aragon/aragen) some required files for the first-party Aragon apps to work, so it doesn't have to try and fetch them over the network.
-
-```sh
-aragon ipfs
-```
 
 ## aragon deploy
 

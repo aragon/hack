@@ -1,6 +1,7 @@
 ---
 id: cli-dao-commands
 title: DAO commands
+custom_edit_url: https://github.com/aragon/aragon-cli/blob/master/docs/Dao-commands.md
 sidebar_label: DAO commands
 hide_title: false
 ---

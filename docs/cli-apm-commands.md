@@ -1,6 +1,7 @@
 ---
 id: cli-apm-commands
 title: aragonPM commands
+custom_edit_url: https://github.com/aragon/aragon-cli/blob/master/docs/Apm-commands.md
 sidebar_label: aragonPM commands
 hide_title: false
 ---

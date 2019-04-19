@@ -1,6 +1,7 @@
 ---
 id: aragonjs-guide-bg-scripts
 title: Background Scripts
+custom_edit_url: https://github.com/aragon/aragon.js/blob/master/docs/BACKGROUND_SCRIPTS.md
 sidebar_label: Background Scripts
 hide_title: true
 ---

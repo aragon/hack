@@ -1,6 +1,7 @@
 ---
 id: cli-global-confg
 title: Global configuration
+custom_edit_url: https://github.com/aragon/aragon-cli/blob/master/docs/Global-confg.md
 sidebar_label: Global configuration
 hide_title: false
 ---

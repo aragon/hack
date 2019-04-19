@@ -1,6 +1,7 @@
 ---
 id: aragonjs-ref-architecture
 title: aragonAPI for architecture
+custom_edit_url: https://github.com/aragon/aragon.js/blob/master/docs/ARCHITECTURE.md
 sidebar_label: Architecture of apps
 hide_title: true
 ---

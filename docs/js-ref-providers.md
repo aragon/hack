@@ -1,6 +1,7 @@
 ---
 id: aragonjs-ref-providers
 title: aragonAPI for providers
+custom_edit_url: https://github.com/aragon/aragon.js/blob/master/docs/PROVIDERS.md
 sidebar_label: Providers
 hide_title: true
 ---

@@ -1,6 +1,7 @@
 ---
 id: cli-intro
 title: Using the aragonCLI
+custom_edit_url: https://github.com/aragon/aragon-cli/blob/master/docs/Intro.md
 sidebar_label: Introduction
 hide_title: true
 ---

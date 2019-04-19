@@ -1,6 +1,7 @@
 ---
 id: aragonjs-ref-app
 title: aragonAPI for Javascript
+custom_edit_url: https://github.com/aragon/aragon.js/blob/master/docs/APP.md
 sidebar_label: App API
 hide_title: true
 ---
