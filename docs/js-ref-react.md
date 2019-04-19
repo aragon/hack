@@ -1,11 +1,11 @@
 ---
 id: aragonjs-ref-react
 title: aragonAPI for React
-custom_edit_url: https://github.com/aragon/aragon.js/blob/master/docs/../packages/aragon-api-react/README.md
+custom_edit_url: https://github.com/aragon/aragon.js/blob/master/packages/aragon-api-react/README.md
 sidebar_label: React API
 hide_title: true
 ---
-<!-- Please consider editing this file here: https://github.com/aragon/aragon.js/blob/master/docs/../packages/aragon-api-react/README.md - thank you! -->
+<!-- Please consider editing this file here: https://github.com/aragon/aragon.js/blob/master/packages/aragon-api-react/README.md - thank you! -->
 
 # aragonAPI for React
 

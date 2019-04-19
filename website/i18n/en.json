@@ -101,10 +101,6 @@
         "title": "aragonAPI for architecture",
         "sidebar_label": "Architecture of apps"
       },
-      "aragonjs-ref-hooks": {
-        "title": "aragonJS - React Hooks",
-        "sidebar_label": "React Hooks"
-      },
       "aragonjs-ref-providers": {
         "title": "aragonAPI for providers",
         "sidebar_label": "Providers"

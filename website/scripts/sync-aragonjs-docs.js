@@ -50,7 +50,7 @@ const pages = [
     title: 'aragonAPI for React',
     sidebarLabel: 'React API',
     hideTitle: true,
-    contentLocation: 'docs/../packages/aragon-api-react/README.md',
+    contentLocation: 'packages/aragon-api-react/README.md',
   },
 ]
 
