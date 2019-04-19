@@ -26,6 +26,8 @@ npm run build
 npm run publish-gh-pages
 ```
 
+Note: the `aragonOS` files **must** be generated on publish, [see issue](https://github.com/aragon/hack/issues/116).
+
 ## Syncing files
 
 Currently the docs for `aragonCLI` and `aragon.js` are being pulled from their own repositories.
