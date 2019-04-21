@@ -34,11 +34,11 @@ const pages = [
     contentLocation: 'docs/Dao-commands.md'
   },
   {
-    fileLocation: '/docs/cli-ipfs-commands.md',
+    destination: '/docs/cli-ipfs-commands.md',
     id: 'cli-ipfs-commands',
     title: 'IPFS commands',
     sidebarLabel: 'IPFS commands',
-    contentURL: 'docs/Ipfs-commands.md',
+    contentLocation: 'docs/Ipfs-commands.md',
   },
   {
     destination: '/docs/cli-global-confg.md',
