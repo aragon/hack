@@ -83,7 +83,7 @@ In plain english, cryptoeconomics is about building systems using cryptography t
 
 The key takeaway here is that cryptoeconomics is the big unlock that has allowed us to start moving from centralized data structures (web2) to more decentralized or fully distributed data architectures (web3).
 
-[insert centralized-vs-decentralized-stack image]
+![](/docs/assets/centralized-vs-decentralized-stack-2.png)
 
 > Note that there’s a spectrum from fully centralized (left) to fully decentralized (right).
 
