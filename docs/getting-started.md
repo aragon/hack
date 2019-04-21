@@ -211,6 +211,9 @@ If you've made it this dar congrats 🤗. You've just created your first DAO!
 It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
 
 ### Interacting with your first DAO
+[visual tutorial with metamask]
+
+[visual tutorial with frame]
 
 ## Next steps
 
