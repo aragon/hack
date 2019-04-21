@@ -98,16 +98,16 @@ As Aragon's apps aim to run in a completely decentralized way, every layer of th
 
 # Up and running
 
-Now that we've got you all excited, let's go through what you need to get started building with Aragon...
+Now that we've got you all excited, let's go through what you need to get started building with Aragon 😊
 
 
 ## Environment setup
 
-### Node version
+### Node.js
 
-You'll need Node.js. Make sure you have a recent version, at least Node.js `v8.0.0`.
+First off, you'll need Node.js. Make sure you have a recent version, at least Node.js `v8.0.0`.
 
-To see what version of Node you have installed, from the command line run:
+To see which version of Node you have installed, from the command line run:
 
 ```sh
 node -v
@@ -116,21 +116,22 @@ node -v
 To download the latest version, [see here](https://nodejs.org/en/download/).
 
 
-### Signing and web3 provider
+### Web3 provider
 
-You'll need what we call a web3 provider to actually sign and send transactions to the blockchain.
+Next you'll need what we call a web3 provider to actually sign and send transactions to the ethereum blockchain.
 
-If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why doesn't the decentralized application (dapp) just do it itself?
+We recommend either [Frame](https://frame.sh) or [Metamask](https://metamask.io/).
 
-In short, doing it this way allows you to interact with a dapp without necessarily trusting it with your funds. And since dapps never get access to your funds, dapp developers are spared from all the security headaches that come with handling money.
+If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why don't decentralized apps (dapps) just do it themselves?
 
-We recommend using [Frame](https://frame.sh) to send transactions to the blockchain. Otherwise you can use [Metamask browser extension](https://metamask.io/).
+In short, while it's possible for dapps to interact directly with the blockchain, doing it this way allows users to interact with dapps without trusting them with their private keys (the keys to theirs funds). Without web3 providers, users have to have total trust in every dapp they use -- otherwise they risk having their funds stolen.
+
 
 #### Metamask 
-...
+> MetaMask is a bridge that allows you to visit the distributed web of tomorrow in your browser today. It allows you to run Ethereum dApps right in your browser without running a full Ethereum node.
 
 #### Frame 
-...
+> Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network.
 
 
 ### The aragonCLI
