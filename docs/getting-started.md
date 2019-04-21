@@ -66,13 +66,13 @@ In this section we'll briefly cover the sorts of things DAOs can enable, when yo
 
 Unless you've been living under a rock for the last few years, you've probably come across the term web3 😋. But what does it mean exactly? And why do we care about it in the context of Aragon?
 
-Web3 is the vision of a fully decentralized web. One of the craziest things to wrap your head around is that in web3, apps don't need a central server!
+Web3 is the vision of a fully decentralized web. One of the craziest things to wrap your head around is that in web3, apps don't need a central server to fetch data from!
 
 How is this possible? In a nutshell, thanks to something called peer-to-peer data architectures. The key point is that in a P2P architecture, instead of requesting data from a central server, you request it from multiple computers (peers) around you.
 
 While this is nothing new by itself -- P2P architectures have existed since the 1990’s (where they rose to fame with file sharing programs like BitTorrent and Tor browser) -- what's new is the addition of cryptography and economic incentives to these architectures.
 
-This fusion of seemingly disparate disciplines was the big innovation behind Bitcoin. And since then, it has led to the emergence of a new field of research called cryptoeconomics.
+This fusion of seemingly disparate disciplines was the big innovation behind Bitcoin, and has led to the emergence of a new field of research called cryptoeconomics.
 
 What exactly is cryptoeconomics? To borrow Vitalik's definition, cryptoeconomics is about building systems that have certain desired properties, using:
 
@@ -82,6 +82,14 @@ What exactly is cryptoeconomics? To borrow Vitalik's definition, cryptoeconomics
 In plain english, cryptoeconomics is about building systems using cryptography to make sure that past data can't be hacked, and economic incentives to make sure that people act in a way that's good for the system.
 
 The key takeaway here is that cryptoeconomics is the big unlock that has allowed us to start moving from centralized data structures (web2) to more decentralized or fully distributed data architectures (web3).
+
+[insert centralized-vs-decentralized-stack image]
+
+> Note that there’s a spectrum from fully centralized (left) to fully decentralized (right).
+
+It's also important to note that blockchains -- like Ethereum -- are only part of the decentralized web3 stack (platform and processing). It turns out that blockchains don't make good file systems because they are expensive to store data on. That's why there's also a need for decentralized file systems like the [InterPlanetary File System](https://ipfs.io/).
+
+As Aragon's apps aim to run in a completely decentralized way, every layer of the web3 stack is key to our vision. For example, we make use of IPFS.
 
 
 ### Further reading
