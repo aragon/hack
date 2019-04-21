@@ -23,7 +23,7 @@ const pages = [
     destination: '/docs/cli-apm-commands.md',
     id: 'cli-apm-commands',
     title: 'aragonPM commands',
-    sidebarLabel: 'aragonPM commands',
+    sidebarLabel: 'APM commands',
     contentLocation: 'docs/Apm-commands.md'
   },
   {

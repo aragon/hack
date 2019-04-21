@@ -28,16 +28,6 @@ npm run publish-gh-pages
 
 Note: the `aragonOS` files **must** be generated on publish, [see issue](https://github.com/aragon/hack/issues/116).
 
-## Syncing files
-
-Currently the docs for `aragonCLI` and `aragon.js` are being pulled from their own repositories.
-(see `./website/scripts`)
-
-This is a one way sync and any changes to the docs in **this** repo have to be synced manually by
-maintainers 🤔.
-
-Please make sure to check the diff when doing the sync!
-
 ## Contributing
 
 Thanks for your interest in contributing to these docs!
