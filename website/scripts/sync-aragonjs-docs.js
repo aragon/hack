@@ -5,6 +5,14 @@ const REPO = 'aragon/aragon.js'
 
 const pages = [
   {
+    destination: '/docs/js-ref-quick-start.md',
+    id: 'aragonjs-quick-start',
+    title: 'Quick Start',
+    sidebarLabel: 'Quick Start',
+    hideTitle: true,
+    contentLocation: 'docs/QUICK_START.md',
+  },
+  {
     destination: '/docs/js-ref-app.md',
     id: 'aragonjs-ref-app',
     title: 'aragonAPI for Javascript',
