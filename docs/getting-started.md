@@ -105,7 +105,7 @@ Now that we've got you all excited, let's go through what you need to get starte
 
 ### Node.js
 
-First off, you'll need Node.js. Make sure you have a recent version, at least Node.js `v8.0.0`.
+First off, we need to sure we have a recent version of Node.js, at least `v8.0.0`.
 
 To see which version of Node you have installed, from the command line run:
 
@@ -118,7 +118,7 @@ To download the latest version, [see here](https://nodejs.org/en/download/).
 
 ### Web3 provider
 
-Next you'll need what we call a web3 provider to actually sign and send transactions to the ethereum blockchain.
+Next we'll need what we call a web3 provider to actually sign and send transactions to the ethereum blockchain.
 
 We recommend either [Frame](https://frame.sh) or [Metamask](https://metamask.io/).
 
@@ -133,15 +133,18 @@ In short, while it's possible for dapps to interact directly with the blockchain
 
 > MetaMask injects a javascript library called web3.js into the namespace of each page your browser loads. web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests on the blockchain that are consistent with the existing protocol [Source](https://www.quora.com/What-is-MetaMask)
 
+[explain what this means and go through installation -- with images]
 
 
 #### Frame 
 > Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network.
 
+[explain what this means and go through installation -- with images]
+
 
 ### The aragonCLI
 
-The aragonCLI is....
+Finally, we'll need to install the aragonCLI (Command Line Interface). This will allow us to create and develop Aragon apps.
 
 To install it from the command line run:
 
@@ -149,11 +152,9 @@ To install it from the command line run:
 npm i -g @aragon/cli
 ```
 
-Once we have this package installed we can start building DAOs. If you're having trouble with this step, see the relevant operating system considerations below.
+If this package downloaded successfully, you're now ready to start building DAOs!
 
-### Note on Git
-
-You might need to have [Git](https://git-scm.com) installed.
+If you're having trouble with this step, you should look at the considerations for your operating system below. If that doesn't fix things, please don't hesitate to reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
 
 ### Mac considerations
 
@@ -165,7 +166,7 @@ EACCES: permission denied
 
 It's probably because you originally installed Node with root permissions. Because of this, writing to your npm directory (```npm -i -g```) requires root permissions too.
 
-One way to quickly give yourself root permissions is to run the slightly modified command:
+While it's not a good idea to have Node installed this way, one way to quickly give yourself root permissions is to run the slightly modified command:
 
 ```sh
 sudo npm i -g --unsafe-perm @aragon/cli
@@ -173,25 +174,43 @@ sudo npm i -g --unsafe-perm @aragon/cli
 
 An arguably better way to fix the problem is to follow the steps outlined in this [stackoverflow answer.](https://stackoverflow.com/a/24404451)
 
+[i think this whole section needs to be exlained more simply...]
+
 ### Windows considerations
 
-You might need to run the shell with administrator rights when installing the aragonCLI, because our `go-ipfs` dependency will need to create a symlink to work correctly.
+You might need to run the shell with administrator rights when installing the aragonCLI, because our `go-ipfs` dependency will need to create a symlink to work correctly. [this needs to be explained better]
 
-If you have problems during the instalation of aragonCLI or any other dependencies. You probably need to install [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) or similar package.
+If you have problems during the instalation of aragonCLI or any other dependencies. You probably need to install [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) or similar package. 
 
+Again, if you're having trouble fixing things, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help)
+
+### Note on Git
+
+You might need to have [Git](https://git-scm.com) installed. [a little startling for the reader... why might? i think we need to elaborate here...]
 
 ## Quick start
 
-To create your first DAO run:
+To get up and running quickly, we’ll build our first DAO using some basic scaffolding -- remember a DAO is just a combination of Aragon Apps... [elaborate?]
+
+To create our DAO run:
 
 ```sh
 npx create-aragon-app foo.aragonpm.eth
 cd foo
 npx aragon run
 ```
-If you're unsure what the difference is between ```npx``` and ```npm```, we recommend you read through this [stackoverflow post.](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm) Don't worry if you don't completely understand what the rest of the first line is doing. We'll cover this in the [tutorial](https://hack.aragon.org/docs/tutorial.html) coming up. 
 
-Congrats you have just created a DAO! It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
+Don't worry about understanding the first line right now. Really. We'll cover that in the [tutorial](https://hack.aragon.org/docs/tutorial.html) coming up.
+
+With respect to the third line, ```aragon run``` just sets up everything for us in the background so we can quickly live test our DAO.
+
+N.B. If you're unsure what the difference is between ```npx``` and ```npm```, we recommend you read through this [stackoverflow post.](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm)
+
+If you've made it this dar congrats 🤗. You've just created your first DAO!
+
+It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
+
+### Interacting with your first DAO
 
 ## Next steps
 
