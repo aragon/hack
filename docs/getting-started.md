@@ -70,7 +70,7 @@ Web3 is the vision of a fully decentralized web. One of the craziest things to w
 
 How is this possible? In a nutshell, thanks to something called peer-to-peer data architectures. The key point is that in a P2P architecture, instead of requesting data from a central server, you request it from multiple computers (peers) around you.
 
-While this is nothing new by itself -- P2P architectures have existed since the 1990’s (where they rose to fame with file sharing programs like BitTorrent and Tor browser) -- what's new is the addition of cryptography and economic incentives to these architectures.
+While this is nothing new by itself -- P2P architectures have existed since the 1990’s (where they rose to fame with file sharing programs like BitTorrent and Napster) -- what's new is the addition of cryptography and economic incentives to these architectures.
 
 This fusion of seemingly disparate disciplines was the big innovation behind Bitcoin, and has led to the emergence of a new field of research called cryptoeconomics.
 
@@ -128,7 +128,12 @@ In short, while it's possible for dapps to interact directly with the blockchain
 
 
 #### Metamask 
-> MetaMask is a bridge that allows you to visit the distributed web of tomorrow in your browser today. It allows you to run Ethereum dApps right in your browser without running a full Ethereum node.
+
+> MetaMask is a browser plugin that allows users to make Ethereum transactions through regular websites. It facilitates the adoption of Ethereum because it bridges the gap between the user interfaces for Ethereum (eg. Mist browsers, Dapps) and the regular web (eg. Chrome, Firefox, websites).
+
+> MetaMask injects a javascript library called web3.js into the namespace of each page your browser loads. web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests on the blockchain that are consistent with the existing protocol [Source](https://www.quora.com/What-is-MetaMask)
+
+
 
 #### Frame 
 > Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network.
