@@ -23,6 +23,7 @@
       "cli-main-commands",
       "cli-dao-commands",
       "cli-apm-commands",
+      "cli-ipfs-commands",
       "cli-global-confg"
     ],
     "aragonPM": ["apm", "apm-ref"],
