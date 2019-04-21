@@ -23,22 +23,22 @@ Many of us have  gone through the pain of setting up a corporate entity. Or felt
 
 Right now, the current system simply doesn't work. If you want to setup an organisation you have to go to lawyers, pay thousands of dollars, and all you get in return is a set of unintelligible pieces of paper that cost you more than months of development. On top of this, these pieces of paper don't enforce anything by themselves: they're more like an idea, or a concept.
 
-If you try to explain this to a kid, or to younger generations that have spent most of their lives interacting in a borderless digital world, you quickly realise how mad the current system seems to them. When you think about it, it's really impressive that the world functions the way it does with this sort of legacy framework and operating system underneath.
+If you try to explain this to a kid, or to younger generations that have spent much of their lives interacting in a borderless digital world, you quickly realise how mad the current system seems to them. When you think about it, it's really impressive that the world functions the way it does with this sort of legacy framework and operating system underneath.
 
-We believe that decentralized autonomous organizations (or  DAOs) are the solution to this problem. What is a DAO? Like the parable of the blind man and the elephant... For our purposes, you can think of DAOs as flexible, global, uncensorable, permissionless, free, online organizations.
+At Aragon, we believe that decentralized autonomous organizations (DAOs) are the solution to this problem. What exactly is a DAO? Like the parable of the blind man and the elephant... There are many ways to describe a DAO, and knowledgable people may disagree on the precise definition. For our purposes, you can think of DAOs as flexible, global, and uncensorable online organizations.
 
-Where does Aragon fit in? Aragon apps can be thought of as the basic modules that make up a DAO. In other words, Aragon makes it easy to build DAOs (by providing you with, and allowing you to easily combine, decentralized applications that meet your organisations every need). One way to think of Aragon is as a new operating system (OS) for setting up organizations. One that is far more efficient than the existing OS (lawyers, administrative headaches, etc) we are used to dealing with.
+How does Aragon fit in? Aragon provides you with tools (apps) that make it easy for you to create DAOs -- you can think of Aragon apps as lego bricks, and DAOs as final lego structures. In other words, Aragon is a new operating system (OS) for setting up organizations. One that is far more efficient than the existing OS (lawyers, administrative headaches, etc) we are used to dealing with.
 
 ### More on DAOs
 
-#### DAOs can enable: ####
+#### DAOs can enable: 
 
 - Shared bank accounts with custom rules and permissions
 - Payroll that automatically runs by itself
 - Built-in voting on important topics
 - The creation and distribution of governance tokens
 
-#### DAO use cases: ####
+#### DAO use cases: 
 
 - Part-time projects with friends or strangers
 - Future of work: people working part time on multiple things for short periods of time
@@ -46,7 +46,7 @@ Where does Aragon fit in? Aragon apps can be thought of as the basic modules tha
 - Companies in authoritarian jurisdictions
 - Global, distributed teams
 
-#### Trends around the world accelerating DAO adoption: ####
+#### Trends around the world accelerating DAO adoption: 
 
 - The rise of populist authoritarians
 - The future of work (remote and distributed)
@@ -93,10 +93,10 @@ In short, doing it this way allows you to interact with a dapp without necessari
 
 We recommend using [Frame](https://frame.sh) to send transactions to the blockchain. Otherwise you can use [Metamask browser extension](https://metamask.io/).
 
-#### Metamask ####
+#### Metamask 
 ...
 
-#### Frame ####
+#### Frame 
 ...
 
 
