@@ -13,7 +13,7 @@ These tools help people freely organize **across borders** and **without interme
 
 The Aragon stack helps you develop software for **human organization**. From the smart contracts to the user interface, Aragon takes care of the most important pieces of infrastructure to deliver censorship-resistant, decentralized and upgradeable apps.
 
-If you're new to this ecosystem, don't worry if some (or all) of that sounded a little abstract to you. You can simply think of Aragon as providing the lego pieces to allow people to build the next generation of companies. Companies that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to organise themselves efficiently and effectively.
+If you're new to this ecosystem, don't worry if some (or all) of that sounded a little abstract to you. You can simply think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of companies. Companies that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to organise themselves efficiently and effectively.
 
 ![](/docs/assets/core.png)
 
