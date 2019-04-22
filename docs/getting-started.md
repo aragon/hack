@@ -130,7 +130,7 @@ Visit https://metamask.io/ and download the relevant browser extension. Once it'
 
 ![](/docs/assets/metamask-1.png)
 
-Click on Get Started and follow the instructions carefully. They should be pretty self-explanatory. Once you've finished setting up Metamask, you should be automatically redirected to a page that looks like the one below.
+Click on GET STARTED and follow the instructions carefully. They should be pretty self-explanatory. Once you've finished setting up Metamask, you should be automatically redirected to a page that looks like the one below.
 
 ![](/docs/assets/metamask-4.png)
 
@@ -152,9 +152,9 @@ Finally, if you click on the VIEW ACCOUNT ON ETHERSCAN button you'll be taken to
 
 ![](/docs/assets/metamask-7.png)
 
-This page allows you to see (in real-time) your incoming and outgoing transactions for this address, as well as your entire transaction history.
+Etherscan allows you to see (in real-time) your incoming and outgoing transactions for this address, as well as your entire transaction history.
 
-That should be enough to get started. We'll cover the rest as we go.
+That should be enough to get started 🥳. We'll cover the rest as we go.
 
 #### Frame 
 > Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network.
@@ -164,7 +164,7 @@ That should be enough to get started. We'll cover the rest as we go.
 
 ### The aragonCLI
 
-Finally, to create and develop Aragon apps, we need to install the aragonCLI (Command Line Interface).
+The final missing piece is what's known as the aragonCLI (or Command Line Interface). This is what we'll use to create and develop Aragon apps.
 
 To install it from the command line run:
 
@@ -172,9 +172,9 @@ To install it from the command line run:
 npm i -g @aragon/cli
 ```
 
-If this package downloaded successfully, you're now ready to start building DAOs!
+Hopefully, it downloaded successfully. If that's the case, congrats! you're now officially ready to start building DAOs!
 
-If you're having trouble with this step, you should look at the considerations for your operating system below. If that doesn't fix things, please don't hesitate to reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
+If you're having trouble with this step, you should quickly check out the considerations for your operating system below. If that doesn't fix things, please don't hesitate to reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
 
 ### Mac considerations
 
@@ -184,15 +184,15 @@ If you're seeing one or more errors that look like:
 EACCES: permission denied
 ```
 
-It's probably because you originally installed Node with root permissions. Because of this, writing to your npm directory (```npm -i -g```) requires root permissions too.
+It's probably because you originally installed Node with root permissions [explain what this means] . Because of this, writing to your npm directory (```npm -i -g```) requires root permissions too.
 
-While it's not a good idea to have Node installed this way, one way to quickly give yourself root permissions is to run the slightly modified command:
+While it's not a good idea to have Node installed this way, one way to quickly give yourself root permissions is to run the slightly modified command: [maybe not a good idea to show this option]
 
 ```sh
 sudo npm i -g --unsafe-perm @aragon/cli
 ```
 
-An arguably better way to fix the problem is to follow the steps outlined in this [stackoverflow answer.](https://stackoverflow.com/a/24404451)
+An arguably better way to fix the problem is to follow the steps outlined in this [stackoverflow answer.](https://stackoverflow.com/a/24404451) [should make this more intuitive...]
 
 [i think this whole section needs to be exlained more simply...]
 
@@ -210,7 +210,7 @@ You might need to have [Git](https://git-scm.com) installed. [a little startling
 
 ## Quick start
 
-To get up and running quickly, we’ll build our first DAO using some basic scaffolding -- remember a DAO is just a combination of Aragon Apps... [elaborate]
+In order to get up and running quickly, we’ll build our first DAO using some basic scaffolding [explain what scaffolding means] -- remember a DAO is just a combination of Aragon Apps... [elaborate...]
 
 To create our DAO run:
 
