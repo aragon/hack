@@ -9,6 +9,162 @@
         "title": "Permissions",
         "sidebar_label": "Permissions"
       },
+      "acl_ACL": {
+        "title": "ACL"
+      },
+      "acl_ACLSyntaxSugar_ACLHelpers": {
+        "title": "ACLHelpers"
+      },
+      "acl_ACLSyntaxSugar": {
+        "title": "ACLSyntaxSugar"
+      },
+      "acl_IACL": {
+        "title": "IACL"
+      },
+      "acl_IACLOracle": {
+        "title": "IACLOracle"
+      },
+      "apm_APMNamehash": {
+        "title": "APMNamehash"
+      },
+      "apm_APMRegistry_APMInternalAppNames": {
+        "title": "APMInternalAppNames"
+      },
+      "apm_APMRegistry": {
+        "title": "APMRegistry"
+      },
+      "apm_Repo": {
+        "title": "Repo"
+      },
+      "apps_AppProxyBase": {
+        "title": "AppProxyBase"
+      },
+      "apps_AppProxyPinned": {
+        "title": "AppProxyPinned"
+      },
+      "apps_AppProxyUpgradeable": {
+        "title": "AppProxyUpgradeable"
+      },
+      "apps_AppStorage": {
+        "title": "AppStorage"
+      },
+      "apps_AragonApp": {
+        "title": "AragonApp"
+      },
+      "apps_UnsafeAragonApp": {
+        "title": "UnsafeAragonApp"
+      },
+      "common_Autopetrified": {
+        "title": "Autopetrified"
+      },
+      "common_DelegateProxy": {
+        "title": "DelegateProxy"
+      },
+      "common_DepositableDelegateProxy": {
+        "title": "DepositableDelegateProxy"
+      },
+      "common_DepositableStorage": {
+        "title": "DepositableStorage"
+      },
+      "common_EtherTokenConstant": {
+        "title": "EtherTokenConstant"
+      },
+      "common_IForwarder": {
+        "title": "IForwarder"
+      },
+      "common_Initializable": {
+        "title": "Initializable"
+      },
+      "common_IsContract": {
+        "title": "IsContract"
+      },
+      "common_IVaultRecoverable": {
+        "title": "IVaultRecoverable"
+      },
+      "common_Petrifiable": {
+        "title": "Petrifiable"
+      },
+      "common_SafeERC20": {
+        "title": "SafeERC20"
+      },
+      "common_TimeHelpers": {
+        "title": "TimeHelpers"
+      },
+      "common_Uint256Helpers": {
+        "title": "Uint256Helpers"
+      },
+      "common_UnstructuredStorage": {
+        "title": "UnstructuredStorage"
+      },
+      "common_VaultRecoverable": {
+        "title": "VaultRecoverable"
+      },
+      "ens_ENSConstants": {
+        "title": "ENSConstants"
+      },
+      "ens_ENSSubdomainRegistrar": {
+        "title": "ENSSubdomainRegistrar"
+      },
+      "evmscript_EVMScriptRegistry": {
+        "title": "EVMScriptRegistry"
+      },
+      "evmscript_EVMScriptRunner": {
+        "title": "EVMScriptRunner"
+      },
+      "evmscript_executors_BaseEVMScriptExecutor": {
+        "title": "BaseEVMScriptExecutor"
+      },
+      "evmscript_executors_CallsScript": {
+        "title": "CallsScript"
+      },
+      "evmscript_IEVMScriptExecutor": {
+        "title": "IEVMScriptExecutor"
+      },
+      "evmscript_IEVMScriptRegistry_EVMScriptRegistryConstants": {
+        "title": "EVMScriptRegistryConstants"
+      },
+      "evmscript_IEVMScriptRegistry": {
+        "title": "IEVMScriptRegistry"
+      },
+      "evmscript_ScriptHelpers": {
+        "title": "ScriptHelpers"
+      },
+      "factory_APMRegistryFactory": {
+        "title": "APMRegistryFactory"
+      },
+      "factory_AppProxyFactory": {
+        "title": "AppProxyFactory"
+      },
+      "factory_DAOFactory": {
+        "title": "DAOFactory"
+      },
+      "factory_ENSFactory": {
+        "title": "ENSFactory"
+      },
+      "factory_EVMScriptRegistryFactory": {
+        "title": "EVMScriptRegistryFactory"
+      },
+      "kernel_IKernel_IKernelEvents": {
+        "title": "IKernelEvents"
+      },
+      "kernel_IKernel": {
+        "title": "IKernel"
+      },
+      "kernel_Kernel": {
+        "title": "Kernel"
+      },
+      "kernel_KernelConstants_KernelAppIds": {
+        "title": "KernelAppIds"
+      },
+      "kernel_KernelConstants_KernelNamespaceConstants": {
+        "title": "KernelNamespaceConstants"
+      },
+      "kernel_KernelProxy": {
+        "title": "KernelProxy"
+      },
+      "kernel_KernelStorage": {
+        "title": "KernelStorage"
+      },
       "api-intro": {
         "title": "aragonAPI Introduction",
         "sidebar_label": "Introduction"
@@ -177,7 +333,16 @@
       "aragonOS": "aragonOS",
       "aragonAPI": "aragonAPI",
       "aragonUI": "aragonUI",
-      "App Center": "App Center"
+      "App Center": "App Center",
+      "ACL": "ACL",
+      "APM": "APM",
+      "APPS": "APPS",
+      "COMMON": "COMMON",
+      "ENS": "ENS",
+      "EVMSCRIPT": "EVMSCRIPT",
+      "EVMSCRIPT / EXECUTORS": "EVMSCRIPT / EXECUTORS",
+      "FACTORY": "FACTORY",
+      "KERNEL": "KERNEL"
     }
   },
   "pages-strings": {
