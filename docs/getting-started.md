@@ -130,7 +130,7 @@ Visit https://metamask.io/ and download the relevant browser extension. Once it'
 
 ![](/docs/assets/metamask-1.png)
 
-Click on GET STARTED and follow the instructions carefully. They should be pretty self-explanatory. Once you've finished setting up Metamask, you should be automatically redirected to a page that looks like the one below.
+Click on the **Get Started** button and follow the instructions carefully. They should be pretty self-explanatory. Once you've finished setting up Metamask, you should be automatically redirected to a page that looks like the one below.
 
 ![](/docs/assets/metamask-4.png)
 
@@ -144,11 +144,11 @@ What are these other networks and why might we need to select them? Well, before
 
 Don't worry about the precise differences between the test nets at this stage. The key takeaway is that Metamask also allows you to connect to Ethereum test nets. And these test nets allow you to play around with apps without risking real money.
 
-Here's another basic thing you should know. If you click on the DETAILS button below your account name, a popup will appear with your account address. This is what's known as your public address (or public key). This is the address you should share with other people in order to receive Eth.
+Here's another basic thing you should know. If you click on the **Details** button below your account name, a popup will appear with your account address. This is what's known as your public address (or public key). This is the address you should share with other people in order to receive Eth.
 
 ![](/docs/assets/metamask-6.png)
 
-Finally, if you click on the VIEW ACCOUNT ON ETHERSCAN button you'll be taken to a page that looks like this
+Finally, if you click on the **View Account on Etherscan* button you'll be taken to a page that looks like this
 
 ![](/docs/assets/metamask-7.png)
 
