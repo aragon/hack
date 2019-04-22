@@ -13,10 +13,6 @@
         "title": "aragonAPI Introduction",
         "sidebar_label": "Introduction"
       },
-      "aragonjs-quick-start": {
-        "title": "Quick Start",
-        "sidebar_label": "Quick Start"
-      },
       "apm-ref": {
         "title": "aragonPM reference documentation",
         "sidebar_label": "Reference documentation"
@@ -101,13 +97,13 @@
         "title": "aragonAPI for architecture",
         "sidebar_label": "Architecture of apps"
       },
-      "aragonjs-ref-hooks": {
-        "title": "aragonJS - React Hooks",
-        "sidebar_label": "React Hooks"
-      },
       "aragonjs-ref-providers": {
         "title": "aragonAPI for providers",
         "sidebar_label": "Providers"
+      },
+      "aragonjs-quick-start": {
+        "title": "Quick Start",
+        "sidebar_label": "Quick Start"
       },
       "aragonjs-ref-react": {
         "title": "aragonAPI for React",

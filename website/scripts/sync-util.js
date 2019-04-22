@@ -1,14 +1,25 @@
 const fetch = require('node-fetch')
 const fs = require('fs')
 
-async function syncPages(pages, locationReferenceMap) {
-  Promise.all(pages.map(page => syncPage(page, locationReferenceMap)))
+async function syncPages(pages, locationReferenceMap, gitRef, repo) {
+  Promise.all(
+    pages.map(page => syncPage(page, locationReferenceMap, gitRef, repo))
+  )
 }
 
-async function syncPage(
-  { id, title, hideTitle, sidebarLabel, contentURL, fileLocation },
-  locationReferenceMap
-) {
+async function syncPage(page, locationReferenceMap, gitRef, repo) {
+  const {
+    id,
+    title,
+    hideTitle,
+    sidebarLabel,
+    contentLocation,
+    destination,
+  } = page
+
+  const contentURL = `https://raw.githubusercontent.com/${repo}/${gitRef}/${contentLocation}`
+  const editURL = `https://github.com/${repo}/blob/${gitRef}/${contentLocation}`
+
   const response = await fetch(contentURL)
   let remoteText = await response.text()
   // Fix the links
@@ -23,6 +34,7 @@ async function syncPage(
   const header = `---
 id: ${id}
 title: ${title}
+custom_edit_url: ${editURL}
 sidebar_label: ${sidebarLabel}
 hide_title: ${hideTitle || false}
 ---
@@ -30,7 +42,7 @@ hide_title: ${hideTitle || false}
 `
   const result = header.concat('\n').concat(remoteText)
   // this script will be run from the website directory => we need to go up one level
-  fs.writeFileSync(`../${fileLocation}`, result)
+  fs.writeFileSync(`../${destination}`, result)
 }
 
 function replaceAll(string, mapObject) {
