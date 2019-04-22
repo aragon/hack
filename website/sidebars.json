@@ -85,6 +85,7 @@
     ],
     "COMMON": [
       "common_Autopetrified",
+      "common_ConversionHelpers",
       "common_DelegateProxy",
       "common_DepositableDelegateProxy",
       "common_DepositableStorage",
@@ -94,6 +95,7 @@
       "common_Initializable",
       "common_IsContract",
       "common_Petrifiable",
+      "common_ReentrancyGuard",
       "common_SafeERC20",
       "common_TimeHelpers",
       "common_Uint256Helpers",

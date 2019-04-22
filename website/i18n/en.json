@@ -57,6 +57,9 @@
       "common_Autopetrified": {
         "title": "Autopetrified"
       },
+      "common_ConversionHelpers": {
+        "title": "ConversionHelpers"
+      },
       "common_DelegateProxy": {
         "title": "DelegateProxy"
       },
@@ -83,6 +86,9 @@
       },
       "common_Petrifiable": {
         "title": "Petrifiable"
+      },
+      "common_ReentrancyGuard": {
+        "title": "ReentrancyGuard"
       },
       "common_SafeERC20": {
         "title": "SafeERC20"
