@@ -133,8 +133,38 @@ In short, while it's possible for dapps to interact directly with the blockchain
 
 > MetaMask injects a javascript library called web3.js into the namespace of each page your browser loads. web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests on the blockchain that are consistent with the existing protocol [Source](https://www.quora.com/What-is-MetaMask)
 
-[explain what this means and go through installation -- with images]
+[^explain what this means]
 
+If this is your first time using Metamask, here's how to started:
+
+Visit https://metamask.io/ and download the relevant browser extension. Once it's downloaded you should be automatically directed to a page that looks like this (note that the screenshots below are taken from the chrome browser extension).
+
+[metamask-1.png]
+
+Follow the instructions carefully. They should be pretty self-explanatory. Once your metamask setup is complete, you should be redirected to a page that looks like this:
+
+[metamask-4.png]
+
+If you've reached this stage, congratulations! You've just created your first Ethereum wallet. You're now able to sign transactions and interact directly with the Ethereum blockchain.
+
+A couple of useful points:
+
+In the top right you should see a dropdown menu with Main Ethereum Network selected. With this option selected, you're able to interact directly with the main Ethereum blockchain.  If you click on it however, you should see that you have the ability to select other networks.
+
+[metamask-5.png]
+
+Why would we need to select other networks? Simply put, before launching a project (or dapp) on the main Ethereum network, it's good practice to deploy a version to an Ethereum test network. These test nets simulate Ethereum, and give developers and the community a chance to iron out any problems before real money is involved.
+
+Don't worry about the precise differences between the test nets at this stage. The key takeaway is that Metamask also allows you to connect to Ethereum test networks. And that these networks allow you to play around with dapps using fake money (we'll be using one of these test networks later	to interact with out first DAO).
+
+[metamask-5b]
+
+If you click on the details button below your account name, a popup will appear with your account address. This is your public address (or public key). You can share this with other people to receive Eth.
+
+[metamask-6.png]
+
+Finally, if you click on the View Account On EtherScan button you'll be taken to a page that looks like this.
+This will allow you to see (in real-time) your transaction history for this address. If you're signing off on or expecting to receive a transaction, this is where you should check.
 
 #### Frame 
 > Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network.
@@ -144,7 +174,7 @@ In short, while it's possible for dapps to interact directly with the blockchain
 
 ### The aragonCLI
 
-Finally, we'll need to install the aragonCLI (Command Line Interface). This will allow us to create and develop Aragon apps.
+Finally, to create and develop Aragon apps, we need to install the aragonCLI (Command Line Interface).
 
 To install it from the command line run:
 
@@ -190,7 +220,7 @@ You might need to have [Git](https://git-scm.com) installed. [a little startling
 
 ## Quick start
 
-To get up and running quickly, we’ll build our first DAO using some basic scaffolding -- remember a DAO is just a combination of Aragon Apps... [elaborate?]
+To get up and running quickly, we’ll build our first DAO using some basic scaffolding -- remember a DAO is just a combination of Aragon Apps... [elaborate]
 
 To create our DAO run:
 
