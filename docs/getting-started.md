@@ -231,19 +231,21 @@ If you've made it this far congrats 🤗. You've just created your first DAO!
 It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
 
 ### Interacting with your first DAO
-If it's not already open, open your browser at the localhost address shown in your terminal. It should look something like this
+If it's not already open, open your browser at the localhost address shown in your terminal.
 
-[insert getting-started-dao-0.png]
+![](/docs/assets/getting-started-dao-0.png)
 
-Once your browser is pointed to the right address, you should see a screen that looks like the one below
+Once your browser is open at the right address, you should see a screen that looks like the one below
 
-[insert getting-started-dao-1.png]
+![](/docs/assets/getting-started-dao-1.png)
 
-As you can see on the left, this DAO is made up of two Aragon apps -- Home and Counter. Right now, you're in the Home app. It's just a default welcome page with no possible user interactions, so it's quite boring. Click on Counter to open up the (slightly) more interesting Counter app...
+As you can see on the left, this DAO is made up of two Aragon apps -- Home and Counter. Right now, we're in the Home app. This app just displays a welcome message with no possible user interactions.
 
-[insert getting-started-dao-2.png]
+Click on Counter to open up the (slightly) more interesting Counter app.
 
-[^ reread and rework this section + add images]
+![](/docs/assets/getting-started-dao-2.png)
+
+[^ reread and rework this section]
 
 #### Signing your first transaction with Metamask
 
