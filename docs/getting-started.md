@@ -239,14 +239,30 @@ With respect to the third line, ```aragon run``` just sets up everything for us 
 
 N.B. If you're unsure what the difference is between ```npx``` and ```npm```, we recommend you read through this [stackoverflow post.](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm)
 
-If you've made it this dar congrats 🤗. You've just created your first DAO!
+If you've made it this far congrats 🤗. You've just created your first DAO!
 
 It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
 
 ### Interacting with your first DAO
-[visual tutorial with metamask]
+If it's not already open, open your browser at the localhost address shown in your terminal.
 
-[visual tutorial with frame]
+[getting-started-dao-0.png]
+
+You should see the following screen:
+
+[getting-started-dao-1.png]
+
+You should see that this DAO is made up of two Aragon apps -- Home and Counter. Don't worry about the system settings yet. 
+
+Right now you're in the Home app. Click on Counter to open up the Counter app.
+
+#### Signing your first transaction with Metamask
+
+[insert visual tutorial]
+
+#### Signing your first transaction with Frame
+
+[insert visual tutorial]
 
 ## Next steps
 
