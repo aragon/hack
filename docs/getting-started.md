@@ -231,17 +231,17 @@ If you've made it this far congrats 🤗. You've just created your first DAO!
 It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
 
 ### Interacting with your first DAO
-If it's not already open, open your browser at the localhost address shown in your terminal.
+If it's not already open, open your browser at the localhost address shown in your terminal. It should look something like this
 
 [getting-started-dao-0.png]
 
-You should see the following screen:
+Once your browser is pointed to the right address, you should see a screen that looks like the one below
 
 [getting-started-dao-1.png]
 
-You should see that this DAO is made up of two Aragon apps -- Home and Counter. Don't worry about the system settings yet. 
+As you can see on the left, this DAO is made up of two Aragon apps -- Home and Counter. Right now, you're in the Home app. It's just a default welcome page with no possible user interactions, so it's quite boring. Click on Counter to open up the (slightly) more interesting Counter app...
 
-Right now you're in the Home app. Click on Counter to open up the Counter app.
+[reread and rework this section + add images]
 
 #### Signing your first transaction with Metamask
 
@@ -253,4 +253,6 @@ Right now you're in the Home app. Click on Counter to open up the Counter app.
 
 ## Next steps
 
-Now that you’ve built a DAO let's take a look at the docs or you can jump into the [tutorial](/docs/tutorial.html).
+We hope you enjoyed that 😊! Please don't hesitate to leave us any feedback [insert link here].
+
+Now that you’ve built your first DAO, feel free to take a look at the docs. If you're interested in understanding things at a deeper level, we recommentd you jump straight into our awesome [tutorial](/docs/tutorial.html).
