@@ -108,13 +108,13 @@ If you need to download a more recent version, [see here](https://nodejs.org/en/
 
 ### Web3 provider
 
-Next we'll need what we call a web3 provider to actually sign and send transactions to the Ethereum blockchain.
+Next, we'll need what we call a web3 provider to actually sign and send transactions to the Ethereum blockchain.
 
 We recommend either [Frame](https://frame.sh) or [Metamask](https://metamask.io/).
 
-If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why don't decentralized apps like Aragon's just do it themselves?
+If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why don't decentralized apps (like Aragon's) just do it themselves?
 
-In short, while it's possible for dapps to interact directly with the blockchain, using a web3 provider allows users to interact with dapps without trusting each one of them with their private keys (the keys to theirs funds). Without a web3 provider, users have to have total trust in every dapp they use. With a web3 provider, they just need to trust that provider
+In short, while it's possible for dapps to interact directly with the blockchain, using a web3 provider allows users to interact with dapps without trusting every one of them with their private keys (the keys to theirs funds). Without a web3 provider, users have to have total trust in every dapp they use. With a web3 provider, they just need to trust that provider.
 
 #### Metamask 
 
@@ -122,41 +122,39 @@ In short, while it's possible for dapps to interact directly with the blockchain
 
 > MetaMask injects a javascript library called web3.js into the namespace of each page your browser loads. web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests on the blockchain that are consistent with the existing protocol [Source](https://www.quora.com/What-is-MetaMask)
 
-[^explain what this means]
+[^ explain what this means]
 
 If this is your first time using Metamask, here's how to started:
 
-Visit https://metamask.io/ and download the relevant browser extension. Once it's downloaded you should be automatically directed to a page that looks like this (note that the screenshots below are taken from the chrome browser extension).
+Visit https://metamask.io/ and download the relevant browser extension. Once it's downloaded you should be automatically directed to a page that looks like the image below.
 
 ![](/docs/assets/metamask-1.png)
 
-Follow the instructions carefully. They should be pretty self-explanatory. Once your metamask setup is complete, you should be redirected to a page that looks like this:
+Click on Get Started and follow the instructions carefully. They should be pretty self-explanatory. Once you've finished setting up Metamask, you should be automatically redirected to a page that looks like the one below.
 
 ![](/docs/assets/metamask-4.png)
 
-If you've reached this stage, congratulations! You've just created your first Ethereum wallet. You're now able to sign transactions and interact directly with the Ethereum blockchain.
+Congratulations! You're now ready to interact directly with the Ethereum blockchain. But before we move on, let's go over a couple of basic things.
 
-A couple of useful points:
-
-In the top right you should see a dropdown menu with Main Ethereum Network selected. With this option selected, you're able to interact directly with the main Ethereum blockchain.  If you click on it however, you should see that you have the ability to select other networks.
+In the top right you should see a dropdown menu with Main Ethereum Network selected. While this is the default selection, if you click on it, you should see that you have the ability to select other networks.
 
 ![](/docs/assets/metamask-5.png)
 
-Why would we need to select other networks? Before launching a project (or dapp) on the main Ethereum network, it's good practice to deploy a version to an Ethereum test network. These test nets simulate Ethereum, and give developers and the community a chance to iron out any problems before real money is involved.
+What are these other networks and why might we need to select them? Well, before launching a project (or app) on the main Ethereum network, it's good practice to deploy a version to a test network. These test nets simulate Ethereum, and give developers and the community a chance to iron out any problems before real money is involved.
 
-Don't worry about the precise differences between the test nets at this stage. The key takeaway is that Metamask also allows you to connect to Ethereum test networks. And that these networks allow you to play around with dapps using fake money (we'll be using one of these test networks later	to interact with out first DAO).
+Don't worry about the precise differences between the test nets at this stage. The key takeaway is that Metamask also allows you to connect to Ethereum test nets. And these test nets allow you to play around with apps without risking real money.
 
-![](/docs/assets/metamask-5.png)
-
-If you click on the details button below your account name, a popup will appear with your account address. This is your public address (or public key). You can share this with other people to receive Eth.
+Here's another basic thing you should know. If you click on the DETAILS button below your account name, a popup will appear with your account address. This is what's known as your public address (or public key). This is the address you should share with other people in order to receive Eth.
 
 ![](/docs/assets/metamask-6.png)
 
-Finally, if you click on the View Account On EtherScan button you'll be taken to a page that looks like this:
+Finally, if you click on the VIEW ACCOUNT ON ETHERSCAN button you'll be taken to a page that looks like this
 
 ![](/docs/assets/metamask-7.png)
 
-This will allow you to see (in real-time) your transaction history for this address. If you're sending, or expecting to receive a transaction, this is where you should look to see when it gets added to the blockchain.
+This page allows you to see (in real-time) your incoming and outgoing transactions for this address, as well as your entire transaction history.
+
+That should be enough to get started. We'll cover the rest as we go.
 
 #### Frame 
 > Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network.
