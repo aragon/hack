@@ -95,7 +95,7 @@ Now that we've got you all excited, let's go through what you need to get starte
 
 ### Node.js
 
-First off, we need to sure we have a recent version of Node.js, at least `v8.0.0`.
+First off, we need to sure we have a recent version of Node.js installed, at least `v8.0.0`.
 
 To see which version of Node you have installed, from the command line run:
 
@@ -103,19 +103,18 @@ To see which version of Node you have installed, from the command line run:
 node -v
 ```
 
-To download the latest version, [see here](https://nodejs.org/en/download/).
+If you need to download a more recent version, [see here](https://nodejs.org/en/download/).
 
 
 ### Web3 provider
 
-Next we'll need what we call a web3 provider to actually sign and send transactions to the ethereum blockchain.
+Next we'll need what we call a web3 provider to actually sign and send transactions to the Ethereum blockchain.
 
 We recommend either [Frame](https://frame.sh) or [Metamask](https://metamask.io/).
 
-If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why don't decentralized apps (dapps) just do it themselves?
+If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why don't decentralized apps like Aragon's just do it themselves?
 
-In short, while it's possible for dapps to interact directly with the blockchain, doing it this way allows users to interact with dapps without trusting them with their private keys (the keys to theirs funds). Without web3 providers, users have to have total trust in every dapp they use -- otherwise they risk having their funds stolen.
-
+In short, while it's possible for dapps to interact directly with the blockchain, using a web3 provider allows users to interact with dapps without trusting each one of them with their private keys (the keys to theirs funds). Without a web3 provider, users have to have total trust in every dapp they use. With a web3 provider, they just need to trust that provider
 
 #### Metamask 
 
