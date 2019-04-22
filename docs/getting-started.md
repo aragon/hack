@@ -13,7 +13,7 @@ These tools help people freely organize **across borders** and **without interme
 
 The Aragon stack helps you develop software for **human organization**. From the smart contracts to the user interface, Aragon takes care of the most important pieces of infrastructure to deliver censorship-resistant, decentralized and upgradeable apps.
 
-If you're new to this ecosystem, don't worry if some (or all) of that sounded a little abstract to you. You can simply think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of companies. Companies that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to organise themselves efficiently and effectively.
+If you're new to this ecosystem, don't worry if some (or all) of that sounded a little abstract to you. You can think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of human organizations. Organizations that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to collaborate effectively.
 
 ![](/docs/assets/core.png)
 
@@ -23,26 +23,25 @@ If you're new to this ecosystem, don't worry if some (or all) of that sounded a 
 
 Many of us have  gone through the pain of setting up a corporate entity. Or felt like we've lacked the tools to collaborate with people all around the world when we're building stuff we want to see in the world.
 
-Right now, the current system simply doesn't work. If you want to setup an organisation you have to go to lawyers, pay thousands of dollars, and all you get in return is a set of unintelligible pieces of paper that cost you more than months of development. On top of this, these pieces of paper don't enforce anything by themselves: they're more like an idea, or a concept.
+Right now, the current system simply doesn't work. If you want to set up an organisation you have to go to lawyers, pay thousands of dollars, and all you get in return is a set of unintelligible pieces of paper that cost you more than months of development. On top of this, these pieces of paper don't enforce anything by themselves: they're more like an idea, or a concept.
 
-If you try to explain this to a kid, or to younger generations that have spent much of their lives interacting in a borderless digital world, you quickly realise how mad the current system seems to them. When you think about it, it's really impressive that the world functions the way it does with this sort of legacy framework and operating system underneath.
+If you try to explain this to a kid, you quickly realise how mad the current system seems to them. When you think about it, it's really impressive that the world functions the way it does with this sort of legacy framework and operating system underneath.
 
-At Aragon, we believe that decentralized autonomous organizations (DAOs) are the solution to this problem. What exactly is a DAO? Like the parable of the blind man and the elephant... There are many ways to describe a DAO, and knowledgable people may disagree on the precise definition. For our purposes, you can think of DAOs as flexible, global, and uncensorable online organizations.
+At Aragon, we believe that decentralized autonomous organizations (DAOs) are the solution to this problem. What exactly is a DAO? There are many ways to describe a DAO, and knowledgable people may disagree on the precise definition. For our purposes, you can think of DAOs as flexible, global, and uncensorable online organizations.
 
 How does Aragon fit in? Aragon provides you with tools (apps) that make it easy for you to create DAOs -- you can think of Aragon apps as lego bricks that can be flexibly combined to make DAOs (the final lego structures).
 
-Another way to think about Aragon is as a new operating system (OS) for setting up organizations. One that is far more efficient than the existing OS (lawyers, administrative headaches, etc) we are used to dealing with.
+Another way to think of Aragon is as a new operating system (OS) for setting up organizations. One that is far more efficient than the existing OS (lawyers, administrative headaches, etc) we are used to dealing with.
 
 ### More on DAOs
 
-In this section we'll briefly cover the sorts of things DAOs can enable, when you might want to use a DAO, as well as the trends around the world accelerating their adoption.
+For those of you who are new to DAOs, in this section we'll briefly cover the sorts of things DAOs can enable, when you might want to use a DAO, as well as the trends around the world accelerating their adoption.
 
 #### DAOs can enable: 
 
 - Shared bank accounts with custom rules and permissions
 - Payroll that automatically runs by itself
 - Built-in voting on important topics
-- The creation and distribution of governance tokens
 
 #### DAO use cases: 
 
@@ -70,26 +69,17 @@ Web3 is the vision of a fully decentralized web. One of the craziest things to w
 
 How is this possible? In a nutshell, thanks to something called peer-to-peer data architectures. The key point is that in a P2P architecture, instead of requesting data from a central server, you request it from multiple computers (peers) around you.
 
-While this is nothing new by itself -- P2P architectures have existed since the 1990’s (where they rose to fame with file sharing programs like BitTorrent and Napster) -- what's new is the addition of cryptography and economic incentives to these architectures.
+While this is nothing new in itself -- P2P architectures have existed since the 1990’s (where they rose to fame with file sharing programs like BitTorrent and Napster) -- what's new is the addition of cryptography and economic incentives to these architectures.
 
-This fusion of seemingly disparate disciplines was the big innovation behind Bitcoin, and has led to the emergence of a new field of research called cryptoeconomics.
+This fusion of these seemingly disparate disciplines was the big innovation behind Bitcoin, and has since led to the emergence of a new field of research devoted to their intersection (what we now call cryptoeconomics). 
 
-What exactly is cryptoeconomics? To borrow Vitalik's definition, cryptoeconomics is about building systems that have certain desired properties, using:
-
-- Cryptography to prove properties about messages that happened in the past
-- Economic incentives to encourage desired properties to hold into the future
-
-In plain english, cryptoeconomics is about building systems using cryptography to make sure that past data can't be hacked, and economic incentives to make sure that people act in a way that's good for the system.
-
-The key takeaway here is that cryptoeconomics is the big unlock that has allowed us to start moving from centralized data structures (web2) to more decentralized or fully distributed data architectures (web3).
+While we won't get into the details here,the key takeaway is that cryptoeconomics is the big unlock that has allowed us to start moving from centralized data structures (web2) to more decentralized or fully distributed data architectures (web3).
 
 ![](/docs/assets/centralized-vs-decentralized-stack-2.png)
 
 > Note that there’s a spectrum from fully centralized (left) to fully decentralized (right).
 
-It's also important to note that blockchains -- like Ethereum -- are only part of the decentralized web3 stack (platform and processing). It turns out that blockchains don't make good file systems because they are expensive to store data on. That's why there's also a need for decentralized file systems like the [InterPlanetary File System](https://ipfs.io/).
-
-As Aragon's apps aim to run in a completely decentralized way, every layer of the web3 stack is key to our vision. For example, we make use of IPFS.
+And while blockchains -- like Bitcoin and Ethereum -- are key to this web3 vision, it's important to note that there are other essential parts of the web3 stack that are not covered by them. For example, since blockchains are relatively expensive to store data on, it turns out that they don't make great file systems. That's why there's also a need for decentralized file systems like the [InterPlanetary File System](https://ipfs.io/) (which Aragon also makes use of).
 
 
 ### Further reading
