@@ -134,7 +134,7 @@ Click on the **Get Started** button and follow the instructions carefully. They 
 
 ![](/docs/assets/metamask-4.png)
 
-Congratulations! You're now ready to interact directly with the Ethereum blockchain. 
+This is the Metamask interface to your Ethereum wallet. Congratulations! You're now ready to interact directly with the Ethereum blockchain. 
 
 #### Frame 
 > Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network.
