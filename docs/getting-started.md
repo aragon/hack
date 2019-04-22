@@ -134,27 +134,7 @@ Click on the **Get Started** button and follow the instructions carefully. They 
 
 ![](/docs/assets/metamask-4.png)
 
-Congratulations! You're now ready to interact directly with the Ethereum blockchain. But before we move on, let's go over a couple of basic things.
-
-In the top right you should see a dropdown menu with Main Ethereum Network selected. While this is the default selection, if you click on it, you should see that you have the ability to select other networks.
-
-![](/docs/assets/metamask-5.png)
-
-What are these other networks and why might we need to select them? Well, before launching a project (or app) on the main Ethereum network, it's good practice to deploy a version to a test network. These test nets simulate Ethereum, and give developers and the community a chance to iron out any problems before real money is involved.
-
-Don't worry about the precise differences between the test nets at this stage. The key takeaway is that Metamask also allows you to connect to Ethereum test nets. And these test nets allow you to play around with apps without risking real money.
-
-Here's another basic thing you should know. If you click on the **Details** button below your account name, a popup will appear with your account address. This is what's known as your public address (or public key). This is the address you should share with other people in order to receive Eth.
-
-![](/docs/assets/metamask-6.png)
-
-Finally, if you click on the **View Account on Etherscan* button you'll be taken to a page that looks like this
-
-![](/docs/assets/metamask-7.png)
-
-Etherscan allows you to see (in real-time) your incoming and outgoing transactions for this address, as well as your entire transaction history.
-
-That should be enough to get started 🥳. We'll cover the rest as we go.
+Congratulations! You're now ready to interact directly with the Ethereum blockchain. 
 
 #### Frame 
 > Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network.
@@ -174,7 +154,7 @@ npm i -g @aragon/cli
 
 Hopefully, it downloaded successfully. If that's the case, congrats! you're now officially ready to start building DAOs!
 
-If you're having trouble with this step, you should quickly check out the considerations for your operating system below. If that doesn't fix things, please don't hesitate to reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
+If you're having trouble with this step, you should read through the relevant operating system section below. If that doesn't fix things, please don't hesitate to reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
 
 ### Mac considerations
 
