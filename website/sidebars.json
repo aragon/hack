@@ -26,7 +26,10 @@
       "cli-ipfs-commands",
       "cli-global-confg"
     ],
-    "aragonPM": ["apm", "apm-ref"],
+    "aragonPM": [
+      "apm",
+      "apm-ref"
+    ],
     "aragonOS": [
       "aragonos-intro",
       "aragonos-motivation",
@@ -51,7 +54,85 @@
         ]
       }
     ],
-    "aragonUI": ["aragonui-intro"],
-    "App Center": ["app-center-preparing-assets"]
+    "aragonUI": [
+      "aragonui-intro"
+    ],
+    "App Center": [
+      "app-center-preparing-assets"
+    ]
+  },
+  "docs-api": {
+    "ACL": [
+      "acl_ACL",
+      "acl_ACLSyntaxSugar",
+      "acl_ACLSyntaxSugar_ACLHelpers",
+      "acl_IACL",
+      "acl_IACLOracle"
+    ],
+    "APM": [
+      "apm_APMNamehash",
+      "apm_APMRegistry",
+      "apm_APMRegistry_APMInternalAppNames",
+      "apm_Repo"
+    ],
+    "APPS": [
+      "apps_AppProxyBase",
+      "apps_AppProxyPinned",
+      "apps_AppProxyUpgradeable",
+      "apps_AppStorage",
+      "apps_AragonApp",
+      "apps_UnsafeAragonApp"
+    ],
+    "COMMON": [
+      "common_Autopetrified",
+      "common_ConversionHelpers",
+      "common_DelegateProxy",
+      "common_DepositableDelegateProxy",
+      "common_DepositableStorage",
+      "common_EtherTokenConstant",
+      "common_IForwarder",
+      "common_IVaultRecoverable",
+      "common_Initializable",
+      "common_IsContract",
+      "common_Petrifiable",
+      "common_ReentrancyGuard",
+      "common_SafeERC20",
+      "common_TimeHelpers",
+      "common_Uint256Helpers",
+      "common_UnstructuredStorage",
+      "common_VaultRecoverable"
+    ],
+    "ENS": [
+      "ens_ENSConstants",
+      "ens_ENSSubdomainRegistrar"
+    ],
+    "EVMSCRIPT": [
+      "evmscript_EVMScriptRegistry",
+      "evmscript_EVMScriptRunner",
+      "evmscript_IEVMScriptExecutor",
+      "evmscript_IEVMScriptRegistry",
+      "evmscript_IEVMScriptRegistry_EVMScriptRegistryConstants",
+      "evmscript_ScriptHelpers"
+    ],
+    "EVMSCRIPT / EXECUTORS": [
+      "evmscript_executors_BaseEVMScriptExecutor",
+      "evmscript_executors_CallsScript"
+    ],
+    "FACTORY": [
+      "factory_APMRegistryFactory",
+      "factory_AppProxyFactory",
+      "factory_DAOFactory",
+      "factory_ENSFactory",
+      "factory_EVMScriptRegistryFactory"
+    ],
+    "KERNEL": [
+      "kernel_IKernel",
+      "kernel_IKernel_IKernelEvents",
+      "kernel_Kernel",
+      "kernel_KernelConstants_KernelAppIds",
+      "kernel_KernelConstants_KernelNamespaceConstants",
+      "kernel_KernelProxy",
+      "kernel_KernelStorage"
+    ]
   }
 }

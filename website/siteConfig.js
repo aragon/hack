@@ -60,7 +60,7 @@ const siteConfig = {
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
-  projectName: 'hack-docs',
+  projectName: 'hack',
   organizationName: 'aragon',
 
   headerLinks: [
