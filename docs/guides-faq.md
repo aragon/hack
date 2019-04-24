@@ -6,6 +6,40 @@ sidebar_label: Troubleshooting
 
 #####
 
+## Installing aragonCLI
+
+### Mac considerations
+
+If you're seeing one or more errors that look like:
+
+```sh
+EACCES: permission denied
+```
+
+It's probably because you originally installed Node with root permissions [explain what this means] . Because of this, writing to your npm directory (```npm -i -g```) requires root permissions too.
+
+While it's not a good idea to have Node installed this way, one way to quickly give yourself root permissions is to run the slightly modified command: [maybe not a good idea to show this option]
+
+```sh
+sudo npm i -g --unsafe-perm @aragon/cli
+```
+
+An arguably better way to fix the problem is to follow the steps outlined in this [stackoverflow answer.](https://stackoverflow.com/a/24404451) [should make this more intuitive...]
+
+[i think this whole section needs to be exlained more simply...]
+
+### Windows considerations
+
+You might need to run the shell with administrator rights when installing the aragonCLI, because our `go-ipfs` dependency will need to create a symlink to work correctly. [this needs to be explained better]
+
+If you have problems during the instalation of aragonCLI or any other dependencies. You probably need to install [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) or similar package. 
+
+Again, if you're having trouble fixing things, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help)
+
+### Note on Git
+
+You might need to have [Git](https://git-scm.com) installed. [a little startling for the reader... why might? i think we need to elaborate here...]
+
 ## Resetting the devchain
 
 After upgrading aragonCLI, or if unexpected errors are being experienced, [resetting the devchain](/docs/cli-main-commands.html#aragon-devchain) (by doing `aragon devchain --reset` or `aragon run --reset`) is sometimes useful as it will restart the chain from the snapshot.
