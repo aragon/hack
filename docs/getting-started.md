@@ -239,4 +239,10 @@ Click on Counter to open up the (slightly) more interesting Counter app.
 
 We hope you enjoyed that 😊! Please don't hesitate to leave us any feedback [insert link].
 
-Now that you’ve built your first DAO, feel free to take a look at the docs. If you're interested in understanding things at a deeper level, we recommentd you jump straight into our awesome [tutorial](/docs/tutorial.html).
+Now that you’ve built your first DAO, feel free to take a look at the docs. If you're interested in understanding things at a deeper level, we recommend you jump straight into our awesome [tutorial](/docs/tutorial.html).
+
+P.S. You should find that there is a light blue EDIT button in the top-right corner of every page. If you feel like you can improve our documentation in any way, please don't hesitate to click on it. Once you click on it, you'll be taken to a github copy of the page. On that page you should see a small pencil icon somewhere on the right. Click on it to start.
+
+P.P.S. Before you submit any changes, you should read our [contribution guidelines.](https://github.com/aragon/hack/blob/master/CONTRIBUTING.md)
+
+[^ create and/or provide a link to a tutorial that takes the user through their first githubedit + simple Markdown]
