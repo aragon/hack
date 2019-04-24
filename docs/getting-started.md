@@ -124,7 +124,7 @@ In short, while it's possible for dapps to interact directly with the blockchain
 
 [^ explain what this means]
 
-If this is your first time using Metamask, here's how to started:
+If this is your first time using Metamask, here's how to get started:
 
 Visit https://metamask.io/ and download the relevant browser extension. Once it's downloaded you should be automatically directed to a page that looks like the image below.
 
