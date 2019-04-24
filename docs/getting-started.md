@@ -95,7 +95,7 @@ Now that we've got you all excited, let's go through what you need to get starte
 
 ### Node.js
 
-First off, we need to sure we have a recent version of Node.js installed, at least `v8.0.0`.
+First off, we need to be sure we have a recent version of Node.js installed, at least `v8.0.0`.
 
 To see which version of Node you have installed, from the command line run:
 
