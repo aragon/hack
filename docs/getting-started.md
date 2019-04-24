@@ -195,8 +195,8 @@ In order to get up and running quickly, we’ll build our first DAO using some b
 To create our DAO run:
 
 ```sh
-npx create-aragon-app foo.aragonpm.eth
-cd foo
+npx create-aragon-app first_dao.aragonpm.eth
+cd first_dao
 npx aragon run
 ```
 
