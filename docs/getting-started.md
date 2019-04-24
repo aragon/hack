@@ -144,7 +144,7 @@ This is the Metamask interface to your Ethereum wallet. Congratulations! You're 
 
 ### The aragonCLI
 
-The final missing piece is what's known as the aragonCLI (or Command Line Interface). This is what we'll use to create and develop Aragon apps.
+The final missing piece is what's known as the aragonCLI (or Command Line Interface). This is what we'll use to create, interact with, and develop Aragon apps and DAOs.
 
 To install it from the command line run:
 
