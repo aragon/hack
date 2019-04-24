@@ -152,7 +152,7 @@ To install it from the command line run:
 npm i -g @aragon/cli
 ```
 
-Hopefully, it downloaded successfully. If that's the case, congrats! you're now officially ready to start building DAOs!
+Hopefully, it downloaded successfully. If that's the case, congrats! you're now officially ready to start building your first DAO!
 
 If you're having trouble with this step, you should read through the relevant operating system section below. If that doesn't fix things, please don't hesitate to reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
 
@@ -204,7 +204,7 @@ Don't worry about understanding the first line right now. Really. We'll cover th
 
 With respect to the third line, ```aragon run``` just sets up everything for us in the background so we can quickly live test our DAO.
 
-N.B. If you're unsure what the difference is between ```npx``` and ```npm```, we recommend you read through this [stackoverflow post.](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm)
+N.B. If you're unsure what the difference is between ```npx``` and ```npm```, we recommend you read through this [medium post](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) and this [stackoverflow post.](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm)
 
 If you've made it this far congrats 🤗. You've just created your first DAO!
 
