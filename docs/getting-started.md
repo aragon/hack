@@ -211,9 +211,16 @@ If you've made it this far congrats 🤗. You've just created your first DAO!
 It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
 
 ### Interacting with your first DAO
-If it's not already open, open your browser at the localhost address shown in your terminal.
+If it's not already open, open your browser at the localhost address shown in your terminal. It should look something like this:
 
-![](/docs/assets/getting-started-dao-0.png)
+<pre>This is the configuration for your development deployment:
+    Ethereum Node: ws://localhost:8545
+    ENS registry: 0x5f6f7e8cc7346a11ca2def8f827b7a0b612c56a1
+    APM registry: aragonpm.eth
+    DAO address: 0xE56671CA800F4516B5B705c729BD3c6Aee4DDbEC
+
+    Opening <b>http://localhost:3000/#/0xE56671CA800F4516B5B705c729BD3c6Aee4DDbEC</b> to view your DAO
+</pre>
 
 Once your browser is open at the right address, you should see a screen that looks like the one below
 
