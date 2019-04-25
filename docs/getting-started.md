@@ -123,6 +123,7 @@ In short, while it's possible for dapps to interact directly with the blockchain
 **[^ replace quotation with jargon free paragraph]**
 
 For instructions on how to use Frame as your web3 provider, please take a look at our Frame guide.
+
 **[link to frame guide]**
 
 #### Metamask 
