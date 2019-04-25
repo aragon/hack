@@ -110,7 +110,7 @@ If you need to download a more recent version, [see here](https://nodejs.org/en/
 
 Next, we'll need what we call a web3 provider to actually sign and send transactions to the Ethereum blockchain.
 
-We recommend either [Frame](https://frame.sh) or [Metamask](https://metamask.io/). [talk briefly about the differences, why you might prefer one over the other]
+We recommend either [Frame](https://frame.sh) or [Metamask](https://metamask.io/). *[talk briefly about the differences, why you might prefer one over the other]*
 
 If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why don't decentralized apps (like Aragon's) just do it themselves?
 
@@ -120,11 +120,11 @@ In short, while it's possible for dapps to interact directly with the blockchain
 
 >Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network. 
 
-**[^ replace quotation with jargon free paragraph]**
+*[^ replace quotation with jargon free paragraph]*
 
 For instructions on how to use Frame as your web3 provider, please take a look at our Frame guide.
 
-**[link to frame guide]**
+*[link to frame guide]*
 
 #### Metamask 
 
@@ -132,7 +132,7 @@ MetaMask is a browser plugin that allows users to make Ethereum transactions thr
 
 For instructions on how to use Metamask as your web3 provider, please take a look at our Metamask guide.
 
-**[link to metamask guide]**
+*[link to metamask guide]*
 
 
 ### The aragonCLI
@@ -193,15 +193,15 @@ Click on Counter to open up the (slightly) more interesting Counter app.
 
 #### Signing your first transaction with Metamask
 
-[link to relevant section of metamask guide]
+*[link to relevant section of metamask guide]*
 
 #### Signing your first transaction with Frame
 
-[link to relevant section of frame guide]
+*[link to relevant section of frame guide]*
 
 ## Next steps
 
-We hope you enjoyed that 😊! Please don't hesitate to leave us any feedback **[insert link].**
+We hope you enjoyed that 😊! Please don't hesitate to leave us any feedback *[insert link].*
 
 Now that you’ve built your first DAO, feel free to take a look at the docs. If you're interested in understanding things at a deeper level, we recommend you jump straight into our awesome [tutorial](/docs/tutorial.html).
 
