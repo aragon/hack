@@ -119,15 +119,19 @@ In short, while it's possible for dapps to interact directly with the blockchain
 #### Frame 
 
 >Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network. 
-[^ replace quotation with jargon free paragraph]
 
-For instructions on how to use Frame as your web3 provider, please take a look at our Frame guide. [link to frame guide]
+**[^ replace quotation with jargon free paragraph]**
+
+For instructions on how to use Frame as your web3 provider, please take a look at our Frame guide.
+**[link to frame guide]**
 
 #### Metamask 
 
 MetaMask is a browser plugin that allows users to make Ethereum transactions through regular websites. It does this by injecting a javascript library called web3.js into the namespace of each page your browser loads. web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests to the blockchain. Eventually we'll have browsers with this sort of functionality built-in. But for now we need plugins like Metamask to help us bridge the gap between web2 and web3.
 
-For instructions on how to use Metamask as your web3 provider, please take a look at our Metamask guide. [link to metamask guide]
+For instructions on how to use Metamask as your web3 provider, please take a look at our Metamask guide.
+
+**[link to metamask guide]**
 
 
 ### The aragonCLI
@@ -186,19 +190,17 @@ Click on Counter to open up the (slightly) more interesting Counter app.
 
 ![](/docs/assets/getting-started-dao-2.png)
 
-[^ reread and rework this section]
-
 #### Signing your first transaction with Metamask
 
-[insert visual tutorial]
+**[link to relevant section of metamask guide]**
 
 #### Signing your first transaction with Frame
 
-[insert visual tutorial]
+**[link to relevant section of frame guide]**
 
 ## Next steps
 
-We hope you enjoyed that 😊! Please don't hesitate to leave us any feedback [insert link].
+We hope you enjoyed that 😊! Please don't hesitate to leave us any feedback **[insert link].**
 
 Now that you’ve built your first DAO, feel free to take a look at the docs. If you're interested in understanding things at a deeper level, we recommend you jump straight into our awesome [tutorial](/docs/tutorial.html).
 
@@ -206,4 +208,3 @@ P.S. You should find that there is a light blue EDIT button in the top-right cor
 
 P.P.S. Before you submit any changes, you should read our [contribution guidelines.](https://github.com/aragon/hack/blob/master/CONTRIBUTING.md)
 
-[^ create and/or provide a link to a tutorial that takes the user through their first githubedit + simple Markdown]
