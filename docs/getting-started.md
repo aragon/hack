@@ -110,36 +110,24 @@ If you need to download a more recent version, [see here](https://nodejs.org/en/
 
 Next, we'll need what we call a web3 provider to actually sign and send transactions to the Ethereum blockchain.
 
-We recommend either [Frame](https://frame.sh) or [Metamask](https://metamask.io/).
+We recommend either [Frame](https://frame.sh) or [Metamask](https://metamask.io/). [talk briefly about the differences, why you might prefer one over the other]
 
 If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why don't decentralized apps (like Aragon's) just do it themselves?
 
 In short, while it's possible for dapps to interact directly with the blockchain, using a web3 provider allows users to interact with dapps without trusting every one of them with their private keys (the keys to theirs funds). Without a web3 provider, users have to have total trust in every dapp they use. With a web3 provider, they just need to trust that provider.
 
+#### Frame 
+
+>Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network. 
+[^ replace quotation with jargon free paragraph]
+
+For instructions on how to use Frame as your web3 provider, please take a look at our Frame guide. [link to frame guide]
+
 #### Metamask 
 
-MetaMask is a browser plugin that allows users to make Ethereum transactions through regular websites. It facilitates the adoption of Ethereum because it bridges the gap between the user interfaces for Ethereum (eg. Mist browsers, Dapps) and the regular web (eg. Chrome, Firefox, websites).
+MetaMask is a browser plugin that allows users to make Ethereum transactions through regular websites. It does this by injecting a javascript library called web3.js into the namespace of each page your browser loads. web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests to the blockchain.
 
-> MetaMask injects a javascript library called web3.js into the namespace of each page your browser loads. web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests on the blockchain that are consistent with the existing protocol [Source](https://www.quora.com/What-is-MetaMask)
-
-[^ explain what this means]
-
-If this is your first time using Metamask, here's how to get started:
-
-Visit https://metamask.io/ and download the relevant browser extension. Once it's downloaded you should be automatically directed to a page that looks like the image below.
-
-![](/docs/assets/metamask-1.png)
-
-Click on the **Get Started** button and follow the instructions carefully. They should be pretty self-explanatory. Once you've finished setting up Metamask, you should be automatically redirected to a page that looks like the one below.
-
-![](/docs/assets/metamask-4.png)
-
-This is the Metamask interface to your Ethereum wallet. Congratulations! You're now ready to interact directly with the Ethereum blockchain. 
-
-#### Frame 
-> Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network.
-
-[explain what this means and go through installation -- with images]
+For instructions on how to use Metamask as your web3 provider, please take a look at our Metamask guide. [link to metamask guide]
 
 
 ### The aragonCLI
