@@ -38,7 +38,8 @@ Again, if you're having trouble fixing things, please reach out to us at the [#d
 
 ### Note on Git
 
-You might need to have [Git](https://git-scm.com) installed. [a little startling for the reader... why might? i think we need to elaborate here...]
+You might need to have [Git](https://git-scm.com) installed. If you're unsure what Git is, or whether you have it installed, we recommend you follow [this tutorial.](https://www.learnenough.com/git-tutorial/getting_started)
+*[a little startling for the reader... why might? i think we need to elaborate here...]*
 
 ## Resetting the devchain
 
