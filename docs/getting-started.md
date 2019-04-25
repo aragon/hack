@@ -192,11 +192,11 @@ Click on Counter to open up the (slightly) more interesting Counter app.
 
 #### Signing your first transaction with Metamask
 
-**[link to relevant section of metamask guide]**
+[link to relevant section of metamask guide]
 
 #### Signing your first transaction with Frame
 
-**[link to relevant section of frame guide]**
+[link to relevant section of frame guide]
 
 ## Next steps
 
