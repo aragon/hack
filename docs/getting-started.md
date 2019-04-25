@@ -148,7 +148,7 @@ If you're having trouble with this step, you should take a look at the installin
 
 In order to get up and running quickly, we’ll build our first DAO using some basic scaffolding. Just like real scaffolding in a construction site, when we talk about scaffolding in this context, we mean a simple prebuilt structure for your project, on top of which you can build the real one. 
 
-Scaffolding relies on some generated code, magically created by the ```create-aragon-app``` command. To create your first (scaffolded) DAO, from the command line run:
+To create your first (scaffolded) DAO, from the command line run:
 
 ```sh
 npx create-aragon-app first_dao.aragonpm.eth
@@ -156,7 +156,7 @@ cd first_dao
 npx aragon run
 ```
 
-Don't worry about understanding the first line right now. Really. We'll cover that in the [tutorial](https://hack.aragon.org/docs/tutorial.html) coming up.
+Don't worry about fully understanding the first line right now. Really. We'll cover that in the [tutorial](https://hack.aragon.org/docs/tutorial.html) coming up. Right now, you just need to know that the scaffolding relies on some generated code, magically created by the ```create-aragon-app``` command. 
 
 With respect to the third line, ```aragon run``` just sets up everything for us in the background so we can quickly live test our DAO.
 
