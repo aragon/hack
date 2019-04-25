@@ -132,21 +132,21 @@ For instructions on how to use Metamask as your web3 provider, please take a loo
 
 ### The aragonCLI
 
-The final missing piece is what's known as the aragonCLI (or Command Line Interface). This is what we'll use to create, interact with, and develop Aragon apps and DAOs.
+The final missing piece is what's known as the aragonCLI (or Command Line Interface). This is what we'll use to create, interact with, and develop Aragon apps and DAOs -- remember an Aragon DAO is just a combination of Aragon Apps.
 
-To install it from the command line run:
+To install aragonCLI from the command line run:
 
 ```sh
 npm i -g @aragon/cli
 ```
 
-Hopefully, it downloaded successfully. If that's the case, congrats! you're now officially ready to start building your first DAO!
+Hopefully, it downloaded successfully. If that's the case, congrats! You're now officially ready to start building your first Aragon DAO!
 
 If you're having trouble with this step, you should take a look at the installing aragonCLI section of the [troubleshooting guide.](https://hack.aragon.org/docs/guides-faq#installing-aragonCLI) If that doesn't fix things, please don't hesitate to reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
 
 ## Quick start
 
-In order to get up and running quickly, we’ll build our first DAO using some basic scaffolding [explain what scaffolding means] -- remember a DAO is just a combination of Aragon Apps... [elaborate...]
+In order to get up and running quickly, we’ll build our first DAO using some basic scaffolding. Just like real scaffolding in a construction site, when we talk about scaffolding in the context of code, we mean a simple prebuilt structure for your project, on top of which you can build the real one. Scaffolding relies on some generated code, magically created by the ```create-aragon-app``` command.
 
 To create our DAO run:
 
@@ -162,9 +162,7 @@ With respect to the third line, ```aragon run``` just sets up everything for us 
 
 N.B. If you're unsure what the difference is between ```npx``` and ```npm```, we recommend you read through this [medium post](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) and this [stackoverflow post.](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm)
 
-If you've made it this far congrats 🤗. You've just created your first DAO!
-
-It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
+If you've made it this far congrats 🤗. You've just created your first DAO! It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
 
 ### Interacting with your first DAO
 If it's not already open, open your browser at the localhost address shown in your terminal. It should look something like this:
