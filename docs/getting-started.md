@@ -125,7 +125,7 @@ For instructions on how to use Frame as your web3 provider, please take a look a
 
 #### Metamask 
 
-MetaMask is a browser plugin that allows users to make Ethereum transactions through regular websites. It does this by injecting a javascript library called web3.js into the namespace of each page your browser loads. web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests to the blockchain.
+MetaMask is a browser plugin that allows users to make Ethereum transactions through regular websites. It does this by injecting a javascript library called web3.js into the namespace of each page your browser loads. web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests to the blockchain. Eventually we'll have browsers with this sort of functionality built-in. But for now we need plugins like Metamask to help us bridge the gap between web2 and web3.
 
 For instructions on how to use Metamask as your web3 provider, please take a look at our Metamask guide. [link to metamask guide]
 
