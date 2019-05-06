@@ -27,7 +27,8 @@
       "cli-global-confg"
     ],
     "aragonPM": [
-      "apm",
+      "apm-intro",
+      "apm-architecture",
       "apm-ref"
     ],
     "aragonOS": [
@@ -58,7 +59,9 @@
       "aragonui-intro"
     ],
     "App Center": [
-      "app-center-preparing-assets"
+      "app-center-intro",
+      "app-center-preparing-assets",
+      "app-center-submission"
     ]
   },
   "docs-api": {

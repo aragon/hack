@@ -14,19 +14,19 @@ aragonPM is built from three aragonOS-powered applications:
 
 ## APMRegistry
 
-### ENSSubdomainRegistrar
-
-Upon initialization, ownership of the ENS name that the APMRegistry operates is transferred to the ENSSubdomainRegistrar app that is installed in the DAO. In our deployments, we ensure this is completed on deployment through a APMRegistryFactory contract that assigns the APMRegistry the ENSSubdomainRegistrar's `POINT_ROOTNODE_ROLE` and then calls `initialize()` on the APMRegistry.
-
-The APMRegistry also needs to have permissions for the ENSSubdomainRegistrar's `CREATE_NAME_ROLE` in order to create new names, which is done every time a repo is created.
-
----
-
 ### APMRegistry governance
 
 Each instance of an APMRegistry can have a different governance model. Governance of a registry is enforced directly using the DAO's ACL.
 
 By default a new repo will set the creator (or `dev` param) as the owner of the repo and it is the only address that can create new versions in the repo. However, as the permission manager, this account can grant the permission to create versions to other entities. These entities can be anything from another dev to a multisig or a full blown DAO.
+
+### ENSSubdomainRegistrar
+
+Aragon app with the logic and permissions to add and delete subdomains to the ENS domain owned by the APMRegistry DAO.
+
+Upon initialization, ownership of the ENS name that the APMRegistry operates is transferred to the ENSSubdomainRegistrar app that is installed in the DAO. In our deployments, we ensure this is completed on deployment through a APMRegistryFactory contract that assigns the APMRegistry the ENSSubdomainRegistrar's `POINT_ROOTNODE_ROLE` and then calls `initialize()` on the APMRegistry.
+
+The APMRegistry also needs to have permissions for the ENSSubdomainRegistrar's `CREATE_NAME_ROLE` in order to create new names, which is done every time a repo is created.
 
 ---
 
@@ -80,7 +80,7 @@ After the ACL check, the Repo logic checks whether the version upgrade is allowe
 
 The initial version of an app must be a valid bump from version `0.0.0`.
 
-By having this check performed at the smart contract level we can load the correct version of the frontend just by looking at an instance of an app. This is done by checking that the version of a smart contract is linked to a given app by getting its `appId` and `appCode` (see section below *By latest contract address*).
+By having this check performed at the smart contract level we can load the correct version of the frontend just by looking at an instance of an app. This is done by checking that the version of a smart contract is linked to a given app by getting its `appId` and `appCode` (see section below _By latest contract address_).
 
 ---
 
