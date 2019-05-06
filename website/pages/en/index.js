@@ -328,7 +328,7 @@ const UseCaseCard = styled.div`
 const SecondaryNavbar = props => (
   <div className="secondary-navbar">
     <div className="secondary-container">
-      <a className="secondary-item" href={docUrl('apm')}>
+      <a className="secondary-item" href={docUrl('apm-intro')}>
         <img src={imgUrl('navbar/aragon-pm.svg')} />
         <h6>aragonPM</h6>
       </a>

@@ -27,7 +27,8 @@
       "cli-global-confg"
     ],
     "aragonPM": [
-      "apm",
+      "apm-intro",
+      "apm-architecture",
       "apm-ref"
     ],
     "aragonOS": [
