@@ -90,7 +90,7 @@ contract MyFancyApp is App {
 
 ## Roles and the Access Control List
 
-aragonOS comes with a powerful [Access Control List (ACL)](/docs/acl-intro.html) that apps can leverage for protecting functionality behind permissions. Rather than coding any custom access control logic into your app, such as the infamous `onlyOwner`, you can just protect functions by adding the `auth()` or `authP()` modifiers.
+aragonOS comes with a powerful [Access Control List (ACL)](/docs/acl-intro) that apps can leverage for protecting functionality behind permissions. Rather than coding any custom access control logic into your app, such as the infamous `onlyOwner`, you can just protect functions by adding the `auth()` or `authP()` modifiers.
 
 If the `auth()` modifier is present in a function it will check with the connected Kernel's ACL whether the entity performing the call is allowed to perform the action in the app prior to its execution.
 
@@ -216,12 +216,13 @@ If a function has a token parameter, but you would like to handle ETH as well as
 
 #### Representing time
 
-As it is unlikely we'll ever need to worry about `uint256`-precision for UNIX timestamps (in seconds) or blocks (in ~15s intervals), we generally cast these values down to `uint64`s so we can pack them to save gas. aragonOS provides `TimeHelpers` and `Uint256Helpers` as utility contracts for obtaining these values safely.
+As it is unlikely we'll ever need to worry about `uint256`-precision for UNIX timestamps (in seconds) or blocks (in ~15s intervals), we generally cast these values down to `uint64`s so we can pack them to save gas. aragonOS provides [`TimeHelpers`](docs/common_TimeHelpers) and [`Uint256Helpers`](docs/common_Uint256Helpers) as utility contracts for obtaining these values safely.
 
 ### Safety conveniences
 
-`SafeERC20` is available as of `@aragon/os@4.1.0` as a generic library to smooth out ERC20 token
-interactions. In particular, it adds the ability to transparently handle [tokens that don't return properly](https://github.com/sec-bit/awesome-buggy-erc20-tokens/blob/master/ERC20_token_issue_list.md#b1-transfer-no-return) as well as adding `staticcall` variants for common read-only interfaces in tokens.
+As of `@aragon/os@4.1.0`, [`SafeERC20`](docs/common_SafeERC20) is available as a generic library to smooth out ERC20 token interactions. In particular, it adds the ability to transparently handle [tokens that don't return properly](https://github.com/sec-bit/awesome-buggy-erc20-tokens/blob/master/ERC20_token_issue_list.md#b1-transfer-no-return) as well as adding `staticcall` variants for common read-only interfaces in tokens.
+
+As of `@aragon/os@4.2.0`, a `ReentrancyGuard` has been built into `AragonApp` to prevent exposed app functionality from facing re-entrancy problems. See [the aragonOS reference documentation](/docs/aragonos-ref#re-entrancy-protection) for more information on making use of it.
 
 ### UNIX philosophy
 
