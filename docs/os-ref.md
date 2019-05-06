@@ -510,6 +510,26 @@ function getEVMScriptRegistry() public view returns (IEVMScriptRegistry);
 
 For more information on the use cases for EVMScripts, see the following [Forwarders and EVMScripts](#forwarders-and-evmscripts) section.
 
+#### Re-entrancy protection
+
+AragonApp comes with a built-in re-entrancy guard, easily usable through the `nonReentrant` modifier:
+
+```solidity
+function nonReentrantFunction() external nonReentrant {
+}
+```
+
+It's use is recommended as a last resort, for cases where there are no better options for protecting against re-entrancy.
+
+Most commonly, you may want to apply this modifier to functions that fulfill these requirements:
+
+- Externally available and is state changing
+- Invokable by non-trusted contracts or accounts
+- Not already protected by a role
+- There exist more than one of these functions
+
+A contrived example of this is if your app allows creating a recurring token payment to another account (protected via a role), but only the recipient account can modify certain parameters (e.g. when to withdraw payments, what token to withdraw). If the withdraw and token selection functions are separately available, they may benefit from being `nonReentrant`.
+
 ### API documentation
 
 See [AragonApp](/docs/apps_AragonApp.html).
