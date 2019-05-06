@@ -201,11 +201,17 @@ Click on Counter to open up the (slightly) more interesting Counter app.
 
 ## Next steps
 
-We hope you enjoyed that 😊! Please don't hesitate to leave us any feedback *[insert link].*
+We hope you enjoyed that 😊! Please don't hesitate to leave us any [feedback](https://aragon.chat/channel/feedback).
 
-Now that you’ve built your first DAO, feel free to take a look at the docs. If you're interested in understanding things at a deeper level, we recommend you jump straight into our awesome [tutorial](/docs/tutorial.html).
+Now that you’ve built your first DAO, feel free to take a look at the docs. If you're interested in understanding things at a deeper level, we recommend you jump straight into our [awesome tutorial](/docs/tutorial.html).
 
-P.S. You should find that there is a light blue EDIT button in the top-right corner of every page. If you feel like you can improve our documentation in any way, please don't hesitate to click on it. Once you click on it, you'll be taken to a github copy of the page. On that page you should see a small pencil icon somewhere on the right. Click on it to start.
+## Contributing
 
-P.P.S. Before you submit any changes, you should read our [contribution guidelines.](https://github.com/aragon/hack/blob/master/CONTRIBUTING.md)
+You should find that there is a light blue EDIT button in the top-right corner the page. This button is available on every page of the Aragon docs. If you feel like you can improve our documentation in any way, please don't hesitate to click on it!
+
+If you don't have any programming experience or if this is your first time contributing to an open-source project, don't worry. We've created a [contributing tutorial](https://medium.com/@sachastleger_80263/aragon-developer-docs-your-first-github-edit-c6d429268132) just for you 😊.
+
+P.S. Before you submit any changes, make sure to read our [contribution guidelines.](https://github.com/aragon/hack/blob/master/CONTRIBUTING.md)
+
+
 
