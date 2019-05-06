@@ -14,8 +14,6 @@ aragonPM is built from three aragonOS-powered applications:
 
 ## APMRegistry
 
-Aragon Package Manager DAO configured with a customizable set of Aragon apps that allow governance of a [ENS](https://docs.ens.domains) domain.
-
 ### APMRegistry governance
 
 Each instance of an APMRegistry can have a different governance model. Governance of a registry is enforced directly using the DAO's ACL.
