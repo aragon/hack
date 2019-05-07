@@ -8,6 +8,10 @@ sidebar_label: Troubleshooting
 
 ## Installing aragonCLI
 
+### Linux considerations
+
+If you're seeing several errors (e.g. `node-gyp rebuild`) it's probably cause you need to run node long term support (LTS) version, currently `10.15.3`.
+
 ### Mac considerations
 
 If you're seeing one or more errors that look like:
