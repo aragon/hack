@@ -138,8 +138,6 @@ const siteConfig = {
     const insertStylesAt = html.lastIndexOf('</body>')
     return `
       <!DOCTYPE html>
-      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css"/>
-      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hkgrotesklight" type="text/css">
       <script type="text/javascript">
         var _paq = _paq || [];
         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
