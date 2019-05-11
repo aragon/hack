@@ -15,7 +15,9 @@ The Aragon stack helps you develop software for **human organization**. From the
 
 But that's not all. Through the [Aragon Network](https://aragon.org/network), Aragon also serves as the **world's first digital jurisdiction**: a decentralized, community governed jurisdiction with it's own decentralized court system. The network complements the project by providing infrastructure and services to users of the Aragon platform.
 
-If you're new to this ecosystem, don't worry if some (or all) of that sounded a little abstract to you. You can think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of human organizations. Organizations that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to collaborate effectively.
+If you're new to this ecosystem, don't worry if some (or all) of that sounded a little abstract. You can think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of human organizations.
+
+Organizations that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to collaborate effectively.
 
 ![](/docs/assets/core.png)
 
@@ -25,11 +27,15 @@ If you're new to this ecosystem, don't worry if some (or all) of that sounded a 
 
 Many of us have  gone through the pain of setting up a corporate entity. Or felt like we've lacked the tools to collaborate with people all around the globe when we're building stuff we want to see in the world.
 
-Right now, the current system simply doesn't work. If you want to set up an organisation you have to go to lawyers, pay thousands of dollars, and all you get in return is a set of unintelligible pieces of paper that cost you more than months of development. On top of this, these pieces of paper don't enforce anything by themselves: they're more like an idea, or a concept.
+Right now, the current system simply doesn't work. If you want to set up an organisation you have to go to lawyers, pay thousands of dollars, and all you get in return is a set of unintelligible pieces of paper that cost you more than months of development.
+
+On top of this, these pieces of paper don't enforce anything by themselves: they're more like an idea, or a concept.
 
 If you try to explain this to a kid, you quickly realise how mad the current system seems to them. When you think about it, it's really impressive that the world functions the way it does with this sort of legacy framework and operating system underneath.
 
-At Aragon, we believe that decentralized autonomous organizations (DAOs) are the solution to this problem. What exactly is a DAO? There are many ways to describe a DAO, and knowledgable people may disagree on the precise definition. For our purposes, you can think of DAOs as flexible, global, and uncensorable online organizations.
+At Aragon, we believe that decentralized autonomous organizations (DAOs) are the solution to this problem. 
+
+What exactly is a DAO? There are many ways to describe a DAO, and knowledgable people may disagree on the precise definition. For our purposes, you can think of DAOs as flexible, global, and uncensorable online organizations.
 
 How does Aragon fit in? Aragon provides you with tools (apps) that make it easy for you to create DAOs -- you can think of Aragon apps as lego bricks that can be flexibly combined to make DAOs (the final lego structures).
 
@@ -81,7 +87,9 @@ While we won't get into the details here,the key takeaway is that cryptoeconomic
 
 > Note that there’s a spectrum from fully centralized (left) to fully decentralized (right).
 
-And while blockchains -- like Bitcoin and Ethereum -- are key to this web3 vision, it's important to note that there are other essential parts of the web3 stack that are not covered by them. For example, since blockchains are relatively expensive to store data on, it turns out that they don't make great file systems. That's why there's also a need for decentralized file systems like the [InterPlanetary File System](https://ipfs.io/) (which Aragon also makes use of).
+And while blockchains -- like Bitcoin and Ethereum -- are key to this web3 vision, it's important to note that there are other essential parts of the web3 stack that are not covered by them. 
+
+For example, since blockchains are relatively expensive to store data on, it turns out that they don't make great file systems. That's why there's also a need for decentralized file systems like the [InterPlanetary File System](https://ipfs.io/) (which Aragon also makes use of).
 
 
 ### Further reading
@@ -116,7 +124,9 @@ If you have a hardware wallet, we recommend you use [Frame](https://frame.sh) as
 
 If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why don't decentralized apps (like Aragon's) just do it themselves?
 
-In short, while it's possible for dapps to interact directly with the blockchain, using a web3 provider allows users to interact with dapps without trusting every one of them with their private keys (the keys to theirs funds). Without a web3 provider, users have to have total trust in every dapp they use. With a web3 provider, they just need to trust that provider.
+In short, while it's possible for dapps to interact directly with the blockchain, using a web3 provider allows users to interact with dapps without trusting every one of them with their private keys (the keys to theirs funds).
+
+Without a web3 provider, users have to have total trust in every dapp they use. With a web3 provider, they just need to trust that provider.
 
 
 #### Why we prefer Frame
@@ -138,7 +148,9 @@ For instructions on how to use Frame as your web3 provider, please follow our [F
 
 #### Metamask 
 
-MetaMask is a browser plugin that allows users to make Ethereum transactions through regular websites. It does this by injecting a javascript library called web3.js into the namespace of each page your browser loads. web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests to the blockchain. Eventually we'll have browsers with this sort of functionality built-in. But for now we need plugins like Metamask to help us bridge the gap between web2 and web3.
+MetaMask is a browser plugin that allows users to make Ethereum transactions through regular websites. It does this by injecting a javascript library called web3.js into the namespace of each page your browser loads.
+
+web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests to the blockchain. Eventually we'll have browsers with this sort of functionality built-in. But for now we need plugins like Metamask to help us bridge the gap between web2 and web3.
 
 For instructions on how to use Metamask as your web3 provider, please follow our Metamask guide.
 
