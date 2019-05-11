@@ -26,11 +26,7 @@
       "cli-ipfs-commands",
       "cli-global-confg"
     ],
-    "aragonPM": [
-      "apm-intro",
-      "apm-architecture",
-      "apm-ref"
-    ],
+    "aragonPM": ["apm-intro", "apm-architecture", "apm-ref"],
     "aragonOS": [
       "aragonos-intro",
       "aragonos-motivation",
@@ -45,19 +41,17 @@
         "type": "subcategory",
         "label": "JavaScript",
         "ids": [
-          "aragonjs-quick-start",
-          "aragonjs-ref-app",
-          "aragonjs-ref-react",
-          "aragonjs-ref-wrapper",
-          "aragonjs-ref-providers",
-          "aragonjs-ref-architecture",
-          "aragonjs-guide-bg-scripts"
+          "api-js-quick-start",
+          "api-js-ref-app",
+          "api-js-ref-react",
+          "api-js-ref-wrapper",
+          "api-js-ref-providers",
+          "api-js-ref-architecture",
+          "api-js-guide-bg-scripts"
         ]
       }
     ],
-    "aragonUI": [
-      "aragonui-intro"
-    ],
+    "aragonUI": ["aragonui-intro"],
     "App Center": [
       "app-center-intro",
       "app-center-preparing-assets",
@@ -105,10 +99,7 @@
       "common_UnstructuredStorage",
       "common_VaultRecoverable"
     ],
-    "ENS": [
-      "ens_ENSConstants",
-      "ens_ENSSubdomainRegistrar"
-    ],
+    "ENS": ["ens_ENSConstants", "ens_ENSSubdomainRegistrar"],
     "EVMSCRIPT": [
       "evmscript_EVMScriptRegistry",
       "evmscript_EVMScriptRunner",
