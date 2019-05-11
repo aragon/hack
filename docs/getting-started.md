@@ -110,19 +110,27 @@ If you need to download a more recent version, [see here](https://nodejs.org/en/
 
 Next, we'll need what we call a web3 provider to actually sign and send transactions to the Ethereum blockchain.
 
-We recommend either [Frame](https://frame.sh) or [Metamask](https://metamask.io/). *[talk briefly about the differences, why you might prefer one over the other]*
+If you have a hardware wallet, we recommend you use [Frame](https://frame.sh) as your web3 provider. Otherwise [MetaMask](https://metamask.io/) will do.
 
 If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why don't decentralized apps (like Aragon's) just do it themselves?
 
 In short, while it's possible for dapps to interact directly with the blockchain, using a web3 provider allows users to interact with dapps without trusting every one of them with their private keys (the keys to theirs funds). Without a web3 provider, users have to have total trust in every dapp they use. With a web3 provider, they just need to trust that provider.
 
+
+#### Why we prefer Frame
+
+- **Security.** Frame lives at the OS level. Whereas MetaMask lives at the browser level. This makes Frame more secure.
+  
+- **Flexibility.** Frame is flexible: it can support web dapps, desktop dapps, and even command line tools. Since MetaMask is a browser extension, it only supports web dapps.
+
+- **Decentralization.** Frame is a standalone application, so it's not dependent on a browser or extension store. This means that in the future, distribution and upgradeability of Frame can be fully decentralized. MetaMask on the other hand, is a browser extension, which means that distribution will always depend on a third-party.
+
+
 #### Frame 
 
->Frame is an OS-level Ethereum interface that lets you use standalone signers, such as a Ledger or Trezor, to interact with dapps and the Ethereum network. 
+>Frame is an Ethereum interface like MetaMask that aims to improve flexibility, security and decentralization by living at the OS-level. It isn’t dependent on a browser or extension store and works with any type of dapp: web, desktop and even command line. Frame currently supports macOS, Linux and Windows along with Ledger and Trezor hardware signers. [source](https://medium.com/@framehq/frame-security-audit-frm-01-7a90975992af)
 
-*[^ replace quotation with jargon free paragraph]*
-
-For instructions on how to use Frame as your web3 provider, please take a look at our Frame guide.
+For instructions on how to use Frame as your web3 provider, please follow our [Frame guide]().
 
 *[link to frame guide]*
 
@@ -130,7 +138,7 @@ For instructions on how to use Frame as your web3 provider, please take a look a
 
 MetaMask is a browser plugin that allows users to make Ethereum transactions through regular websites. It does this by injecting a javascript library called web3.js into the namespace of each page your browser loads. web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests to the blockchain. Eventually we'll have browsers with this sort of functionality built-in. But for now we need plugins like Metamask to help us bridge the gap between web2 and web3.
 
-For instructions on how to use Metamask as your web3 provider, please take a look at our Metamask guide.
+For instructions on how to use Metamask as your web3 provider, please follow our Metamask guide.
 
 *[link to metamask guide]*
 
