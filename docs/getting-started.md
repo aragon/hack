@@ -197,9 +197,9 @@ cd first_dao
 npx aragon run
 ```
 
-The first line ```cd first_dao``` just  moves us into the directory where the scaffolded app was created.
+The first line, ```cd first_dao```, just  moves us into the directory where the scaffolded app was created.
 
-With respect to the second line, ```aragon run``` just sets up everything for us in the background so we can quickly live test our DAO.
+And the second, ```aragon run```, sets up everything for us in the background so we can quickly live test our DAO.
 
 N.B. If you're unsure what the difference is between ```npx``` and ```npm```, we recommend you read through this [medium post](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) and this [stackoverflow post.](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm)
 
