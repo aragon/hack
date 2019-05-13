@@ -9,183 +9,33 @@
         "title": "Permissions",
         "sidebar_label": "Permissions"
       },
-      "acl_ACL": {
-        "title": "ACL"
-      },
-      "acl_ACLSyntaxSugar_ACLHelpers": {
-        "title": "ACLHelpers"
-      },
-      "acl_ACLSyntaxSugar": {
-        "title": "ACLSyntaxSugar"
-      },
-      "acl_IACL": {
-        "title": "IACL"
-      },
-      "acl_IACLOracle": {
-        "title": "IACLOracle"
-      },
-      "apm_APMNamehash": {
-        "title": "APMNamehash"
-      },
-      "apm_APMRegistry_APMInternalAppNames": {
-        "title": "APMInternalAppNames"
-      },
-      "apm_APMRegistry": {
-        "title": "APMRegistry"
-      },
-      "apm_Repo": {
-        "title": "Repo"
-      },
-      "apps_AppProxyBase": {
-        "title": "AppProxyBase"
-      },
-      "apps_AppProxyPinned": {
-        "title": "AppProxyPinned"
-      },
-      "apps_AppProxyUpgradeable": {
-        "title": "AppProxyUpgradeable"
-      },
-      "apps_AppStorage": {
-        "title": "AppStorage"
-      },
-      "apps_AragonApp": {
-        "title": "AragonApp"
-      },
-      "apps_UnsafeAragonApp": {
-        "title": "UnsafeAragonApp"
-      },
-      "common_Autopetrified": {
-        "title": "Autopetrified"
-      },
-      "common_ConversionHelpers": {
-        "title": "ConversionHelpers"
-      },
-      "common_DelegateProxy": {
-        "title": "DelegateProxy"
-      },
-      "common_DepositableDelegateProxy": {
-        "title": "DepositableDelegateProxy"
-      },
-      "common_DepositableStorage": {
-        "title": "DepositableStorage"
-      },
-      "common_EtherTokenConstant": {
-        "title": "EtherTokenConstant"
-      },
-      "common_IForwarder": {
-        "title": "IForwarder"
-      },
-      "common_Initializable": {
-        "title": "Initializable"
-      },
-      "common_IsContract": {
-        "title": "IsContract"
-      },
-      "common_IVaultRecoverable": {
-        "title": "IVaultRecoverable"
-      },
-      "common_Petrifiable": {
-        "title": "Petrifiable"
-      },
-      "common_ReentrancyGuard": {
-        "title": "ReentrancyGuard"
-      },
-      "common_SafeERC20": {
-        "title": "SafeERC20"
-      },
-      "common_TimeHelpers": {
-        "title": "TimeHelpers"
-      },
-      "common_Uint256Helpers": {
-        "title": "Uint256Helpers"
-      },
-      "common_UnstructuredStorage": {
-        "title": "UnstructuredStorage"
-      },
-      "common_VaultRecoverable": {
-        "title": "VaultRecoverable"
-      },
-      "ens_ENSConstants": {
-        "title": "ENSConstants"
-      },
-      "ens_ENSSubdomainRegistrar": {
-        "title": "ENSSubdomainRegistrar"
-      },
-      "evmscript_EVMScriptRegistry": {
-        "title": "EVMScriptRegistry"
-      },
-      "evmscript_EVMScriptRunner": {
-        "title": "EVMScriptRunner"
-      },
-      "evmscript_executors_BaseEVMScriptExecutor": {
-        "title": "BaseEVMScriptExecutor"
-      },
-      "evmscript_executors_CallsScript": {
-        "title": "CallsScript"
-      },
-      "evmscript_IEVMScriptExecutor": {
-        "title": "IEVMScriptExecutor"
-      },
-      "evmscript_IEVMScriptRegistry_EVMScriptRegistryConstants": {
-        "title": "EVMScriptRegistryConstants"
-      },
-      "evmscript_IEVMScriptRegistry": {
-        "title": "IEVMScriptRegistry"
-      },
-      "evmscript_ScriptHelpers": {
-        "title": "ScriptHelpers"
-      },
-      "factory_APMRegistryFactory": {
-        "title": "APMRegistryFactory"
-      },
-      "factory_AppProxyFactory": {
-        "title": "AppProxyFactory"
-      },
-      "factory_DAOFactory": {
-        "title": "DAOFactory"
-      },
-      "factory_ENSFactory": {
-        "title": "ENSFactory"
-      },
-      "factory_EVMScriptRegistryFactory": {
-        "title": "EVMScriptRegistryFactory"
-      },
-      "kernel_IKernel_IKernelEvents": {
-        "title": "IKernelEvents"
-      },
-      "kernel_IKernel": {
-        "title": "IKernel"
-      },
-      "kernel_Kernel": {
-        "title": "Kernel"
-      },
-      "kernel_KernelConstants_KernelAppIds": {
-        "title": "KernelAppIds"
-      },
-      "kernel_KernelConstants_KernelNamespaceConstants": {
-        "title": "KernelNamespaceConstants"
-      },
-      "kernel_KernelProxy": {
-        "title": "KernelProxy"
-      },
-      "kernel_KernelStorage": {
-        "title": "KernelStorage"
-      },
       "api-intro": {
         "title": "aragonAPI Introduction",
+        "sidebar_label": "Introduction"
+      },
+      "apm-architecture": {
+        "title": "aragonPM Architecture: Registries, Repos and versions",
+        "sidebar_label": "Architecture"
+      },
+      "apm-intro": {
+        "title": "aragonPM Introduction",
         "sidebar_label": "Introduction"
       },
       "apm-ref": {
         "title": "aragonPM reference documentation",
         "sidebar_label": "Reference documentation"
       },
-      "apm": {
-        "title": "aragonPM",
-        "sidebar_label": "Architecture"
+      "app-center-intro": {
+        "title": "App Center",
+        "sidebar_label": "Introduction"
       },
       "app-center-preparing-assets": {
-        "title": "App Center",
+        "title": "Preparing Assets for App Publishing",
         "sidebar_label": "Preparing assets"
+      },
+      "app-center-submission": {
+        "title": "Submitting Your App to the App Center",
+        "sidebar_label": "Submitting Your App to the App Center"
       },
       "cli-apm-commands": {
         "title": "aragonPM commands",
@@ -247,31 +97,31 @@
         "title": "Human readable transactions",
         "sidebar_label": "Human readable transactions"
       },
-      "aragonjs-guide-bg-scripts": {
+      "api-js-guide-bg-scripts": {
         "title": "Background Scripts",
         "sidebar_label": "Background Scripts"
       },
-      "aragonjs-ref-app": {
+      "api-js-ref-app": {
         "title": "aragonAPI for Javascript",
         "sidebar_label": "App API"
       },
-      "aragonjs-ref-architecture": {
+      "api-js-ref-architecture": {
         "title": "aragonAPI for architecture",
         "sidebar_label": "Architecture of apps"
       },
-      "aragonjs-ref-providers": {
+      "api-js-ref-providers": {
         "title": "aragonAPI for providers",
         "sidebar_label": "Providers"
       },
-      "aragonjs-quick-start": {
+      "api-js-quick-start": {
         "title": "Quick Start",
         "sidebar_label": "Quick Start"
       },
-      "aragonjs-ref-react": {
+      "api-js-ref-react": {
         "title": "aragonAPI for React",
         "sidebar_label": "React API"
       },
-      "aragonjs-ref-wrapper": {
+      "api-js-ref-wrapper": {
         "title": "aragonAPI for wrapper",
         "sidebar_label": "Wrapper"
       },
@@ -323,14 +173,7 @@
         "sidebar_label": "Upgradeability"
       }
     },
-    "links": {
-      "Get started": "Get started",
-      "Tutorial": "Tutorial",
-      "aragonOS": "aragonOS",
-      "aragonAPI": "aragonAPI",
-      "aragonUI": "aragonUI",
-      "Help": "Help"
-    },
+    "links": {},
     "categories": {
       "The basics": "The basics",
       "Guides": "Guides",

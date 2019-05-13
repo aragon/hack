@@ -13,7 +13,7 @@ Start by downloading Frame from the official website: https://frame.sh.
 After installation Frame stays quietly in your menu bar until it's needed.
 
 <p align="center">
-  <img width="240" height="535" src="/docs/assets/frame/frame-intro.mp4">
+  <img width="240" height="500" src="/docs/assets/frame/frame-intro.gif">
 </p>
 
 To take full advantage of Frame we recommend you have the `aragonCLI` installed as well. If you already have it, skip to the next section, otherwise ran:
@@ -31,7 +31,7 @@ npm install -g @aragon/cli
 On Ledger devices insert your pin on the device to unlock it and then open Frame.
 
 <p align="center">
-  <img width="240" height="500" src="/docs/assets/frame/frame-ledger.mp4">
+  <img width="240" height="500" src="/docs/assets/frame/frame-ledger.gif">
 </p>
 
 #####
@@ -41,7 +41,7 @@ On Ledger devices insert your pin on the device to unlock it and then open Frame
 On Trezor devices insert your pin directly on frame.
 
 <p align="center">
-  <img width="240" height="500" src="/docs/assets/frame/frame-trezor.mp4">
+  <img width="240" height="500" src="/docs/assets/frame/frame-trezor.gif">
 </p>
 
 #####
@@ -51,13 +51,13 @@ You are ready to select the network and account you would like to interact with.
 To choose the appropiate network select the button on the uper right corner (the one with the three arrows). This page is the app menu, here you can configure general settings for Frame. We will focus on the Connection option. Right now the default is Rinkeby but you can aslo choose Mainnet, Ropsten and Kovan. For this tutorial we will select Rinkeby.
 
 <p align="center">
-  <img width="240" height="500" src="/docs/assets/frame/frame-app-menu.mp4">
+  <img width="240" height="500" src="/docs/assets/frame/frame-app-menu.gif">
 </p>
 
 The last step is to choose your account, click on the configuration button, the one on the right, and then click on the accounts button that will pop up. This action will show you a new menu with the avaible accounts on your device for the network. Select one, be sure to have some test ether, get some on the [Rinkeby faucet](https://faucet.rinkeby.io) otherwise.
 
 <p align="center">
-  <img width="240" height="500" src="/docs/assets/frame/frame-accounts.mp4">
+  <img width="240" height="500" src="/docs/assets/frame/frame-accounts.gif">
 </p>
 
 In the configuration menu you can also manage the dapp permisions you have granted for that particular account. We will explain more about this on the next section.
@@ -85,13 +85,13 @@ After you ran the command you will see an error message on the terminal:
 No worry, we need to grant permissions to the `aragonCLI` on Frame. Probably you already saw Frame asking for this. Accept the request to continue.
 
 <p align="center">
-  <img width="240" height="500" src="/docs/assets/frame/frame-permissions.mp4">
+  <img width="240" height="500" src="/docs/assets/frame/frame-permissions.gif">
 </p>
 
 Next ran the command again. This time Frame will ask you to sign the transaction that the `aragonCLI` have generated, then confirm it in your device. A couple of seconds later the transaction will be mined.
 
 <p align="center">
-  <img width="240" height="500" src="/docs/assets/frame/frame-first-tx.mp4">
+  <img width="240" height="500" src="/docs/assets/frame/frame-first-tx.gif">
 </p>
 
 Congratulation 🎉 you just sign a transaction with Frame. Open the browser and see the minted `FRAME` tokens for the address you choose. [Follow this link](https://rinkeby.aragon.org/#/0x16b3C84d4DB149590981F2d3A36e14Db96069730/0x1a8d8bb7eb5ac6e6f51df5e65d301c7e5dd00d58).
@@ -99,7 +99,7 @@ Congratulation 🎉 you just sign a transaction with Frame. Open the browser and
 Also view the transaction on etherscan clicking on view details.
 
 <p align="center">
-  <img width="240" height="500" src="/docs/assets/frame/frame-view-tx.mp4">
+  <img width="240" height="500" src="/docs/assets/frame/frame-view-tx.gif">
 </p>
 
 ## Next steps
