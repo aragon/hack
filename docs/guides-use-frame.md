@@ -102,7 +102,7 @@ Next ran the command again. This time Frame will ask you to sign the transaction
   <img width="240" height="500" src="/docs/assets/frame/frame-first-tx.gif">
 </p>
 
-Congratulation 🎉 you just sign a transaction with Frame. Open the browser and see the minted `FRAME` tokens for the address you choose. [Follow this link](https://rinkeby.aragon.org/#/0x16b3C84d4DB149590981F2d3A36e14Db96069730/0x1a8d8bb7eb5ac6e6f51df5e65d301c7e5dd00d58).
+Congratulation 🎉 you just sign a transaction with Frame. Open the browser and see the minted `FRAME` tokens for the address you choose one the live Aragon DAO on rinkeby. [Follow this link](https://rinkeby.aragon.org/#/0x16b3C84d4DB149590981F2d3A36e14Db96069730/0x1a8d8bb7eb5ac6e6f51df5e65d301c7e5dd00d58).
 
 #### View
 
