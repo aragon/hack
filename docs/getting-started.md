@@ -142,9 +142,7 @@ Without a web3 provider, users have to have total trust in every dapp they use. 
 
 >Frame is an Ethereum interface like MetaMask that aims to improve flexibility, security and decentralization by living at the OS-level. It isn’t dependent on a browser or extension store and works with any type of dapp: web, desktop and even command line. Frame currently supports macOS, Linux and Windows along with Ledger and Trezor hardware signers. [source](https://medium.com/@framehq/frame-security-audit-frm-01-7a90975992af)
 
-For instructions on how to use Frame as your web3 provider, please follow our [Frame guide]().
-
-*[link to frame guide]*
+For instructions on how to use Frame as your web3 provider, please follow our [Frame guide](/docs/guides-use-frame.html).
 
 #### Metamask 
 
