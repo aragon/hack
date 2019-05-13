@@ -13,7 +13,7 @@ Start by downloading Frame from the official website: https://frame.sh.
 After installation Frame stays quietly in your menu bar until it's needed.
 
 <p align="center">
-  <img width="240" height="535" src="/docs/assets/frame/frame-intro.mp4">
+  <img width="240" height="500" src="/docs/assets/frame/frame-intro.mp4">
 </p>
 
 To take full advantage of Frame we recommend you have the `aragonCLI` installed as well. If you already have it, skip to the next section, otherwise ran:
