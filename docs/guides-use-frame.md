@@ -4,13 +4,11 @@ title: How to use Frame
 sidebar_label: How to use Frame
 ---
 
-This guide will help you to get started with Frame and interact with your DAO using a hardware wallet. If you don't have a DAO yet create one following: [Your first Aragon app tutorial](tutorial.md).
+This guide will help you to get started with Frame and interact with a DAO using a hardware wallet.
 
 ## Setup
 
-Start by downloading Frame from the official website: https://frame.sh.
-
-After installation Frame stays quietly in your menu bar until it's needed.
+Start by downloading Frame from the official website: https://frame.sh. After installation Frame stays quietly in your menu bar until it's needed.
 
 <p align="center">
   <img width="240" height="500" src="/docs/assets/frame/frame-intro.gif">
@@ -34,17 +32,13 @@ On Ledger devices insert your pin on the device to unlock it and then open Frame
   <img width="240" height="500" src="/docs/assets/frame/frame-ledger.gif">
 </p>
 
-#####
-
 #### Trezor
 
-On Trezor devices insert your pin directly on frame.
+On Trezor devices insert your pin directly on Frame.
 
 <p align="center">
   <img width="240" height="500" src="/docs/assets/frame/frame-trezor.gif">
 </p>
-
-#####
 
 You are ready to select the network and account you would will use.
 
@@ -70,7 +64,7 @@ Now that we finish setting up the device we are ready to sign our first transact
 
 ## Signing your first transaction
 
-On this section we are going to interact with an already deployed DAO on rinkeby that allow anyone to mint any amount of `FRAME` tokens to any address. We will use an `aragonCLI` command to execute a function on the `token-manager` app of the DAO. You might find helpful to [learn more about `dao exec` command](https://hack.aragon.org/docs/cli-dao-commands#dao-exec) before continue.
+On this section we are going to interact with an already [deployed DAO on rinkeby](https://rinkeby.aragon.org/#/0x16b3C84d4DB149590981F2d3A36e14Db96069730/) that allow anyone to mint any amount of `FRAME` tokens to any address. We will use an `aragonCLI` command to execute a function on the `token-manager` app of the DAO. You might find helpful to [learn more about `dao exec` command](https://hack.aragon.org/docs/cli-dao-commands#dao-exec) before continue.
 
 The first step is to ran the command on the terminal:
 
@@ -78,7 +72,7 @@ The first step is to ran the command on the terminal:
 dao exec 0x16b3C84d4DB149590981F2d3A36e14Db96069730 0x1A8D8BB7eB5aC6E6F51dF5E65d301c7e5dD00D58 mint <address> <amount> --environment aragon:rinkeby --use-frame
 ```
 
-Under `<address>` input an address of your choice and under `<amount>` provide the amount of tokens you would like to mint for the address. The arguments `--environments` and `--use-frame` tell the `aragonCLI` that we want to interact with rinkeby and we will use Frame as signer.
+Under `<address>` input an address of your choice and under `<amount>` provide the amount of tokens you would like to mint for the address. The options `--environments` and `--use-frame` tell the `aragonCLI` that we want to interact with rinkeby and we will use Frame as signer.
 
 #### Permissions
 
@@ -88,7 +82,7 @@ After you ran the command you will see an error message on the terminal:
 ✖ Returned error: Permission denied, approve AragonCLI in Frame to continue
 ```
 
-No worry, we need to grant permissions to the `aragonCLI` on Frame. Probably you already saw Frame asking for this. Accept the request to continue.
+No worry, we need to grant permissions to the `aragonCLI` on Frame. Probably you already saw Frame asking for this. Approve the request to continue.
 
 <p align="center">
   <img width="240" height="500" src="/docs/assets/frame/frame-permissions.gif">
@@ -102,11 +96,11 @@ Next ran the command again. This time Frame will ask you to sign the transaction
   <img width="240" height="500" src="/docs/assets/frame/frame-first-tx.gif">
 </p>
 
-Congratulation 🎉 you just sign a transaction with Frame. Open the browser and see the minted `FRAME` tokens for the address you choose one the live Aragon DAO on rinkeby. [Follow this link](https://rinkeby.aragon.org/#/0x16b3C84d4DB149590981F2d3A36e14Db96069730/0x1a8d8bb7eb5ac6e6f51df5e65d301c7e5dd00d58).
+Congratulation 🎉 you just sign a transaction with Frame. Open the browser and see the minted `FRAME` tokens for the address you choose on the live Aragon DAO on rinkeby. [Follow this link](https://rinkeby.aragon.org/#/0x16b3C84d4DB149590981F2d3A36e14Db96069730/0x1a8d8bb7eb5ac6e6f51df5e65d301c7e5dd00d58).
 
 #### View
 
-Frame show you the transaction on etherscan clicking on the view details button.
+Frame also show you the transaction on etherscan clicking on the view details button.
 
 <p align="center">
   <img width="240" height="500" src="/docs/assets/frame/frame-view-tx.gif">
