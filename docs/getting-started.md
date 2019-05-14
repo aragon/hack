@@ -233,9 +233,13 @@ Click on Counter to open up the (slightly) more interesting Counter app.
 
 ![](/docs/assets/getting-started-dao-2.png)
 
+Right now the count is at 0. Let's increment it. 
+
+Note that incrementing the counter triggers a blockchain transaction that saves the new value to the chain. But before the transaction can be sent, we need to sign it (to prove it was us that really sent it).
+
 #### Signing your first transaction with Metamask
 
-*[link to relevant section of metamask guide]*
+To sign your first transaction with Metamask, head to the **Signing your first transaction with Metamask** section of our [Metamask guide](/docs/guides-use-metamask.html).
 
 #### Signing your first transaction with Frame
 
