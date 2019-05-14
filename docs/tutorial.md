@@ -4,7 +4,7 @@ title: Your first Aragon app
 sidebar_label: Your first Aragon app
 ---
 
-##### 
+#####
 
 
 In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), the JavaScript implementation of [aragonAPI](api-intro.md), [aragonUI](ui-intro.md) and [aragonCLI](/docs/cli-intro.html).
@@ -175,15 +175,11 @@ app.store(async (state, event) => {
   }
 })
 
-function getValue() {
+async function getValue() {
   // Get current value from the contract by calling the public getter
-  return new Promise(resolve => {
-    app
-      .call('value')
-      .first()
-      .map(value => parseInt(value, 10))
-      .subscribe(resolve)
-  })
+  // app.call() returns a single-emission observable that we can immediately turn into a promise
+  const value = await app.call('value').toPromise()
+  return parseInt(value, 10)
 }
 ```
 
