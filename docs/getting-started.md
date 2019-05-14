@@ -150,9 +150,7 @@ MetaMask is a browser plugin that allows users to make Ethereum transactions thr
 
 web3.js is written by the Ethereum core team, and has functions that regular webpages can use to make read and write requests to the blockchain. Eventually we'll have browsers with this sort of functionality built-in. But for now we need plugins like Metamask to help us bridge the gap between web2 and web3.
 
-For instructions on how to use Metamask as your web3 provider, please follow our Metamask guide.
-
-*[link to metamask guide]*
+For instructions on how to use Metamask as your web3 provider, please follow our [Metamask guide](/docs/guides-use-metamask.html).
 
 
 ### The aragonCLI
