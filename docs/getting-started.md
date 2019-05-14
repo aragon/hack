@@ -92,9 +92,19 @@ And while blockchains -- like Bitcoin and Ethereum -- are key to this web3 visio
 For example, since blockchains are relatively expensive to store data on, it turns out that they don't make great file systems. That's why there's also a need for decentralized file systems like the [InterPlanetary File System](https://ipfs.io/) (which Aragon also makes use of).
 
 
-### Further reading
-...
+### Further resources
 
+- [DAOs and the Web3 vision](https://www.youtube.com/watch?v=YG3a5ihbkAQ)
+- [The Aragon Manifesto](https://blog.aragon.org/the-aragon-manifesto-4a21212eac03/)
+- [The Aragon Whitepaper](https://github.com/aragon/whitepaper)
+- [Aragon Black: #1 White paper & Manifesto](https://blog.aragon.black/white-paper-manifesto/)
+- [Can Aragon make decentralized autonomous governance work](https://breakermag.com/can-aragon-make-decentralized-autonomous-governance-work/)
+- [Why The Internet Needs IPFS Before It’s Too Late](https://techcrunch.com/2015/10/04/why-the-internet-needs-ipfs-before-its-too-late/)
+- [A hands-on introduction to IPFS](https://medium.com/coinmonks/a-hands-on-introduction-to-ipfs-ee65b594937)
+- [Blockchain infrastructure landscape: a first principles framing](https://medium.com/@trentmc0/blockchain-infrastructure-landscape-a-first-principles-framing-92cc5549bafe)
+- [The case for decentralization](https://a16zcrypto.com/2019/04/why-work-in-crypto-startup-grind-2019/)
+- [What comes after open source?](https://a16zcrypto.com/2019/01/what-comes-after-open-source/)
+- [Fat protocols](http://www.usv.com/blog/fat-protocols)
 
 # Up and running
 
