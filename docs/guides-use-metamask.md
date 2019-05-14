@@ -36,7 +36,9 @@ Follow the instructions carefully. They should be pretty self-explanatory. 
 Once your MetaMask setup is complete, you should be redirected to your newly created Ethereum wallet.
 
 
+
 ![](/docs/assets/metamask-guide/m-1.png)
+
 
 
 If you've made it this far, congratulations 🎉. 
@@ -46,7 +48,7 @@ You now have all you need to sign transactions and interact directly with the Et
 
 # A couple of useful points
 
-While at this stage there's no need for you to understand everything about MetaMask, here are a couple of useful points.
+While at this stage there's no need for you to understand everything about Metamask, here are a couple of useful points.
 
 
 ### Selected networks
@@ -99,16 +101,16 @@ This will open up an interface to your Ethereum wallet.
 
 ![](/docs/assets/metamask-guide/m-5.png)
 ![](/docs/assets/metamask-guide/m-6.png)
-
+  
 Click on the circle in the top right.
 
 ![](/docs/assets/metamask-guide/m-7.png)
-
-You should see a black drop down menu appear.
+  
+You should see a black drop down menu appear.  
 
 ![](/docs/assets/metamask-guide/m-8.png)
 
-Click on the **Log out** button in the top right. You'll be taken to a Welcome Back page.
+Click on the **Log out** button in the top right of this menu. You'll be taken to a Welcome Back page.
 
 ![](/docs/assets/metamask-guide/m-9.png)
 
