@@ -130,7 +130,7 @@ If you need to download a more recent version, [see here](https://nodejs.org/en/
 
 Next, we'll need what we call a web3 provider to actually sign and send transactions to the Ethereum blockchain.
 
-If you have a hardware wallet, we recommend you use [Frame](https://frame.sh) as your web3 provider. Otherwise [MetaMask](https://metamask.io/) will do.
+In general, if you have a hardware wallet, we recommend you use [Frame](https://frame.sh) as your web3 provider -- we'll go over how to do this in the [tutorial](/docs/github-guide.html) that follows. To interact with the app in this section however, we'll be using [Metamask](https://metamask.io/).
 
 If you're new to the decentralized web you might be wondering why we have to use a separate provider to interact with the blockchain. Why don't decentralized apps (like Aragon's) just do it themselves?
 
@@ -138,21 +138,6 @@ In short, while it's possible for dapps to interact directly with the blockchain
 
 Without a web3 provider, users have to have total trust in every dapp they use. With a web3 provider, they just need to trust that provider.
 
-
-#### Why we prefer Frame
-
-- **Security.** Frame lives at the OS level. Whereas MetaMask lives at the browser level. This makes Frame more secure.
-  
-- **Flexibility.** Frame is flexible: it can support web dapps, desktop dapps, and even command line tools. Since MetaMask is a browser extension, it only supports web dapps.
-
-- **Decentralization.** Frame is a standalone application, so it's not dependent on a browser or extension store. This means that in the future, distribution and upgradeability of Frame can be fully decentralized. MetaMask on the other hand, is a browser extension, which means that distribution will always depend on a third-party.
-
-
-#### Frame 
-
->Frame is an Ethereum interface like MetaMask that aims to improve flexibility, security and decentralization by living at the OS-level. It isn’t dependent on a browser or extension store and works with any type of dapp: web, desktop and even command line. Frame currently supports macOS, Linux and Windows along with Ledger and Trezor hardware signers. [source](https://medium.com/@framehq/frame-security-audit-frm-01-7a90975992af)
-
-For instructions on how to use Frame as your web3 provider, please follow our [Frame guide](/docs/guides-use-frame.html).
 
 #### Metamask 
 
@@ -241,9 +226,6 @@ Note that incrementing the counter triggers a blockchain transaction that saves 
 
 To sign your first transaction with Metamask, head to the **Signing your first transaction with Metamask** section of our [Metamask guide](/docs/guides-use-metamask.html).
 
-#### Signing your first transaction with Frame
-
-*[link to relevant section of frame guide]*
 
 ## Next steps
 
