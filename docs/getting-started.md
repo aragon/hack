@@ -255,7 +255,7 @@ Now that you’ve built your first DAO, feel free to take a look at the docs. If
 
 You should find that there is a light blue EDIT button in the top-right corner the page. This button is available on every page of the Aragon docs. If you feel like you can improve our documentation in any way, please don't hesitate to click on it!
 
-If you don't have any programming experience or if this is your first time contributing to an open-source project, don't worry. We've created a [contributing tutorial](/docs/github-guide.html) just for you 😊.
+If you don't have any programming experience or if this is your first time contributing to an open-source project, don't worry. We've created a [GitHub guide](/docs/github-guide.html) just for you 😊.
 
 P.S. Before you submit any changes, make sure to read our [contribution guidelines.](https://github.com/aragon/hack/blob/master/CONTRIBUTING.md)
 
