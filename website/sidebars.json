@@ -16,6 +16,11 @@
       "tutorial",
       "guides-publish",
       "guides-custom-deploy",
+      {
+        "type": "subcategory",
+        "label": "Signers",
+        "ids": ["guides-use-frame", "guides-use-metamask"]
+      },
       "guides-faq"
     ],
     "aragonCLI": [

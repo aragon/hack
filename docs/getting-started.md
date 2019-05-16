@@ -12,12 +12,6 @@ These tools help people freely organize **across borders** and **without interme
 
 The Aragon stack helps you develop software for **human organization**. From the smart contracts to the user interface, Aragon takes care of the most important pieces of infrastructure to deliver censorship-resistant, decentralized and upgradeable apps.
 
-<!--
-    Uncomment section once the court is ready
-
-But that's not all. Through the [Aragon Network](https://aragon.org/network), Aragon also serves as the **world's first digital jurisdiction**: a decentralized, community governed jurisdiction with it's own decentralized court system. The network complements the project by providing infrastructure and services to users of the Aragon platform.
--->
-
 If you're new to this ecosystem, don't worry if some (or all) of that sounded a little abstract. You can think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of human organizations.
 
 Organizations that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to collaborate effectively.
@@ -134,7 +128,7 @@ In short, while it's possible for dapps to interact directly with the blockchain
 
 Without a web3 provider, users have to have total trust in every dapp they use. With a web3 provider, they just need to trust that provider.
 
-> In general, if you have a hardware wallet, we recommend you use [Frame](https://frame.sh) as your web3 provider -- we'll go over how to do this in the [tutorial](/docs/github-guide.html) that follows. To interact with the app in this section however, we'll be using [Metamask](https://metamask.io/).
+> In general, if you have a hardware wallet, we recommend you use [Frame](https://frame.sh) as your web3 provider -- we'll go over how to do this in the [tutorial](/docs/guides-github.html) that follows. To interact with the app in this section however, we'll be using [Metamask](https://metamask.io/).
 
 #### Metamask
 
@@ -156,7 +150,7 @@ npm i -g @aragon/cli
 
 Hopefully, it downloaded successfully. If that's the case, congrats! You're now officially ready to start building your first Aragon DAO!
 
-If you're having trouble with this step, you should take a look at the installing aragonCLI section of the [troubleshooting guide.](https://hack.aragon.org/docs/guides-faq#installing-aragonCLI) If that doesn't fix things, please don't hesitate to reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
+If you're having trouble with this step, you should take a look at the installing aragonCLI section of the [troubleshooting guide.](/docs/guides-faq#installing-aragonCLI) If that doesn't fix things, please don't hesitate to reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
 
 ## Quick start
 
@@ -168,7 +162,7 @@ To create your first (scaffolded) DAO, from the command line run:
 npx create-aragon-app first-dao.aragonpm.eth
 ```
 
-Don't worry about fully understanding this line right now. Really. We'll cover that in the [tutorial](https://hack.aragon.org/docs/tutorial.html) coming up. Right now, you just need to know that the scaffolding relies on some generated code, magically created by the `create-aragon-app` command.
+Don't worry about fully understanding this line right now. Really. We'll cover that in the [tutorial](/docs/tutorial.html) coming up. Right now, you just need to know that the scaffolding relies on some generated code, magically created by the `create-aragon-app` command.
 
 If you look at your terminal, you should see a five step process:
 
@@ -242,6 +236,6 @@ Now that you’ve built your first DAO, feel free to take a look at the docs. If
 
 You should find that there is a light blue EDIT button in the top-right corner the page. This button is available on every page of the Aragon docs. If you feel like you can improve our documentation in any way, please don't hesitate to click on it!
 
-If you don't have any programming experience or if this is your first time contributing to an open-source project, don't worry. We've created a [GitHub guide](/docs/github-guide.html) just for you 😊.
+If you don't have any programming experience or if this is your first time contributing to an open-source project, don't worry. We've created a [GitHub guide](/docs/guides-github.html) just for you 😊.
 
 P.S. Before you submit any changes, make sure to read our [contribution guidelines.](https://github.com/aragon/hack/blob/master/CONTRIBUTING.md)
