@@ -1,10 +1,6 @@
----
-id: github-guide
-title: GitHub Guide
-sidebar_label: GitHub Guide
----
+# GitHub guide for contributors
 
-# An introduction to Git and GitHub ?
+## An introduction to Git and GitHub
 
 Git is a system that enables thousands of people to work together on projects without central coordination.
 
@@ -13,13 +9,14 @@ Because of how useful this is, Git has a whole ecosystem built around it. You ca
 GitHub is a site optimized for hosting and sharing Git repositories (repositories are just a fancy name for projects). And while you don't strictly need GitHub to use Git, you'll find that it makes your life considerably easier.
 
 At Aragon we choose to put a copy of our Git repository on GitHub for three reasons:
+
 1. It's a full backup of our code (including the full history of changes).
 
 1. It has an excellent User Interface that makes future collaboration easy.
 
 1. It offers convenient ways to browse and search through our codebase.
 
-# Editing a document on GitHub
+## Editing a document on GitHub
 
 Now that you have a high-level overview of both Git and GitHub, we're ready to cover how to edit a document.
 
@@ -37,7 +34,7 @@ Click on it. You'll be taken to a GitHub copy of the page.
 
 You should see a small pencil icon on the right. When you hover over it, it will turn blue, and you'll see a small tooltip appear above it with the words:
 
->Edit the file in your fork of this project
+> Edit the file in your fork of this project
 
 ![](/docs/assets/github-guide/gh-2.png)
 
@@ -75,13 +72,13 @@ If you're new to it, we recommend reading through this quick [Markdown guide](ht
 
 Really, it'll take you 3 minutes, and will give you a much better understanding of the structure of the document we are about to edit.
 
-# Your first edit
+## Your first edit
 
 Suppose you've read the [Getting Started page](https://hack.aragon.org/docs/getting-started) and you have an idea for how to explain things more clearly.
 
-In particular, you want to add a paragraph to the *What is Aragon and what does it do* section. Something along the lines of:
+In particular, you want to add a paragraph to the _What is Aragon and what does it do_ section. Something along the lines of:
 
->If you're new to this ecosystem, don't worry if some (or all) of that sounded a little abstract to you. You can think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of human organizations. Organizations that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to collaborate effectively.
+> If you're new to this ecosystem, don't worry if some (or all) of that sounded a little abstract to you. You can think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of human organizations. Organizations that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to collaborate effectively.
 
 The process couldn't be simpler. Just start writing directly in the document editor provided!
 
@@ -95,7 +92,7 @@ If you're happy with how your change looks, you're ready to officially propose t
 
 Note that if you're unhappy with the result, you can click on the **Edit file** button to continue making changes.
 
-# Proposing the file change
+## Proposing the file change
 
 Scroll down to the bottom of the page You should see a box with the heading **Propose file change**.
 
@@ -105,21 +102,21 @@ This is where the description of your proposed file change goes- known in Git as
 
 ou can think of a commit message as a short email explaining your proposal: the first text box is the subject line, and the second is the text body.
 
-The [convention](https://github.blog/2011-09-06-shiny-new-commit-styles/) is to write your commit message in the present tense. For example, if you fixed a bug, you would write *Fix bug* and not *Fixed bug*.
+The [convention](https://github.blog/2011-09-06-shiny-new-commit-styles/) is to write your commit message in the present tense. For example, if you fixed a bug, you would write _Fix bug_ and not _Fixed bug_.
 
-In the first box we'll write: 
+In the first box we'll write:
 
->Update getting-started.md
+> Update getting-started.md
 
 And in the second we'll write a brief description:
 
->Add paragraph to 'What is Aragon and what does it do' subsection.
+> Add paragraph to 'What is Aragon and what does it do' subsection.
 
 ![](/docs/assets/github-guide/gh-8.png)
 
 When you're ready, click on the green **Propose file change** button.
 
-# Comparing changes
+## Comparing changes
 
 If you've followed the above steps correctly, you should be looking a page that looks like this.
 
@@ -127,7 +124,7 @@ If you've followed the above steps correctly, you should be looking a page that 
 
 Under the header, you should see a line that says:
 
->Choose two **branches** to see what's changed or to start a new **pull request**. If you need to, you can also compare across **forks**.
+> Choose two **branches** to see what's changed or to start a new **pull request**. If you need to, you can also compare across **forks**.
 
 Before we move on, it's time to explain what these terms mean.
 
@@ -143,13 +140,13 @@ A GitHub project always starts with one branch (the master branch). However, the
 
 Why is it good practice to create a new branch for every new feature? Why not just make changes directly to the master branch?
 
-The problems with making changes directly to the master branch is that there may be others working on implementing new features   at the same time as you.
+The problems with making changes directly to the master branch is that there may be others working on implementing new features at the same time as you.
 
 If you're implementing your feature at the same time as someone else is implementing theirs, you might overwrite each others changes by mistake. This can get messy. So we try to avoid this.
 
 The idea is that once we've implemented our changes in our branch, we can request to **merge** our branch into the original branch: which is basically a request to update the original branch with our changes. This is usually done using a **pull request**.
 
-# Your first pull request
+## Your first pull request
 
 ![](/docs/assets/github-guide/gh-10.png)
 
@@ -175,7 +172,7 @@ Now you just need to wait for the pull request to be reviewed by a maintainer.
 
 Don't worry if it isn't perfect (no pull request is). Your reviewer will help you improve it and fix any problems!
 
-# Adjusting your pull request
+## Adjusting your pull request
 
 After making a pull request, you may want to make an adjustment or an addition.
 
@@ -185,15 +182,15 @@ GitHub ensures your pull request automatically tracks the changes in your branch
 
 Let's go through an example.
 
-Under the *Update getting-started.md* header you should see a line that reads:
+Under the _Update getting-started.md_ header you should see a line that reads:
 
->*username* wants to merge 1 commit into aragon:master from *username:branchname*
+> _username_ wants to merge 1 commit into aragon:master from _username:branchname_
 
-Note that, in the text above, *username* and *branchname* are just placeholders for your user and branch names.
+Note that, in the text above, _username_ and _branchname_ are just placeholders for your user and branch names.
 
-In my case, my username is *sysl91* and the name of the branch I'm working in is *patch-1*, so I would click on *sysl91:patch-1*.
+In my case, my username is _sysl91_ and the name of the branch I'm working in is _patch-1_, so I would click on _sysl91:patch-1_.
 
-To access your branch, click on your *username:branchname* (it should be highlighted in blue).
+To access your branch, click on your _username:branchname_ (it should be highlighted in blue).
 
 ![](/docs/assets/github-guide/gh-13.png)
 
@@ -211,7 +208,6 @@ You should find yourself back at the GitHub copy of the Getting Started page.
 
 ![](/docs/assets/github-guide/gh-1.png)
 
-
 ![](/docs/assets/github-guide/gh-16.png)
 
 From here on in the workflow is pretty much the same as before.
@@ -222,7 +218,7 @@ Click on the pencil icon to start editing.
 
 Say we want to make a grammatical change to the paragraph we added. Specifically, we want to separate the two clauses below with a colon instead of a full stop.
 
->You can think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of human **organizations: Organizations** that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to collaborate effectively.
+> You can think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of human **organizations: Organizations** that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to collaborate effectively.
 
 As before, we can make this change directly in the editor.
 

@@ -128,7 +128,7 @@ In short, while it's possible for dapps to interact directly with the blockchain
 
 Without a web3 provider, users have to have total trust in every dapp they use. With a web3 provider, they just need to trust that provider.
 
-> In general, if you have a hardware wallet, we recommend you use [Frame](https://frame.sh) as your web3 provider -- we'll go over how to do this in the [tutorial](/docs/guides-github.html) that follows. To interact with the app in this section however, we'll be using [Metamask](https://metamask.io/).
+> In general, if you have a hardware wallet, we recommend you use [Frame](https://frame.sh) as your web3 provider -- we'll go over how to do this in the [tutorial](/docs/tutorial.html) that follows. To interact with the app in this section however, we'll be using [Metamask](https://metamask.io/).
 
 #### Metamask
 
@@ -224,7 +224,7 @@ Note that incrementing the counter triggers a blockchain transaction that saves 
 
 #### Signing your first transaction with Metamask
 
-To sign your first transaction with Metamask, head to the **Signing your first transaction with Metamask** section of our [Metamask guide](/docs/guides-use-metamask.html).
+To sign your first transaction with Metamask, head to the **Signing your first transaction with Metamask** section of our [Metamask guide](/docszf/guides-use-metamask.html).
 
 ## Next steps
 
@@ -236,6 +236,6 @@ Now that you’ve built your first DAO, feel free to take a look at the docs. If
 
 You should find that there is a light blue EDIT button in the top-right corner the page. This button is available on every page of the Aragon docs. If you feel like you can improve our documentation in any way, please don't hesitate to click on it!
 
-If you don't have any programming experience or if this is your first time contributing to an open-source project, don't worry. We've created a [GitHub guide](/docs/guides-github.html) just for you 😊.
+If you don't have any programming experience or if this is your first time contributing to an open-source project, don't worry. We've created a [GitHub guide](https://github.com/aragon/hack/tree/master/docs-internal/github-guide.md) just for you 😊.
 
 P.S. Before you submit any changes, make sure to read our [contribution guidelines.](https://github.com/aragon/hack/blob/master/CONTRIBUTING.md)
