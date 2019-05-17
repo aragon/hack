@@ -225,7 +225,7 @@ Note that incrementing the counter triggers a blockchain transaction that saves 
 
 #### Signing your first transaction with Metamask
 
-To sign your first transaction with Metamask, head to the **Signing your first transaction with Metamask** section of our [Metamask guide](/docszf/guides-use-metamask.html).
+To sign your first transaction with Metamask, head to the **Signing your first transaction with Metamask** section of our [Metamask guide](/docs/guides-use-metamask.html#signing-your-first-transaction-with-metamask).
 
 ## Next steps
 
