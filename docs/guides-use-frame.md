@@ -1,7 +1,7 @@
 ---
 id: guides-use-frame
 title: How to use Frame
-sidebar_label: How to use Frame
+sidebar_label: Frame
 ---
 
 This guide will help you to get started with Frame and interact with a DAO using a hardware wallet.
@@ -113,4 +113,3 @@ Finally, if you click on the "View details" button, Frame will open the transact
 <p align="center">
   <img width="240" height="500" src="/docs/assets/frame/frame-view-tx.gif">
 </p>
-
