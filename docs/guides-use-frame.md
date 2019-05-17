@@ -114,4 +114,3 @@ Finally, if you click on the "View details" button, Frame will open the transact
   <img width="240" height="500" src="/docs/assets/frame/frame-view-tx.gif">
 </p>
 
-## Next steps
