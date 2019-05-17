@@ -167,6 +167,7 @@ Don't worry about fully understanding this line right now. Really. We'll cover t
 If you look at your terminal, you should see a five step process:
 
 <br>
+
 <span>![*](/docs/assets/check.svg) `Preparing initialization`</span>
 
 <span>![*](/docs/assets/check.svg) `Cloning app template`</span>
