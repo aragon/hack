@@ -24,15 +24,13 @@ If you don't have a GitHub account already, the first thing you should do is [si
 
 The next step is to open the [Getting Started page](https://hack.aragon.org/docs/getting-started) of the hack Aragon docs.
 
-You should find that there is a light blue **EDIT** button in the top-right corner the page. This button is available on every page of the Aragon docs.
-
 ![](/docs/assets/github-guide/gh-0.png)
 
-Click on it. You'll be taken to a GitHub copy of the page.
+You should find that there is a light blue **EDIT** button in the top-right corner the page. This button is available on every page of the docs. Click on it. You'll be taken to a GitHub copy of the page.
 
 ![](/docs/assets/github-guide/gh-1.png)
 
-You should see a small pencil icon on the right. When you hover over it, it will turn blue, and you'll see a small tooltip appear above it with the words:
+You should see a small pencil icon on the right-hand side. When you hover over it, it will turn blue, and you should see a small tooltip appear above it with the words:
 
 > Edit the file in your fork of this project
 
@@ -56,7 +54,7 @@ Click on the pencil icon. You should be directed to a page with a built-in docum
 
 At the top you should see a message highlighted in a blue box. Don't worry about understanding what it means at this stage.
 
-Right below this blue box you should see a line that reads:
+Right below the blue box you should see a line that reads:
 
 > hack / docs / getting-started.md
 
@@ -70,11 +68,11 @@ The **.md** file extension stands for **Markdown**. In GitHub's words:
 
 If you're new to it, we recommend reading through this quick [Markdown guide](https://guides.github.com/features/mastering-markdown/) before moving on.
 
-Really, it'll take you 3 minutes, and will give you a much better understanding of the structure of the document we are about to edit.
+Really 😊, it'll take you 3 minutes, and will give you a much better understanding of the structure of the document we are about to edit.
 
 ## Your first edit
 
-Suppose you've read the [Getting Started page](https://hack.aragon.org/docs/getting-started) and you have an idea for how to explain things more clearly.
+Suppose you've read the [Getting Started page](https://hack.aragon.org/docs/getting-started) and have an idea for how to explain things more clearly.
 
 In particular, you want to add a paragraph to the _What is Aragon and what does it do_ section. Something along the lines of:
 
@@ -88,7 +86,7 @@ When you're happy with the changes you've made, click on the **Preview changes**
 
 ![](/docs/assets/github-guide/gh-6.png)
 
-If you're happy with how your change looks, you're ready to officially propose the file change.
+If you're happy with how it looks, you're ready to officially propose the file change.
 
 Note that if you're unhappy with the result, you can click on the **Edit file** button to continue making changes.
 
@@ -98,13 +96,13 @@ Scroll down to the bottom of the page You should see a box with the heading **Pr
 
 ![](/docs/assets/github-guide/gh-7.png)
 
-This is where the description of your proposed file change goes- known in Git as a **commit message**.
+This is where the description of your proposed file change goes -- this is known in Git as a **commit message**.
 
-ou can think of a commit message as a short email explaining your proposal: the first text box is the subject line, and the second is the text body.
+You can think of a commit message as a short email explaining your proposal: the first text box is the subject line, and the second is the text body.
 
-The [convention](https://github.blog/2011-09-06-shiny-new-commit-styles/) is to write your commit message in the present tense. For example, if you fixed a bug, you would write _Fix bug_ and not _Fixed bug_.
+The [convention](https://github.blog/2011-09-06-shiny-new-commit-styles/) is to write it in the present tense. For example, if you fixed a bug, you would write _Fix bug_ and not _Fixed bug_.
 
-In the first box we'll write:
+In our case, in the first box we'll write:
 
 > Update getting-started.md
 
@@ -114,11 +112,11 @@ And in the second we'll write a brief description:
 
 ![](/docs/assets/github-guide/gh-8.png)
 
-When you're ready, click on the green **Propose file change** button.
+When you've written your message, click on the green **Propose file change** button.
 
 ## Comparing changes
 
-If you've followed the above steps correctly, you should be looking a page that looks like this.
+If you've followed the above steps correctly, you should see a page with the header **Comparing changes**.
 
 ![](/docs/assets/github-guide/gh-9.png)
 
@@ -130,9 +128,9 @@ Before we move on, it's time to explain what these terms mean.
 
 We've already explained the term [fork](https://help.github.com/en/articles/fork-a-repo) : remember it's just GitHub's term for a copy of a project.
 
-We mentioned that when you click on the pencil icon to edit the document, GitHub creates a complete copy (fork) of the project under your account (we need a copy because we don't have the permissions required to directly edit the original project).
+We mentioned that when you click on the pencil icon to edit the document, GitHub creates a complete copy (fork) of the project under your account: we need a copy because we don't have the permissions required to directly edit the original project.
 
-What we didn't cover is that clicking on this icon also creates what Git calls a new branch.
+What we didn't cover is that clicking on this icon also creates what Git calls a **new branch**.
 
 The ability to create branches is one of the most powerful features of Git: Branches are essentially self-contained copies of the project code.
 
@@ -144,7 +142,7 @@ The problems with making changes directly to the master branch is that there may
 
 If you're implementing your feature at the same time as someone else is implementing theirs, you might overwrite each others changes by mistake. This can get messy. So we try to avoid this.
 
-The idea is that once we've implemented our changes in our branch, we can request to **merge** our branch into the original branch: which is basically a request to update the original branch with our changes. This is usually done using a **pull request**.
+The idea is that once we've implemented our changes in our branch, we can request to **merge** it into the original branch: which is basically a request to update the original branch with our changes. This is usually done using a **pull request**.
 
 ## Your first pull request
 
@@ -162,7 +160,7 @@ At this stage you should add any issues you think exist with the pull request to
 
 If you haven't already, this is a good time to familiarize yourself with Aragon's [contribution guidelines](https://github.com/aragon/hack/blob/master/CONTRIBUTING.md).
 
-Once you're confident you've satisfied the contribution guidelines, click on **Create pull request** again.
+Once you're confident you've satisfied the guidelines, click on **Create pull request** again.
 
 ![](/docs/assets/github-guide/gh-12.png)
 
@@ -178,7 +176,7 @@ After making a pull request, you may want to make an adjustment or an addition.
 
 Making an adjustment is as simple as editing the relevant file(s) in your branch and committing the change.
 
-GitHub ensures your pull request automatically tracks the changes in your branch and updates accordingly.
+Don't worry, you won't have to make a new pull request every time you change something. GitHub ensures your pull request automatically tracks the changes in your branch and updates accordingly.
 
 Let's go through an example.
 
@@ -198,15 +196,13 @@ This will open up the branch you've created in your fork of the **hack** project
 
 ![](/docs/assets/github-guide/gh-14.png)
 
-Click on the **docs** folder (remember, the getting-started.md page is located in the docs folder).
+Click on the **docs** folder (remember, the getting-started.md page we want to edit is located in the docs folder).
 
 ![](/docs/assets/github-guide/gh-15.png)
 
 Now click on **getting-started.md**.
 
 You should find yourself back at the GitHub copy of the Getting Started page.
-
-![](/docs/assets/github-guide/gh-1.png)
 
 ![](/docs/assets/github-guide/gh-16.png)
 
@@ -216,7 +212,7 @@ Click on the pencil icon to start editing.
 
 ![](/docs/assets/github-guide/gh-17.png)
 
-Say we want to make a grammatical change to the paragraph we added. Specifically, we want to separate the two clauses below with a colon instead of a full stop.
+Say we want to make a grammatical change to the paragraph we added. For example, say we want to separate the two clauses below with a colon instead of a full stop.
 
 > You can think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of human **organizations: Organizations** that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to collaborate effectively.
 
@@ -232,4 +228,4 @@ And if we're happy with the result, commit it.
 
 ![](/docs/assets/github-guide/gh-20.png)
 
-And voila! That's all there is to it 😊. The changes you just committed will automatically be reflected in your pull request.
+And voila! That's all there is to it 😊. 
