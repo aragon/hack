@@ -73,19 +73,17 @@ Really 😊, it'll take you 3 minutes, and will give you a much better understan
 
 ## Your first edit
 
-Suppose you've read the [Getting Started page](https://hack.aragon.org/docs/getting-started) and have an idea for how to explain things more clearly.
+Suppose you've just learnt about [Aragon Court](https://github.com/aragon/aragon-court) and want to add a paragraph about it in the _What is Aragon and what does it do_ section. Something along the lines of:
 
-In particular, you want to add a paragraph to the _What is Aragon and what does it do_ section. Something along the lines of:
-
-> If you're new to this ecosystem, don't worry if some (or all) of that sounded a little abstract to you. You can think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of human organizations. Organizations that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to collaborate effectively.
+> But that's not all. Through the [Aragon Network](https://aragon.org/network), Aragon also serves as the **world's first digital jurisdiction**: a decentralized, community governed jurisdiction with it's own decentralized court system. The network complements the project by providing infrastructure and services to users of the Aragon platform. 
 
 The process couldn't be simpler. Just start writing directly in the document editor provided!
 
-![](/docs/assets/github-guide/gh-5.png)
+![](/docs/assets/github-guide/gh-5-hq.png)
 
 When you're happy with the changes you've made, click on the **Preview changes** button at the top of the document editor.
 
-![](/docs/assets/github-guide/gh-6.png)
+![](/docs/assets/github-guide/gh-6-hq.png)
 
 If you're happy with how it looks, you're ready to officially propose the file change.
 
