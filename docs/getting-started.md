@@ -16,6 +16,8 @@ If you're new to this ecosystem, don't worry if some (or all) of that sounded a 
 
 Organizations that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to collaborate effectively.
 
+But that's not all. Through the [Aragon Network](https://aragon.org/network), Aragon also serves as the **world's first digital jurisdiction**: a decentralized, community governed jurisdiction with it's own decentralized court system. The network complements the project by providing infrastructure and services to users of the Aragon platform.
+
 ![](/docs/assets/core.png)
 
 > Example of a decentralized, censorship-resistant, good-looking voting app on Aragon
