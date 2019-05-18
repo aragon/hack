@@ -51,7 +51,7 @@ Later on, when we're happy with our changes, we can use our fork to propose chan
 
 Click on the pencil icon. You should be directed to a page with a built-in document editor.
 
-![](/docs/assets/github-guide/gh-3.png)
+![](/docs/assets/github-guide/gh-3-hq.png)
 
 At the top you should see a message highlighted in a blue box. Don't worry about understanding what it means at this stage.
 
@@ -59,7 +59,7 @@ Right below the blue box you should see a line that reads:
 
 > hack / docs / getting-started.md
 
-![](/docs/assets/github-guide/gh-4.png)
+![](/docs/assets/github-guide/gh-4-hq.png)
 
 This line gives us the location as well as the name of the document we are currently editing. In this case **getting-started.md** is the name of the document, and it's located in the **hack/docs** folder of our GitHub repository.
 
