@@ -24,17 +24,18 @@ If you don't have a GitHub account already, the first thing you should do is [si
 
 The next step is to open the [Getting Started page](https://hack.aragon.org/docs/getting-started) of the hack Aragon docs.
 
-![](/docs/assets/github-guide/gh-0.png)
+![](/docs/assets/github-guide/gh-0-hq.png)
 
 You should find that there is a light blue **EDIT** button in the top-right corner the page. This button is available on every page of the docs. Click on it. You'll be taken to a GitHub copy of the page.
 
-![](/docs/assets/github-guide/gh-1.png)
+![](/docs/assets/github-guide/gh-1-hq.png)
 
 You should see a small pencil icon on the right-hand side. When you hover over it, it will turn blue, and you should see a small tooltip appear above it with the words:
 
 > Edit the file in your fork of this project
 
-![](/docs/assets/github-guide/gh-2.png)
+![](/docs/assets/github-guide/gh-2-hq.png)
+
 
 [A fork](https://help.github.com/en/articles/fork-a-repo) is just GitHub's term for a copy of a project. In other words, clicking on the pencil icon tells GitHub to:
 
