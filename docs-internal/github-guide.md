@@ -93,7 +93,7 @@ Note that if you're unhappy with the result, you can click on the **Edit file** 
 
 Scroll down to the bottom of the page You should see a box with the heading **Propose file change**.
 
-![](/docs/assets/github-guide/gh-7.png)
+![](/docs/assets/github-guide/gh-7-hq.png)
 
 This is where the description of your proposed file change goes -- this is known in Git as a **commit message**.
 
@@ -107,9 +107,9 @@ In our case, in the first box we'll write:
 
 And in the second we'll write a brief description:
 
-> Add paragraph to 'What is Aragon and what does it do' subsection.
+> Add paragraph introducing Aragon Network in 'What is Aragon and what does it do' subsection.
 
-![](/docs/assets/github-guide/gh-8.png)
+![](/docs/assets/github-guide/gh-8-hq.png)
 
 When you've written your message, click on the green **Propose file change** button.
 
@@ -117,7 +117,7 @@ When you've written your message, click on the green **Propose file change** but
 
 If you've followed the above steps correctly, you should see a page with the header **Comparing changes**.
 
-![](/docs/assets/github-guide/gh-9.png)
+![](/docs/assets/github-guide/gh-9-hq.png)
 
 Under the header, you should see a line that says:
 
