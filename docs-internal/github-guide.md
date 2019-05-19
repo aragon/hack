@@ -188,42 +188,42 @@ In my case, my username is _sysl91_ and the name of the branch I'm working in is
 
 To access your branch, click on your _username:branchname_ (it should be highlighted in blue).
 
-![](/docs/assets/github-guide/gh-13.png)
+![](/docs/assets/github-guide/gh-13-hq.png)
 
 This will open up the branch you've created in your fork of the **hack** project.
 
-![](/docs/assets/github-guide/gh-14.png)
+![](/docs/assets/github-guide/gh-14-hq.png)
 
 Click on the **docs** folder (remember, the getting-started.md page we want to edit is located in the docs folder).
 
-![](/docs/assets/github-guide/gh-15.png)
+![](/docs/assets/github-guide/gh-15-hq.png)
 
 Now click on **getting-started.md**.
 
 You should find yourself back at the GitHub copy of the Getting Started page.
 
-![](/docs/assets/github-guide/gh-16.png)
+![](/docs/assets/github-guide/gh-16-hq.png)
 
 From here on in the workflow is pretty much the same as before.
 
 Click on the pencil icon to start editing.
 
-![](/docs/assets/github-guide/gh-17.png)
+![](/docs/assets/github-guide/gh-2-hq.png)
 
-Say we want to make a grammatical change to the paragraph we added. For example, say we want to separate the two clauses below with a colon instead of a full stop.
+Say we want to make a change to the paragraph we added. For example, say we want to add a link to make it easy for readers to find out more about the decentralized court system.
 
-> You can think of Aragon as providing the lego pieces to allow people (like you) to build the next generation of human **organizations: Organizations** that can be spun up instantly, that can't be shut down by governments, that are resistant to internet censorship, and that allow small groups of people to collaborate effectively.
+> But that's not all. Through the [Aragon Network](https://aragon.org/network), Aragon also serves as the **world's first digital jurisdiction**: a decentralized, community governed jurisdiction with it's own [decentralized court system](https://github.com/aragon/aragon-court). The network complements the project by providing infrastructure and services to users of the Aragon platform.
 
 As before, we can make this change directly in the editor.
 
-![](/docs/assets/github-guide/gh-18.png)
+![](/docs/assets/github-guide/gh-17-hq.png)
 
 We can then preview it.
 
-![](/docs/assets/github-guide/gh-19.png)
+![](/docs/assets/github-guide/gh-18-hq.png)
 
-And if we're happy with the result, commit it.
+And if we're happy with the result, scroll to the bottom and commit it.
 
-![](/docs/assets/github-guide/gh-20.png)
+![](/docs/assets/github-guide/gh-19-hq.png)
 
 And voila! That's all there is to it 😊. 
