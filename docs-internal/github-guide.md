@@ -145,13 +145,13 @@ The idea is that once we've implemented our changes in our branch, we can reques
 
 ## Your first pull request
 
-![](/docs/assets/github-guide/gh-10.png)
+![](/docs/assets/github-guide/gh-10-hq.png)
 
 [Pull requests](https://help.github.com/en/articles/about-pull-requests) let you tell others about changes you've pushed to a branch in a repository. Once a pull request is created, you can discuss and review the potential changes with collaborators (in this case the Aragon One team) before your changes are merged into the original (base) branch.
 
 By now you should understand the gist of this page. So let's go ahead and click on **Create pull request**.
 
-![](/docs/assets/github-guide/gh-11.png)
+![](/docs/assets/github-guide/gh-11-hq.png)
 
 You should see both a subject and a body field. In our case they have been automatically filled with our previous commit message.
 
@@ -161,13 +161,12 @@ If you haven't already, this is a good time to familiarize yourself with Aragon'
 
 Once you're confident you've satisfied the guidelines, click on **Create pull request** again.
 
-![](/docs/assets/github-guide/gh-12.png)
+![](/docs/assets/github-guide/gh-12-hq.png)
 
 Congratulations! 🎉 You've just opened your first pull request.
 
-Now you just need to wait for the pull request to be reviewed by a maintainer.
+Don't worry if it isn't perfect (no pull request is). You'll be assigned one or more reviewers. They'll help you improve it and fix any problems.
 
-Don't worry if it isn't perfect (no pull request is). Your reviewer will help you improve it and fix any problems!
 
 ## Adjusting your pull request
 
