@@ -34,7 +34,7 @@ You should see a small pencil icon on the right-hand side. When you hover over i
 
 > Edit the file in your fork of this project
 
-![](/docs/assets/github-guide/gh-2-hq.png)
+<img src="/docs/assets/github-guide/gh-2-hq.png" alt="drawing" width="550"/>
 
 
 [A fork](https://help.github.com/en/articles/fork-a-repo) is just GitHub's term for a copy of a project. In other words, clicking on the pencil icon tells GitHub to:
@@ -59,7 +59,7 @@ Right below the blue box you should see a line that reads:
 
 > hack / docs / getting-started.md
 
-![](/docs/assets/github-guide/gh-4-hq.png)
+<img src="/docs/assets/github-guide/gh-4-hq.png" alt="drawing" width="550"/>
 
 This line gives us the location as well as the name of the document we are currently editing. In this case **getting-started.md** is the name of the document, and it's located in the **hack/docs** folder of our GitHub repository.
 
@@ -188,7 +188,7 @@ In my case, my username is _sysl91_ and the name of the branch I'm working in is
 
 To access your branch, click on your _username:branchname_ (it should be highlighted in blue).
 
-![](/docs/assets/github-guide/gh-13-hq.png)
+<img src="/docs/assets/github-guide/gh-13-hq.png" alt="drawing" width="550"/>
 
 This will open up the branch you've created in your fork of the **hack** project.
 
@@ -208,7 +208,7 @@ From here on in the workflow is pretty much the same as before.
 
 Click on the pencil icon to start editing.
 
-![](/docs/assets/github-guide/gh-2-hq.png)
+<img src="/docs/assets/github-guide/gh-2-hq.png" alt="drawing" width="550"/>
 
 Say we want to make a change to the paragraph we added. For example, say we want to add a link to make it easy for readers to find out more about the decentralized court system.
 
