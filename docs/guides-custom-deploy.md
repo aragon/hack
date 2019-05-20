@@ -1,7 +1,7 @@
 ---
 id: guides-custom-deploy
 title: Custom Deploy
-sidebar_label: Custom deploy with aragonCLI
+sidebar_label: Custom Deploy
 ---
 
 ##### Aragon Organization deployment using aragonCLI
@@ -16,7 +16,6 @@ In order to get started you will need the latest version of the CLI installed so
 npm install -g @aragon/cli
 
 ```
-
 
 ## General considerations
 

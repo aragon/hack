@@ -6,7 +6,7 @@ sidebar_label: Reference documentation
 
 ##### Documentation for [aragonOS](https://github.com/aragon/aragonOS) v4.0.1.
 
-*Looking for [aragonOS 3 documentation?](/docs/aragonos-3-ref.html)*
+_Looking for [aragonOS 3 documentation?](/docs/aragonos-3-ref.html)_
 
 <br>
 
@@ -39,7 +39,7 @@ function getApp(bytes32 namespace, bytes32 appId) public view returns (address);
 ```
 
 - **namespace:** specifies what type of app record is being set.
-- **appId:** used to identify what app is being set. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
+- **appId:** used to identify what app is being set. It is the [ENS `namehash`](https://docs.ens.domains/#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
 - **app:** Address of a contract that can have a different meaning depending on the [namespace](#namespaces).
 
 > **Warning**
@@ -69,7 +69,7 @@ function newAppInstance(bytes32 appId, address appBase);
 function newPinnedAppInstance(bytes32 appId, address appBase);
 ```
 
-- **appId:** used to identify what app to link the proxy to. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
+- **appId:** used to identify what app to link the proxy to. It is the [ENS `namehash`](https://docs.ens.domains/#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
 - **app:** Address of the base contract for the app instance. If this app has already been installed previously, this address **must** be the same as the one currently set (use `getApp(kernel.APP_BASES_NAMESPACE(), appId)` to check).
 
 Overloaded versions of the two functions with more options are available:
@@ -293,25 +293,12 @@ Parameters allow the ACL to perform certain computations with the arguments of a
 An ACL parameter is comprised of a data structure with 3 values:
 
 - **Argument Value** (`uint240`): the value to compare against, depending on the argument. It is a regular Ethereum memory word that loses its two most significant bytes of precision. The reason for this was to allow parameters to be saved in just one storage slot, saving significant gas.
-Even though `uint240`s are used, it can be used to store any integer up to `2^30 - 1`, addresses, and bytes32. In the case of comparing hashes, losing 2 bytes of precision shouldn't be a dealbreaker if the hash algorithm is secure.
-- **Argument ID** (`uint8`): Determines how the comparison value is fetched. From 0 to 200 it refers to the argument index number passed to the role. After 200, there are some special *Argument IDs*:
-	- `BLOCK_NUMBER_PARAM_ID` (`id = 200`): sets comparison value to the block number at the time of execution. This allows for setting up timelocks depending on blocks.
-	- `TIMESTAMP_PARAM_ID` (`id = 201`): sets comparison value to the timestamp of the current block at the time of execution. This allows for setting up timelocks on time.
-	- `id = 202`: not currently in use.
-	- `ORACLE_PARAM_ID` (`id = 203`): checks with an oracle at the address in the `argument value` and returns whether it returned true or false (no comparison with the `argument value`).
-	- `LOGIC_OP_PARAM_ID` (`id = 204`): evaluates a logical operation and returns true or false depending on its result (no comparison with the `argument value`).
-	- `PARAM_VALUE_PARAM_ID` (`id = 205`): return `argument value`. Commonly used with the `RET` operation to just return a value. If the value in the param is greater than 0 it will evaluate to true, otherwise it will return false.
-- **Operation type** (`uint8`): what operation should be done to compare the value fetched using the argument ID or the argument value. For all comparisons, both values are compared in the following order `args[param.id] <param.op> param.value`. Therefore, for a greater than operation, with `param = {id: 0, op: Op.GT, value: 10}`, it will interpret whether the argument 0 is greater than 10. The implemented operation types are:
-	- None (`Op.NONE`): always evaluates to `false` regardless of parameter or arguments.
-	- Equals (`Op.EQ`): evaluates to true if every byte matches between `args[param.id]` and `param.value`.
-	- Not equals (`Op.NEQ`): evaluates to true if any byte doesn't match.
-	- Greater than (`Op.GT`): evaluates to true if `args[param.id] > param.value`.
-	- Less than (`Op.LT`): evaluates to true if `args[param.id] < param.value`.
-	- Greater than or equal (`Op.GTE`): evaluates to true if `args[param.id] >= param.value`.
-	- Less than or equal (`Op.LTE`): evaluates to true if `args[param.id] <= param.value`.
-	- Return (`Op.RET`): evaluates to true if `args[param.id]` is greater than one. Used with `PARAM_VALUE_PARAM_ID`, it makes `args[param.id] = param.value`, so it returns the associated value of the parameter.
+  Even though `uint240`s are used, it can be used to store any integer up to `2^30 - 1`, addresses, and bytes32. In the case of comparing hashes, losing 2 bytes of precision shouldn't be a dealbreaker if the hash algorithm is secure.
+- **Argument ID** (`uint8`): Determines how the comparison value is fetched. From 0 to 200 it refers to the argument index number passed to the role. After 200, there are some special _Argument IDs_: - `BLOCK_NUMBER_PARAM_ID` (`id = 200`): sets comparison value to the block number at the time of execution. This allows for setting up timelocks depending on blocks. - `TIMESTAMP_PARAM_ID` (`id = 201`): sets comparison value to the timestamp of the current block at the time of execution. This allows for setting up timelocks on time. - `id = 202`: not currently in use. - `ORACLE_PARAM_ID` (`id = 203`): checks with an oracle at the address in the `argument value` and returns whether it returned true or false (no comparison with the `argument value`). - `LOGIC_OP_PARAM_ID` (`id = 204`): evaluates a logical operation and returns true or false depending on its result (no comparison with the `argument value`). - `PARAM_VALUE_PARAM_ID` (`id = 205`): return `argument value`. Commonly used with the `RET` operation to just return a value. If the value in the param is greater than 0 it will evaluate to true, otherwise it will return false.
+- **Operation type** (`uint8`): what operation should be done to compare the value fetched using the argument ID or the argument value. For all comparisons, both values are compared in the following order `args[param.id] <param.op> param.value`. Therefore, for a greater than operation, with `param = {id: 0, op: Op.GT, value: 10}`, it will interpret whether the argument 0 is greater than 10. The implemented operation types are: - None (`Op.NONE`): always evaluates to `false` regardless of parameter or arguments. - Equals (`Op.EQ`): evaluates to true if every byte matches between `args[param.id]` and `param.value`. - Not equals (`Op.NEQ`): evaluates to true if any byte doesn't match. - Greater than (`Op.GT`): evaluates to true if `args[param.id] > param.value`. - Less than (`Op.LT`): evaluates to true if `args[param.id] < param.value`. - Greater than or equal (`Op.GTE`): evaluates to true if `args[param.id] >= param.value`. - Less than or equal (`Op.LTE`): evaluates to true if `args[param.id] <= param.value`. - Return (`Op.RET`): evaluates to true if `args[param.id]` is greater than one. Used with `PARAM_VALUE_PARAM_ID`, it makes `args[param.id] = param.value`, so it returns the associated value of the parameter.
 
 While also representing an operation, when the argument ID is `LOGIC_OP_PARAM_ID` only the `Op`s below are valid. These operations use the parameter's value to point to other parameter indices in the parameter array. Any values are encoded as `uint32` numbers, each left-shifted 32 bits (for example, an `Op` that takes two inputs with a value of `0x00....0000000200000001` would have input 1, 1, and input 2, 2, refering to params at index 1 and 2). Here are the available logic `Op`s:
+
 - Not (`Op.NOT`): takes 1 parameter index and evaluates to the opposite of what the linked parameter evaluates to.
 - And (`Op.AND`): takes 2 parameter indices and evaluates to true if both evaluate to true.
 - Or (`Op.OR`): takes 2 parameter indices and evaluates to true if either evaluate to true.
@@ -409,7 +396,7 @@ bytes32 public CUSTOM_ACTION_ROLE = keccak256("CUSTOM_ACTION_ROLE");
 
 Protecting an action behind the ACL is done in the smart contract by simply adding the authentication modifiers `auth()` or `authP()` to the action. On executing the action, the `auth()` or `authP()` modifier checks with the Kernel whether the entity performing the call holds the required role or not.
 
-`auth(bytes32 role)` is capable of defining a *binary* permission—either yes or no:
+`auth(bytes32 role)` is capable of defining a _binary_ permission—either yes or no:
 
 ```solidity
 function customAction() auth(CUSTOM_ACTION_ROLE) {
@@ -438,7 +425,7 @@ function canPerform(address sender, bytes32 role, uint256[] params) public view 
 
 > **Note**
 >
-> Apps have the choice of which actions to protect behind the ACL as some actions may make sense to be completely public. Any publicly exposed state-changing function should *most likely* be protected, however.
+> Apps have the choice of which actions to protect behind the ACL as some actions may make sense to be completely public. Any publicly exposed state-changing function should _most likely_ be protected, however.
 
 #### Lifecycle of an AragonApp call requiring the ACL
 
@@ -544,7 +531,7 @@ The forwarding interface also allows a frontend interface, like the Aragon clien
 
 ![forwarding animation](/docs/assets/fwd.gif)
 
-> Vote forwarding scenario.  (Please note that the governance model and characters are fictional.)
+> Vote forwarding scenario. (Please note that the governance model and characters are fictional.)
 
 ### EVMScripts
 
