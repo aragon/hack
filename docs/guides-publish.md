@@ -32,12 +32,12 @@ This app has 3 environments defined:
 | Environment | Network   |
 | ----------- | --------- |
 | default     | localhost |
-| staging     | rinkeby   |
-| production  | mainnet   |
+| rinkeby     | rinkeby   |
+| mainnet     | mainnet   |
 
 Is a prerequisite to have a ENS Registry address defined.
 
-Environments are defined in [`arapp.json`](/docs/cli-global-confg#the-arappjson-file), for example `staging` points to:
+Environments are defined in [`arapp.json`](/docs/cli-global-confg#the-arappjson-file), for example `rinkeby` points to:
 
 - An ENS registry: `0x98df287b6c145399aaa709692c8d308357bc085d`
 - An app name (repository and registry of aragonPM): `app.open.aragonpm.eth`
@@ -59,7 +59,7 @@ To publish on aragonPM we will use [`aragon apm publish`](/docs/cli-apm-commands
 Command:
 
 ```sh
-npx aragon apm publish major --environment staging
+npx aragon apm publish major --environment rinkeby
 ```
 
 This will:
@@ -72,12 +72,12 @@ This will:
 
 <span>![*](/docs/assets/check.svg) Generate application artifact.</span>
 
-<span>![*](/docs/assets/check.svg) Publish the app to the **staging** environment.</span>
+<span>![*](/docs/assets/check.svg) Publish the app to the **rinkeby** environment.</span>
 
 Sample output:
 
 ```sh
- > npx aragon apm publish major --environment staging
+ > npx aragon apm publish major --environment rinkeby
 
  ✔ Successfully published app.open.aragonpm.eth v1.0.0:
  ℹ Contract address: 0xE636bcA5B95e94F749F63E322a04DB59362299F1
@@ -97,7 +97,7 @@ Sample output:
 Command:
 
 ```sh
-npx aragon apm publish patch --environment staging
+npx aragon apm publish patch --environment rinkeby
 ```
 
 This will:
@@ -108,7 +108,7 @@ This will:
 
 <span>![*](/docs/assets/check.svg) Generate application artifact.</span>
 
-<span>![*](/docs/assets/check.svg) Publish the app to the **staging** environment.</span>
+<span>![*](/docs/assets/check.svg) Publish the app to the **rinkeby** environment.</span>
 
 Sample output:
 
@@ -126,7 +126,7 @@ To fetch the versions published on aragonPM we will use [`aragon apm versions`](
 Command:
 
 ```sh
-npx aragon apm versions --environment staging
+npx aragon apm versions --environment rinkeby
 ```
 
 Sample output:
@@ -139,12 +139,12 @@ Sample output:
 
 ### Fetch other packages versions
 
-We will fetch the published versions of the official `voting` app on the staging (`rinkeby` network) environment.
+We will fetch the published versions of the official `voting` app on the rinkeby (`rinkeby` network) environment.
 
 Command:
 
 ```sh
-npx aragon apm voting.aragonpm.eth --environment staging
+npx aragon apm voting.aragonpm.eth --environment rinkeby
 ```
 
 Sample output:
