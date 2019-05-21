@@ -34,8 +34,9 @@ You should see a small pencil icon on the right-hand side. When you hover over i
 
 > Edit the file in your fork of this project
 
-<img src="/docs/assets/github-guide/gh-2-hq.png" alt="drawing" width="550"/>
-
+<p align="center">
+   <img src="/docs/assets/github-guide/gh-2-hq.png" alt="drawing" width="550"/>
+</p>
 
 [A fork](https://help.github.com/en/articles/fork-a-repo) is just GitHub's term for a copy of a project. In other words, clicking on the pencil icon tells GitHub to:
 
@@ -59,7 +60,9 @@ Right below the blue box you should see a line that reads:
 
 > hack / docs / getting-started.md
 
-<img src="/docs/assets/github-guide/gh-4-hq.png" alt="drawing" width="550"/>
+<p align="center">
+   <img src="/docs/assets/github-guide/gh-4-hq.png" alt="drawing" width="550"/>
+</p>
 
 This line gives us the location as well as the name of the document we are currently editing. In this case **getting-started.md** is the name of the document, and it's located in the **hack/docs** folder of our GitHub repository.
 
@@ -208,7 +211,9 @@ From here on in the workflow is pretty much the same as before.
 
 Click on the pencil icon to start editing.
 
-<img src="/docs/assets/github-guide/gh-2-hq.png" alt="drawing" width="550"/>
+<p align="center">
+  <img src="/docs/assets/github-guide/gh-2-hq.png" alt="drawing" width="550"/>
+</p>
 
 Say we want to make a change to the paragraph we added. For example, say we want to add a link to make it easy for readers to find out more about the decentralized court system.
 
