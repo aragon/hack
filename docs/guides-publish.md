@@ -23,7 +23,7 @@ npx create-aragon-app app
 
 This will create a new directory named `app`, with everything you need.
 
-Then to interact with aragonPM we will use the [`aragon apm`](/docs/cli-apm-commands) commands.
+To interact with aragonPM we will use the [`aragon apm`](/docs/cli-apm-commands) commands.
 
 ## Introduction to environments
 
@@ -44,9 +44,9 @@ Environments are defined in [`arapp.json`](/docs/cli-global-confg#the-arappjson-
 - An Ethereum websockets provider: `wss://rinkeby.eth.aragon.network/ws` - to **read** from the blockchain
 - An Ethereum network: `rinkeby`
 
-The `rinkeby` network is further defined in `truffle.js`, an has an Ethereum provider (to **write** to the blockchain), which define:
+The `rinkeby` network is further defined in `truffle.js`, and has:
 
-- An address: `https://rinkeby.infura.io`
+- An Ethereum provider address: `https://rinkeby.infura.io` (to **write** to the blockchain)
 - An Ethereum account: `0xb41...6eE7` (which is the first account generated from the `DEFAULT_MNEMONIC` variable, to learn how to use a different account follow the [troubleshooting guide](/docs/guides-faq.html#set-a-private-key))
 
 > **Note**<br>
@@ -70,7 +70,7 @@ This will:
 
 <span>![*](/docs/assets/check.svg) _Build_ the app's [frontend (by default the output lives in `dist`)](#building-frontends)</span>
 
-<span>![*](/docs/assets/check.svg) Generate application artifcat.</span>
+<span>![*](/docs/assets/check.svg) Generate application artifact.</span>
 
 <span>![*](/docs/assets/check.svg) Publish the app to the **staging** environment.</span>
 
@@ -106,7 +106,7 @@ This will:
 
 <span>![*](/docs/assets/check.svg) _Build_ the app's [frontend (by default the output lives in `dist`)](#building-frontends)</span>
 
-<span>![*](/docs/assets/check.svg) Generate application artifcat.</span>
+<span>![*](/docs/assets/check.svg) Generate application artifact.</span>
 
 <span>![*](/docs/assets/check.svg) Publish the app to the **staging** environment.</span>
 
