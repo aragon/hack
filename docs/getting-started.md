@@ -89,6 +89,7 @@ For example, since blockchains are relatively expensive to store data on, it tur
 ### Further resources
 
 - [DAOs and the Web3 vision](https://www.youtube.com/watch?v=YG3a5ihbkAQ)
+- [The future of organizations](https://blog.aragon.one/the-future-of-organizations/)
 - [The Aragon Manifesto](https://blog.aragon.org/the-aragon-manifesto-4a21212eac03/)
 - [The Aragon Whitepaper](https://github.com/aragon/whitepaper)
 - [Aragon Black: #1 White paper & Manifesto](https://blog.aragon.black/white-paper-manifesto/)
