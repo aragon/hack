@@ -39,7 +39,7 @@ function getApp(bytes32 namespace, bytes32 appId) public view returns (address);
 ```
 
 - **namespace:** specifies what type of app record is being set.
-- **appId:** used to identify what app is being set. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
+- **appId:** used to identify what app is being set. It is the [ENS `namehash`](https://docs.ens.domains/#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
 - **app:** Address of a contract that can have a different meaning depending on the [namespace](#namespaces).
 
 > **Warning**
@@ -69,7 +69,7 @@ function newAppInstance(bytes32 appId, address appBase);
 function newPinnedAppInstance(bytes32 appId, address appBase);
 ```
 
-- **appId:** used to identify what app to link the proxy to. It is the [ENS `namehash`](http://docs.ens.domains/en/latest/introduction.html#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
+- **appId:** used to identify what app to link the proxy to. It is the [ENS `namehash`](https://docs.ens.domains/#namehash) of the aragonPM repo (e.g. `namehash('voting.aragonpm.eth')`).
 - **app:** Address of the base contract for the app instance. If this app has already been installed previously, this address **must** be the same as the one currently set (use `getApp(kernel.APP_BASES_NAMESPACE(), appId)` to check).
 
 Overloaded versions of the two functions with more options are available:
@@ -509,6 +509,26 @@ function getEVMScriptRegistry() public view returns (IEVMScriptRegistry);
 ```
 
 For more information on the use cases for EVMScripts, see the following [Forwarders and EVMScripts](#forwarders-and-evmscripts) section.
+
+#### Re-entrancy protection
+
+AragonApp comes with a built-in re-entrancy guard, easily usable through the `nonReentrant` modifier:
+
+```solidity
+function nonReentrantFunction() external nonReentrant {
+}
+```
+
+It's use is recommended as a last resort, for cases where there are no better options for protecting against re-entrancy.
+
+Most commonly, you may want to apply this modifier to functions that fulfill these requirements:
+
+- Externally available and is state changing
+- Invokable by non-trusted contracts or accounts
+- Not already protected by a role
+- There exist more than one of these functions
+
+A contrived example of this is if your app allows creating a recurring token payment to another account (protected via a role), but only the recipient account can modify certain parameters (e.g. when to withdraw payments, what token to withdraw). If the withdraw and token selection functions are separately available, they may benefit from being `nonReentrant`.
 
 ### API documentation
 

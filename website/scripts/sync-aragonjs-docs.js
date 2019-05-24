@@ -1,67 +1,74 @@
 const { syncPages } = require('./sync-util')
 
 const GIT_REF = 'master'
-const REPO = 'aragon.js'
-const BASE_CONTENT_URL = `https://raw.githubusercontent.com/aragon/${REPO}/${GIT_REF}/docs`
+const REPO = 'aragon/aragon.js'
 
 const pages = [
   {
-    fileLocation: '/docs/js-ref-app.md',
-    id: 'aragonjs-ref-app',
+    destination: '/docs/js-ref-quick-start.md',
+    id: 'api-js-quick-start',
+    title: 'Quick Start',
+    sidebarLabel: 'Quick Start',
+    hideTitle: true,
+    contentLocation: 'docs/QUICK_START.md',
+  },
+  {
+    destination: '/docs/js-ref-app.md',
+    id: 'api-js-ref-app',
     title: 'aragonAPI for Javascript',
     sidebarLabel: 'App API',
     hideTitle: true,
-    contentURL: `${BASE_CONTENT_URL}/APP.md`,
+    contentLocation: 'docs/APP.md',
   },
   {
-    fileLocation: '/docs/js-ref-providers.md',
-    id: 'aragonjs-ref-providers',
+    destination: '/docs/js-ref-providers.md',
+    id: 'api-js-ref-providers',
     title: 'aragonAPI for providers',
     sidebarLabel: 'Providers',
     hideTitle: true,
-    contentURL: `${BASE_CONTENT_URL}/PROVIDERS.md`,
+    contentLocation: 'docs/PROVIDERS.md',
   },
   {
-    fileLocation: '/docs/js-ref-wrapper.md',
-    id: 'aragonjs-ref-wrapper',
+    destination: '/docs/js-ref-wrapper.md',
+    id: 'api-js-ref-wrapper',
     title: 'aragonAPI for wrapper',
     sidebarLabel: 'Wrapper',
     hideTitle: true,
-    contentURL: `${BASE_CONTENT_URL}/WRAPPER.md`,
+    contentLocation: 'docs/WRAPPER.md',
   },
   {
-    fileLocation: '/docs/js-ref-architecture.md',
-    id: 'aragonjs-ref-architecture',
+    destination: '/docs/js-ref-architecture.md',
+    id: 'api-js-ref-architecture',
     title: 'aragonAPI for architecture',
     sidebarLabel: 'Architecture of apps',
     hideTitle: true,
-    contentURL: `${BASE_CONTENT_URL}/ARCHITECTURE.md`,
+    contentLocation: 'docs/ARCHITECTURE.md',
   },
   {
-    fileLocation: '/docs/js-guide-bg-scripts.md',
-    id: 'aragonjs-guide-bg-scripts',
+    destination: '/docs/js-guide-bg-scripts.md',
+    id: 'api-js-guide-bg-scripts',
     title: 'Background Scripts',
     sidebarLabel: 'Background Scripts',
     hideTitle: true,
-    contentURL: `${BASE_CONTENT_URL}/BACKGROUND_SCRIPTS.md`,
+    contentLocation: 'docs/BACKGROUND_SCRIPTS.md',
   },
   {
-    fileLocation: '/docs/js-ref-react.md',
-    id: 'aragonjs-ref-react',
+    destination: '/docs/js-ref-react.md',
+    id: 'api-js-ref-react',
     title: 'aragonAPI for React',
     sidebarLabel: 'React API',
     hideTitle: true,
-    contentURL: `${BASE_CONTENT_URL}/../packages/aragon-api-react/README.md`,
+    contentLocation: 'packages/aragon-api-react/README.md',
   },
 ]
 
 const locationReferenceMap = {
-  '/docs/APP.md': '/docs/aragonjs-ref-app.html',
-  '/docs/WRAPPER.md': '/docs/aragonjs-ref-wrapper.html',
-  '/docs/PROVIDERS.md': '/docs/aragonjs-ref-providers.html',
-  '/docs/ARCHITECTURE.md': '/docs/aragonjs-ref-architecture.html',
-  '/docs/BACKGROUND_SCRIPTS.md': '/docs/aragonjs-guide-bg-scripts.html',
-  '/packages/aragon-api-react/README.md': '/docs/aragonjs-ref-react.html',
+  '/docs/APP.md': '/docs/api-js-ref-app.html',
+  '/docs/WRAPPER.md': '/docs/api-js-ref-wrapper.html',
+  '/docs/PROVIDERS.md': '/docs/api-js-ref-providers.html',
+  '/docs/ARCHITECTURE.md': '/docs/api-js-ref-architecture.html',
+  '/docs/BACKGROUND_SCRIPTS.md': '/docs/api-js-guide-bg-scripts.html',
+  '/packages/aragon-api-react/README.md': '/docs/api-js-ref-react.html',
 }
 
-syncPages(pages, locationReferenceMap)
+syncPages(pages, locationReferenceMap, GIT_REF, REPO)

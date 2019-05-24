@@ -60,17 +60,10 @@ const siteConfig = {
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
-  projectName: 'hack-docs',
+  projectName: 'hack',
   organizationName: 'aragon',
 
-  headerLinks: [
-    { doc: 'getting-started', label: 'Get started' },
-    { doc: 'tutorial', label: 'Tutorial' },
-    { doc: 'aragonos-intro', label: 'aragonOS' },
-    { doc: 'api-intro', label: 'aragonAPI' },
-    { doc: 'aragonui-intro', label: 'aragonUI' },
-    { page: 'help', label: 'Help' },
-  ],
+  headerLinks: [],
 
   cleanUrl: true,
 
@@ -145,8 +138,6 @@ const siteConfig = {
     const insertStylesAt = html.lastIndexOf('</body>')
     return `
       <!DOCTYPE html>
-      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css"/>
-      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hkgrotesklight" type="text/css">
       <script type="text/javascript">
         var _paq = _paq || [];
         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */

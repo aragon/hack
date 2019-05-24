@@ -14,4 +14,4 @@ aragonPM allows for multiple package registries to exist with different governan
 
 Different aragonPM registries in which everyone can publish their packages are expected to be created by the community. **You can create your own registry** and have full control over it.
 
-#### Read more: [aragonPM architecture](/docs/apm.html)
+#### Read more: [aragonPM](/docs/apm-intro.html)

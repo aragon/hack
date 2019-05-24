@@ -4,7 +4,7 @@ title: Your first Aragon app
 sidebar_label: Your first Aragon app
 ---
 
-##### 
+#####
 
 
 In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), the JavaScript implementation of [aragonAPI](api-intro.md), [aragonUI](ui-intro.md) and [aragonCLI](/docs/cli-intro.html).
@@ -140,7 +140,7 @@ Then the client takes care of connecting to Ethereum via Web3, and also handles 
 
 All of this is achieved by using aragonAPI. aragonAPI is split in two parts: one for clients and one for apps. The client portion of aragonAPI reads _requests_ from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).
 
-Because we're building an app, all we need is `@aragon/client` and our template already has that installed.
+Because we're building an app, all we need is `@aragon/api` and our template already has that installed.
 
 ### Background workers and building state
 
@@ -155,7 +155,7 @@ Let's start by writing a background worker that listens for our `Increment` and 
 ```js
 // app/script.js
 import '@babel/polyfill'
-import Aragon from '@aragon/client'
+import Aragon from '@aragon/api'
 
 const app = new Aragon()
 
@@ -175,15 +175,11 @@ app.store(async (state, event) => {
   }
 })
 
-function getValue() {
+async function getValue() {
   // Get current value from the contract by calling the public getter
-  return new Promise(resolve => {
-    app
-      .call('value')
-      .first()
-      .map(value => parseInt(value, 10))
-      .subscribe(resolve)
-  })
+  // app.call() returns a single-emission observable that we can immediately turn into a promise
+  const value = await app.call('value').toPromise()
+  return parseInt(value, 10)
 }
 ```
 
@@ -220,7 +216,7 @@ Now let's write the view portion of our app. In our case, this is a simple HTML 
 
 ```js
 // app/app.js
-import Aragon, { providers } from '@aragon/client'
+import Aragon, { providers } from '@aragon/api'
 
 const initializeApp = () => {
   const app = new Aragon(new providers.WindowMessage(window.parent))
@@ -416,7 +412,7 @@ You can check the [aragonCLI documentation](cli-main-commands.md) for an in-dept
 
 A good place to go from here would be to check out [our existing apps](https://github.com/aragon/aragon-apps). They are fairly self-contained and use some patterns you might find helpful.
 
-There is much more to [aragonOS](os-intro.md) and [aragonAPI](ui-intro.md), and we even have our own [UI toolkit](https://github.com/aragon/aragon-ui). We encourage you to explore all 3 and provide us feedback.
+There is much more to [aragonOS](os-intro.md) and [aragonAPI](api-intro.md), and we even have our own [UI toolkit](ui-intro.md). We encourage you to explore all 3 and provide us feedback.
 
 ### Community
 

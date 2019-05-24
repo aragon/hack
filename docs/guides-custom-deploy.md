@@ -1,7 +1,7 @@
 ---
 id: guides-custom-deploy
 title: Custom Deploy
-sidebar_label: Custom deploy with aragonCLI
+sidebar_label: Custom Deploy
 ---
 
 ##### Aragon Organization deployment using aragonCLI
@@ -16,7 +16,6 @@ In order to get started you will need the latest version of the CLI installed so
 npm install -g @aragon/cli
 
 ```
-
 
 ## General considerations
 
@@ -51,7 +50,7 @@ This will create a new organization based on the default [`bare-template`](https
 
 ## Adding a Token and Token Manager instance
 
-Aragon uses tokens to represent groups, token balances can be capped to a certain amount per account made non-transferrable. The following are 3 common scenarios:
+Aragon uses tokens to represent groups, token balances can be capped to a certain amount per account and made non-transferrable. The following are 3 common scenarios:
 
 - `Membership`: A non-transferrable token limited to 1 per account
 - `Reputation`: A non-transferrable token without balance restriction
@@ -124,7 +123,7 @@ The voting app requires the following initialization parameters:
 - `min accept quorum`: Percentage of yeas in total possible votes for a vote to succeed (expressed as a percentage of `10^18`; eg. `10^16 = 1%`, `10^18 = 100%`)
 - `vote time`: Seconds that a vote will be open for token holders to vote (unless enough yeas or nays have been cast to make an early decision)
 
-So if we want a voting app instances with a support requirement of 60% and min accept quorum of 25% and a voting period of 7 days we would use the following command.
+So if we want a voting app instance with a support requirement of 60% and min accept quorum of 25% and a voting period of 7 days we would use the following command.
 
 ```sh
 dao install <dao-address> voting --app-init-args [token-address] 600000000000000000 250000000000000000 604800

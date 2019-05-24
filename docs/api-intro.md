@@ -24,12 +24,9 @@ Some of the things you can do with the JavaScript implementation are:
 - Get access to application state with built in client-side caching
 - Create human-readable transaction descriptions for your smart contracts through [Radspec](human-readable-txs.md)
 
-#### Quick Start
-
-- [Quick Start for apps](api-quick-start.md)
-
 #### Docs
 
+- [Quick Start for apps](js-ref-quick-start.md)
 - [App API](js-ref-app.md)
   - [React API](js-ref-react.md)
 - [Aragon client implementations (wrapper)](js-ref-wrapper.md)

@@ -1,13 +1,10 @@
 ---
 id: app-center-preparing-assets
-title: App Center
+title: Preparing Assets for App Publishing
 sidebar_label: Preparing assets
 ---
 
-
-##### Preparing assets for publishing your Aragon app
-
-Before you publish your Aragon app in the App Center, you will need to prepare a few types of assets to display it correctly, and differentiate from other apps.
+Before you publish your Aragon app, you will need to prepare a few types of assets in order for the Aragon client to display it correctly and differentiate from other apps.
 
  The main assets are: 
 - App menu icon (SVG)
@@ -19,8 +16,6 @@ Before you publish your Aragon app in the App Center, you will need to prepare a
 
 <br>
 In the next sections we will describe the requirements for each asset one by one. Templates are also provided to help you prepare everything.
-
-<br>
 
 
 ## Icons
@@ -88,8 +83,6 @@ The screenshots will be shown in your app's expanded App Center page, to show us
 <span>![*](/docs/assets/check.svg) Mobile (portrait) screenshots should be 9:16 aspect ratio, minimum resolution  **1080 px x 1920 px** (they will be automatically resized)</span>
 
 <span>![*](/docs/assets/check.svg) Export to **PNG** for App Center submissions</span>
-
-<br>
 
 ### App description
 

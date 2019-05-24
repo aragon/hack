@@ -6,6 +6,17 @@ body {
  font-family: 'HankenGroteskBold';
  src: url('../fonts/HKGrotesk-Bold.ttf') format('opentype');
 }
+
+@font-face {
+ font-family: 'HankenGroteskRegular';
+ src: url('../fonts/HKGrotesk-Regular.ttf') format('opentype');
+}
+
+@font-face {
+ font-family: 'HankenGroteskLight';
+ src: url('../fonts/HKGrotesk-Light.ttf') format('opentype');
+}
+
 /* your custom css */
 strong, b {
   font-family: 'HankenGroteskBold';
