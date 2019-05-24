@@ -1,18 +1,18 @@
 # Contributing to the Aragon documentation
 
-Would you like to help improve these Aragon developer docs? Awesome! Feel welcome and read the following sections in order to know how to ask questions and how to work on something.
+Would you like to help improve the Aragon developer docs? Awesome! You're on the right page 😊. The sections below cover the different ways to contribute, our documentation guidelines, and how to ask for help.
 
-All members of our community are expected to follow our [Code of Conduct](https://wiki.aragon.org/documentation/Code_of_Conduct/). Please make sure you are welcoming and friendly in all of our spaces.
+All members of our community are expected to follow our [Code of Conduct](https://wiki.aragon.org/documentation/Code_of_Conduct/). In short, we expect you to be friendly and welcoming in all of our spaces.
 
 
 ## Ways to contribute
 
-### File an issue
+### Filing an issue
 If you see a problem with the docs that should be improved, you can simply report it in our [issue tracker](https://github.com/aragon/hack/issues).  Please take a quick look to see if the issue doesn't already exist before filing yours.
 
-Do your best to include as many details as needed in order for someone else to fix the problem and resolve the issue.
+Do your best to include as many details as needed in order to make it as easy as possible for someone else to fix the problem and resolve the issue.
 
-### Fix an issue
+### Fixing an issue
 You can browse our [issue tracker](https://github.com/aragon/hack/issues) and choose an issue to fix.  Or, if you spot something in the docs that needs fixing, you can go right in and fix it without creating an issue first.  The development process follows one typical of open source contributions. Here's a quick rundown:
 
 1. [Find an issue](https://github.com/aragon/hack/issues) that you are interested in addressing or a feature that you would like to add.
@@ -30,11 +30,17 @@ You can browse our [issue tracker](https://github.com/aragon/hack/issues) and ch
 13. Make changes to the pull request if the maintainer recommends them.
 14. Celebrate your success after your pull request is merged!
 
-Besides this method of setting up a local instance of the docs for editing, you can also edit a page directly through your browser.  Start this process by clicking the "EDIT" link in the top-right corner of any page and then clicking the pencil icon in the github copy of the page.
+For a great tutorial on the above workflow see [here](https://gist.github.com/Chaser324/ce0505fbed06b947d962).
+
+### Editing in the browser
+
+Besides setting up a local instance of the docs for editing, you can also edit a page directly through your browser.  Start this process by clicking the light blue **EDIT** link in the top-right corner of any page and then clicking the pencil icon in the github copy of the page.
+
+If you don't have any programming experience or if this is your first time contributing to an open-source project, don't worry. We've created a [GitHub guide](/docs-internal/github-guide.md) just for you 😊.
 
 
 ## Documentation guidelines
-In our efforts to keep the docs clear and consistent throughout and as useful as possible for people, please make sure any contributions adhere to the following guidelines:
+To ensure our docs are kept as clear and consistent as possible, please make sure any contributions adhere to the following guidelines:
 
 1. Follow [Strunk and White](http://www.jlakes.org/ch/web/The-elements-of-style.pdf) for grammar and punctuation.
 2. Don’t include closing “;” at the end of statements in JS code blocks.
