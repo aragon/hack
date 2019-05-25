@@ -36,7 +36,7 @@ For a great tutorial on the above workflow see [here](https://gist.github.com/Ch
 
 ### Editing in the browser
 
-Besides setting up a local instance of the docs for editing, you can also edit a page directly through your browser.  Start this process by clicking the light blue **EDIT** link in the top-right corner of any page and then clicking the pencil icon in the github copy of the page.
+Besides setting up a local instance of the docs for editing, you can also edit a page directly through your browser. To start this process click on the light blue **EDIT** link in the top-right corner of any page. You'll be redirected to a github copy of the page. Click on the pencil icon in the top right to start editing.
 
 If you don't have any programming experience or if this is your first time contributing to an open-source project, don't worry. We've created a [GitHub guide](/docs-internal/github-guide.md) just for you 😊.
 
