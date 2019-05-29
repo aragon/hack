@@ -1,9 +1,10 @@
  ## Introduction
- The Agent app is an Aragon App that can be installed in any Aragon DAO. It's main feature is its ability to perform arbitrary calls to contracts. This allows it to represent the DAO externally.
 
- In other words, the Agent app can be thought of as the external interface of a DAO: it allows a DAO and its members to collectively participate in any web3 application, including other DAOs. 
- 
  >Aragon Agent is a fully-fledged Ethereum account owned by an Aragon organization. It's like a multi-signature account on steroids that enables organizations to interact with any Ethereum contract or protocol. Trading tokens on 0x or Uniswap, opening a Maker CDP, managing names in ENS, owning digital LAND parcels, or even breeding digital cats. [Source](https://blog.aragon.one/aragon-agent-beta-release/)
+
+ The Agent app (or Aragon Agent) is an Aragon app that can be installed in any Aragon DAO. It's main feature is its ability to perform arbitrary calls to contracts. This means it can be thought of as the **external interface of a DAO**. 
+ 
+ 
 
 
 
