@@ -17,7 +17,7 @@ Concretely, the Agent app allows for things like:
 
 - An Aragon DAO to participate as a stakeholder in another DAO.
 
-### Further resources
+### To find out more
 - [Dynamic Permissions for Organization “Actions” with Signer Integration](https://forum.aragon.org/t/dynamic-permissions-for-organization-actions-with-signer-integration/116)
 
  - [Agent app, arbitrary actions from DAOs](https://forum.aragon.org/t/agent-app-arbitrary-actions-from-daos/275)
