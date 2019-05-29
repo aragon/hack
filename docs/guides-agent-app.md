@@ -59,6 +59,38 @@ N.B. even if you've already installed the CLI, you might want to reinstall it to
 
 ## Installing the Agent app
 
+aragonCLI installs the `aragon dao` commands. We use [these commands](https://hack.aragon.org/docs/cli-dao-commands) to interact directly with our dao from the command line. They are also available directly using the `dao` shortcut.
+
+### **Step 1**
+To install the Agent app run: 
+
+`dao install <your organisation's name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/` 
+
+You should see that after `dao install <your organisation's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro#global-options): `enviroment` and `apm.ipfs.rpc`.
+
+`environment` specifies the network we want to use. In our case...
+
+And `apm.ipfs.rpc` identifies the IPFS node used to publish files. In our case...
+
+Note that if we had chosen the **Ethereum Mainnet** as the network for our organization we would have passed `aragon:mainnet` instead of `aragon:rinkeby` as the argument to `environment`.
+
+For more on the `dao install` command see the documentation [here](https://hack.aragon.org/docs/cli-dao-commands#dao-install).
+
+### **Step 2**
+If you look at the output of the command you just ran, you should see the following:
+```
+ℹ Successfully executed: "Execute desired action as a token holder"
+ ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
+```
+
+
+
+
+
+
+
+
+
 
 
 
