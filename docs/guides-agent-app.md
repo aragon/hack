@@ -24,7 +24,7 @@ Concretely, the Agent app allows for things like:
 
  - [Releasing Aragon Agent beta](https://blog.aragon.one/aragon-agent-beta-release/)
 
-## Prerequisites
+## Before we start
 
 Before we start, you'll need to head over to [Aragon](https://app.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-kits/tree/master/kits/democracy).
 
