@@ -1,8 +1,11 @@
- >Aragon Agent is a fully-fledged Ethereum account owned by an Aragon organization. It's like a multi-signature account on steroids that enables organizations to interact with any Ethereum contract or protocol. Trading tokens on 0x or Uniswap, opening a Maker CDP, managing names in ENS, owning digital LAND parcels, or even breeding digital cats. [Source](https://blog.aragon.one/aragon-agent-beta-release/)
  
- ## Introduction
+## Introduction
 
  The Agent app (or Aragon Agent) is an Aragon app that can be installed in any Aragon DAO. It's main feature is its ability to perform arbitrary calls to contracts. This means it can be thought of as the **external interface of a DAO**. 
+
+ Put another way:
+
+ >Aragon Agent is a fully-fledged Ethereum account owned by an Aragon organization. It's like a multi-signature account on steroids that enables organizations to interact with any Ethereum contract or protocol. Trading tokens on 0x or Uniswap, opening a Maker CDP, managing names in ENS, owning digital LAND parcels, or even breeding digital cats. [Source](https://blog.aragon.one/aragon-agent-beta-release/)
  
  In technical terms, it's a superset of the [Vault app](https://wiki.aragon.org/dev/apps/vault/), which means it can hold valuable assets ((ETH and [ERC-20](https://en.wikipedia.org/wiki/ERC-20) tokens).
  
@@ -53,6 +56,8 @@ Hopefully, it downloaded successfully.
 You can find out more about aragonCLI by reading the [aragonCLI documentation](https://hack.aragon.org/docs/cli-intro).
 
 N.B. even if you've already installed the CLI, you might want to reinstall it to make sure you're up to date with the latest version.
+
+## Installing the Agent app
 
 
 
