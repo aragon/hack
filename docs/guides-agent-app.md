@@ -90,7 +90,7 @@ Running a local IPFS node allows us to run the same command without the `--apm.i
 
 However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
 
-**Note that this will trigger a vote in the DAO, you'll need to vote YES to confirm the installation of the Agent app.**
+**Note that this will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.**
 
 
 ## 3. Set permissions
@@ -125,23 +125,23 @@ You should see a table that looks something like this:
 
 | App  | Proxy address | Content |
 | ------------- | ------------- | ------------ |
-| kernel@vundefined  | 0x45d5bfc6262dc22aac45e2d11de84502c50cb2f5  | (No UI available) |
-| acl@vundefined | 0xea8e69eb3393f05f7d541b0a19702d57cbec9c51   | (No UI available) |
-| evmreg@vundefined | 0x0ebd148047b006380d2e0a882561c99c8f236e93  | (No UI available) | 
-| voting@v2.0.3 | **0xcebf38271c2fb25c1505711c832c9813e8c8f0bd**  | ipfs:QmcgUz9PXaZwvA3m7fXPgjsEVKteuivLNSCDvxKGv8ztMa |
-| vault@v3.0.1   | 0x7f82f34e15b6942ca4f9493224ff2e2dd1e58cb8  | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
-| finance@v2.0.4    | 0x512ddbc255bfc05dc0fc0f7bc5ef35344a834a44  | ipfs:QmUA6s9eA6Nq5CPrd29ZGYXTTHqvYPUUJ5CUSM5QCj4XKY |
-| token-manager@v2.0.2  | 0x0f23ed476668bca59fdcc9142d413ecc4983dde1  | ipfs:QmP8RgDXBDUxV4LLwKsepFJPbXLcpaKu8DMngWPFz51P1m |
+| kernel@vundefined  | 0xa25fb31870bc492d450012ae32dafa72af9e82c3  | (No UI available) |
+| acl@vundefined | 0xfefb0cdb7a1fac257815d52ba82776f98dc70205   | (No UI available) |
+| evmreg@vundefined | 0x9087db02300ef24b116daf0426b6ba22b28a0c79  | (No UI available) | 
+| voting@v2.0.3 | **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5**  | ipfs:QmPjWU51opgTVnXwAhYAWasL2CaiYHqy2mXdXtzqfC8sKx |
+| vault@v3.0.1   | 0x952a18185da912984e0bc8a830ba98f8151976af | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
+| finance@v2.0.4    | 0x4171f7ac1a4606b93093e8648e2f9a16c59cf3b1 | ipfs:QmeMLs4jHya89khHVSubLaao9cZW6ELZUoYPHkwCUwKBH7 |
+| token-manager@v2.0.2  | 0xbf07e1c74a72aa60df3ddf3115d15575d27e61e1 | ipfs:Qmb9Bv3J9AuXD5auY1WNwiJeohnYRhyso7XMULs7EZ8eTG |
 
 Followed directly by another that looks like this:
 
 | Permissionless app   | Proxy address  |
 | ------------- | ------------- |
-| 0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a | **0xD9c5C153B162ACd0e88370410F92A055052d4572** |
+| 0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a | **0x843bfA21a040E742ec32b8F6991e182D9655AF21** |
 
-The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In my case that's **0xD9c5C153B162ACd0e88370410F92A055052d4572** .
+The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In my case that's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** .
 
-The Voting app address can be found under the **Proxy address** column in the voting app row of the first table: **0xcebf38271c2fb25c1505711c832c9813e8c8f0bd** .
+The Voting app address can be found under the **Proxy address** column in the voting app row of the first table: **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** .
 
 Once you've located your Agent and Voting app addresses, run the following command:
 
@@ -162,7 +162,7 @@ Before we explain the `dao acl create` command we ran above we need to understan
 
 Aragon uses an [Access Control List](https://hack.aragon.org/docs/acl-intro) (ACL) to control who can access your app's functionality.
 
-This list just contains a set of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission.
+This list contains a set of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission.
 
 [`dao acl create`](https://hack.aragon.org/docs/cli-dao-commands#dao-acl-create) is just the Aragon command used to create a permission in the ACL.
 
@@ -201,7 +201,9 @@ You should see that in our case:
 
 **5.** Is our Voting app again. We are giving it permission to re-grant or revoke the permission we have just given it.
 
-For more on how we handle permissions in Aragon, we encourage you to read through our [documentation](https://hack.aragon.org/docs/acl-intro).
+For more on how we handle permissions in Aragon, we encourage you to read through this [documentation](https://hack.aragon.org/docs/acl-intro).
+
+**Note that, same as before, this will trigger a vote in the DAO, you'll need to vote *yes* to confirm the new permissions you've granted to the Voting app.**
 
 ## 4. Check the app has appeared
 
