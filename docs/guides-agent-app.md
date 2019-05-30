@@ -83,7 +83,7 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
 For more on the `dao install` command see the documentation [here](https://hack.aragon.org/docs/cli-dao-commands#dao-install).
 
 
-# Step 3: Assigning permissions
+# Step 3: Setting permissions
 
 If you look at the end of the output of the `dao install` command you just ran, you should see the following:
 ```
@@ -92,9 +92,13 @@ If you look at the end of the output of the `dao install` command you just ran, 
 ```
 What does this mean exactly? 
 
-Although we've successfully installed the Agent app, before we can use it as part of our DAO we need to define who can access the app's functionality.
+It's telling us that although we've successfully installed the Agent app, before we can use it as part of our DAO we need to define who can access the app's functionality.
 
 In other words, we need to define who has permission to execute actions in the Agent app and who can re-grant and revoke that permission.
+
+In this guide we're going to give the Voting app permissions to execute actions on behalf of the Agent app, and therefore on behalf of the DAO.
+
+But before we do that we need to get a hold of the Ethereum address of the Agent app -- remember Agent is a fully-fledged Ethereum account -- as well as the address of the Voting app.
 
 ...
 
