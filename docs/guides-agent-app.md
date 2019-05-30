@@ -228,6 +228,10 @@ You should see that your Agent app has been added to the bottom of the App table
 | Permissionless app   | Proxy address  |
 | ------------- | ------------- |
 
+This is confirmation that the Agent app is now an app in the DAO.
+
+Note that **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a** is just the identifier for the Agent app.
+
 ...*Visual explanation of how to verify through UI*
 
 
