@@ -1,5 +1,5 @@
  
-## Introduction
+# Introduction
 
  The Agent app (or Aragon Agent) is an Aragon app that can be installed in any Aragon DAO. It's main feature is its ability to perform arbitrary calls to contracts. This means it can be thought of as the **external interface of a DAO**. 
 
@@ -24,7 +24,7 @@ Concretely, the Agent app allows for things like:
 
  - [Releasing Aragon Agent beta](https://blog.aragon.one/aragon-agent-beta-release/)
 
-## Before we start
+# Before we start
 
 Before we start, you'll need to head over to [Aragon](https://app.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-kits/tree/master/kits/democracy).
 
@@ -40,7 +40,7 @@ We'll go with the following (sensible) defaults:
 - Min. Quorum: 0%
 - Duration: 168 hours (or 1 week)
 
-## Installing aragonCLI
+# Step 1: Installing aragonCLI
 
 The aragonCLI (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
 
@@ -56,13 +56,12 @@ Note that even if you've already installed the CLI, you might want to reinstall 
 
 If you want to find out more about aragonCLI, have a look at the [aragonCLI documentation](https://hack.aragon.org/docs/cli-intro).
 
-## Installing the Agent app
+# Step 2: Installing the Agent app
 
 Now that we've downloaded aragonCLI, we're ready to install the Agent app.
 
 aragonCLI installs the `aragon dao` commands. We use [these commands](https://hack.aragon.org/docs/cli-dao-commands) to interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
 
-### **Step 1**
 To install the Agent app run: 
 
 `dao install <your organisation's name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/` 
@@ -83,13 +82,23 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
 
 For more on the `dao install` command see the documentation [here](https://hack.aragon.org/docs/cli-dao-commands#dao-install).
 
-### **Step 2**
-If you look at the output of the command you just ran, you should see the following:
+
+# Step 3: Assigning permissions
+
+If you look at the end of the output of the `dao install` command you just ran, you should see the following:
 ```
 ℹ Successfully executed: "Execute desired action as a token holder"
  ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
 ```
+What does this mean exactly? 
 
+Although we've successfully installed the Agent app, before we can use it as part of our DAO we need to define who can access the app's functionality.
+
+In other words, we need to define who has permission to execute actions in the Agent app and who can re-grant and revoke that permission.
+
+...
+
+For more on how we handle permissions in Aragon, [see here](https://hack.aragon.org/docs/acl-intro).
 
 
 
