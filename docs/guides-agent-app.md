@@ -145,9 +145,9 @@ You should see the following output:
 ```
 🎉🎉 Congratulations! 🎉🎉 You've successfully given your Voting app permissions to execute actions on behalf of your Agent app.
 
-[Explain the acl command, EXECUTE_ROLE and arguments]
+**[Explain the acl command, EXECUTE_ROLE and arguments]**
 
-If you rerun the command:
+Now, if you rerun the command:
 
 `dao apps <your organization name> --all --environment aragon:rinkeby`
 
