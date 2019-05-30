@@ -40,7 +40,9 @@ We'll go with the following (sensible) defaults:
 - Min. Quorum: 0%
 - Duration: 168 hours (or 1 week)
 
-# 1. Installing aragonCLI
+# Setup
+
+## 1. Installing aragonCLI
 
 The [aragonCLI]((https://hack.aragon.org/docs/cli-intro).) (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
 
@@ -56,7 +58,7 @@ If that still doesn't fix things 😟, please reach out to us at the [#dev-help 
 
 Note that even if you've already installed the CLI, you might want to reinstall it to make sure you're up to date with the latest version.
 
-# 2. Installing the Agent app
+## 2. Installing the Agent app
 
 Now that we've downloaded aragonCLI 🎉, we're ready to install the Agent app.
 
@@ -88,7 +90,7 @@ Running a local IPFS node allows us to run the same command without the `--apm.i
 However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
 
 
-# 3. Setting permissions
+## 3. Setting permissions
 
 If you look at the end of the output of the `dao install` command you just ran, you should see the following:
 ```
@@ -196,7 +198,7 @@ You should see that in our case:
 
 **5.** Is our Voting app again. We are giving it permission to re-grant or revoke the permission we have just given it.
 
-# 4. Verifying permissions
+## 4. Verifying permissions
 
 If you rerun the command:
 
@@ -224,7 +226,15 @@ You should see that your Agent app has been added to the bottom of the App table
 For more on how we handle permissions in Aragon, we encourage you to read through our [documentation](https://hack.aragon.org/docs/acl-intro).
 
 
+# Use cases
 
+## 1. Voting in another organization
+
+## 2. Opening a makerCDP
+
+## 3. Interacting with Uniswap
+
+## 3. Creating an Aragon Trust
 
 
 
