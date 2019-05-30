@@ -128,10 +128,10 @@ You should see a table that looks something like this:
 | kernel@vundefined  | 0xa25fb31870bc492d450012ae32dafa72af9e82c3  | (No UI available) |
 | acl@vundefined | 0xfefb0cdb7a1fac257815d52ba82776f98dc70205   | (No UI available) |
 | evmreg@vundefined | 0x9087db02300ef24b116daf0426b6ba22b28a0c79  | (No UI available) | 
-| voting@v2.0.3 | **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5**  | ipfs:QmPjWU51opgTVnXwAhYAWasL2CaiYHqy2mXdXtzqfC8sKx |
+| voting@v2.0.4 | **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5**  | ipfs:QmPjWU51opgTVnXwAhYAWasL2CaiYHqy2mXdXtzqfC8sKx |
 | vault@v3.0.1   | 0x952a18185da912984e0bc8a830ba98f8151976af | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
-| finance@v2.0.4    | 0x4171f7ac1a4606b93093e8648e2f9a16c59cf3b1 | ipfs:QmeMLs4jHya89khHVSubLaao9cZW6ELZUoYPHkwCUwKBH7 |
-| token-manager@v2.0.2  | 0xbf07e1c74a72aa60df3ddf3115d15575d27e61e1 | ipfs:Qmb9Bv3J9AuXD5auY1WNwiJeohnYRhyso7XMULs7EZ8eTG |
+| finance@v2.0.5    | 0x4171f7ac1a4606b93093e8648e2f9a16c59cf3b1 | ipfs:QmeMLs4jHya89khHVSubLaao9cZW6ELZUoYPHkwCUwKBH7 |
+| token-manager@v2.0.3  | 0xbf07e1c74a72aa60df3ddf3115d15575d27e61e1 | ipfs:Qmb9Bv3J9AuXD5auY1WNwiJeohnYRhyso7XMULs7EZ8eTG |
 
 Followed directly by another that looks like this:
 
@@ -215,14 +215,14 @@ You should see that your Agent app has been added to the bottom of the App table
 
 | App  | Proxy address | Content |
 | ------------- | ------------- | ------------ |
-| kernel@vundefined  | 0x45d5bfc6262dc22aac45e2d11de84502c50cb2f5  | (No UI available) |
-| acl@vundefined | 0xea8e69eb3393f05f7d541b0a19702d57cbec9c51   | (No UI available) |
-| evmreg@vundefined | 0x0ebd148047b006380d2e0a882561c99c8f236e93  | (No UI available) | 
-| voting@v2.0.3 | 0xcebf38271c2fb25c1505711c832c9813e8c8f0bd  | ipfs:QmcgUz9PXaZwvA3m7fXPgjsEVKteuivLNSCDvxKGv8ztMa |
-| vault@v3.0.1   | 0x7f82f34e15b6942ca4f9493224ff2e2dd1e58cb8  | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
-| finance@v2.0.4    | 0x512ddbc255bfc05dc0fc0f7bc5ef35344a834a44  | ipfs:QmUA6s9eA6Nq5CPrd29ZGYXTTHqvYPUUJ5CUSM5QCj4XKY |
-| token-manager@v2.0.2  | 0x0f23ed476668bca59fdcc9142d413ecc4983dde1  | ipfs:QmP8RgDXBDUxV4LLwKsepFJPbXLcpaKu8DMngWPFz51P1m |
-| **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a** | 0xD9c5C153B162ACd0e88370410F92A055052d4572 | ipfs:QmfNaBuQsaKE8at2ce9k2FU9dKs16WQqg4RPUHSNik1z9e |
+| kernel@vundefined  | 0xa25fb31870bc492d450012ae32dafa72af9e82c3 | (No UI available) |
+| acl@vundefined | 0xfefb0cdb7a1fac257815d52ba82776f98dc70205 | (No UI available) |
+| evmreg@vundefined | 0x9087db02300ef24b116daf0426b6ba22b28a0c79 | (No UI available) | 
+| voting@v2.0.4 | 0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5 | ipfs:QmPjWU51opgTVnXwAhYAWasL2CaiYHqy2mXdXtzqfC8sKx |
+| vault@v3.0.1   | 0x952a18185da912984e0bc8a830ba98f8151976af | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
+| finance@v2.0.5    | 0x4171f7ac1a4606b93093e8648e2f9a16c59cf3b1 | ipfs:QmeMLs4jHya89khHVSubLaao9cZW6ELZUoYPHkwCUwKBH7 |
+| token-manager@v2.0.3  | 0xbf07e1c74a72aa60df3ddf3115d15575d27e61e1 | ipfs:Qmb9Bv3J9AuXD5auY1WNwiJeohnYRhyso7XMULs7EZ8eTG |
+| **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a** | 0x843bfa21a040e742ec32b8f6991e182d9655af21 | ipfs:QmfNaBuQsaKE8at2ce9k2FU9dKs16WQqg4RPUHSNik1z9e |
 
 
 | Permissionless app   | Proxy address  |
