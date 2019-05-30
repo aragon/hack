@@ -1,4 +1,9 @@
- 
+---
+id: guides-use-agent
+title: How to use Aragon Agent
+sidebar_label: Agent app
+---
+
 # Introduction
 
  The Agent app (or Aragon Agent) is an Aragon app that can be installed in any Aragon DAO. It's main feature is its ability to perform arbitrary calls to contracts. This means it can be thought of as the **external interface of a DAO**. 
@@ -27,11 +32,11 @@ Concretely, the Agent app allows for things like:
 
 # Setup
 
-## 0. Creating a Democracy DAO
+## 0. Create a Democracy DAO
 
 Before we start, you'll need to head over to [Aragon](https://app.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-kits/tree/master/kits/democracy).
 
-If you're not sure how to do that, please have a look at  [this section](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization) of our awesome [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization).
+If you're not sure how to do that, please have a look at  [this section](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization) of our  [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization).
 
 The first thing you'll be asked to do is to [choose the network](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#211-navigate-to-httpsapparagonorg-in-your-web-browser) for your organization. For the purposes of this guide we'll choose the **Ethereum Testnet (Rinkeby)**.
 
@@ -43,7 +48,7 @@ We'll go with the following (sensible) defaults:
 - Min. Quorum: 0%
 - Duration: 168 hours (or 1 week)
 
-## 1. Installing aragonCLI
+## 1. Install aragonCLI
 
 The [aragonCLI]((https://hack.aragon.org/docs/cli-intro).) (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
 
@@ -59,11 +64,11 @@ If that still doesn't fix things 😟, please reach out to us at the [#dev-help 
 
 Note that even if you've already installed the CLI, you might want to reinstall it to make sure you're up to date with the latest version.
 
-## 2. Installing the Agent app
+## 2. Install the Agent app
 
-Now that we've downloaded aragonCLI 🎉, we're ready to install the Agent app.
+Now that we've downloaded aragonCLI 🎉, we're ready to install the [Agent app](https://blog.aragon.one/aragon-agent-beta-release/).
 
-aragonCLI installs the `aragon dao` commands. We use [these commands](https://hack.aragon.org/docs/cli-dao-commands) to interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
+aragonCLI installs the [`aragon dao`](https://hack.aragon.org/docs/cli-dao-commands) commands. We use these cto interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
 
 We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#dao-install) command to install the Agent app.
 
@@ -72,9 +77,11 @@ We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#
 1. The address or name of an Aragon DAO. 
 2. The name of an Aragon app.
 
-So to install the Agent app run: 
+So in our case, to install the Agent app, we'll run: 
 
-`dao install <your organisation's name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/` 
+```
+dao install <your organisation name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+```
 
 You should see that after `dao install <your organisation's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro#global-options): `--enviroment` and `--apm.ipfs.rpc`.
 
@@ -84,16 +91,41 @@ Note that if we had chosen the **Ethereum Mainnet** as the network for our organ
 
 The `--apm.ipfs.rpc` option allows us to point to an IPFS node that has the files we are looking for. In our case we're pointing it to the aragon network IPFS node.
 
-Note that we can run our own IPFS node by running `aragon ipfs` in another terminal window. 
+We can also run our own IPFS node by running `aragon ipfs` in another terminal window. 
 
 Running a local IPFS node allows us to run the same command without the `--apm.ipfs.rpc` option (since the `--apm.ipfs.rpc` option defaults to `http://localhost:5001`). 
 
 However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
 
+**Note that, in the true spirit of democracy, this step will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.**
 
-## 3. Setting permissions
+1. Click on the  Voting app icon on the left. You should you have one open vote.
 
-If you look at the end of the output of the `dao install` command you just ran, you should see the following:
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-0.png">
+</p>
+
+2. Click on the **View vote** button. You should see a panel pop up on the right hand side.
+
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-1.png">
+</p>
+
+3. Scroll to the bottom of the panel and click on the big green **Yes** button.
+
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-2.png">
+</p>
+
+4. Sign the transaction and voila! That's all there is to it. When you click on the Voting app again you should see the vote has passed with a 100% Yes vote.
+
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-3.png">
+</p>
+
+## 3. Set permissions
+
+If you look at the end of the output of the `dao install` command you ran in the previous step, you should see the following:
 ```
 ℹ Successfully executed: "Execute desired action as a token holder"
  ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
@@ -113,7 +145,7 @@ To do this we'll use the [`dao apps`](https://hack.aragon.org/docs/cli-dao-comma
 
 `dao apps` takes one argument: the address or name of an aragon DAO. 
 
-By default it only returns apps with permissions. But we can use the `--all` option to get it to return apps without permissions in the report.
+By default it only returns apps with permissions. But we can use the `--all` option to get it to return apps without permissions.
 
 From the command line run:
 
@@ -123,27 +155,29 @@ You should see a table that looks something like this:
 
 | App  | Proxy address | Content |
 | ------------- | ------------- | ------------ |
-| kernel@vundefined  | 0x45d5bfc6262dc22aac45e2d11de84502c50cb2f5  | (No UI available) |
-| acl@vundefined | 0xea8e69eb3393f05f7d541b0a19702d57cbec9c51   | (No UI available) |
-| evmreg@vundefined | 0x0ebd148047b006380d2e0a882561c99c8f236e93  | (No UI available) | 
-| voting@v2.0.3 | **0x1141b4a2d237023cbf916244ac2f3bf17b00bd40**  | ipfs:QmcgUz9PXaZwvA3m7fXPgjsEVKteuivLNSCDvxKGv8ztMa |
-| vault@v3.0.1   | 0x7f82f34e15b6942ca4f9493224ff2e2dd1e58cb8  | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
-| finance@v2.0.4    | 0x512ddbc255bfc05dc0fc0f7bc5ef35344a834a44  | ipfs:QmUA6s9eA6Nq5CPrd29ZGYXTTHqvYPUUJ5CUSM5QCj4XKY |
-| token-manager@v2.0.2  | 0x0f23ed476668bca59fdcc9142d413ecc4983dde1  | ipfs:QmP8RgDXBDUxV4LLwKsepFJPbXLcpaKu8DMngWPFz51P1m |
+| kernel@vundefined  | 0xa25fb31870bc492d450012ae32dafa72af9e82c3  | (No UI available) |
+| acl@vundefined | 0xfefb0cdb7a1fac257815d52ba82776f98dc70205   | (No UI available) |
+| evmreg@vundefined | 0x9087db02300ef24b116daf0426b6ba22b28a0c79  | (No UI available) | 
+| voting@v2.0.4 | **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5**  | ipfs:QmPjWU51opgTVnXwAhYAWasL2CaiYHqy2mXdXtzqfC8sKx |
+| vault@v3.0.1   | 0x952a18185da912984e0bc8a830ba98f8151976af | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
+| finance@v2.0.5    | 0x4171f7ac1a4606b93093e8648e2f9a16c59cf3b1 | ipfs:QmeMLs4jHya89khHVSubLaao9cZW6ELZUoYPHkwCUwKBH7 |
+| token-manager@v2.0.3  | 0xbf07e1c74a72aa60df3ddf3115d15575d27e61e1 | ipfs:Qmb9Bv3J9AuXD5auY1WNwiJeohnYRhyso7XMULs7EZ8eTG |
 
 Followed directly by another that looks like this:
 
 | Permissionless app   | Proxy address  |
 | ------------- | ------------- |
-| 0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a | **0xD9c5C153B162ACd0e88370410F92A055052d4572** |
+| 0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a | **0x843bfA21a040E742ec32b8F6991e182D9655AF21** |
 
-The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In my case that's **0xD9c5C153B162ACd0e88370410F92A055052d4572** .
+The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In my case that's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** . Yours will be slightly different.
 
-The Voting app address can be found under the **Proxy address** column in the voting app row of the first table: **0x1141b4a2d237023cbf916244ac2f3bf17b00bd40** .
+The Voting app address can be found under the **Proxy address** column in the voting app row of the first table: **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** .
 
 Once you've located your Agent and Voting app addresses, run the following command:
 
-`dao acl create <Your organisation name> <Your agent app address> EXECUTE_ROLE <Your voting app address> <Your voting app address> --environment aragon:rinkeby`
+```
+dao acl create <your organisation name> <your agent app address> EXECUTE_ROLE <your voting app address> <your voting app address> --environment aragon:rinkeby
+```
 
 You should see the following output:
 
@@ -160,46 +194,71 @@ Before we explain the `dao acl create` command we ran above we need to understan
 
 Aragon uses an [Access Control List](https://hack.aragon.org/docs/acl-intro) (ACL) to control who can access your app's functionality.
 
-This list just contains a set of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission.
+This list contains a set of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission.
 
 [`dao acl create`](https://hack.aragon.org/docs/cli-dao-commands#dao-acl-create) is just the Aragon command used to create a permission in the ACL.
 
 It takes 5 arguments:
 
-**1.** The name or main address of the DAO
-
-**2.** The address of the app whose permissions are being managed.
-
-**3.** The identifier or name of the role.
-
-**4.** The address of the app (or entity) that is being granted the permission.
-
-**5.** The address of the app (or entity) that will be able to grant that permission or revoke it.
+1. The name or main address of the DAO
+2. The address of the app whose - permissions are being managed.
+3. The identifier or name of the role.
+4.  The address of the app (or entity) that is being granted the permission.
+5. The address of the app (or entity) that will be able to grant that permission or revoke it.
 
 Let's revisit an annotated version of the command we ran above:
 
 ```
 dao acl create
-1. <Your organization name>
-2. <Your agent app address> 
+1. <your organization name>
+2. <your agent app address> 
 3. EXECUTE_ROLE
-4. <Your voting app address>
-5. <Your voting app address>
+4. <your voting app address>
+5. <your voting app address>
 --environment aragon:rinkeby
 ```
 You should see that in our case:
 
-**1.** Is the name of our organization. 
+- **1** is the name of our organization. 
 
-**2.** Is our organization's Agent app -- we are managing the permissions of our Agent app by allowing the Voting app to execute actions on behalf of it).
+- **2** is our organization's Agent app -- we are managing the permissions of our Agent app by allowing the Voting app to execute actions on behalf of it.
 
-**3.** Is the EXECUTE_ROLE. The EXECUTE_ROLE is a role defined in the Agent app. It allows an app or entity to transfer tokens (as well as some additional actions).
+- **3** is the EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an app or entity to transfer tokens (as well as some additional actions).
 
-**4.** Is our organization's Voting app -- we are granting permission to our Voting app to execute actions on behalf of our Agent app.
+- **4** is our organization's Voting app -- we are granting permission to our Voting app to execute actions on behalf of our Agent app.
 
-**5.** Is our Voting app again. We are giving it permission to re-grant or revoke the permission we have just given it.
+- **5** is our Voting app again -- we are giving it permission to re-grant or revoke the permission we have just given it.
 
-## 4. Verifying permissions
+**Note that, same as before, this command will trigger a vote in the DAO and you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
+
+You can do this either by using the UI again or,now that you know how to get the address of your apps, by running:
+
+```
+dao exec <your organization name> <your voting app address> vote 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+```
+
+[`dao exec`](https://hack.aragon.org/docs/cli-dao-commands) is used to perform transactions in your DAO directly from the aragonCLI. It takes at least three arguments:
+
+- The first is always the name of the DAO you want to interact with. In our case this is our DAO's name.
+
+- The second is the address of the app where the action is being performed. In our case this is the [Voting app](https://wiki.aragon.org/dev/apps/voting/).
+
+- The third is the name of the method being executed in the app: In our case the method is [`vote`](https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes).
+
+- The remaining arguments are the arguments which the method -- in our case `vote` -- will be exectuted with. We are passing in three: `1`,  `true` and  `true`.
+
+    - The first (`1`) is the id for the vote we want to interact with. This is always an integer. Vote ids start at 0 and increment by 1 each time a vote is created.
+
+    - The second (`true`) specifies which was we want to vote: `true` means yes and `false` means no.
+
+    - And the third (`true`) specifies whether the contract should check if a vote already has enough support to be executed. By executed we mean that even if everyone else voted against, the vote would still be approved. If that's the case, the vote is executed and immediately closed. `true` means check, `false` means don't check.
+
+<p align="center">
+   <img width="400" src="/docs/assets/agent-guide/agent-4.png">
+   <em>It's easy to find vote ids from the UI: see the red circle.</em>
+</p>
+
+## 4. Check permissions
 
 If you rerun the command:
 
@@ -209,33 +268,148 @@ You should see that your Agent app has been added to the bottom of the App table
 
 | App  | Proxy address | Content |
 | ------------- | ------------- | ------------ |
-| kernel@vundefined  | 0x45d5bfc6262dc22aac45e2d11de84502c50cb2f5  | (No UI available) |
-| acl@vundefined | 0xea8e69eb3393f05f7d541b0a19702d57cbec9c51   | (No UI available) |
-| evmreg@vundefined | 0x0ebd148047b006380d2e0a882561c99c8f236e93  | (No UI available) | 
-| voting@v2.0.3 | 0x1141b4a2d237023cbf916244ac2f3bf17b00bd40  | ipfs:QmcgUz9PXaZwvA3m7fXPgjsEVKteuivLNSCDvxKGv8ztMa |
-| vault@v3.0.1   | 0x7f82f34e15b6942ca4f9493224ff2e2dd1e58cb8  | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
-| finance@v2.0.4    | 0x512ddbc255bfc05dc0fc0f7bc5ef35344a834a44  | ipfs:QmUA6s9eA6Nq5CPrd29ZGYXTTHqvYPUUJ5CUSM5QCj4XKY |
-| token-manager@v2.0.2  | 0x0f23ed476668bca59fdcc9142d413ecc4983dde1  | ipfs:QmP8RgDXBDUxV4LLwKsepFJPbXLcpaKu8DMngWPFz51P1m |
-| **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a** | 0xD9c5C153B162ACd0e88370410F92A055052d4572 | ipfs:QmfNaBuQsaKE8at2ce9k2FU9dKs16WQqg4RPUHSNik1z9e |
+| kernel@vundefined  | 0xa25fb31870bc492d450012ae32dafa72af9e82c3 | (No UI available) |
+| acl@vundefined | 0xfefb0cdb7a1fac257815d52ba82776f98dc70205 | (No UI available) |
+| evmreg@vundefined | 0x9087db02300ef24b116daf0426b6ba22b28a0c79 | (No UI available) | 
+| voting@v2.0.4 | 0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5 | ipfs:QmPjWU51opgTVnXwAhYAWasL2CaiYHqy2mXdXtzqfC8sKx |
+| vault@v3.0.1   | 0x952a18185da912984e0bc8a830ba98f8151976af | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
+| finance@v2.0.5    | 0x4171f7ac1a4606b93093e8648e2f9a16c59cf3b1 | ipfs:QmeMLs4jHya89khHVSubLaao9cZW6ELZUoYPHkwCUwKBH7 |
+| token-manager@v2.0.3  | 0xbf07e1c74a72aa60df3ddf3115d15575d27e61e1 | ipfs:Qmb9Bv3J9AuXD5auY1WNwiJeohnYRhyso7XMULs7EZ8eTG |
+| **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a** | 0x843bfa21a040e742ec32b8f6991e182d9655af21 | ipfs:QmfNaBuQsaKE8at2ce9k2FU9dKs16WQqg4RPUHSNik1z9e |
 
 
 | Permissionless app   | Proxy address  |
 | ------------- | ------------- |
 
-...*Visual explanation of how to verify through UI*
+This confirms that the Agent app has been assigned permissions and is now an app in the DAO.
 
-For more on how we handle permissions in Aragon, we encourage you to read through our [documentation](https://hack.aragon.org/docs/acl-intro).
+Note that **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a** is just the general identifier for the version of Agent app you have installed.
 
+You can also verify that permissions have been set properly through the UI:
+
+1. Click on the **Permissions** menu option in the left panel. You should see the Agent app at the end of the second row. Click on it.
+
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-5.png">
+</p>
+
+2. Under **Actions available on this app** should see that the Voting app now manages who has the ability to execute actions for the Agent app. Scroll down.
+
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-6.png">
+</p>
+
+3.  Under **Permissions set on this app** you should see that Voting app is also allowed to execute actions on behalf of the Agent app.
+
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-7.png">
+</p>
 
 # Use cases
 
-## 1. Voting in another organization
+## A. Voting in another organization
 
-## 2. Opening a makerCDP
+### **1. Create another Democracy DAO**
 
-## 3. Interacting with Uniswap
+Exactly the same as before, revisit [step 0 of the Setup section](/docs/guides-agent-app.md) above if you need reminding 😋. 
 
-## 3. Creating an Aragon Trust
+### **2. Mint a token to allow our first DAO (A) to vote in our new DAO (B)**
+
+We've now created two Democracy DAOs -- let's call them **A** and **B**. A has an Agent app, B doesn't. We want to allow A to vote in B.
+
+Remember that one needs to be a tokenholder of B to be able to vote in B. And that A's Agent app acts its external interface.  
+
+In other words, A's Agent app allows it to participate as a stakeholder in B.
+
+It follows that to allow A to vote in B we need to mint a token for A's Agent app in B. 
+
+To do this run:
+
+```
+dao exec <name of dao B> <token manager app address of dao B> mint <agent app address of dao A> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+```
+
+Remember, you can find the addresses of the apps in any of your DAOs by running `dao apps <organization name> --environment aragon:rinkeby`.
+
+As you can see, we are using the `dao exec` command to interact with the `mint` method of B's [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) app.
+
+ [`mint`](https://wiki.aragon.org/dev/apps/token-manager/index.html#mint-tokens) is used to create new tokens and assign them to a receiver. It takes two arguments: a receiver address and the amount of tokens to be created.
+
+In our case the receiver is A's Agent App, and the amount of tokens to be created is 1.
+
+However, you should notice that instead of writing `1` as the second argument to `mint` we've gone with `1000000000000000000`.
+
+This is because a token has 18 decimals, so 1 unit of a token is actually 0.000000000000000001 tokens. This is not what we want.
+
+In order to mint a full token from the CLI we need to pass the full number, which will then be interpreted with 18 decimals.
+In our case this is a 1 followed by eighteen 0s, or `1000000000000000000`.
+
+Finally, the usual warning: running the above command will trigger a vote in B to create and send a token to A's Agent App: we'll need to vote *yes* to confirm the minting of the token.
+
+Do this either directly through the UI or by running:
+
+```
+dao exec <name of dao B> <voting app address of dao B> vote 0 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+```
+
+
+### **3. Create a vote in B to add a third entity**
+
+As in step 2, we'll run `dao exec` again, except this time the first argument to `mint` will be the address of the third entity we want to add to B.
+
+```
+dao exec <name of dao B> <token manager app address of dao B> mint <third entity's address> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+```
+
+Running the above will create a vote in B. Again we'll need to vote *yes* to confirm the minting.
+
+As before, you can either do this through the UI or run the same command we ran at the end of step 2 with one small modification: 
+
+This time the first argument to `vote` will be a `1` and not a `0`, since the id of this new vote is 1. Remember that vote ids start at zero and increment by one each time a vote is created.
+
+
+### **4. Use A's Agent app to take part in B's vote**
+
+Next, we will use A's Agent app to vote yes to adding a third entity to B.
+
+But before we do this, we need to introduce the `dao act` command.
+
+According to the documentation:
+
+>`dao act` provides some syntax sugar over `dao exec` for executing actions using Agent app instances in a DAO.
+
+In plain english, `dao act` acts like `dao exec` except the first argument to `dao act` is an agent app address rather than a DAO address.
+
+Another minor but important difference is that we need to pass in the full signature of the method we wish to execute.
+
+For example, if we want to execute the `vote` method of a Voting app we need to pass in `vote(unint256,bool,bool)`.
+
+Now that you have a high-level understanding of `dao act`, you're ready to run the following command:
+
+```
+dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+```
+
+### **5. Confirm the vote/action in A**
+
+Finally, we need to confirm the vote in A.
+
+Again, we can do this either through the UI or by running:
+
+```
+dao exec <name of dao A> <voting app address of dao A> vote 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+```
+Note that we passed in a vote id of `2` as the first argument to `vote`. That's because this is the 3rd vote created in A, and vote ids start at 0.
+
+If you've made it this far,  congratulations! 😊🎉😊🎉
+
+You've just used the Agent app to allow one Aragon organization to participate as a stakeholder in another! 
+
+## B. Opening a Maker CDP
+
+## C. Interacting with Uniswap
+
+## D. Creating an Aragon Trust
 
 
 
