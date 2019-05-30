@@ -28,7 +28,7 @@ Concretely, the Agent app allows for things like:
 
 Before we start, you'll need to head over to [Aragon](https://app.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-kits/tree/master/kits/democracy).
 
-If you're not sure how to do that, please have a look at  [this section](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization) of our [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization).
+If you're not sure how to do that, please have a look at  [this section](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization) of our awesome [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization).
 
 The first thing you'll be asked to do is to [choose the network](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#211-navigate-to-httpsapparagonorg-in-your-web-browser) for your organization. For the purposes of this guide we'll choose the **Ethereum Testnet (Rinkeby)**.
 
@@ -42,27 +42,34 @@ We'll go with the following (sensible) defaults:
 
 # Step 1: Installing aragonCLI
 
-The aragonCLI (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
+The [aragonCLI]((https://hack.aragon.org/docs/cli-intro).) (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
 
 Install it from NPM by running the following command:
 
 `npm install -g @aragon/cli`
 
-Hopefully, it downloaded successfully.
+Hopefully, it downloaded successfully 😊.
 
- If not, you should take a look at the [installing aragonCLI](https://hack.aragon.org/docs/guides-faq#installing-aragoncli) section of our [troubleshooting guide.](/docs/guides-faq#installing-aragonCLI) If that doesn't fix things, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
+ If not, you should take a quick look at the [installing aragonCLI](https://hack.aragon.org/docs/guides-faq#installing-aragoncli) section of our [troubleshooting guide](/docs/guides-faq#installing-aragonCLI). It should help diagnose and fix the problem.
+ 
+If that still doesn't fix things 😟, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help). We're more than happy to help.
 
 Note that even if you've already installed the CLI, you might want to reinstall it to make sure you're up to date with the latest version.
 
-If you want to find out more about aragonCLI, have a look at the [aragonCLI documentation](https://hack.aragon.org/docs/cli-intro).
-
 # Step 2: Installing the Agent app
 
-Now that we've downloaded aragonCLI, we're ready to install the Agent app.
+Now that we've downloaded aragonCLI 🎉, we're ready to install the Agent app.
 
 aragonCLI installs the `aragon dao` commands. We use [these commands](https://hack.aragon.org/docs/cli-dao-commands) to interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
 
-To install the Agent app run: 
+We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#dao-install) command to install the Agent app.
+
+`dao install` takes two arguments:
+
+1. The address or name of an Aragon DAO. 
+2. The name of an Aragon app.
+
+So to install the Agent app run: 
 
 `dao install <your organisation's name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/` 
 
@@ -80,8 +87,6 @@ Running a local IPFS node allows us to run the same command without the `--apm.i
 
 However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
 
-For more on the `dao install` command see the documentation [here](https://hack.aragon.org/docs/cli-dao-commands#dao-install).
-
 
 # Step 3: Setting permissions
 
@@ -90,7 +95,8 @@ If you look at the end of the output of the `dao install` command you just ran, 
 ℹ Successfully executed: "Execute desired action as a token holder"
  ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
 ```
-What does this mean exactly? 
+What does this mean exactly 
+😕? 
 
 It's telling us that although we've successfully installed the Agent app, before we can use it as part of our DAO we need to define who can access the app's functionality.
 
@@ -143,7 +149,7 @@ You should see the following output:
   ✔ Sending transaction
  ✔ Successfully executed
 ```
-🎉🎉 Congratulations! 🎉🎉 You've successfully given your Voting app permissions to execute actions on behalf of your Agent app.
+If you've reached this stage, 😊🎉 Congratulations! 🎉😊 You've successfully given your Voting app permissions to execute actions on behalf of your Agent app!
 
 **[Explain the acl command, EXECUTE_ROLE and arguments]**
 
