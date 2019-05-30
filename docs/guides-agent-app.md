@@ -27,7 +27,7 @@ Concretely, the Agent app allows for things like:
 
 # Setup
 
-## 0. Before we start
+## 0. Creating a Democracy DAO
 
 Before we start, you'll need to head over to [Aragon](https://app.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-kits/tree/master/kits/democracy).
 
