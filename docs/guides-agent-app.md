@@ -98,13 +98,13 @@ In other words, we need to define who (or which app) has permission to execute a
 
 In this guide we're going to give the Voting app permissions to execute actions on behalf of the Agent app, and therefore on behalf of the DAO.
 
-To assign these permissions we need to get a hold of the Ethereum address of the Agent app -- remember Agent is a fully-fledged Ethereum account -- as well as the address of the Voting app.
+To assign these permissions we need to get a hold of the Ethereum address of the Agent app -- remember **Agent is a fully-fledged Ethereum account** -- as well as the address of the Voting app.
 
 To do this we'll use the [`dao apps`](https://hack.aragon.org/docs/cli-dao-commands#dao-apps) command.
 
-`dao apps` takes one argument, the address or name of an aragon DAO. 
+`dao apps` takes one argument: the address or name of an aragon DAO. 
 
-By default it only shows apps with permissions. But we can use the `--all` option to include apps without permissions in the report.
+By default it only returns apps with permissions. But we can use the `--all` option to get it to return apps without permissions in the report.
 
 From the command line run:
 
@@ -127,6 +127,48 @@ Followed directly by another that looks like this:
 | Permissionless app   | Proxy address  |
 | ------------- | ------------- |
 | 0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a | **0xD9c5C153B162ACd0e88370410F92A055052d4572** |
+
+The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In my case that's **0xD9c5C153B162ACd0e88370410F92A055052d4572** .
+
+The Voting app address can be found under the **Proxy address** column in the voting app row of the first table: **0x1141b4a2d237023cbf916244ac2f3bf17b00bd40** .
+
+Once you've found your Agent and Voting app addresses, run the following command:
+
+`dao acl create <Your organisation name> <Your agent app address> EXECUTE_ROLE <Your voting app address> <Your voting app address> --environment aragon:rinkeby`
+
+You should see the following output:
+
+```
+✔ Generating transaction
+  ✔ Sending transaction
+ ✔ Successfully executed
+```
+🎉🎉 Congratulations! 🎉🎉 You've successfully given your Voting app permissions to execute actions on behalf of your Agent app.
+
+[Explain the acl command, EXECUTE_ROLE and arguments]
+
+If you rerun the command:
+
+`dao apps <your organization name> --all --environment aragon:rinkeby`
+
+You should see that your Agent app has been added to the bottom of the App table and that the Permissionless app table is now empty.
+
+| App  | Proxy address | Content |
+| ------------- | ------------- | ------------ |
+| kernel@vundefined  | 0x45d5bfc6262dc22aac45e2d11de84502c50cb2f5  | (No UI available) |
+| acl@vundefined | 0xea8e69eb3393f05f7d541b0a19702d57cbec9c51   | (No UI available) |
+| evmreg@vundefined | 0x0ebd148047b006380d2e0a882561c99c8f236e93  | (No UI available) | 
+| voting@v2.0.3 | 0x1141b4a2d237023cbf916244ac2f3bf17b00bd40  | ipfs:QmcgUz9PXaZwvA3m7fXPgjsEVKteuivLNSCDvxKGv8ztMa |
+| vault@v3.0.1   | 0x7f82f34e15b6942ca4f9493224ff2e2dd1e58cb8  | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
+| finance@v2.0.4    | 0x512ddbc255bfc05dc0fc0f7bc5ef35344a834a44  | ipfs:QmUA6s9eA6Nq5CPrd29ZGYXTTHqvYPUUJ5CUSM5QCj4XKY |
+| token-manager@v2.0.2  | 0x0f23ed476668bca59fdcc9142d413ecc4983dde1  | ipfs:QmP8RgDXBDUxV4LLwKsepFJPbXLcpaKu8DMngWPFz51P1m |
+| **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a** | 0xD9c5C153B162ACd0e88370410F92A055052d4572 | ipfs:QmfNaBuQsaKE8at2ce9k2FU9dKs16WQqg4RPUHSNik1z9e |
+
+
+| Permissionless app   | Proxy address  |
+| ------------- | ------------- |
+
+
 
 
 
