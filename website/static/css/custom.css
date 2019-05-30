@@ -180,6 +180,7 @@ li .item h4 {
 }
 .navSearchWrapper {
   width: 90%;
+  margin-bottom: 35px;
 }
 
 input#search_input_react {
@@ -555,8 +556,10 @@ nav.toc .toggleNav .navGroup h3 {
   line-height: 2;
   letter-spacing: normal;
   color: #2d4051;
-  font-size: 24px;
-  padding-top: 10px;
+  font-size: 22px;
+  padding-top: 0px;
+  margin-top: 0!important;
+  width: 90%;
 }
 .button {
   font-family: 'HankenGroteskRegular', sans-serif !important;
@@ -675,7 +678,8 @@ nav.toc .toggleNav .subNavGroup ul {
     display: block;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
-    position: fixed;
+    overflow-x: hidden;
+    position: sticky;
     top: 100px;
     width: 240px;
     padding-bottom: 50px;
@@ -691,8 +695,10 @@ nav.toc .toggleNav .subNavGroup ul {
     background-color: #f6f6f6;
     z-index: 60;
   }
-
-  .docMainWrapper .mainContainer {
-    padding-left: 260px;
+  
+  .docMainWrapper {
+    margin: 60px auto 0 auto;
   }
+
+
 }
