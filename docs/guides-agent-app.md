@@ -24,7 +24,10 @@ Concretely, the Agent app allows for things like:
 
  - [Releasing Aragon Agent beta](https://blog.aragon.one/aragon-agent-beta-release/)
 
-# Before we start
+
+# Setup
+
+## 0. Before we start
 
 Before we start, you'll need to head over to [Aragon](https://app.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-kits/tree/master/kits/democracy).
 
@@ -39,8 +42,6 @@ We'll go with the following (sensible) defaults:
 - Support: 100%
 - Min. Quorum: 0%
 - Duration: 168 hours (or 1 week)
-
-# Setup
 
 ## 1. Installing aragonCLI
 
