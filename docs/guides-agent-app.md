@@ -196,7 +196,7 @@ You should see that in our case:
 
 **5.** Is our Voting app again. We are giving it permission to re-grant or revoke the permission we have just given it.
 
-# Step 4: Verifying permissions
+# 4. Verifying permissions
 
 If you rerun the command:
 
