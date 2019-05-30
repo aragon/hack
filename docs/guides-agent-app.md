@@ -40,7 +40,7 @@ We'll go with the following (sensible) defaults:
 - Min. Quorum: 0%
 - Duration: 168 hours (or 1 week)
 
-# Step 1: Installing aragonCLI
+# 1. Installing aragonCLI
 
 The [aragonCLI]((https://hack.aragon.org/docs/cli-intro).) (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
 
@@ -56,7 +56,7 @@ If that still doesn't fix things 😟, please reach out to us at the [#dev-help 
 
 Note that even if you've already installed the CLI, you might want to reinstall it to make sure you're up to date with the latest version.
 
-# Step 2: Installing the Agent app
+# 2. Installing the Agent app
 
 Now that we've downloaded aragonCLI 🎉, we're ready to install the Agent app.
 
@@ -88,7 +88,7 @@ Running a local IPFS node allows us to run the same command without the `--apm.i
 However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
 
 
-# Step 3: Setting permissions
+# 3. Setting permissions
 
 If you look at the end of the output of the `dao install` command you just ran, you should see the following:
 ```
@@ -163,31 +163,42 @@ This list just contains a set of who has permission to execute an action in an A
 
 It takes 5 arguments:
 
-1. The name or main address of the DAO
+**1.** The name or main address of the DAO
 
-2. The address of the app whose permissions are being managed.
+**2.** The address of the app whose permissions are being managed.
 
-3. The identifier or name of the role.
+**3.** The identifier or name of the role.
 
-4. The address of the app (or entity) that is being granted the permission.
+**4.** The address of the app (or entity) that is being granted the permission.
 
-5. The address of the app (or entity) that will be able to grant that permission or revoke it.
+**5.** The address of the app (or entity) that will be able to grant that permission or revoke it.
 
-In our case:
+Let's revisit an annotated version of the command we ran above:
 
-`dao acl create <Your organization name> <Your agent app address> EXECUTE_ROLE <Your voting app address> <Your voting app address> --environment aragon:rinkeby`
+```
+dao acl create
+1. <Your organization name>
+2. <Your agent app address> 
+3. EXECUTE_ROLE
+4. <Your voting app address>
+5. <Your voting app address>
+--environment aragon:rinkeby
+```
+You should see that in our case:
 
-1. The name of the DAO is our organization 
+**1.** Is the name of our organization. 
 
-2. We are managing the permissions of our Agent app (by allowing the Voting app to execute actions on behalf of it).
+**2.** Is our organization's Agent app -- we are managing the permissions of our Agent app by allowing the Voting app to execute actions on behalf of it).
 
-3. The EXECUTE_ROLE is a role defined in the Agent app that allows an app or entity to transfer tokens (as well as some additional actions).
+**3.** Is the EXECUTE_ROLE. The EXECUTE_ROLE is a role defined in the Agent app. It allows an app or entity to transfer tokens (as well as some additional actions).
 
-4. We are granting permission to the Voting app (to execute actions on behalf of the Agent app)
+**4.** Is our organization's Voting app -- we are granting permission to our Voting app to execute actions on behalf of our Agent app.
 
-5. We are giving the Voting app permission to re-grant or revoke the permission we have just given it.
+**5.** Is our Voting app again. We are giving it permission to re-grant or revoke the permission we have just given it.
 
-Now, if you rerun the command:
+# Step 4: Verifying permissions
+
+If you rerun the command:
 
 `dao apps <your organization name> --all --environment aragon:rinkeby`
 
@@ -208,7 +219,7 @@ You should see that your Agent app has been added to the bottom of the App table
 | Permissionless app   | Proxy address  |
 | ------------- | ------------- |
 
-...
+...*Visual explanation of how to verify through UI*
 
 For more on how we handle permissions in Aragon, we encourage you to read through our [documentation](https://hack.aragon.org/docs/acl-intro).
 
