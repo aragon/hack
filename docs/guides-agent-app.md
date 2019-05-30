@@ -90,7 +90,7 @@ Running a local IPFS node allows us to run the same command without the `--apm.i
 
 However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
 
-**Note that this will trigger a vote in the DAO, we still need to vote YES to confirm the installation of the Agent app.**
+**Note that this will trigger a vote in the DAO, you'll need to vote YES to confirm the installation of the Agent app.**
 
 
 ## 3. Set permissions
