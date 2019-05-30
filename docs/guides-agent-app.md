@@ -138,7 +138,7 @@ The permissionless app is the Agent app we've just installed. Its address is lis
 
 The Voting app address can be found under the **Proxy address** column in the voting app row of the first table: **0x1141b4a2d237023cbf916244ac2f3bf17b00bd40** .
 
-Once you've found your Agent and Voting app addresses, run the following command:
+Once you've located your Agent and Voting app addresses, run the following command:
 
 `dao acl create <Your organisation name> <Your agent app address> EXECUTE_ROLE <Your voting app address> <Your voting app address> --environment aragon:rinkeby`
 
@@ -151,7 +151,41 @@ You should see the following output:
 ```
 If you've reached this stage, 😊🎉 Congratulations! 🎉😊 You've successfully given your Voting app permissions to execute actions on behalf of your Agent app!
 
-**[Explain the acl command, EXECUTE_ROLE and arguments]**
+Why did that work 😕?
+
+Before we explain the `dao acl create` command we ran above we need to understand a little bit about how permissions in Aragon work.
+
+Aragon uses an [Access Control List](https://hack.aragon.org/docs/acl-intro) (ACL) to control who can access your app's functionality.
+
+This list just contains a set of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission.
+
+[`dao acl create`](https://hack.aragon.org/docs/cli-dao-commands#dao-acl-create) is just the Aragon command used to create a permission in the ACL.
+
+It takes 5 arguments:
+
+1. The name or main address of the DAO
+
+2. The address of the app whose permissions are being managed.
+
+3. The identifier or name of the role.
+
+4. The address of the app (or entity) that is being granted the permission.
+
+5. The address of the app (or entity) that will be able to grant that permission or revoke it.
+
+In our case:
+
+`dao acl create <Your organization name> <Your agent app address> EXECUTE_ROLE <Your voting app address> <Your voting app address> --environment aragon:rinkeby`
+
+1. The name of the DAO is our organization 
+
+2. We are managing the permissions of our Agent app (by allowing the Voting app to execute actions on behalf of it).
+
+3. The EXECUTE_ROLE is a role defined in the Agent app that allows an app or entity to transfer tokens (as well as some additional actions).
+
+4. We are granting permission to the Voting app (to execute actions on behalf of the Agent app)
+
+5. We are giving the Voting app permission to re-grant or revoke the permission we have just given it.
 
 Now, if you rerun the command:
 
@@ -174,13 +208,9 @@ You should see that your Agent app has been added to the bottom of the App table
 | Permissionless app   | Proxy address  |
 | ------------- | ------------- |
 
-
-
-
-
 ...
 
-For more on how we handle permissions in Aragon, [see here](https://hack.aragon.org/docs/acl-intro).
+For more on how we handle permissions in Aragon, we encourage you to read through our [documentation](https://hack.aragon.org/docs/acl-intro).
 
 
 
