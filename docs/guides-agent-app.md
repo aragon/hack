@@ -282,12 +282,12 @@ As you can see, we are using the `dao exec` command to interact with B's [Token 
 - *aragon ipfs*
 
 
-Finally, note that running the above command will trigger a vote in **B**: you'll need to vote *yes* to confirm the minting of the token.
+Finally, note that running the above command will trigger a vote in **B**: we'll need to vote *yes* to confirm the minting of the token.
 
 We can do this either directly through the UI or by running:
 
 ```
-dao exec <name of dao B> <voting app address of dao B> "vote" 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao exec <name of dao B> <voting app address of dao B> "vote" 0 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 
@@ -298,6 +298,14 @@ As in step 2, we'll run `dao exec` again, except this time the first argument to
 ```
 dao exec <name of dao B> <token manager app address of dao B> mint <third entity's address> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
+
+Running the above will create a vote in B. Again we'll need to vote *yes* to confirm the minting.
+
+Again, you can either do this through the UI or run the same command we ran at the end of step 2.
+
+N.B. this time the first argument to `"vote"` will be a `1` and not a `0` this time, since the id of this vote is 1. Vote ids start at 0 and increment by 1 each time a vote is created.
+
+
 *...Supplement with Visual explanation (UI)?* 
 
 ### **4. Use A's Agent app to take part in B's vote**
@@ -309,7 +317,7 @@ For this we'll need to use `dao act` command.
 *...Explain `dao act`*
 
 ```
-dao act <agent app address of dao A> <voting app address of dao B>  "vote" 2 true true  --environment aragon:rinkeby
+dao act <agent app address of dao A> <voting app address of dao B>  "vote" 1 true true  --environment aragon:rinkeby
 ```
 
 
