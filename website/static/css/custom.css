@@ -180,7 +180,7 @@ li .item h4 {
 }
 .navSearchWrapper {
   width: 90%;
-  margin-bottom: 35px;
+  margin: 27px 0 35px 0;
 }
 
 input#search_input_react {
@@ -697,7 +697,7 @@ nav.toc .toggleNav .subNavGroup ul {
   }
   
   .docMainWrapper {
-    margin: 60px auto 0 auto;
+    margin: 50px auto 0 auto;
   }
 
 
