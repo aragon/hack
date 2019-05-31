@@ -174,11 +174,11 @@ This list contains a set of who has permission to execute an action in an Aragon
 
 It takes 5 arguments:
 
-**1.** The name or main address of the DAO
-**2.** The address of the app whose permissions are being managed.
-**3.** The identifier or name of the role.
-**4.** The address of the app (or entity) that is being granted the permission.
-**5.** The address of the app (or entity) that will be able to grant that permission or revoke it.
+1. The name or main address of the DAO
+2. The address of the app whose - permissions are being managed.
+3. The identifier or name of the role.
+4.  The address of the app (or entity) that is being granted the permission.
+5. The address of the app (or entity) that will be able to grant that permission or revoke it.
 
 Let's revisit an annotated version of the command we ran above:
 
@@ -193,15 +193,15 @@ dao acl create
 ```
 You should see that in our case:
 
-**1. =** The name of our organization. 
+1. **=** The name of our organization. 
 
-**2. =** Our organization's Agent app -- we are managing the permissions of our Agent app by allowing the Voting app to execute actions on behalf of it.
+2. **=** Our organization's Agent app -- we are managing the permissions of our Agent app by allowing the Voting app to execute actions on behalf of it.
 
-**3. =** The EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an app or entity to transfer tokens (as well as some additional actions).
+3. **=** The EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an app or entity to transfer tokens (as well as some additional actions).
 
-**4. =** Our organization's Voting app -- we are granting permission to our Voting app to execute actions on behalf of our Agent app.
+4. **=** Our organization's Voting app -- we are granting permission to our Voting app to execute actions on behalf of our Agent app.
 
-**5. =** Our Voting app again -- we are giving it permission to re-grant or revoke the permission we have just given it.
+5. **=** Our Voting app again -- we are giving it permission to re-grant or revoke the permission we have just given it.
 
 For more on how we handle permissions in Aragon, we encourage you to read through this [documentation](https://hack.aragon.org/docs/acl-intro).
 
