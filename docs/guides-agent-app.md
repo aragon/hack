@@ -255,7 +255,7 @@ dao exec <your organization name> <your voting app address> "vote" 1 true true -
 
 <p align="center">
    <img width="400" height="225" src="/docs/assets/agent-guide/agent-4.png">
-   <em>It's easy to find vote ids from the UI. Here the vote id is circled in red</em>
+   <em>It's easy to find vote ids from the UI. Here the id is circled in red.</em>
 </p>
 
 ## 4. Check permissions
