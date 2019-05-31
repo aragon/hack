@@ -265,9 +265,9 @@ Remember that one needs to be a tokenholder of **B** to be able to vote in **B**
 
 In other words, **A**'s Agent app allows it to participate as a stakeholder in **B**.
 
-It follows that to allow **A** to vote in **B** we need to mint a token for **A**'s Agent app in **B**. We do this by interacting with **B**'s Token Manager app.
+It follows that to allow **A** to vote in **B** we need to mint a token for **A**'s Agent app in **B**. 
 
-...
+To do this run:
 
 ```
 dao exec <name of dao B> <token manager app address of dao B> mint <agent app address of dao A> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
@@ -275,9 +275,11 @@ dao exec <name of dao B> <token manager app address of dao B> mint <agent app ad
 
 Remember you can run `dao apps <organization name> --environment aragon:rinkeby` to find the address of the apps in any of your DAOs.
 
-Note that running the above `dao exec` command will trigger a vote in **B**: you'll need to vote *yes* to confirm the minting of the token.
+We are using the `dao exec` command to interact with B's [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) app...
 
-To do this run:
+Finally, note that running the above command will trigger a vote in **B**: you'll need to vote *yes* to confirm the minting of the token.
+
+To confirm the minting run:
 
 ```
 dao exec <name of dao B> <voting app address of dao B> "vote" 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
