@@ -197,15 +197,15 @@ dao acl create
 ```
 You should see that in our case:
 
-**1.** Is the name of our organization. 
+**1.** is the name of our organization. 
 
-**2.** Is our organization's Agent app -- we are managing the permissions of our Agent app by allowing the Voting app to execute actions on behalf of it).
+**2.** is our organization's Agent app -- we are managing the permissions of our Agent app by allowing the Voting app to execute actions on behalf of it).
 
-**3.** Is the EXECUTE_ROLE. The EXECUTE_ROLE is a role defined in the Agent app. It allows an app or entity to transfer tokens (as well as some additional actions).
+**3.** is the EXECUTE_ROLE. The EXECUTE_ROLE is a role defined in the Agent app. It allows an app or entity to transfer tokens (as well as some additional actions).
 
-**4.** Is our organization's Voting app -- we are granting permission to our Voting app to execute actions on behalf of our Agent app.
+**4.** is our organization's Voting app -- we are granting permission to our Voting app to execute actions on behalf of our Agent app.
 
-**5.** Is our Voting app again. We are giving it permission to re-grant or revoke the permission we have just given it.
+**5.** is our Voting app again. We are giving it permission to re-grant or revoke the permission we have just given it.
 
 For more on how we handle permissions in Aragon, we encourage you to read through this [documentation](https://hack.aragon.org/docs/acl-intro).
 
@@ -267,6 +267,8 @@ In other words, **A**'s Agent app allows it to participate as a stakeholder in *
 
 It follows that to allow **A** to vote in **B** we need to mint a token for **A**'s Agent app in **B**. We do this by interacting with **B**'s Token Manager app.
 
+...
+
 ```
 dao exec <name of dao B> <token manager app address of dao B> mint <agent app address of dao A> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
@@ -275,25 +277,35 @@ Remember you can run `dao apps <organization name> --environment aragon:rinkeby`
 
 Note that running `dao exec` will trigger a vote in **B**: you'll need to vote *yes* to confirm the minting of the token.
 
-*...Things to mention/explain:*
+*...Things left to mention/explain:*
 - *1000000000000000000*
-- *aragon ipfs*
-- *dao exec*
 - *mint function*
 - *token manager*
-- *UI workflow*
+- *aragon ipfs*
 
-### **3. Create a vote in B to add a third member**
 
-*...Visual explanation (UI)* 
+### **3. Create a vote in B to add a third entity**
+
+As in step 2, we'll run `dao exec` again, except this time the first argument to `mint` will be the address of the third entity.
+
+```
+dao exec <name of dao B> <token manager app address of dao B> mint <third entity's address> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+```
+*...Supplement with Visual explanation (UI)* 
 
 ### **4. Use A's Agent app to take part in B's vote**
+
+We will use A's Agent app to vote yes to adding a third entity to B.
+
 ```
 dao act <agent app address of dao A> <voting app address of dao B>  "vote" 2 true true  --environment aragon:rinkeby
 ```
 *...Explain `dao act`*
 
 ### **5. Confirm the vote/action in A**
+
+Finally, we need to confirm the vote in A.
+
 ```
 dao exec <name of dao A> <voting app address of dao A> "vote" 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
