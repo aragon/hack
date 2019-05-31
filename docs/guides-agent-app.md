@@ -245,11 +245,11 @@ Exactly the same as before, revisit step 0 of the Setup section above if you've 
 
 ### **2. Mint a token for our first DAO's Agent app in our new DAO**
 
-We've now created two Democracy DAOs -- **A** and **B**. **A** has an Agent app, **B** doesn't. We want to allow **A** to vote in **B**.
+We've now created two Democracy DAOs -- let's call them **A** and **B**. **A** has an Agent app, **B** doesn't. We want to allow **A** to vote in **B**.
 
-Remember that in a Democracy DAO, you need to be a tokenholder to be able to vote. And that the an Agent app essentially acts as an external interface to a DAO.
+Remember that one needs to be a tokenholder of B to be able to vote in **B**. And that **A**'s Agent app essentially acts its external interface.
 
-So we need to mint a token for DAO A's Agent app in DAO B. We do this by interacting with DAO B's Token Manager App.
+It follows that to allow **A** to vote in **B** we need to mint a token for **A**'s Agent app in **B**. We do this by interacting with **B**'s Token Manager app.
 
 ```
 dao exec
