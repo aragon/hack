@@ -193,15 +193,15 @@ dao acl create
 ```
 You should see that in our case:
 
-1. **=** The name of our organization. 
+1. **==>** The name of our organization. 
 
-2. **=** Our organization's Agent app -- we are managing the permissions of our Agent app by allowing the Voting app to execute actions on behalf of it.
+2. **==>** Our organization's Agent app -- we are managing the permissions of our Agent app by allowing the Voting app to execute actions on behalf of it.
 
-3. **=** The EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an app or entity to transfer tokens (as well as some additional actions).
+3. **==>** The EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an app or entity to transfer tokens (as well as some additional actions).
 
-4. **=** Our organization's Voting app -- we are granting permission to our Voting app to execute actions on behalf of our Agent app.
+4. **==>** Our organization's Voting app -- we are granting permission to our Voting app to execute actions on behalf of our Agent app.
 
-5. **=** Our Voting app again -- we are giving it permission to re-grant or revoke the permission we have just given it.
+5. **==>** Our Voting app again -- we are giving it permission to re-grant or revoke the permission we have just given it.
 
 For more on how we handle permissions in Aragon, we encourage you to read through this [documentation](https://hack.aragon.org/docs/acl-intro).
 
