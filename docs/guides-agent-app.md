@@ -102,25 +102,25 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
 1. Click on the  Voting app icon on the left. You should you have one open vote.
 
 <p align="center">
-   <img width="800" height="450" src="/docs/assets/agent-guide/agent-0.png">
+   <img width="800" src="/docs/assets/agent-guide/agent-0.png">
 </p>
 
 2. Click on the **View vote** button. You should see a panel pop up on the right hand side.
 
 <p align="center">
-   <img width="800" height="450" src="/docs/assets/agent-guide/agent-1.png">
+   <img width="800" src="/docs/assets/agent-guide/agent-1.png">
 </p>
 
 3. Scroll to the bottom of the panel and click on the big green **Yes** button.
 
 <p align="center">
-   <img width="800" height="450" src="/docs/assets/agent-guide/agent-2.png">
+   <img width="800" src="/docs/assets/agent-guide/agent-2.png">
 </p>
 
 4. Sign the transaction and voila! That's all there is to it. When you click on the Voting app again you should see the vote has passed with a 100% Yes vote.
 
 <p align="center">
-   <img width="800" height="450" src="/docs/assets/agent-guide/agent-3.png">
+   <img width="800" src="/docs/assets/agent-guide/agent-3.png">
 </p>
 
 ## 3. Set permissions
@@ -254,7 +254,7 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
     - And the third (`true`) specifies whether the contract should check if a vote already has enough support to be executed. By executed we mean that even if everyone else voted against, the vote would still be approved. If that's the case, the vote is executed and immediately closed. `true` means check, `false` means don't check.
 
 <p align="center">
-   <img width="400" height="225" src="/docs/assets/agent-guide/agent-4.png">
+   <img width="400" src="/docs/assets/agent-guide/agent-4.png">
    <em>It's easy to find vote ids from the UI: see the red circle.</em>
 </p>
 
@@ -290,19 +290,19 @@ You can also verify that permissions have been set properly through the UI:
 1. Click on the **Permissions** menu option in the left panel. You should see the Agent app at the end of the second row. Click on it.
 
 <p align="center">
-   <img width="800" height="450" src="/docs/assets/agent-guide/agent-5.png">
+   <img width="800" src="/docs/assets/agent-guide/agent-5.png">
 </p>
 
 2. Under **Actions available on this app** should see that the Voting app now manages who has the ability to execute actions for the Agent app. Scroll down.
 
 <p align="center">
-   <img width="800" height="450" src="/docs/assets/agent-guide/agent-6.png">
+   <img width="800" src="/docs/assets/agent-guide/agent-6.png">
 </p>
 
 3.  Under **Permissions set on this app** you should see that Voting app is also allowed to execute actions on behalf of the Agent app.
 
 <p align="center">
-   <img width="800" height="450" src="/docs/assets/agent-guide/agent-7.png">
+   <img width="800" src="/docs/assets/agent-guide/agent-7.png">
 </p>
 
 # Use cases
