@@ -61,7 +61,7 @@ Note that even if you've already installed the CLI, you might want to reinstall 
 
 ## 2. Install the Agent app
 
-Now that we've downloaded aragonCLI 🎉, we're ready to install the Agent app.
+Now that we've downloaded aragonCLI 🎉, we're ready to install the [Agent app](https://blog.aragon.one/aragon-agent-beta-release/).
 
 aragonCLI installs the [`aragon dao`](https://hack.aragon.org/docs/cli-dao-commands) commands. We use these cto interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
 
@@ -119,7 +119,7 @@ To do this we'll use the [`dao apps`](https://hack.aragon.org/docs/cli-dao-comma
 
 `dao apps` takes one argument: the address or name of an aragon DAO. 
 
-By default it only returns apps with permissions. But we can use the `--all` option to get it to return apps without permissions in the report.
+By default it only returns apps with permissions. But we can use the `--all` option to get it to return apps without permissions.
 
 From the command line run:
 
@@ -143,7 +143,7 @@ Followed directly by another that looks like this:
 | ------------- | ------------- |
 | 0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a | **0x843bfA21a040E742ec32b8F6991e182D9655AF21** |
 
-The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In my case that's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** .
+The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In my case that's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** . Yours will be slightly different.
 
 The Voting app address can be found under the **Proxy address** column in the voting app row of the first table: **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** .
 
@@ -175,13 +175,9 @@ This list contains a set of who has permission to execute an action in an Aragon
 It takes 5 arguments:
 
 **1.** The name or main address of the DAO
-
 **2.** The address of the app whose permissions are being managed.
-
 **3.** The identifier or name of the role.
-
 **4.** The address of the app (or entity) that is being granted the permission.
-
 **5.** The address of the app (or entity) that will be able to grant that permission or revoke it.
 
 Let's revisit an annotated version of the command we ran above:
