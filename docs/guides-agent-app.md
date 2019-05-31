@@ -284,17 +284,16 @@ As you can see, we are using the `dao exec` command to interact with B's [Token 
 
 Finally, note that running the above command will trigger a vote in **B**: you'll need to vote *yes* to confirm the minting of the token.
 
-To confirm the minting of this token run:
+We can do this either directly through the UI or by running:
 
 ```
 dao exec <name of dao B> <voting app address of dao B> "vote" 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 
-
 ### **3. Create a vote in B to add a third entity**
 
-As in step 2, we'll run `dao exec` again, except this time the first argument to `mint` will be the address of the third entity.
+As in step 2, we'll run `dao exec` again, except this time the first argument to `mint` will be the address of the third entity we want to add to B.
 
 ```
 dao exec <name of dao B> <token manager app address of dao B> mint <third entity's address> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
@@ -305,14 +304,20 @@ dao exec <name of dao B> <token manager app address of dao B> mint <third entity
 
 Next, we will use A's Agent app to vote yes to adding a third entity to B.
 
+For this we'll need to use `dao act` command.
+
+*...Explain `dao act`*
+
 ```
 dao act <agent app address of dao A> <voting app address of dao B>  "vote" 2 true true  --environment aragon:rinkeby
 ```
-*...Explain `dao act`*
+
 
 ### **5. Confirm the vote/action in A**
 
 Finally, we need to confirm the vote in A.
+
+Again, we can do this either directly through the UI or by running:
 
 ```
 dao exec <name of dao A> <voting app address of dao A> "vote" 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
