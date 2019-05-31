@@ -117,7 +117,7 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
    <img width="800" height="450" src="/docs/assets/agent-guide/agent-2.png">
 </p>
 
-4. And voila! That's all there is to it. You should see the vote has passed with 100% Yes vote.
+4. Sign the transaction and voila! That's all there is to it. When you click on the Voting app again you should see the vote has passed with a 100% Yes vote.
 
 <p align="center">
    <img width="800" height="450" src="/docs/assets/agent-guide/agent-3.png">
