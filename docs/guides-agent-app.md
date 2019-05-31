@@ -230,7 +230,7 @@ dao exec <your organization name> <your voting app address> "vote" 1 true true -
     - And the third (`true`) specifies whether the contract should check if a vote already has enough support to be executed. By executed we mean that even if everyone else voted against, the vote would still be approved. If that's the case, the vote is executed and immediately closed. `true` means check, `false` means don't check.
 
 
-## 4. Check the app has appeared
+## 4. Check permissions
 
 If you rerun the command:
 
