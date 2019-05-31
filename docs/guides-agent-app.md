@@ -301,9 +301,7 @@ dao exec <name of dao B> <token manager app address of dao B> mint <third entity
 
 Running the above will create a vote in B. Again we'll need to vote *yes* to confirm the minting.
 
-As before, you can either do this through the UI or run the same command we ran at the end of step 2 with one small modification.
-
-This time the first argument to `"vote"` will be a `1` and not a `0`, since the id of this new vote is 1. Not that vote ids start at 0 and increment by 1 each time a vote is created.
+As before, you can either do this through the UI or run the same command we ran at the end of step 2 with one small modification: This time the first argument to `"vote"` will be a `1` and not a `0`, since the id of this new vote is 1. Not that vote ids start at 0 and increment by 1 each time a vote is created.
 
 
 *...Supplement with Visual explanation (UI)?* 
@@ -329,6 +327,7 @@ Again, we can do this either directly through the UI or by running:
 ```
 dao exec <name of dao A> <voting app address of dao A> "vote" 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
+Note that we pass in a vote id of `2` as the first argument to `vote`. That's because this is the third vote created in A, and vote ids start at 0.
 
 ## B. Opening a Maker CDP
 
