@@ -120,7 +120,7 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
 
 ## 3. Set permissions
 
-If you look at the end of the output of the `dao install` command you just ran, you should see the following:
+If you look at the end of the output of the `dao install` command you ran in the previous step, you should see the following:
 ```
 ℹ Successfully executed: "Execute desired action as a token holder"
  ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
