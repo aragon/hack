@@ -285,7 +285,7 @@ Note that running `dao exec` will trigger a vote in **B**: you'll need to vote *
 
 ### **3. Create a vote in B to add a third member**
 
-*Insert visual explanation (UI)* 
+*...Visual explanation (UI)* 
 
 ### **4. Use A's Agent app to take part in B's vote**
 ```
