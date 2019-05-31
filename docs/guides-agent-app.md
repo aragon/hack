@@ -234,7 +234,7 @@ You should see that in our case:
 You can do this either by using the UI again or,now that you know how to get the address of your apps, by running:
 
 ```
-dao exec <your organization name> <your voting app address> "vote" 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao exec <your organization name> <your voting app address> vote 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 [`dao exec`](https://hack.aragon.org/docs/cli-dao-commands) is used to perform transactions in your DAO directly from the aragonCLI. It takes at least three arguments:
@@ -349,7 +349,7 @@ Finally, the usual warning: running the above command will trigger a vote in B t
 Do this either directly through the UI or by running:
 
 ```
-dao exec <name of dao B> <voting app address of dao B> "vote" 0 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao exec <name of dao B> <voting app address of dao B> vote 0 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 
@@ -365,7 +365,7 @@ Running the above will create a vote in B. Again we'll need to vote *yes* to con
 
 As before, you can either do this through the UI or run the same command we ran at the end of step 2 with one small modification: 
 
-This time the first argument to `"vote"` will be a `1` and not a `0`, since the id of this new vote is 1. Remember that vote ids start at zero and increment by one each time a vote is created.
+This time the first argument to `vote` will be a `1` and not a `0`, since the id of this new vote is 1. Remember that vote ids start at zero and increment by one each time a vote is created.
 
 
 ### **4. Use A's Agent app to take part in B's vote**
@@ -397,7 +397,7 @@ Finally, we need to confirm the vote in A.
 Again, we can do this either through the UI or by running:
 
 ```
-dao exec <name of dao A> <voting app address of dao A> "vote" 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao exec <name of dao A> <voting app address of dao A> vote 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 Note that we passed in a vote id of `2` as the first argument to `vote`. That's because this is the 3rd vote created in A, and vote ids start at 0.
 
