@@ -249,7 +249,7 @@ We've now created two Democracy DAOs -- let's call them **A** and **B**. **A** h
 
 Remember that one needs to be a tokenholder of **B** to be able to vote in **B**. And that **A**'s Agent app acts its external interface.  
 
-In other words, A's Agent app allows it to participate as a stakeholder in B.
+In other words, **A**'s Agent app allows it to participate as a stakeholder in **B**.
 
 It follows that to allow **A** to vote in **B** we need to mint a token for **A**'s Agent app in **B**. We do this by interacting with **B**'s Token Manager app.
 
