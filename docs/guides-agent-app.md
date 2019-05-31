@@ -290,13 +290,13 @@ Exactly the same as before, revisit step 0 of the Setup section above if you've 
 
 ### **2. Mint a token to allow our first DAO (A) to vote in our new DAO (B)**
 
-We've now created two Democracy DAOs -- let's call them **A** and **B**. **A** has an Agent app, **B** doesn't. We want to allow **A** to vote in **B**.
+We've now created two Democracy DAOs -- let's call them **A** and **B**. A has an Agent app, B doesn't. We want to allow A to vote in B.
 
-Remember that one needs to be a tokenholder of **B** to be able to vote in **B**. And that **A**'s Agent app acts its external interface.  
+Remember that one needs to be a tokenholder of B to be able to vote in B. And that A's Agent app acts its external interface.  
 
-In other words, **A**'s Agent app allows it to participate as a stakeholder in **B**.
+In other words, A's Agent app allows it to participate as a stakeholder in B.
 
-It follows that to allow **A** to vote in **B** we need to mint a token for **A**'s Agent app in **B**. 
+It follows that to allow A to vote in B we need to mint a token for A's Agent app in B. 
 
 To do this run:
 
@@ -319,7 +319,7 @@ This is because a token has 18 decimals, so 1 unit of a token is actually 0.0000
 In order to mint a full token from the CLI we need to pass the full number, which will then be interpreted with 18 decimals.
 In our case this is a 1 followed by eighteen 0s, or `1000000000000000000`.
 
-Finally, the usual warning: running the above command will trigger a vote in **B** to create and send a token to **A**'s Agent App: we'll need to vote *yes* to confirm the minting of the token.
+Finally, the usual warning: running the above command will trigger a vote in B to create and send a token to A's Agent App: we'll need to vote *yes* to confirm the minting of the token.
 
 Do this either directly through the UI or by running:
 
@@ -365,6 +365,10 @@ Again, we can do this either directly through the UI or by running:
 dao exec <name of dao A> <voting app address of dao A> "vote" 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 Note that we passed in a vote id of `2` as the first argument to `vote`. That's because this is the 3rd vote created in A, and vote ids start at 0.
+
+If you've made it this far,  congratulations! 😊🎉😊🎉
+
+You've just used the Agent app to allow one organization to vote in another!
 
 ## B. Opening a Maker CDP
 
