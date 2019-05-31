@@ -387,7 +387,7 @@ For example, if we want to execute the `vote` method of a Voting app we need to 
 Now that you have a high-level understanding of `dao act`, you're ready to run the following command:
 
 ```
-dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby
+dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 ### **5. Confirm the vote/action in A**
