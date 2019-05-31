@@ -311,7 +311,7 @@ You can also verify that permissions have been set properly through the UI:
 
 ### **1. Create another Democracy DAO**
 
-Exactly the same as before, revisit step 0 of the Setup section above if you've forgotten 😋. **[link]**
+Exactly the same as before, revisit [step 0 of the Setup section]() above if you've forgotten 😋. 
 
 ### **2. Mint a token to allow our first DAO (A) to vote in our new DAO (B)**
 
