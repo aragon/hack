@@ -94,25 +94,25 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
 
 **Note that this step will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.**
 
-1. Click on the  Voting app icon on the left. You should you have one open vote.
+    1. Click on the  Voting app icon on the left. You should you have one open vote.
 
 <p align="center">
    <img width="800" height="450" src="/docs/assets/agent-guide/agent-0.png">
 </p>
 
-2. Click on the **View vote** button.
+    2. Click on the **View vote** button. You should see a panel pop up on the right hand side.
 
 <p align="center">
    <img width="800" height="450" src="/docs/assets/agent-guide/agent-1.png">
 </p>
 
-3. Scroll to the bottom of the panel and click on the big green **Yes** button.
+    3. Scroll to the bottom of the panel and click on the big green **Yes** button.
 
 <p align="center">
    <img width="800" height="450" src="/docs/assets/agent-guide/agent-2.png">
 </p>
 
-4. Voila! You should see the vote has passed with a 100% yes vote.
+    4. And voila! That's all there is to it. You should see the vote has passed with 100% Yes vote.
 
 <p align="center">
    <img width="800" height="450" src="/docs/assets/agent-guide/agent-3.png">
