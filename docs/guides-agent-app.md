@@ -285,8 +285,19 @@ This confirms that the Agent app has been assigned permissions and is now an app
 
 Note that **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a** is just the general identifier for the version of Agent app you have installed.
 
-...*Visual explanation of how to verify through UI*
+You can also verify that permissions have been set properly through the UI.
 
+<p align="center">
+   <img width="800" height="450" src="/docs/assets/agent-guide/agent-5.png">
+</p>
+
+<p align="center">
+   <img width="800" height="450" src="/docs/assets/agent-guide/agent-6.png">
+</p>
+
+<p align="center">
+   <img width="800" height="450" src="/docs/assets/agent-guide/agent-7.png">
+</p>
 
 # Use cases
 
