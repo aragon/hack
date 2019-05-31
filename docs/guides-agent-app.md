@@ -205,7 +205,7 @@ You should see that in our case:
 
 For more on how we handle permissions in Aragon, we encourage you to read through this [documentation](https://hack.aragon.org/docs/acl-intro).
 
-**Note that, same as before, this will trigger a vote in the DAO, you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
+**Note that, same as before, this will trigger a vote in the DAO and you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
 
 You can do this either by using the UI again or,now that you know how to get the address of your apps, by running:
 
@@ -269,7 +269,7 @@ To do this run:
 dao exec <name of dao B> <token manager app address of dao B> mint <agent app address of dao A> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-Remember you can run `dao apps <organization name> --environment aragon:rinkeby` to find the address of the apps in any of your DAOs.
+Remember, you can find the addresses of the apps in any of your DAOs by running `dao apps <organization name> --environment aragon:rinkeby`.
 
 As you can see, we are using the `dao exec` command to interact with B's [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) app *...mention/explain:*
 - *1000000000000000000*
@@ -297,7 +297,9 @@ dao exec <name of dao B> <token manager app address of dao B> mint <third entity
 
 Running the above will create a vote in B. Again we'll need to vote *yes* to confirm the minting.
 
-As before, you can either do this through the UI or run the same command we ran at the end of step 2 with one small modification: This time the first argument to `"vote"` will be a `1` and not a `0`, since the id of this new vote is 1. Not that vote ids start at 0 and increment by 1 each time a vote is created.
+As before, you can either do this through the UI or run the same command we ran at the end of step 2 with one small modification: 
+
+This time the first argument to `"vote"` will be a `1` and not a `0`, since the id of this new vote is 1. Not that vote ids start at 0 and increment by 1 each time a vote is created.
 
 
 *...Supplement with Visual explanation (UI)?* 
@@ -323,7 +325,7 @@ Again, we can do this either directly through the UI or by running:
 ```
 dao exec <name of dao A> <voting app address of dao A> "vote" 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
-Note that we pass in a vote id of `2` as the first argument to `vote`. That's because this is the 3rd vote created in A, and vote ids start at 0.
+Note that we passed in a vote id of `2` as the first argument to `vote`. That's because this is the 3rd vote created in A, and vote ids start at 0.
 
 ## B. Opening a Maker CDP
 
