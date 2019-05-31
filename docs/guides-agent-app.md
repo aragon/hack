@@ -243,7 +243,7 @@ Note that **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a**
 
 Exactly the same as before, revisit step 0 of the Setup section above if you've forgotten 😋. **[link]**
 
-### **2. Mint a token for our first DAO's Agent app in our new DAO**
+### **2. Mint a token to allow our first DAO (A) to vote in our new DAO (B)**
 
 We've now created two Democracy DAOs -- let's call them **A** and **B**. **A** has an Agent app, **B** doesn't. We want to allow **A** to vote in **B**.
 
@@ -265,14 +265,14 @@ Note that running `dao exec` will trigger a vote in B: you'll need to vote *yes*
 - token manager
 - UI workflow
 
-### **3. Create a vote in our new DAO to add a third member**
+### **3. Create a vote in B to add a third member**
 
-### **4. Use our first DAO's Agent app to take part in our new DAO's vote**
+### **4. Use A's Agent app to take part in our B's vote**
 ```
 dao act <agent app address of dao A> <voting app address of dao B>  "vote" 1 true true  --environment aragon:rinkeby
 ```
 
-### **5. Confirm the vote/action in our first DAO**
+### **5. Confirm the vote/action in A**
 
 ## B. Opening a makerCDP
 
