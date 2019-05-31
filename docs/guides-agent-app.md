@@ -364,7 +364,7 @@ Another minor difference is that we need to pass in the full signature of the me
 
 For example, if we want to execute the `vote` method of a Voting app we need to pass in `vote(unint256,bool,bool)`.
 
-Now that you understand `dao act`, you're ready to run the following command:
+Now that you have a high-level understanding of `dao act`, you're ready to run the following command:
 
 ```
 dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby
