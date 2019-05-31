@@ -312,14 +312,13 @@ N.B. this time the first argument to `"vote"` will be a `1` and not a `0` this t
 
 Next, we will use A's Agent app to vote yes to adding a third entity to B.
 
-For this we'll need to use `dao act` command.
+But before we do this, we need to introduce the `dao act` command.
 
 *...Explain `dao act`*
 
 ```
 dao act <agent app address of dao A> <voting app address of dao B>  "vote" 1 true true  --environment aragon:rinkeby
 ```
-
 
 ### **5. Confirm the vote/action in A**
 
