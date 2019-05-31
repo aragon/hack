@@ -241,7 +241,7 @@ Note that **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a**
 
 ### **1. Create another Democracy DAO**
 
-Exactly the same as before, follow step 0 of the Setup section above. **[link to this]**
+Exactly the same as before, revisit step 0 of the Setup section above if you've forgotten 😋. **[link]**
 
 ### **2. Mint a token for our first DAO's Agent app in our new DAO**
 
