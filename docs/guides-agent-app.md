@@ -383,7 +383,7 @@ Note that we passed in a vote id of `2` as the first argument to `vote`. That's 
 
 If you've made it this far,  congratulations! 😊🎉😊🎉
 
-You've just used the Agent app to allow one organization to vote in another!
+You've just used the Agent app to allow one Aragon organization to participate as a stakeholder in another! 
 
 ## B. Opening a Maker CDP
 
