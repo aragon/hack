@@ -205,7 +205,7 @@ You should see that in our case:
 
 For more on how we handle permissions in Aragon, we encourage you to read through this [documentation](https://hack.aragon.org/docs/acl-intro).
 
-**Note that, same as before, this will trigger a vote in the DAO and you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
+**Note that, same as before, this command will trigger a vote in the DAO and you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
 
 You can do this either by using the UI again or,now that you know how to get the address of your apps, by running:
 
@@ -286,16 +286,22 @@ dao exec <name of dao B> <token manager app address of dao B> mint <agent app ad
 
 Remember, you can find the addresses of the apps in any of your DAOs by running `dao apps <organization name> --environment aragon:rinkeby`.
 
-As you can see, we are using the `dao exec` command to interact with B's [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) app *...mention/explain:*
-- *1000000000000000000*
-- *mint function*
-- *token manager*
-- *aragon ipfs*
+As you can see, we are using the `dao exec` command to interact with the `mint` method of B's [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) app.
 
+ [`mint`](https://wiki.aragon.org/dev/apps/token-manager/index.html#mint-tokens) is used to create new tokens and assign them to a receiver. It takes two arguments: a receiver address and the amount of tokens to be created.
 
-Finally, note that running the above command will trigger a vote in **B**: we'll need to vote *yes* to confirm the minting of the token.
+In our case the receiver is A's Agent App, and the amount of tokens to be created is 1.
 
-We can do this either directly through the UI or by running:
+However, you should notice that instead of writing `1` as the second argument to `mint` we've gone with `1000000000000000000`.
+
+This is because a token has 18 decimals, so 1 unit of a token is actually 0.000000000000000001 tokens. This is not what we want.
+
+In order to mint a full token from the CLI we need to pass the full number, which will then be interpreted with 18 decimals.
+In our case this is a 1 followed by eighteen 0s, or `1000000000000000000`.
+
+Finally, the usual warning: running the above command will trigger a vote in **B** to create and send a token to **A**'s Agent App: we'll need to vote *yes* to confirm the minting of the token.
+
+Do this either directly through the UI or by running:
 
 ```
 dao exec <name of dao B> <voting app address of dao B> "vote" 0 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
