@@ -1,4 +1,9 @@
- 
+---
+id: guides-use-agent
+title: How to use Aragon Agent
+sidebar_label: Agent app
+---
+
 # Introduction
 
  The Agent app (or Aragon Agent) is an Aragon app that can be installed in any Aragon DAO. It's main feature is its ability to perform arbitrary calls to contracts. This means it can be thought of as the **external interface of a DAO**. 
