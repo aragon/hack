@@ -275,7 +275,13 @@ dao exec <name of dao B> <token manager app address of dao B> mint <agent app ad
 
 Remember you can run `dao apps <organization name> --environment aragon:rinkeby` to find the address of the apps in any of your DAOs.
 
-Note that running `dao exec` will trigger a vote in **B**: you'll need to vote *yes* to confirm the minting of the token.
+Note that running the above `dao exec` command will trigger a vote in **B**: you'll need to vote *yes* to confirm the minting of the token.
+
+To do this run:
+
+```
+dao exec <name of dao B> <voting app address of dao B> "vote" 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+```
 
 *...Things left to mention/explain:*
 - *1000000000000000000*
