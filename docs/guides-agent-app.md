@@ -380,7 +380,7 @@ According to the documentation:
 
 In plain english, `dao act` acts like `dao exec` except the first argument to `dao act` is an agent app address rather than a DAO address.
 
-Another minor difference is that we need to pass in the full signature of the method we wish to execute.
+Another minor but important difference is that we need to pass in the full signature of the method we wish to execute.
 
 For example, if we want to execute the `vote` method of a Voting app we need to pass in `vote(unint256,bool,bool)`.
 
