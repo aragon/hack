@@ -303,7 +303,7 @@ dao exec <name of dao B> <token manager app address of dao B> mint <third entity
 
 ### **4. Use A's Agent app to take part in B's vote**
 
-We will use A's Agent app to vote yes to adding a third entity to B.
+Next, we will use A's Agent app to vote yes to adding a third entity to B.
 
 ```
 dao act <agent app address of dao A> <voting app address of dao B>  "vote" 2 true true  --environment aragon:rinkeby
