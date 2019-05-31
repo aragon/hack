@@ -252,7 +252,7 @@ Remember that one needs to be a tokenholder of B to be able to vote in **B**. An
 It follows that to allow **A** to vote in **B** we need to mint a token for **A**'s Agent app in **B**. We do this by interacting with **B**'s Token Manager app.
 
 `dao exec <name of dao B> <dao B token manager address> mint <dao  A agent app address> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/`
-```
+
 Remember you can run `dao apps <your organization name> --environment aragon:rinkeby` to find the address of your apps.
 
 Once you've done that you need to go to DAO B's Voting app and vote YES to finalize the transaction.
