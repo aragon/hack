@@ -213,23 +213,21 @@ You can do this either by using the UI again or,now that you know how to get the
 dao exec <your organization name> <your voting app address> "vote" 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-[`dao exec`](https://hack.aragon.org/docs/cli-dao-commands) is used to perform transactions in your DAO directly from the aragonCLI.
+[`dao exec`](https://hack.aragon.org/docs/cli-dao-commands) is used to perform transactions in your DAO directly from the aragonCLI. It takes at least three arguments:
 
-The first argument is always the name of the DAO you want to interact with. In our case this is our DAO's name.
+- The first is always the name of the DAO you want to interact with. In our case this is our DAO's name.
 
-The second is  the address of the app where the action is being performed. In our case this is the [Voting app](https://wiki.aragon.org/dev/apps/voting/).
+- The second is the address of the app where the action is being performed. In our case this is the [Voting app](https://wiki.aragon.org/dev/apps/voting/).
 
-The third is the name of the method being executed in the app: In our case the method is [`vote`](https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes).
+- The third is the name of the method being executed in the app: In our case the method is [`vote`](https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes).
 
-The remaining arguments are the arguments which the method -- in our case `vote` -- will be exectuted with. We have three: `1`,  `true` and  `true`.
+- The remaining arguments are the arguments which the method -- in our case `vote` -- will be exectuted with. We are passing in three: `1`,  `true` and  `true`.
 
-The first is the id for the vote we want to interact with. This is always an integer. Vote ids start at 0 and increment by 1 each time a vote is created.
+    - The first (`1`) is the id for the vote we want to interact with. This is always an integer. Vote ids start at 0 and increment by 1 each time a vote is created.
 
-The second specifies which was we want to vote: `true` means yes and `false` means no.
+    - The second (`true`) specifies which was we want to vote: `true` means yes and `false` means no.
 
-And the third specifies whether the contract should check if a vote already has enough support to be executed.
-
- By executed we mean that even if everyone else voted against, the vote would still be approved. If that's the case, the vote is executed and immediately closed. `true` means check, `false` means don't check.
+    - And the third (`true`) specifies whether the contract should check if a vote already has enough support to be executed. By executed we mean that even if everyone else voted against, the vote would still be approved. If that's the case, the vote is executed and immediately closed. `true` means check, `false` means don't check.
 
 
 ## 4. Check the app has appeared
