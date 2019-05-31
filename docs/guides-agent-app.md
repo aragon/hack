@@ -94,13 +94,7 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
 
 **Note that this will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.**
 
-You can do this either by using the UI again or by running:
-
-```
-dao exec <your organization name> <your voting app address> "vote" 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
-```
-
-*explain dao exec*
+*...Visual explanation (UI)*
 
 
 ## 3. Set permissions
@@ -217,6 +211,14 @@ For more on how we handle permissions in Aragon, we encourage you to read throug
 
 **Note that, same as before, this will trigger a vote in the DAO, you'll need to vote *yes* to confirm the new permissions you've granted to the Voting app.**
 
+You can do this either by using the UI again or by running:
+
+```
+dao exec <your organization name> <your voting app address> "vote" 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+```
+
+*...Explain dao exec*
+
 ## 4. Check the app has appeared
 
 If you rerun the command:
@@ -273,13 +275,13 @@ Remember you can run `dao apps <organization name> --environment aragon:rinkeby`
 
 Note that running `dao exec` will trigger a vote in **B**: you'll need to vote *yes* to confirm the minting of the token.
 
-**Things to mention/explain:**
-- 1000000000000000000
-- aragon ipfs
-- dao exec
-- mint function
-- token manager
-- UI workflow
+*...Things to mention/explain:*
+- *1000000000000000000*
+- *aragon ipfs*
+- *dao exec*
+- *mint function*
+- *token manager*
+- *UI workflow*
 
 ### **3. Create a vote in B to add a third member**
 
@@ -289,6 +291,7 @@ Note that running `dao exec` will trigger a vote in **B**: you'll need to vote *
 ```
 dao act <agent app address of dao A> <voting app address of dao B>  "vote" 2 true true  --environment aragon:rinkeby
 ```
+*...Explain `dao act`*
 
 ### **5. Confirm the vote/action in A**
 ```
