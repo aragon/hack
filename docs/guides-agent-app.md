@@ -224,8 +224,6 @@ You should see that in our case:
 
 - **5** is our Voting app again -- we are giving it permission to re-grant or revoke the permission we have just given it.
 
-For more on how we handle permissions in Aragon, we encourage you to read through this [documentation](https://hack.aragon.org/docs/acl-intro).
-
 **Note that, same as before, this command will trigger a vote in the DAO and you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
 
 You can do this either by using the UI again or,now that you know how to get the address of your apps, by running:
