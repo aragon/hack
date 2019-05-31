@@ -95,19 +95,19 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
 **Note that this step will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.**
 
 <p align="center">
-   <img width="600" height="400" src="/docs/assets/agent-guide/agent-0.png">
+   <img width="800" height="450" src="/docs/assets/agent-guide/agent-0.png">
 </p>
 
 <p align="center">
-   <img width="600" height="400" src="/docs/assets/agent-guide/agent-1.png">
+   <img width="800" height="450" src="/docs/assets/agent-guide/agent-1.png">
 </p>
 
 <p align="center">
-   <img width="600" height="400" src="/docs/assets/agent-guide/agent-2.png">
+   <img width="800" height="450" src="/docs/assets/agent-guide/agent-2.png">
 </p>
 
 <p align="center">
-   <img width="800" height="400" src="/docs/assets/agent-guide/agent-3.png">
+   <img width="800" height="450" src="/docs/assets/agent-guide/agent-3.png">
 </p>
 
 ## 3. Set permissions
