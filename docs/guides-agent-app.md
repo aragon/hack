@@ -217,7 +217,7 @@ You can do this either by using the UI again or by running:
 dao exec <your organization name> <your voting app address> "vote" 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-*...Explain dao exec*
+*...Explain `dao exec`*
 
 ## 4. Check the app has appeared
 
