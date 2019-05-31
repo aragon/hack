@@ -285,15 +285,21 @@ This confirms that the Agent app has been assigned permissions and is now an app
 
 Note that **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a** is just the general identifier for the version of Agent app you have installed.
 
-You can also verify that permissions have been set properly through the UI.
+You can also verify that permissions have been set properly through the UI:
+
+1. Click on the **Permissions** menu option in the left panel. You should see the Agent app at the end of the second row. Click on it.
 
 <p align="center">
    <img width="800" height="450" src="/docs/assets/agent-guide/agent-5.png">
 </p>
 
+2. Under **Actions available on this app** should see that the Voting app now manages who has the ability to execute actions for the Agent app. Scroll down.
+
 <p align="center">
    <img width="800" height="450" src="/docs/assets/agent-guide/agent-6.png">
 </p>
+
+3.  Under **Permissions set on this app** you should see that Voting app is also allowed to execute actions on behalf of the Agent app.
 
 <p align="center">
    <img width="800" height="450" src="/docs/assets/agent-guide/agent-7.png">
