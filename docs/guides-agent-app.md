@@ -209,7 +209,7 @@ You should see that in our case:
 
 For more on how we handle permissions in Aragon, we encourage you to read through this [documentation](https://hack.aragon.org/docs/acl-intro).
 
-**Note that, same as before, this will trigger a vote in the DAO, you'll need to vote *yes* to confirm the new permissions you've granted to the Voting app.**
+**Note that, same as before, this will trigger a vote in the DAO, you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
 
 You can do this either by using the UI again or,now that you know how to get the address of your apps, by running:
 
