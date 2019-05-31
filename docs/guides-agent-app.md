@@ -349,7 +349,17 @@ Next, we will use A's Agent app to vote yes to adding a third entity to B.
 
 But before we do this, we need to introduce the `dao act` command.
 
-*...Explain `dao act`*
+According to the documentation:
+
+>`dao act` provides some syntax sugar over `dao exec` for executing actions using Agent app instances in a DAO.
+
+In plain english, `dao act` acts like `dao exec` except the first argument to `dao act` is an agent app address rather than a DAO address.
+
+Another minor difference is that we need to pass in the full signature of the method we wish to execute.
+
+For example, if we want to execute the `vote` method of a Voting app we need to pass in `vote(unint256,bool,bool)`.
+
+Now that you understand `dao act`, you're ready to run the following command:
 
 ```
 dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby
@@ -359,7 +369,7 @@ dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint25
 
 Finally, we need to confirm the vote in A.
 
-Again, we can do this either directly through the UI or by running:
+Again, we can do this either through the UI or by running:
 
 ```
 dao exec <name of dao A> <voting app address of dao A> "vote" 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
