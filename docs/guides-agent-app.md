@@ -317,7 +317,7 @@ But before we do this, we need to introduce the `dao act` command.
 *...Explain `dao act`*
 
 ```
-dao act <agent app address of dao A> <voting app address of dao B>  "vote" 1 true true  --environment aragon:rinkeby
+dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby
 ```
 
 ### **5. Confirm the vote/action in A**
