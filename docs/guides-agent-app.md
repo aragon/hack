@@ -74,7 +74,7 @@ We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#
 
 So to install the Agent app run: 
 
-`dao install <your organisation's name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/` 
+`dao install <your organisation name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/` 
 
 You should see that after `dao install <your organisation's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro#global-options): `--enviroment` and `--apm.ipfs.rpc`.
 
@@ -91,6 +91,14 @@ Running a local IPFS node allows us to run the same command without the `--apm.i
 However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
 
 **Note that this will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.**
+
+You can do this either by using the UI again or by running:
+
+```
+dao exec <your organization name> <your voting app address> "vote" 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+```
+
+*explain dao exec*
 
 
 ## 3. Set permissions
@@ -145,7 +153,9 @@ The Voting app address can be found under the **Proxy address** column in the vo
 
 Once you've located your Agent and Voting app addresses, run the following command:
 
-`dao acl create <Your organisation name> <Your agent app address> EXECUTE_ROLE <Your voting app address> <Your voting app address> --environment aragon:rinkeby`
+```
+dao acl create <your organisation name> <your agent app address> EXECUTE_ROLE <your voting app address> <your voting app address> --environment aragon:rinkeby
+```
 
 You should see the following output:
 
@@ -182,11 +192,11 @@ Let's revisit an annotated version of the command we ran above:
 
 ```
 dao acl create
-1. <Your organization name>
-2. <Your agent app address> 
+1. <your organization name>
+2. <your agent app address> 
 3. EXECUTE_ROLE
-4. <Your voting app address>
-5. <Your voting app address>
+4. <your voting app address>
+5. <your voting app address>
 --environment aragon:rinkeby
 ```
 You should see that in our case:
@@ -283,7 +293,7 @@ dao act <agent app address of dao A> <voting app address of dao B>  "vote" 2 tru
 dao exec <name of dao A> <voting app address of dao A> "vote" 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-## B. Opening a makerCDP
+## B. Opening a Maker CDP
 
 ## C. Interacting with Uniswap
 
