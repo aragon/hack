@@ -248,6 +248,7 @@ dao exec <your organization name> <your voting app address> "vote" 1 true true -
 
     - And the third (`true`) specifies whether the contract should check if a vote already has enough support to be executed. By executed we mean that even if everyone else voted against, the vote would still be approved. If that's the case, the vote is executed and immediately closed. `true` means check, `false` means don't check.
 
+*...Image + explanation of how to look up vote id in UI*
 
 ## 4. Check permissions
 
@@ -341,8 +342,6 @@ As before, you can either do this through the UI or run the same command we ran 
 
 This time the first argument to `"vote"` will be a `1` and not a `0`, since the id of this new vote is 1. Remember that vote ids start at zero and increment by one each time a vote is created.
 
-
-*...Supplement with Visual explanation (UI)?* 
 
 ### **4. Use A's Agent app to take part in B's vote**
 
