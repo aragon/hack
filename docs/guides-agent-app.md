@@ -63,7 +63,7 @@ Note that even if you've already installed the CLI, you might want to reinstall 
 
 Now that we've downloaded aragonCLI 🎉, we're ready to install the Agent app.
 
-aragonCLI installs the `aragon dao` commands. We use [these commands](https://hack.aragon.org/docs/cli-dao-commands) to interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
+aragonCLI installs the [`aragon dao`](https://hack.aragon.org/docs/cli-dao-commands) commands. We use these cto interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
 
 We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#dao-install) command to install the Agent app.
 
@@ -72,7 +72,7 @@ We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#
 1. The address or name of an Aragon DAO. 
 2. The name of an Aragon app.
 
-So to install the Agent app run: 
+So in our case, to install the Agent app, we'll run: 
 
 ```
 dao install <your organisation name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
@@ -92,9 +92,9 @@ Running a local IPFS node allows us to run the same command without the `--apm.i
 
 However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
 
-**Note that this will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.**
+**Note that this step will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.**
 
-*...Visual explanation (UI)*
+*...Visual explanation of how to confirm the vote (UI)*
 
 
 ## 3. Set permissions
@@ -327,7 +327,7 @@ Again, we can do this either directly through the UI or by running:
 ```
 dao exec <name of dao A> <voting app address of dao A> "vote" 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
-Note that we pass in a vote id of `2` as the first argument to `vote`. That's because this is the third vote created in A, and vote ids start at 0.
+Note that we pass in a vote id of `2` as the first argument to `vote`. That's because this is the 3rd vote created in A, and vote ids start at 0.
 
 ## B. Opening a Maker CDP
 
