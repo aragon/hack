@@ -97,7 +97,7 @@ Running a local IPFS node allows us to run the same command without the `--apm.i
 
 However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
 
-**Note that this step will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.**
+**Note that, in the true spirit of democracy, this step will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.**
 
 1. Click on the  Voting app icon on the left. You should you have one open vote.
 
