@@ -324,7 +324,7 @@ Exactly the same as before, revisit [step 0 of the Setup section](/docs/guides-a
 
 We've now created two Democracy DAOs -- let's call them **A** and **B**. A has an Agent app, B doesn't. We want to allow A to vote in B.
 
-Remember that one needs to be a tokenholder of B to be able to vote in B. And that A's Agent app acts its external interface.  
+Remember that A needs to be a tokenholder of B to be able to vote in B. And that A's Agent app acts its external interface.
 
 In other words, A's Agent app allows it to participate as a stakeholder in B.
 
