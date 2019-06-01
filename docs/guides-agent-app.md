@@ -75,7 +75,7 @@ Note that even if you've already installed the CLI, you might want to reinstall 
 
 Now that we've downloaded aragonCLI 🎉, we're ready to install the [Agent app](https://blog.aragon.one/aragon-agent-beta-release/).
 
-aragonCLI installs the [`aragon dao`](https://hack.aragon.org/docs/cli-dao-commands) commands. We use these cto interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
+aragonCLI installs the [`aragon dao`](https://hack.aragon.org/docs/cli-dao-commands) commands. We use these to interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
 
 We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#dao-install) command to install the Agent app.
 
