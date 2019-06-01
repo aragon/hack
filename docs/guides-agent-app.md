@@ -238,7 +238,7 @@ You should see that in our case:
 
 **Note that, same as before, this command will trigger a vote in the DAO and you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
 
-You can do this either by using the UI again or,now that you know how to get the address of your apps, by running:
+You can do this either by using the UI again or, now that you know how to get the address of your apps, by running:
 
 ```
 dao exec <your organization name> <your voting app address> vote 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
