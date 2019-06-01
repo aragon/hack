@@ -246,7 +246,7 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
 
 [`dao exec`](https://hack.aragon.org/docs/cli-dao-commands) is used to perform transactions in your DAO directly from the aragonCLI. It takes at least three arguments:
 
-- The first is always the name of the DAO you want to interact with. In our case this is our DAO's name.
+- The first is always the name or address of the DAO you want to interact with. In our case this is our DAO's name.
 
 - The second is the address of the app where the action is being performed. In our case this is the [Voting app](https://wiki.aragon.org/dev/apps/voting/).
 
