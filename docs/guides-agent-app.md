@@ -82,7 +82,8 @@ We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#
 `dao install` takes two arguments:
 
 1. The address or [aragonID](https://github.com/aragon/aragon-id) name of an Aragon DAO.
-2. The name of an Aragon app.
+2. The package name of an Aragon app published to aragonPM (e.g. vault or vault.aragonpm.eth).
+`
 
 So in our case, to install the Agent app, we'll run: 
 
