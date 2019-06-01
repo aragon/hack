@@ -371,7 +371,7 @@ Once you've voted *yes*, switch over to the Token Manager app (click on *Tokens*
    <img width="800" src="/docs/assets/agent-guide/agent-9.png">
 </p>
 
-You should see that you've added another token holder (your Agent app)!
+You should see that you've successfully added another token holder (your Agent app)!
 
 ### **3. Create a vote in B to add a third entity**
 
@@ -386,6 +386,14 @@ Running the above will create a vote in B. Again we'll need to vote *yes* to con
 As before, you can either do this through the UI or run the same command we ran at the end of step 2 with one small modification: 
 
 This time the first argument to `vote` will be a `1` and not a `0`, since the id of this new vote is 1. Remember that vote ids start at zero and increment by one each time a vote is created.
+
+If you go to the Voting app after you've voted, you'll see that the *yes* vote is only 50%.
+
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-10.png">
+</p>
+
+That's because only 1 / 2 tokenholders have voted. The other tokenholder (A's Agent app) still has to vote.
 
 
 ### **4. Use A's Agent app to take part in B's vote**
