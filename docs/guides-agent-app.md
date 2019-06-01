@@ -383,6 +383,10 @@ dao exec <name of dao B> <token manager app address of dao B> mint <third entity
 
 Running the above will create a vote in B. Again we'll need to vote *yes* to confirm the minting.
 
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-10b.png">
+</p>
+
 As before, you can either do this through the UI or run the same command we ran at the end of step 2 with one small modification: 
 
 This time the first argument to `vote` will be a `1` and not a `0`, since the id of this new vote is 1. Remember that vote ids start at zero and increment by one each time a vote is created.
