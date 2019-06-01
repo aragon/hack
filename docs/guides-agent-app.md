@@ -353,12 +353,25 @@ In our case this is a 1 followed by eighteen 0s, or `1000000000000000000`.
 
 Finally, the usual warning: running the above command will trigger a vote in B to create and send a token to A's Agent App: we'll need to vote *yes* to confirm the minting of the token.
 
-Do this either directly through the UI or by running:
+You can do this either directly through the UI or by running:
 
 ```
 dao exec <name of dao B> <voting app address of dao B> vote 0 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
+On the UI, the vote will look something like this.
+
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-8.png">
+</p>
+
+Once you've voted *yes*, switch over to the Token Manager app (click on *Tokens* in the left sidebar).
+
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-9.png">
+</p>
+
+You should see that you've added another token holder (your Agent app)!
 
 ### **3. Create a vote in B to add a third entity**
 
