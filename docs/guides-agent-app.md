@@ -402,7 +402,7 @@ That's because only 1 / 2 tokenholders have voted. The other tokenholder (A's Ag
 
 ### **4. Use A's Agent app to take part in B's vote**
 
-Next, we will use A's Agent app to vote yes to adding a third entity to B.
+To enact the vote, we'll use A's Agent app to vote yes to adding a third entity to B.
 
 But before we do this, we need to introduce the `dao act` command.
 
