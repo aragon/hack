@@ -82,7 +82,7 @@ We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#
 `dao install` takes two arguments:
 
 1. The address or [aragonID](https://github.com/aragon/aragon-id) name of an Aragon DAO.
-2. The package name of an Aragon app published to aragonPM (e.g. vault or vault.aragonpm.eth).
+2. The package name of an Aragon app published to [aragonPM](https://hack.aragon.org/docs/apm-intro.html) (for the Agent app this would be agent  or agent.aragonpm.eth).
 `
 
 So in our case, to install the Agent app, we'll run: 
@@ -231,7 +231,7 @@ You should see that in our case:
 
 - **2** is our organization's Agent app -- we are managing the permissions of our Agent app by allowing the Voting app to execute actions on behalf of it.
 
-- **3** is the EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an entity to execute a specific action through the Agent app (could involve a token transfer).
+- **3** is the EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an entity to execute a specific action through the Agent app (transferring tokens for example).
 
 - **4** is our organization's Voting app -- we are granting this role to our Voting app, this allows it to execute actions on behalf of our Agent app.
 
