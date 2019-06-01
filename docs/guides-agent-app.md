@@ -3,13 +3,6 @@ id: guides-use-agent
 title: How to use Aragon Agent
 sidebar_label: Agent app
 ---
-# Prerequisites
-
-If this is your first time interacting with an Aragon app we recommend you go through our [Getting started page](https://hack.aragon.org/docs/getting-started.html) first. 
-
-It will also be helpful for you to have a basic understanding of both our [Voting](https://wiki.aragon.org/dev/apps/voting/) and [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) apps. The best way to do that is to go through sections 2.1 and 2.2 of our [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/index.html#2-templates).
-
-Apart from that this guide should be self-contained.
 
 # Introduction
 
@@ -36,6 +29,13 @@ Concretely, the Agent app allows for things like:
 
  - [Releasing Aragon Agent beta](https://blog.aragon.one/aragon-agent-beta-release/)
 
+# Prerequisites
+
+If this is your first time interacting with an Aragon app we recommend you go through our [Getting started page](https://hack.aragon.org/docs/getting-started.html) first. 
+
+It will also be helpful for you to have a basic understanding of both our [Voting](https://wiki.aragon.org/dev/apps/voting/) and [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) apps. The best way to do that is to go through sections 2.1 and 2.2 of our [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/index.html#2-templates).
+
+Apart from that this guide should be self-contained.
 
 # Setup
 
