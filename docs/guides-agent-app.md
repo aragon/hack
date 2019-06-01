@@ -211,7 +211,7 @@ It takes 5 arguments:
 2. The address of the app whose - permissions are being managed (WHO).
 3. The identifier or name of the role (WHERE).
 4.  The address of the app (or entity) that is being granted the permission (WHAT).
-5. The address of the app (or entity) that will be able to grant that permission or revoke it.
+5. The address of the app (or entity) that will be able to grant that permission or revoke it (HOW).
 
 Let's revisit an annotated version of the command we ran above:
 
