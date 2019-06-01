@@ -440,7 +440,7 @@ You've just used the Agent app to allow one Aragon organization to participate a
 
 ## B. Opening a Maker CDP
 
-## C. Interacting with Uniswap
+## C. Interacting with Compound
 
 ## D. Creating an Aragon Trust
 
