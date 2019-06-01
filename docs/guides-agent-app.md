@@ -232,7 +232,7 @@ You should see that in our case:
 
 - **3** is the EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an app or entity to transfer tokens (as well as some additional actions).
 
-- **4** is our organization's Voting app -- we are granting permission to our Voting app to execute actions on behalf of our Agent app.
+- **4** is our organization's Voting app -- we are granting this role to our Voting app, this allows it to execute actions on behalf of our Agent app.
 
 - **5** is our Voting app again -- we are giving it permission to re-grant or revoke the permission we have just given it.
 
