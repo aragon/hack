@@ -263,8 +263,11 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
 
 <p align="center">
    <img width="400" src="/docs/assets/agent-guide/agent-4.png">
-   <em>It's easy to find vote ids from the UI: see the red circle.</em>
 </p>
+
+P.S. If you need to look up the id of a vote, it's easy to find it from the UI. 
+
+You can always find the id in the top left corner of any vote (next to the hashtag). For example in the image above, we can see that the id of the vote is 1 (inside the red circle).
 
 ## 4. Check permissions
 
