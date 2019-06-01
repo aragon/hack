@@ -231,7 +231,7 @@ You should see that in our case:
 
 - **2** is our organization's Agent app -- we are managing the permissions of our Agent app by allowing the Voting app to execute actions on behalf of it.
 
-- **3** is the EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an app or entity to transfer tokens (as well as some additional actions).
+- **3** is the EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an entity to execute a specific action through the Agent app (could involve a token transfer).
 
 - **4** is our organization's Voting app -- we are granting this role to our Voting app, this allows it to execute actions on behalf of our Agent app.
 
