@@ -22,7 +22,7 @@ Concretely, the Agent app allows for things like:
 
 - An Aragon DAO to participate as a stakeholder in another DAO.
 
-### For more details
+### Some history
 - [Dynamic Permissions for Organization “Actions” with Signer Integration](https://forum.aragon.org/t/dynamic-permissions-for-organization-actions-with-signer-integration/116)
 
  - [Agent app, arbitrary actions from DAOs](https://forum.aragon.org/t/agent-app-arbitrary-actions-from-daos/275)
@@ -31,9 +31,9 @@ Concretely, the Agent app allows for things like:
 
 # Prerequisites
 
-If this is your first time interacting with an Aragon app we recommend you go through our [Getting started page](https://hack.aragon.org/docs/getting-started.html) first. 
+If this is your first time interacting with an Aragon app we recommend you first go through our [Getting started page](https://hack.aragon.org/docs/getting-started.html). 
 
-It will also be helpful for you to have a basic understanding of both our [Voting](https://wiki.aragon.org/dev/apps/voting/) and [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) apps. The best way to do that is to go through sections 2.1 and 2.2 of our [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/index.html#2-templates).
+It will also be helpful to have a basic understanding of both our [Voting](https://wiki.aragon.org/dev/apps/voting/) and [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) apps. The best way to do that is to go through sections 2.1 and 2.2 of our [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/index.html#2-templates).
 
 Apart from that this guide should be self-contained.
 
@@ -41,7 +41,7 @@ Apart from that this guide should be self-contained.
 
 ## 0. Create a Democracy DAO
 
-Before we start, you'll need to head over to [Aragon](https://app.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-kits/tree/master/kits/democracy).
+Before we start, you'll need to head over to [Aragon](https://rinkeby.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-kits/tree/master/kits/democracy).
 
 If you're not sure how to do that, please have a look at  [this section](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization) of our  [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization).
 
@@ -59,21 +59,21 @@ We'll go with the following (sensible) defaults:
 
 The [aragonCLI]((https://hack.aragon.org/docs/cli-intro).) (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
 
-Install it from NPM by running the following command:
+If you haven't done so already, install it from NPM by running the following command:
 
 `npm install -g @aragon/cli`
 
-Hopefully, it downloaded successfully 😊.
+Hopefully, it installed successfully 😊.
 
- If not, you should take a quick look at the [installing aragonCLI](https://hack.aragon.org/docs/guides-faq#installing-aragoncli) section of our [troubleshooting guide](/docs/guides-faq#installing-aragonCLI). It should help diagnose and fix the problem.
+ If not, we recommend you take a quick look at the [installing aragonCLI](https://hack.aragon.org/docs/guides-faq#installing-aragoncli) section of our [troubleshooting guide](/docs/guides-faq#installing-aragonCLI). It should help diagnose and fix the problem 🧐.
  
 If that still doesn't fix things 😟, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help). We're more than happy to help.
 
-Note that even if you've already installed the CLI, you might want to reinstall it to make sure you're up to date with the latest version.
+Note that if it's been a while since you last installed the CLI, you might want to reinstall it to make sure you're up to date with the latest version.
 
 ## 2. Install the Agent app
 
-Now that we've downloaded aragonCLI 🎉, we're ready to install the [Agent app](https://blog.aragon.one/aragon-agent-beta-release/).
+Now that we've installed aragonCLI 🎉, we're ready to install the [Agent app](https://blog.aragon.one/aragon-agent-beta-release/).
 
 aragonCLI installs the [`aragon dao`](https://hack.aragon.org/docs/cli-dao-commands) commands. We use these to interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
 
@@ -85,7 +85,7 @@ We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#
 2. The package name of an Aragon app published to [aragonPM](https://hack.aragon.org/docs/apm-intro.html) (for the Agent app this would be agent  or agent.aragonpm.eth).
 `
 
-So in our case, to install the Agent app, we'll run: 
+So in our case, to install the Agent app, we need to run: 
 
 ```
 dao install <your organisation name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
@@ -105,9 +105,9 @@ Running a local IPFS node allows us to run the same command without the `--apm.i
 
 However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
 
-**Note that, in the true spirit of democracy, this step will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.**
+**Note that, in the true spirit of democracy, this step will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.** To confirm the vote:
 
-1. Click on the  Voting app icon on the left. You should you have one open vote.
+1. Click on the  **Voting** app icon in the left panel. You should see you have one open vote.
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-0.png">
@@ -125,7 +125,7 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
    <img width="800" src="/docs/assets/agent-guide/agent-2.png">
 </p>
 
-4. Sign the transaction and voila! That's all there is to it. When you click on the Voting app again you should see the vote has passed with a 100% Yes vote.
+4. Sign the transaction with your favourite [web3 provider](https://hack.aragon.org/docs/getting-started.html#web3-provider) and voila! That's all there is to it. When you click on the Voting app again you should see the vote has passed with a 100% Yes vote.
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-3.png">
@@ -147,7 +147,7 @@ In other words, we need to define who (or which app) has permission to execute a
 
 In this guide we're going to give the Voting app permissions to execute actions on behalf of the Agent app, and therefore on behalf of the DAO.
 
-To assign these permissions we need to get a hold of the Ethereum address of the Agent app -- remember **Agent is a fully-fledged Ethereum account** -- as well as the address of the Voting app.
+To assign these permissions we need to get a hold of the Ethereum address of the Agent app -- remember **Agent is a fully-fledged Ethereum account** -- as well as the address of the Voting app in our DAO.
 
 To do this we'll use the [`dao apps`](https://hack.aragon.org/docs/cli-dao-commands#dao-apps) command.
 
@@ -265,9 +265,9 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
    <img width="400" src="/docs/assets/agent-guide/agent-4.png">
 </p>
 
-P.S. If you need to look up the id of a vote, it's easy to find it from the UI. 
+P.S. If you need to look up the id of a vote, look the vote up in the Voting app UI. You'll find the id in the top left corner (next to the hashtag).
 
-You can always find the id in the top left corner of any vote (next to the hashtag). For example in the image above, we can see that the id of the vote is 1 (inside the red circle).
+For example in the image above, the id of the vote is 1 (look inside the red circle).
 
 ## 4. Check permissions
 
