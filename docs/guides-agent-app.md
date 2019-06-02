@@ -455,7 +455,7 @@ To double check that your chosen entity has really been added as a stakeholder i
    <img width="800" src="/docs/assets/agent-guide/agent-14.png">
 </p>
 
-You should see three tokenholders, with equivalent stakes.
+You should see there are now three tokenholders, each xwith equivalent stakes.
 
 If you've made it this far,  congratulations! 😊🎉😊🎉
 
