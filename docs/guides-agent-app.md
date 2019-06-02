@@ -426,9 +426,15 @@ Now that you have a high-level understanding of `dao act`, you're ready to run t
 dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
+This will trigger a vote in A on whether to allow A's Agent app to execute the vote in B.
+
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-11.png">
+</p>
+
 ### **5. Confirm the vote/action in A**
 
-Finally, we need to confirm the vote in A.
+The final step is to confirm the vote in A.
 
 Again, we can do this either through the UI or by running:
 
@@ -436,6 +442,20 @@ Again, we can do this either through the UI or by running:
 dao exec <name of dao A> <voting app address of dao A> vote 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 Note that we passed in a vote id of `2` as the first argument to `vote`. That's because this is the 3rd vote created in A, and vote ids start at 0.
+
+Once you've confirmed the vote, if you head over to B's voting app again you should see that the vote to mint one token for your chosen third entity now has 100% support.
+
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-13.png">
+</p>
+
+To double check that your chosen entity has really been added as a stakeholder in B, click on B's Token Manager (named Tokens in left panel).
+
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-13.png">
+</p>
+
+You should see three tokenholders, with equivalent stakes.
 
 If you've made it this far,  congratulations! 😊🎉😊🎉
 
