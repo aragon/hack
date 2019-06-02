@@ -441,7 +441,7 @@ Again, we can do this either through the UI or by running:
 ```
 dao exec <name of dao A> <voting app address of dao A> vote 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
-Note that we passed in a vote id of `2` as the first argument to `vote`. That's because this is the 3rd vote created in A, and vote ids start at 0.
+Note that we passed in a vote id of `2` as the first argument to `vote`. That's because this is the third vote created in A, and vote ids start at 0.
 
 Once you've confirmed the vote, if you head over to B's voting app again you should see that the vote to mint one token for your chosen third entity now has 100% support.
 
@@ -452,7 +452,7 @@ Once you've confirmed the vote, if you head over to B's voting app again you sho
 To double check that your chosen entity has really been added as a stakeholder in B, click on B's Token Manager (named Tokens in left panel).
 
 <p align="center">
-   <img width="800" src="/docs/assets/agent-guide/agent-13.png">
+   <img width="800" src="/docs/assets/agent-guide/agent-14.png">
 </p>
 
 You should see three tokenholders, with equivalent stakes.
