@@ -461,12 +461,11 @@ If you've made it this far,  congratulations! 😊🎉😊🎉
 
 You've just used the Agent app to allow one Aragon organization to participate as a stakeholder in another! 
 
-## B. Opening a Maker CDP
+## B. Interacting with Compound
 
-## C. Interacting with Compound
+## C. Creating an Aragon Trust
 
-## D. Creating an Aragon Trust
-
+## D. Opening a Maker CDP
 
 
 
