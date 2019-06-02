@@ -322,7 +322,11 @@ You can also verify that permissions have been set properly through the UI:
 
 ### **1. Create another Democracy DAO**
 
-Exactly the same as before, revisit [step 0 of the Setup section](/docs/guides-agent-app.md) above if you need reminding 😋. 
+Exactly the same as before, head over to [Aragon](https://rinkeby.aragon.org/) and choose the following defaults:
+
+- Support: 100%
+- Min. Quorum: 0%
+- Duration: 168 hours (or 1 week)
 
 ### **2. Mint a token to allow our first DAO (A) to vote in our new DAO (B)**
 
@@ -332,7 +336,7 @@ Remember that A needs to be a tokenholder of B to be able to vote in B. And that
 
 In other words, A's Agent app allows it to participate as a stakeholder in B.
 
-It follows that to allow A to vote in B we need to mint a token for A's Agent app in B. 
+This means that to allow A to vote in B we need to mint a token for A's Agent app in B. 
 
 To do this run:
 
@@ -385,7 +389,7 @@ As in step 2, we'll run `dao exec` again, except this time the first argument to
 dao exec <name of dao B> <token manager app address of dao B> mint <third entity's address> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-Running the above will create a vote in B. Again we'll need to vote *yes* to confirm the minting.
+Running the above will create an open vote in B. Again we'll need to vote *yes* to confirm the minting.
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-10b.png">
@@ -406,7 +410,7 @@ That's because only 1 / 2 tokenholders have voted. The other tokenholder (A's Ag
 
 ### **4. Use A's Agent app to take part in B's vote**
 
-To enact the vote, we'll use A's Agent app to vote yes to adding a third entity to B.
+In order to close and enact the vote, we'll use A's Agent app to vote yes to adding a third entity to B.
 
 But before we do this, we need to introduce the `dao act` command.
 
@@ -449,7 +453,7 @@ Once you've confirmed the vote, if you head over to B's voting app again you sho
    <img width="800" src="/docs/assets/agent-guide/agent-13.png">
 </p>
 
-To double check that your chosen entity has really been added as a stakeholder in B, click on B's Token Manager (named Tokens in left panel).
+Finally, to double check that your chosen entity has really been added as a stakeholder in B, click on B's Token Manager (named Tokens in left panel).
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-14.png">
