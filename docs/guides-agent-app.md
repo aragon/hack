@@ -162,19 +162,27 @@ As for the Voting app, its address can be found through the UI as follows:
 
 1. Click on **App Center** in the left panel to see your installed apps.
 
-*insert image*
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-15.png">
+</p>
 
 2. Click on the **View details** button under the voting app.
 
-*insert image*
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-16.png">
+</p>
 
-3. Click on the hexadecimal string under **Installed Instances** (inside the red ellipse in the image below).
+3. Click on the [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) string under **Installed Instances** (inside the red ellipse in the image below).
 
-*insert image*
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-17.png">
+</p>
 
- 4. Under **Address** is the address of your voting app. In my case that's **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** . Again, yours will be slightly different.
+ 4. You should see a small pop up appear with a header that says **Address**. Under the header is the address of your voting app. In my case that's **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** . Again, yours will be slightly different.
 
- *insert image*
+ <p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-18.png">
+</p>
 
 Once you've located your Agent and Voting app addresses, run the following command:
 
