@@ -62,7 +62,15 @@ Hopefully, it installed successfully 😊.
  
 If that still doesn't fix things 😟, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help). We're more than happy to help.
 
-Note that if it's been a while since you last installed the CLI, you might want to reinstall it to make sure you're up to date with the latest version.
+Note that aragonCLI v5.4.0 was the first version to [include support](https://blog.aragon.one/aragon-agent-beta-release/) for Agent.
+
+
+If you're unsure which version of aragonCLI you have, run:
+
+`aragon -v`
+
+If your version is less than 5.4.0 or if it's been a while since you last installed the CLI, we recommend you reinstall it (by running the `npm install` command above).
+
 
 ## 2. Install the Agent app
 
