@@ -69,7 +69,7 @@ If you're unsure which version of aragonCLI you have, run:
 
 `aragon -v`
 
-If your version is less than 5.4.0 or if it's been a while since you last installed the CLI, we recommend you reinstall it (by running the `npm install` command above).
+If your version is less than 5.9.4 or if it's been a while since you last installed the CLI, we recommend you reinstall it (by running the `npm install` command above).
 
 
 ## 2. Install the Agent app
@@ -94,6 +94,9 @@ dao install <your organization name> agent --environment aragon:rinkeby --apm.ip
 
 You should see that after `dao install <your organization's name> agent` we pass in two [global options](/docs/cli-intro#global-options): `--enviroment` and `--apm.ipfs.rpc`.
 
+<details>
+<summary>Tell me more about these global options.</summary>
+
 The `--environment` option allows us to specify the network we want to use. In our case we've created our organization on rinkeby so we pass in `aragon:rinkeby`.
 
 Note that if we had chosen the **Ethereum Mainnet** as the network for our organization we would have passed `aragon:mainnet` instead of `aragon:rinkeby` as the argument to `--environment`.
@@ -105,6 +108,8 @@ We can also run our own IPFS node by running `aragon ipfs` in another terminal w
 Running a local IPFS node allows us to run the same command without the `--apm.ipfs.rpc` option (since the `--apm.ipfs.rpc` option defaults to `http://localhost:5001`). 
 
 However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
+
+</details>
 
 **Note that, in the true spirit of democracy, this step will trigger a vote in the DAO, you'll need to vote *yes* to confirm the installation of the Agent app.** To confirm the vote:
 
@@ -197,7 +202,8 @@ You should see the following output:
 ```
 If you've reached this stage, 😊🎉 Congratulations! 🎉😊 You've successfully given your Voting app permissions to execute actions on behalf of your Agent app!
 
-Why did that work 😕?
+<details>
+<summary>Why did that work 😕?</summary>
 
 Before we explain the `dao acl create` command we ran above we need to understand a little bit about how permissions in Aragon work.
 
@@ -237,6 +243,7 @@ You should see that in our case:
 - **4** is our organization's Voting app -- we are granting this role to our Voting app, this allows it to execute actions on behalf of our Agent app.
 
 - **5** is our Voting app again -- we are assigning it as manager of the role, this allows it to grant or revoke the permissions of this role.
+</details>
 
 **Note that, same as before, this command will trigger a vote in the DAO and you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
 
@@ -266,9 +273,7 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
    <img width="400" src="/docs/assets/agent-guide/agent-4.png">
 </p>
 
-P.S. If you need to look up the id of a vote, look the vote up in the Voting app UI. You'll find the id in the top left corner (next to the hashtag).
-
-For example in the image above, the id of the vote is 1 (look inside the red circle).
+>**Tip:** If you need to look up the id of a vote, look the vote up in the Voting app UI. You'll find the id in the top left corner (next to the hashtag). For example in the image above, the id of the vote is 1 (look inside the red circle).
 
 ## 4. Check permissions
 
