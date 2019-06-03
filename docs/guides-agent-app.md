@@ -144,6 +144,7 @@ If you look at the end of the output of the `dao install` command you ran in the
 ℹ Successfully executed: "Execute desired action as a token holder"
  ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
 ```
+*Note to self: test `dao install` with aragonCLI 5.9.4 and insert returned agent app address to above code snippet*
 
 What does this mean exactly 😕?
 
@@ -155,37 +156,25 @@ In this guide we're going to give the Voting app permissions to execute actions 
 
 To assign these permissions we need to get a hold of the Ethereum address of the Agent app -- remember **Agent is a fully-fledged Ethereum account** -- as well as the address of the Voting app in our DAO.
 
-To do this we'll use the [`dao apps`](/docs/cli-dao-commands#dao-apps) command.
+The Agent app address is returned at the end of the output of the `dao install` command. In my case it's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** . Yours will be slightly different.
 
-`dao apps` takes one argument: the address or name of an aragon DAO. 
+As for the Voting app, its address can be found through the UI as follows:
 
-By default it only returns apps with permissions. But we can use the `--all` option to get it to return apps without permissions.
+1. Click on **App Center** in the left panel to see your installed apps.
 
-From the command line run:
+*insert image*
 
-`dao apps <your organization name> --all --environment aragon:rinkeby`
+2. Click on the **View details** button under the voting app.
 
-You should see a table that looks something like this:
+*insert image*
 
-| App  | Proxy address | Content |
-| ------------- | ------------- | ------------ |
-| kernel@vundefined  | 0xa25fb31870bc492d450012ae32dafa72af9e82c3  | (No UI available) |
-| acl@vundefined | 0xfefb0cdb7a1fac257815d52ba82776f98dc70205   | (No UI available) |
-| evmreg@vundefined | 0x9087db02300ef24b116daf0426b6ba22b28a0c79  | (No UI available) | 
-| voting@v2.0.4 | **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5**  | ipfs:QmPjWU51opgTVnXwAhYAWasL2CaiYHqy2mXdXtzqfC8sKx |
-| vault@v3.0.1   | 0x952a18185da912984e0bc8a830ba98f8151976af | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
-| finance@v2.0.5    | 0x4171f7ac1a4606b93093e8648e2f9a16c59cf3b1 | ipfs:QmeMLs4jHya89khHVSubLaao9cZW6ELZUoYPHkwCUwKBH7 |
-| token-manager@v2.0.3  | 0xbf07e1c74a72aa60df3ddf3115d15575d27e61e1 | ipfs:Qmb9Bv3J9AuXD5auY1WNwiJeohnYRhyso7XMULs7EZ8eTG |
+3. Click on the hexadecimal string under **Installed Instances** (inside the red ellipse in the image below).
 
-Followed directly by another that looks like this:
+*insert image*
 
-| Permissionless app   | Proxy address  |
-| ------------- | ------------- |
-| 0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a | **0x843bfA21a040E742ec32b8F6991e182D9655AF21** |
+ 4. Under **Address** is the address of your voting app. In my case that's **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** . Again, yours will be slightly different.
 
-The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In my case that's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** . Yours will be slightly different.
-
-The Voting app address can be found under the **Proxy address** column in the voting app row of the first table: **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** .
+ *insert image*
 
 Once you've located your Agent and Voting app addresses, run the following command:
 
@@ -252,7 +241,8 @@ You can do this either by using the UI again or, now that you know how to get th
 ```
 dao exec <your organization name> <your voting app address> vote 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
-
+<details>
+<summary>Tell me more about dao exec</summary>
 [`dao exec`](/docs/cli-dao-commands) is used to perform transactions in your DAO directly from the aragonCLI. It takes at least three arguments:
 
 - The first is always the name or address of the DAO you want to interact with. In our case this is our DAO's name.
@@ -269,6 +259,8 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
 
     - And the third (`true`) specifies whether the contract should check if a vote already has enough support to be executed. By executed we mean that even if everyone else voted against, the vote would still be approved. If that's the case, the vote is executed and immediately closed. `true` means check, `false` means don't check.
 
+</details>
+
 <p align="center">
    <img width="400" src="/docs/assets/agent-guide/agent-4.png">
 </p>
@@ -277,32 +269,7 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
 
 ## 4. Check permissions
 
-If you rerun the command:
-
-`dao apps <your organization name> --all --environment aragon:rinkeby`
-
-You should see that your Agent app has been added to the bottom of the App table and that the Permissionless app table is now empty.
-
-| App  | Proxy address | Content |
-| ------------- | ------------- | ------------ |
-| kernel@vundefined  | 0xa25fb31870bc492d450012ae32dafa72af9e82c3 | (No UI available) |
-| acl@vundefined | 0xfefb0cdb7a1fac257815d52ba82776f98dc70205 | (No UI available) |
-| evmreg@vundefined | 0x9087db02300ef24b116daf0426b6ba22b28a0c79 | (No UI available) | 
-| voting@v2.0.4 | 0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5 | ipfs:QmPjWU51opgTVnXwAhYAWasL2CaiYHqy2mXdXtzqfC8sKx |
-| vault@v3.0.1   | 0x952a18185da912984e0bc8a830ba98f8151976af | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
-| finance@v2.0.5    | 0x4171f7ac1a4606b93093e8648e2f9a16c59cf3b1 | ipfs:QmeMLs4jHya89khHVSubLaao9cZW6ELZUoYPHkwCUwKBH7 |
-| token-manager@v2.0.3  | 0xbf07e1c74a72aa60df3ddf3115d15575d27e61e1 | ipfs:Qmb9Bv3J9AuXD5auY1WNwiJeohnYRhyso7XMULs7EZ8eTG |
-| **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a** | 0x843bfa21a040e742ec32b8f6991e182d9655af21 | ipfs:QmfNaBuQsaKE8at2ce9k2FU9dKs16WQqg4RPUHSNik1z9e |
-
-
-| Permissionless app   | Proxy address  |
-| ------------- | ------------- |
-
-This confirms that the Agent app has been assigned permissions and is now an app in the DAO.
-
-Note that **0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a** is just the general identifier for the version of Agent app you have installed.
-
-You can also verify that permissions have been set properly through the UI:
+Let's verify that permissions have been set properly through the UI:
 
 1. Click on the **Permissions** menu option in the left panel. You should see the Agent app at the end of the second row. Click on it.
 
