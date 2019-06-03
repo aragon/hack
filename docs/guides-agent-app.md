@@ -50,7 +50,7 @@ We'll go with the following (sensible) defaults:
 
 ## 1. Install aragonCLI
 
-The [aragonCLI]((https://hack.aragon.org/docs/cli-intro).) (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
+The [aragonCLI](https://hack.aragon.org/docs/cli-intro) (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
 
 If you haven't done so already, install it from NPM by running the following command:
 
