@@ -30,7 +30,7 @@ While there are no formal prerequisites to this guide, it'll be helpful for you 
 
 Apart from that this guide should be self-contained.
 
-# Setup
+# Installing Aragon Agent
 
 ## 0. Create a Democracy DAO
 
@@ -297,7 +297,22 @@ Let's verify that permissions have been set properly through the UI:
    <img width="800" src="/docs/assets/agent-guide/agent-7.png">
 </p>
 
-# Use cases
+# Interacting with Aragon Agent
+
+## Introduction
+*Note to self: introduce and explain the need for `dao act`*
+
+According to the documentation:
+
+>`dao act` provides some syntax sugar over `dao exec` for executing actions using Agent app instances in a DAO.
+
+*Note to self: Explain `dao act` in detail*
+
+An important point to note is that we need to pass in the [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute.
+
+For example, if we want to execute the `vote` method of a Voting app we need to pass in `vote(unint256,bool,bool)`...
+
+
 
 ## A. Voting in another organization
 
@@ -393,19 +408,13 @@ That's because only one out of two token holders have voted. The other token hol
 
 In order to close and enact the vote, we'll use A's Agent app to vote yes to adding a third entity to B.
 
-But before we do this, we need to introduce the `dao act` command.
+To do this we need to use the `dao act` command we introduced at the beginning of this section.
 
-According to the documentation:
+Remember that to use `dao act` we need to pass in the [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute.
 
->`dao act` provides some syntax sugar over `dao exec` for executing actions using Agent app instances in a DAO.
+In our case, since we want to execute the `vote` method of a Voting app we need to pass in `vote(unint256,bool,bool)`.
 
-In plain english, `dao act` acts like `dao exec` except the first argument to `dao act` is an agent app address rather than a DAO address.
-
-Another minor but important difference is that we need to pass in the [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute.
-
-For example, if we want to execute the `vote` method of a Voting app we need to pass in `vote(unint256,bool,bool)`.
-
-Now that you have a high-level understanding of `dao act`, you're ready to run the following command:
+*Note to self: expand on above explanation*
 
 ```
 dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
