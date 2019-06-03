@@ -24,7 +24,7 @@ Concretely, the Agent app allows for things like:
 
 # Prerequisites
 
-If this is your first time interacting with an Aragon app we recommend you first go through our [Getting started page](https://hack.aragon.org/docs/getting-started.html). 
+If this is your first time interacting with an Aragon app we recommend you first go through our [Getting started page](docs/getting-started). 
 
 It will also be helpful to have a basic understanding of both our [Voting](https://wiki.aragon.org/dev/apps/voting/) and [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) apps. The best way to do that is to go through sections 2.1 and 2.2 of our [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/index.html#2-templates).
 
@@ -50,7 +50,7 @@ We'll go with the following (sensible) defaults:
 
 ## 1. Install aragonCLI
 
-The [aragonCLI](https://hack.aragon.org/docs/cli-intro) (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
+The [aragonCLI](docs/cli-intro) (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
 
 If you haven't done so already, install it from NPM by running the following command:
 
@@ -58,7 +58,7 @@ If you haven't done so already, install it from NPM by running the following com
 
 Hopefully, it installed successfully 😊.
 
- If not, we recommend you take a quick look at the [installing aragonCLI](https://hack.aragon.org/docs/guides-faq#installing-aragoncli) section of our [troubleshooting guide](/docs/guides-faq#installing-aragonCLI). It should help diagnose and fix the problem 🧐.
+ If not, we recommend you take a quick look at the [installing aragonCLI](/docs/guides-faq#installing-aragoncli) section of our [troubleshooting guide](/docs/guides-faq#installing-aragonCLI). It should help diagnose and fix the problem 🧐.
  
 If that still doesn't fix things 😟, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help). We're more than happy to help.
 
@@ -68,14 +68,14 @@ Note that if it's been a while since you last installed the CLI, you might want 
 
 Now that we've installed aragonCLI 🎉, we're ready to install the [Agent app](https://blog.aragon.one/aragon-agent-beta-release/).
 
-aragonCLI installs the [`aragon dao`](https://hack.aragon.org/docs/cli-dao-commands) commands. We use these to interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
+aragonCLI installs the [`aragon dao`](/docs/cli-dao-commands) commands. We use these to interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
 
-We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#dao-install) command to install the Agent app.
+We'll use the the [`dao install`](docs/cli-dao-commands#dao-install) command to install the Agent app.
 
 `dao install` takes two arguments:
 
 1. The address or [aragonID](https://github.com/aragon/aragon-id) name of an Aragon DAO.
-2. The package name of an Aragon app published to [aragonPM](https://hack.aragon.org/docs/apm-intro.html) (for the Agent app this would be agent  or agent.aragonpm.eth).
+2. The package name of an Aragon app published to [aragonPM](/docs/apm-intro) (for the Agent app this would be agent  or agent.aragonpm.eth).
 `
 
 So in our case, to install the Agent app, we need to run: 
@@ -84,7 +84,7 @@ So in our case, to install the Agent app, we need to run:
 dao install <your organization name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-You should see that after `dao install <your organization's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro#global-options): `--enviroment` and `--apm.ipfs.rpc`.
+You should see that after `dao install <your organization's name> agent` we pass in two [global options](/docs/cli-intro#global-options): `--enviroment` and `--apm.ipfs.rpc`.
 
 The `--environment` option allows us to specify the network we want to use. In our case we've created our organization on rinkeby so we pass in `aragon:rinkeby`.
 
@@ -118,7 +118,7 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
    <img width="800" src="/docs/assets/agent-guide/agent-2.png">
 </p>
 
-4. Sign the transaction with your favourite [web3 provider](https://hack.aragon.org/docs/getting-started.html#web3-provider) and voila! That's all there is to it. When you click on the Voting app again you should see the vote has passed with a 100% Yes vote.
+4. Sign the transaction with your favourite [web3 provider](/docs/getting-started#web3-provider) and voila! That's all there is to it. When you click on the Voting app again you should see the vote has passed with a 100% Yes vote.
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-3.png">
@@ -142,7 +142,7 @@ In this guide we're going to give the Voting app permissions to execute actions 
 
 To assign these permissions we need to get a hold of the Ethereum address of the Agent app -- remember **Agent is a fully-fledged Ethereum account** -- as well as the address of the Voting app in our DAO.
 
-To do this we'll use the [`dao apps`](https://hack.aragon.org/docs/cli-dao-commands#dao-apps) command.
+To do this we'll use the [`dao apps`](/docs/cli-dao-commands#dao-apps) command.
 
 `dao apps` takes one argument: the address or name of an aragon DAO. 
 
@@ -193,11 +193,11 @@ Why did that work 😕?
 
 Before we explain the `dao acl create` command we ran above we need to understand a little bit about how permissions in Aragon work.
 
-Aragon uses an [Access Control List](https://hack.aragon.org/docs/acl-intro) (ACL) to control who can access your app's functionality.
+Aragon uses an [Access Control List](/docs/acl-intro) (ACL) to control who can access your app's functionality.
 
 This list contains a set of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission.
 
-[`dao acl create`](https://hack.aragon.org/docs/cli-dao-commands#dao-acl-create) is just the Aragon command used to create a permission in the ACL.
+[`dao acl create`](/docs/cli-dao-commands#dao-acl-create) is just the Aragon command used to create a permission in the ACL.
 
 It takes 5 arguments:
 
@@ -238,7 +238,7 @@ You can do this either by using the UI again or, now that you know how to get th
 dao exec <your organization name> <your voting app address> vote 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-[`dao exec`](https://hack.aragon.org/docs/cli-dao-commands) is used to perform transactions in your DAO directly from the aragonCLI. It takes at least three arguments:
+[`dao exec`](/docs/cli-dao-commands) is used to perform transactions in your DAO directly from the aragonCLI. It takes at least three arguments:
 
 - The first is always the name or address of the DAO you want to interact with. In our case this is our DAO's name.
 
