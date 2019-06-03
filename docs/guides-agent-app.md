@@ -251,6 +251,7 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
 ```
 <details>
 <summary>Tell me more about dao exec</summary>
+
 [`dao exec`](/docs/cli-dao-commands) is used to perform transactions in your DAO directly from the aragonCLI. It takes at least three arguments:
 
 - The first is always the name or address of the DAO you want to interact with. In our case this is our DAO's name.
@@ -310,15 +311,19 @@ According to the documentation:
 
 An important point to note is that we need to pass in the [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute.
 
-For example, if we want to execute the `vote` method of a Voting app we need to pass in `vote(unint256,bool,bool)`...
+For example, if we want to execute the `vote` method of a Voting app we would pass in `vote(unint256,bool,bool)`.
 
+And if we wanted to interact with `confirmTransaction` method of a [Gnosis Multisig](https://wallet.gnosis.pm/#/wallets) we would pass in `confirmTransaction(uint256)`.
 
+With that in mind, let's take a look at a few examples / use cases.
 
-## A. Voting in another organization
+## Voting in another organization
+
+Let's start by seeing how we can use the Agent app to allow one Aragon organization to participate as a stakeholder in another.
 
 ### **1. Create another Democracy DAO**
 
-Exactly the same as before, head over to [Aragon](https://rinkeby.aragon.org/) and choose the following defaults:
+The first step is to create another Democracy DAO. Exactly the same as before, head over to [Aragon](https://rinkeby.aragon.org/) and choose the following defaults:
 
 - Support: 100%
 - Min. Quorum: 0%
@@ -455,11 +460,11 @@ If you've made it this far,  congratulations! 😊🎉😊🎉
 
 You've just used the Agent app to allow one Aragon organization to participate as a stakeholder in another! 
 
-## B. Interacting with Compound
+## Interacting with Compound
 
-## C. Creating an Aragon Trust
+## Creating an Aragon Trust
 
-## D. Opening a Maker CDP
+## Opening a Maker CDP
 
 # Further resources
 - [Dynamic Permissions for Organization “Actions” with Signer Integration](https://forum.aragon.org/t/dynamic-permissions-for-organization-actions-with-signer-integration/116)
