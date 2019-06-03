@@ -302,7 +302,7 @@ Let's verify that permissions have been set properly through the UI:
 
 ## Introducing `dao act`
 
-`dao act` is the main way we'll interact with Aragon Agent. It's the command we use to perform transactions with Aragon Agent directly from aragonCLI.
+`dao act` is the main way we'll interact with Aragon Agent. It's the command we use to perform transactions with the Agent app directly from aragonCLI.
 
 According to the documentation:
 
@@ -320,7 +320,7 @@ Like `dao exec` it takes at least three arguments:
 
 The remaining arguments are the arguments which the method we specified in our third argument will be executed with.
 
-Don't worry if it's not completely clear to you how `dao act` works at this stage. The following use cases should make things clear!
+Don't worry if it's not completely clear to you how `dao act` works at this stage. The following use cases should help!
 
 ## Use case A: Voting in another organization
 
@@ -420,17 +420,30 @@ In order to close and enact the vote, we'll use A's Agent app to vote yes to add
 
 To do this we need to use the `dao act` command we introduced at the beginning of this section.
 
-Remember that to use `dao act` we need to pass in the [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute.
+Remember that `dao act` takes at least three arguments:
 
-In our case, since we want to execute the `vote` method of a Voting app we need to pass in `vote(unint256,bool,bool)`.
+ - The first is the address of the Agent app you want to use to perform an action. In our case this is the address of A's Agent app.
 
-*Note to self: expand on above explanation*
+- The second is the address of an **external contract** or  the address of an app within a DAO. In our case this is the address of B's [Voting app](https://wiki.aragon.org/dev/apps/voting/).
+
+- The third is the [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute in either the external contract or the app we specified in the second argument. In our case the method is [`vote`](https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes) and its full signature is `vote(unint256,bool,bool)`.
+
+- And the remaining arguments are the arguments which the method -- in our case `vote` -- will be exectuted with. We can see from the signature that `vote takes three arguments: an interger, a boolean, and a boolean. In our case we will pass in: **1**, **true** and **true**.
+
+   - The first -- **1** -- is the id for the vote we want to interact with. This is always an integer. Remember that vote ids start at 0 and increment by 1 each time a vote is created.
+
+   - The second -- **true** -- specifies which was we want to vote: true means yes and false means no.
+
+   - And the third -- **true** -- specifies whether the contract should check if a vote already has enough support to be executed. By executed we mean that even if everyone else voted against, the vote would still be approved. If that's the case, the vote is executed and immediately closed. true means check, false means don't check.
+
+
+So in our case, we run:
 
 ```
 dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-This will trigger a vote in A on whether to allow A's Agent app to execute the vote in B.
+The result of this command will be to trigger a vote in A on whether to allow A's Agent app to execute the vote in B.
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-11.png">
