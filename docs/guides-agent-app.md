@@ -300,24 +300,29 @@ Let's verify that permissions have been set properly through the UI:
 
 # Interacting with Aragon Agent
 
-## Introduction
-*Note to self: introduce and explain the need for `dao act`*
+## Introducing `dao act`
+
+`dao act` is the main way we'll interact with Aragon Agent. It's the command we use to perform transactions with Aragon Agent directly from aragonCLI.
 
 According to the documentation:
 
 >`dao act` provides some syntax sugar over `dao exec` for executing actions using Agent app instances in a DAO.
 
-*Note to self: Explain `dao act` in detail*
+Like `dao exec` it takes at least three arguments:
 
-An important point to note is that we need to pass in the [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute.
+1. The address of the Agent app you want to use to perform an action.
 
-For example, if we want to execute the `vote` method of a Voting app we would pass in `vote(unint256,bool,bool)`.
+2. The address of an **external contract** or **the address of an app** within a DAO.
 
-And if we wanted to interact with `confirmTransaction` method of a [Gnosis Multisig](https://wallet.gnosis.pm/#/wallets) we would pass in `confirmTransaction(uint256)`.
+3. The [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute in either the external contract or the app we specified in the second arugument.
 
-With that in mind, let's take a look at a few examples / use cases.
+>For example if we wanted to execute the `vote` method of a Voting app we would pass in its full signature `vote(unint256,bool,bool)` as the third argument. And if we wanted to execute the `confirmTransaction` method of a [Gnosis Multisig](https://wallet.gnosis.pm/#/wallets) we would pass in `confirmTransaction(uint256)`.
 
-## Voting in another organization
+The remaining arguments are the arguments which the method we specified in our third argument will be executed with.
+
+Don't worry if it's not completely clear to you how `dao act` works at this stage. The following use cases should make things clear!
+
+## Use case A: Voting in another organization
 
 Let's start by seeing how we can use the Agent app to allow one Aragon organization to participate as a stakeholder in another.
 
@@ -460,11 +465,11 @@ If you've made it this far,  congratulations! 😊🎉😊🎉
 
 You've just used the Agent app to allow one Aragon organization to participate as a stakeholder in another! 
 
-## Interacting with Compound
+## Use case B: Interacting with Compound
 
-## Creating an Aragon Trust
+## Use case C: Creating an Aragon Trust
 
-## Opening a Maker CDP
+## Use case D: Opening a Maker CDP
 
 # Further resources
 - [Dynamic Permissions for Organization “Actions” with Signer Integration](https://forum.aragon.org/t/dynamic-permissions-for-organization-actions-with-signer-integration/116)
