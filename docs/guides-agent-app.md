@@ -22,13 +22,6 @@ Concretely, the Agent app allows for things like:
 
 - An Aragon DAO to participate as a stakeholder in another DAO.
 
-### Some history
-- [Dynamic Permissions for Organization “Actions” with Signer Integration](https://forum.aragon.org/t/dynamic-permissions-for-organization-actions-with-signer-integration/116)
-
- - [Agent app, arbitrary actions from DAOs](https://forum.aragon.org/t/agent-app-arbitrary-actions-from-daos/275)
-
- - [Releasing Aragon Agent beta](https://blog.aragon.one/aragon-agent-beta-release/)
-
 # Prerequisites
 
 If this is your first time interacting with an Aragon app we recommend you first go through our [Getting started page](https://hack.aragon.org/docs/getting-started.html). 
@@ -138,8 +131,8 @@ If you look at the end of the output of the `dao install` command you ran in the
 ℹ Successfully executed: "Execute desired action as a token holder"
  ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
 ```
-What does this mean exactly 
-😕? 
+
+What does this mean exactly 😕?
 
 It's telling us that although we've successfully installed the Agent app, before we can use it as part of our DAO we need to define who can access the app's functionality.
 
@@ -471,7 +464,12 @@ You've just used the Agent app to allow one Aragon organization to participate a
 
 ## D. Opening a Maker CDP
 
+# Further resources
+- [Dynamic Permissions for Organization “Actions” with Signer Integration](https://forum.aragon.org/t/dynamic-permissions-for-organization-actions-with-signer-integration/116)
 
+- [Agent app, arbitrary actions from DAOs](https://forum.aragon.org/t/agent-app-arbitrary-actions-from-daos/275)
+
+- [Releasing Aragon Agent beta](https://blog.aragon.one/aragon-agent-beta-release/)
 
 
 
