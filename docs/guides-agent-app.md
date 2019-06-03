@@ -40,7 +40,7 @@ If you're not sure how to do that, please have a look at  [this section](https:/
 
 The first thing you'll be asked to do is to [choose the network](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#211-navigate-to-httpsapparagonorg-in-your-web-browser) for your organization. For the purposes of this guide we'll choose the **Ethereum Testnet (Rinkeby)**.
 
-Later on, you'll be asked to [set three parameters](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#214-set-the-parameters-of-your-democracy-organization-then-click-next) for your organisation -- the **support**, the **minimum acceptance quorum**, and the **vote duration**.
+Later on, you'll be asked to [set three parameters](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#214-set-the-parameters-of-your-democracy-organization-then-click-next) for your organization -- the **support**, the **minimum acceptance quorum**, and the **vote duration**.
 
 We'll go with the following (sensible) defaults:
 
@@ -81,10 +81,10 @@ We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#
 So in our case, to install the Agent app, we need to run: 
 
 ```
-dao install <your organisation name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao install <your organization name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-You should see that after `dao install <your organisation's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro#global-options): `--enviroment` and `--apm.ipfs.rpc`.
+You should see that after `dao install <your organization's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro#global-options): `--enviroment` and `--apm.ipfs.rpc`.
 
 The `--environment` option allows us to specify the network we want to use. In our case we've created our organization on rinkeby so we pass in `aragon:rinkeby`.
 
@@ -177,7 +177,7 @@ The Voting app address can be found under the **Proxy address** column in the vo
 Once you've located your Agent and Voting app addresses, run the following command:
 
 ```
-dao acl create <your organisation name> <your agent app address> EXECUTE_ROLE <your voting app address> <your voting app address> --environment aragon:rinkeby
+dao acl create <your organization name> <your agent app address> EXECUTE_ROLE <your voting app address> <your voting app address> --environment aragon:rinkeby
 ```
 
 You should see the following output:
