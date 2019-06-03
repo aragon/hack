@@ -398,7 +398,7 @@ If you go to the Voting app after you've voted, you'll see that the *yes* vote i
    <img width="800" src="/docs/assets/agent-guide/agent-10.png">
 </p>
 
-That's because only 1 / 2 tokenholders have voted. The other tokenholder (A's Agent app) still has to vote.
+That's because only one out of two token holders have voted. The other token holder (A's Agent app) still has to vote.
 
 
 ### **4. Use A's Agent app to take part in B's vote**
