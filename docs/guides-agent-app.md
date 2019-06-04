@@ -361,7 +361,7 @@ In our case the receiver is A's Agent App, and the amount of tokens to be create
 
 However, you should notice that instead of writing `1` as the second argument to `mint` we've gone with `1000000000000000000`.
 
-This is because a token has 18 decimals, so 1 unit of a token is actually 0.000000000000000001 tokens. This is not what we want.
+This is because the token created by the [democracy template](https://github.com/aragon/dao-kits/tree/master/kits/democracy) has 18 decimals, so 1 unit of a token is actually 0.000000000000000001 tokens. This is not what we want.
 
 In order to mint a full token from the CLI we need to pass the full number, which will then be interpreted with 18 decimals.
 In our case this is a 1 followed by eighteen 0s, or `1000000000000000000`.
