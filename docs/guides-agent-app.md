@@ -139,12 +139,13 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
 
 ## 3. Set permissions
 
-If you look at the end of the output of the `dao install` command you ran in the previous step, you should see the following:
-```
+If you look at the end of the output of the `dao install` command you ran in the previous step, you should see something like:
+
+<pre>
+✔ Successfully deployed the app at  <b>0x843bfA21a040E742ec32b8F6991e182D9655AF21</b>
 ℹ Successfully executed: "Execute desired action as a token holder"
  ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
-```
-*Note to self: test `dao install` with aragonCLI 5.9.5 (when released) and insert returned agent app address to above terminal snippet*
+</pre>
 
 What does this mean exactly 😕?
 
@@ -156,7 +157,7 @@ In this guide we're going to give the Voting app permissions to execute actions 
 
 To assign these permissions we need to get a hold of the Ethereum address of the Agent app -- remember **Agent is a fully-fledged Ethereum account** -- as well as the address of the Voting app in our DAO.
 
-The Agent app address is returned at the end of the output of the `dao install` command. In my case it's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** . Yours will be slightly different.
+The Agent app address is returned at the end of the output of the `dao install` command. In my case it's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** (see the code snippet above). Yours will be slightly different.
 
 As for the Voting app, its address can be found through the UI as follows:
 
