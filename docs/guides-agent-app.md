@@ -467,7 +467,7 @@ Once you've confirmed the vote, if you head over to B's voting app again you sho
    <img width="800" src="/docs/assets/agent-guide/agent-13.png">
 </p>
 
-Finally, to double check that your chosen entity has really been added as a stakeholder in B, click on B's Token Manager (named Tokens in left panel).
+Finally, to double check that your chosen entity has really been added as a stakeholder in B, click on B's Token Manager (named **Tokens** in left panel).
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-14.png">
