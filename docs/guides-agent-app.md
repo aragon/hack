@@ -293,7 +293,7 @@ As a final step, let's verify that permissions have been set properly through th
    <img width="800" src="/docs/assets/agent-guide/agent-6.png">
 </p>
 
-3.  Under **Permissions set on this app** you should see that Voting app now has permission to use the Agent app to execute actions.
+3.  Under **Permissions set on this app** you should see that Voting app now has permission to use the Agent app to execute actions. 🎉🎉🎉
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-7.png">
