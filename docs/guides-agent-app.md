@@ -386,7 +386,7 @@ Once you've voted *yes*, switch over to the Token Manager app (click on **Tokens
    <img width="800" src="/docs/assets/agent-guide/agent-9.png">
 </p>
 
-You should see that you've successfully added another token holder (your Agent app)!
+You should see that you've successfully added another token holder (your Agent app)! 🎉🎉😊
 
 ### **3. Create a vote in B to add a third entity**
 
