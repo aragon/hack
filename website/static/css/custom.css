@@ -681,6 +681,7 @@ nav.toc .toggleNav .subNavGroup ul {
     overflow-x: hidden;
     position: sticky;
     top: 100px;
+    z-index: 20;
     width: 240px;
     padding-bottom: 50px;
     padding-top: 8px;
@@ -699,6 +700,16 @@ nav.toc .toggleNav .subNavGroup ul {
   .docMainWrapper {
     margin: 50px auto 0 auto;
   }
-
+  .navSearchWrapper {
+    position: fixed;
+    top: 41px;
+    right: 40px;
+    z-index: 90;
+    width: 200px;
+  }
+  .reactNavSearchWrapper input#search_input_react {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
 
 }
