@@ -144,7 +144,7 @@ If you look at the end of the output of the `dao install` command you ran in the
 ℹ Successfully executed: "Execute desired action as a token holder"
  ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
 ```
-*Note to self: test `dao install` with aragonCLI 5.9.4 and insert returned agent app address to above terminal snippet*
+*Note to self: test `dao install` with aragonCLI 5.9.5 (when released) and insert returned agent app address to above terminal snippet*
 
 What does this mean exactly 😕?
 
@@ -200,7 +200,7 @@ You should see the following output:
 😊🎉 🎉😊
 
 <details>
-<summary>Tell me more about dao acl.</summary>
+<summary>Tell me more about dao acl create.</summary>
 
 Before we explain the `dao acl create` command we ran above we need to understand a little bit about how permissions in Aragon work.
 
