@@ -209,7 +209,7 @@ Aragon uses an [Access Control List](/docs/acl-intro) (ACL) to control who can a
 
 This list contains a set of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission.
 
-[`dao acl create`](/docs/cli-dao-commands.md#dao-acl-create) is just the Aragon command used to create a permission in the ACL.
+[`dao acl create`](https://hack.aragon.org/docs/cli-dao-commands#dao-acl-create) is just the Aragon command used to create a permission in the ACL.
 
 It takes 5 arguments:
 
