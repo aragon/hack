@@ -265,7 +265,7 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
 
     - The first (`1`) is the id for the vote we want to interact with. This is always an integer. Vote ids start at 0 and increment by 1 each time a vote is created.
 
-    - The second (`true`) specifies which was we want to vote: `true` means yes and `false` means no.
+    - The second (`true`) specifies which way we want to vote: `true` means yes and `false` means no.
 
     - And the third (`true`) specifies whether the contract should check if a vote already has enough support to be executed. By executed we mean that even if everyone else voted against, the vote would still be approved. If that's the case, the vote is executed and immediately closed. `true` means check, `false` means don't check.
 
