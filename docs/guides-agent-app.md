@@ -173,7 +173,7 @@ As for the Voting app, its address can be found through the UI as follows:
    <img width="800" src="/docs/assets/agent-guide/agent-16.png">
 </p>
 
-3. Click on the [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) string under **Installed intances** (see inside the red ellipse in the image below).
+3. Click on the blue box under **Installed intances** (see inside the red ellipse in the image below).
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-17.png">
