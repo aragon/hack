@@ -315,7 +315,7 @@ Like `dao exec` it takes at least three arguments:
 
 2. The address of an **external contract** or **the address of an app** within a DAO.
 
-3. The [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute in either the external contract or the app we specified in the second arugument.
+3. The [full signature](https://www.4byte.directory/) of the method we wish to execute in either the external contract or the app we specified in the second arugument.
 
 >For example if we wanted to execute the `vote` method of a Voting app we would pass in its full signature `vote(unint256,bool,bool)` as the third argument. And if we wanted to execute the `confirmTransaction` method of a [Gnosis Multisig](https://wallet.gnosis.pm/#/wallets) we would pass in `confirmTransaction(uint256)`.
 
