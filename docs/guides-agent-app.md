@@ -58,7 +58,7 @@ If you haven't done so already, install it from NPM by running the following com
 
 Hopefully, it installed successfully 😊.
 
- If not, we recommend you take a quick look at the [installing aragonCLI](/docs/guides-faq#installing-aragoncli) section of our [troubleshooting guide](/docs/guides-faq#installing-aragonCLI). It should help diagnose and fix the problem 🧐.
+ If not, we recommend you take a quick look at the [installing aragonCLI](/docs/guides-faq.md#installing-aragoncli) section of our [troubleshooting guide](/docs/guides-faq.md#installing-aragonCLI). It should help diagnose and fix the problem 🧐.
  
 If that still doesn't fix things 😟, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help). We're more than happy to help.
 
@@ -76,9 +76,9 @@ If your version is less than 5.9.4 or if it's been a while since you last instal
 
 Now that we've installed aragonCLI 🎉, we're ready to install the [Agent app](https://blog.aragon.one/aragon-agent-beta-release/).
 
-aragonCLI installs the [`aragon dao`](/docs/cli-dao-commands) commands. We use these to interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
+aragonCLI installs the [`aragon dao`](https://hack.aragon.org/docs/cli-dao-commands) commands. We use these to interact directly with our DAO from the command line. They're also available directly using the `dao` shortcut.
 
-We'll use the the [`dao install`](docs/cli-dao-commands#dao-install) command to install the Agent app.
+We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#dao-install) command to install the Agent app.
 
 `dao install` takes two arguments:
 
@@ -92,7 +92,7 @@ So in our case, to install the Agent app, we need to run:
 dao install <your organization name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-You should see that after `dao install <your organization's name> agent` we pass in two [global options](/docs/cli-intro#global-options): `--enviroment` and `--apm.ipfs.rpc`.
+You should see that after `dao install <your organization's name> agent` we pass in two [global options](/docs/cli-intro.md#global-options): `--enviroment` and `--apm.ipfs.rpc`.
 
 <details>
 <summary>Tell me more about these global options.</summary>
@@ -131,7 +131,7 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
    <img width="800" src="/docs/assets/agent-guide/agent-2.png">
 </p>
 
-4. Sign the transaction with your favourite [web3 provider](/docs/getting-started#web3-provider) and voila! That's all there is to it. When you click on the Voting app again you should see the vote has passed with a 100% Yes vote.
+4. Sign the transaction with your favourite [web3 provider](/docs/getting-started.md#web3-provider) and voila! That's all there is to it. When you click on the Voting app again you should see the vote has passed with a 100% Yes vote.
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-3.png">
@@ -209,7 +209,7 @@ Aragon uses an [Access Control List](/docs/acl-intro) (ACL) to control who can a
 
 This list contains a set of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission.
 
-[`dao acl create`](/docs/cli-dao-commands#dao-acl-create) is just the Aragon command used to create a permission in the ACL.
+[`dao acl create`](/docs/cli-dao-commands.md#dao-acl-create) is just the Aragon command used to create a permission in the ACL.
 
 It takes 5 arguments:
 
@@ -253,7 +253,7 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
 <details>
 <summary>Tell me more about dao exec.</summary>
 
-[`dao exec`](/docs/cli-dao-commands) is used to perform transactions in your DAO directly from the aragonCLI. It takes at least three arguments:
+[`dao exec`](https://hack.aragon.org/docs/cli-dao-commands#dao-exec) is used to perform transactions in your DAO directly from the aragonCLI. It takes at least three arguments:
 
 - The first is always the name or address of the DAO you want to interact with. In our case this is our DAO's name.
 
