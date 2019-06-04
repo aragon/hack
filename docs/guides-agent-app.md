@@ -261,7 +261,7 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
 
 - The third is the name of the method being executed in the app: In our case the method is [`vote`](https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes).
 
-- The remaining arguments are the arguments which the method -- in our case `vote` -- will be exectuted with. We are passing in three: `1`,  `true` and  `true`.
+- The remaining arguments are the arguments which the method -- in our case `vote` -- will be executed with. We are passing in three: `1`,  `true` and  `true`.
 
     - The first (`1`) is the id for the vote we want to interact with. This is always an integer. Vote ids start at 0 and increment by 1 each time a vote is created.
 
