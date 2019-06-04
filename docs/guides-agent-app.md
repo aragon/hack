@@ -380,7 +380,7 @@ On the UI, the vote will look something like this.
    <img width="800" src="/docs/assets/agent-guide/agent-8.png">
 </p>
 
-Once you've voted *yes*, switch over to the Token Manager app (click on *Tokens* in the left sidebar).
+Once you've voted *yes*, switch over to the Token Manager app (click on **Tokens** in the left sidebar).
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-9.png">
