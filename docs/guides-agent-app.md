@@ -321,7 +321,7 @@ Like `dao exec` it takes at least three arguments:
 
 The remaining arguments are the arguments which the method we specified in our third argument will be executed with.
 
-Don't worry if it's not completely clear to you how `dao act` works at this stage. The following use cases should help!
+Don't worry if it's not completely clear to you how `dao act` works at this stage. The following use cases will help you develop some intuition for it!
 
 ## Use case A: Voting in another organization
 
