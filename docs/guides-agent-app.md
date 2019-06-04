@@ -245,7 +245,7 @@ You should see that in our case:
 
 **Note that, same as before, this command will trigger a vote in the DAO and you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
 
-You can do this either by using the UI again or, now that you know how to get the address of your apps, by running:
+You can do this either by using the Aragon client again or, now that you know how to get the address of your apps, by running:
 
 ```
 dao exec <your organization name> <your voting app address> vote 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
@@ -261,7 +261,7 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
 
 - The third is the name of the method being executed in the app: In our case the method is [`vote`](https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes).
 
-- The remaining arguments are the arguments which the method -- in our case `vote` -- will be exectuted with. We are passing in three: `1`,  `true` and  `true`.
+- The remaining arguments are the arguments which the method -- in our case `vote` -- will be executed with. We are passing in three: `1`,  `true` and  `true`.
 
     - The first (`1`) is the id for the vote we want to interact with. This is always an integer. Vote ids start at 0 and increment by 1 each time a vote is created.
 
