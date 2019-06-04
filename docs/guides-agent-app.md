@@ -234,7 +234,7 @@ You should see that in our case:
 
 - **1** is the name of our organization. 
 
-- **2** is our organization's Agent app -- we are managing the permissions of our Agent app by allowing the Voting app to execute actions on behalf of it.
+- **2** is our organization's Agent app -- we are managing the permissions of our Agent app by giving the Voting app permissions to use the Agent app to execute actions.
 
 - **3** is the EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an entity to execute a specific action through the Agent app (transferring tokens for example).
 
@@ -293,7 +293,7 @@ As a final step, let's verify that permissions have been set properly through th
    <img width="800" src="/docs/assets/agent-guide/agent-6.png">
 </p>
 
-3.  Under **Permissions set on this app** you should see that Voting app is also allowed to execute actions on behalf of the Agent app.
+3.  Under **Permissions set on this app** you should see that Voting app now has permission to use the Agent app to execute actions.
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-7.png">
