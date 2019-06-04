@@ -144,7 +144,7 @@ If you look at the end of the output of the `dao install` command you ran in the
 ℹ Successfully executed: "Execute desired action as a token holder"
  ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
 ```
-*Note to self: test `dao install` with aragonCLI 5.9.4 and insert returned agent app address to above code snippet*
+*Note to self: test `dao install` with aragonCLI 5.9.4 and insert returned agent app address to above terminal snippet*
 
 What does this mean exactly 😕?
 
@@ -184,7 +184,7 @@ As for the Voting app, its address can be found through the UI as follows:
    <img width="800" src="/docs/assets/agent-guide/agent-18.png">
 </p>
 
-Once you've located your Agent and Voting app addresses, run the following command:
+Once you've located your Agent and Voting app addresses, run the following command to give your Voting app permissions to execute actions on behalf of your Agent app:
 
 ```
 dao acl create <your organization name> <your agent app address> EXECUTE_ROLE <your voting app address> <your voting app address> --environment aragon:rinkeby
@@ -197,10 +197,10 @@ You should see the following output:
   ✔ Sending transaction
  ✔ Successfully executed
 ```
-If you've reached this stage, 😊🎉 Congratulations! 🎉😊 You've successfully given your Voting app permissions to execute actions on behalf of your Agent app!
+😊🎉 🎉😊
 
 <details>
-<summary>Why did that work 😕?</summary>
+<summary>Tell me more about dao acl</summary>
 
 Before we explain the `dao acl create` command we ran above we need to understand a little bit about how permissions in Aragon work.
 
@@ -278,7 +278,7 @@ dao exec <your organization name> <your voting app address> vote 1 true true --e
 
 ## 4. Check permissions
 
-Let's verify that permissions have been set properly through the UI:
+As a final step, let's verify that permissions have been set properly through the UI:
 
 1. Click on the **Permissions** menu option in the left panel. You should see the Agent app at the end of the second row. Click on it.
 
