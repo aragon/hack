@@ -157,7 +157,7 @@ In this guide we're going to give the Voting app permission to use the Agent app
 
 To assign these permissions we need to get a hold of the Ethereum address of the Agent app -- remember **Agent is a fully-fledged Ethereum account** -- as well as the address of the Voting app in our DAO.
 
-The Agent app address is returned at the end of the output of the `dao install` command. It will look something like **0x843bfA21a040E742ec32b8F6991e182D9655AF21** (see the code snippet above). Yours will be slightly different.
+The Agent app address is returned at the end of the output of the `dao install` command. It should look something like **0x843bfA21a040E742ec32b8F6991e182D9655AF21** (see the code snippet above). Yours will be slightly different.
 
 As for the Voting app, its address can be found through the UI as follows:
 
