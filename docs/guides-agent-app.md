@@ -50,7 +50,7 @@ We'll go with the following (sensible) defaults:
 
 ## 1. Install aragonCLI
 
-The [aragonCLI](docs/cli-intro) (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
+The [aragonCLI](https://hack.aragon.org/docs/cli-intro) (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
 
 If you haven't done so already, install it from NPM by running the following command:
 
@@ -92,7 +92,7 @@ So in our case, to install the Agent app, we need to run:
 dao install <your organization name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-You should see that after `dao install <your organization's name> agent` we pass in two [global options](/docs/cli-intro.md#global-options): `--enviroment` and `--apm.ipfs.rpc`.
+You should see that after `dao install <your organization's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro.html#global-options): `--enviroment` and `--apm.ipfs.rpc`.
 
 <details>
 <summary>Tell me more about these global options.</summary>
