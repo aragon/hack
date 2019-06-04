@@ -200,7 +200,7 @@ You should see the following output:
 😊🎉 🎉😊
 
 <details>
-<summary>Tell me more about dao acl</summary>
+<summary>Tell me more about dao acl.</summary>
 
 Before we explain the `dao acl create` command we ran above we need to understand a little bit about how permissions in Aragon work.
 
@@ -250,7 +250,7 @@ You can do this either by using the UI again or, now that you know how to get th
 dao exec <your organization name> <your voting app address> vote 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 <details>
-<summary>Tell me more about dao exec</summary>
+<summary>Tell me more about dao exec.</summary>
 
 [`dao exec`](/docs/cli-dao-commands) is used to perform transactions in your DAO directly from the aragonCLI. It takes at least three arguments:
 
@@ -428,13 +428,13 @@ Remember that `dao act` takes at least three arguments:
 
 - The third is the [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute in either the external contract or the app we specified in the second argument. In our case the method is [`vote`](https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes) and its full signature is `vote(unint256,bool,bool)`.
 
-- And the remaining arguments are the arguments which the method -- in our case `vote` -- will be exectuted with. We can see from the signature that `vote takes three arguments: an interger, a boolean, and a boolean. In our case we will pass in: **1**, **true** and **true**.
+- And the remaining arguments are the arguments which the method -- in our case `vote` -- will be exectuted with. We can see from the signature that `vote` takes three arguments: an interger, a boolean, and a boolean. In our case we will pass in: `1`, `true` and `true`.
 
-   - The first -- **1** -- is the id for the vote we want to interact with. This is always an integer. Remember that vote ids start at 0 and increment by 1 each time a vote is created.
+   - The first (`1`) is the id for the vote we want to interact with. This is always an integer. Remember that vote ids start at 0 and increment by 1 each time a vote is created.
 
-   - The second -- **true** -- specifies which was we want to vote: true means yes and false means no.
+   - The second (`true`) specifies which was we want to vote: true means yes and false means no.
 
-   - And the third -- **true** -- specifies whether the contract should check if a vote already has enough support to be executed. By executed we mean that even if everyone else voted against, the vote would still be approved. If that's the case, the vote is executed and immediately closed. true means check, false means don't check.
+   - And the third (`true`) specifies whether the contract should check if a vote already has enough support to be executed. By executed we mean that even if everyone else voted against, the vote would still be approved. If that's the case, the vote is executed and immediately closed. `true` means check, `false` means don't check.
 
 
 So in our case, we run:
