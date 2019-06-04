@@ -153,11 +153,11 @@ It's telling us that although we've successfully installed the Agent app, before
 
 In other words, we need to define who (or which app) has permission to execute actions in the Agent app and who can re-grant and revoke that permission.
 
-In this guide we're going to give the Voting app permissions to execute actions on behalf of the Agent app, and therefore on behalf of the DAO.
+In this guide we're going to give the Voting app permission to use the Agent app to execute actions.
 
 To assign these permissions we need to get a hold of the Ethereum address of the Agent app -- remember **Agent is a fully-fledged Ethereum account** -- as well as the address of the Voting app in our DAO.
 
-The Agent app address is returned at the end of the output of the `dao install` command. In my case it's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** (see the code snippet above). Yours will be slightly different.
+The Agent app address is returned at the end of the output of the `dao install` command. It will look something like **0x843bfA21a040E742ec32b8F6991e182D9655AF21** (see the code snippet above). Yours will be slightly different.
 
 As for the Voting app, its address can be found through the UI as follows:
 
@@ -185,7 +185,7 @@ As for the Voting app, its address can be found through the UI as follows:
    <img width="800" src="/docs/assets/agent-guide/agent-18.png">
 </p>
 
-Once you've located your Agent and Voting app addresses, run the following command to give your Voting app permissions to execute actions on behalf of your Agent app:
+Once you've located your Agent and Voting app addresses, run the following command to give your Voting app permission to use Agent to execute actions.
 
 ```
 dao acl create <your organization name> <your agent app address> EXECUTE_ROLE <your voting app address> <your voting app address> --environment aragon:rinkeby
@@ -238,7 +238,7 @@ You should see that in our case:
 
 - **3** is the EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an entity to execute a specific action through the Agent app (transferring tokens for example).
 
-- **4** is our organization's Voting app -- we are granting this role to our Voting app, this allows it to execute actions on behalf of our Agent app.
+- **4** is our organization's Voting app -- we are granting this role to our Voting app, this gives it permission to use the Agent app to execute actions.
 
 - **5** is our Voting app again -- we are assigning it as manager of the role, this allows it to grant or revoke the permissions of this role.
 </details>
