@@ -248,7 +248,7 @@ You should see that in our case:
 You can do this either by using the Aragon client again or, now that you know how to get the address of your apps, by running:
 
 ```
-dao exec <your organization name> <your voting app address> vote 1 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao exec <your organization name> <your voting app address> vote <vote id> true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 <details>
 <summary>Tell me more about dao exec.</summary>
