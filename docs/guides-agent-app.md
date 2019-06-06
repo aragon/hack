@@ -366,7 +366,7 @@ This is because the token created by the [democracy template](https://github.com
 In order to mint a full token from the CLI we need to pass the full number, which will then be interpreted with 18 decimals.
 In our case this is a 1 followed by eighteen 0s, or `1000000000000000000`.
 
->Note: If you're having problems with this step, you might need to run `aragon ipfs` in another terminal.
+>Note: If you're having problems with this step, you might need to run [`aragon ipfs`](https://hack.aragon.org/docs/cli-ipfs-commands#aragon-ipfs) in another terminal.
 
 Finally, the usual warning: running the above command will trigger a vote in B to create and send a token to A's Agent App: we'll need to vote *yes* to confirm the minting of the token.
 
