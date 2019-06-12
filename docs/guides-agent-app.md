@@ -94,8 +94,10 @@ dao install <your organization name> agent --environment aragon:rinkeby --apm.ip
 
 You should see that after `dao install <your organization's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro.html#global-options): `--enviroment` and `--apm.ipfs.rpc`.
 
+>Note: As an alternative to passing the `--apm.ipfs.rpc` option, you can also choose to run `aragon ipfs` in another terminal.
+
 <details>
-<summary>Tell me more about these global options.</summary>
+<summary>Tell me more about aragon ipfs and these global options.</summary>
 
 The `--environment` option allows us to specify the network we want to use. In our case we've created our organization on rinkeby so we pass in `aragon:rinkeby`.
 
