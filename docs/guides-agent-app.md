@@ -191,7 +191,7 @@ Followed directly by another that looks like this:
 
 The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In the table above that's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** . Yours will be slightly different.
 
-You should see that you can also find your Voting app's address by looking up the **Proxy address** of the voting app in the first table. In the table above that's **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** . Again, yours will be slightly different.
+You should see that you can also find your Voting app's address by looking up the **Proxy address** of the voting app in the first table. Above above that's **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** . Again, yours will be slightly different.
 
 Another way you can find your Voting app's address (or any of your permissioned apps) is to use the UI:
 
