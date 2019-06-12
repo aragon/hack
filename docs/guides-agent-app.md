@@ -69,7 +69,7 @@ If you're unsure which version of aragonCLI you have, run:
 
 `aragon -v`
 
-If your version number is less than 5.9.5, or if it's been a while since you last installed the CLI, we recommend you reinstall it (by running the `npm install` command above).
+If your version number is less than `5.9.5`, or if it's been a while since you last installed the aragonCLI, we recommend you reinstall it (by running the `npm install` command above).
 
 
 ## 2. Install the Agent app
