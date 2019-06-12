@@ -232,7 +232,7 @@ dao acl create
 ```
 You should see that in our case:
 
-- **1** is the name of our organization. 
+1. Is the name of our organization. 
 
 2. Is our organization's Agent app -- we are managing the permissions of our Agent app by giving the Voting app permissions to use the Agent app to execute actions.
 
