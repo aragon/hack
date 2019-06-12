@@ -319,7 +319,7 @@ Like `dao exec` it takes at least three arguments:
 
 >For example if we wanted to execute the `vote` method of a Voting app we would pass in its full signature `vote(unint256,bool,bool)` as the third argument. And if we wanted to execute the `confirmTransaction` method of a [Gnosis Multisig](https://wallet.gnosis.pm/#/wallets) we would pass in `confirmTransaction(uint256)`.
 
-The remaining arguments are the arguments which the method we specified in our third argument will be executed with.
+The remaining arguments are the parameters which the method we specified will be executed with.
 
 Don't worry if it's not completely clear to you how `dao act` works at this stage. The following use cases will help you develop some intuition for it!
 
