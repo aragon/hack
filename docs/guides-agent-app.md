@@ -160,9 +160,40 @@ In this guide we're going to give the Voting app permission to use the Agent app
 
 To assign these permissions we need to get a hold of the Ethereum address of the Agent app -- remember **Agent is a fully-fledged Ethereum account** -- as well as the address of the Voting app in our DAO.
 
-The Agent app address can be found... *insert tables*
+The Agent app address can be found by running the [`dao apps`](/docs/cli-dao-commands#dao-apps) command.
 
-As for the Voting app, its address can be found through the UI as follows:
+`dao apps` takes one argument: the address or name of an aragon DAO. 
+
+By default it only returns apps with permissions. But we can use the `--all` option to get it to return apps without permissions.
+
+From the command line run:
+
+`dao apps <your organization name> --all --environment aragon:rinkeby`
+
+You should see a table that looks something like this:
+
+| App  | Proxy address | Content |
+| ------------- | ------------- | ------------ |
+| kernel@vundefined  | 0xa25fb31870bc492d450012ae32dafa72af9e82c3  | (No UI available) |
+| acl@vundefined | 0xfefb0cdb7a1fac257815d52ba82776f98dc70205   | (No UI available) |
+| evmreg@vundefined | 0x9087db02300ef24b116daf0426b6ba22b28a0c79  | (No UI available) | 
+| voting@v2.0.4 | **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5**  | ipfs:QmPjWU51opgTVnXwAhYAWasL2CaiYHqy2mXdXtzqfC8sKx |
+| vault@v3.0.1   | 0x952a18185da912984e0bc8a830ba98f8151976af | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
+| finance@v2.0.5    | 0x4171f7ac1a4606b93093e8648e2f9a16c59cf3b1 | ipfs:QmeMLs4jHya89khHVSubLaao9cZW6ELZUoYPHkwCUwKBH7 |
+| token-manager@v2.0.3  | 0xbf07e1c74a72aa60df3ddf3115d15575d27e61e1 | ipfs:Qmb9Bv3J9AuXD5auY1WNwiJeohnYRhyso7XMULs7EZ8eTG |
+
+
+Followed directly by another that looks like this:
+
+| Permissionless app   | Proxy address  |
+| ------------- | ------------- |
+| 0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a | **0x843bfA21a040E742ec32b8F6991e182D9655AF21** |
+
+The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In the table above that's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** . Yours will be slightly different.
+
+You should see that you can also find your Voting app's address by looking up the **Proxy address** of the voting app in the first table. In the table above that's **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** . Again, yours will be slightly different.
+
+Another way you can find your Voting app's address (or any of your permissioned apps) is to use the UI:
 
 1. Click on **App Center** in the left panel to see your installed apps.
 
