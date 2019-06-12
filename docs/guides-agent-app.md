@@ -240,7 +240,7 @@ You should see that in our case:
 
 4. Is our organization's Voting app -- we are granting this role to our Voting app, this gives it permission to use the Agent app to execute actions.
 
-- **5** is our Voting app again -- we are assigning it as manager of the role, this allows it to grant or revoke the permissions of this role.
+5. Is our Voting app again -- we are assigning it as manager of the role, this allows it to grant or revoke the permissions of this ro
 </details>
 
 **Note that, same as before, this command will trigger a vote in the DAO and you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
