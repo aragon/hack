@@ -67,7 +67,7 @@ If you're unsure which version of aragonCLI you have, run:
 
 `aragon -v`
 
-If your version number is less than `5.10.0`, or if it's been a while since you last installed the aragonCLI, we recommend you reinstall it (by running the `npm install` command above).
+If your version number is less than `5.9.3`, or if it's been a while since you last installed the aragonCLI, we recommend you reinstall it (by running the `npm install` command above).
 
 
 ## Install the Agent app
@@ -86,17 +86,27 @@ We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#
 So in our case, to install the Agent app, we need to run: 
 
 ```
-dao install <your organization name> agent --environment aragon:rinkeby
+dao install <your organization name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-You should see that after `dao install <your organization's name> agent` we pass a [global option](https://hack.aragon.org/docs/cli-intro.html#global-options): `--enviroment`.
+You should see that after `dao install <your organization's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro.html#global-options): `--enviroment` and `--apm.ipfs.rpc`.
+
+>Note: As an alternative to passing the `--apm.ipfs.rpc` option, you can also choose to run `aragon ipfs` in another terminal.
 
 <details>
-<summary>Tell me more about these global options.</summary>
+<summary>Tell me more about aragon ipfs and these global options.</summary>
 
 The `--environment` option allows us to specify the network we want to use. In our case we've created our organization on rinkeby so we pass in `aragon:rinkeby`.
 
 Note that if we had chosen the **Ethereum Mainnet** as the network for our organization we would have passed `aragon:mainnet` instead of `aragon:rinkeby` as the argument to `--environment`.
+
+The `--apm.ipfs.rpc` option allows us to point to an IPFS node that has the files we are looking for. In our case we're pointing it to the aragon network IPFS node.		
+
+We can also run our own IPFS node by running `aragon ipfs` in another terminal window. 		
+
+Running a local IPFS node allows us to run the same command without the `--apm.ipfs.rpc` option (since the `--apm.ipfs.rpc` option defaults to `http://localhost:5001`). 		
+
+  However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
 
 </details>
 
@@ -271,7 +281,7 @@ Note that, same as before, this command will trigger a vote in the DAO and **you
 You can do this either by using the Aragon client again or, now that you know how to get the address of your apps, by running:
 
 ```
-dao exec <your organization name> <your voting app address> vote <vote id> true true --environment aragon:rinkeby
+dao exec <your organization name> <your voting app address> vote <vote id> true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 <details>
 <summary>Tell me more about dao exec.</summary>
@@ -371,7 +381,7 @@ This means that to allow A to vote in B we need to mint a token for A's Agent ap
 To do this run:
 
 ```
-dao exec <name of dao B> <token manager app address of dao B> mint <agent app address of dao A> 1000000000000000000 --environment aragon:rinkeby
+dao exec <name of dao B> <token manager app address of dao B> mint <agent app address of dao A> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 Remember, you can find the addresses of the apps in any of your DAOs by running `dao apps <organization name> --environment aragon:rinkeby`.
@@ -396,7 +406,7 @@ Finally, the usual warning: running the above command will trigger a vote in B t
 You can do this either directly through the UI or by running:
 
 ```
-dao exec <name of dao B> <voting app address of dao B> vote 0 true true --environment aragon:rinkeby
+dao exec <name of dao B> <voting app address of dao B> vote 0 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 On the UI, the vote will look something like this.
@@ -418,7 +428,7 @@ You should see that you've successfully added another token holder (your Agent a
 As in step 2, we'll run `dao exec` again, except this time the first argument to `mint` will be the address of the third entity we want to add to B.
 
 ```
-dao exec <name of dao B> <token manager app address of dao B> mint <third entity's address> 1000000000000000000 --environment aragon:rinkeby
+dao exec <name of dao B> <token manager app address of dao B> mint <third entity's address> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 Running the above will create an open vote in B. Again we'll need to vote *yes* to confirm the minting.
@@ -466,7 +476,7 @@ Remember that `dao act` takes at least three arguments:
 So in our case, we run:
 
 ```
-dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby
+dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 The result of this command will be to trigger a vote in A on whether to allow A's Agent app to execute the vote in B.
@@ -482,7 +492,7 @@ The final step is to confirm the vote in A.
 Again, we can do this either through the UI or by running:
 
 ```
-dao exec <name of dao A> <voting app address of dao A> vote 2 true true --environment aragon:rinkeby
+dao exec <name of dao A> <voting app address of dao A> vote 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 Note that we passed in a vote id of `2` as the first argument to `vote`. That's because this is the third vote created in A, and vote ids start at 0.
 
