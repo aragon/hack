@@ -58,7 +58,7 @@ If you haven't done so already, install it from NPM by running the following com
 
 Hopefully, it installed successfully 😊.
 
- If not, we recommend you take a quick look at the [installing aragonCLI](/docs/guides-faq.md#installing-aragoncli) section of our [troubleshooting guide](/docs/guides-faq.md#installing-aragonCLI). It should help diagnose and fix the problem 🧐.
+ If not, we recommend you take a quick look at the [installing aragonCLI](/docs/guides-faq.html#installing-aragoncli) section of our [troubleshooting guide](/docs/guides-faq.html#installing-aragonCLI). It should help diagnose and fix the problem 🧐.
  
 If that still doesn't fix things 😟, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help). We're more than happy to help.
 
@@ -133,7 +133,7 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
    <img width="800" src="/docs/assets/agent-guide/agent-2.png">
 </p>
 
-4. Sign the transaction with your favourite [web3 provider](/docs/getting-started.md#web3-provider) and voila! That's all there is to it. When you click on the Voting app again you should see the vote has passed with a 100% Yes vote.
+4. Sign the transaction with your favourite [web3 provider](/docs/getting-started.html#web3-provider) and voila! That's all there is to it. When you click on the Voting app again you should see the vote has passed with a 100% Yes vote.
 
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-3.png">
