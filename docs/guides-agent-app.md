@@ -189,11 +189,11 @@ Followed directly by another that looks like this:
 | ------------- | ------------- |
 | 0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a | **0x843bfA21a040E742ec32b8F6991e182D9655AF21** |
 
-The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In the table above that's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** . Yours will be slightly different.
+The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In this guide that's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** . Yours will be slightly different.
 
-You should see that you can also find your Voting app's address by looking up the **Proxy address** of the voting app in the first table. Above above that's **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** . Again, yours will be slightly different.
+You should see that you can also find your Voting app's address by looking up the **Proxy address** of the voting app in the first table. In this guide that's **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** . Again, yours will be slightly different.
 
-Another way you can find your Voting app's address (or any of your permissioned apps) is to use the UI:
+Another way you can find your Voting app's address is to use the UI:
 
 1. Click on **App Center** in the left panel to see your installed apps.
 
@@ -218,6 +218,8 @@ Another way you can find your Voting app's address (or any of your permissioned 
  <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-18.png">
 </p>
+
+>Note: the above process works with any permissioned app!
 
 Once you've located your Agent and Voting app addresses, run the following command to give your Voting app permission to use the Agent app to execute actions.
 
@@ -277,7 +279,7 @@ You should see that in our case:
 5. Is our Voting app again -- we are assigning it as manager of the role, this allows it to grant or revoke the permissions of this ro
 </details>
 
-**Note that, same as before, this command will trigger a vote in the DAO and you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
+Note that, same as before, this command will trigger a vote in the DAO and **you'll need to vote *yes* to confirm the new permissions you've granted the Voting app.**
 
 You can do this either by using the Aragon client again or, now that you know how to get the address of your apps, by running:
 
