@@ -74,6 +74,7 @@
 <url> <loc>https://hack.aragon.org/docs/forwarding-intro</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/forwarding-intro" /> </url>
 <url> <loc>https://hack.aragon.org/docs/getting-started</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/getting-started" /> </url>
 <url> <loc>https://hack.aragon.org/docs/glossary</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/glossary" /> </url>
+<url> <loc>https://hack.aragon.org/docs/guides-use-agent</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/guides-use-agent" /> </url>
 <url> <loc>https://hack.aragon.org/docs/guides-custom-deploy</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/guides-custom-deploy" /> </url>
 <url> <loc>https://hack.aragon.org/docs/guides-faq</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/guides-faq" /> </url>
 <url> <loc>https://hack.aragon.org/docs/guides-publish</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://hack.aragon.org/docs/guides-publish" /> </url>

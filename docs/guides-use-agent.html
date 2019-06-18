@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+      <script type="text/javascript">
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://arastats.eu/staats/";
+          _paq.push(['setTrackerUrl', u+'piwik.php']);
+          _paq.push(['setSiteId', '7']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+      <noscript><img src="https://arastats.eu/staats/piwik.php?idsite=7&amp;rec=1" style="border:0" alt="" /></noscript>
+      <html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>How to use Aragon Agent · Aragon Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;introduction&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#introduction&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Introduction&lt;/h1&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="How to use Aragon Agent · Aragon Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://hack.aragon.org/"/><meta property="og:description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;introduction&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#introduction&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Introduction&lt;/h1&gt;
+"/><meta property="og:image" content="https://hack.aragon.org/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://hack.aragon.org/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div><div class="aragon-navbar"><div class="center"><ul class="left"><li><a href="https://aragon.org/discover">Discover</a></li><li><a class="active">Developers</a></li></ul><ul><li class="logo-li"><a class="logo-link" href="https://aragon.org"><img class="logo" src="/img/navbar-logo.svg" alt="Aragon Developer Portal"/></a></li></ul><ul class="right"><li><a href="https://aragon.org/project">Project</a></li><li><a href="https://aragon.org/network">Network</a></li></ul></div></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="back-to-home"><div><a href="/">← Back to home</a></div></div><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><img alt="menu" src="/img/menubar.svg"/></div><h2><span><a href="/">home</a></span><i>-</i><span>Guides</span></h2><div class="tocToggler" id="tocToggler"><img alt="menu" src="/img/menumore.svg"/></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">The basics<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/stack">The stack</a></li><li class="navListItem"><a class="navItem" href="/docs/acl-intro">Permissions</a></li><li class="navListItem"><a class="navItem" href="/docs/forwarding-intro">Forwarding</a></li><li class="navListItem"><a class="navItem" href="/docs/upgradeability-intro">Upgradeability</a></li><li class="navListItem"><a class="navItem" href="/docs/package-management">Package management</a></li><li class="navListItem"><a class="navItem" href="/docs/templates-intro">Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/client">The Aragon client</a></li><li class="navListItem"><a class="navItem" href="/docs/human-readable-txs">Human readable transactions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Guides<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorial">Your first Aragon app</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-publish">Publish to aragonPM</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-custom-deploy">Custom Deploy</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/guides-use-agent">The Agent app</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Signers</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guides-use-frame">Frame</a></li><li class="navListItem"><a class="navItem" href="/docs/guides-use-metamask">Metamask</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/guides-faq">Troubleshooting</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">aragonCLI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/cli-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-main-commands">Main commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-dao-commands">DAO commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-apm-commands">APM commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-ipfs-commands">IPFS commands</a></li><li class="navListItem"><a class="navItem" href="/docs/cli-global-confg">Global configuration</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">aragonPM<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/apm-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/apm-architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/apm-ref">Reference documentation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">aragonOS<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/aragonos-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-motivation">Motivations</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-building">Developing with aragonOS</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-ref">Reference documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-4-migration">Migrating to aragonOS 4 from aragonOS 3</a></li><li class="navListItem"><a class="navItem" href="/docs/aragonos-3-ref">Reference (aragonOS 3)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">aragonAPI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/api-intro">Introduction</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JavaScript</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api-js-quick-start">Quick Start</a></li><li class="navListItem"><a class="navItem" href="/docs/api-js-ref-app">App API</a></li><li class="navListItem"><a class="navItem" href="/docs/api-js-ref-react">React API</a></li><li class="navListItem"><a class="navItem" href="/docs/api-js-ref-wrapper">Wrapper</a></li><li class="navListItem"><a class="navItem" href="/docs/api-js-ref-providers">Providers</a></li><li class="navListItem"><a class="navItem" href="/docs/api-js-ref-architecture">Architecture of apps</a></li><li class="navListItem"><a class="navItem" href="/docs/api-js-guide-bg-scripts">Background Scripts</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">aragonUI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/aragonui-intro">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">App Center<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/app-center-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/app-center-preparing-assets">Preparing assets</a></li><li class="navListItem"><a class="navItem" href="/docs/app-center-submission">Submitting Your App to the App Center</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/guides-agent-app.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">How to use Aragon Agent</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="introduction"></a><a href="#introduction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h1>
+<p>The Agent app (or Aragon Agent) is an Aragon app that can be installed in any Aragon DAO. It's main feature is its ability to perform arbitrary calls to contracts. This means it can be thought of as the <strong>external interface of a DAO</strong>.</p>
+<p>Put another way:</p>
+<blockquote>
+<p>Aragon Agent is a fully-fledged Ethereum account owned by an Aragon organization. <strong>It's like a multi-signature account on steroids that enables organizations to interact with any Ethereum contract or protocol.</strong> Trading tokens on 0x or Uniswap, opening a Maker CDP, managing names in ENS, owning digital LAND parcels, or even breeding digital cats. <a href="https://blog.aragon.one/aragon-agent-beta-release/">Source</a></p>
+</blockquote>
+<p>In technical terms, it's a superset of the <a href="https://wiki.aragon.org/dev/apps/vault/">Vault app</a>, which means it can hold valuable assets (ETH and <a href="https://en.wikipedia.org/wiki/ERC-20">ERC-20</a> tokens).</p>
+<p>Concretely, the Agent app allows for things like:</p>
+<ul>
+<li><p>An Aragon DAO to interact with other Ethereum smart contracts or protocols without the need to implement a custom Aragon app for every protocol.</p></li>
+<li><p>Members of DAOs to identify themselves as their DAO when using any Ethereum dApp.</p></li>
+<li><p>An Aragon DAO to participate as a stakeholder in another DAO.</p></li>
+</ul>
+<h1><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h1>
+<p>While there are no formal prerequisites to this guide, it'll be helpful for you to have a basic understanding of both our <a href="https://wiki.aragon.org/dev/apps/voting/">Voting</a> and <a href="https://wiki.aragon.org/dev/apps/token-manager/">Token Manager</a> apps. The best way to do that is to go through sections 2.1 and 2.2 of our <a href="https://wiki.aragon.org/tutorials/Aragon_User_Guide/index.html#2-templates">User Guide</a>.</p>
+<p>Apart from that this guide should be self-contained.</p>
+<h1><a class="anchor" aria-hidden="true" id="installing-aragon-agent"></a><a href="#installing-aragon-agent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing Aragon Agent</h1>
+<h2><a class="anchor" aria-hidden="true" id="create-a-democracy-dao"></a><a href="#create-a-democracy-dao" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Democracy DAO</h2>
+<p>Before we start, you'll need to head over to <a href="https://rinkeby.aragon.org/">Aragon</a> and create a new DAO with the <a href="https://github.com/aragon/dao-kits/tree/master/kits/democracy">democracy template</a>.</p>
+<p>If you're not sure how to do that, please have a look at <a href="https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization">this section</a> of our <a href="https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization">User Guide</a>.</p>
+<p>The first thing you'll be asked to do is to <a href="https://wiki.aragon.org/tutorials/Aragon_User_Guide/#211-navigate-to-httpsapparagonorg-in-your-web-browser">choose the network</a> for your organization. For the purposes of this guide we'll choose the <strong>Ethereum Testnet (Rinkeby)</strong>.</p>
+<p>Later on, you'll be asked to <a href="https://wiki.aragon.org/tutorials/Aragon_User_Guide/#214-set-the-parameters-of-your-democracy-organization-then-click-next">set three parameters</a> for your organization -- the <strong>support</strong>, the <strong>minimum acceptance quorum</strong>, and the <strong>vote duration</strong>.</p>
+<p>We'll go with the following (sensible) defaults:</p>
+<ul>
+<li>Support: 100%</li>
+<li>Min. Quorum: 0%</li>
+<li>Duration: 168 hours (or 1 week)</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="install-aragoncli"></a><a href="#install-aragoncli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install aragonCLI</h2>
+<p>The <a href="https://hack.aragon.org/docs/cli-intro">aragonCLI</a> (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.</p>
+<p>If you haven't done so already, install it from NPM by running the following command:</p>
+<p><code>npm install -g @aragon/cli</code></p>
+<p>Hopefully, it installed successfully 😊.</p>
+<p>If not, we recommend you take a quick look at the <a href="/docs/guides-faq.html#installing-aragoncli">installing aragonCLI</a> section of our <a href="/docs/guides-faq.html#installing-aragonCLI">troubleshooting guide</a>. It should help diagnose and fix the problem 🧐.</p>
+<p>If that still doesn't fix things 😟, please reach out to us at the <a href="https://aragon.chat/channel/dev-help">#dev-help channel on the Aragon Chat</a>. We're more than happy to help.</p>
+<p>Note that aragonCLI v5.4.0 was the first version to <a href="https://blog.aragon.one/aragon-agent-beta-release/">include support</a> for Agent.</p>
+<p>If you're unsure which version of aragonCLI you have, run:</p>
+<p><code>aragon -v</code></p>
+<p>If your version number is less than <code>5.9.3</code>, or if it's been a while since you last installed the aragonCLI, we recommend you reinstall it (by running the <code>npm install</code> command above).</p>
+<h2><a class="anchor" aria-hidden="true" id="install-the-agent-app"></a><a href="#install-the-agent-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install the Agent app</h2>
+<p>Now that we've installed aragonCLI 🎉, we're ready to install the <a href="https://blog.aragon.one/aragon-agent-beta-release/">Agent app</a>.</p>
+<p>aragonCLI installs the <a href="https://hack.aragon.org/docs/cli-dao-commands"><code>aragon dao</code></a> commands. We use these to interact directly with our DAO from the command line. They're also available directly using the <code>dao</code> shortcut.</p>
+<p>We'll use the the <a href="https://hack.aragon.org/docs/cli-dao-commands#dao-install"><code>dao install</code></a> command to install the Agent app.</p>
+<p><code>dao install</code> takes two arguments:</p>
+<ol>
+<li>The address or <a href="https://github.com/aragon/aragon-id">aragonID</a> name of an Aragon DAO.</li>
+<li>The package name of an Aragon app published to <a href="/docs/apm-intro">aragonPM</a> (for the Agent app this would be agent or agent.aragonpm.eth).</li>
+</ol>
+<p>So in our case, to install the Agent app, we need to run:</p>
+<pre><code class="hljs">dao <span class="hljs-keyword">install</span> &lt;your <span class="hljs-keyword">organization</span> <span class="hljs-keyword">name</span>&gt; <span class="hljs-keyword">agent</span> <span class="hljs-comment">--environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/</span>
+</code></pre>
+<p>You should see that after <code>dao install &lt;your organization's name&gt; agent</code> we pass in two <a href="https://hack.aragon.org/docs/cli-intro.html#global-options">global options</a>: <code>--enviroment</code> and <code>--apm.ipfs.rpc</code>.</p>
+<blockquote>
+<p>Note: As an alternative to passing the <code>--apm.ipfs.rpc</code> option, you can also choose to run <code>aragon ipfs</code> in another terminal.</p>
+</blockquote>
+<p><details>
+<summary>Tell me more about aragon ipfs and these global options.</summary></p>
+<p>The <code>--environment</code> option allows us to specify the network we want to use. In our case we've created our organization on rinkeby so we pass in <code>aragon:rinkeby</code>.</p>
+<p>Note that if we had chosen the <strong>Ethereum Mainnet</strong> as the network for our organization we would have passed <code>aragon:mainnet</code> instead of <code>aragon:rinkeby</code> as the argument to <code>--environment</code>.</p>
+<p>The <code>--apm.ipfs.rpc</code> option allows us to point to an IPFS node that has the files we are looking for. In our case we're pointing it to the aragon network IPFS node.</p>
+<p>We can also run our own IPFS node by running <code>aragon ipfs</code> in another terminal window.</p>
+<p>Running a local IPFS node allows us to run the same command without the <code>--apm.ipfs.rpc</code> option (since the <code>--apm.ipfs.rpc</code> option defaults to <code>http://localhost:5001</code>).</p>
+<p>However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.</p>
+<p></details></p>
+<p><strong>Note that, in the true spirit of democracy, this step will trigger a vote in the DAO, you'll need to vote <em>yes</em> to confirm the installation of the Agent app.</strong> To confirm the vote:</p>
+<ol>
+<li>Click on the <strong>Voting</strong> app icon in the left panel. You should see you have one open vote.</li>
+</ol>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-0.png">
+</p>
+<ol start="2">
+<li>Click on the <strong>View vote</strong> button. You should see a panel pop up on the right hand side.</li>
+</ol>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-1.png">
+</p>
+<ol start="3">
+<li>Scroll to the bottom of the panel and click on the big green <strong>Yes</strong> button.</li>
+</ol>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-2.png">
+</p>
+<ol start="4">
+<li>Sign the transaction with your favourite <a href="/docs/getting-started.html#web3-provider">web3 provider</a> and voila! That's all there is to it. When you click on the Voting app again you should see the vote has passed with a 100% Yes vote.</li>
+</ol>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-3.png">
+</p>
+<h2><a class="anchor" aria-hidden="true" id="set-permissions"></a><a href="#set-permissions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set permissions</h2>
+<p>If you look at the end of the output of the <code>dao install</code> command you ran in the previous step, you should see something like:</p>
+<pre>
+↓ Fetching deployed app [skipped]
+    → App wasn't deployed in transaction.
+ℹ Successfully executed: "Execute desired action as a token holder"
+ ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
+</pre>
+<p>What does this mean exactly 😕?</p>
+<p>It's telling us that although we've successfully installed the Agent app, before we can use it as part of our DAO we need to define who can access the app's functionality.</p>
+<p>In other words, we need to define who (or which app) has permission to execute actions in the Agent app and who can re-grant and revoke that permission.</p>
+<p>In this guide we're going to give the Voting app permission to use the Agent app to execute actions.</p>
+<p>To assign these permissions we need to get a hold of the Ethereum address of the Agent app -- remember <strong>Agent is a fully-fledged Ethereum account</strong> -- as well as the address of the Voting app in our DAO.</p>
+<p>The Agent app address can be found by running the <a href="/docs/cli-dao-commands#dao-apps"><code>dao apps</code></a> command.</p>
+<p><code>dao apps</code> takes one argument: the address or name of an aragon DAO.</p>
+<p>By default it only returns apps with permissions. But we can use the <code>--all</code> option to get it to return apps without permissions.</p>
+<p>From the command line run:</p>
+<p><code>dao apps &lt;your organization name&gt; --all --environment aragon:rinkeby</code></p>
+<p>You should see a table that looks something like this:</p>
+<table>
+<thead>
+<tr><th>App</th><th>Proxy address</th><th>Content</th></tr>
+</thead>
+<tbody>
+<tr><td>kernel@vundefined</td><td>0xa25fb31870bc492d450012ae32dafa72af9e82c3</td><td>(No UI available)</td></tr>
+<tr><td>acl@vundefined</td><td>0xfefb0cdb7a1fac257815d52ba82776f98dc70205</td><td>(No UI available)</td></tr>
+<tr><td>evmreg@vundefined</td><td>0x9087db02300ef24b116daf0426b6ba22b28a0c79</td><td>(No UI available)</td></tr>
+<tr><td>voting@v2.0.4</td><td><strong>0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5</strong></td><td>ipfs:QmPjWU51opgTVnXwAhYAWasL2CaiYHqy2mXdXtzqfC8sKx</td></tr>
+<tr><td>vault@v3.0.1</td><td>0x952a18185da912984e0bc8a830ba98f8151976af</td><td>ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA</td></tr>
+<tr><td>finance@v2.0.5</td><td>0x4171f7ac1a4606b93093e8648e2f9a16c59cf3b1</td><td>ipfs:QmeMLs4jHya89khHVSubLaao9cZW6ELZUoYPHkwCUwKBH7</td></tr>
+<tr><td>token-manager@v2.0.3</td><td>0xbf07e1c74a72aa60df3ddf3115d15575d27e61e1</td><td>ipfs:Qmb9Bv3J9AuXD5auY1WNwiJeohnYRhyso7XMULs7EZ8eTG</td></tr>
+</tbody>
+</table>
+<p>Followed directly by another that looks like this:</p>
+<table>
+<thead>
+<tr><th>Permissionless app</th><th>Proxy address</th></tr>
+</thead>
+<tbody>
+<tr><td>0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a</td><td><strong>0x843bfA21a040E742ec32b8F6991e182D9655AF21</strong></td></tr>
+</tbody>
+</table>
+<p>The permissionless app is the Agent app we've just installed. Its address is listed under <strong>Proxy address</strong> in the bottom table. In this guide that's <strong>0x843bfA21a040E742ec32b8F6991e182D9655AF21</strong> . Yours will be slightly different.</p>
+<p>You should see that you can also find your Voting app's address by looking up the <strong>Proxy address</strong> of the voting app in the first table. In this guide that's <strong>0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5</strong> . Again, yours will be slightly different.</p>
+<p>Another way you can find your Voting app's address is to use the UI:</p>
+<ol>
+<li>Click on <strong>App Center</strong> in the left panel to see your installed apps.</li>
+</ol>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-15.png">
+</p>
+<ol start="2">
+<li>Click on the <strong>View details</strong> button under the voting app.</li>
+</ol>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-16.png">
+</p>
+<ol start="3">
+<li>Click on the blue box under <strong>Installed intances</strong> (see inside the red ellipse in the image below).</li>
+</ol>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-17.png">
+</p>
+<ol start="4">
+<li>You should see a small pop up appear with a header that says <strong>Address</strong>. Under the header is the address of your voting app. It should look something like <strong>0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5</strong>.</li>
+</ol>
+ <p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-18.png">
+</p>
+<blockquote>
+<p>Note: the above process works with any permissioned app!</p>
+</blockquote>
+<p>Once you've located your Agent and Voting app addresses, run the following command to give your Voting app permission to use the Agent app to execute actions.</p>
+<pre><code class="hljs">dao acl <span class="hljs-keyword">create</span> &lt;your <span class="hljs-keyword">organization</span> <span class="hljs-keyword">name</span>&gt; &lt;your <span class="hljs-keyword">agent</span> app address&gt; EXECUTE_ROLE &lt;your voting app address&gt; &lt;your voting app address&gt; <span class="hljs-comment">--environment aragon:rinkeby</span>
+</code></pre>
+<p>You should see the following output:</p>
+<pre><code class="hljs">✔ Generating <span class="hljs-keyword">transaction</span>
+  ✔ Sending <span class="hljs-keyword">transaction</span>
+ ✔ Successfully executed
+</code></pre>
+<p>😊🎉 🎉😊</p>
+<p><details>
+<summary>Tell me more about dao acl create.</summary></p>
+<p>Before we explain the <code>dao acl create</code> command we ran above we need to understand a little bit about how permissions in Aragon work.</p>
+<p>Aragon uses an <a href="/docs/acl-intro">Access Control List</a> (ACL) to control who can access your app's functionality.</p>
+<p>This list contains a set of who has permission to execute an action in an Aragon app and who can re-grant or revoke that permission.</p>
+<p><a href="https://hack.aragon.org/docs/cli-dao-commands#dao-acl-create"><code>dao acl create</code></a> is just the Aragon command used to create a permission in the ACL.</p>
+<p>It takes 5 arguments:</p>
+<ol>
+<li>The name or main address of the DAO</li>
+<li>The address of the app whose - permissions are being managed (WHO).</li>
+<li>The identifier or name of the role (WHERE).</li>
+<li>The address of the app (or entity) that is being granted the permission (WHAT).</li>
+<li>The address of the app (or entity) that will be able to grant that permission or revoke it (HOW).</li>
+</ol>
+<p>Let's revisit an annotated version of the command we ran above:</p>
+<pre><code class="hljs">dao acl create
+<span class="hljs-number">1.</span> &lt;your organization name&gt;
+<span class="hljs-number">2.</span> &lt;your agent app address&gt;
+<span class="hljs-number">3.</span> EXECUTE_ROLE
+<span class="hljs-number">4.</span> &lt;your voting app address&gt;
+<span class="hljs-number">5.</span> &lt;your voting app address&gt;
+--environment aragon:rinkeby
+</code></pre>
+<p>You should see that in our case:</p>
+<ol>
+<li><p>Is the name of our organization.</p></li>
+<li><p>Is our organization's Agent app -- we are managing the permissions of our Agent app by giving the Voting app permissions to use the Agent app to execute actions.</p></li>
+<li><p>Is the EXECUTE_ROLE -- The EXECUTE_ROLE is a role defined in the Agent app: it allows an entity to execute a specific action through the Agent app (transferring tokens for example).</p></li>
+<li><p>Is our organization's Voting app -- we are granting this role to our Voting app, this gives it permission to use the Agent app to execute actions.</p></li>
+<li><p>Is our Voting app again -- we are assigning it as manager of the role, this allows it to grant or revoke the permissions of this ro
+</details></p></li>
+</ol>
+<p>Note that, same as before, this command will trigger a vote in the DAO and <strong>you'll need to vote <em>yes</em> to confirm the new permissions you've granted the Voting app.</strong></p>
+<p>You can do this either by using the Aragon client again or, now that you know how to get the address of your apps, by running:</p>
+<pre><code class="hljs"><span class="hljs-string">dao</span> <span class="hljs-string">exec</span> <span class="hljs-string">&lt;your</span> <span class="hljs-string">organization</span> <span class="hljs-string">name&gt;</span> <span class="hljs-string">&lt;your</span> <span class="hljs-string">voting</span> <span class="hljs-string">app</span> <span class="hljs-string">address&gt;</span> <span class="hljs-string">vote</span> <span class="hljs-string">&lt;vote</span> <span class="hljs-string">id&gt;</span> <span class="hljs-literal">true</span> <span class="hljs-literal">true</span> <span class="hljs-bullet">--environment</span> <span class="hljs-attr">aragon:rinkeby</span> <span class="hljs-bullet">--apm.ipfs.rpc</span> <span class="hljs-attr">https://ipfs.eth.aragon.network/ipfs/</span>
+</code></pre>
+<p><details>
+<summary>Tell me more about dao exec.</summary></p>
+<p><a href="https://hack.aragon.org/docs/cli-dao-commands#dao-exec"><code>dao exec</code></a> is used to perform transactions in your DAO directly from the aragonCLI. It takes at least three arguments:</p>
+<ul>
+<li><p>The first is always the name or address of the DAO you want to interact with. In our case this is our DAO's name.</p></li>
+<li><p>The second is the address of the app where the action is being performed. In our case this is the <a href="https://wiki.aragon.org/dev/apps/voting/">Voting app</a>.</p></li>
+<li><p>The third is the name of the method being executed in the app: In our case the method is <a href="https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes"><code>vote</code></a>.</p></li>
+<li><p>The remaining arguments are the arguments which the method -- in our case <code>vote</code> -- will be executed with. We are passing in three: <code>1</code>, <code>true</code> and <code>true</code>.</p>
+<ul>
+<li><p>The first (<code>1</code>) is the id for the vote we want to interact with. This is always an integer. Vote ids start at 0 and increment by 1 each time a vote is created.</p></li>
+<li><p>The second (<code>true</code>) specifies which way we want to vote: <code>true</code> means yes and <code>false</code> means no.</p></li>
+<li><p>And the third (<code>true</code>) specifies whether the contract should check if a vote already has enough support to be executed. If it does, the Voting app will perform the action that was being voted on, and the vote will be close. <code>true</code> means check if this vote can be executed, <code>false</code> means don't check.</p></li>
+</ul></li>
+</ul>
+<p></details></p>
+<p align="center">
+   <img width="400" src="/docs/assets/agent-guide/agent-4.png">
+</p>
+<blockquote>
+<p>Tip: If you need to look up the id of a vote, look the vote up in the Voting app UI. You'll find the id in the top left corner (next to the hashtag). For example in the image above, the id of the vote is 1 (look inside the red circle).</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="check-permissions"></a><a href="#check-permissions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Check permissions</h2>
+<p>As a final step, let's verify that permissions have been set properly through the UI:</p>
+<ol>
+<li>Click on the <strong>Permissions</strong> menu option in the left panel. You should see the Agent app at the end of the second row. Click on it.</li>
+</ol>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-5.png">
+</p>
+<ol start="2">
+<li>Under <strong>Actions available on this app</strong> should see that the Voting app now manages who has the ability to execute actions for the Agent app. Scroll down.</li>
+</ol>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-6.png">
+</p>
+<ol start="3">
+<li>Under <strong>Permissions set on this app</strong> you should see that Voting app now has permission to use the Agent app to execute actions. 🎉🎉🎉</li>
+</ol>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-7.png">
+</p>
+<h1><a class="anchor" aria-hidden="true" id="interacting-with-aragon-agent"></a><a href="#interacting-with-aragon-agent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interacting with Aragon Agent</h1>
+<h2><a class="anchor" aria-hidden="true" id="introducing-dao-act"></a><a href="#introducing-dao-act" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introducing dao act</h2>
+<p><code>dao act</code> is the main way we'll interact with Aragon Agent. It's the command we use to perform transactions with the Agent app directly from aragonCLI.</p>
+<p>According to the documentation:</p>
+<blockquote>
+<p><code>dao act</code> provides some syntax sugar over <code>dao exec</code> for executing actions using Agent app instances in a DAO.</p>
+</blockquote>
+<p>Like <code>dao exec</code> it takes at least three arguments:</p>
+<ol>
+<li><p>The address of the Agent app you want to use to perform an action.</p></li>
+<li><p>The address of an <strong>external contract</strong> or <strong>the address of an app</strong> within a DAO.</p></li>
+<li><p>The <a href="https://www.4byte.directory">full signature</a> of the method we wish to execute in either the external contract or the app we specified in the second arugument -- note that by the full signature we mean the <a href="https://solidity.readthedocs.io/en/v0.5.3/abi-spec.html#function-selector">human readable function signature</a>.</p></li>
+</ol>
+<blockquote>
+<p>For example if we wanted to execute the <code>vote</code> method of a Voting app we would pass in its full signature <code>vote(unint256,bool,bool)</code> as the third argument. And if we wanted to execute the <code>confirmTransaction</code> method of a <a href="https://wallet.gnosis.pm/#/wallets">Gnosis Multisig</a> we would pass in <code>confirmTransaction(uint256)</code>.</p>
+</blockquote>
+<p>The remaining arguments are the parameters which the method we specified will be executed with.</p>
+<p>Don't worry if it's not completely clear to you how <code>dao act</code> works at this stage. The following use cases will help you develop some intuition for it!</p>
+<h2><a class="anchor" aria-hidden="true" id="use-case-voting-in-another-organization"></a><a href="#use-case-voting-in-another-organization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use case: Voting in another organization</h2>
+<p>Let's start by seeing how we can use the Agent app to allow one Aragon organization to participate as a stakeholder in another.</p>
+<h3><a class="anchor" aria-hidden="true" id="create-another-democracy-dao"></a><a href="#create-another-democracy-dao" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create another Democracy DAO</h3>
+<p>The first step is to create another Democracy DAO. Exactly the same as before, head over to <a href="https://rinkeby.aragon.org/">Aragon</a> and choose the following defaults:</p>
+<ul>
+<li>Support: 100%</li>
+<li>Min. Quorum: 0%</li>
+<li>Duration: 168 hours (or 1 week)</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="mint-a-token-to-allow-our-first-dao-a-to-vote-in-our-new-dao-b"></a><a href="#mint-a-token-to-allow-our-first-dao-a-to-vote-in-our-new-dao-b" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mint a token to allow our first DAO (A) to vote in our new DAO (B)</h3>
+<p>We've now created two Democracy DAOs -- let's call them <strong>A</strong> and <strong>B</strong>. A has an Agent app, B doesn't. We want to allow A to vote in B.</p>
+<p>Remember that A needs to be a tokenholder of B to be able to vote in B. And that A's Agent app acts its external interface.</p>
+<p>In other words, A's Agent app allows it to participate as a stakeholder in B.</p>
+<p>This means that to allow A to vote in B we need to mint a token for A's Agent app in B.</p>
+<p>To do this run:</p>
+<pre><code class="hljs">dao exec &lt;name of dao B&gt; &lt;token manager app <span class="hljs-selector-tag">address</span> of dao B&gt; mint &lt;agent app <span class="hljs-selector-tag">address</span> of dao A&gt; <span class="hljs-number">1000000000000000000</span> --environment aragon:rinkeby --apm<span class="hljs-selector-class">.ipfs</span><span class="hljs-selector-class">.rpc</span> https:<span class="hljs-comment">//ipfs.eth.aragon.network/ipfs/</span>
+</code></pre>
+<p>Remember, you can find the addresses of the apps in any of your DAOs by running <code>dao apps &lt;organization name&gt; --environment aragon:rinkeby</code>.</p>
+<p>As you can see, we are using the <code>dao exec</code> command to interact with the <code>mint</code> method of B's <a href="https://wiki.aragon.org/dev/apps/token-manager/">Token Manager</a> app.</p>
+<p><a href="https://wiki.aragon.org/dev/apps/token-manager/index.html#mint-tokens"><code>mint</code></a> is used to create new tokens and assign them to a receiver. It takes two arguments: a receiver address and the amount of tokens to be created.</p>
+<p>In our case the receiver is A's Agent App, and the amount of tokens to be created is 1.</p>
+<p>However, you should notice that instead of writing <code>1</code> as the second argument to <code>mint</code> we've gone with <code>1000000000000000000</code>.</p>
+<p>This is because the token created by the <a href="https://github.com/aragon/dao-kits/tree/master/kits/democracy">democracy template</a> has 18 decimals, so 1 unit of a token is actually 0.000000000000000001 tokens. This is not what we want.</p>
+<p>In order to mint a full token from the CLI we need to pass the full number, which will then be interpreted with 18 decimals.
+In our case this is a 1 followed by eighteen 0s, or <code>1000000000000000000</code>.</p>
+<blockquote>
+<p>Note: If you're having problems with this step, you might need to run <a href="https://hack.aragon.org/docs/cli-ipfs-commands#aragon-ipfs"><code>aragon ipfs</code></a> in another terminal.</p>
+</blockquote>
+<p>Finally, the usual warning: running the above command will trigger a vote in B to create and send a token to A's Agent App: we'll need to vote <em>yes</em> to confirm the minting of the token.</p>
+<p>You can do this either directly through the UI or by running:</p>
+<pre><code class="hljs">dao exec &lt;<span class="hljs-built_in">name</span> <span class="hljs-keyword">of</span> dao B&gt; &lt;voting app address <span class="hljs-keyword">of</span> dao B&gt; vote <span class="hljs-number">0</span> <span class="hljs-literal">true</span> <span class="hljs-literal">true</span> <span class="hljs-comment">--environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/</span>
+</code></pre>
+<p>On the UI, the vote will look something like this.</p>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-8.png">
+</p>
+<p>Once you've voted <em>yes</em>, switch over to the Token Manager app (click on <strong>Tokens</strong> in the left sidebar).</p>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-9.png">
+</p>
+<p>You should see that you've successfully added another token holder (your Agent app)! 🎉🎉😊</p>
+<h3><a class="anchor" aria-hidden="true" id="create-a-vote-in-b-to-add-a-third-entity"></a><a href="#create-a-vote-in-b-to-add-a-third-entity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a vote in B to add a third entity</h3>
+<p>As in step 2, we'll run <code>dao exec</code> again, except this time the first argument to <code>mint</code> will be the address of the third entity we want to add to B.</p>
+<pre><code class="hljs">dao exec &lt;<span class="hljs-built_in">name</span> <span class="hljs-keyword">of</span> dao B&gt; &lt;token manager app address <span class="hljs-keyword">of</span> dao B&gt; mint &lt;<span class="hljs-keyword">third</span> entity's address&gt; <span class="hljs-number">1000000000000000000</span> <span class="hljs-comment">--environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/</span>
+</code></pre>
+<p>Running the above will create an open vote in B. Again we'll need to vote <em>yes</em> to confirm the minting.</p>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-10b.png">
+</p>
+<p>As before, you can either do this through the UI or run the same command we ran at the end of step 2 with one small modification:</p>
+<p>This time the first argument to <code>vote</code> will be a <code>1</code> and not a <code>0</code>, since the id of this new vote is 1. Remember that vote ids start at zero and increment by one each time a vote is created.</p>
+<p>If you go to the Voting app after you've voted, you'll see that the <em>yes</em> vote is only 50%.</p>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-10.png">
+</p>
+<p>That's because only one out of two token holders have voted. The other token holder (A's Agent app) still has to vote.</p>
+<h3><a class="anchor" aria-hidden="true" id="use-a-s-agent-app-to-take-part-in-b-s-vote"></a><a href="#use-a-s-agent-app-to-take-part-in-b-s-vote" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use A's Agent app to take part in B's vote</h3>
+<p>In order to close and enact the vote, we'll use A's Agent app to vote yes to adding a third entity to B.</p>
+<p>To do this we need to use the <code>dao act</code> command we introduced at the beginning of this section.</p>
+<p>Remember that <code>dao act</code> takes at least three arguments:</p>
+<ul>
+<li><p>The first is the address of the Agent app you want to use to perform an action. In our case this is the address of A's Agent app.</p></li>
+<li><p>The second is the address of an <strong>external contract</strong> or the address of an app within a DAO. In our case this is the address of B's <a href="https://wiki.aragon.org/dev/apps/voting/">Voting app</a>.</p></li>
+<li><p>The third is the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function">full signature</a> of the method we wish to execute in either the external contract or the app we specified in the second argument. In our case the method is <a href="https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes"><code>vote</code></a> and its full signature is <code>vote(unint256,bool,bool)</code>.</p></li>
+<li><p>Finally, the remaining arguments are the arguments which the method -- in our case <code>vote</code> -- will be exectuted with. We can see from the signature that <code>vote</code> takes three arguments: an interger, a boolean, and a boolean. In our case we will pass in: <code>1</code>, <code>true</code> and <code>true</code>.</p>
+<ul>
+<li><p>The first (<code>1</code>) is the id for the vote we want to interact with. This is always an integer. Remember that vote ids start at 0 and increment by 1 each time a vote is created.</p></li>
+<li><p>The second (<code>true</code>) specifies which was we want to vote: true means yes and false means no.</p></li>
+<li><p>And the third (<code>true</code>) specifies whether the contract should check if a vote already has enough support to be executed. If it does, the Voting app will perform the action that was being voted on, and the vote will be close. <code>true</code> means check if this vote can be executed, <code>false</code> means don't check.</p></li>
+</ul></li>
+</ul>
+<p>So in our case, we run:</p>
+<pre><code class="hljs">dao act &lt;agent app <span class="hljs-selector-tag">address</span> of dao A&gt; &lt;voting app <span class="hljs-selector-tag">address</span> of dao B&gt;  <span class="hljs-string">"vote(uint256,bool,bool)"</span> <span class="hljs-number">1</span> true true  --environment aragon:rinkeby --apm<span class="hljs-selector-class">.ipfs</span><span class="hljs-selector-class">.rpc</span> https:<span class="hljs-comment">//ipfs.eth.aragon.network/ipfs/</span>
+</code></pre>
+<p>The result of this command will be to trigger a vote in A on whether to allow A's Agent app to execute the vote in B.</p>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-11.png">
+</p>
+<h3><a class="anchor" aria-hidden="true" id="confirm-the-vote-action-in-a"></a><a href="#confirm-the-vote-action-in-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Confirm the vote/action in A</h3>
+<p>The final step is to confirm the vote in A.</p>
+<p>Again, we can do this either through the UI or by running:</p>
+<pre><code class="hljs">dao exec &lt;<span class="hljs-built_in">name</span> <span class="hljs-keyword">of</span> dao A&gt; &lt;voting app address <span class="hljs-keyword">of</span> dao A&gt; vote <span class="hljs-number">2</span> <span class="hljs-literal">true</span> <span class="hljs-literal">true</span> <span class="hljs-comment">--environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/</span>
+</code></pre>
+<p>Note that we passed in a vote id of <code>2</code> as the first argument to <code>vote</code>. That's because this is the third vote created in A, and vote ids start at 0.</p>
+<p>Once you've confirmed the vote, if you head over to B's voting app again you should see that the vote to mint one token for your chosen third entity now has 100% support.</p>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-13.png">
+</p>
+<p>Finally, to double check that your chosen entity has really been added as a stakeholder in B, click on B's Token Manager (named <strong>Tokens</strong> in left panel).</p>
+<p align="center">
+   <img width="800" src="/docs/assets/agent-guide/agent-14.png">
+</p>
+<p>You should see there are now three tokenholders, each with equivalent stakes.</p>
+<p>If you've made it this far, congratulations! 😊🎉😊🎉</p>
+<p>You've just used the Agent app to allow one Aragon organization to participate as a stakeholder in another!</p>
+<p>On next iteration of this guide we will explain 3 new use cases:</p>
+<ol>
+<li>Interacting with Compound</li>
+<li>Creating an Aragon Trust</li>
+<li>Opening a Maker CDP</li>
+</ol>
+<p>Stay tuned!</p>
+<h1><a class="anchor" aria-hidden="true" id="further-resources"></a><a href="#further-resources" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Further resources</h1>
+<ul>
+<li><p><a href="https://forum.aragon.org/t/dynamic-permissions-for-organization-actions-with-signer-integration/116">Dynamic Permissions for Organization “Actions” with Signer Integration</a></p></li>
+<li><p><a href="https://forum.aragon.org/t/agent-app-arbitrary-actions-from-daos/275">Agent app, arbitrary actions from DAOs</a></p></li>
+<li><p><a href="https://blog.aragon.one/aragon-agent-beta-release/">Releasing Aragon Agent beta</a></p></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/guides-custom-deploy"><span class="arrow-prev">← </span><span>Custom Deploy</span></a><a class="docs-next button" href="/docs/guides-use-frame"><span>Frame</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#create-a-democracy-dao">Create a Democracy DAO</a></li><li><a href="#install-aragoncli">Install aragonCLI</a></li><li><a href="#install-the-agent-app">Install the Agent app</a></li><li><a href="#set-permissions">Set permissions</a></li><li><a href="#check-permissions">Check permissions</a></li><li><a href="#introducing-dao-act">Introducing dao act</a></li><li><a href="#use-case-voting-in-another-organization">Use case: Voting in another organization</a><ul class="toc-headings"><li><a href="#create-another-democracy-dao">Create another Democracy DAO</a></li><li><a href="#mint-a-token-to-allow-our-first-dao-a-to-vote-in-our-new-dao-b">Mint a token to allow our first DAO (A) to vote in our new DAO (B)</a></li><li><a href="#create-a-vote-in-b-to-add-a-third-entity">Create a vote in B to add a third entity</a></li><li><a href="#use-a-s-agent-app-to-take-part-in-b-s-vote">Use A's Agent app to take part in B's vote</a></li><li><a href="#confirm-the-vote-action-in-a">Confirm the vote/action in A</a></li></ul></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bDWFJH" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/footer.svg" alt="Aragon Developer Portal" width="66" height="58"/></a></div><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/api-intro.html">aragonAPI</a><a href="/docs/aragonui-intro.html">aragonUI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '9dff0383c32107d6c174f15e259bb23a',
+                indexName: 'aragon',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script>
+      <style data-styled-components="bDWFJH">
+/* sc-component-id: sc-bdVaJa */
+.sc-bdVaJa {}
+/* sc-component-id: sc-global-3832733198 */
+@font-face{font-family:'overpass';src:url(/aragon-ui/cf790334a5a6d45c.woff2) format('woff2'),url(/aragon-ui/fd48a701d84ebf69.woff) format('woff');font-weight:400;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/32a3f11e7740ce58.woff2) format('woff2'),url(/aragon-ui/860b19d3e10736e7.woff) format('woff');font-weight:600;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/5cfe62515c2f9b42.woff2) format('woff2'),url(/aragon-ui/f8ba2d7a9af0db1f.woff) format('woff');font-weight:800;font-style:normal;} *,*:before,*:after{box-sizing:border-box;} html{min-height:100%;} body{font-family:overpass,sans-serif;font-size:15px;font-weight:400;line-height:1.5;color:#000000;background:#F7FBFD;} body,ul,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;} button,select,input,textarea,h1,h2,h3,h4,h5,h6{font-size:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;} a,button,select,input,textarea{color:inherit;} strong,b{font-weight:600;}</style>
+      </body></html>
