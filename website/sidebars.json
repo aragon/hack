@@ -16,6 +16,7 @@
       "tutorial",
       "guides-publish",
       "guides-custom-deploy",
+      "guides-use-agent",
       {
         "type": "subcategory",
         "label": "Signers",
