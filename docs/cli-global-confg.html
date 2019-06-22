@@ -92,6 +92,7 @@
 </ul></li>
 </ul></li>
 <li><code>path</code>: The path to the main contract in your app.</li>
+<li><code>links</code>: (optional) Array of links. Each object in that array should have name and address attributes. Used to links any linkable contracts into the deploying contract bytecode.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
 <p>This is the arapp.json of the app build in the <a href="/docs/tutorial">tutorial</a> configure with rinkeby and mainnet environments.</p>
@@ -114,17 +115,33 @@
       <span class="hljs-attr">"network"</span>: <span class="hljs-string">"development"</span>
     },
     <span class="hljs-attr">"aragon:rinkeby"</span>: {
+        <span class="hljs-attr">"apm"</span>: {
+          <span class="hljs-attr">"ipfs"</span>: {
+            <span class="hljs-attr">"gateway"</span>: <span class="hljs-string">"https://ipfs.eth.aragon.network/ipfs"</span>
+          }
+        },
         <span class="hljs-attr">"registry"</span>: <span class="hljs-string">"0x98df287b6c145399aaa709692c8d308357bc085d"</span>,
         <span class="hljs-attr">"wsRPC"</span>: <span class="hljs-string">"wss://rinkeby.eth.aragon.network/ws"</span>,
         <span class="hljs-attr">"network"</span>: <span class="hljs-string">"rinkeby"</span>
     },
     <span class="hljs-attr">"aragon:mainnet"</span>: {
+        <span class="hljs-attr">"apm"</span>: {
+          <span class="hljs-attr">"ipfs"</span>: {
+            <span class="hljs-attr">"gateway"</span>: <span class="hljs-string">"https://ipfs.eth.aragon.network/ipfs"</span>
+          }
+        },
         <span class="hljs-attr">"registry"</span>: <span class="hljs-string">"0x314159265dd8dbb310642f98f50c066173c1259b"</span>,
         <span class="hljs-attr">"wsRPC"</span>: <span class="hljs-string">"wss://mainnet.eth.aragon.network/ws"</span>,
         <span class="hljs-attr">"network"</span>: <span class="hljs-string">"mainnet"</span>
     }
   },
-  <span class="hljs-attr">"path"</span>: <span class="hljs-string">"contracts/CounterApp.sol"</span>
+  <span class="hljs-attr">"path"</span>: <span class="hljs-string">"contracts/CounterApp.sol"</span>,
+  <span class="hljs-attr">"links"</span>: [
+    {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CounterExtension"</span>,
+      <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x82606d5d2dB55Ac1D36a011dbbA769c729349f56"</span>
+    }
+  ]
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="how-to-use-environments"></a><a href="#how-to-use-environments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to use environments</h3>
