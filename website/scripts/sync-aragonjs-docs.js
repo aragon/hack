@@ -13,12 +13,12 @@ const pages = [
     contentLocation: 'docs/QUICK_START.md',
   },
   {
-    destination: '/docs/js-ref-app.md',
-    id: 'api-js-ref-app',
+    destination: '/docs/js-ref-api.md',
+    id: 'api-js-ref-api',
     title: 'aragonAPI for Javascript',
     sidebarLabel: 'App API',
     hideTitle: true,
-    contentLocation: 'docs/APP.md',
+    contentLocation: 'docs/API.md',
   },
   {
     destination: '/docs/js-ref-providers.md',
@@ -63,7 +63,7 @@ const pages = [
 ]
 
 const locationReferenceMap = {
-  '/docs/APP.md': '/docs/api-js-ref-app.html',
+  '/docs/API.md': '/docs/api-js-ref-api.html',
   '/docs/WRAPPER.md': '/docs/api-js-ref-wrapper.html',
   '/docs/PROVIDERS.md': '/docs/api-js-ref-providers.html',
   '/docs/ARCHITECTURE.md': '/docs/api-js-ref-architecture.html',
