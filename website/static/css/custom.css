@@ -169,6 +169,8 @@ blockquote {
 
 blockquote p {
   padding-top: 0px !important;
+  margin-bottom: 0!important;
+  color: #EB9C1A!important;
 }
 
 li .item h4 {
@@ -422,6 +424,10 @@ footer.nav-footer .sitemap h5 {
   color: #2d4051;
   border-top: solid 0px transparent;
   margin-top: 10px !important;
+}
+
+h6 {
+  color: #2d4051;
 }
 
 .mainContainer .wrapper .post h1 {
@@ -713,4 +719,70 @@ nav.toc .toggleNav .subNavGroup ul {
     padding-bottom: 2px;
   }
 
+}
+
+
+/* TABLES */
+thead tr, thead th {
+  border: 0px solid transparent;
+  font-size: 16px;
+  line-height: 19px;
+  color: #637381;
+}
+tbody td {
+  font-size: 16px;
+  line-height: 19px;
+  color: #161616;
+  background: transparent;
+}
+table td, table th {
+  padding: 15px 30px;
+}
+table tbody tr:nth-child(2n) {
+  background: transparent;
+}
+
+.layouts-table tbody td:nth-child(2){
+  color: #FDAD00;
+}
+
+.colors-table tbody td {
+  color: #637381;
+  position: relative;
+  padding: 7px 30px;
+}
+.colors-table tbody td:nth-child(1) {
+  color: #161616;
+}
+.colors-table tbody td:nth-child(1),
+.colors-table tbody td:nth-child(2) {
+  min-width: 250px;
+}
+.colors-table table th {
+  padding: 15px 30px 15px 0;
+}
+
+.colors-table tbody td span {
+  top: -5px;
+  position: relative;
+}
+
+.colors-table tbody td img {
+  top: 2px;
+  position: relative;
+  padding-right: 0!important;
+  max-width: inherit;
+}
+
+.overview-components {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.overview-components img {
+  padding-right: 0!important;
+}
+.overview-components p {
+  padding: 0!important;
+  margin: -3px 0!important;
 }

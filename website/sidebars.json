@@ -134,5 +134,22 @@
       "kernel_KernelProxy",
       "kernel_KernelStorage"
     ]
+  },
+  "design-system": {
+    "Guidelines": [
+      "layout",
+      "color",
+      "iconography",
+      "typography",
+      "illustrations",
+      "motion",
+      "voicetone"
+    ],
+    "Components": [
+      "overview",
+      "buttons",
+      "alerts",
+      "layouts"
+    ]
   }
 }
