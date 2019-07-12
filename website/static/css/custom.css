@@ -157,7 +157,8 @@ code {
 
 blockquote,
 pre {
-  max-width: 50rem;
+  max-width: 100%;
+  overflow: auto;
 }
 
 blockquote {
@@ -696,7 +697,7 @@ nav.toc .toggleNav .subNavGroup ul {
     background-color: #f6f6f6;
     z-index: 60;
   }
-  
+
   .docMainWrapper {
     margin: 50px auto 0 auto;
   }
