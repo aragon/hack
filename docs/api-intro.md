@@ -27,7 +27,7 @@ Some of the things you can do with the JavaScript implementation are:
 #### Docs
 
 - [Quick Start for apps](js-ref-quick-start.md)
-- [App API](js-ref-app.md)
+- [App API](js-ref-api.md)
   - [React API](js-ref-react.md)
 - [Aragon client implementations (wrapper)](js-ref-wrapper.md)
 - [Providers](js-ref-providers.md)
