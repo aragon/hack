@@ -84,9 +84,7 @@ In this section we'll go through how to sign your first transaction using Metama
 
 From now on, I'll assume you've reached the **Interacting with your first DAO** section of our [getting started](https://hack.aragon.org/docs/getting-started.html) page. If you haven't, and you want to follow along, you should do this first.
 
-The first step is to open up the Metamask browser extension. If you're using Chrome you should be able to do this by clicking on the fox icon located to the right of your address bar. If you can't see it, [click here](https://chrome.google.com/webstore/search/metamask).
-
-This will open up an interface to your Ethereum wallet.
+The first step is to open up the Metamask browser extension. If you're using Chrome you should be able to do this by clicking on the fox icon located to the right of your address bar. If you can't see it, [click here](https://chrome.google.com/webstore/search/metamask). This will open up an interface to your Ethereum wallet.
 
 <p align="center">
    <img width="600" height="326" src="/docs/assets/metamask-guide/m-3.png">
