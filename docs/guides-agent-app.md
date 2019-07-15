@@ -30,7 +30,7 @@ Apart from that this guide should be self-contained.
 
 # Installing Aragon Agent
 
-## Create a Democracy DAO
+## 1. Create a Democracy DAO
 
 Before we start, you'll need to head over to [Aragon](https://rinkeby.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-kits/tree/master/kits/democracy).
 
@@ -46,7 +46,7 @@ We'll go with the following (sensible) defaults:
 - Min. Quorum: 0%
 - Duration: 168 hours (or 1 week)
 
-## Install aragonCLI
+## 2. Install aragonCLI
 
 The [aragonCLI](https://hack.aragon.org/docs/cli-intro) (Command Line Interface) is what we use to create, interact with, and develop Aragon apps.
 
@@ -68,7 +68,7 @@ If you're unsure which version of aragonCLI you have, run:
 
 If your version number is less than `5.9.3`, or if it's been a while since you last installed the aragonCLI, we recommend you reinstall it (by running the `npm install` command above).
 
-## Install the Agent app
+## 3. Install the Agent app
 
 Now that we've installed aragonCLI 🎉, we're ready to install the [Agent app](https://blog.aragon.one/aragon-agent-beta-release/).
 
@@ -134,7 +134,7 @@ However, since IPFS propogation is slow, it's better to point directly to the ar
    <img width="800" src="/docs/assets/agent-guide/agent-3.png">
 </p>
 
-## Set permissions
+## 4. Set permissions
 
 If you look at the end of the output of the `dao install` command you ran in the previous step, you should see something like:
 
@@ -310,7 +310,7 @@ dao exec <your organization name> <your voting app address> vote <vote id> true 
 
 > Tip: If you need to look up the id of a vote, look the vote up in the Voting app UI. You'll find the id in the top left corner (next to the hashtag). For example in the image above, the id of the vote is 1 (look inside the red circle).
 
-## Check permissions
+## 5. Check permissions
 
 As a final step, let's verify that permissions have been set properly through the UI:
 
@@ -360,7 +360,7 @@ Don't worry if it's not completely clear to you how `dao act` works at this stag
 
 Let's start by seeing how we can use the Agent app to allow one Aragon organization to participate as a stakeholder in another.
 
-### Create another Democracy DAO
+### 1. Create another Democracy DAO
 
 The first step is to create another Democracy DAO. Exactly the same as before, head over to [Aragon](https://rinkeby.aragon.org/) and choose the following defaults:
 
@@ -368,7 +368,7 @@ The first step is to create another Democracy DAO. Exactly the same as before, h
 - Min. Quorum: 0%
 - Duration: 168 hours (or 1 week)
 
-### Mint a token to allow our first DAO (A) to vote in our new DAO (B)
+### 2. Mint a token to allow our first DAO (A) to vote in our new DAO (B)
 
 We've now created two Democracy DAOs -- let's call them **A** and **B**. A has an Agent app, B doesn't. We want to allow A to vote in B.
 
@@ -423,7 +423,7 @@ Once you've voted _yes_, switch over to the Token Manager app (click on **Tokens
 
 You should see that you've successfully added another token holder (your Agent app)! 🎉🎉😊
 
-### Create a vote in B to add a third entity
+### 3. Create a vote in B to add a third entity
 
 As in step 2, we'll run `dao exec` again, except this time the first argument to `mint` will be the address of the third entity we want to add to B.
 
@@ -449,7 +449,7 @@ If you go to the Voting app after you've voted, you'll see that the _yes_ vote i
 
 That's because only one out of two token holders have voted. The other token holder (A's Agent app) still has to vote.
 
-### Use A's Agent app to take part in B's vote
+### 4. Use A's Agent app to take part in B's vote
 
 In order to close and enact the vote, we'll use A's Agent app to vote yes to adding a third entity to B.
 
@@ -483,7 +483,7 @@ The result of this command will be to trigger a vote in A on whether to allow A'
    <img width="800" src="/docs/assets/agent-guide/agent-11.png">
 </p>
 
-### Confirm the vote/action in A
+### 5. Confirm the vote/action in A
 
 The final step is to confirm the vote in A.
 
