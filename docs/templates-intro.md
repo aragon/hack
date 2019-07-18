@@ -11,10 +11,10 @@ Creating a DAO with all the desired apps and permissions requires multiple opera
 
 For these reasons, **the recommended way of creating Aragon DAOs** is using what we call **templates**, on-chain _deployment scripts_ that create a DAO and perform all the required configuration steps in an **atomic manner** without the possibility of an attacker interacting with the DAO while it is still being set up. **templates allow creating a DAO in just one transaction** and when the transaction is processed the DAO is already **fully configured and functional**.
 
-Templates can also be thought of as **DAO templates** as every template can create a DAO with specific settings for an organization type. The two DAO configurations that one can choose from when using the [Aragon client](http://app.aragon.org) correspond to the beta templates ([Democracy](https://github.com/aragon/dao-kits/blob/ce62d132d944951dc200df8aa74e42db8e70a094/kits/democracy/contracts/DemocracyKit.sol) and [Multisig](https://github.com/aragon/dao-kits/blob/ce62d132d944951dc200df8aa74e42db8e70a094/kits/multisig/contracts/MultisigKit.sol)) available in the [DAO templates repository](https://github.com/aragon/dao-kits).
+Templates can also be thought of as **DAO templates** as every template can create a DAO with specific settings for an organization type. The two DAO configurations that one can choose from when using the [Aragon client](http://app.aragon.org) correspond to the beta templates ([Democracy](https://github.com/aragon/dao-templates/blob/ce62d132d944951dc200df8aa74e42db8e70a094/kits/democracy/contracts/DemocracyKit.sol) and [Multisig](https://github.com/aragon/dao-templates/blob/ce62d132d944951dc200df8aa74e42db8e70a094/kits/multisig/contracts/MultisigKit.sol)) available in the [DAO templates repository](https://github.com/aragon/dao-templates).
 
 > **Note**<br>
-> The `kits` has been deprecated and `templates` should be used instead. You may find the `kits` notation in some places while we made the transition.
+> The `kits` has been deprecated and `templates` should be used instead. You may still find the `kits` notation in some places while we make the transition.
 
 ## Getting started with templates using the aragonCLI
 
