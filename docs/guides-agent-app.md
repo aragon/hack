@@ -32,7 +32,7 @@ Apart from that this guide should be self-contained.
 
 ## 1. Create a Democracy DAO
 
-Before we start, you'll need to head over to [Aragon](https://rinkeby.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-kits/tree/master/kits/democracy).
+Before we start, you'll need to head over to [Aragon](https://rinkeby.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-templates/tree/aragon-v0.7/kits/democracy).
 
 If you're not sure how to do that, please have a look at [this section](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization) of our [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization).
 
@@ -394,7 +394,7 @@ In our case the receiver is A's Agent App, and the amount of tokens to be create
 
 However, you should notice that instead of writing `1` as the second argument to `mint` we've gone with `1000000000000000000`.
 
-This is because the token created by the [democracy template](https://github.com/aragon/dao-kits/tree/master/kits/democracy) has 18 decimals, so 1 unit of a token is actually 0.000000000000000001 tokens. This is not what we want.
+This is because the token created by the [democracy template](https://github.com/aragon/dao-templates/tree/aragon-v0.7/kits/democracy) has 18 decimals, so 1 unit of a token is actually 0.000000000000000001 tokens. This is not what we want.
 
 In order to mint a full token from the CLI we need to pass the full number, which will then be interpreted with 18 decimals.
 In our case this is a 1 followed by eighteen 0s, or `1000000000000000000`.
