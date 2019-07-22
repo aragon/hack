@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+      <script type="text/javascript">
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://arastats.eu/staats/";
+          _paq.push(['setTrackerUrl', u+'piwik.php']);
+          _paq.push(['setSiteId', '7']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+      <noscript><img src="https://arastats.eu/staats/piwik.php?idsite=7&amp;rec=1" style="border:0" alt="" /></noscript>
+      <html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Color · Aragon Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;&lt;img src=&quot;/docs/assets/designSystem/covers/color.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Color · Aragon Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://hack.aragon.org/"/><meta property="og:description" content="&lt;p&gt;&lt;img src=&quot;/docs/assets/designSystem/covers/color.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+"/><meta property="og:image" content="https://hack.aragon.org/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://hack.aragon.org/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div><div class="aragon-navbar"><div class="center"><ul><li><a href="https://aragon.org/discover">Discover</a></li><li><a class="active">Developers</a></li><li class="logo-li"><a class="logo-link" href="https://aragon.org"><img class="logo" src="/img/navbar-logo.svg" alt="Aragon Developer Portal"/></a></li><li><a href="https://aragon.org/project">Project</a></li><li><a href="https://aragon.org/network">Network</a></li></ul></div></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="back-to-home"><div><a href="/">← Back to home</a></div></div><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><img alt="menu" src="/img/menubar.svg"/></div><h2><span><a href="/">home</a></span><i>-</i><span>Guidelines</span></h2><div class="tocToggler" id="tocToggler"><img alt="menu" src="/img/menumore.svg"/></div></div><div class="navGroups"><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Guidelines<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/layout">Layout</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/color">Color</a></li><li class="navListItem"><a class="navItem" href="/docs/iconography">Iconography</a></li><li class="navListItem"><a class="navItem" href="/docs/typography">Typography</a></li><li class="navListItem"><a class="navItem" href="/docs/illustrations">Illustrations</a></li><li class="navListItem"><a class="navItem" href="/docs/motion">Motion</a></li><li class="navListItem"><a class="navItem" href="/docs/voicetone">Voicetone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Components<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/buttons">Buttons</a></li><li class="navListItem"><a class="navItem" href="/docs/alerts">Alerts</a></li><li class="navListItem"><a class="navItem" href="/docs/layouts">Layouts</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/tree/master/docs/ds-color.md" target="_blank" rel="noreferrer noopener">Edit</a></header><article><div><span><p><img src="/docs/assets/designSystem/covers/color.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="colors"></a><a href="#colors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Colors</h3>
+<p>These principles are the framework upon which we have built our system for how color is used in Aragon.</p>
+<p><img src="/docs/assets/designSystem/guidelines/naming.svg" alt=""></p>
+<ul>
+<li><b> Precision:</b> We defined a small number of primary colors for core interactions (and task base contexts) and a sufficient number of secondary colors to create more ascetic / decorative illustrations, app icons and graphs.</li>
+<li><b> Accesible:</b> We should never use color alone to convey information, provide sufficient contrast between the elements and meet the minimum accessibility guidelines to better serve color blind or people with low vision.</li>
+<li><b> Focus:</b> We should use color purposefully to help focus users’ attention with the task at hand. Color convey meaning and complement the content hierarchy following a clear rationale.</li>
+<li><b> Clarity:</b> Developers and designers should be able to easily refer to particular colors defined in the system. Color names are easily understood, memorable, and spark meaningful conversations between designers and developers (shades changes, contrast corrections etc.).</li>
+<li><b> Consistent:</b> Color should be applied throughout a UI consistently and celebrate the brand it represents.
+<br></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="color-naming-conventions"></a><a href="#color-naming-conventions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Color naming conventions</h3>
+<p>There’s two common approaches when it comes to name color names: Declarative or natural color names and semantic or abstract color names. We’ve followed both approaches to create a more flexible and theme-able design system.</p>
+<h3><a class="anchor" aria-hidden="true" id="aragon-colors"></a><a href="#aragon-colors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aragon Colors</h3>
+<div class="colors-table">
+<table>
+<thead>
+<tr><th>Basic light theme</th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><span>White</span></td><td><span>White</span></td><td><span>#000000</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/white.svg" alt=""></td></tr>
+<tr><td><span>Baby Blue</span></td><td><span>Baby Blue</span></td><td><span>#F9FAFC</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/baby-blue.svg" alt=""></td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="grey-scale"></a><a href="#grey-scale" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Grey scale</h4>
+<table>
+<thead>
+<tr><th>Grey</th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><span>Grey Basic</span></td><td><span>Grey Basic</span></td><td><span>#DDE4E9</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/grey-basic.svg" alt=""></td></tr>
+<tr><td><span>Grey Light</span></td><td><span>Grey Light</span></td><td><span>#C4CDD5</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/grey-light.svg" alt=""></td></tr>
+<tr><td><span>Grey</span></td><td><span>Grey</span></td><td><span>#C8D7EA</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/grey.svg" alt=""></td></tr>
+<tr><td><span>Grey Medium</span></td><td><span>Grey Medium</span></td><td><span>#637381</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/grey-medium.svg" alt=""></td></tr>
+<tr><td><span>Grey Dark</span></td><td><span>Grey Dark</span></td><td><span>#212B36</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/grey-dark.svg" alt=""></td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="primary-colors"></a><a href="#primary-colors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Primary colors</h4>
+<table>
+<thead>
+<tr><th>Aragon Blue</th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><span>Aragon Blue Light</span></td><td><span>Aragon Blue Light</span></td><td><span>#95ECFF</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/aragon-blue-light.svg" alt=""></td></tr>
+<tr><td><span>Aragon Blue</span></td><td><span>Aragon Blue</span></td><td><span>#08BEE5</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/aragon-blue.svg" alt=""></td></tr>
+<tr><td><span>Aragon Blue Dark</span></td><td><span>Aragon Blue Dark</span></td><td><span>#0792AF</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/aragon-blue-dark.svg" alt=""></td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th>Aragon Turquoise</th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><span>Aragon Turquoise Light</span></td><td><span>Aragon Turquoise Light</span></td><td><span>#9CF7F3</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/aragon-turquoise-light.svg" alt=""></td></tr>
+<tr><td><span>Aragon Turquoise</span></td><td><span>Aragon Turquoise</span></td><td><span>#3FE8E0</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/aragon-turquoise.svg" alt=""></td></tr>
+<tr><td><span>Aragon Turquoise Dark</span></td><td><span>Aragon Turquoise Dark</span></td><td><span>#26B4AD</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/aragon-turquoise-dark.svg" alt=""></td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="secondary-colors"></a><a href="#secondary-colors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Secondary colors</h4>
+<table>
+<thead>
+<tr><th>Purple</th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><span>Purple Light</span></td><td><span>Purple Light</span></td><td><span>#95ECFF</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/purple-light.svg" alt=""></td></tr>
+<tr><td><span>Purple</span></td><td><span>Purple</span></td><td><span>#08BEE5</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/purple.svg" alt=""></td></tr>
+<tr><td><span>Purple Dark</span></td><td><span>Purple Dark</span></td><td><span>#0792AF</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/purple-dark.svg" alt=""></td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th>Blue</th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><span>Blue Light</span></td><td><span>Blue Light</span></td><td><span>#9CF7F3</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/blue-light.svg" alt=""></td></tr>
+<tr><td><span>Blue</span></td><td><span>Blue</span></td><td><span>#3FE8E0</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/blue.svg" alt=""></td></tr>
+<tr><td><span>Blue Dark</span></td><td><span>Blue Dark</span></td><td><span>#26B4AD</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/blue-dark.svg" alt=""></td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th>Green</th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><span>Green Light</span></td><td><span>Green Light</span></td><td><span>#9CF7F3</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/green-light.svg" alt=""></td></tr>
+<tr><td><span>Green</span></td><td><span>Green</span></td><td><span>#3FE8E0</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/green.svg" alt=""></td></tr>
+<tr><td><span>Green Dark</span></td><td><span>Green Dark</span></td><td><span>#26B4AD</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/green-dark.svg" alt=""></td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th>Yellow</th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><span>Yellow Light</span></td><td><span>Yellow Light</span></td><td><span>#9CF7F3</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/yellow-light.svg" alt=""></td></tr>
+<tr><td><span>Yellow</span></td><td><span>Yellow</span></td><td><span>#3FE8E0</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/yellow.svg" alt=""></td></tr>
+<tr><td><span>Yellow Dark</span></td><td><span>Yellow Dark</span></td><td><span>#26B4AD</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/yellow-dark.svg" alt=""></td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th>Coral</th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><span>Coral Light</span></td><td><span>Coral Light</span></td><td><span>#9CF7F3</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/coral-light.svg" alt=""></td></tr>
+<tr><td><span>Coral</span></td><td><span>Coral</span></td><td><span>#3FE8E0</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/coral.svg" alt=""></td></tr>
+<tr><td><span>Coral Dark</span></td><td><span>Coral Dark</span></td><td><span>#26B4AD</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/coral-dark.svg" alt=""></td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th>Brown</th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><span>Brown Light</span></td><td><span>Brown Light</span></td><td><span>#9CF7F3</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/brown-light.svg" alt=""></td></tr>
+<tr><td><span>Brown</span></td><td><span>Brown</span></td><td><span>#3FE8E0</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/brown.svg" alt=""></td></tr>
+<tr><td><span>Brown Dark</span></td><td><span>Brown Dark</span></td><td><span>#26B4AD</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/brown-dark.svg" alt=""></td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th>Pink</th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><span>Pink Light</span></td><td><span>Pink Light</span></td><td><span>#9CF7F3</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/pink-light.svg" alt=""></td></tr>
+<tr><td><span>Pink</span></td><td><span>Pink</span></td><td><span>#3FE8E0</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/pink.svg" alt=""></td></tr>
+<tr><td><span>Pink Dark</span></td><td><span>Pink Dark</span></td><td><span>#26B4AD</span></td><td><img src="/docs/assets/designSystem/guidelines/colors/pink-dark.svg" alt=""></td></tr>
+</tbody>
+</table>
+</div>
+<h3><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h3>
+<p>The Aragon Gradient (AragonBlue + AragonTurquoise) is used to convey the most relevant action in the page as well as statuses in Aragon UI. We use it for the primary buttons and selected states in various components.</p>
+<h3><a class="anchor" aria-hidden="true" id="branded"></a><a href="#branded" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Branded</h3>
+<p>Primary colors are used to emphasize primary buttons, interactive areas, components states and progress indicators.</p>
+<p><img src="/docs/assets/designSystem/guidelines/branded.svg" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="interface"></a><a href="#interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interface</h3>
+<p>Base theme colors are used to visualize all UI objects: typography, backgrounds, iconography, etc.</p>
+<p><img src="/docs/assets/designSystem/guidelines/interface.svg" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="contextual"></a><a href="#contextual" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contextual</h3>
+<p>Functional colors are used to convey the current status of the interface: primary objects include contextual buttons, help and feedback objects, transient elements, etc.</p>
+<p><img src="/docs/assets/designSystem/guidelines/contextual.svg" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="aesthetics"></a><a href="#aesthetics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aesthetics</h3>
+<p>Additional colors are used for data visualization, illustrations and iconography.</p>
+<p><img src="/docs/assets/designSystem/guidelines/aesthetics.svg" alt=""></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/layout"><span class="arrow-prev">← </span><span>Layout</span></a><a class="docs-next button" href="/docs/iconography"><span>Iconography</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer sc-bdVaJa bDWFJH" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/footer.svg" alt="Aragon Developer Portal" width="66" height="58"/></a></div><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/api-intro.html">aragonAPI</a><a href="/docs/aragonui-intro.html">aragonUI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '9dff0383c32107d6c174f15e259bb23a',
+                indexName: 'aragon',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script>
+      <style data-styled-components="bDWFJH">
+/* sc-component-id: sc-bdVaJa */
+.sc-bdVaJa {}
+/* sc-component-id: sc-global-3832733198 */
+@font-face{font-family:'overpass';src:url(/aragon-ui/cf790334a5a6d45c.woff2) format('woff2'),url(/aragon-ui/fd48a701d84ebf69.woff) format('woff');font-weight:400;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/32a3f11e7740ce58.woff2) format('woff2'),url(/aragon-ui/860b19d3e10736e7.woff) format('woff');font-weight:600;font-style:normal;} @font-face{font-family:'overpass';src:url(/aragon-ui/5cfe62515c2f9b42.woff2) format('woff2'),url(/aragon-ui/f8ba2d7a9af0db1f.woff) format('woff');font-weight:800;font-style:normal;} *,*:before,*:after{box-sizing:border-box;} html{min-height:100%;} body{font-family:overpass,sans-serif;font-size:15px;font-weight:400;line-height:1.5;color:#000000;background:#F7FBFD;} body,ul,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;} button,select,input,textarea,h1,h2,h3,h4,h5,h6{font-size:inherit;font-family:inherit;font-weight:inherit;line-height:inherit;} a,button,select,input,textarea{color:inherit;} strong,b{font-weight:600;}</style>
+      </body></html>
