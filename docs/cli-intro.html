@@ -70,19 +70,19 @@
 <h3><a class="anchor" aria-hidden="true" id="installation-pre-requisites"></a><a href="#installation-pre-requisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation pre-requisites</h3>
 <p>The following must be installed prior to installation:</p>
 <ul>
-<li>Node + npm
+<li><p>Node + npm</p>
 <ul>
 <li>Version of Node we recommend to be <a href="https://nodejs.org/en/">the latest LTS version, available to download here</a>.</li>
-<li>After downloading and unpacking, you must add the /bin folder to you $PATH.</li>
+<li>After downloading and unpacking, you must add the /bin folder to you $PATH.s</li>
 </ul></li>
 </ul>
 <p>For Linux:</p>
 <ul>
-<li>git
+<li><p>git</p>
 <ul>
 <li>Install this using the command <code>sudo apt install git</code></li>
 </ul></li>
-<li>python
+<li><p>python</p>
 <ul>
 <li>Install this using the command <code>sudo apt install python</code></li>
 </ul></li>
@@ -95,6 +95,13 @@
 </ul></li>
 </ul>
 <p>Note: Python comes pre-installed on Mac.</p>
+<p>For Windows:</p>
+<ul>
+<li>windows-build-tools
+<ul>
+<li>Install with <code>npm i windows-build-tools</code></li>
+</ul></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="install-aragoncli"></a><a href="#install-aragoncli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install aragonCLI</h3>
 <p>The aragonCLI can be installed from NPM:</p>
 <pre><code class="hljs css language-sh">npm install -g @aragon/cli
@@ -106,20 +113,27 @@ npm install
 npm link
 </code></pre>
 <p>After installing, the main <code>aragon</code> executable will be available for use. It will also install the <code>dao</code> alias which is a shortcut for <code>aragon dao</code> commands.</p>
+<h4><a class="anchor" aria-hidden="true" id="install-ipfs"></a><a href="#install-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install IPFS</h4>
+<p>Since <code>v6.0.0</code> we separate the instalation of <code>go-ipfs</code> from the aragonCLI. If you do not have it installed globally on your system we have a couple of comands to help with that:<code>aragon ipfs install</code> and <code>aragon ipfs uninstall</code>.</p>
+<blockquote>
+<p><strong>Note</strong><br>
+We are using the <code>0.4.18-hacky2</code> version cause lastest version is not stable yet.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="global-options"></a><a href="#global-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Global options</h2>
 <p>Options that change the behaviour of the command:</p>
 <ul>
+<li><code>--environment</code>: The environment in your arapp.json that you want to use. Defaults to <code>aragon:local</code>. Check the other <a href="/docs/cli-global-confg.html#example">default environments</a>.</li>
+<li><code>--gas-price</code>: Gas price in Gwei. Defaults to <code>2</code>.</li>
 <li><code>--silent</code>: Silence output to terminal.</li>
 <li><code>--debug</code>: Show more output to terminal.</li>
 <li><code>--cwd</code>: Project working directory.</li>
 <li><code>--use-frame</code>: Use frame as a signing provider and web3 provider.</li>
-<li><code>--environment</code>: The <a href="/docs/cli-global-confg.html#the-arappjson-file">environment</a> in your arapp.json that you want to use.</li>
 <li><code>--apm.ens-registry</code>: Address of the ENS registry. This will be overwritten if the selected environment from your arapp.json includes a <code>registry</code> property.</li>
 <li><code>--apm.ipfs.gateway</code>: An URI to the IPFS Gateway to read files from. Defaults to <code>http://localhost:8080/ipfs</code>.</li>
 <li><code>--apm.ipfs.rpc</code>: An URI to the IPFS node used to publish files. Defaults to <code>http://localhost:5001#default</code>.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
-<pre><code class="hljs css language-sh">aragon &lt;<span class="hljs-built_in">command</span>&gt; --environment aragon:mainnet --use-frame --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs --debug
+<pre><code class="hljs css language-sh">aragon &lt;<span class="hljs-built_in">command</span>&gt; --environment aragon:mainnet --gas-price 1 --use-frame --debug
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="create-aragon-app"></a><a href="#create-aragon-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>create-aragon-app</h2>
 <p>This command will set up an Aragon app project so you can start building your app from a functional boilerplate.</p>
@@ -131,6 +145,7 @@ npm link
 <ul>
 <li><code>react</code>: this boilerplate contains a very basic Counter app and a webapp for interacting with it. It showcases the end-to-end interaction with an Aragon app, from the contracts to the webapp. Also comes with a DAO Template which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Template <a href="/docs/templates-intro">here</a>.</li>
 <li><code>bare</code>: this boilerplate will just set up your app directory structure but contains no functional code.</li>
+<li><code>tutorial</code>: this boilerplate is the one used in Your first Aragon app guide.</li>
 </ul></li>
 </ul>
 <blockquote>

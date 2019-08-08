@@ -141,8 +141,12 @@ All app instances of the same app in a DAO must run the same version, so install
 <ul>
 <li><code>agent-proxy</code>: Address of the Agent app proxy.</li>
 <li><code>target-addr</code>: Address where the action is being executed.</li>
-<li><code>method</code>: Name of the method being executed in the app (e.g. <code>transfer</code>).</li>
+<li><code>method</code>: The <a href="https://www.4byte.directory">full signature</a> of the method we wish to execute in either the external contract or the app we specified, note that by the full signature we mean the <a href="https://solidity.readthedocs.io/en/v0.5.3/abi-spec.html#function-selector">human readable function signature</a> (e.g. <code>vote(unint256,bool,bool)</code>).</li>
 <li><code>arguments</code>: The arguments that the method will be executed with (each separated by a space).</li>
+</ul>
+<p>Options:</p>
+<ul>
+<li><code>--eth-value</code>: Amount of ETH from the contract that is sent with the action.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="dao-token"></a><a href="#dao-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dao token</h2>
 <p>Commands used to create and interact with the tokens your DAO will use.</p>
@@ -155,7 +159,7 @@ All app instances of the same app in a DAO must run the same version, so install
 <li><code>symbol</code>: Symbol of the new Token.</li>
 <li><code>decimal-units</code>: Total decimal units the new token will use. Defaults to <code>18</code>.</li>
 <li><code>transfer-enabled</code>: Whether the new token will have transfers enabled. Defaults to <code>true</code>.</li>
-<li><code>token-factory-address</code>: Address of a MiniMe Token Factory deployed on the network. Defaults to an existing Minime Factory address for Rinkeby and Mainnet.</li>
+<li><code>token-factory-address</code>: Address of a MiniMe Token Factory deployed on the network. Defaults to an existing Minime Factory address for Rinkeby and Mainnet. Defaults to <code>0xA29EF584c389c67178aE9152aC9C543f9156E2B3</code> on Mainnet and <code>0xad991658443c56b3dE2D7d7f5d8C68F339aEef29</code> on Rinkeby.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="dao-token-change-controller"></a><a href="#dao-token-change-controller" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dao token change-controller</h3>
 <p>Change the controller of a MiniMe token.</p>
