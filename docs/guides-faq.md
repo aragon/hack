@@ -18,7 +18,7 @@ If you're seeing one or more errors that look like:
 EACCES: permission denied
 ```
 
-It's probably because you originally installed Node with root permissions. Because of this, writing to your npm directory (```npm -i -g```) requires root permissions too.
+It's probably because you originally installed Node with root permissions. Because of this, writing to your npm directory (`npm -i -g`) requires root permissions too.
 
 While it's not a good idea to have Node installed this way, one way to quickly give yourself root permissions is to run the slightly modified command:
 
@@ -28,12 +28,11 @@ sudo npm i -g --unsafe-perm @aragon/cli
 
 An arguably better way to fix the problem is to follow the steps outlined in this [stackoverflow answer.](https://stackoverflow.com/a/24404451)
 
-
 ### Windows considerations
 
 You might need to run the shell with administrator rights when installing the aragonCLI, because our `go-ipfs` dependency will need to create a symlink to work correctly.
 
-If you have problems during the instalation of aragonCLI or any other dependencies. You probably need to install [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) or similar package. 
+If you have problems during the instalation of aragonCLI or any other dependencies. You probably need to install [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) or similar package.
 
 Again, if you're having trouble fixing things, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help)
 
@@ -51,7 +50,6 @@ The aragonCLI creates the `.aragon` directory under the user directory where it 
 
 In case the client is not loading properly, deleting the `~/.aragon` directory will make `aragon run` recreate the environment the next time it is used and may solve the issue.
 
-
 ## Set a private key
 
 For interacting with aragonCLI you can configure a private key in `~/.aragon`. Create a file `<network>_key.json` (eg. `rinkeby_key.json`) with this structure:
@@ -59,9 +57,7 @@ For interacting with aragonCLI you can configure a private key in `~/.aragon`. C
 ```json
 {
   "rpc": "https://<network>.infura.io",
-  "keys": [
-    "put-your-priv-key-here"
-  ]
+  "keys": ["put-your-priv-key-here"]
 }
 ```
 
@@ -71,7 +67,7 @@ You can also define a `~/.aragon/mnemonic.json` file like:
 
 ```json
 {
-    "mnemonic": "explain tackle mirror kit ..."
+  "mnemonic": "explain tackle mirror kit ..."
 }
 ```
 
@@ -87,8 +83,19 @@ For example `voting@1.1.5`. We can check the information for that deployment in 
 
 You can check the `commitHash` in aragon-apps GitHub repo and view the smart contract code that was deployed for that specific version. For `v1.1.5` this is the [code deployed](https://github.com/aragon/aragon-apps/blob/d99b6e9d62d3de47601077adb6b3b14fbe92f8a9/apps/voting/contracts/Voting.sol)
 
-
 ## IPFS
+
+### IPFS version
+
+If you have a version recent than `0.4.18-hacky2` you should first uninstall your current version with `aragon ipfs unisntall` and then install ipfs again with `aragon ipfs install`.
+
+The latest version `0.4.21` is throwing:
+
+```
+ERROR p2pnode: mdns error: could not determine host IP addresses
+```
+
+This error is tracked [here](https://github.com/ipfs/go-ipfs/issues/6359). It was fixed, but not released yet.
 
 ### Resetting IPFS
 
@@ -111,22 +118,21 @@ If you are running into issues with your hash being propagated to this URL, try 
 1. If you have `aragon ipfs` running, quit that daemon.
 2. Run the command `ipfs daemon --enable-namesys-pubsub`.
 3. Propagate your content through public gateways.
-    - Request your content hash at the following gateways. The `index.html` will automatically be loaded if it's available in the hash's root directory:
-      - `https://ipfs.eth.aragon.network/ipfs/<hash>`
-      - `https://ipfs.io/ipfs/<hash>`
-      - `https://ipfs.infura.io/ipfs/<hash>`
-      - [Check this list](https://discuss.ipfs.io/t/curated-list-of-ipfs-gateways/620) for additional gateways if you are having trouble with propagating.
-    - If your content also includes an `artifact.json` or `manifest.json`, make sure to separately request these as they will usually not be requested by the `index.html`:
-      - `<gateway>/ipfs/<hash>/artifact.json`
-      - `<gateway>/ipfs/<hash>/manifest.json`
-    - Keep retrying if any files don't immediately become available.
+   - Request your content hash at the following gateways. The `index.html` will automatically be loaded if it's available in the hash's root directory:
+     - `https://ipfs.eth.aragon.network/ipfs/<hash>`
+     - `https://ipfs.io/ipfs/<hash>`
+     - `https://ipfs.infura.io/ipfs/<hash>`
+     - [Check this list](https://discuss.ipfs.io/t/curated-list-of-ipfs-gateways/620) for additional gateways if you are having trouble with propagating.
+   - If your content also includes an `artifact.json` or `manifest.json`, make sure to separately request these as they will usually not be requested by the `index.html`:
+     - `<gateway>/ipfs/<hash>/artifact.json`
+     - `<gateway>/ipfs/<hash>/manifest.json`
+   - Keep retrying if any files don't immediately become available.
 4. Once successful with step 3, request your hash at the Aragon gateway to double check it has propagated and is immediately accessible by the Aragon client:
-    - `https://ipfs.eth.aragon.network/ipfs/<hash>`
-    - (If applicable) `https://ipfs.eth.aragon.network/ipfs/<hash>/artifact.json`
-    - (If applicable) `https://ipfs.eth.aragon.network/ipfs/<hash>/manifest.json`
+   - `https://ipfs.eth.aragon.network/ipfs/<hash>`
+   - (If applicable) `https://ipfs.eth.aragon.network/ipfs/<hash>/artifact.json`
+   - (If applicable) `https://ipfs.eth.aragon.network/ipfs/<hash>/manifest.json`
 
 Note that it is best practice to pin the content hash to an IPFS server you manage to ensure its future availability.
-
 
 ## Metamask
 
@@ -138,7 +144,6 @@ To interact with your DAO using [Metamask](https://metamask.io/) you must make s
 - Private network (_Localhost 8545_) is chosen
 - The first account provided by `aragon run` or `aragon devchain` is imported and selected. To import the account, copy the private key (something like `a8a5...1563`), go to the Metamask accounts upper icon (to the left of the hamburguer button), scroll down, click on "Import account" and paste the value you copied.
 
-
 ### Issues sending transactions
 
 Because of the way that Metamask caches the account nonces for the different networks, you may be getting the following error when interacting with your app:
@@ -147,4 +152,4 @@ Because of the way that Metamask caches the account nonces for the different net
 Error: the tx doesn't have the correct nonce. account has nonce of: 157 tx has nonce of: 158
 ```
 
-The workaround is to switch to a different network (e.g. Rinkeby) and then switch back to the _Localhost 8545_ network.  This will refresh Metamask's account nonce cache. Sending transactions should now succeed.
+The workaround is to switch to a different network (e.g. Rinkeby) and then switch back to the _Localhost 8545_ network. This will refresh Metamask's account nonce cache. Sending transactions should now succeed.

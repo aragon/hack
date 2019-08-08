@@ -63,6 +63,14 @@ const pages = [
 ]
 
 const locationReferenceMap = {
+  'https://github.com/aragon/aragon.js/blob/master/docs/API.md':
+    '/docs/api-js-ref-api.html',
+  'https://github.com/aragon/aragon.js/edit/master/docs/BACKGROUND_SCRIPTS.md':
+    '/docs/api-js-guide-bg-scripts.html',
+  'https://github.com/aragon/aragon.js/blob/master/docs/API.md#aragonapp':
+    '/docs/api-js-ref-api.html#aragonapp',
+  'https://github.com/aragon/aragon.js/blob/master/docs/API.md#network':
+    '/docs/api-js-ref-api.html#network',
   '/docs/API.md': '/docs/api-js-ref-api.html',
   '/docs/WRAPPER.md': '/docs/api-js-ref-wrapper.html',
   '/docs/PROVIDERS.md': '/docs/api-js-ref-providers.html',
