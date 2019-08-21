@@ -165,6 +165,8 @@ npx create-aragon-app first-dao.aragonpm.eth
 
 Don't worry about fully understanding this line right now. Really. We'll cover that in the [tutorial](/docs/tutorial.html) coming up. Right now, you just need to know that the scaffolding relies on some generated code, magically created by the `create-aragon-app` command.
 
+If you're unsure what the difference is between `npx` and `npm`, we recommend you read through this [medium post](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) and this [stackoverflow post.](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm)
+
 If you look at your terminal, you should see a five step process:
 
 <br>
@@ -185,14 +187,12 @@ Once all 5 have ticks next to them, you should run the following:
 
 ```sh
 cd first-dao
-npx aragon run
+npm start
 ```
 
 The first line, `cd first-dao`, just moves us into the directory where the scaffolded app was created.
 
-And the second, `npx aragon run`, sets up everything for us in the background so we can quickly live test our DAO.
-
-If you're unsure what the difference is between `npx` and `npm`, we recommend you read through this [medium post](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) and this [stackoverflow post.](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm)
+And the second, `npm start`, sets up everything for us in the background so we can quickly live test our DAO.
 
 If you've made it this far congrats 🤗. You've just created your first DAO! It’s running on your local network and as soon as it's ready it will open in your browser at [localhost:3000](http://localhost:3000)!
 
