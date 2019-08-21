@@ -104,7 +104,7 @@ Click on the **Log out** button in the top right of this menu. You'll be taken t
 
 Now click on **Import using account seed phrase**. Metamask should now open up in a new tab, with the heading: **Restore your account with Seed Phrase**.
 
-Now, what you need to do is to look at the output of your terminal after you ran `npx aragon run`. You should see the following at the end:
+Now, what you need to do is to look at the output of your terminal after you ran `npm start`. You should see the following at the end:
 
 ```
 ℹ The accounts were generated from the following mnemonic phrase:

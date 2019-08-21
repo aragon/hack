@@ -359,14 +359,14 @@ Let's modify it accordingly:
 To test out your app without deploying a DAO yourself, installing apps, setting up permissions and setting up aragonPM, you can simply run:
 
 ```sh
-npx aragon run
+npx aragon run --files dist
 ```
 
 This will do a couple of things for you:
 
 - It will start a development chain you can interact with (it uses `ganache-core`, so it's a full testrpc instance)
 - It deploys an Aragon DAO with apps and development permissions (i.e. everyone can do everything)
-- It publishes your app to a local aragonPM instance
+- It publishes your app to a local aragonPM instance. The `--files` flag indicate the content to be publish.
 - It installs your app
 
 After running this command a browser tab should pop up with your freshly created DAO, complete with permissions and your local app installed.
