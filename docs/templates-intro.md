@@ -31,7 +31,7 @@ That command will create a new Aragon app project with a sample template in it r
 In order to start the Aragon client with a DAO created by the template, execute:
 
 ```sh
-npm start:ipfs:template
+npm run start:ipfs:template
 ```
 
 When modifying the name of your contract or app name be sure to update those in `Template.sol` otherwise running the template will fail
