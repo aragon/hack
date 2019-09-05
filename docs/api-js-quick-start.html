@@ -85,12 +85,9 @@ app.identify(<span class="hljs-string">'Employee counter'</span>)
   <span class="hljs-keyword">if</span> (event.event === <span class="hljs-string">'Decrement'</span>) {
     <span class="hljs-comment">// Calculate the next state</span>
     state--
-    <span class="hljs-comment">// Send notification</span>
-    app.notify(<span class="hljs-string">'Counter decremented'</span>, <span class="hljs-string">`The counter was decremented to <span class="hljs-subst">${state}</span>`</span>)
   }
   <span class="hljs-keyword">if</span> (event.event === <span class="hljs-string">'Increment'</span>) {
     state++
-    app.notify(<span class="hljs-string">'Counter incremented'</span>, <span class="hljs-string">`The counter was incremented to <span class="hljs-subst">${state}</span>`</span>)
   }
 
   <span class="hljs-keyword">return</span> state

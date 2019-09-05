@@ -133,6 +133,35 @@ ReactDOM.render(
   <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> api.vote(true)}&gt;Vote<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
 }
 </code></pre>
+<h4><a class="anchor" aria-hidden="true" id="path-requestpath"></a><a href="#path-requestpath" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>path</code> / <code>requestPath()</code></h4>
+<p>The app's current path. Its value is <code>&quot;/&quot;</code> by default.</p>
+<p>Use <code>requestPath()</code> to request the app be navigated to another path. Note that the navigation request <em>may</em> be rejected, and in that case the <code>path</code> will stay constant.</p>
+<p>Example:</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> { path, requestPath } = useAragonApi()
+
+  <span class="hljs-comment">// “Hello World” screen</span>
+  <span class="hljs-keyword">if</span> (path === <span class="hljs-string">'/hello-world'</span>) {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> requestPath('/')}&gt;
+          Back
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+  }
+
+  <span class="hljs-comment">// Home</span>
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> requestPath('/hello-world')}&gt;
+        Click
+      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  )
+}
+</code></pre>
 <h4><a class="anchor" aria-hidden="true" id="appstate"></a><a href="#appstate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>appState</code></h4>
 <p>The app state, after having passed the <a href="/docs/api-js-guide-bg-scripts.html">background script</a> state through the <code>reducer</code> prop of <code>AragonApi</code>.</p>
 <p>Example:</p>
@@ -153,6 +182,45 @@ ReactDOM.render(
   )
 }
 </code></pre>
+<h4><a class="anchor" aria-hidden="true" id="currentapp"></a><a href="#currentapp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>currentApp</code></h4>
+<p>Details about the current app. It returns a single object with the following keys:</p>
+<ul>
+<li><code>appAddress</code>: the app's contract address</li>
+<li><code>appId</code>: the app's appId</li>
+<li><code>appImplementationAddress</code>: the app's implementation contract address, if any (only available if this app is a proxied AragonApp)</li>
+<li><code>identifier</code>: the app's identifier, if any</li>
+<li><code>isForwarder</code>: whether the app is a forwarder</li>
+<li><code>kernelAddress</code>: the app's attached Kernel address (i.e. organization address)</li>
+<li><code>name</code>: the app's name, if available</li>
+</ul>
+<p>Each app detail also includes an <code>icon(size)</code> function, that allows you to query for the app's icon (if available) based on a preferred size.</p>
+<p>Example:</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> { currentApp } = useAragonApi()
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{app.icon(40)}</span> /&gt;</span>
+      {currentApp.appAddress}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  )
+}
+</span></code></pre>
+<h4><a class="anchor" aria-hidden="true" id="installedapps"></a><a href="#installedapps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>installedApps</code></h4>
+<p>The complete list of apps installed in the organization. Its value is an empty array (<code>[]</code>) until
+the list of apps are loaded.</p>
+<p>Each object in the array holds the same keys as <code>currentApp</code>.</p>
+<p>Example:</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> { installedApps } = useAragonApi()
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      {installedApps.map(app =&gt; (
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{app.appAddress}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      ))}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  )
+}
+</code></pre>
 <h4><a class="anchor" aria-hidden="true" id="network"></a><a href="#network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>network</code></h4>
 <p>An <a href="/docs/api-js-ref-api.html#network">object</a> representing the current network using its <code>id</code> and <code>type</code> entries. Its value is <code>null</code> until it gets loaded.</p>
 <p>Example:</p>
@@ -161,21 +229,23 @@ ReactDOM.render(
   <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Current network: {network.type}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
 }
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="displaymenubutton"></a><a href="#displaymenubutton" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>displayMenuButton</code></h4>
-<p>Whether or not to display the menu button (<code>Boolean</code>), depending on it being automatically hidden or not in the client.</p>
-<h4><a class="anchor" aria-hidden="true" id="requestmenu"></a><a href="#requestmenu" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>requestMenu()</code></h4>
-<p>Call this function to display the Aragon menu, when hidden automatically. This should be called when the user clicks on the menu button.</p>
 <h3><a class="anchor" aria-hidden="true" id="useapi"></a><a href="#useapi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>useApi()</h3>
-<p>This Hook returns the same data than the <code>api</code> entry from the <code>useAragonApi()</code> hook.</p>
+<p>This Hook returns the same data as the <code>api</code> entry from the <code>useAragonApi()</code> hook.</p>
 <h3><a class="anchor" aria-hidden="true" id="useappstate"></a><a href="#useappstate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>useAppState()</h3>
-<p>This Hook returns the same data than the <code>appState</code> entry from the <code>useAppState()</code> hook.</p>
+<p>This Hook returns the same data as the <code>appState</code> entry from the <code>useAppState()</code> hook.</p>
 <h3><a class="anchor" aria-hidden="true" id="useconnectedaccount"></a><a href="#useconnectedaccount" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>useConnectedAccount()</h3>
-<p>This Hook returns the same data than the <code>connectedAccount</code> entry from the <code>useAragonApi()</code> hook.</p>
-<h3><a class="anchor" aria-hidden="true" id="usemenubutton"></a><a href="#usemenubutton" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>useMenuButton()</h3>
-<p>This Hook returns an array containing the <code>displayMenuButton</code> and the <code>requestMenu</code> entries from the <code>useAragonApi()</code> hook, in that order.</p>
+<p>This Hook returns the same data as the <code>connectedAccount</code> entry from the <code>useAragonApi()</code> hook.</p>
+<h3><a class="anchor" aria-hidden="true" id="useinstalledapps"></a><a href="#useinstalledapps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>useInstalledApps()</h3>
+<p>This Hook returns the same data as the <code>installedApps</code> entry from the <code>useAragonApi()</code> hook.</p>
 <h3><a class="anchor" aria-hidden="true" id="usenetwork"></a><a href="#usenetwork" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>useNetwork()</h3>
-<p>This Hook returns the same data than the <code>network</code> entry from the <code>useAragonApi()</code> hook.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/api-js-ref-api"><span class="arrow-prev">← </span><span>App API</span></a><a class="docs-next button" href="/docs/api-js-ref-wrapper"><span>Wrapper</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#usage">Usage</a></li><li><a href="#installation">Installation</a></li><li><a href="#documentation">Documentation</a><ul class="toc-headings"><li><a href="#lt-aragonapi">&lt;AragonApi /&gt;</a></li><li><a href="#usearagonapi">useAragonApi()</a></li><li><a href="#useapi">useApi()</a></li><li><a href="#useappstate">useAppState()</a></li><li><a href="#useconnectedaccount">useConnectedAccount()</a></li><li><a href="#usemenubutton">useMenuButton()</a></li><li><a href="#usenetwork">useNetwork()</a></li></ul></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bDWFJH" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/footer.svg" alt="Aragon Developer Portal" width="66" height="58"/></a></div><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/api-intro.html">aragonAPI</a><a href="/docs/aragonui-intro.html">aragonUI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+<p>This Hook returns the same data as the <code>network</code> entry from the <code>useAragonApi()</code> hook.</p>
+<h3><a class="anchor" aria-hidden="true" id="usepath"></a><a href="#usepath" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>usePath()</h3>
+<p>This Hook returns an array holding two values from the <code>useAragonApi()</code> hook:</p>
+<ol>
+<li><code>path</code>, and</li>
+<li><code>requestPath</code></li>
+</ol>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/api-js-ref-api"><span class="arrow-prev">← </span><span>App API</span></a><a class="docs-next button" href="/docs/api-js-ref-wrapper"><span>Wrapper</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#usage">Usage</a></li><li><a href="#installation">Installation</a></li><li><a href="#documentation">Documentation</a><ul class="toc-headings"><li><a href="#lt-aragonapi">&lt;AragonApi /&gt;</a></li><li><a href="#usearagonapi">useAragonApi()</a></li><li><a href="#useapi">useApi()</a></li><li><a href="#useappstate">useAppState()</a></li><li><a href="#useconnectedaccount">useConnectedAccount()</a></li><li><a href="#useinstalledapps">useInstalledApps()</a></li><li><a href="#usenetwork">useNetwork()</a></li><li><a href="#usepath">usePath()</a></li></ul></li></ul></nav></div><footer class="nav-footer sc-bdVaJa bDWFJH" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/footer.svg" alt="Aragon Developer Portal" width="66" height="58"/></a></div><div><h5>Documentation</h5><a href="/docs/getting-started.html">Get started</a><a href="/docs/tutorial.html">Tutorial</a><a href="/docs/aragonos-intro.html">aragonOS</a><a href="/docs/api-intro.html">aragonAPI</a><a href="/docs/aragonui-intro.html">aragonUI</a></div><div><h5>Community</h5><a href="http://wiki.aragon.org/projects/" target="_blank">User showcase</a><a href="https://aragon.chat" target="_blank">Community chat</a><a href="https://twitter.com/AragonProject" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.aragon.org">Blog</a><a href="https://github.com/aragon">GitHub</a><a href="https://wiki.aragon.org/documentation/legal/Privacy_policy/">Privacy policy</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
