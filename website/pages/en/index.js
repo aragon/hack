@@ -75,7 +75,7 @@ const BuildingBlocks = props => (
     <BlocksCards href={docUrl('apm-intro')} className="pm">
       <div className="border-line" />
       <div className="blocks-container">
-        <img src={siteConfig.baseUrl + 'img/ds.svg'} />
+        <img src={siteConfig.baseUrl + 'img/navbar/aragonPM.svg'} />
         <h1>aragonPM</h1>
         <p>
           Decentralized package manager based on aragonOS that handles
@@ -87,7 +87,7 @@ const BuildingBlocks = props => (
     <BlocksCards href={docUrl('aragonos-intro')} className="os">
       <div className="border-line" />
       <div className="blocks-container">
-        <img src={siteConfig.baseUrl + 'img/ds.svg'} />
+        <img src={siteConfig.baseUrl + 'img/navbar/aragonOS.svg'} />
         <h1>aragonOS</h1>
         <p>
           Framework that enables flexible and upgradeable governance mechanisms
@@ -98,7 +98,7 @@ const BuildingBlocks = props => (
     <BlocksCards href={docUrl('api-intro')} className="api">
       <div className="border-line" />
       <div className="blocks-container">
-        <img src={siteConfig.baseUrl + 'img/ds.svg'} />
+        <img src={siteConfig.baseUrl + 'img/navbar/aragonAPI.svg'} />
         <h1>aragonAPI</h1>
         <p>
           Standard set of APIs and specifications used to interact with
@@ -110,7 +110,7 @@ const BuildingBlocks = props => (
     <BlocksCards href={docUrl('aragonui-intro')} className="ui">
       <div className="border-line" />
       <div className="blocks-container">
-        <img src={siteConfig.baseUrl + 'img/ds.svg'} />
+        <img src={siteConfig.baseUrl + 'img/navbar/aragonUI.svg'} />
         <h1>aragonUI</h1>
         <p>
           Aragon-native toolkit of React UI components for decentralized apps
@@ -121,7 +121,7 @@ const BuildingBlocks = props => (
     <BlocksCards href={docUrl('cli-intro')} className="cli">
       <div className="border-line" />
       <div className="blocks-container">
-        <img src={siteConfig.baseUrl + 'img/ds.svg'} />
+        <img src={siteConfig.baseUrl + 'img/navbar/aragonCLI.svg'} />
         <h1>aragonCLI</h1>
         <p>
           Tool for creating, testing and publishing Aragon applications. Also
@@ -132,7 +132,7 @@ const BuildingBlocks = props => (
     <BlocksCards href={docUrl('layout')} className="ds">
       <div className="border-line" />
       <div className="blocks-container">
-        <img src={siteConfig.baseUrl + 'img/ds.svg'} />
+        <img src={siteConfig.baseUrl + 'img/navbar/aragonDS.svg'} />
         <h1>aragonDS</h1>
         <p>
           The Aragon Design System defines a set of user behaviours and

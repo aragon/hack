@@ -3,27 +3,28 @@ body {
   overflow-x: hidden;
 }
 @font-face {
- font-family: 'HankenGroteskBold';
- src: url('../fonts/HKGrotesk-Bold.ttf') format('opentype');
+  font-family: 'HankenGroteskBold';
+  src: url('../fonts/HKGrotesk-Bold.ttf') format('opentype');
 }
 @font-face {
- font-family: 'HankenGroteskMedium';
- src: url('../fonts/HKGrotesk-Medium.ttf') format('opentype');
+  font-family: 'HankenGroteskMedium';
+  src: url('../fonts/HKGrotesk-Medium.ttf') format('opentype');
 }
 @font-face {
- font-family: 'HankenGroteskRegular';
- src: url('../fonts/HKGrotesk-Regular.ttf') format('opentype');
+  font-family: 'HankenGroteskRegular';
+  src: url('../fonts/HKGrotesk-Regular.ttf') format('opentype');
 }
 
 @font-face {
- font-family: 'HankenGroteskLight';
- src: url('../fonts/HKGrotesk-Light.ttf') format('opentype');
+  font-family: 'HankenGroteskLight';
+  src: url('../fonts/HKGrotesk-Light.ttf') format('opentype');
 }
 
 /* your custom css */
-strong, b {
+strong,
+b {
   font-family: 'HankenGroteskMedium';
-  font-weight: 400!important;
+  font-weight: 400 !important;
 }
 a:hover {
   transition: all 0.25s ease-in-out 0s;
@@ -172,8 +173,8 @@ blockquote {
 
 blockquote p {
   padding-top: 0px !important;
-  margin-bottom: 0!important;
-  color: #EB9C1A!important;
+  margin-bottom: 0 !important;
+  color: #eb9c1a !important;
 }
 
 li .item h4 {
@@ -453,7 +454,8 @@ h6 {
   padding-top: 30px;
   color: #2d4051;
 }
-.mainContainer .wrapper .post h3, .mainContainer .wrapper .post .design-system-wrapper h2 {
+.mainContainer .wrapper .post h3,
+.mainContainer .wrapper .post .design-system-wrapper h2 {
   font-family: 'HankenGroteskMedium', sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -462,26 +464,27 @@ h6 {
   line-height: 62px;
   margin-bottom: 10px;
   font-size: 32px;
-  color: #30404F;
+  color: #30404f;
   margin-top: 25px;
 }
 .mainContainer .wrapper .post h4 {
   font-family: 'HankenGroteskLight', sans-serif;
   font-size: 22px;
   line-height: 62px;
-  color: #2D4051;
+  color: #2d4051;
 }
 .mainContainer .wrapper .post h5 {
   font-family: 'HankenGroteskLight', sans-serif;
   font-size: 24px;
   line-height: 1.5;
-  color: #2D4051;
+  color: #2d4051;
   padding-bottom: 30px;
   border-bottom: solid 0.5px #ddd;
-  margin-top: 0!important;
+  margin-top: 0 !important;
   margin-bottom: 30px;
 }
-.mainContainer .wrapper ul li, .mainContainer .wrapper ol li {
+.mainContainer .wrapper ul li,
+.mainContainer .wrapper ol li {
   margin-bottom: 16px;
 }
 .mainContainer .wrapper .post span img {
@@ -516,7 +519,7 @@ hr {
 }
 .onPageNav > ul {
   border-left: 3px solid #01bfe3;
-  padding: 0px 0 2px 15px!important;
+  padding: 0px 0 2px 15px !important;
   margin-top: 10px;
 }
 .onPageNav a {
@@ -565,7 +568,7 @@ nav.toc .toggleNav .navGroup h3 {
   color: #2d4051;
   font-size: 22px;
   padding-top: 0px;
-  margin-top: 0!important;
+  margin-top: 0 !important;
   width: 90%;
 }
 .button {
@@ -673,7 +676,7 @@ nav.toc .toggleNav .navGroup h3 {
   letter-spacing: 0.1px;
   font-size: 17px;
   color: #2d4051;
-  margin-top: 0!important;
+  margin-top: 0 !important;
 }
 
 nav.toc .toggleNav .subNavGroup ul {
@@ -723,12 +726,11 @@ nav.toc .toggleNav .subNavGroup ul {
     padding-top: 2px;
     padding-bottom: 2px;
   }
-
 }
 
-
 /* TABLES */
-thead tr, thead th {
+thead tr,
+thead th {
   border: 0px solid transparent;
   font-size: 16px;
   line-height: 19px;
@@ -740,15 +742,16 @@ tbody td {
   color: #161616;
   background: transparent;
 }
-table td, table th {
+table td,
+table th {
   padding: 15px 30px;
 }
 table tbody tr:nth-child(2n) {
   background: transparent;
 }
 
-.layouts-table tbody td:nth-child(2){
-  color: #FDAD00;
+.layouts-table tbody td:nth-child(2) {
+  color: #fdad00;
 }
 
 .colors-table tbody td {
@@ -775,8 +778,21 @@ table tbody tr:nth-child(2n) {
 .colors-table tbody td img {
   top: 2px;
   position: relative;
-  padding-right: 0!important;
+  padding: 0 !important;
   max-width: inherit;
+}
+
+.iconography-table table tbody td img {
+  padding: 15px 0!important;
+  margin: auto !important;
+  vertical-align: -webkit-baseline-middle!important;
+}
+
+.iconography-table table tbody td {
+  width: 11.5vw;
+  height: 11.5vw;
+  line-height: 10vw;
+  text-align: center;
 }
 
 .overview-components {
@@ -785,13 +801,16 @@ table tbody tr:nth-child(2n) {
 }
 
 .overview-components img {
-  padding-right: 0!important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 .overview-components p {
-  padding: 0!important;
-  margin: -3px 0!important;
+  padding: 0 !important;
+  margin: -3px 0 !important;
 }
-.docs-prev, .docs-next {
+.docs-prev,
+.docs-next {
   background: white;
   border: 1px solid rgba(223, 227, 232, 0.75);
   box-sizing: border-box;
@@ -802,11 +821,12 @@ table tbody tr:nth-child(2n) {
   text-align: center;
 }
 
-.docs-prev span, .docs-next span {
+.docs-prev span,
+.docs-next span {
   font-size: 16px;
   line-height: 16px;
   text-align: right;
-  color: #30404F;
+  color: #30404f;
   text-transform: capitalize;
 }
 .arrow-prev img {
@@ -850,7 +870,7 @@ table tbody tr:nth-child(2n) {
 }
 .footer-item a {
   display: block;
-  font-family: "FontRegular", sans-serif;
+  font-family: 'FontRegular', sans-serif;
   font-size: 14px;
   line-height: 3.14;
   color: #7f8198;
@@ -862,7 +882,7 @@ table tbody tr:nth-child(2n) {
 }
 .footer-item p,
 .footer-item form {
-  font-family: "FontRegular", sans-serif;
+  font-family: 'FontRegular', sans-serif;
   font-size: 14px;
   line-height: 3.14;
   color: #7f8198;
@@ -929,4 +949,8 @@ table tbody tr:nth-child(2n) {
 }
 .logo-footer-img {
   height: 50px;
+}
+
+.font-family-box p {
+  display: flex;
 }

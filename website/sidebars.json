@@ -141,15 +141,10 @@
       "color",
       "iconography",
       "typography",
-      "illustrations",
-      "motion",
-      "voicetone"
+      "illustrations"
     ],
     "Components": [
-      "overview",
-      "buttons",
-      "alerts",
-      "layouts"
+      "overview"
     ]
   }
 }
