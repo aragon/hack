@@ -74,6 +74,10 @@ p img {
   max-height: 200px !important;
 }
 
+h2.projectTitle {
+  margin-top: 0 !important;
+}
+
 .homeContainer h2.projectTitle {
   font-family: 'HankenGroteskLight', 'HankenGroteskRegular', 'Overpass',
     sans-serif;
@@ -141,6 +145,7 @@ a.take-tutorial:hover {
 
 .edit-page-link {
   border: none;
+  display: none;
 }
 
 .edit-page-link:hover {
@@ -953,4 +958,14 @@ table tbody tr:nth-child(2n) {
 
 .font-family-box p {
   display: flex;
+}
+
+.productShowcaseSection .logos img {
+  max-height: 90px;
+  padding: 20px;
+  width: 90px;
+}
+
+.mainContainer .wrapper .post .postHeader {
+  margin-bottom: 0!important;
 }

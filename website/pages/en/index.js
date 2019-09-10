@@ -169,7 +169,10 @@ const UseCases = props => (
       </div>
     </UseCaseCard>
     <br />
-    <UseCaseCard className="for-daos for-dapps">
+    <UseCaseCard className="for-daos">
+      <div className="for-daos-img-div ">
+        <img src={imgUrl('for-dapps.svg')} />
+      </div>
       <div>
         <div className="use-case-mobile-div ">
           <img src={imgUrl('for-dapps.svg')} />
@@ -192,10 +195,8 @@ const UseCases = props => (
           be able to consume it without any additional changes.
         </p>
       </div>
-      <div className="for-daos-img-div">
-        <img src={imgUrl('for-dapps.svg')} />
-      </div>
     </UseCaseCard>
+    
     <br />
     <UseCaseCard className="for-daos">
       <div className="for-daos-img-div ">
@@ -296,16 +297,17 @@ const DeveloperBox = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1305px;
+  max-width: 1100px;
+  margin: auto;
   ${large('flex-direction: row;')};
 `
 
 const DeveloperContainer = styled.div`
-  ${large('width: 60%;')}
+  ${large('width: 56%;')}
   padding-top: 30px;
   ${breakpoint('large', `padding-bottom:0; padding-top: 0`)}
   @media (min-width: 1152px) {
-    padding-left: 150px;
+    padding-left: 90px;
   }
 
   text-align: center;
@@ -344,6 +346,7 @@ const DeveloperImage = styled.img`
 const DeveloperImageContainer = styled.div`
   text-align: center;
   margin: auto;
+  max-width: 427px;
 `
 
 class Index extends React.Component {
@@ -377,7 +380,7 @@ const PromoSection = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'HankenGroteskMedium';
+    font-family: 'HankenGroteskRegular';
     font-weight: 600;
     font-size: 16px;
     line-height: 44px;
@@ -442,6 +445,7 @@ const BlocksCards = styled.a`
   padding: 0;
   flex-wrap: wrap;
   flex-direction: column;
+  transition: all 0.25s ease-in-out;
   &:hover {
     box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.14);
   }
@@ -476,18 +480,18 @@ const BlocksCards = styled.a`
   }
 
   p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.4;
-    min-height: 175px;
+    min-height: 117px;
     letter-spacing: 0.2px !important;
     text-align: left;
     color: #7f8198 !important;
   }
   h1 {
-    font-size: 38px !important;
+    font-size: 36px !important;
     font-family: 'HankenGroteskLight', sans-serif;
     font-weight: 300;
     color: #212b36;
@@ -497,10 +501,13 @@ const BlocksCards = styled.a`
     text-align: left;
     margin-top: 20px !important;
   }
+  img {
+    height: 85px;
+  }
 `
 
 const GreyText = styled.p`
-  font-size: 21px;
+  font-size: 18px;
   line-height: 35px;
   font-weight: normal;
   font-style: normal;
@@ -542,6 +549,7 @@ const UseCaseCard = styled.div`
   background: #f9fafc;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.0726053);
   border-radius: 12px;
+  transition: all 0.25s ease-in-out;
 
   @media (min-width: 1026px) {
     width: 1020px;
