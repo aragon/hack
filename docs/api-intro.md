@@ -9,7 +9,7 @@ hide_title: true
 
 #####
 
-Standard set of APIs and specifications used to interact with aragonOS-powered contracts by handling transaction pathing, upgradeability, and contract state without depending of a centralized service.
+Standard set of APIs and specifications used to interact with aragonOS-powered contracts by handling transaction pathing, upgradeability, and contract state without depending on a centralized service.
 
 ## Reference implementations in specific languages
 
