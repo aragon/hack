@@ -8,7 +8,7 @@ hide_title: true
 ![](/docs/assets/designSystem/covers/illustrations.png)
 
 
-### Illustration
+## Illustration
 
 Illustration is a key element of the brand system.
 
@@ -23,7 +23,7 @@ Illustration is a key element of the brand system.
 - Just like the written word, illustrations exist to tell stories and thoughtfully convey ideas - they should not be used as decoration or without consideration.
 
 
-### Illustration principles
+## Illustration principles
 
 **Be bold**<br>
 Our illustration style takes larger-than-life achievements, and makes them human and relatable. Being bold means taking on massive goals, feeling empowered, and being confident that those goals are achievable. It's not about being loud, noisy, or over-the-top. It's about setting a goal, and acknowledging the inherent complexity in getting things done. We use clean shapes, plenty of white space, and balanced color ratios to ensure that the scene never feels too chaotic.
@@ -31,7 +31,7 @@ Our illustration style takes larger-than-life achievements, and makes them human
 <br>
 
 **Be optimistic**<br>
-Our illustrations feature future-forward narratives that center around teams working together to improve the world around them. The Aragon illustration style reflects our belief that a team is capable of tackling any task, no matter how big or complex. Stylistically, bright color and a sense of low-gravity lend a lightness and boyancy to our storytelling, driving home the point that when we work together, anything is achievable.
+Our illustrations feature future-forward narratives that center around teams working together to improve the world around them. The Aragon illustration style reflects our belief that a team is capable of tackling any task, no matter how big or complex. Stylistically, bright color and a sense of low-gravity lend a lightness and buoyancy to our storytelling, driving home the point that when we work together, anything is achievable.
 
 <br>
 
@@ -40,10 +40,11 @@ Though our illustration style is slightly fantastical, it should never feel impr
 
 <br>
 
-### Textures and colors
+
+## Textures and colors
 
 **Textures**<br>
-La utilización de texturas nos dará un aspecto orgánico a nuestras ilustraciones.
+The use of textures will give our illustrations an organic look.
 
 <br>
 
@@ -51,21 +52,23 @@ La utilización de texturas nos dará un aspecto orgánico a nuestras ilustracio
 
 ![](/docs/assets/designSystem/guidelines/textures2.png)
 
-**Colores**<br>
-La utilización de texturas nos dará un aspecto orgánico a nuestras ilustraciones.
+**Colors**<br>
+A good color palette has a massive impact on the final result of an illustration. Select colors that may fit conceptually and help convey the narrative of the illustration.
 
 <br>
 
 ![](/docs/assets/designSystem/guidelines/naming.svg)
 
 **Skin tones**<br>
-Multiculturalidad
+The use of different skin tones help us illustrate human diversity and promote representation.
 
 <br>
 
 ![](/docs/assets/designSystem/guidelines/skin-tones.svg)
 
-### Types of illustration
+## Types of illustration
+
+<br>
 
 **HERO**<br>
 Our illustration style takes larger-than-life achievements, and makes them human and relatable.
@@ -78,7 +81,7 @@ Our illustration style takes larger-than-life achievements, and makes them human
 <br>
 
 **SPOT**<br>
-Spot illustrations are the simplest and most literal expression of a concept. Because they are often used in product as an empty state, or in a composition with other spot illustrations, they are small and simple. They usually do not include any people but occasionally include some atmospheric background elements - depending on the design.
+Spot illustrations are the simplest and most literal expression of a concept. Because they are often used in the product as an empty state, or in a composition with other spot illustrations, they are small and simple. They occasionally include some atmospheric background elements - depending on the design.
 
 <br>
 
@@ -88,7 +91,7 @@ Spot illustrations are the simplest and most literal expression of a concept. Be
 <br>
 
 **ICONS**<br>
-Spot illustrations are the simplest and most literal expression of a concept. Because they are often used in product as an empty state, or in a composition with other spot illustrations, they are small and simple. They usually do not include any people but occasionally include some atmospheric background elements - depending on the design.
+Icon illustrations are the best way to represent a basic concept. These icons have only one tone of color, with a basic soft blue gradient. They usually do not include any people, using only objects and forms to represent the ideas.
 
 <br>
 
@@ -97,14 +100,14 @@ Spot illustrations are the simplest and most literal expression of a concept. Be
 <br>
 <br>
 
-### Usos correctos de las ilustraciones
+## Correct use of illustrations
 
-Es importante hacer un uso correcto de las ilustraciones tanto en terminos de color, proporciones, formas... estos son solo algunos ejemplos de un uso correcto e incorrecto de las mismas
+It is important to make proper use of the illustrations in terms of color, proportions, shapes. Below are just some examples of illustration Do's and Don'ts.
 
 <br>
 
-**RESPETAR EL CÓDIGO DE COLOR**<br>
-El código de color es importante a la hora de crear nuestras ilustraciones, es importante que el degradado básico de aragon forme parte de algún elemento dentro de nuestra ilustración
+**RESPECT THE COLOR CODE**<br>
+The color code is important when creating our illustrations, it is essential that the basic Aragon Gradient is part of some element within our illustration.
 
 <br>
 
@@ -113,8 +116,8 @@ El código de color es importante a la hora de crear nuestras ilustraciones, es 
 <br>
 <br>
 
-**ESTILO DE ILUSTRACIÓN**<br>
-Uno de las reglas más importantes que tenemos que respetar es la consistencia dentro del estilo de ilustración. Nunca deberíamos utilizar otro tipo de ilustración ni tampoco mezclarla.
+**ILLUSTRATION STYLE**<br>
+One of the most important rules that we should respect is the consistency within the style of illustration. We should never use another type of illustration or mix styles.
 
 <br>
 
@@ -123,8 +126,9 @@ Uno de las reglas más importantes que tenemos que respetar es la consistencia d
 <br>
 <br>
 
-**INTEGRACIÓN DE AMBOS SEXOS Y MULTICULTURALIDAD**<br>
-UEs importante realizar una integración lógica y equilibrada de ambos sexos, incluyendo también siempre un alto grado de multiculturalidad. También evitaremos repetir personajes.
+**INCLUSION AND DIVERSITY**<br>
+It’s our duty to fight for breaking down gender identity and ethnic stereotypes in order to promote equality with our designs. Illustrations can be used as a powerful tool to help us build a path to diversity and inclusion. We will also avoid repeating characters within the same illustration.
+
 
 <br>
 

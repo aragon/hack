@@ -1,4 +1,4 @@
----
+<!-- ---
 id: motion
 title: Motion
 sidebar_label: Motion
@@ -7,12 +7,12 @@ hide_title: true
 
 ![](/docs/assets/designSystem/covers/motion.svg)
 
-### Understanding motion
+## Understanding motion
 
 Fluent motion keeps the UI feeling alive, and guides the user’s navigation through your product. Elicits an emotional connection between a user and their digital experience.
 
 
-### Motion principles
+## Motion principles
 
 **Quick and fluid**<br>
 Animations should be fast and nimble, never keeping the user waiting longer than is necessary
@@ -29,14 +29,14 @@ Animations should have a playful and delightful personality when appropiate
 
 <br>
 
-### Types of animations
+## Types of animations
 
 We can differenciate the animations in two types, productive animations and expressive animations
 
 ![](/docs/assets/designSystem/guidelines/types-of-animations.svg)
 
 
-### Easing
+## Easing
 
 <br>
 
@@ -48,7 +48,7 @@ We can differenciate the animations in two types, productive animations and expr
 
 <br>
 
-### Productive motion
+## Productive motion
 
 Sense of efficiency and responsiveness
 - Microinteractions
@@ -60,7 +60,7 @@ Sense of efficiency and responsiveness
 ![](/docs/assets/designSystem/guidelines/productive-motion.svg)
 
 
-### Expressive motion
+## Expressive motion
 
 Delivers enthusiastic, vibrand and highly visible movement.
 - Open new page
@@ -71,6 +71,6 @@ Delivers enthusiastic, vibrand and highly visible movement.
 ![](/docs/assets/designSystem/guidelines/expressive-motion.svg)
 
 
-### Duration
+## Duration
 
-Animations should last 150ms–250ms and should feel quick and responsive. Shorter animations are also more easily compiled by machines, helping to achieve the sensation of quick responsiveness.
+Animations should last 150ms–250ms and should feel quick and responsive. Shorter animations are also more easily compiled by machines, helping to achieve the sensation of quick responsiveness. -->

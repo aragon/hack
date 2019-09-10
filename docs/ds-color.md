@@ -7,26 +7,27 @@ hide_title: true
 
 ![](/docs/assets/designSystem/covers/color.png)
 
+<div class="design-system-wrapper">
 
-### Colors
+## Colors
 
 These principles are the framework upon which we have built our system for how color is used in Aragon.
 
 ![](/docs/assets/designSystem/guidelines/naming.svg)
 
-- <b> Precision:</b> We defined a small number of primary colors for core interactions (and task base contexts) and a sufficient number of secondary colors to create more ascetic / decorative illustrations, app icons and graphs.
-- <b> Accesible:</b> We should never use color alone to convey information, provide sufficient contrast between the elements and meet the minimum accessibility guidelines to better serve color blind or people with low vision.
-- <b> Focus:</b> We should use color purposefully to help focus users’ attention with the task at hand. Color convey meaning and complement the content hierarchy following a clear rationale.
-- <b> Clarity:</b> Developers and designers should be able to easily refer to particular colors defined in the system. Color names are easily understood, memorable, and spark meaningful conversations between designers and developers (shades changes, contrast corrections etc.).
+- <b> Precision:</b> We defined a small number of primary colors for core interactions (and task-based contexts) and a sufficient number of secondary colors to create more ascetic / decorative illustrations, app icons and graphs.
+- <b> Accesible:</b> We should never use color alone to convey information. Provide sufficient contrast between the elements and meet the minimum accessibility guidelines to better serve color blind or people with low vision.
+- <b> Focus:</b> We should use color purposefully to help focus users’ attention with the task at hand. Colors convey meaning and complement the content hierarchy following a clear rationale.
+- <b> Clarity:</b> Developers and designers should be able to easily refer to particular colors defined in the system. Color names are easily understood, memorable, and spark meaningful conversations between designers and developers (shades changes, contrast corrections, etc.).
 - <b> Consistent:</b> Color should be applied throughout a UI consistently and celebrate the brand it represents.
 <br>
 
-### Color naming conventions
+## Color naming conventions
 
-There’s two common approaches when it comes to name color names: Declarative or natural color names and semantic or abstract color names. We’ve followed both approaches to create a more flexible and theme-able design system.
+There are two common approaches when it comes to name color names: Declarative or natural color names and semantic or abstract color names. We’ve combined both approaches to create a more flexible and theme-able design system.
 
 
-### Aragon Colors
+## Aragon Colors
 
 
 <div class="colors-table">
@@ -107,32 +108,60 @@ There’s two common approaches when it comes to name color names: Declarative o
 | <span>Pink</span> | <span>Pink</span>  | <span>#3FE8E0</span> | ![](/docs/assets/designSystem/guidelines/colors/pink.svg)  |
 | <span>Pink Dark</span> | <span>Pink Dark</span>  | <span>#26B4AD</span> | ![](/docs/assets/designSystem/guidelines/colors/pink-dark.svg)  |
 
+| Green Olive |  |         |         |       
+| ----------|---------- | --------| --------|
+| <span>Green Olive Light</span>     | <span>Green Olive Light</span>      | <span>#E4F577</span> | ![](/docs/assets/designSystem/guidelines/colors/green-olive-light.svg)  |
+| <span>Green Olive</span> | <span>Green Olive</span>  | <span>#BDD237</span> | ![](/docs/assets/designSystem/guidelines/colors/green-olive.svg)  |
+| <span>Green Olive Dark</span> | <span>Green Olive Dark</span>  | <span>#87981B</span> | ![](/docs/assets/designSystem/guidelines/colors/green-olive-dark.svg)  |
+
+#### Functional colors
+
+| Mint Green |  |         |         |       
+| ----------|---------- | --------| --------|
+| <span>Mint Green Light</span>     | <span>Mint Green Light</span>      | <span>#87F1CB</span> | ![](/docs/assets/designSystem/guidelines/colors/mint-green-light.svg)  |
+| <span>Mint Green</span> | <span>Mint Green</span>  | <span>#2CC68F</span> | ![](/docs/assets/designSystem/guidelines/colors/mint-green.svg)  |
+| <span>Mint Green Dark</span> | <span>Mint Green Dark</span>  | <span>#1B8962</span> | ![](/docs/assets/designSystem/guidelines/colors/mint-green-dark.svg)  |
+
+| Orange |  |         |         |       
+| ----------|---------- | --------| --------|
+| <span>Orange Light</span>     | <span>Orange Light</span>      | <span>#FFD48C</span> | ![](/docs/assets/designSystem/guidelines/colors/orange-light.svg)  |
+| <span>Orange</span> | <span>Orange</span>  | <span>#2CC68F</span> | ![](/docs/assets/designSystem/guidelines/colors/orange.svg)  |
+| <span>Orange Dark</span> | <span>Orange Dark</span>  | <span>#C7871E</span> | ![](/docs/assets/designSystem/guidelines/colors/orange-dark.svg)  |
+
+| Red |  |         |         |       
+| ----------|---------- | --------| --------|
+| <span>Red Light</span>     | <span>Red Light</span>      | <span>#FFB1B1</span> | ![](/docs/assets/designSystem/guidelines/colors/red-light.svg)  |
+| <span>Red</span> | <span>Red</span>  | <span>#FF6969</span> | ![](/docs/assets/designSystem/guidelines/colors/red.svg)  |
+| <span>Red Dark</span> | <span>Red Dark</span>  | <span>#CA4141</span> | ![](/docs/assets/designSystem/guidelines/colors/red-dark.svg)  |
+
 </div>
 
-### Usage
+## Usage
 
-The Aragon Gradient (AragonBlue + AragonTurquoise) is used to convey the most relevant action in the page as well as statuses in Aragon UI. We use it for the primary buttons and selected states in various components.
+The Aragon Gradient (AragonBlue + AragonTurquoise) is used to convey the most relevant action in the page as well as statuses in Aragon UI. We use it for the primary buttons and selected and active states in various components.
 
-### Branded
+## Branded
 
-Primary colors are used to emphasize primary buttons, interactive areas, components states and progress indicators.
+Primary colors are used to emphasize primary buttons, interactive areas, component states, and progress indicators.
 
 ![](/docs/assets/designSystem/guidelines/branded.svg)
 
-### Interface
+## Interface
 
 Base theme colors are used to visualize all UI objects: typography, backgrounds, iconography, etc.
 
 ![](/docs/assets/designSystem/guidelines/interface.svg)
 
-### Contextual
+## Contextual
 
 Functional colors are used to convey the current status of the interface: primary objects include contextual buttons, help and feedback objects, transient elements, etc.
 
 ![](/docs/assets/designSystem/guidelines/contextual.svg)
 
-### Aesthetics
+## Aesthetics
 
-Additional colors are used for data visualization, illustrations and iconography.
+Additional colors are used for data visualization, illustrations, and iconography.
 
 ![](/docs/assets/designSystem/guidelines/aesthetics.svg)
+
+</div>

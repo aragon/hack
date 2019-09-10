@@ -8,22 +8,21 @@ hide_title: true
 ![](/docs/assets/designSystem/covers/layout.png)
 
 
-### Base grid
+## 8-point Grid System
 
-La base grid sirve como referencia para la construcción y la posición de todos los componentes.
-También ayuda a definir el padding y el margin entre los elementos.
-El grid esta construido sobre una base de 8px, con lo cual, todos los elementos y las distancias deberán utilizar una numeración múltiple de 8 (8,16, 24, 32, 40...)
+The layout grid is used as a reference to build and position all the components. It also helps to define the spacing between different elements, improving data consumption through better legibility. All the UI elements and the spacings around them (paddings, margins, and gutters) align to an 8x8 square baseline grid for all viewport sizes, using multiples of 8 (8px / 16px / 24px / 32px / 40px / 48px / 56px and so on) to reach an aesthetically pleasing composition.
 
 ![](/docs/assets/designSystem/guidelines/base-grid.svg)
 
-Esto ayudará a crear un patrón consistente entre todos los elementos y también una previsibilidad a la hora de construir o colocar nuevos componentes. 
-Los grids ayudan a crear un trabajo más eficiente, reduciendo el número decisiones y ayudan a que todo el sistema comparta un mismo lenguaje visual entre los diseñadores y los desarrolladores.
+This system will help us create consistency across layouts and and also ensure predictability when building and placing new elements.
+
+Grids help us work more efficiently, reducing the number of decisions to make while maintaining a quality rhythm between the elements. It also ensures the entire system shares the same visual language between designers and developers.
 
 ![](/docs/assets/designSystem/guidelines/token-manager.svg)
 
-### Sistema de columnas
+## Column system
 
-Un sistema de columnas sirve para distribuir los elementos de forma horizontal, sobre este sistema se consturirán horizontalmente todos los layouts.
+A 16-column grid is used to distribute the elements evenly and horizontally. With this structure, all layouts will be built on the horizontal axis with an equal amount of white space (16px) separating the columns.
 
 ![](/docs/assets/designSystem/guidelines/column-system1.svg)
 
@@ -31,17 +30,15 @@ Un sistema de columnas sirve para distribuir los elementos de forma horizontal, 
 
 ![](/docs/assets/designSystem/guidelines/column-system3.svg)
 
-Aragon Design system se basa en una estructura para el contenido dividida en 16 columnas separadas entre márgenes horizontales de 16px. Sobre esta estructura construiremos nuestros layouts principales.
+## Gutters
 
-### Gutters
-
-El padding en el interior de los módulos coincide con el margin exterior, con un total de 16px. For closely related content, consider a gutterless grid. Apply gutters when content warrants more separation.
+This is a flexible system that allows for a lot of different combinations. The padding inside the modules matches the outer margin, with a total of 16px. For closely related content, consider a gutterless grid. Apply gutters when content warrants more separation.
 
 ![](/docs/assets/designSystem/guidelines/gutters.svg)
 
-### Breakpoint Table
+## Breakpoint Table
 
-En esta tabla definimos los valores para los diferentes breakpoints
+In this table we define the values for the different breakpoints we target with our responsive design:
 
 <div class="layouts-table">
 
@@ -53,9 +50,9 @@ En esta tabla definimos los valores para los diferentes breakpoints
 
 </div>
 
-### Responsive layout
+## Responsive layout
 
-En esta tabla definimos los valores para los diferentes breakpoints
+These are the points at which our components and content will respond to provide the user with the best possible layout to consume information and interact with the elements on the screen.
 
 ![](/docs/assets/designSystem/guidelines/responsive1.svg)
 
