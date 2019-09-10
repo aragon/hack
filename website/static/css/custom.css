@@ -969,3 +969,13 @@ table tbody tr:nth-child(2n) {
 .mainContainer .wrapper .post .postHeader {
   margin-bottom: 0!important;
 }
+
+.aragon-navbar {
+  background: rgb(28, 37, 46);
+}
+.aragon-navbar a.active {
+  font-weight: 300;
+}
+.aragon-navbar .center ul li {
+  margin-top: 0;
+}

@@ -6,7 +6,6 @@
  */
 
 const React = require('react')
-
 const CompLibrary = require('../../core/CompLibrary.js')
 const MarkdownBlock = CompLibrary.MarkdownBlock /* Used to read markdown */
 const Container = CompLibrary.Container
@@ -47,6 +46,8 @@ function docUrl(doc, language) {
 function pageUrl(page, language) {
   return siteConfig.baseUrl + (language ? language + '/' : '') + page + '.html'
 }
+
+
 
 class Hero extends React.Component {
   render() {
@@ -196,7 +197,7 @@ const UseCases = props => (
         </p>
       </div>
     </UseCaseCard>
-    
+
     <br />
     <UseCaseCard className="for-daos">
       <div className="for-daos-img-div ">
@@ -402,6 +403,9 @@ const HeroContainer = styled.div`
   justify-content: center;
   overflow: hidden;
   background: rgb(28, 29, 35);
+  background-image: url(${siteConfig.baseUrl + 'img/hero-background.png'});
+  background-size: cover;
+  background-position: center;
   h2 {
     font-family: 'HankenGroteskBold', sans-serif;
     font-size: 68px;
