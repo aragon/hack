@@ -6,7 +6,6 @@
  */
 
 const React = require('react')
-
 const CompLibrary = require('../../core/CompLibrary.js')
 const MarkdownBlock = CompLibrary.MarkdownBlock /* Used to read markdown */
 const Container = CompLibrary.Container
@@ -18,7 +17,11 @@ const {
   IconBlank,
   Text,
   theme,
+  breakpoint,
 } = require('@aragon/ui')
+
+const medium = css => breakpoint('medium', css)
+const large = css => breakpoint('large', css)
 
 const styled = require('styled-components').default
 
@@ -44,323 +47,112 @@ function pageUrl(page, language) {
   return siteConfig.baseUrl + (language ? language + '/' : '') + page + '.html'
 }
 
-const SplashContainer = props => (
-  <div className="homeContainer">
-    <div className="homeSplashFade">
-      <div className="wrapper homeWrapper">{props.children}</div>
-    </div>
-  </div>
-)
 
-const Logo = props => (
-  <div className="projectLogo">
-    <img src={props.img_src} alt="" />
-  </div>
-)
 
-const ProjectTitle = props => (
-  <React.Fragment>
-    <h2 className="projectTitle">{siteConfig.title}</h2>
-    <small className="project-subtitle">{siteConfig.tagline}</small>
-  </React.Fragment>
-)
-
-const PromoSection = props => (
-  <div className="section promoSection">
-    <div className="promoRow">
-      <div className="pluginRowBlock">{props.children}</div>
-    </div>
-  </div>
-)
-
-class HomeSplash extends React.Component {
+class Hero extends React.Component {
   render() {
-    let language = this.props.language || ''
     return (
-      <SplashContainer>
-        <div className="inner hero-box">
-          <ProjectTitle />
+      <HeroContainer>
+        <div>
+          <h2 className="projectTitle">{siteConfig.title}</h2>
+          <p className="project-subtitle">{siteConfig.tagline}</p>
           <PromoSection>
-            <Button.Anchor mode="strong" href={docUrl('getting-started')}>
+            <a className="primary" href={docUrl('getting-started')}>
               Get started
-            </Button.Anchor>
+            </a>
             &nbsp;&nbsp;
-            <Button.Anchor
-              mode="text"
-              className="take-tutorial"
-              href={docUrl('tutorial')}
-            >
-              Take the tutorial >
-            </Button.Anchor>
+            <a mode="text" className="secondary" href={docUrl('tutorial')}>
+              Take the tutorial
+            </a>
           </PromoSection>
         </div>
-        <div className="home-logo">
-          <img src={imgUrl('hero.svg')} />
-        </div>
-      </SplashContainer>
+      </HeroContainer>
     )
   }
 }
 
-const Block = props => (
-  <Container
-    padding={['bottom', 'top']}
-    id={props.id}
-    background={props.background}
-  >
-    <GridBlock align="center" contents={props.children} layout={props.layout} />
-  </Container>
-)
-
-const TextContainer = styled.div`
-  display: flex;
-  height: 100%;
-  padding: 0 20px;
-  justify-content: space-around;
-  align-items: center;
-  white-space: nowrap;
-`
-
-const IconTokens = () => (
-  <svg width="22" height="22" viewBox="0 0 22 22">
-    <g fill="none">
-      <path d="M0 0h22v22H0z" />
-      <g transform="translate(2 3)" stroke="#8B9396">
-        <circle cx="9" cy="13" r="3" />
-        <circle cx="9" cy="2" r="2" />
-        <circle cx="2" cy="5" r="2" />
-        <circle cx="16" cy="5" r="2" />
-        <path d="M3.275 6.48l3.715 4.164m1.994-6.645v5.99m5.844-3.393l-4.019 4.018" />
-      </g>
-    </g>
-  </svg>
-)
-
-const StyledGetStartedButton = styled(Button.Anchor)`
-  width: 150px;
-  margin-top: 20px;
-`
-
-const GetStartedButton = ({ href }) => (
-  <StyledGetStartedButton mode="strong" href={href}>
-    Get started
-  </StyledGetStartedButton>
-)
-
 const BuildingBlocks = props => (
   <BuildingBlocksContainer className="white-section">
-    <BlocksCards
-      title="aragonOS"
-      text={<p>Solidity framework for governance</p>}
-      actionButton={() => <GetStartedButton href={docUrl('aragonos-intro')} />}
-      icon={() => <img src={siteConfig.baseUrl + siteConfig.os} />}
-    />
-    <BlocksCards
-      title="aragonAPI"
-      text={<p>Easily interact with your dapp&#39;s state</p>}
-      actionButton={() => <GetStartedButton href={docUrl('api-intro')} />}
-      icon={() => <img src={siteConfig.baseUrl + siteConfig.api} />}
-    />
-    <BlocksCards
-      title="aragonUI"
-      text={<p>Create a beautiful UI for your dapp</p>}
-      actionButton={() => <GetStartedButton href={docUrl('aragonui-intro')} />}
-      icon={() => <img src={siteConfig.baseUrl + siteConfig.ui} />}
-    />
+    <BlocksCards href={docUrl('apm-intro')} className="pm">
+      <div className="border-line" />
+      <div className="blocks-container">
+        <img src={siteConfig.baseUrl + 'img/navbar/aragonPM.svg'} />
+        <h1>aragonPM</h1>
+        <p>
+          Decentralized package manager based on aragonOS that handles
+          upgreadability of smart contracts and arbitrary data blobs, such as
+          webapps.
+        </p>
+      </div>
+    </BlocksCards>
+    <BlocksCards href={docUrl('aragonos-intro')} className="os">
+      <div className="border-line" />
+      <div className="blocks-container">
+        <img src={siteConfig.baseUrl + 'img/navbar/aragonOS.svg'} />
+        <h1>aragonOS</h1>
+        <p>
+          Framework that enables flexible and upgradeable governance mechanisms
+          by creating and assigning permissions to multiple entities.
+        </p>
+      </div>
+    </BlocksCards>
+    <BlocksCards href={docUrl('api-intro')} className="api">
+      <div className="border-line" />
+      <div className="blocks-container">
+        <img src={siteConfig.baseUrl + 'img/navbar/aragonAPI.svg'} />
+        <h1>aragonAPI</h1>
+        <p>
+          Standard set of APIs and specifications used to interact with
+          aragonOS-powered contracts by handling transaction pathing,
+          upgradeability, and contract state.
+        </p>
+      </div>
+    </BlocksCards>
+    <BlocksCards href={docUrl('aragonui-intro')} className="ui">
+      <div className="border-line" />
+      <div className="blocks-container">
+        <img src={siteConfig.baseUrl + 'img/navbar/aragonUI.svg'} />
+        <h1>aragonUI</h1>
+        <p>
+          Aragon-native toolkit of React UI components for decentralized apps
+          that implement aragonDS. Slick, fast and easily extendable.
+        </p>
+      </div>
+    </BlocksCards>
+    <BlocksCards href={docUrl('cli-intro')} className="cli">
+      <div className="border-line" />
+      <div className="blocks-container">
+        <img src={siteConfig.baseUrl + 'img/navbar/aragonCLI.svg'} />
+        <h1>aragonCLI</h1>
+        <p>
+          Tool for creating, testing and publishing Aragon applications. Also
+          allows for creating custom Aragon organizations.
+        </p>
+      </div>
+    </BlocksCards>
+    <BlocksCards href={docUrl('layout')} className="ds">
+      <div className="border-line" />
+      <div className="blocks-container">
+        <img src={siteConfig.baseUrl + 'img/navbar/aragonDS.svg'} />
+        <h1>aragonDS</h1>
+        <p>
+          The Aragon Design System defines a set of user behaviours and
+          guidelines to ensure consistency across all Aragon apps.
+        </p>
+      </div>
+    </BlocksCards>
   </BuildingBlocksContainer>
 )
 
-const BuildingBlocksContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-  flex-wrap: wrap;
-`
-
-const BlocksCards = styled(EmptyStateCard)`
-  border-radius: 6px;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.08);
-  background-color: #f9fafc;
-  border: 0px solid transparent;
-  margin: 1rem;
-  height: auto;
-  width: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-  flex-wrap: wrap;
-  &:hover {
-    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.07);
-  }
-
-  p {
-    font-size: 19px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.4;
-    letter-spacing: 0.2px !important;
-    text-align: center;
-    color: #7f8198 !important;
-  }
-  h1 span {
-    font-size: 40px !important;
-    font-family: 'HankenGroteskLight', sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.48;
-    letter-spacing: normal;
-    text-align: center;
-    color: #2d4051;
-  }
-`
-
-const Hero = props => (
-  <div className="productShowcaseSection paddingTop white-section">
-    <SectionTitle className="light">
-      Build DAOs, protocols and dapps
-    </SectionTitle>
-    <GreyText>
-      Aragon is the most powerful and modular way to run{' '}
-      <a
-        href="https://en.wikipedia.org/wiki/Decentralized_autonomous_organization"
-        target="_blank"
-      >
-        DAOs
-      </a>
-      . But on our journey creating DAOs, we discovered how to modularize
-      individual components that can be used for creating any dapp or crypto
-      protocol.
-    </GreyText>
-  </div>
-)
-
-const GreyText = styled.p`
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.75;
-  letter-spacing: 0.1px;
-  text-align: center;
-  color: #7f8198;
-  margin-bottom: 0 !important;
-`
-
-const SectionTitle = styled.h2`
-  font-size: 42px !important;
-  font-family: 'HankenGroteskLight';
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.48 !important;
-  letter-spacing: normal;
-  text-align: center;
-  padding: 0 !important ;
-  color: #2d4051 !important;
-`
-
-const UseCasesContainer = styled(Container)`
-  flex: auto;
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 0 !important;
-`
-const UseCaseCard = styled.div`
-  border-radius: 6px;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.08);
-  background-color: #ffffff;
-  padding: 30px;
-  max-width: 85vw;
-  @media (min-width: 1026px) {
-    width: 1020px;
-  }
-  width: auto;
-  min-height: 405px !important;
-  margin: auto;
-  display: flex;
-  &:hover {
-    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.07);
-  }
-  &.third {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    h2,
-    p {
-      width: 500px;
-      max-width: 100% !important;
-    }
-  }
-  h2 {
-    margin-top: 0 !important;
-    margin-bottom: 30px;
-    padding-top: 0 !important;
-    font-size: 46px !important;
-    font-family: 'HankenGroteskLight', sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.35 !important;
-    letter-spacing: normal;
-    color: #2d4051;
-    max-width: 500px !important;
-  }
-  p {
-    font-size: 16px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.75;
-    letter-spacing: 0.1px !important;
-    color: #7f8198 !important;
-    max-width: 500px !important;
-  }
-`
-
-const SecondaryNavbar = props => (
-  <div className="secondary-navbar">
-    <div className="secondary-container">
-      <a className="secondary-item" href={docUrl('apm-intro')}>
-        <img src={imgUrl('navbar/aragon-pm.svg')} />
-        <h6>aragonPM</h6>
-      </a>
-      <a className="secondary-item" href={docUrl('aragonos-intro')}>
-        <img src={imgUrl('navbar/aragon-os.svg')} />
-        <h6>aragonOS</h6>
-      </a>
-      <a className="secondary-item" href={docUrl('api-intro')}>
-        <img src={imgUrl('navbar/aragon-api.svg')} />
-        <h6>aragonAPI</h6>
-      </a>
-      <a className="secondary-item" href={docUrl('aragonui-intro')}>
-        <img src={imgUrl('navbar/aragon-ui.svg')} />
-        <h6>aragonUI</h6>
-      </a>
-      <a className="secondary-item" href={docUrl('cli-intro')}>
-        <img src={imgUrl('navbar/aragon-cli.svg')} />
-        <h6>aragonCLI</h6>
-      </a>
-    </div>
-  </div>
-)
-
 const UseCases = props => (
-  <UseCasesContainer className="grey-section">
+  <UseCasesContainer className="white-section">
     <UseCaseCard className="for-daos">
       <div className="for-daos-img-div ">
         <img src={imgUrl('for-daos.svg')} />
       </div>
       <div>
         <div className="use-case-mobile-div ">
-          <img src={imgUrl('for-daos-mobile.svg')} />
+          <img src={imgUrl('for-daos.svg')} />
         </div>
         <h2 className="light">For DAOs</h2>
         <p>
@@ -378,10 +170,13 @@ const UseCases = props => (
       </div>
     </UseCaseCard>
     <br />
-    <UseCaseCard className="for-dapps">
+    <UseCaseCard className="for-daos">
+      <div className="for-daos-img-div ">
+        <img src={imgUrl('for-dapps.svg')} />
+      </div>
       <div>
         <div className="use-case-mobile-div ">
-          <img src={imgUrl('for-dapps-mobile.svg')} />
+          <img src={imgUrl('for-dapps.svg')} />
         </div>
         <h2 className="light">For dapps</h2>
         <p>
@@ -402,17 +197,23 @@ const UseCases = props => (
         </p>
       </div>
     </UseCaseCard>
+
     <br />
-    <UseCaseCard className="third crypto-protocol">
-      <div className="use-case-mobile-div ">
-        <img src={imgUrl('crypto-protocols-mobile.svg')} />
+    <UseCaseCard className="for-daos">
+      <div className="for-daos-img-div ">
+        <img src={imgUrl('for-crypto.svg')} />
       </div>
-      <h2 className="light">For crypto protocols</h2>
-      <p>
-        You can build any governance mechanism to upgrade your crypto protocol
-        or its parameters. Benefit from any of the existing governance
-        mechanisms that support aragonOS, or easily roll out your own.
-      </p>
+      <div>
+        <div className="use-case-mobile-div ">
+          <img src={imgUrl('for-crypto.svg')} />
+        </div>
+        <h2 className="light">For crypto protocols</h2>
+        <p>
+          You can build any governance mechanism to upgrade your crypto protocol
+          or its parameters. Benefit from any of the existing governance
+          mechanisms that support aragonOS, or easily roll out your own.
+        </p>
+      </div>
     </UseCaseCard>
   </UseCasesContainer>
 )
@@ -451,6 +252,358 @@ const TrustedBy = props => {
   )
 }
 
+const AlmostFullSection = props => (
+  <WhiteSection>
+    <DeveloperSection>
+      <DeveloperBox>
+        <DeveloperImageContainer className="image-left">
+          <DeveloperImage src={imgUrl('you-developer.png')} />
+        </DeveloperImageContainer>
+        <DeveloperContainer className="divided-section-container">
+          <h3>This is for you,<br/>developer.</h3>
+          <p>
+            Aragon is the most powerful and modular way to run DAOs. But on our
+            journey creating DAOs, we discovered how to modularize individual
+            components that can be used for creating any dapp or crypto
+            protocol.
+          </p>
+        </DeveloperContainer>
+      </DeveloperBox>
+    </DeveloperSection>
+  </WhiteSection>
+)
+const WhiteSection = styled.div`
+  min-height: 600px;
+  height: auto;
+  width: 100%;
+  background: white;
+  margin: 0;
+  padding: 50px 0;
+`
+
+const DeveloperSection = styled.div`
+  background: linear-gradient(151.57deg, #ffd08d 6.11%, #ffdca9 96.84%);
+  min-height: 500px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  ${large('padding: 50px 120px;')}
+`
+
+const DeveloperBox = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  ${large('flex-direction: row;')};
+`
+
+const DeveloperContainer = styled.div`
+  ${large('width: 56%;')}
+  padding-top: 30px;
+  ${breakpoint('large', `padding-bottom:0; padding-top: 0`)}
+  @media (min-width: 1152px) {
+    padding-left: 90px;
+  }
+
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  ${large('text-align: left; margin: inherit;')}
+  p {
+    font-size: 18px;
+    ${large('font-size: 21px;')}
+    line-height: 1.66;
+    text-align: center;
+    ${large('text-align: left;')}
+    letter-spacing: 0.24px;
+    margin: 20px 0;
+    letter-spacing: 0.315px;
+    color: #637381;
+  }
+  h3 {
+    font-size: 35px;
+    ${large('font-size: 48px;')}
+    line-height: 1.36;
+    text-align: center;
+    margin: 0;
+    ${large('text-align: left; margin: 0 0 5px 0!important;')}
+    color: #212b36;
+    font-family: 'HankenGroteskRegular', sans-serif;
+    letter-spacing: -0.564706px;
+  }
+`
+const DeveloperImage = styled.img`
+  max-width: 100%;
+`
+
+const DeveloperImageContainer = styled.div`
+  text-align: center;
+  margin: auto;
+  max-width: 427px;
+`
+
+class Index extends React.Component {
+  render() {
+    let language = this.props.language || ''
+
+    return (
+      <IndexContainer className="home-section">
+        <Hero />
+        <MainContainer className="mainContainer">
+          <BuildingBlocks />
+          <AlmostFullSection />
+          <UseCases />
+          <TrustedBy />
+        </MainContainer>
+      </IndexContainer>
+    )
+  }
+}
+
+const PromoSection = styled.div`
+  margin: 40px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.150249);
+    border-radius: 6px;
+    width: 182px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'HankenGroteskRegular';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 44px;
+    color: #ffffff;
+  }
+  a.primary {
+    background: linear-gradient(186.69deg, #32fff5 -103.98%, #01bfe3 80.13%);
+  }
+  a.secondary {
+    background: #2f3c4b;
+    height: 47px;
+  }
+`
+
+const HeroContainer = styled.div`
+  height: 486px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgb(28, 29, 35);
+  background-image: url(${siteConfig.baseUrl + 'img/hero-background.png'});
+  background-size: cover;
+  background-position: center;
+  h2 {
+    font-family: 'HankenGroteskBold', sans-serif;
+    font-size: 68px;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: -1.8px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  p {
+    font-family: 'HankenGroteskRegular', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: 0.33px;
+    color: #adb4cb;
+  }
+`
+
+const BuildingBlocksContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10%;
+  flex-wrap: wrap;
+`
+
+const BlocksCards = styled.a`
+  background: #f9fafc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.0726053);
+  border-radius: 12px;
+  border: 0px solid transparent;
+  margin: 1rem;
+  height: auto;
+  width: 320px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  flex-wrap: wrap;
+  flex-direction: column;
+  transition: all 0.25s ease-in-out;
+  &:hover {
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.14);
+  }
+  .border-line {
+    height: 7px;
+    width: 100%;
+    background: linear-gradient(89.35deg, #ffa05c 0%, #ff7958 99.99%);
+    overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  &.pm .border-line {
+    background: linear-gradient(89.35deg, #ffa05c 0%, #ff7958 99.99%);
+  }
+  &.os .border-line {
+    background: linear-gradient(89.35deg, #02d9ea 0%, #02eae6 99.99%);
+  }
+  &.api .border-line {
+    background: linear-gradient(89.35deg, #ddcf82 0%, #3dcfd1 99.99%);
+  }
+  &.ui .border-line {
+    background: linear-gradient(89.35deg, #e7947c 0%, #ae56ae 99.99%);
+  }
+  &.cli .border-line {
+    background: linear-gradient(89.35deg, #fed760 0%, #ffb595 99.99%);
+  }
+  &.ds .border-line {
+    background: linear-gradient(89.35deg, #8a4fc7 0%, #c56cd6 99.99%);
+  }
+  .blocks-container {
+    padding: 35px;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.4;
+    min-height: 117px;
+    letter-spacing: 0.2px !important;
+    text-align: left;
+    color: #7f8198 !important;
+  }
+  h1 {
+    font-size: 36px !important;
+    font-family: 'HankenGroteskLight', sans-serif;
+    font-weight: 300;
+    color: #212b36;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    text-align: left;
+    margin-top: 20px !important;
+  }
+  img {
+    height: 85px;
+  }
+`
+
+const GreyText = styled.p`
+  font-size: 18px;
+  line-height: 35px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0.315px;
+  text-align: center;
+  color: #637381;
+  margin-bottom: 0 !important;
+`
+
+const SectionTitle = styled.h2`
+  font-size: 38px !important;
+  font-family: 'HankenGroteskRegular';
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.48 !important;
+
+  text-align: center;
+  padding: 0 !important ;
+  color: #212b36 !important;
+  letter-spacing: -0.447059px;
+`
+
+const UseCasesContainer = styled(Container)`
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0 !important;
+`
+
+const UseCaseCard = styled.div`
+  padding: 30px;
+  max-width: 85vw;
+  background: #f9fafc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.0726053);
+  border-radius: 12px;
+  transition: all 0.25s ease-in-out;
+
+  @media (min-width: 1026px) {
+    width: 1020px;
+  }
+  width: auto;
+  min-height: 405px !important;
+  margin: auto;
+  display: flex;
+  &:hover {
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.14);
+  }
+  &.third {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    h2,
+    p {
+      width: 500px;
+      max-width: 100% !important;
+    }
+  }
+  h2 {
+    margin-top: 16px !important;
+    margin-bottom: 30px;
+    padding-top: 0 !important;
+    font-size: 38px !important;
+    font-family: 'HankenGroteskRegular', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2 !important;
+    letter-spacing: -0.447059px;
+    color: #212b36;
+    max-width: 500px !important;
+  }
+  p {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.55;
+    letter-spacing: 0.24px !important;
+    color: #7f8198 !important;
+    max-width: 500px !important;
+  }
+  &.for-daos.for-dapps .for-daos-img-div {
+    text-align: right;
+  }
+`
+
 const TrustedByContainer = styled.div`
   padding-bottom: 60px;
   padding-top: 30px;
@@ -479,25 +632,6 @@ const MainContainer = styled.div`
   background-color: ${theme.mainBackground};
 `
 
-class Index extends React.Component {
-  render() {
-    let language = this.props.language || ''
-
-    return (
-      <IndexContainer className="home-section">
-        <SecondaryNavbar />
-        <HomeSplash />
-        <MainContainer className="mainContainer">
-          <Hero />
-          <BuildingBlocks />
-          <UseCases />
-          <TrustedBy />
-        </MainContainer>
-      </IndexContainer>
-    )
-  }
-}
-
 const IndexContainer = styled.div`
   .white-section {
     background: white;
@@ -517,4 +651,5 @@ const IndexContainer = styled.div`
     font-family: 'HankenGroteskLight', sans-serif !important;
   }
 `
+
 module.exports = Index

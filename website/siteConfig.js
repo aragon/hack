@@ -77,11 +77,10 @@ const siteConfig = {
   headerIcon: 'img/navbar-logo.svg',
   footerIcon: 'img/footer.svg',
   favicon: 'img/favicon.png',
-  os: 'img/os.svg',
-  api: 'img/api.svg',
-  ui: 'img/ui.svg',
   menumore: 'img/menumore.svg',
   menubar: 'img/menubar.svg',
+  prevArrow: 'img/prev-arrow.svg',
+  nextArrow: 'img/next-arrow.svg',
 
   /* colors for website */
   // #00c8e4
