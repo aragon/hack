@@ -87,7 +87,7 @@ So in our case, to install the Agent app, we need to run:
 dao install <your organization name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-You should see that after `dao install <your organization's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro.html#global-options): `--enviroment` and `--apm.ipfs.rpc`.
+You should see that after `dao install <your organization's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro.html#global-options): `--environment` and `--apm.ipfs.rpc`.
 
 > Note: As an alternative to passing the `--apm.ipfs.rpc` option, you can also choose to run `aragon ipfs` in another terminal.
 
