@@ -56,7 +56,7 @@ For interacting with aragonCLI you can configure a private key in `~/.aragon`. C
 
 ```json
 {
-  "rpc": "https://<network>.infura.io",
+  "rpc": "https://<network>.eth.aragon.network",
   "keys": ["put-your-priv-key-here"]
 }
 ```
