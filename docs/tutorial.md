@@ -349,12 +349,19 @@ Let's modify it accordingly:
 {
   "name": "Counter",
   "description": "My first Aragon app",
-  "script": "/dist/script.js",
-  "start_url": "/dist/index.html"
+  "script": "/script.js",
+  "start_url": "/index.html"
 }
 ```
 
 ## Running your app locally
+
+> **Prerequisite**<br>
+> If this is your first time using the CLI, you will first need to install IPFS to store the development files. This command only needs to be run once:
+> 
+> ```sh
+> npx aragon ipfs install
+> ```
 
 To test out your app without deploying a DAO yourself, installing apps, setting up permissions and setting up aragonPM, you can simply run:
 
