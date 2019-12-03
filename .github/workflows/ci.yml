@@ -1,0 +1,40 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - name: npm install
+        run: npm install
+        working-directory: ./website
+      - name: install solc
+        run: |
+          git clone https://github.com/crytic/solc-select.git
+          ./solc-select/scripts/install.sh
+          export PATH=/$HOME/.solc-select:$PATH
+          solc use 0.4.24
+      - name: build
+        run: |
+          export PATH=/$HOME/.solc-select:$PATH
+          solc --version
+          npm run build
+        working-directory: ./website
+      - name: deploy
+        run: |
+          git config --global user.email "autobot@noreply.aragon.org"
+          git config --global user.name "Autobots, roll out!"
+          echo "machine github.com login sohkai password ${{ secrets.GIT_TOKEN }}" > $HOME/.netrc
+          GIT_USER=sohkai npx docusaurus-publish
+        working-directory: ./website
+env:
+  CI: true
