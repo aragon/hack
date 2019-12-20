@@ -25,14 +25,34 @@ npx copy-aragon-ui-assets ./public
 
 Wrap your app in the `Main` component:
 
-```javascript
+```jsx
 import { Main } from '@aragon/ui'
 
-const App = () => (
-  <Main>
-    {/* Your app goes here */}
-  </Main>
-)
+function App() {
+  return (
+    <Main>
+      {/* Your app goes here */}
+    </Main>
+  )
+}
 ```
 
-[Check the project on GitHub](https://github.com/aragon/aragon-ui#getting-started) for more information.
+#### Theming
+
+aragonUI supports themes, which can adapt to the preference of the user. This is how you can pass the current theme from aragonAPI to aragonUI:
+
+```jsx
+import { useGuiStyle } from '@aragon/api-react'
+import { Main } from '@aragon/ui'
+
+function App() {
+  const { appearance } = useGuiStyle()
+  return (
+    <Main theme={appearance}>
+      {/* Your app goes here */}
+    </Main>
+  )
+}
+```
+
+[Check the project website](https://ui.aragon.org/getting-started/) for more information.
