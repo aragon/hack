@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- [`solc@v0.4.24`](https://github.com/ethereum/solidity/releases)
+- [`solc@v0.4.24`](https://github.com/ethereum/solidity/releases/tag/v0.4.24)
 
 Note: `solidity-docgen` [does not work on Windows](https://github.com/OpenZeppelin/solidity-docgen/issues/22).
 
