@@ -242,7 +242,7 @@ const TrustedBy = props => {
       <div className="more-users">
         <a
           className="button"
-          href="http://wiki.aragon.org/projects/"
+          href="https://wiki.aragon.org/about/projects/"
           target="_blank"
         >
           More Aragon users
