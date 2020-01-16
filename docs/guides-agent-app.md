@@ -12,7 +12,7 @@ Put another way:
 
 > Aragon Agent is a fully-fledged Ethereum account owned by an Aragon organization. **It's like a multi-signature account on steroids that enables organizations to interact with any Ethereum contract or protocol.** Trading tokens on 0x or Uniswap, opening a Maker CDP, managing names in ENS, owning digital LAND parcels, or even breeding digital cats. [Source](https://blog.aragon.one/aragon-agent-beta-release/)
 
-In technical terms, it's a superset of the [Vault app](https://wiki.aragon.org/dev/apps/vault/), which means it can hold valuable assets (ETH and [ERC-20](https://en.wikipedia.org/wiki/ERC-20) tokens).
+In technical terms, it's a superset of the [Vault app](https://github.com/aragon/aragon-apps/tree/master/apps/vault), which means it can hold valuable assets (ETH and [ERC-20](https://en.wikipedia.org/wiki/ERC-20) tokens).
 
 Concretely, the Agent app allows for things like:
 
@@ -24,7 +24,7 @@ Concretely, the Agent app allows for things like:
 
 # Prerequisites
 
-While there are no formal prerequisites to this guide, it'll be helpful for you to have a basic understanding of both our [Voting](https://wiki.aragon.org/dev/apps/voting/) and [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) apps. The best way to do that is to go through sections 2.1 and 2.2 of our [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/index.html#2-templates).
+While there are no formal prerequisites to this guide, it'll be helpful for you to have a basic understanding of both our [Voting](https://help.aragon.org/article/19-voting) and [Token Manager](https://help.aragon.org/article/18-tokens/) apps. The best way to do that is to go through sections [2.1](https://help.aragon.org/article/30-create-a-new-company-organization) and [2.2](https://help.aragon.org/article/31-explore-the-company-organization) of our [User Guide](hhttps://help.aragon.org/category/12-templates).
 
 Apart from that this guide should be self-contained.
 
@@ -32,18 +32,18 @@ Apart from that this guide should be self-contained.
 
 ## 1. Create a Democracy DAO
 
-Before we start, you'll need to head over to [Aragon](https://rinkeby.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-templates/tree/aragon-v0.7/kits/democracy).
+Before we start, you'll need to head over to [Aragon](https://rinkeby.aragon.org/) and create a new DAO with the [company template](hhttps://github.com/aragon/dao-templates/tree/master/templates/company).
 
-If you're not sure how to do that, please have a look at [this section](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization) of our [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization).
+If you're not sure how to do that, please have a look at [this section](https://help.aragon.org/article/30-create-a-new-company-organization).
 
-The first thing you'll be asked to do is to [choose the network](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#211-navigate-to-httpsapparagonorg-in-your-web-browser) for your organization. For the purposes of this guide we'll choose the **Ethereum Testnet (Rinkeby)**.
+The first thing you'll be asked to do is to [choose the network](https://help.aragon.org/article/4-about-aragon) for your organization. For the purposes of this guide we'll choose the **Ethereum Testnet (Rinkeby)**.
 
-Later on, you'll be asked to [set three parameters](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#214-set-the-parameters-of-your-democracy-organization-then-click-next) for your organization -- the **support**, the **minimum acceptance quorum**, and the **vote duration**.
+Later on, you'll be asked to [set three parameters](https://help.aragon.org/article/30-create-a-new-company-organization#set) for your organization -- the **support**, the **minimum approval %**, and the **vote duration**.
 
 We'll go with the following (sensible) defaults:
 
 - Support: 100%
-- Min. Quorum: 0%
+- Min. Approval: 0%
 - Duration: 168 hours (or 1 week)
 
 ## 2. Install aragonCLI
@@ -89,7 +89,7 @@ dao install <your organization name> agent --environment aragon:rinkeby --ipfs-r
 
 You should see that after `dao install <your organization's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro.html#global-options): `--environment` and `--ipfs-rpc`.
 
-> Note: As an alternative to passing the `--ipfs-rpc` option, you can also choose to run `aragon ipfs` in another terminal.
+> Note: As an alternative to passing the `--ipfs-rpc` option, you can also choose to run `aragon ipfs start` in another terminal.
 
 <details>
 <summary>Tell me more about aragon ipfs and these global options.</summary>
@@ -181,7 +181,7 @@ Followed directly by another that looks like this:
 
 | Permissionless app                                                 | Proxy address                                  |
 | ------------------------------------------------------------------ | ---------------------------------------------- |
-| 0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a | **0x843bfA21a040E742ec32b8F6991e182D9655AF21** |
+| agent                                                              | **0x843bfA21a040E742ec32b8F6991e182D9655AF21** |
 
 The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In this guide that's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** . Yours will be slightly different.
 
@@ -290,9 +290,9 @@ dao exec <your organization name> <your voting app address> vote <vote id> true 
 
 - The first is always the name or address of the DAO you want to interact with. In our case this is our DAO's name.
 
-- The second is the address of the app where the action is being performed. In our case this is the [Voting app](https://wiki.aragon.org/dev/apps/voting/).
+- The second is the address of the app where the action is being performed. In our case this is the [Voting app](https://help.aragon.org/article/19-voting).
 
-- The third is the name of the method being executed in the app: In our case the method is [`vote`](https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes).
+- The third is the name of the method being executed in the app: In our case the method is [`vote`](https://github.com/aragon/aragon-apps/blob/master/apps/voting/contracts/Voting.sol#L154).
 
 - The remaining arguments are the arguments which the method -- in our case `vote` -- will be executed with. We are passing in three: `1`, `true` and `true`.
 
@@ -365,7 +365,7 @@ Let's start by seeing how we can use the Agent app to allow one Aragon organizat
 The first step is to create another Democracy DAO. Exactly the same as before, head over to [Aragon](https://rinkeby.aragon.org/) and choose the following defaults:
 
 - Support: 100%
-- Min. Quorum: 0%
+- Min. Approval: 0%
 - Duration: 168 hours (or 1 week)
 
 ### 2. Mint a token to allow our first DAO (A) to vote in our new DAO (B)
@@ -386,15 +386,15 @@ dao exec <name of dao B> <token manager app address of dao B> mint <agent app ad
 
 Remember, you can find the addresses of the apps in any of your DAOs by running `dao apps <organization name> --environment aragon:rinkeby`.
 
-As you can see, we are using the `dao exec` command to interact with the `mint` method of B's [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) app.
+As you can see, we are using the `dao exec` command to interact with the `mint` method of B's [Token Manager](https://help.aragon.org/article/18-tokens) app.
 
-[`mint`](https://wiki.aragon.org/dev/apps/token-manager/index.html#mint-tokens) is used to create new tokens and assign them to a receiver. It takes two arguments: a receiver address and the amount of tokens to be created.
+[`mint`](https://github.com/aragon/aragon-apps/blob/master/apps/token-manager/contracts/TokenManager.sol#L104) is used to create new tokens and assign them to a receiver. It takes two arguments: a receiver address and the amount of tokens to be created.
 
 In our case the receiver is A's Agent App, and the amount of tokens to be created is 1.
 
 However, you should notice that instead of writing `1` as the second argument to `mint` we've gone with `1000000000000000000`.
 
-This is because the token created by the [democracy template](https://github.com/aragon/dao-templates/tree/aragon-v0.7/kits/democracy) has 18 decimals, so 1 unit of a token is actually 0.000000000000000001 tokens. This is not what we want.
+This is because the token created by the [company template](https://github.com/aragon/dao-templates/tree/master/templates/company) has 18 decimals, so 1 unit of a token is actually 0.000000000000000001 tokens. This is not what we want.
 
 In order to mint a full token from the CLI we need to pass the full number, which will then be interpreted with 18 decimals.
 In our case this is a 1 followed by eighteen 0s, or `1000000000000000000`.
@@ -459,9 +459,9 @@ Remember that `dao act` takes at least three arguments:
 
 - The first is the address of the Agent app you want to use to perform an action. In our case this is the address of A's Agent app.
 
-- The second is the address of an **external contract** or the address of an app within a DAO. In our case this is the address of B's [Voting app](https://wiki.aragon.org/dev/apps/voting/).
+- The second is the address of an **external contract** or the address of an app within a DAO. In our case this is the address of B's [Voting app](https://help.aragon.org/article/19-voting).
 
-- The third is the [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute in either the external contract or the app we specified in the second argument. In our case the method is [`vote`](https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes) and its full signature is `vote(unint256,bool,bool)`.
+- The third is the [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute in either the external contract or the app we specified in the second argument. In our case the method is [`vote`](https://github.com/aragon/aragon-apps/blob/master/apps/voting/contracts/Voting.sol#L154) and its full signature is `vote(unint256,bool,bool)`.
 
 - Finally, the remaining arguments are the arguments which the method -- in our case `vote` -- will be exectuted with. We can see from the signature that `vote` takes three arguments: an interger, a boolean, and a boolean. In our case we will pass in: `1`, `true` and `true`.
 
