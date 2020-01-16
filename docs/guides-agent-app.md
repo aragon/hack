@@ -169,9 +169,9 @@ You should see a table that looks something like this:
 
 | App                  | Proxy address                                  | Content                                             |
 | -------------------- | ---------------------------------------------- | --------------------------------------------------- |
-| kernel@vundefined    | 0xa25fb31870bc492d450012ae32dafa72af9e82c3     | (No UI available)                                   |
-| acl@vundefined       | 0xfefb0cdb7a1fac257815d52ba82776f98dc70205     | (No UI available)                                   |
-| evmreg@vundefined    | 0x9087db02300ef24b116daf0426b6ba22b28a0c79     | (No UI available)                                   |
+| kernel               | 0xa25fb31870bc492d450012ae32dafa72af9e82c3     | (No UI available)                                   |
+| acl                  | 0xfefb0cdb7a1fac257815d52ba82776f98dc70205     | (No UI available)                                   |
+| evmreg               | 0x9087db02300ef24b116daf0426b6ba22b28a0c79     | (No UI available)                                   |
 | voting@v2.0.4        | **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** | ipfs:QmPjWU51opgTVnXwAhYAWasL2CaiYHqy2mXdXtzqfC8sKx |
 | vault@v3.0.1         | 0x952a18185da912984e0bc8a830ba98f8151976af     | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
 | finance@v2.0.5       | 0x4171f7ac1a4606b93093e8648e2f9a16c59cf3b1     | ipfs:QmeMLs4jHya89khHVSubLaao9cZW6ELZUoYPHkwCUwKBH7 |
