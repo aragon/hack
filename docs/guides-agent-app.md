@@ -30,7 +30,7 @@ Apart from that this guide should be self-contained.
 
 # Installing Aragon Agent
 
-## 1. Create a Democracy DAO
+## 1. Create a Company DAO
 
 Before we start, you'll need to head over to [Aragon](https://rinkeby.aragon.org/) and create a new DAO with the [company template](hhttps://github.com/aragon/dao-templates/tree/master/templates/company).
 
