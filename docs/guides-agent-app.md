@@ -12,7 +12,7 @@ Put another way:
 
 > Aragon Agent is a fully-fledged Ethereum account owned by an Aragon organization. **It's like a multi-signature account on steroids that enables organizations to interact with any Ethereum contract or protocol.** Trading tokens on 0x or Uniswap, opening a Maker CDP, managing names in ENS, owning digital LAND parcels, or even breeding digital cats. [Source](https://blog.aragon.one/aragon-agent-beta-release/)
 
-In technical terms, it's a superset of the [Vault app](https://wiki.aragon.org/dev/apps/vault/), which means it can hold valuable assets (ETH and [ERC-20](https://en.wikipedia.org/wiki/ERC-20) tokens).
+In technical terms, it's a superset of the [Vault app](https://github.com/aragon/aragon-apps/tree/master/apps/vault), which means it can hold valuable assets (ETH and [ERC-20](https://en.wikipedia.org/wiki/ERC-20) tokens).
 
 Concretely, the Agent app allows for things like:
 
@@ -24,26 +24,26 @@ Concretely, the Agent app allows for things like:
 
 # Prerequisites
 
-While there are no formal prerequisites to this guide, it'll be helpful for you to have a basic understanding of both our [Voting](https://wiki.aragon.org/dev/apps/voting/) and [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) apps. The best way to do that is to go through sections 2.1 and 2.2 of our [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/index.html#2-templates).
+While there are no formal prerequisites to this guide, it'll be helpful for you to have a basic understanding of both our [Voting](https://help.aragon.org/article/19-voting) and [Token Manager](https://help.aragon.org/article/18-tokens/) apps. The best way to do that is to go through sections [2.1](https://help.aragon.org/article/30-create-a-new-company-organization) and [2.2](https://help.aragon.org/article/31-explore-the-company-organization) of our [User Guide](https://help.aragon.org/category/12-templates).
 
 Apart from that this guide should be self-contained.
 
 # Installing Aragon Agent
 
-## 1. Create a Democracy DAO
+## 1. Create a Company DAO
 
-Before we start, you'll need to head over to [Aragon](https://rinkeby.aragon.org/) and create a new DAO with the [democracy template](https://github.com/aragon/dao-templates/tree/aragon-v0.7/kits/democracy).
+Before we start, you'll need to head over to [Aragon](https://rinkeby.aragon.org/) and create a new DAO with the [company template](https://github.com/aragon/dao-templates/tree/master/templates/company).
 
-If you're not sure how to do that, please have a look at [this section](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization) of our [User Guide](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#21-create-a-new-democracy-organization).
+If you're not sure how to do that, please have a look at [this section](https://help.aragon.org/article/30-create-a-new-company-organization).
 
-The first thing you'll be asked to do is to [choose the network](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#211-navigate-to-httpsapparagonorg-in-your-web-browser) for your organization. For the purposes of this guide we'll choose the **Ethereum Testnet (Rinkeby)**.
+The first thing you'll be asked to do is to [choose the network](https://help.aragon.org/article/4-about-aragon) for your organization. For the purposes of this guide we'll choose the **Ethereum Testnet (Rinkeby)**.
 
-Later on, you'll be asked to [set three parameters](https://wiki.aragon.org/tutorials/Aragon_User_Guide/#214-set-the-parameters-of-your-democracy-organization-then-click-next) for your organization -- the **support**, the **minimum acceptance quorum**, and the **vote duration**.
+Later on, you'll be asked to [set three parameters](https://help.aragon.org/article/30-create-a-new-company-organization#set) for your organization -- the **support**, the **minimum approval %**, and the **vote duration**.
 
 We'll go with the following (sensible) defaults:
 
 - Support: 100%
-- Min. Quorum: 0%
+- Min. Approval: 0%
 - Duration: 168 hours (or 1 week)
 
 ## 2. Install aragonCLI
@@ -66,7 +66,7 @@ If you're unsure which version of aragonCLI you have, run:
 
 `aragon -v`
 
-If your version number is less than `5.9.3`, or if it's been a while since you last installed the aragonCLI, we recommend you reinstall it (by running the `npm install` command above).
+If your version number is less than `7.0.3`, or if it's been a while since you last installed the aragonCLI, we recommend you reinstall it (by running the `npm install` command above).
 
 ## 3. Install the Agent app
 
@@ -84,12 +84,12 @@ We'll use the the [`dao install`](https://hack.aragon.org/docs/cli-dao-commands#
 So in our case, to install the Agent app, we need to run:
 
 ```
-dao install <your organization name> agent --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao install <your organization name> agent --environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
-You should see that after `dao install <your organization's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro.html#global-options): `--environment` and `--apm.ipfs.rpc`.
+You should see that after `dao install <your organization's name> agent` we pass in two [global options](https://hack.aragon.org/docs/cli-intro.html#global-options): `--environment` and `--ipfs-rpc`.
 
-> Note: As an alternative to passing the `--apm.ipfs.rpc` option, you can also choose to run `aragon ipfs` in another terminal.
+> Note: As an alternative to passing the `--ipfs-rpc` option, you can also choose to run `aragon ipfs start` in another terminal.
 
 <details>
 <summary>Tell me more about aragon ipfs and these global options.</summary>
@@ -98,11 +98,11 @@ The `--environment` option allows us to specify the network we want to use. In o
 
 Note that if we had chosen the **Ethereum Mainnet** as the network for our organization we would have passed `aragon:mainnet` instead of `aragon:rinkeby` as the argument to `--environment`.
 
-The `--apm.ipfs.rpc` option allows us to point to an IPFS node that has the files we are looking for. In our case we're pointing it to the aragon network IPFS node.
+The `--ipfs-rpc` option allows us to point to an IPFS node that has the files we are looking for. In our case we're pointing it to the aragon network IPFS node.
 
 We can also run our own IPFS node by running `aragon ipfs` in another terminal window.
 
-Running a local IPFS node allows us to run the same command without the `--apm.ipfs.rpc` option (since the `--apm.ipfs.rpc` option defaults to `http://localhost:5001`).
+Running a local IPFS node allows us to run the same command without the `--ipfs-rpc` option (since the `--ipfs-rpc` option defaults to `http://localhost:5001`).
 
 However, since IPFS propogation is slow, it's better to point directly to the aragon IPFS node.
 
@@ -169,9 +169,9 @@ You should see a table that looks something like this:
 
 | App                  | Proxy address                                  | Content                                             |
 | -------------------- | ---------------------------------------------- | --------------------------------------------------- |
-| kernel@vundefined    | 0xa25fb31870bc492d450012ae32dafa72af9e82c3     | (No UI available)                                   |
-| acl@vundefined       | 0xfefb0cdb7a1fac257815d52ba82776f98dc70205     | (No UI available)                                   |
-| evmreg@vundefined    | 0x9087db02300ef24b116daf0426b6ba22b28a0c79     | (No UI available)                                   |
+| kernel               | 0xa25fb31870bc492d450012ae32dafa72af9e82c3     | (No UI available)                                   |
+| acl                  | 0xfefb0cdb7a1fac257815d52ba82776f98dc70205     | (No UI available)                                   |
+| evmreg               | 0x9087db02300ef24b116daf0426b6ba22b28a0c79     | (No UI available)                                   |
 | voting@v2.0.4        | **0x15a102f80ea3b1bd585a044e9b3c39a84c5f44e5** | ipfs:QmPjWU51opgTVnXwAhYAWasL2CaiYHqy2mXdXtzqfC8sKx |
 | vault@v3.0.1         | 0x952a18185da912984e0bc8a830ba98f8151976af     | ipfs:QmeMabCnkA5BtTTszqqRztYKCXZqE9VQFH4Vx7dY9ue2nA |
 | finance@v2.0.5       | 0x4171f7ac1a4606b93093e8648e2f9a16c59cf3b1     | ipfs:QmeMLs4jHya89khHVSubLaao9cZW6ELZUoYPHkwCUwKBH7 |
@@ -181,7 +181,7 @@ Followed directly by another that looks like this:
 
 | Permissionless app                                                 | Proxy address                                  |
 | ------------------------------------------------------------------ | ---------------------------------------------- |
-| 0x9ac98dc5f995bf0211ed589ef022719d1487e5cb2bab505676f0d084c07cf89a | **0x843bfA21a040E742ec32b8F6991e182D9655AF21** |
+| agent                                                              | **0x843bfA21a040E742ec32b8F6991e182D9655AF21** |
 
 The permissionless app is the Agent app we've just installed. Its address is listed under **Proxy address** in the bottom table. In this guide that's **0x843bfA21a040E742ec32b8F6991e182D9655AF21** . Yours will be slightly different.
 
@@ -280,7 +280,7 @@ Note that, same as before, this command will trigger a vote in the DAO and **you
 You can do this either by using the Aragon client again or, now that you know how to get the address of your apps, by running:
 
 ```
-dao exec <your organization name> <your voting app address> vote <vote id> true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao exec <your organization name> <your voting app address> vote <vote id> true true --environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 <details>
@@ -290,9 +290,9 @@ dao exec <your organization name> <your voting app address> vote <vote id> true 
 
 - The first is always the name or address of the DAO you want to interact with. In our case this is our DAO's name.
 
-- The second is the address of the app where the action is being performed. In our case this is the [Voting app](https://wiki.aragon.org/dev/apps/voting/).
+- The second is the address of the app where the action is being performed. In our case this is the [Voting app](https://help.aragon.org/article/19-voting).
 
-- The third is the name of the method being executed in the app: In our case the method is [`vote`](https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes).
+- The third is the name of the method being executed in the app: In our case the method is [`vote`](https://github.com/aragon/aragon-apps/blob/master/apps/voting/contracts/Voting.sol#L154).
 
 - The remaining arguments are the arguments which the method -- in our case `vote` -- will be executed with. We are passing in three: `1`, `true` and `true`.
 
@@ -365,7 +365,7 @@ Let's start by seeing how we can use the Agent app to allow one Aragon organizat
 The first step is to create another Democracy DAO. Exactly the same as before, head over to [Aragon](https://rinkeby.aragon.org/) and choose the following defaults:
 
 - Support: 100%
-- Min. Quorum: 0%
+- Min. Approval: 0%
 - Duration: 168 hours (or 1 week)
 
 ### 2. Mint a token to allow our first DAO (A) to vote in our new DAO (B)
@@ -381,20 +381,20 @@ This means that to allow A to vote in B we need to mint a token for A's Agent ap
 To do this run:
 
 ```
-dao exec <name of dao B> <token manager app address of dao B> mint <agent app address of dao A> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao exec <name of dao B> <token manager app address of dao B> mint <agent app address of dao A> 1000000000000000000 --environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 Remember, you can find the addresses of the apps in any of your DAOs by running `dao apps <organization name> --environment aragon:rinkeby`.
 
-As you can see, we are using the `dao exec` command to interact with the `mint` method of B's [Token Manager](https://wiki.aragon.org/dev/apps/token-manager/) app.
+As you can see, we are using the `dao exec` command to interact with the `mint` method of B's [Token Manager](https://help.aragon.org/article/18-tokens) app.
 
-[`mint`](https://wiki.aragon.org/dev/apps/token-manager/index.html#mint-tokens) is used to create new tokens and assign them to a receiver. It takes two arguments: a receiver address and the amount of tokens to be created.
+[`mint`](https://github.com/aragon/aragon-apps/blob/master/apps/token-manager/contracts/TokenManager.sol#L104) is used to create new tokens and assign them to a receiver. It takes two arguments: a receiver address and the amount of tokens to be created.
 
 In our case the receiver is A's Agent App, and the amount of tokens to be created is 1.
 
 However, you should notice that instead of writing `1` as the second argument to `mint` we've gone with `1000000000000000000`.
 
-This is because the token created by the [democracy template](https://github.com/aragon/dao-templates/tree/aragon-v0.7/kits/democracy) has 18 decimals, so 1 unit of a token is actually 0.000000000000000001 tokens. This is not what we want.
+This is because the token created by the [company template](https://github.com/aragon/dao-templates/tree/master/templates/company) has 18 decimals, so 1 unit of a token is actually 0.000000000000000001 tokens. This is not what we want.
 
 In order to mint a full token from the CLI we need to pass the full number, which will then be interpreted with 18 decimals.
 In our case this is a 1 followed by eighteen 0s, or `1000000000000000000`.
@@ -406,7 +406,7 @@ Finally, the usual warning: running the above command will trigger a vote in B t
 You can do this either directly through the UI or by running:
 
 ```
-dao exec <name of dao B> <voting app address of dao B> vote 0 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao exec <name of dao B> <voting app address of dao B> vote 0 true true --environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 On the UI, the vote will look something like this.
@@ -428,7 +428,7 @@ You should see that you've successfully added another token holder (your Agent a
 As in step 2, we'll run `dao exec` again, except this time the first argument to `mint` will be the address of the third entity we want to add to B.
 
 ```
-dao exec <name of dao B> <token manager app address of dao B> mint <third entity's address> 1000000000000000000 --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao exec <name of dao B> <token manager app address of dao B> mint <third entity's address> 1000000000000000000 --environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 Running the above will create an open vote in B. Again we'll need to vote _yes_ to confirm the minting.
@@ -459,9 +459,9 @@ Remember that `dao act` takes at least three arguments:
 
 - The first is the address of the Agent app you want to use to perform an action. In our case this is the address of A's Agent app.
 
-- The second is the address of an **external contract** or the address of an app within a DAO. In our case this is the address of B's [Voting app](https://wiki.aragon.org/dev/apps/voting/).
+- The second is the address of an **external contract** or the address of an app within a DAO. In our case this is the address of B's [Voting app](https://help.aragon.org/article/19-voting).
 
-- The third is the [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute in either the external contract or the app we specified in the second argument. In our case the method is [`vote`](https://wiki.aragon.org/dev/apps/voting/index.html#casting-votes) and its full signature is `vote(unint256,bool,bool)`.
+- The third is the [full signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function) of the method we wish to execute in either the external contract or the app we specified in the second argument. In our case the method is [`vote`](https://github.com/aragon/aragon-apps/blob/master/apps/voting/contracts/Voting.sol#L154) and its full signature is `vote(unint256,bool,bool)`.
 
 - Finally, the remaining arguments are the arguments which the method -- in our case `vote` -- will be exectuted with. We can see from the signature that `vote` takes three arguments: an interger, a boolean, and a boolean. In our case we will pass in: `1`, `true` and `true`.
 
@@ -474,7 +474,7 @@ Remember that `dao act` takes at least three arguments:
 So in our case, we run:
 
 ```
-dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao act <agent app address of dao A> <voting app address of dao B>  "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 The result of this command will be to trigger a vote in A on whether to allow A's Agent app to execute the vote in B.
@@ -490,7 +490,7 @@ The final step is to confirm the vote in A.
 Again, we can do this either through the UI or by running:
 
 ```
-dao exec <name of dao A> <voting app address of dao A> vote 2 true true --environment aragon:rinkeby --apm.ipfs.rpc https://ipfs.eth.aragon.network/ipfs/
+dao exec <name of dao A> <voting app address of dao A> vote 2 true true --environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/
 ```
 
 Note that we passed in a vote id of `2` as the first argument to `vote`. That's because this is the third vote created in A, and vote ids start at 0.
