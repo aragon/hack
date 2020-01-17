@@ -33,8 +33,8 @@ jobs:
         run: |
           git config --global user.email "autobot@noreply.aragon.org"
           git config --global user.name "Autobots, roll out!"
-          echo "machine github.com login sohkai password ${{ secrets.GIT_TOKEN }}" > $HOME/.netrc
-          GIT_USER=sohkai npx docusaurus-publish
+          echo "machine github.com login arabot-1 password ${{ secrets.GIT_TOKEN }}" > $HOME/.netrc
+          GIT_USER="arabot-1" npx docusaurus-publish
         working-directory: ./website
 env:
   CI: true
