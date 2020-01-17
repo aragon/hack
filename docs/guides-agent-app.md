@@ -24,7 +24,7 @@ Concretely, the Agent app allows for things like:
 
 # Prerequisites
 
-While there are no formal prerequisites to this guide, it'll be helpful for you to have a basic understanding of both our [Voting](https://help.aragon.org/article/19-voting) and [Token Manager](https://help.aragon.org/article/18-tokens/) apps. The best way to do that is to go through sections [2.1](https://help.aragon.org/article/30-create-a-new-company-organization) and [2.2](https://help.aragon.org/article/31-explore-the-company-organization) of our [User Guide](hhttps://help.aragon.org/category/12-templates).
+While there are no formal prerequisites to this guide, it'll be helpful for you to have a basic understanding of both our [Voting](https://help.aragon.org/article/19-voting) and [Token Manager](https://help.aragon.org/article/18-tokens/) apps. The best way to do that is to go through sections [2.1](https://help.aragon.org/article/30-create-a-new-company-organization) and [2.2](https://help.aragon.org/article/31-explore-the-company-organization) of our [User Guide](https://help.aragon.org/category/12-templates).
 
 Apart from that this guide should be self-contained.
 
@@ -32,7 +32,7 @@ Apart from that this guide should be self-contained.
 
 ## 1. Create a Company DAO
 
-Before we start, you'll need to head over to [Aragon](https://rinkeby.aragon.org/) and create a new DAO with the [company template](hhttps://github.com/aragon/dao-templates/tree/master/templates/company).
+Before we start, you'll need to head over to [Aragon](https://rinkeby.aragon.org/) and create a new DAO with the [company template](https://github.com/aragon/dao-templates/tree/master/templates/company).
 
 If you're not sure how to do that, please have a look at [this section](https://help.aragon.org/article/30-create-a-new-company-organization).
 
