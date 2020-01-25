@@ -35,7 +35,7 @@ Today, we will build a simple counter app — you can increment it, you can decr
 
 ```solidity
 // contracts/CounterApp.sol
-pragma solidity 0.4.24;
+pragma solidity ^0.4.24;
 
 contract CounterApp {
     // Events
