@@ -155,10 +155,6 @@
         "title": "aragonAPI for Javascript",
         "sidebar_label": "App API"
       },
-      "api-js-ref-app": {
-        "title": "aragonAPI for Javascript",
-        "sidebar_label": "App API"
-      },
       "api-js-ref-architecture": {
         "title": "aragonAPI for architecture",
         "sidebar_label": "Architecture of apps"
