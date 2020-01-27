@@ -1,7 +1,7 @@
 {
   "scripts": {
     "examples": "docusaurus-examples",
-    "sync-assets": "rsync -rtu \"$(dirname $(node -p 'require.resolve(\"@aragon/ui\")'))/\" static/aragon-ui",
+    "sync-assets": "copy-aragon-ui-assets ./",
     "hack_solidity_version": "find ./node_modules/@aragon/os/contracts -name \"*.sol\" -exec sed -i'' -e 's/pragma solidity 0.4.18/pragma solidity ^0.4.18/g' {} \\;",
     "hack_clean_os_lib_api": "rm -f ../docs/api_lib_*",
     "generate:os": "npm run hack_solidity_version && solidity-docgen --exclude lib node_modules/@aragon/os node_modules/@aragon/os/contracts ../ && npm run hack_clean_os_lib_api",
@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "@aragon/os": "^4.0.1",
-    "@aragon/ui": "^0.16.0",
+    "@aragon/ui": "^1.2.1",
     "highlightjs-solidity": "^1.0.6",
-    "styled-components": "^3.2.6"
+    "styled-components": "^5.0.0"
   }
 }

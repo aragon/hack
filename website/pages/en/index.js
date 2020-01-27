@@ -47,8 +47,6 @@ function pageUrl(page, language) {
   return siteConfig.baseUrl + (language ? language + '/' : '') + page + '.html'
 }
 
-
-
 class Hero extends React.Component {
   render() {
     return (
@@ -73,7 +71,7 @@ class Hero extends React.Component {
 
 const BuildingBlocks = props => (
   <BuildingBlocksContainer className="white-section">
-    <BlocksCards href={docUrl('apm-intro')} className="pm">
+    <BlocksCards href={docUrl('apm-ref')} className="pm">
       <div className="border-line" />
       <div className="blocks-container">
         <img src={siteConfig.baseUrl + 'img/navbar/aragonPM.svg'} />
@@ -85,7 +83,7 @@ const BuildingBlocks = props => (
         </p>
       </div>
     </BlocksCards>
-    <BlocksCards href={docUrl('aragonos-intro')} className="os">
+    <BlocksCards href={docUrl('basics-os-concepts')} className="os">
       <div className="border-line" />
       <div className="blocks-container">
         <img src={siteConfig.baseUrl + 'img/navbar/aragonOS.svg'} />
@@ -108,7 +106,7 @@ const BuildingBlocks = props => (
         </p>
       </div>
     </BlocksCards>
-    <BlocksCards href={docUrl('aragonui-intro')} className="ui">
+    <BlocksCards href={docUrl('aragon-ui')} className="ui">
       <div className="border-line" />
       <div className="blocks-container">
         <img src={siteConfig.baseUrl + 'img/navbar/aragonUI.svg'} />
@@ -159,7 +157,10 @@ const UseCases = props => (
           You can create organizations that let entities (users, smart
           contracts) interact with each other and create rich{' '}
           <b>governance mechanisms</b> by using the{' '}
-          <a href="/docs/acl-intro.html">Access Control List</a>.
+          <a href="/docs/basics/basics-os-concepts.htm/#how-does-it-work">
+            Access Control List
+          </a>
+          .
         </p>
         <p>
           You can also create templates so other people will be able to create
@@ -260,7 +261,11 @@ const AlmostFullSection = props => (
           <DeveloperImage src={imgUrl('you-developer.png')} />
         </DeveloperImageContainer>
         <DeveloperContainer className="divided-section-container">
-          <h3>This is for you,<br/>developer.</h3>
+          <h3>
+            This is for you,
+            <br />
+            developer.
+          </h3>
           <p>
             Aragon is the most powerful and modular way to run DAOs. But on our
             journey creating DAOs, we discovered how to modularize individual

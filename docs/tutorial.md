@@ -6,7 +6,6 @@ sidebar_label: Your first Aragon app
 
 #####
 
-
 In this guide, we will walk you through creating your first Aragon app using [aragonOS](os-intro.md), the JavaScript implementation of [aragonAPI](api-intro.md), [aragonUI](ui-intro.md) and [aragonCLI](/docs/cli-intro.html).
 
 ## The setup
@@ -358,7 +357,7 @@ Let's modify it accordingly:
 
 > **Prerequisite**<br>
 > If this is your first time using the CLI, you will first need to install IPFS to store the development files. This command only needs to be run once:
-> 
+>
 > ```sh
 > npx aragon ipfs install
 > ```
@@ -378,7 +377,7 @@ This will do a couple of things for you:
 
 After running this command a browser tab should pop up with your freshly created DAO, complete with permissions and your local app installed.
 
-![Screenshot of dapp](/docs/assets/counter.png)
+![Screenshot of dapp](/docs/assets/counter-app.png)
 
 > **Note**<br>
 > It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the [React template](https://github.com/aragon/aragon-react-boilerplate)!

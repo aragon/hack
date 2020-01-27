@@ -1,68 +1,36 @@
 {
   "docs": {
     "The basics": [
-      "getting-started",
-      "glossary",
-      "stack",
-      "acl-intro",
-      "forwarding-intro",
-      "upgradeability-intro",
-      "package-management",
-      "templates-intro",
-      "client",
-      "human-readable-txs"
+      "basics-getting-started",
+      "basics-stack",
+      "basics-os-concepts"
     ],
-    "Guides": [
-      "tutorial",
-      "guides-publish",
+    "Advance concepts": [
+      "aragon-api",
+      "aragon-cli",
+      "aragon-ui",
+      "os-ref",
+      "apm-ref",
+      "aragonos-building",
       "guides-custom-deploy",
       "guides-use-agent",
-      {
-        "type": "subcategory",
-        "label": "Signers",
-        "ids": ["guides-use-frame", "guides-use-metamask"]
-      },
-      "guides-faq"
-    ],
-    "aragonCLI": [
-      "cli-intro",
-      "cli-main-commands",
-      "cli-dao-commands",
-      "cli-apm-commands",
-      "cli-ipfs-commands",
-      "cli-global-confg"
-    ],
-    "aragonPM": ["apm-intro", "apm-architecture", "apm-ref"],
-    "aragonOS": [
-      "aragonos-intro",
-      "aragonos-motivation",
-      "aragonos-building",
-      "aragonos-ref",
+      "guides-app-center",
+      "guides-publish",
+      "guides-templates",
       "aragonos-4-migration",
-      "aragonos-3-ref"
+      "aragonos-3-ref",
+      "use-frame", 
+      "use-metamask"
     ],
-    "aragonAPI": [
-      "api-intro",
-      {
-        "type": "subcategory",
-        "label": "JavaScript",
-        "ids": [
-          "api-js-quick-start",
-          "api-js-ref-api",
-          "api-js-ref-react",
-          "api-js-ref-wrapper",
-          "api-js-ref-providers",
-          "api-js-ref-architecture",
-          "api-js-guide-bg-scripts"
-        ]
-      }
-    ],
-    "aragonUI": ["aragonui-intro"],
-    "App Center": [
-      "app-center-intro",
-      "app-center-preparing-assets",
-      "app-center-submission"
-    ]
+    "FAQ": [
+      "cli-install",
+      "set-private-key",
+      "verify-contracts",
+      "propagation",
+      "metamask",
+      "ipfs",
+      "reset-devchain",
+      "aragon-dir"]
   },
   "docs-api": {
     "ACL": [
@@ -133,6 +101,30 @@
       "kernel_KernelConstants_KernelNamespaceConstants",
       "kernel_KernelProxy",
       "kernel_KernelStorage"
+    ]
+  },
+  "aragonAPI": {
+    "aragonAPI": "api-intro",
+    "JavaScript": [
+        "api-js-quick-start",
+        "api-js-ref-api",
+        "api-js-ref-react",
+        "api-js-ref-wrapper",
+        "api-js-ref-providers",
+        "api-js-ref-architecture",
+        "api-js-guide-bg-scripts"
+      ]
+  },
+  "aragonCLI": {
+    "aragonCLI": [
+      "cli-intro",
+      "cli-global-confg"
+    ],
+    "Commands": [
+      "cli-main-commands",
+      "cli-dao-commands",
+      "cli-apm-commands",
+      "cli-ipfs-commands"
     ]
   },
   "design-system": {
