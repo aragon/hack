@@ -91,7 +91,7 @@ If you have a version older than `0.4.22`, you should first uninstall your curre
 
 After upgrading aragonCLI, or if unexpected errors are being experienced, resetting IPFS by deleting the `~/.ipfs` directory and then run `aragon ipfs` sometimes help.
 
-### Difficulty for a local IPFS node to load information from Aragon's IPFS server
+### Local IPFS node having trouble loading information from Aragon's IPFS server
 
 The best way around this is to:
 
