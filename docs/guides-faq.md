@@ -10,9 +10,11 @@ sidebar_label: Troubleshooting
 
 ### Unix considerations
 
-If you're seeing several errors (e.g. `node-gyp rebuild`) it's probably cause you need to run node long term support (LTS) version, currently `10.15.3`.
+If you're seeing several installation errors (e.g. `node-gyp rebuild`), the problem is probably due to an outdated Node.js version.
 
-If you're seeing one or more errors that look like:
+aragonCLI currently supports the latest releases of the following Node.js versions: 10, 11 and 12.  
+
+If you're seeing errors similar to:
 
 ```sh
 EACCES: permission denied
@@ -30,11 +32,7 @@ An arguably better way to fix the problem is to follow the steps outlined in thi
 
 ### Windows considerations
 
-You might need to run the shell with administrator rights when installing the aragonCLI, because our `go-ipfs` dependency will need to create a symlink to work correctly.
-
-If you have problems during the instalation of aragonCLI or any other dependencies. You probably need to install [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) or similar package.
-
-Again, if you're having trouble fixing things, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help)
+Windows is not officially supported by aragonCLI at the moment. 
 
 ### Note on Git
 
@@ -73,7 +71,7 @@ You can also define a `~/.aragon/mnemonic.json` file like:
 
 ## Verifying your contracts
 
-To be sure you are trying to verify the correct smart contract be sure to check what app version is installed in you DAO with:
+You can validate the smart contract and other files of a specific app installed in your DAO with:
 
 ```sh
 dao apps <dao-address>
@@ -87,21 +85,13 @@ You can check the `commitHash` in aragon-apps GitHub repo and view the smart con
 
 ### IPFS version
 
-If you have a version recent than `0.4.18-hacky2` you should first uninstall your current version with `aragon ipfs unisntall` and then install ipfs again with `aragon ipfs install`.
-
-The latest version `0.4.21` is throwing:
-
-```
-ERROR p2pnode: mdns error: could not determine host IP addresses
-```
-
-This error is tracked [here](https://github.com/ipfs/go-ipfs/issues/6359). It was fixed, but not released yet.
+If you have a version older than `0.4.22`, you should first uninstall your current version with `aragon ipfs unisntall` and install IPFS again with `aragon ipfs install`.
 
 ### Resetting IPFS
 
 After upgrading aragonCLI, or if unexpected errors are being experienced, resetting IPFS by deleting the `~/.ipfs` directory and then run `aragon ipfs` sometimes help.
 
-### Difficult for a local IPFS node to load information from our IPFS server
+### Difficulty for a local IPFS node to load information from Aragon's IPFS server
 
 The best way around this is to:
 
@@ -113,7 +103,7 @@ The best way around this is to:
 
 When publishing a package via `aragon apm publish`, you will be returned an IPFS content (root) hash. For the Aragon client to load these files through its default IPFS configuration, this hash needs to be accessible at `https://ipfs.eth.aragon.network/ipfs/<hash>`.
 
-If you are running into issues with your hash being propagated to this URL, try the following steps.
+If you are running into issues with your hash being propagated to this URL, try running `ipfs propagate <hash>` or the following steps.
 
 1. If you have `aragon ipfs` running, quit that daemon.
 2. Run the command `ipfs daemon --enable-namesys-pubsub`.
