@@ -74,7 +74,7 @@ You can also define a `~/.aragon/mnemonic.json` file like:
 You can validate the smart contract and other files of a specific app installed in your Aragon organization with:
 
 ```sh
-dao apps <dao-address>
+dao apps <org-address>
 ```
 
 For example `voting@1.1.5`. We can check the information for that deployment in the [`deploys.yml` file](https://github.com/aragon/deployments/blob/470c6929674a4afe4f89f9a6917578f7e9486d39/environments/rinkeby/deploys.yml#L40). Be sure to look in the environment you are working (eg. rinkeby).
@@ -128,7 +128,7 @@ Note that it is best practice to pin the content hash to an IPFS server you mana
 
 ### Using Metamask
 
-To interact with your DAO using [Metamask](https://metamask.io/) you must make sure that:
+To interact with your organization using [Metamask](https://metamask.io/) you must make sure that:
 
 - It's unlocked
 - Private network (_Localhost 8545_) is chosen
