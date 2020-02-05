@@ -71,7 +71,7 @@ You can also define a `~/.aragon/mnemonic.json` file like:
 
 ## Verifying your contracts
 
-You can validate the smart contract and other files of a specific app installed in your DAO with:
+You can validate the smart contract and other files of a specific app installed in your Aragon organization with:
 
 ```sh
 dao apps <dao-address>
