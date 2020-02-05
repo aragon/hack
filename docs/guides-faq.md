@@ -85,7 +85,7 @@ You can check the `commitHash` in aragon-apps GitHub repo and view the smart con
 
 ### IPFS version
 
-If you have a version older than `0.4.22`, you should first uninstall your current version with `aragon ipfs unisntall` and install IPFS again with `aragon ipfs install`.
+If you have a version older than `0.4.22`, you should first uninstall your current version with `aragon ipfs uninstall` and install IPFS again with `aragon ipfs install`.
 
 ### Resetting IPFS
 
