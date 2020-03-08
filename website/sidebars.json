@@ -14,13 +14,17 @@
     ],
     "Guides": [
       "tutorial",
+      "guides-buidler-migration",
       "guides-publish",
       "guides-custom-deploy",
       "guides-use-agent",
       {
         "type": "subcategory",
         "label": "Signers",
-        "ids": ["guides-use-frame", "guides-use-metamask"]
+        "ids": [
+          "guides-use-frame",
+          "guides-use-metamask"
+        ]
       },
       "guides-faq"
     ],
@@ -32,7 +36,11 @@
       "cli-ipfs-commands",
       "cli-global-confg"
     ],
-    "aragonPM": ["apm-intro", "apm-architecture", "apm-ref"],
+    "aragonPM": [
+      "apm-intro",
+      "apm-architecture",
+      "apm-ref"
+    ],
     "aragonOS": [
       "aragonos-intro",
       "aragonos-motivation",
@@ -57,7 +65,9 @@
         ]
       }
     ],
-    "aragonUI": ["aragonui-intro"],
+    "aragonUI": [
+      "aragonui-intro"
+    ],
     "App Center": [
       "app-center-intro",
       "app-center-preparing-assets",
@@ -105,7 +115,10 @@
       "common_UnstructuredStorage",
       "common_VaultRecoverable"
     ],
-    "ENS": ["ens_ENSConstants", "ens_ENSSubdomainRegistrar"],
+    "ENS": [
+      "ens_ENSConstants",
+      "ens_ENSSubdomainRegistrar"
+    ],
     "EVMSCRIPT": [
       "evmscript_EVMScriptRegistry",
       "evmscript_EVMScriptRunner",
