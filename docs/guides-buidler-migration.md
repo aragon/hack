@@ -130,7 +130,64 @@ module.exports = {
 
 ## 5. Migrate tests 
 
+Since the Aragon Buidler plugin uses truffle 5, you may have to migrate part of your tests. Here are a few tips on the process.
+
+### Async/Await 
+
+Most truffle contract functions are now asynchronous, so code like this:
+
+```js
+  const dao = Kernel.at('0x9d1C272D0541345144D943470B3a90f14c56910c')
+```
+
+should become:
+
+```js
+  const dao = await Kernel.at('0x9d1C272D0541345144D943470B3a90f14c56910c')
+```
+
+### Web3.js 1.2
+
+Truffle 5 is using Web3.js `1.2` instead of `0.20`, which comes with a few changes:
+
+- [PromiEvent](https://web3js.readthedocs.io/en/v1.2.0/callbacks-promises-events.html) objects.
+- Addresses are now mixed-case instead of lowercase.
+- Many Web3 utility functions have been moved to [web3.utils](https://web3js.readthedocs.io/en/v1.2.0/web3-utils.html)
+- Numbers returned directly from Web3 are now strings.
+- Functions that return multiple values now return an object with both named and indexed keys.
+
+
+### BN.js
+
+Truffle 5 has also replaced [bignumber.js](https://github.com/MikeMcl/bignumber.js) with [BN.js](https://github.com/indutny/bn.js). Instances of `web3.BigNumber()` will therefore have to be changed to `web3.utils.toBN()`.
+
+### Ethereum addresses
+
+You now need to use full Ethereum addresses instead of partial ones like `0x0`. So this address:
+
+```js
+  const ZERO = '0x00'
+```
+
+would become:
+
+```js
+  const ZERO = '0x0000000000000000000000000000000000000000'
+```
+
 ## 6. Start the app and uninstall unnecessary dependencies
+
+You are now ready to start your app:
+
+```sh
+npm start
+```
+
+You can also uninstall dependencies that are no longer required:
+
+  - @aragon/cli
+  - ganache-cli
+  - truffle
 
 
 
