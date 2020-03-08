@@ -6,9 +6,9 @@ sidebar_label: Buidler plugin migration
 
 ##### How to migrate an existing Aragon app to the Buidler plugin
 
-This guide aims to describe the basic steps needed to migrate an Aragon app from the [aragonCLI](https://github.com/aragon/aragon-cli) to the new [Buidler plugin](https://blog.aragon.one/buidler-plugin). This new Aragon tool offers a much more user-friendly and stable developer experience. You can learn more about the Buidler plugin [here](https://github.com/aragon/buidler-aragon).  
+This guide aims to describe the basic steps needed to migrate an Aragon app from the [aragonCLI](https://github.com/aragon/aragon-cli) to the new [Buidler plugin](https://blog.aragon.one/buidler-plugin). This new Aragon tool offers a more user-friendly and stable developer experience. You can learn more about the Buidler plugin [here](https://github.com/aragon/buidler-aragon). 
 
-For this tutorial, we will use the standard [react Aragon boilerplate](https://github.com/aragon/aragon-react-boilerplate) source code as our starting point. This guide assumes that you have a general understanding of the Aragon stack. 
+For this tutorial, we will use the standard [react boilerplate](https://github.com/aragon/aragon-react-boilerplate) source code as our starting point. This guide assumes that you have a general understanding of the Aragon stack. 
 
 ## 1. Install dependencies
 
@@ -22,7 +22,7 @@ The first step is to install the following NPM development dependencies:
   - **"bignumber.js"**: "^9.0.0"
   - **"web3"**: "^1.2.6"
 
-Most of these dependencies are related to Nomic Labs' [Buidler](https://buidler.dev), a task runner for Ethereum smart contract developers. However, one dependency that you may need to upgrade is `web3`, since Aragon's plugin requires `v1.2.6` or higher. This may introduce some breaking changes, mostly in tests. See the [Migrate tests](#5-migrate-tests) section for more information.
+Most of these dependencies should be new to your project and are related to Nomic Labs' [Buidler](https://buidler.dev), a task runner for Ethereum smart contract developers. However, one dependency that you may need to upgrade is `web3`, since Aragon's plugin requires `v1.2.6` or higher. This may introduce some breaking changes, mostly in tests. See the [Migrate tests](#5-migrate-tests) section for more information.
 
 ## 2. Add/replace npm scripts
 
@@ -92,7 +92,7 @@ You can find more information about the Buidler configuration file [here](https:
 
 ## 5. Hooks
 
-Hooks are functions executed at different moments of an app initialization and can be used to specify the `initialize()` function parameters. For example, initializing the app with a `uint` and a `string` would be as simple as writing the following hook:
+Hooks are custom functions called at various stages of an app initialization. They can be used to execute any logic before or after the app is created and also to specify the app's [`initialize()`](https://hack.aragon.org/docs/aragonos-building#constructor-and-initialization) function parameters. For example, initializing the app with a `uint` and a `string` would be as simple as writing the following hook:
 
 ```js
   getInitParams: async ({}, { web3, artifacts }) => {
@@ -100,7 +100,7 @@ Hooks are functions executed at different moments of an app initialization and c
   }
 ```
 
-It can also be used to replace the Aragon template logic. In our case, we will simply add empty functions since we don't need any initialization logic. So we will create a file named `buidler-hooks.js` in the `scripts` folder and add the following code to it:
+Hooks can also be used to replace Aragon's templates logic. You can find complete examples [here](https://github.com/aragon/aragon-apps/pull/1084) and [here](https://github.com/aragon/aragon-apps/pull/1092). In our case, we will simply add empty functions since we don't need any initialization logic. So we will create a file named `buidler-hooks.js` in the `scripts` folder and add the following code:
 
 ```js
 module.exports = {
@@ -130,7 +130,7 @@ module.exports = {
 
 ## 5. Migrate tests 
 
-Since the Aragon Buidler plugin uses truffle 5, you may have to migrate part of your tests. Here are a few tips on the process.
+Since the Aragon Buidler plugin uses truffle 5, you may have to migrate part of your tests. Here are a few tips to ease the process.
 
 ### Async/Await 
 
@@ -151,7 +151,7 @@ should become:
 Truffle 5 is using Web3.js `1.2` instead of `0.20`, which comes with a few changes:
 
 - [PromiEvent](https://web3js.readthedocs.io/en/v1.2.0/callbacks-promises-events.html) objects.
-- Addresses are now mixed-case instead of lowercase.
+- Addresses are now mixed-case instead of lower-case.
 - Many Web3 utility functions have been moved to [web3.utils](https://web3js.readthedocs.io/en/v1.2.0/web3-utils.html)
 - Numbers returned directly from Web3 are now strings.
 - Functions that return multiple values now return an object with both named and indexed keys.
