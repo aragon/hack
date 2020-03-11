@@ -34,7 +34,7 @@ You might need to run the shell with administrator rights when installing the ar
 
 If you have problems during the instalation of aragonCLI or any other dependencies. You probably need to install [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) or similar package.
 
-Again, if you're having trouble fixing things, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help)
+Again, if you're having trouble fixing things, please reach out to us in our Spectrum [App development channel](https://spectrum.chat/aragon/app-development).
 
 ### Note on Git
 

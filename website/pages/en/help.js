@@ -29,7 +29,7 @@ class Help extends React.Component {
         title: 'Open an issue',
       },
       {
-        content: 'Ask questions about the documentation, issues with the tooling, etc. at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help)',
+        content: 'Ask questions about the documentation, issues with the tooling, etc. in our Spectrum [App development channel](https://spectrum.chat/aragon/app-development).',
         title: 'Join the community',
       }
     ]
@@ -45,7 +45,7 @@ class Help extends React.Component {
             <br/>
             <h3>Join the community chat</h3>
             <p>
-                Ask questions about the documentation, issues with the tooling or how to architect your app at the <a href="https://aragon.chat/channel/dev-help">#dev-help channel on the Aragon Chat</a>
+                Ask questions about the documentation, issues with the tooling or how to architect your app in our Spectrum <a href="https://spectrum.chat/aragon/app-development">App development channel</a>
             </p>
             <br/>
             <h3>Open an issue</h3>

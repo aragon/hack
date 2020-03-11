@@ -151,7 +151,7 @@ npm i -g @aragon/cli
 
 Hopefully, it downloaded successfully. If that's the case, congrats! You're now officially ready to start building your first Aragon DAO!
 
-If you're having trouble with this step, you should take a look at the installing aragonCLI section of the [troubleshooting guide.](/docs/guides-faq#installing-aragonCLI) If that doesn't fix things, please don't hesitate to reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
+If you're having trouble with this step, you should take a look at the installing aragonCLI section of the [troubleshooting guide.](/docs/guides-faq#installing-aragonCLI) If that doesn't fix things, please don't hesitate to reach out to us in the [SDK Working Group channel](https://spectrum.chat/aragon/sdk-working-group).
 
 ## Quick start
 
@@ -230,7 +230,7 @@ To sign your first transaction with Metamask, head to the **Signing your first t
 
 ## Next steps
 
-We hope you enjoyed that 😊! Please don't hesitate to leave us any [feedback](https://aragon.chat/channel/feedback).
+We hope you enjoyed that 😊! Please don't hesitate to leave us any feedback on [Spectrum](https://spectrum.chat/aragon/app-development).
 
 Now that you’ve built your first DAO, feel free to take a look at the docs. If you're interested in understanding things at a deeper level, we recommend you jump straight into our [awesome tutorial](/docs/tutorial.html).
 

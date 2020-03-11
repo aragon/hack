@@ -22,7 +22,7 @@ To take full advantage of Frame, we recommend you have `aragonCLI` installed as 
 npm install -g @aragon/cli
 ```
 
-If you're having trouble with this step, you should take a look at the installing aragonCLI section of the [troubleshooting guide.](/docs/guides-faq#installing-aragonCLI) If that doesn't fix things, please don't hesitate to reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help).
+If you're having trouble with this step, you should take a look at the installing aragonCLI section of the [troubleshooting guide.](/docs/guides-faq#installing-aragonCLI) If that doesn't fix things, please don't hesitate to reach out to us in our Spectrum [App development channel](https://spectrum.chat/aragon/app-development).
 
 ## Configure your device
 
