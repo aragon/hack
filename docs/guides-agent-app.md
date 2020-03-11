@@ -58,7 +58,7 @@ Hopefully, it installed successfully 😊.
 
 If not, we recommend you take a quick look at the [installing aragonCLI](/docs/guides-faq.html#installing-aragoncli) section of our [troubleshooting guide](/docs/guides-faq.html#installing-aragonCLI). It should help diagnose and fix the problem 🧐.
 
-If that still doesn't fix things 😟, please reach out to us at the [#dev-help channel on the Aragon Chat](https://aragon.chat/channel/dev-help). We're more than happy to help.
+If that still doesn't fix things 😟, please reach out to us in our Spectrum [App development channel](https://spectrum.chat/aragon/app-development). We're more than happy to help.
 
 Note that aragonCLI v5.4.0 was the first version to [include support](https://blog.aragon.one/aragon-agent-beta-release/) for Agent.
 
