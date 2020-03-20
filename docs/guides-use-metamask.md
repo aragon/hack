@@ -60,7 +60,7 @@ Why would we need to select other networks? Simply put, before launching a proje
 
 The main reason is that Testnet ETH can be obtained without having to pay real money. This gives developers and the community a chance to iron out any problems before real money is involved.
 
-There are four testnets: **Ropsten**, **Kovan**, **Rinkleby**, and **Goerli**.
+There are four testnets: **Ropsten**, **Kovan**, **Rinkeby**, and **Goerli**.
 
 Don't worry about the precise differences between them at this stage. All you need to know is that they simulate Ethereum and can be used without having to pay real money.
 
