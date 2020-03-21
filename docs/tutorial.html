@@ -67,42 +67,93 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/aragon/hack/edit/master/docs/tutorial.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Your first Aragon app</h1></header><article><div><span><h5></h5>
-<p>In this guide, we will walk you through creating your first Aragon app using <a href="/docs/aragonos-intro">aragonOS</a>, the JavaScript implementation of <a href="/docs/api-intro">aragonAPI</a>, <a href="/docs/aragonui-intro">aragonUI</a> and <a href="/docs/cli-intro.html">aragonCLI</a>.</p>
+<p>In this guide, we will walk you through creating your first Aragon app using <a href="/docs/aragonos-intro">aragonOS</a>, the JavaScript implementation of <a href="/docs/api-intro">aragonAPI</a>, <a href="/docs/aragonui-intro">aragonUI</a> and the Aragon <a href="https://github.com/aragon/buidler-aragon">buidler plugin</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="the-setup"></a><a href="#the-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The setup</h2>
 <p>Let's first set up and bootstrap our project:</p>
-<pre><code class="hljs css language-sh">npx create-aragon-app foo.aragonpm.eth tutorial
+<pre><code class="hljs css language-sh">npx create-aragon-app foo tutorial
 </code></pre>
-<p>This will create a new directory named <code>foo</code>, with files cloned from <a href="https://github.com/aragon/your-first-aragon-app">your first Aragon app template</a>. This particular boilerplate includes everything you need to get started — Truffle, aragonOS and aragonAPI.</p>
-<p>Notice that we input a fully qualified <a href="https://ens.domains/">ENS</a> name. Let's examine the ENS name we entered, because it is not entirely arbitrary.</p>
-<p><img src="https://i.imgur.com/MQnYT6d.png" alt="Illustration of foo.aragonpm.eth"></p>
-<p>The first label in the ENS name is the name of our app. This can be anything you want, given that the full ENS name is not taken.</p>
-<p>The second and third label is the name of the <a href="/docs/package-management">aragonPM</a> (aragonPM) registry that your repository will be (or is) registered to. For the sake of simplicity, this guide assumes that you have rights to create repositories on aragonpm.eth, but you could deploy your own aragonPM registry if you so desire.</p>
+<p>This will create a new directory named <code>foo</code>, with files cloned from <a href="https://github.com/aragon/your-first-aragon-app">your first Aragon app template</a>. This particular boilerplate includes everything you need to get started — <a href="https://buidler.dev/">buidler</a>, aragonOS and aragonAPI.</p>
+<h3><a class="anchor" aria-hidden="true" id="structure"></a><a href="#structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structure</h3>
+<p>This boilerplate has the following structure:</p>
+<pre><code class="hljs css language-md">root
+├── app
+├ ├── src
+├ ├ ├── App.js
+├ ├ ├── index.js
+├ ├ └── script.js
+├ └── package.json
+├── contracts
+├ └── CounterApp.sol
+├── scripts
+├ └── buidler-hooks.js
+├── arapp.json
+├── manifest.json
+├── buidler.config.js
+└── package.json
+</code></pre>
+<ul>
+<li><strong>app</strong>: Frontend folder. Completely encapsulated, has its own package.json and dependencies.
+<ul>
+<li><strong>src</strong>: Source files.
+<ul>
+<li><code>App.js</code>: Aragon app root component.</li>
+<li><code>index.js</code>: Aragon app entry point.</li>
+<li><code>script.sol</code>: Aragon app background script.</li>
+</ul></li>
+<li><a href="https://docs.npmjs.com/creating-a-package-json-file"><strong>package.json</strong></a>: Frontend npm configuration file.</li>
+</ul></li>
+<li><strong>contracts</strong>: Smart Constracts folder.
+<ul>
+<li><code>CounterApp.sol</code>: Aragon app contract.</li>
+</ul></li>
+<li><strong>scripts</strong>: Scripts folder.
+<ul>
+<li><code>buidler-hooks.js</code>: Buidler script hook.</li>
+</ul></li>
+<li><strong>test</strong>: Tests folder.</li>
+<li><a href="https://hack.aragon.org/docs/cli-global-confg#the-arappjson-file"><strong>arapp.json</strong></a>: Aragon configuration file. Includes Aragon-specific metadata for your app.</li>
+<li><a href="https://hack.aragon.org/docs/cli-global-confg#the-manifestjson-file"><strong>manifest.json</strong></a>: Aragon configuration file. Includes web-specific configurations.</li>
+<li><a href="https://buidler.dev/config/"><strong>buidler.config.js</strong></a>: Buidler configuration file.</li>
+<li><a href="https://docs.npmjs.com/creating-a-package-json-file"><strong>package.json</strong></a>: Main npm configuration file.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="stuck"></a><a href="#stuck" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stuck?</h3>
+<p>If you get stuck at any point. <a href="https://github.com/aragon/your-first-aragon-app/pull/2/files">Come back here to check the diff with changes after the tutorial is completed</a>.</p>
+<p>Now let's start with it 💪.</p>
 <h2><a class="anchor" aria-hidden="true" id="writing-a-simple-contract"></a><a href="#writing-a-simple-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing a simple contract</h2>
 <p>To illustrate how easy it is to use aragonOS, we will build our app as a vanilla smart contract, without any Aragon-specific interfaces at all.</p>
 <p>Today, we will build a simple counter app — you can increment it, you can decrement it, and it will all be decentralized. Decentralized coffee counter, anyone?</p>
 <pre><code class="hljs css language-solidity"><span class="hljs-comment">// contracts/CounterApp.sol</span>
 pragma solidity ^<span class="hljs-number">0.4</span><span class="hljs-number">.24</span>;
 
+<span class="hljs-keyword">import</span> <span class="hljs-string">"@aragon/os/contracts/lib/math/SafeMath.sol"</span>;
+
+
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">CounterApp</span> </span>{
-    <span class="hljs-comment">// Events</span>
-    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Increment</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> entity</span>)</span>;
-    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Decrement</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> entity</span>)</span>;
+    <span class="hljs-keyword">using</span> SafeMath <span class="hljs-keyword">for</span> <span class="hljs-keyword">uint256</span>;
 
-    <span class="hljs-comment">// State</span>
-    <span class="hljs-keyword">int</span> <span class="hljs-keyword">public</span> value;
+    <span class="hljs-comment">/// Events</span>
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Increment</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> entity, <span class="hljs-keyword">uint256</span> step</span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Decrement</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> entity, <span class="hljs-keyword">uint256</span> step</span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"></span>) <span class="hljs-title">external</span> </span>{
-        value += <span class="hljs-number">1</span>;
-        emit Increment(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>);
+    <span class="hljs-comment">/// State</span>
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> value;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">external</span> </span>{
+        value = value.add(step);
+        emit Increment(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, step);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"></span>) <span class="hljs-title">external</span> </span>{
-        value -= <span class="hljs-number">1</span>;
-        emit Decrement(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">external</span> </span>{
+        value = value.sub(step);
+        emit Decrement(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, step);
     }
 }
 </code></pre>
 <p>Pretty simple, right? You might wonder why we would bother adding events to this smart contract, but it comes in handy later for illustration purposes — and we can also create an activity feed from it, if we wanted to.</p>
+<blockquote>
+<p><strong>Note</strong><br>
+We use <a href="https://github.com/aragon/aragonOS/blob/next/contracts/lib/math/SafeMath.sol">SafeMath</a> for uint256. Using SafeMath is a security convention that allows handling math operations with safety checks that revert on error preventing the risk of overflows.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="3-steps-to-governance-and-upgradeability"></a><a href="#3-steps-to-governance-and-upgradeability" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3 steps to governance and upgradeability</h2>
 <p>Now for the interesting part: making our simple smart contract an Aragon app.</p>
 <p>First, inherit from the Aragon app smart contract, like so:</p>
@@ -121,38 +172,42 @@ pragma solidity ^<span class="hljs-number">0.4</span><span class="hljs-number">.
     <span class="hljs-comment">// ...</span>
 }
 </code></pre>
-<p>Finally, guard the methods with the <code>auth()</code> modifier that the <code>AragonApp</code> interface gives you and add an <a href="/docs/aragonos-building.html#constructor-and-initialization">initialize function</a> to your contract:</p>
+<p>Finally, guard the methods with the <code>auth()</code> modifier that the <code>AragonApp</code> interface gives you and add an <a href="/docs/aragonos-building.html#constructor-and-initialization">initialize function</a> to your contract; we use <code>initValue</code> as the starting value of the counter:</p>
 <pre><code class="hljs css language-solidity"><span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">CounterApp</span> <span class="hljs-keyword">is</span> <span class="hljs-title">AragonApp</span> </span>{
     <span class="hljs-comment">// ...</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"></span>) <span class="hljs-title">onlyInit</span> <span class="hljs-title">public</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _initValue</span>) <span class="hljs-title">public</span> <span class="hljs-title">onlyInit</span> </span>{
+        value = _initValue;
+
         initialized();
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"></span>) <span class="hljs-title">auth</span>(<span class="hljs-params">INCREMENT_ROLE</span>) <span class="hljs-title">external</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">auth</span>(<span class="hljs-params">INCREMENT_ROLE</span>) <span class="hljs-title">external</span> </span>{
         <span class="hljs-comment">// ...</span>
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"></span>) <span class="hljs-title">auth</span>(<span class="hljs-params">DECREMENT_ROLE</span>) <span class="hljs-title">external</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">auth</span>(<span class="hljs-params">DECREMENT_ROLE</span>) <span class="hljs-title">external</span> </span>{
         <span class="hljs-comment">// ...</span>
     }
 }
 </code></pre>
 <p>That's it. In 3 steps, you now have an Aragon app, with full upgradeability and modular governance.</p>
 <h2><a class="anchor" aria-hidden="true" id="descriptive-transactions"></a><a href="#descriptive-transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descriptive transactions</h2>
-<p>Aragon wants to be as user friendly as possible, so it provides an easy way for developers to describe what their smart contracts do in a human readable way. It's called <a href="/docs/human-readable-txs">Radspec</a>. It works by putting <code>@notice</code> statements alongside a human readable description for the function.</p>
+<p>Aragon wants to be as user friendly as possible, so it provides an easy way for developers to describe what their smart contracts do in a human readable way. It's called <a href="/docs/human-readable-txs">Radspec</a>. It works by putting <code>@notice</code> statements alongside a human readable description for the function. In our example, we use the input <code>step</code> to describe what is doing our function at runtime.</p>
 <pre><code class="hljs css language-solidity"><span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">CounterApp</span> <span class="hljs-keyword">is</span> <span class="hljs-title">AragonApp</span> </span>{
     <span class="hljs-comment">/**
-     * @notice Increment the counter by 1
+     * @notice Increment the counter by `step`
+     * @param step Amount to increment by
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"></span>) <span class="hljs-title">auth</span>(<span class="hljs-params">INCREMENT_ROLE</span>) <span class="hljs-title">external</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">auth</span>(<span class="hljs-params">INCREMENT_ROLE</span>) <span class="hljs-title">external</span> </span>{
         <span class="hljs-comment">// ...</span>
     }
 
     <span class="hljs-comment">/**
-     * @notice Decrement the counter by 1
+     * @notice Decrement the counter by `step`
+     * @param step Amount to decrement by
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"></span>) <span class="hljs-title">auth</span>(<span class="hljs-params">DECREMENT_ROLE</span>) <span class="hljs-title">external</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">auth</span>(<span class="hljs-params">DECREMENT_ROLE</span>) <span class="hljs-title">external</span> </span>{
         <span class="hljs-comment">// ...</span>
     }
 }
@@ -162,141 +217,212 @@ pragma solidity ^<span class="hljs-number">0.4</span><span class="hljs-number">.
 <p>Apps are run inside an iframe, which means that it only has access to its own DOM, not the outlying DOM. The app can communicate with the client over our own custom RPC protocol.</p>
 <p>Then the client takes care of connecting to Ethereum via Web3, and also handles things like signing transactions, displaying notifications and more to the end-user.</p>
 <p>All of this is achieved by using aragonAPI. aragonAPI is split in two parts: one for clients and one for apps. The client portion of aragonAPI reads <em>requests</em> from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).</p>
-<p>Because we're building an app, all we need is <code>@aragon/api</code> and our template already has that installed.</p>
-<h3><a class="anchor" aria-hidden="true" id="background-workers-and-building-state"></a><a href="#background-workers-and-building-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background workers and building state</h3>
+<h3><a class="anchor" aria-hidden="true" id="background-scripts-and-building-state"></a><a href="#background-scripts-and-building-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background scripts and building state</h3>
 <p>Apps usually want to listen to events using Web3 and build an application state from those events. This concept is also known as <em>event sourcing</em>.</p>
 <p>aragonAPI was built with event sourcing in mind. To build state continually without having the app loaded indefinitely, though, we need to run a background script.</p>
 <p>Thankfully the <a href="/docs/client">Aragon client</a> will run background scripts specified in the manifest files of our app (more on manifest files later).</p>
-<p>Let's start by writing a background worker that listens for our <code>Increment</code> and <code>Decrement</code> events, and builds a state that simply is the current value of our counter.</p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// app/script.js</span>
-<span class="hljs-keyword">import</span> <span class="hljs-string">'@babel/polyfill'</span>
-<span class="hljs-keyword">import</span> Aragon <span class="hljs-keyword">from</span> <span class="hljs-string">'@aragon/api'</span>
+<p>Let's start by writing a background script that listens for our <code>Increment</code> and <code>Decrement</code> events, and builds a state, for this example, the current value of our counter.</p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// app/src/script.js</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">'core-js/stable'</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">'regenerator-runtime/runtime'</span>
+<span class="hljs-keyword">import</span> Aragon, { events } <span class="hljs-keyword">from</span> <span class="hljs-string">'@aragon/api'</span>
 
 <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Aragon()
 
-<span class="hljs-keyword">const</span> initialState = {
-  <span class="hljs-attr">count</span>: <span class="hljs-number">0</span>,
-}
-app.store(<span class="hljs-keyword">async</span> (state, event) =&gt; {
-  <span class="hljs-keyword">if</span> (state === <span class="hljs-literal">null</span>) state = initialState
+app.store(
+  <span class="hljs-keyword">async</span> (state, { event }) =&gt; {
+    <span class="hljs-keyword">const</span> nextState = {
+      ...state,
+    }
 
-  <span class="hljs-keyword">switch</span> (event.event) {
-    <span class="hljs-keyword">case</span> <span class="hljs-string">'Increment'</span>:
-      <span class="hljs-keyword">return</span> { <span class="hljs-attr">count</span>: <span class="hljs-keyword">await</span> getValue() }
-    <span class="hljs-keyword">case</span> <span class="hljs-string">'Decrement'</span>:
-      <span class="hljs-keyword">return</span> { <span class="hljs-attr">count</span>: <span class="hljs-keyword">await</span> getValue() }
-    <span class="hljs-keyword">default</span>:
-      <span class="hljs-keyword">return</span> state
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">switch</span> (event) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">'Increment'</span>:
+          <span class="hljs-keyword">return</span> { ...nextState, <span class="hljs-attr">count</span>: <span class="hljs-keyword">await</span> getValue() }
+        <span class="hljs-keyword">case</span> <span class="hljs-string">'Decrement'</span>:
+          <span class="hljs-keyword">return</span> { ...nextState, <span class="hljs-attr">count</span>: <span class="hljs-keyword">await</span> getValue() }
+        <span class="hljs-keyword">case</span> events.SYNC_STATUS_SYNCING:
+          <span class="hljs-keyword">return</span> { ...nextState, <span class="hljs-attr">isSyncing</span>: <span class="hljs-literal">true</span> }
+        <span class="hljs-keyword">case</span> events.SYNC_STATUS_SYNCED:
+          <span class="hljs-keyword">return</span> { ...nextState, <span class="hljs-attr">isSyncing</span>: <span class="hljs-literal">false</span> }
+        <span class="hljs-keyword">default</span>:
+          <span class="hljs-keyword">return</span> state
+      }
+    } <span class="hljs-keyword">catch</span> (err) {
+      <span class="hljs-built_in">console</span>.log(err)
+    }
+  },
+  {
+    <span class="hljs-attr">init</span>: initializeState(),
   }
-})
+)
+
+<span class="hljs-comment">/***********************
+ *   Event Handlers    *
+ ***********************/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initializeState</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">async</span> cachedState =&gt; {
+    <span class="hljs-keyword">return</span> {
+      ...cachedState,
+      <span class="hljs-attr">count</span>: <span class="hljs-keyword">await</span> getValue(),
+    }
+  }
+}
 
 <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getValue</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-comment">// Get current value from the contract by calling the public getter</span>
   <span class="hljs-comment">// app.call() returns a single-emission observable that we can immediately turn into a promise</span>
-  <span class="hljs-keyword">const</span> value = <span class="hljs-keyword">await</span> app.call(<span class="hljs-string">'value'</span>).toPromise()
-  <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseInt</span>(value, <span class="hljs-number">10</span>)
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseInt</span>(<span class="hljs-keyword">await</span> app.call(<span class="hljs-string">'value'</span>).toPromise(), <span class="hljs-number">10</span>)
 }
 </code></pre>
 <p>If you've worked with <a href="https://redux.js.org/">Redux</a> before, this might look vaguely familiar.</p>
-<p>The <code>store</code> method takes in a reducer function with the signature <code>(state, event) =&gt; state</code>, where <code>state</code> is whatever you want it to be (in this example it is an integer), and <code>event</code> is a <a href="https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#contract-events">Web3 event</a>.</p>
-<p>Internally, <code>store</code> will fetch the last known state (if any) and pass that in as the first argument, and then store the resulting state in cache. This state can be observed in the view portion of your app. Also note that the <code>store</code> method returns an observable of states. This is a recurring theme in the JavaScript implementation of aragonAPI—almost everything is an <a href="http://reactivex.io/rxjs/">RxJS</a> observable.</p>
-<p>The reducer function <strong>must always</strong> return a state, even if it is the same state as before.</p>
-<blockquote>
-<p><strong>Note</strong><br>
-The state will start out as <code>null</code>, not <code>undefined</code> because of the JSONRPC specification.</p>
-</blockquote>
+<p>The <code>store</code> method takes in a reducer function with the signature <code>(state, event) =&gt; state</code>, where <code>state</code> is whatever you want it to be (in this example it is an integer), and <code>event</code> is a <a href="https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#contract-events">Web3 event</a>. The reducer function <strong>must always</strong> return a state, even if it is the same state as before. Returning undefined will reset the reduced state to its initial null state. Also note that the initial state is always null, not undefined, because of JSONRPC limitations.</p>
+<p>The <code>store</code> should be used as the main &quot;event loop&quot; in an application's background script (running inside a WebWorker). Listens for events, passes them through reducer, caches the resulting state, and re-emits that state for easy chaining. Optionally takes a configuration object comprised of an init function, to re-initialize cached state, and an externals array for subscribing to external contract events. See below for more details.</p>
+<p>The store has block caching automatically applied, such that subsequent loads of the application only fetch new events from a cached (&quot;committed&quot;) block height (rather than from 0 or the app's initialization block). This state can be observed in the view portion of your app. Also note that the <code>store</code> method returns an observable of states. This is a recurring theme in the JavaScript implementation of aragonAPI—almost everything is an <a href="http://reactivex.io/rxjs/">RxJS</a> observable.</p>
 <h3><a class="anchor" aria-hidden="true" id="displaying-state"></a><a href="#displaying-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Displaying State</h3>
-<p>Now let's write the view portion of our app. In our case, this is a simple HTML file, and a simple JavaScript file that observes the state that our background worker builds for us.</p>
+<p>Now let's write the view portion of our app. In our case, this is a simple HTML file, and a simple React app wiht the <code>useAragonApi</code> <a href="https://reactjs.org/docs/hooks-intro.html">React Hook</a> that observes the state that our background script builds for us and returns the data needed to interact with the app contract.</p>
 <pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!-- app/index.html !--&gt;</span>
 <span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Counter App<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Aragon App<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"decrement"</span>&gt;</span>-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"view"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"increment"</span>&gt;</span>+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"app.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"root"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"src/index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// app/app.js</span>
-<span class="hljs-keyword">import</span> Aragon, { providers } <span class="hljs-keyword">from</span> <span class="hljs-string">'@aragon/api'</span>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// app/src/index.js</span>
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>
+<span class="hljs-keyword">import</span> { AragonApi } <span class="hljs-keyword">from</span> <span class="hljs-string">'@aragon/api-react'</span>
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">'./App'</span>
 
-<span class="hljs-keyword">const</span> initializeApp = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-  <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Aragon(<span class="hljs-keyword">new</span> providers.WindowMessage(<span class="hljs-built_in">window</span>.parent))
+<span class="hljs-keyword">const</span> reducer = <span class="hljs-function"><span class="hljs-params">state</span> =&gt;</span> {
+  <span class="hljs-keyword">if</span> (state === <span class="hljs-literal">null</span>) {
+    <span class="hljs-keyword">return</span> { <span class="hljs-attr">count</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">isSyncing</span>: <span class="hljs-literal">true</span> }
+  }
+  <span class="hljs-keyword">return</span> state
+}
 
-  <span class="hljs-keyword">const</span> view = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'view'</span>)
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">AragonApi</span> <span class="hljs-attr">reducer</span>=<span class="hljs-string">{reducer}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">AragonApi</span>&gt;</span></span>,
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>)
+)
+</code></pre>
+<p>Before using any Hook provided, you need to declare the component <code>AragonApi</code> to connect the app. It is generally a good idea to do it near the top level of your React tree. It should only be declared once. It has an optional reducer prop, which lets you process the state coming from the background script. If not provided, the state is passed as-is.</p>
+<h3><a class="anchor" aria-hidden="true" id="app-root-component"></a><a href="#app-root-component" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>App root component</h3>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// app/src/App.js</span>
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> { useAragonApi } <span class="hljs-keyword">from</span> <span class="hljs-string">'@aragon/api-react'</span>
+<span class="hljs-keyword">import</span> {
+  Box,
+  Button,
+  GU,
+  Header,
+  IconMinus,
+  IconPlus,
+  Main,
+  SyncIndicator,
+  Text,
+  textStyle,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@aragon/ui'</span>
 
-  app.state().subscribe(
-    <span class="hljs-function"><span class="hljs-params">state</span> =&gt;</span> {
-      <span class="hljs-comment">// the state is null in the beginning, when there are no event emitted from the contract</span>
-      view.innerHTML = <span class="hljs-string">`The counter is <span class="hljs-subst">${state ? state.count : <span class="hljs-number">0</span>}</span>`</span>
-    },
-    err =&gt; {
-      view.innerHTML = <span class="hljs-string">'An error occured, check the console'</span>
-      <span class="hljs-built_in">console</span>.log(err)
-    }
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> { appState } = useAragonApi()
+  <span class="hljs-keyword">const</span> { count, isSyncing } = appState
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Main</span>&gt;</span>
+      {isSyncing &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">SyncIndicator</span> /&gt;</span>}
+      <span class="hljs-tag">&lt;<span class="hljs-name">Header</span>
+        <span class="hljs-attr">primary</span>=<span class="hljs-string">"Counter"</span>
+        <span class="hljs-attr">secondary</span>=<span class="hljs-string">{</span>
+          &lt;<span class="hljs-attr">Text</span>
+            <span class="hljs-attr">css</span>=<span class="hljs-string">{</span>`
+              ${<span class="hljs-attr">textStyle</span>('<span class="hljs-attr">title2</span>')}
+            `}
+          &gt;</span>
+            {count}
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+        }
+      /&gt;
+      <span class="hljs-tag">&lt;<span class="hljs-name">Box</span>
+        <span class="hljs-attr">css</span>=<span class="hljs-string">{</span>`
+          <span class="hljs-attr">display:</span> <span class="hljs-attr">flex</span>;
+          <span class="hljs-attr">align-items:</span> <span class="hljs-attr">center</span>;
+          <span class="hljs-attr">justify-content:</span> <span class="hljs-attr">center</span>;
+          <span class="hljs-attr">text-align:</span> <span class="hljs-attr">center</span>;
+          <span class="hljs-attr">height:</span> ${<span class="hljs-attr">50</span> * <span class="hljs-attr">GU</span>}<span class="hljs-attr">px</span>;
+          ${<span class="hljs-attr">textStyle</span>('<span class="hljs-attr">title3</span>')};
+        `}
+      &gt;</span>
+        Count: {count}
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Box</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Main</span>&gt;</span>
   )
 }
 
-<span class="hljs-keyword">const</span> sendMessageToWrapper = <span class="hljs-function">(<span class="hljs-params">name, value</span>) =&gt;</span> {
-  <span class="hljs-built_in">window</span>.parent.postMessage({ <span class="hljs-attr">from</span>: <span class="hljs-string">'app'</span>, name, value }, <span class="hljs-string">'*'</span>)
-}
-
-<span class="hljs-comment">// handshake between Aragon Core and the iframe,</span>
-<span class="hljs-comment">// since iframes can lose messages that were sent before they were ready</span>
-<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'message'</span>, ({ data }) =&gt; {
-  <span class="hljs-keyword">if</span> (data.from !== <span class="hljs-string">'wrapper'</span>) {
-    <span class="hljs-keyword">return</span>
-  }
-  <span class="hljs-keyword">if</span> (data.name === <span class="hljs-string">'ready'</span>) {
-    sendMessageToWrapper(<span class="hljs-string">'ready'</span>, <span class="hljs-literal">true</span>)
-    initializeApp()
-  }
-})
-</code></pre>
-<p>That's it! Internally, <code>state</code> observes the <code>state</code> key in cache and emits every time a change occurs.</p>
-<h3><a class="anchor" aria-hidden="true" id="sending-transactions"></a><a href="#sending-transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sending transactions</h3>
-<p>Our users need to be able to increment and decrement the counter. For this, we publish what is called an <em>intent</em> to the wrapper.</p>
-<p>An intent is an action you would like to occur on a specific contract. This intent is handled by the client, which will calculate a <em>transaction path</em> using the ACL of our DAO.</p>
+export default App
+</span></code></pre>
+<p><code>useAragonApi()</code> is a React Hook that returns the data needed to interact with the app contract. As with any React Hook, please ensure that you follow the <a href="https://reactjs.org/docs/hooks-rules.html">Rules of Hooks</a>.
+It returns an object containing the following entries:</p>
+<ul>
+<li><code>appState</code>: Is the app state, after having passed the background script <code>state</code> through the reducer prop of AragonApi.</li>
+<li><code>api</code>: This is the current AragonApp instance. Use it to call methods on the contract.</li>
+</ul>
+<p>These are not all the entries but the ones we are going to use in the tutorial. To learn about all of them check the <a href="https://github.com/aragon/aragon.js/blob/master/packages/aragon-api-react/README.md#usearagonapi">useAragonApi documentation</a>.</p>
+<h4><a class="anchor" aria-hidden="true" id="sending-transactions"></a><a href="#sending-transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sending transactions</h4>
+<p>Our users need to be able to increment and decrement the counter. For this, we send what is called an <em>intent</em> to the client. An intent is an action you would like to occur on a specific contract. This intent is handled by the client, which will calculate a <em>transaction path</em> using the ACL of our DAO.</p>
 <p>To understand transaction paths, we must first understand a little bit about how the ACL works.</p>
 <p>The <a href="/docs/acl-intro">ACL (Access Control List)</a> is a simple mapping of <em>who</em> can perform <em>what</em> actions <em>where</em>. In our case, <em>someone</em> can perform an action guarded by a specific role (the <em>what</em>) on our app (the <em>where</em>).</p>
 <p>However, it is entirely possible that users can not perform actions directly. For example, in order to increment the counter, we might want a decision making process, such as a vote. The beauty of aragonOS is that we never need to specify this directly, as this is handled by the ACL.</p>
 <p>We simply say that the only one (<em>who</em>) that can perform increments and decrements (<em>what</em>) on our app (<em>where</em>) is the voting app. This is not done at compile time, it is done at run time.</p>
 <p>This works because of a concept called <a href="/docs/forwarding-intro"><em>forwarders</em></a>. A forwarder is simply an app that can execute transactions on someone's behalf, if the ACL permits it, and that app can have its own <em>arbitrary conditions</em> under which it wants to execute your transaction! In the example of the voting app, the voting app will only execute your transaction if the vote passes.</p>
 <p>It's really simple to use. Let's add our intents to our app:</p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// app/app.js</span>
-<span class="hljs-keyword">const</span> initializeApp = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-  <span class="hljs-comment">// ...</span>
-  <span class="hljs-keyword">const</span> increment = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'increment'</span>)
-  <span class="hljs-keyword">const</span> decrement = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'decrement'</span>)
+<pre><code class="hljs css language-js"><span class="hljs-comment">// ...</span>
 
-  increment.onclick = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    app.increment()
-  }
-  decrement.onclick = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    app.decrement()
-  }
-  <span class="hljs-comment">// ...</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> { api, appState } = useAragonApi()
+  <span class="hljs-keyword">const</span> { count, isSyncing } = appState
+  <span class="hljs-keyword">const</span> step = <span class="hljs-number">2</span>
+
+  <span class="hljs-keyword">return</span> (
+    <span class="hljs-comment">// ...</span>
+    &lt;Main&gt;
+      // ...
+      &lt;Box&gt;
+        // ...
+        &lt;div&gt;
+          &lt;Button
+            display="icon"
+            icon={&lt;IconMinus /&gt;}
+            label="Decrement"
+            onClick={() =&gt; api.decrement(step).toPromise()}
+          /&gt;
+          &lt;Button
+            display="icon"
+            icon={&lt;IconPlus /&gt;}
+            label="Increment"
+            onClick={() =&gt; api.increment(step).toPromise()}
+            css={`
+              margin-left: ${2 * GU}px;
+            `}
+          /&gt;
+        &lt;/div&gt;
+      &lt;/Box&gt;
+    &lt;/Main&gt;
+  )
 }
 </code></pre>
 <p>That's it! Now whenever the user clicks one of either the increment or decrement buttons, an intent is sent to the wrapper, and it will show the user a transaction to sign.</p>
-<h3><a class="anchor" aria-hidden="true" id="the-build-script"></a><a href="#the-build-script" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The build script</h3>
-<p>Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use <code>parcel</code> because it has zero config, but you can use your favorite bundler.</p>
-<p>Let's add the build script to <code>package.json</code>:</p>
-<pre><code class="hljs css language-json">{
-  // ...
-  "scripts": {
-    "build": "parcel build app/script.js -d dist/ &amp;&amp; parcel build app/index.html -d dist/ --public-url \".\""
-  }
-  // ...
-}
-</code></pre>
-<p>You can now build the front-end of your app by running <code>npm run build</code>.</p>
 <h2><a class="anchor" aria-hidden="true" id="writing-the-manifest-files"></a><a href="#writing-the-manifest-files" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing the manifest files</h2>
 <p>In order for aragonAPI to function, it needs some metadata about your app. This metadata is specified in two manifest files; <code>manifest.json</code> and <code>arapp.json</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="arappjson"></a><a href="#arappjson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>arapp.json</h3>
 <p><code>arapp.json</code> defines smart contract and aragonPM-specific things like the roles in your app or different environments.</p>
 <p>Let's modify <code>arapp.json</code> so that it knows about the roles we defined previously and use the development environment:</p>
 <pre><code class="hljs css language-json">{
@@ -314,13 +440,18 @@ The state will start out as <code>null</code>, not <code>undefined</code> becaus
   ],
   <span class="hljs-attr">"environments"</span>: {
     <span class="hljs-attr">"default"</span>: {
-      <span class="hljs-attr">"network"</span>: <span class="hljs-string">"development"</span>,
+      <span class="hljs-attr">"network"</span>: <span class="hljs-string">"rpc"</span>,
       <span class="hljs-attr">"appName"</span>: <span class="hljs-string">"foo.aragonpm.eth"</span>
     }
   },
   <span class="hljs-attr">"path"</span>: <span class="hljs-string">"contracts/CounterApp.sol"</span>
 }
 </code></pre>
+<p>Notice that we input a fully qualified <a href="https://ens.domains/">ENS</a> name for <code>appName</code>. Let's examine the ENS name we entered, because it is not entirely arbitrary.</p>
+<p><img src="https://i.imgur.com/MQnYT6d.png" alt="Illustration of foo.aragonpm.eth"></p>
+<p>The first label in the ENS name is the name of our app. This can be anything you want, given that the full ENS name is not taken.</p>
+<p>The second and third label is the name of the <a href="/docs/package-management">aragonPM</a> registry that your repository will be (or is) registered to. For the sake of simplicity, this guide assumes that you have rights to create repositories on aragonpm.eth, but you could deploy your own aragonPM registry if you so desire.</p>
+<h3><a class="anchor" aria-hidden="true" id="manifestjson"></a><a href="#manifestjson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>manifest.json</h3>
 <p><code>manifest.json</code> defines end-user specific things like the human-readable name of your app, icons, and a small description of your app. It also (optionally) defines background scripts, of which we have one.</p>
 <p>Let's modify it accordingly:</p>
 <pre><code class="hljs css language-json">{
@@ -330,59 +461,53 @@ The state will start out as <code>null</code>, not <code>undefined</code> becaus
   <span class="hljs-attr">"start_url"</span>: <span class="hljs-string">"/index.html"</span>
 }
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="running-your-app-locally"></a><a href="#running-your-app-locally" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running your app locally</h2>
-<blockquote>
-<p><strong>Prerequisite</strong><br>
-If this is your first time using the CLI, you will first need to install IPFS to store the development files. This command only needs to be run once:</p>
-<pre><code class="hljs css language-sh">npx aragon ipfs install
+<h3><a class="anchor" aria-hidden="true" id="buidler-script-hooks"></a><a href="#buidler-script-hooks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Buidler script hooks</h3>
+<p>These hooks are called by the Aragon Buidler plugin during the start task's lifecycle. All hooks receive two parameters:</p>
+<ul>
+<li>A params object that may contain other objects that pertain to the particular hook.</li>
+<li>A &quot;bre&quot; or BuidlerRuntimeEnvironment object that contains enviroment objects like web3, Truffle artifacts, etc.</li>
+</ul>
+<p>We are going to use the <code>getInitParam</code> hook. Must return an array with the proxy's init parameters.</p>
+<p>That is called when the start task needs to know the app proxy's initialize parameters, <code>_initValue</code> for our <code>CounterApp</code> initialize function.</p>
+<pre><code class="hljs css language-js"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-comment">// ...</span>
+  getInitParams: <span class="hljs-keyword">async</span> ({}, { web3, artifacts }) =&gt; {
+    <span class="hljs-keyword">return</span> [<span class="hljs-number">15</span>]
+  },
+  <span class="hljs-comment">// ...</span>
+}
 </code></pre>
-</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="running-your-app-locally"></a><a href="#running-your-app-locally" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running your app locally</h2>
 <p>To test out your app without deploying a DAO yourself, installing apps, setting up permissions and setting up aragonPM, you can simply run:</p>
-<pre><code class="hljs css language-sh">npx aragon run --files dist
+<pre><code class="hljs css language-sh">npm start
 </code></pre>
 <p>This will do a couple of things for you:</p>
 <ul>
-<li>It will start a development chain you can interact with (it uses <code>ganache-core</code>, so it's a full testrpc instance)</li>
+<li>It will start a development chain you can interact with (it uses <code>ganache-core</code>, so it's a full testrpc instance) and prints 10 accounts.</li>
+<li>It compiles the contracts.</li>
+<li>It deploy the aragonOS bases (ENS, DAO factory, aragonPM registry).</li>
 <li>It deploys an Aragon DAO with apps and development permissions (i.e. everyone can do everything)</li>
-<li>It publishes your app to a local aragonPM instance. The <code>--files</code> flag indicate the content to be publish.</li>
+<li>It build your app font-end. Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use <code>parcel</code> because it has zero config, but you can use your favorite bundler.</li>
+<li>It publishes your app to a local aragonPM instance.</li>
 <li>It installs your app</li>
+<li>It initialize the app proxy with the parameter we defined in <code>getInitParams</code> hook.</li>
+<li>It starts the client locally, installing it if it's not cached.</li>
 </ul>
 <p>After running this command a browser tab should pop up with your freshly created DAO, complete with permissions and your local app installed.</p>
-<p><img src="/docs/assets/counter.png" alt="Screenshot of dapp"></p>
-<blockquote>
-<p><strong>Note</strong><br>
-It's not pretty, but it works. To see a more beautiful version of our counter app, check out the example app that is included in the <a href="https://github.com/aragon/aragon-react-boilerplate">React template</a>!</p>
-</blockquote>
-<h3><a class="anchor" aria-hidden="true" id="running-your-app-from-an-http-server"></a><a href="#running-your-app-from-an-http-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running your app from an HTTP server</h3>
-<p>Running your app using HTTP will allow for a faster development process of your app's front-end, as it can be hot-reloaded without the need to execute <code>aragon run</code> every time a change is made.</p>
-<p>Let's add the scripts we need to <code>package.json</code>:</p>
-<pre><code class="hljs css language-json">{
-  <span class="hljs-attr">"scripts"</span>: {
-    <span class="hljs-attr">"start:app"</span>: <span class="hljs-string">"npm run build -- --no-minify &amp;&amp; parcel serve app/index.html -p 8001 --out-dir dist/ --no-cache"</span>,
-    <span class="hljs-attr">"start:aragon:http"</span>: <span class="hljs-string">"npx aragon run --http localhost:8001 --http-served-from ./dist"</span>
-  }
-}
-</code></pre>
-<ul>
-<li><p>First start your app's development server running <code>npm run start:app</code>, and keep that process running. By default it will rebuild the app and reload the server when changes to the source are made.</p></li>
-<li><p>After that, you can run <code>npm run start:aragon:http</code> which will compile your app's contracts, publish the app locally and create a DAO. You will need to stop it and run it again after making changes to your smart contracts.</p></li>
-</ul>
-<blockquote>
-<p><strong>Note</strong><br>
-Changes to the app's background script (<code>app/script.js</code>) cannot be hot-reloaded, after making changes to the script, you will need to either restart the development server (<code>npm run start:app</code>) or rebuild the script <code>npm run build</code>.</p>
-</blockquote>
+<p>At this point feel free to play around. Both front-end and smart contract files have hot reloading. Yes, even smart contract code, we do a proxy swap on every change under the hood 😎, enjoy.</p>
+<p>If you've made it this far, congratulations! 😊🎉😊🎉</p>
 <h2><a class="anchor" aria-hidden="true" id="next-steps"></a><a href="#next-steps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next steps</h2>
+<h3><a class="anchor" aria-hidden="true" id="tests"></a><a href="#tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tests</h3>
+<p>If you feel like to keep learning about the Aragon stack right away. A great way of doing it is including some tests on your app. Check the <a href="https://github.com/aragon/aragon-react-boilerplate/blob/master/test/app.test.js">tests examples</a> of the react boilerplate repo for ideas.</p>
 <h3><a class="anchor" aria-hidden="true" id="publishing"></a><a href="#publishing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Publishing</h3>
 <p>Now that we're confident that our app will work and amaze the world, we should publish it. You can follow the publish guide to learn <a href="/docs/guides-publish">how to publish in different environments</a>.</p>
-<h3><a class="anchor" aria-hidden="true" id="more-cli-commands"></a><a href="#more-cli-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>More CLI commands</h3>
-<p>You can check the <a href="/docs/cli-main-commands">aragonCLI documentation</a> for an in-depth description of how all the commands available in the CLI work.</p>
 <h3><a class="anchor" aria-hidden="true" id="documentation"></a><a href="#documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Documentation</h3>
 <p>A good place to go from here would be to check out <a href="https://github.com/aragon/aragon-apps">our existing apps</a>. They are fairly self-contained and use some patterns you might find helpful.</p>
 <p>There is much more to <a href="/docs/aragonos-intro">aragonOS</a> and <a href="/docs/api-intro">aragonAPI</a>, and we even have our own <a href="/docs/aragonui-intro">UI toolkit</a>. We encourage you to explore all 3 and provide us feedback.</p>
 <h3><a class="anchor" aria-hidden="true" id="community"></a><a href="#community" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Community</h3>
 <p>Join the conversation and ask questions on <a href="https://github.com/aragon">GitHub</a>, <a href="https://forum.aragon.org">Aragon Forum</a> and Spectrum <a href="https://spectrum.chat/aragon/app-development">App development channel</a>, and make sure to tell us if you build something ara-mazing!</p>
 <p>Now you just need to share the great news on Twitter and Reddit, to let people know that you've built something great!</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/human-readable-txs"><span class="arrow-prev">← </span><span>Human readable transactions</span></a><a class="docs-next button" href="/docs/guides-publish"><span class="function-name-prevnext">Publish to aragonPM</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#the-setup">The setup</a></li><li><a href="#writing-a-simple-contract">Writing a simple contract</a></li><li><a href="#3-steps-to-governance-and-upgradeability">3 steps to governance and upgradeability</a></li><li><a href="#descriptive-transactions">Descriptive transactions</a></li><li><a href="#building-the-frontend">Building the frontend</a><ul class="toc-headings"><li><a href="#background-workers-and-building-state">Background workers and building state</a></li><li><a href="#displaying-state">Displaying State</a></li><li><a href="#sending-transactions">Sending transactions</a></li><li><a href="#the-build-script">The build script</a></li></ul></li><li><a href="#writing-the-manifest-files">Writing the manifest files</a></li><li><a href="#running-your-app-locally">Running your app locally</a><ul class="toc-headings"><li><a href="#running-your-app-from-an-http-server">Running your app from an HTTP server</a></li></ul></li><li><a href="#next-steps">Next steps</a><ul class="toc-headings"><li><a href="#publishing">Publishing</a></li><li><a href="#more-cli-commands">More CLI commands</a></li><li><a href="#documentation">Documentation</a></li><li><a href="#community">Community</a></li></ul></li></ul></nav></div><div class="footer-section"><div class="section-container"><div class="footer-container"><div class="footer-item mobile-full"><a href="https://aragon.org/"><img class="logo-footer-img" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDM3MC4xIDMzMS4zIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzNzAuMSAzMzEuMzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOnVybCgjU1ZHSURfMV8pO30KCS5zdDF7ZmlsbDp1cmwoI1NWR0lEXzJfKTt9Cgkuc3Qye2ZpbGw6dXJsKCNTVkdJRF8zXyk7fQoJLnN0M3tmaWxsOiMyMDIwMUU7fQoJLnN0NHtmaWxsOnVybCgjU1ZHSURfNF8pO30KCS5zdDV7ZmlsbDojMzUzNTM0O30KCS5zdDZ7ZmlsbDojMjgyODI4O30KCS5zdDd7ZmlsbDp1cmwoI1NWR0lEXzVfKTtzdHJva2U6dXJsKCNTVkdJRF82Xyk7c3Ryb2tlLXdpZHRoOjg7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQo8L3N0eWxlPgo8Zz4KCgkJPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIxOTgxLjk2MzYiIHkxPSIyNDQ0LjQ5NjEiIHgyPSIyMTYzLjI5NjkiIHkyPSIyNDQ0LjQ5NjEiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoLTAuMjk2NCAwLjk1NTEgLTAuOTU1MSAtMC4yOTY0IDMxNTQuNjgzNiAtMTE0NC4wOTMzKSI+CgkJPHN0b3AgIG9mZnNldD0iMy45MTk2NTRlLTAyIiBzdHlsZT0ic3RvcC1jb2xvcjojMkNGNEUxIi8+CgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzJDQjJFMSIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE5NyIgY3k9IjEzOS4xIiByPSI5MC43Ii8+Cgk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzJfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjI0NC42MDE2IiB5MT0iMTEzLjEzMTgiIHgyPSIzMjQuMzM2MiIgeTI9IjIyMi4xMTgxIj4KCQk8c3RvcCAgb2Zmc2V0PSIzLjkxOTY1NGUtMDIiIHN0eWxlPSJzdG9wLWNvbG9yOiMyQ0Y0RTEiLz4KCQk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMkNCMkUxIi8+Cgk8L2xpbmVhckdyYWRpZW50PgoJPHBhdGggY2xhc3M9InN0MSIgZD0iTTI2MC43LDExMS45YzYuNSw4LjgsOS45LDE5LjIsOS45LDMwYzAsMTMuMS01LjQsMjUuMi0xNC42LDM1bDUuNiwyMC45aDE3bDE3LjktMjAuM2w0LjgtMjkuN2wxLTE3LjcKCQlsLTE3LjctMjBMMjYwLjcsMTExLjl6Ii8+Cgk8Zz4KCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzNfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjExMS40NTU4IiB5MT0iMTI2Ljc0MTkiIHgyPSIyMjQuMTIyNCIgeTI9IjI4MC43NDE5Ij4KCQkJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzJDRTVFMSIvPgoJCQk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMkNCMkUxIi8+CgkJPC9saW5lYXJHcmFkaWVudD4KCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNNjMuNywyMDAuMmwzLjEsMTIuM2MwLDAsMzYuNiw3NS4xLDExOSwxMDNjMCwwLDc3LjItMzIsMTEwLjUtODYuM2wtNDguMi00MC4xYzAsMC0yMiwxNy41LTU0LjcsMTcuNQoJCQljLTMyLjcsMC03Ny4xLTE5LjUtNzcuMS01OS43YzAtNDAuMiw0Ni01NC45LDQ2LTU0LjlsLTE5LjYtNC44SDkyLjZsLTMxLjgsNzYuNkw2My43LDIwMC4yeiIvPgoJPC9nPgoJPHBhdGggY2xhc3M9InN0MyIgZD0iTTMwNS40LDIyOC4xIi8+Cgk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzRfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjE4Ni40NzM4IiB5MT0iMjMzLjcyNjciIHgyPSIxODYuNDczOCIgeTI9IjM2LjUiPgoJCTxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDAwMDAiLz4KCQk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMEQwRDBEIi8+Cgk8L2xpbmVhckdyYWRpZW50PgoJPHBhdGggY2xhc3M9InN0NCIgZD0iTTM0MC42LDExOS41Yy0xLjQtMS40LTQyLTQ0LjQtMTUzLjMtODIuN2wtMC43LTAuM2MtMTA3LjgsMzctMTU0LjIsODMtMTU0LjIsODNjNC4yLDI0LjUsMTQuOCw1MS44LDI0LjQsNzMKCQljMC44LDEuOCwxMy42LDI0LjQsMjMuMSwzNi43Yy01LjYtMTIuMy0xMS43LTIzLTExLjctNDEuNGMwLTUxLjksNDAuMi05NC4xLDkwLjUtOTUuOWMxLjIsMCwyLjUsMCwzLjcsMC4xbC0xMi0xMgoJCWMwLDAsNDguMy04LjEsMTEwLjMsMjkuNGMwLDAsMC45LDEuOSwwLDcuNWMwLDAsMjkuMiwxMi42LDMxLjcsMzcuMXMtMTMsMzguNS0yNS41LDQwLjVjMCwwLDYuNS0xMC4xLTMuNS0xNS41CgkJYy0yLjEtMS4yLTQuNi0xLjctNy4xLTEuNnYwYy0xOS4xLDAtMjEuMywyMS44LTIxLjMsMjEuOGMtMC4yLDEuMS0wLjIsMi4yLTAuMiwzLjNjMCwwLTMuMiwzMS45LDUzLjYsMzEuMwoJCWMwLDAsMjguOC0zMi42LDM2LjQtNjEuOWMyLjgtMTAuOCw0LjgtMTguOSw2LjEtMjQuOWMzLjItOC41LDYuMy0xNy4zLDkuMy0yNi40TDM0MC42LDExOS41eiIvPgoJPHBhdGggY2xhc3M9InN0NSIgZD0iTTIzNi42LDExNiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTIzNiwxMTkuMWMwLjgtMC40LDMuNC0xLjcsNi40LTQuOGM2LDAuOCwxMS45LDIuNywxMS45LDIuN2MtMTAuOS02LjYtMjUuOC0xMC41LTQyLjMtMTAuNAoJCWMwLDAsNi4zLDksMjMuOCwxMi43QzIzNS44LDExOS4zLDIzNS45LDExOS4yLDIzNiwxMTkuMXoiLz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDYiIGQ9Ik0xODYuMSw0MS4zYzEwLjYsMy4zLDg3LjYsMjguOSwxNDkuMiw3OS44bDYuOS0ybC0wLjUtMC40Yy02MC4yLTUxLTEzNi4zLTc3LjUtMTUyLjEtODIuNmwtMS41LTAuNWwtMi0wLjYKCQkJbC0zLjUsMS4xYy0xNS44LDUuMS05MS45LDMxLjYtMTUyLjEsODIuNmwtMC43LDAuNmw2LjcsMi4yQzk4LjEsNzAuMywxNzUuNSw0NC42LDE4Ni4xLDQxLjN6Ii8+Cgk8L2c+Cgk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzVfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjE4Ni4wNTciIHkxPSIyNDguNzk1NSIgeDI9IjE4Ni4wNTciIHkyPSItMTYuOTcyOCI+CgkJPHN0b3AgIG9mZnNldD0iMy45MTk2NTRlLTAyIiBzdHlsZT0ic3RvcC1jb2xvcjojMkNGNEUxIi8+CgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzJDQjJFMSIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfNl8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjQuODQxNSIgeTE9IjE2OC44NjE2IiB4Mj0iMzQ3LjI3MjYiIHkyPSIxNjguODYxNiI+CgkJPHN0b3AgIG9mZnNldD0iMy45MTk2NTRlLTAyIiBzdHlsZT0ic3RvcC1jb2xvcjojMkNGNEUxIi8+CgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzJDQjJFMSIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxwYXRoIGNsYXNzPSJzdDciIGQ9Ik0zNDEuNywxMDkuMmMtNjAuMi01MS0xMzYuMy03Ny41LTE1Mi4xLTgyLjZsLTEuNS0wLjVsLTItMC42bC0zLjUsMS4xYy0xNS44LDUuMS05MS45LDMxLjYtMTUyLjEsODIuNgoJCWwtMS4zLDEuMWwwLjMsMS43YzAuMSwwLjQsNi42LDM5LjEsMjguOCw4Mi44YzEzLjEsMjUuNywyOSw0OCw0Ny4yLDY2LjVjMjIuMywyMi42LDQ4LjMsMzkuMyw3Ny4yLDQ5LjdsMS43LDAuNmwxLjcsMC42bDEuOC0wLjcKCQlsMS43LTAuNmMyOC45LTEwLjQsNTQuOC0yNy4xLDc3LjItNDkuN2MxOC4yLTE4LjQsMzQuMS00MC44LDQ3LjItNjYuNWMyMi4yLTQzLjYsMjguOC04Mi40LDI4LjgtODIuOGwwLjMtMS43TDM0MS43LDEwOS4yegoJCSBNMzA4LjUsMTkyYy0xMi44LDI1LjEtMjguMyw0Ny00Ni4xLDY1Yy0yMi4xLDIyLjMtNDcuNywzOC43LTc2LjMsNDguOGMtMjguNi0xMC4xLTU0LjItMjYuNC03Ni4zLTQ4LjcKCQljLTE3LjgtMTgtMzMuMy0zOS44LTQ2LjEtNjQuOWMtMTkuMy0zNy44LTI2LjUtNzEuNy0yOC03OS41Qzk3LjQsNjEsMTc1LjQsMzUuMiwxODYuMSwzMS44YzEwLjYsMy40LDg4LjcsMjkuMiwxNTAuNCw4MC45CgkJQzMzNSwxMjAuNCwzMjcuNywxNTQuMywzMDguNSwxOTJ6Ii8+CjwvZz4KPC9zdmc+Cg=="/></a></div><div class="footer-item"><a href="https://aragon.org/">Home</a><a href="https://aragon.org/discover">Discover</a><a href="https://aragon.org/project">Project</a><a href="https://aragon.org/network">Network</a></div><div class="footer-item"><a href="https://hack.aragon.org/" target="_blank">Developers</a><a href="https://wiki.aragon.org/dev/bug_bounty/" target="_blank">Bug bounty</a><a href="https://aragon.org/project/grants">Grants</a><a href="https://aragon.org/project/governance">Governance</a></div><div class="footer-item"><a href="https://aragon.org/project/contribute">Contribute</a><a href="https://blog.aragon.org/" target="_blank">Blog</a><a href="https://wiki.aragon.org/" target="_blank">Wiki</a><a href="https://aracon.one/" target="_blank">AraCon</a></div><div class="footer-item mobile-full"><p class="footer-item-p">Be part of the conversation</p><div class="footer-box"><a href="https://twitter.com/aragonproject" target="_blank"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyMCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOS42NDE0IDEuODc5NzRDMTkuMTk4IDIuMDY4OCAxOC43Mzc2IDIuMjE3OTQgMTguMjY1MyAyLjMyNTkyQzE4Ljc4NTggMS44NTA0MSAxOS4xNzcxIDEuMjU1NjUgMTkuMzk3OSAwLjU5MTc5MVYwLjU5MTc5MUMxOS40NjA5IDAuNDAyMjcxIDE5LjI0NjggMC4yMzgzODggMTkuMDY4OCAwLjMzOTg2MlYwLjMzOTg2MkMxOC40MTE3IDAuNzE0NTk4IDE3LjcwMzggMC45OTU3MjEgMTYuOTY0OSAxLjE3NTUxQzE2LjkyMiAxLjE4NTk0IDE2Ljg3NzggMS4xOTEyMyAxNi44MzM0IDEuMTkxMjNDMTYuNjk4OCAxLjE5MTIzIDE2LjU2OCAxLjE0MzE4IDE2LjQ2NSAxLjA1NTk4QzE1LjY3ODkgMC4zODk4MjYgMTQuNjY3NyAwLjAyMjk0OTIgMTMuNjE3OSAwLjAyMjk0OTJDMTMuMTYzNyAwLjAyMjk0OTIgMTIuNzA1IDAuMDkxMDE5NCAxMi4yNTQ3IDAuMjI1Mjg4QzEwLjg1OTUgMC42NDEzMzUgOS43ODI5NSAxLjc0NzgxIDkuNDQ1MTkgMy4xMTI5NkM5LjMxODQ3IDMuNjI1MDEgOS4yODQxNyA0LjEzNzUyIDkuMzQzMTUgNC42MzYyNEM5LjM0OTkxIDQuNjkzNTUgOS4zMjE3MyA0LjczMzU1IDkuMzA0MzYgNC43NTIzMUM5LjI3Mzg1IDQuNzg1MTkgOS4yMzA1OSA0LjgwNDA1IDkuMTg1NjggNC44MDQwNUM5LjE4MDY2IDQuODA0MDUgOS4xNzU1MSA0LjgwMzgxIDkuMTcwNCA0LjgwMzM1QzYuMTE2MjggNC41MzA1NSAzLjM2MjIyIDMuMTE1OTYgMS40MTU1MSAwLjgyMDE4OVYwLjgyMDE4OUMxLjMxNjI0IDAuNzAzMDkgMS4xMjU4NyAwLjcxNzQ1MiAxLjA0Njc1IDAuODQ3OTMyVjAuODQ3OTMyQzAuNjY1NTMgMS40NzY3IDAuNDY0MDcxIDIuMTk1ODYgMC40NjQwNzEgMi45Mjc2NUMwLjQ2NDA3MSA0LjA0OTE1IDAuOTMyNzMyIDUuMTA2MDQgMS43NDY4IDUuODc2NTJDMS40MDQ0NiA1Ljc5ODQ4IDEuMDczMTIgNS42NzU1OCAwLjc2NTMzNiA1LjUxMTIzVjUuNTExMjNDMC42MTY0MzEgNS40MzE3IDAuNDMzMjE5IDUuNTMzOTIgMC40MzExMjcgNS42OTc2NlY1LjY5NzY2QzAuNDA5ODEzIDcuMzYzNzIgMS40MjQ0MSA4Ljg0NjIgMi45NDQzMSA5LjUxMzc2QzIuOTEzNzEgOS41MTQ0NiAyLjg4MzEgOS41MTQ3OSAyLjg1MjQ0IDkuNTE0NzlDMi42MTE1MiA5LjUxNDc5IDIuMzY3NTcgOS40OTI0MiAyLjEyNzQ4IDkuNDQ4MzFWOS40NDgzMUMxLjk1OTc5IDkuNDE3NTIgMS44MTg5MSA5LjU3MDQ2IDEuODcwOTggOS43MjY3NlY5LjcyNjc2QzIuMzY0MzEgMTEuMjA3NSAzLjY5MDQ1IDEyLjI5OSA1LjI3NzQgMTIuNTQ2OEMzLjk2MDMyIDEzLjM5NjggMi40MjY1NSAxMy44NDUyIDAuODMwMjAyIDEzLjg0NTJMMC4zMzI1MzggMTMuODQ0OUMwLjE3OTIwNCAxMy44NDQ5IDAuMDQ5NTIwNyAxMy45NDEgMC4wMTA0NDUzIDE0LjA4MzhDLTAuMDI4MDQ2MiAxNC4yMjQ0IDAuMDQyODU0IDE0LjM3MjggMC4xNzM2MDggMTQuNDQ1OUMxLjk3MjQ0IDE1LjQ1MjMgNC4wMjQyNyAxNS45ODQzIDYuMTA4MTYgMTUuOTg0M0M3LjkzMjI1IDE1Ljk4NDMgOS42Mzg1MiAxNS42MzYyIDExLjE3OTYgMTQuOTQ5OUMxMi41OTI0IDE0LjMyMDcgMTMuODQwOSAxMy40MjEzIDE0Ljg5MDMgMTIuMjc2N0MxNS44NjggMTEuMjEwNCAxNi42MzI0IDkuOTc5NDQgMTcuMTYyNSA4LjYxODEzQzE3LjY2NzcgNy4zMjA0OSAxNy45MzQ4IDUuOTM1ODkgMTcuOTM0OCA0LjYxMzk3VjQuNTUxQzE3LjkzNDcgNC4zMzg3NCAxOC4wMzQ2IDQuMTM5MDIgMTguMjA4OCA0LjAwMzA3QzE4Ljg2OTkgMy40ODcwNCAxOS40NDU1IDIuODc5NiAxOS45MTk3IDIuMTk3NjRWMi4xOTc2NEMyMC4wNDQ5IDIuMDE3NTcgMTkuODQ3NSAxLjc5MTg4IDE5LjY0MTQgMS44Nzk3NFYxLjg3OTc0WiIgZmlsbD0iIzdGODE5OCIvPgo8L3N2Zz4K"/></a><a href="https://spectrum.chat/aragon" target="_blank"><img src="/img/spectrum.svg"/></a><a href="https://forum.aragon.org/" target="_blank"><img class="forum" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAACqppVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICAgICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIKICAgICAgICAgICAgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iCiAgICAgICAgICAgIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyI+CiAgICAgICAgIDx4bXA6TW9kaWZ5RGF0ZT4yMDE4OjExOjE1IDE1OjExOjE5PC94bXA6TW9kaWZ5RGF0ZT4KICAgICAgICAgPHhtcDpDcmVhdGVEYXRlPjIwMTgtMTEtMTVUMTc6MjQ6MDMrMDE6MDA8L3htcDpDcmVhdGVEYXRlPgogICAgICAgICA8eG1wOk1ldGFkYXRhRGF0ZT4yMDE4LTExLTE1VDE3OjI3OjM4KzAxOjAwPC94bXA6TWV0YWRhdGFEYXRlPgogICAgICAgICA8eG1wOkNyZWF0b3JUb29sPlBpeGVsbWF0b3IgMy4zPC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj43MDwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj43MDwvZXhpZjpQaXhlbFlEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOkNvbG9yU3BhY2U+MTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOjk5Y2E0N2IzLThhNzItNDI4Ny1hMmVlLTEzNDkxMWJiZTMxNTwveG1wTU06SW5zdGFuY2VJRD4KICAgICAgICAgPHhtcE1NOkhpc3Rvcnk+CiAgICAgICAgICAgIDxyZGY6U2VxPgogICAgICAgICAgICAgICA8cmRmOmxpIHJkZjpwYXJzZVR5cGU9IlJlc291cmNlIj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OnNvZnR3YXJlQWdlbnQ+QWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCk8L3N0RXZ0OnNvZnR3YXJlQWdlbnQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTgtMTEtMTVUMTc6MjQ6MDMrMDE6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDppbnN0YW5jZUlEPnhtcC5paWQ6NzZlOGVmYjAtZDVlZC00MzdlLThiZjEtODI2NjFiZDM3NWFjPC9zdEV2dDppbnN0YW5jZUlEPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPmNyZWF0ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6c29mdHdhcmVBZ2VudD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoTWFjaW50b3NoKTwvc3RFdnQ6c29mdHdhcmVBZ2VudD4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OmNoYW5nZWQ+Lzwvc3RFdnQ6Y2hhbmdlZD4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OndoZW4+MjAxOC0xMS0xNVQxNzoyNzozOCswMTowMDwvc3RFdnQ6d2hlbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDo5OWNhNDdiMy04YTcyLTQyODctYTJlZS0xMzQ5MTFiYmUzMTU8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDphY3Rpb24+c2F2ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOlNlcT4KICAgICAgICAgPC94bXBNTTpIaXN0b3J5PgogICAgICAgICA8eG1wTU06RG9jdW1lbnRJRD5hZG9iZTpkb2NpZDpwaG90b3Nob3A6YWNhZThmMzktMjk4MS0xMTdjLWJiZWMtODU3NGIyMzA0MmRjPC94bXBNTTpEb2N1bWVudElEPgogICAgICAgICA8eG1wTU06T3JpZ2luYWxEb2N1bWVudElEPnhtcC5kaWQ6NzZlOGVmYjAtZDVlZC00MzdlLThiZjEtODI2NjFiZDM3NWFjPC94bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ+CiAgICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2UvcG5nPC9kYzpmb3JtYXQ+CiAgICAgICAgIDxkYzpzdWJqZWN0PgogICAgICAgICAgICA8cmRmOlNlcS8+CiAgICAgICAgIDwvZGM6c3ViamVjdD4KICAgICAgICAgPHRpZmY6WVJlc29sdXRpb24+NzI8L3RpZmY6WVJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOkNvbXByZXNzaW9uPjU8L3RpZmY6Q29tcHJlc3Npb24+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgICAgIDx0aWZmOlhSZXNvbHV0aW9uPjcyPC90aWZmOlhSZXNvbHV0aW9uPgog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"/></a></div><p class="footer-item-p">Subscribe to our newsletter</p><form class="footer-form" action="https://one.us15.list-manage.com/subscribe/post?u=a590aa3843a54b079d48e6e18&amp;id=e81a44c4bd" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate=""><div class="email-field"><input type="email" name="EMAIL" placeholder="Enter your email" class="required email form-input" id="mce-EMAIL"/><div aria-hidden="true" style="position:absolute;left:-5000px"><input type="text" name="b_a590aa3843a54b079d48e6e18_e81a44c4bd" tabindex="-1"/></div><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="form-button">Subscribe</button></div></form></div></div></div></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/human-readable-txs"><span class="arrow-prev">← </span><span>Human readable transactions</span></a><a class="docs-next button" href="/docs/guides-publish"><span class="function-name-prevnext">Publish to aragonPM</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#the-setup">The setup</a><ul class="toc-headings"><li><a href="#structure">Structure</a></li><li><a href="#stuck">Stuck?</a></li></ul></li><li><a href="#writing-a-simple-contract">Writing a simple contract</a></li><li><a href="#3-steps-to-governance-and-upgradeability">3 steps to governance and upgradeability</a></li><li><a href="#descriptive-transactions">Descriptive transactions</a></li><li><a href="#building-the-frontend">Building the frontend</a><ul class="toc-headings"><li><a href="#background-scripts-and-building-state">Background scripts and building state</a></li><li><a href="#displaying-state">Displaying State</a></li><li><a href="#app-root-component">App root component</a></li></ul></li><li><a href="#writing-the-manifest-files">Writing the manifest files</a><ul class="toc-headings"><li><a href="#arappjson">arapp.json</a></li><li><a href="#manifestjson">manifest.json</a></li><li><a href="#buidler-script-hooks">Buidler script hooks</a></li></ul></li><li><a href="#running-your-app-locally">Running your app locally</a></li><li><a href="#next-steps">Next steps</a><ul class="toc-headings"><li><a href="#tests">Tests</a></li><li><a href="#publishing">Publishing</a></li><li><a href="#documentation">Documentation</a></li><li><a href="#community">Community</a></li></ul></li></ul></nav></div><div class="footer-section"><div class="section-container"><div class="footer-container"><div class="footer-item mobile-full"><a href="https://aragon.org/"><img class="logo-footer-img" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDM3MC4xIDMzMS4zIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzNzAuMSAzMzEuMzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOnVybCgjU1ZHSURfMV8pO30KCS5zdDF7ZmlsbDp1cmwoI1NWR0lEXzJfKTt9Cgkuc3Qye2ZpbGw6dXJsKCNTVkdJRF8zXyk7fQoJLnN0M3tmaWxsOiMyMDIwMUU7fQoJLnN0NHtmaWxsOnVybCgjU1ZHSURfNF8pO30KCS5zdDV7ZmlsbDojMzUzNTM0O30KCS5zdDZ7ZmlsbDojMjgyODI4O30KCS5zdDd7ZmlsbDp1cmwoI1NWR0lEXzVfKTtzdHJva2U6dXJsKCNTVkdJRF82Xyk7c3Ryb2tlLXdpZHRoOjg7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQo8L3N0eWxlPgo8Zz4KCgkJPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIxOTgxLjk2MzYiIHkxPSIyNDQ0LjQ5NjEiIHgyPSIyMTYzLjI5NjkiIHkyPSIyNDQ0LjQ5NjEiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoLTAuMjk2NCAwLjk1NTEgLTAuOTU1MSAtMC4yOTY0IDMxNTQuNjgzNiAtMTE0NC4wOTMzKSI+CgkJPHN0b3AgIG9mZnNldD0iMy45MTk2NTRlLTAyIiBzdHlsZT0ic3RvcC1jb2xvcjojMkNGNEUxIi8+CgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzJDQjJFMSIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE5NyIgY3k9IjEzOS4xIiByPSI5MC43Ii8+Cgk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzJfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjI0NC42MDE2IiB5MT0iMTEzLjEzMTgiIHgyPSIzMjQuMzM2MiIgeTI9IjIyMi4xMTgxIj4KCQk8c3RvcCAgb2Zmc2V0PSIzLjkxOTY1NGUtMDIiIHN0eWxlPSJzdG9wLWNvbG9yOiMyQ0Y0RTEiLz4KCQk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMkNCMkUxIi8+Cgk8L2xpbmVhckdyYWRpZW50PgoJPHBhdGggY2xhc3M9InN0MSIgZD0iTTI2MC43LDExMS45YzYuNSw4LjgsOS45LDE5LjIsOS45LDMwYzAsMTMuMS01LjQsMjUuMi0xNC42LDM1bDUuNiwyMC45aDE3bDE3LjktMjAuM2w0LjgtMjkuN2wxLTE3LjcKCQlsLTE3LjctMjBMMjYwLjcsMTExLjl6Ii8+Cgk8Zz4KCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzNfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjExMS40NTU4IiB5MT0iMTI2Ljc0MTkiIHgyPSIyMjQuMTIyNCIgeTI9IjI4MC43NDE5Ij4KCQkJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzJDRTVFMSIvPgoJCQk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMkNCMkUxIi8+CgkJPC9saW5lYXJHcmFkaWVudD4KCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNNjMuNywyMDAuMmwzLjEsMTIuM2MwLDAsMzYuNiw3NS4xLDExOSwxMDNjMCwwLDc3LjItMzIsMTEwLjUtODYuM2wtNDguMi00MC4xYzAsMC0yMiwxNy41LTU0LjcsMTcuNQoJCQljLTMyLjcsMC03Ny4xLTE5LjUtNzcuMS01OS43YzAtNDAuMiw0Ni01NC45LDQ2LTU0LjlsLTE5LjYtNC44SDkyLjZsLTMxLjgsNzYuNkw2My43LDIwMC4yeiIvPgoJPC9nPgoJPHBhdGggY2xhc3M9InN0MyIgZD0iTTMwNS40LDIyOC4xIi8+Cgk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzRfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjE4Ni40NzM4IiB5MT0iMjMzLjcyNjciIHgyPSIxODYuNDczOCIgeTI9IjM2LjUiPgoJCTxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDAwMDAiLz4KCQk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMEQwRDBEIi8+Cgk8L2xpbmVhckdyYWRpZW50PgoJPHBhdGggY2xhc3M9InN0NCIgZD0iTTM0MC42LDExOS41Yy0xLjQtMS40LTQyLTQ0LjQtMTUzLjMtODIuN2wtMC43LTAuM2MtMTA3LjgsMzctMTU0LjIsODMtMTU0LjIsODNjNC4yLDI0LjUsMTQuOCw1MS44LDI0LjQsNzMKCQljMC44LDEuOCwxMy42LDI0LjQsMjMuMSwzNi43Yy01LjYtMTIuMy0xMS43LTIzLTExLjctNDEuNGMwLTUxLjksNDAuMi05NC4xLDkwLjUtOTUuOWMxLjIsMCwyLjUsMCwzLjcsMC4xbC0xMi0xMgoJCWMwLDAsNDguMy04LjEsMTEwLjMsMjkuNGMwLDAsMC45LDEuOSwwLDcuNWMwLDAsMjkuMiwxMi42LDMxLjcsMzcuMXMtMTMsMzguNS0yNS41LDQwLjVjMCwwLDYuNS0xMC4xLTMuNS0xNS41CgkJYy0yLjEtMS4yLTQuNi0xLjctNy4xLTEuNnYwYy0xOS4xLDAtMjEuMywyMS44LTIxLjMsMjEuOGMtMC4yLDEuMS0wLjIsMi4yLTAuMiwzLjNjMCwwLTMuMiwzMS45LDUzLjYsMzEuMwoJCWMwLDAsMjguOC0zMi42LDM2LjQtNjEuOWMyLjgtMTAuOCw0LjgtMTguOSw2LjEtMjQuOWMzLjItOC41LDYuMy0xNy4zLDkuMy0yNi40TDM0MC42LDExOS41eiIvPgoJPHBhdGggY2xhc3M9InN0NSIgZD0iTTIzNi42LDExNiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTIzNiwxMTkuMWMwLjgtMC40LDMuNC0xLjcsNi40LTQuOGM2LDAuOCwxMS45LDIuNywxMS45LDIuN2MtMTAuOS02LjYtMjUuOC0xMC41LTQyLjMtMTAuNAoJCWMwLDAsNi4zLDksMjMuOCwxMi43QzIzNS44LDExOS4zLDIzNS45LDExOS4yLDIzNiwxMTkuMXoiLz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDYiIGQ9Ik0xODYuMSw0MS4zYzEwLjYsMy4zLDg3LjYsMjguOSwxNDkuMiw3OS44bDYuOS0ybC0wLjUtMC40Yy02MC4yLTUxLTEzNi4zLTc3LjUtMTUyLjEtODIuNmwtMS41LTAuNWwtMi0wLjYKCQkJbC0zLjUsMS4xYy0xNS44LDUuMS05MS45LDMxLjYtMTUyLjEsODIuNmwtMC43LDAuNmw2LjcsMi4yQzk4LjEsNzAuMywxNzUuNSw0NC42LDE4Ni4xLDQxLjN6Ii8+Cgk8L2c+Cgk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzVfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjE4Ni4wNTciIHkxPSIyNDguNzk1NSIgeDI9IjE4Ni4wNTciIHkyPSItMTYuOTcyOCI+CgkJPHN0b3AgIG9mZnNldD0iMy45MTk2NTRlLTAyIiBzdHlsZT0ic3RvcC1jb2xvcjojMkNGNEUxIi8+CgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzJDQjJFMSIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfNl8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjQuODQxNSIgeTE9IjE2OC44NjE2IiB4Mj0iMzQ3LjI3MjYiIHkyPSIxNjguODYxNiI+CgkJPHN0b3AgIG9mZnNldD0iMy45MTk2NTRlLTAyIiBzdHlsZT0ic3RvcC1jb2xvcjojMkNGNEUxIi8+CgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzJDQjJFMSIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxwYXRoIGNsYXNzPSJzdDciIGQ9Ik0zNDEuNywxMDkuMmMtNjAuMi01MS0xMzYuMy03Ny41LTE1Mi4xLTgyLjZsLTEuNS0wLjVsLTItMC42bC0zLjUsMS4xYy0xNS44LDUuMS05MS45LDMxLjYtMTUyLjEsODIuNgoJCWwtMS4zLDEuMWwwLjMsMS43YzAuMSwwLjQsNi42LDM5LjEsMjguOCw4Mi44YzEzLjEsMjUuNywyOSw0OCw0Ny4yLDY2LjVjMjIuMywyMi42LDQ4LjMsMzkuMyw3Ny4yLDQ5LjdsMS43LDAuNmwxLjcsMC42bDEuOC0wLjcKCQlsMS43LTAuNmMyOC45LTEwLjQsNTQuOC0yNy4xLDc3LjItNDkuN2MxOC4yLTE4LjQsMzQuMS00MC44LDQ3LjItNjYuNWMyMi4yLTQzLjYsMjguOC04Mi40LDI4LjgtODIuOGwwLjMtMS43TDM0MS43LDEwOS4yegoJCSBNMzA4LjUsMTkyYy0xMi44LDI1LjEtMjguMyw0Ny00Ni4xLDY1Yy0yMi4xLDIyLjMtNDcuNywzOC43LTc2LjMsNDguOGMtMjguNi0xMC4xLTU0LjItMjYuNC03Ni4zLTQ4LjcKCQljLTE3LjgtMTgtMzMuMy0zOS44LTQ2LjEtNjQuOWMtMTkuMy0zNy44LTI2LjUtNzEuNy0yOC03OS41Qzk3LjQsNjEsMTc1LjQsMzUuMiwxODYuMSwzMS44YzEwLjYsMy40LDg4LjcsMjkuMiwxNTAuNCw4MC45CgkJQzMzNSwxMjAuNCwzMjcuNywxNTQuMywzMDguNSwxOTJ6Ii8+CjwvZz4KPC9zdmc+Cg=="/></a></div><div class="footer-item"><a href="https://aragon.org/">Home</a><a href="https://aragon.org/discover">Discover</a><a href="https://aragon.org/project">Project</a><a href="https://aragon.org/network">Network</a></div><div class="footer-item"><a href="https://hack.aragon.org/" target="_blank">Developers</a><a href="https://wiki.aragon.org/dev/bug_bounty/" target="_blank">Bug bounty</a><a href="https://aragon.org/project/grants">Grants</a><a href="https://aragon.org/project/governance">Governance</a></div><div class="footer-item"><a href="https://aragon.org/project/contribute">Contribute</a><a href="https://blog.aragon.org/" target="_blank">Blog</a><a href="https://wiki.aragon.org/" target="_blank">Wiki</a><a href="https://aracon.one/" target="_blank">AraCon</a></div><div class="footer-item mobile-full"><p class="footer-item-p">Be part of the conversation</p><div class="footer-box"><a href="https://twitter.com/aragonproject" target="_blank"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyMCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOS42NDE0IDEuODc5NzRDMTkuMTk4IDIuMDY4OCAxOC43Mzc2IDIuMjE3OTQgMTguMjY1MyAyLjMyNTkyQzE4Ljc4NTggMS44NTA0MSAxOS4xNzcxIDEuMjU1NjUgMTkuMzk3OSAwLjU5MTc5MVYwLjU5MTc5MUMxOS40NjA5IDAuNDAyMjcxIDE5LjI0NjggMC4yMzgzODggMTkuMDY4OCAwLjMzOTg2MlYwLjMzOTg2MkMxOC40MTE3IDAuNzE0NTk4IDE3LjcwMzggMC45OTU3MjEgMTYuOTY0OSAxLjE3NTUxQzE2LjkyMiAxLjE4NTk0IDE2Ljg3NzggMS4xOTEyMyAxNi44MzM0IDEuMTkxMjNDMTYuNjk4OCAxLjE5MTIzIDE2LjU2OCAxLjE0MzE4IDE2LjQ2NSAxLjA1NTk4QzE1LjY3ODkgMC4zODk4MjYgMTQuNjY3NyAwLjAyMjk0OTIgMTMuNjE3OSAwLjAyMjk0OTJDMTMuMTYzNyAwLjAyMjk0OTIgMTIuNzA1IDAuMDkxMDE5NCAxMi4yNTQ3IDAuMjI1Mjg4QzEwLjg1OTUgMC42NDEzMzUgOS43ODI5NSAxLjc0NzgxIDkuNDQ1MTkgMy4xMTI5NkM5LjMxODQ3IDMuNjI1MDEgOS4yODQxNyA0LjEzNzUyIDkuMzQzMTUgNC42MzYyNEM5LjM0OTkxIDQuNjkzNTUgOS4zMjE3MyA0LjczMzU1IDkuMzA0MzYgNC43NTIzMUM5LjI3Mzg1IDQuNzg1MTkgOS4yMzA1OSA0LjgwNDA1IDkuMTg1NjggNC44MDQwNUM5LjE4MDY2IDQuODA0MDUgOS4xNzU1MSA0LjgwMzgxIDkuMTcwNCA0LjgwMzM1QzYuMTE2MjggNC41MzA1NSAzLjM2MjIyIDMuMTE1OTYgMS40MTU1MSAwLjgyMDE4OVYwLjgyMDE4OUMxLjMxNjI0IDAuNzAzMDkgMS4xMjU4NyAwLjcxNzQ1MiAxLjA0Njc1IDAuODQ3OTMyVjAuODQ3OTMyQzAuNjY1NTMgMS40NzY3IDAuNDY0MDcxIDIuMTk1ODYgMC40NjQwNzEgMi45Mjc2NUMwLjQ2NDA3MSA0LjA0OTE1IDAuOTMyNzMyIDUuMTA2MDQgMS43NDY4IDUuODc2NTJDMS40MDQ0NiA1Ljc5ODQ4IDEuMDczMTIgNS42NzU1OCAwLjc2NTMzNiA1LjUxMTIzVjUuNTExMjNDMC42MTY0MzEgNS40MzE3IDAuNDMzMjE5IDUuNTMzOTIgMC40MzExMjcgNS42OTc2NlY1LjY5NzY2QzAuNDA5ODEzIDcuMzYzNzIgMS40MjQ0MSA4Ljg0NjIgMi45NDQzMSA5LjUxMzc2QzIuOTEzNzEgOS41MTQ0NiAyLjg4MzEgOS41MTQ3OSAyLjg1MjQ0IDkuNTE0NzlDMi42MTE1MiA5LjUxNDc5IDIuMzY3NTcgOS40OTI0MiAyLjEyNzQ4IDkuNDQ4MzFWOS40NDgzMUMxLjk1OTc5IDkuNDE3NTIgMS44MTg5MSA5LjU3MDQ2IDEuODcwOTggOS43MjY3NlY5LjcyNjc2QzIuMzY0MzEgMTEuMjA3NSAzLjY5MDQ1IDEyLjI5OSA1LjI3NzQgMTIuNTQ2OEMzLjk2MDMyIDEzLjM5NjggMi40MjY1NSAxMy44NDUyIDAuODMwMjAyIDEzLjg0NTJMMC4zMzI1MzggMTMuODQ0OUMwLjE3OTIwNCAxMy44NDQ5IDAuMDQ5NTIwNyAxMy45NDEgMC4wMTA0NDUzIDE0LjA4MzhDLTAuMDI4MDQ2MiAxNC4yMjQ0IDAuMDQyODU0IDE0LjM3MjggMC4xNzM2MDggMTQuNDQ1OUMxLjk3MjQ0IDE1LjQ1MjMgNC4wMjQyNyAxNS45ODQzIDYuMTA4MTYgMTUuOTg0M0M3LjkzMjI1IDE1Ljk4NDMgOS42Mzg1MiAxNS42MzYyIDExLjE3OTYgMTQuOTQ5OUMxMi41OTI0IDE0LjMyMDcgMTMuODQwOSAxMy40MjEzIDE0Ljg5MDMgMTIuMjc2N0MxNS44NjggMTEuMjEwNCAxNi42MzI0IDkuOTc5NDQgMTcuMTYyNSA4LjYxODEzQzE3LjY2NzcgNy4zMjA0OSAxNy45MzQ4IDUuOTM1ODkgMTcuOTM0OCA0LjYxMzk3VjQuNTUxQzE3LjkzNDcgNC4zMzg3NCAxOC4wMzQ2IDQuMTM5MDIgMTguMjA4OCA0LjAwMzA3QzE4Ljg2OTkgMy40ODcwNCAxOS40NDU1IDIuODc5NiAxOS45MTk3IDIuMTk3NjRWMi4xOTc2NEMyMC4wNDQ5IDIuMDE3NTcgMTkuODQ3NSAxLjc5MTg4IDE5LjY0MTQgMS44Nzk3NFYxLjg3OTc0WiIgZmlsbD0iIzdGODE5OCIvPgo8L3N2Zz4K"/></a><a href="https://spectrum.chat/aragon" target="_blank"><img src="/img/spectrum.svg"/></a><a href="https://forum.aragon.org/" target="_blank"><img class="forum" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAACqppVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICAgICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIKICAgICAgICAgICAgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iCiAgICAgICAgICAgIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyI+CiAgICAgICAgIDx4bXA6TW9kaWZ5RGF0ZT4yMDE4OjExOjE1IDE1OjExOjE5PC94bXA6TW9kaWZ5RGF0ZT4KICAgICAgICAgPHhtcDpDcmVhdGVEYXRlPjIwMTgtMTEtMTVUMTc6MjQ6MDMrMDE6MDA8L3htcDpDcmVhdGVEYXRlPgogICAgICAgICA8eG1wOk1ldGFkYXRhRGF0ZT4yMDE4LTExLTE1VDE3OjI3OjM4KzAxOjAwPC94bXA6TWV0YWRhdGFEYXRlPgogICAgICAgICA8eG1wOkNyZWF0b3JUb29sPlBpeGVsbWF0b3IgMy4zPC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj43MDwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj43MDwvZXhpZjpQaXhlbFlEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOkNvbG9yU3BhY2U+MTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOjk5Y2E0N2IzLThhNzItNDI4Ny1hMmVlLTEzNDkxMWJiZTMxNTwveG1wTU06SW5zdGFuY2VJRD4KICAgICAgICAgPHhtcE1NOkhpc3Rvcnk+CiAgICAgICAgICAgIDxyZGY6U2VxPgogICAgICAgICAgICAgICA8cmRmOmxpIHJkZjpwYXJzZVR5cGU9IlJlc291cmNlIj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OnNvZnR3YXJlQWdlbnQ+QWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCk8L3N0RXZ0OnNvZnR3YXJlQWdlbnQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTgtMTEtMTVUMTc6MjQ6MDMrMDE6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDppbnN0YW5jZUlEPnhtcC5paWQ6NzZlOGVmYjAtZDVlZC00MzdlLThiZjEtODI2NjFiZDM3NWFjPC9zdEV2dDppbnN0YW5jZUlEPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPmNyZWF0ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6c29mdHdhcmVBZ2VudD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoTWFjaW50b3NoKTwvc3RFdnQ6c29mdHdhcmVBZ2VudD4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OmNoYW5nZWQ+Lzwvc3RFdnQ6Y2hhbmdlZD4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OndoZW4+MjAxOC0xMS0xNVQxNzoyNzozOCswMTowMDwvc3RFdnQ6d2hlbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDo5OWNhNDdiMy04YTcyLTQyODctYTJlZS0xMzQ5MTFiYmUzMTU8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDphY3Rpb24+c2F2ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOlNlcT4KICAgICAgICAgPC94bXBNTTpIaXN0b3J5PgogICAgICAgICA8eG1wTU06RG9jdW1lbnRJRD5hZG9iZTpkb2NpZDpwaG90b3Nob3A6YWNhZThmMzktMjk4MS0xMTdjLWJiZWMtODU3NGIyMzA0MmRjPC94bXBNTTpEb2N1bWVudElEPgogICAgICAgICA8eG1wTU06T3JpZ2luYWxEb2N1bWVudElEPnhtcC5kaWQ6NzZlOGVmYjAtZDVlZC00MzdlLThiZjEtODI2NjFiZDM3NWFjPC94bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ+CiAgICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2UvcG5nPC9kYzpmb3JtYXQ+CiAgICAgICAgIDxkYzpzdWJqZWN0PgogICAgICAgICAgICA8cmRmOlNlcS8+CiAgICAgICAgIDwvZGM6c3ViamVjdD4KICAgICAgICAgPHRpZmY6WVJlc29sdXRpb24+NzI8L3RpZmY6WVJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOkNvbXByZXNzaW9uPjU8L3RpZmY6Q29tcHJlc3Npb24+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgICAgIDx0aWZmOlhSZXNvbHV0aW9uPjcyPC90aWZmOlhSZXNvbHV0aW9uPgog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"/></a></div><p class="footer-item-p">Subscribe to our newsletter</p><form class="footer-form" action="https://one.us15.list-manage.com/subscribe/post?u=a590aa3843a54b079d48e6e18&amp;id=e81a44c4bd" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate=""><div class="email-field"><input type="email" name="EMAIL" placeholder="Enter your email" class="required email form-input" id="mce-EMAIL"/><div aria-hidden="true" style="position:absolute;left:-5000px"><input type="text" name="b_a590aa3843a54b079d48e6e18_e81a44c4bd" tabindex="-1"/></div><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="form-button">Subscribe</button></div></form></div></div></div></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
