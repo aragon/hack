@@ -50,7 +50,6 @@ root
   - `CounterApp.sol`: Aragon app contract.
 - **scripts**: Scripts folder.
   - `buidler-hooks.js`: Buidler script hook.
-- **test**: Tests folder.
 - [**arapp.json**](https://hack.aragon.org/docs/cli-global-confg#the-arappjson-file): Aragon configuration file. Includes Aragon-specific metadata for your app.
 - [**manifest.json**](https://hack.aragon.org/docs/cli-global-confg#the-manifestjson-file): Aragon configuration file. Includes web-specific configurations.
 - [**buidler.config.js**](https://buidler.dev/config/): Buidler configuration file.
