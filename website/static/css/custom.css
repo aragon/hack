@@ -20,6 +20,13 @@ body {
   src: url('../fonts/HKGrotesk-Light.ttf') format('opentype');
 }
 
+@font-face{
+  font-family: 'Material Icons';
+  font-style:normal;
+  font-weight:400;
+  src: local("Material Icons"),local("MaterialIcons-Regular"),url("../fonts/MaterialIcons-Regular.ttf") format("truetype")}
+
+
 /* your custom css */
 strong,
 b {
@@ -143,14 +150,28 @@ a.take-tutorial:hover {
   color: black;
 }
 
-.edit-page-link {
+.edit-page-link.button {
   border: none;
-  display: none;
+  color: transparent;
 }
 
-.edit-page-link:hover {
+.edit-page-link.button:before {
+  font-family: "Material Icons" !important;
+  content: '';
+  font-style:normal;
+  font-weight: 600 !important; 
+  color: rgb(1, 195, 227);
+  font-size: 24px;
+}
+
+.edit-page-link.button:hover {
   background: none;
-  color: black;
+  color: transparent;
+}
+
+.edit-page-link.button:hover:before {
+  background: none;
+  color: #00b8d4;
 }
 
 hr {

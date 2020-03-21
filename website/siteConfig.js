@@ -55,6 +55,7 @@ const siteConfig = {
   tagline: 'What you need to get started building with Aragon',
   url: 'https://hack.aragon.org',
   baseUrl: '/',
+  editUrl: 'https://github.com/aragon/hack/edit/master/docs/',
   cname: 'hack.aragon.org',
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -67,7 +68,7 @@ const siteConfig = {
 
   cleanUrl: true,
 
-  editUrl: 'https://github.com/aragon/hack/tree/master/docs/',
+  
 
   twitterUsername: 'AragonProject',
 
