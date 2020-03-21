@@ -61,4 +61,4 @@ To ensure our docs are kept as clear and consistent as possible, please make sur
 
 
 ## Getting help
-If you need help, please reach out to Aragon core contributors and community members in the [#dev-help channel](https://aragon.chat/channel/dev-help) on the Aragon Chat.  We'd love to hear from you and know what you're working on!
+If you need help, please reach out to Aragon core contributors and community members in one of our [Aragon Spectrum channels](https://spectrum.chat/aragon).  We'd love to hear from you and know what you're working on!

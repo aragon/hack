@@ -423,6 +423,6 @@ There is much more to [aragonOS](os-intro.md) and [aragonAPI](api-intro.md), and
 
 ### Community
 
-Join the conversation and ask questions on [GitHub](https://github.com/aragon), [Aragon Forum](https://forum.aragon.org) and [Aragon Chat](https://aragon.chat), and make sure to tell us if you build something ara-mazing!
+Join the conversation and ask questions on [GitHub](https://github.com/aragon), [Aragon Forum](https://forum.aragon.org) and Spectrum [App development channel](https://spectrum.chat/aragon/app-development), and make sure to tell us if you build something ara-mazing!
 
 Now you just need to share the great news on Twitter and Reddit, to let people know that you've built something great!

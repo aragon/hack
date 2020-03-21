@@ -32,7 +32,14 @@ An arguably better way to fix the problem is to follow the steps outlined in thi
 
 ### Windows considerations
 
+
 Windows is not officially supported by aragonCLI at the moment. 
+
+You might need to run the shell with administrator rights when installing the aragonCLI, because our `go-ipfs` dependency will need to create a symlink to work correctly.
+
+If you have problems during the instalation of aragonCLI or any other dependencies. You probably need to install [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) or similar package.
+
+Again, if you're having trouble fixing things, please reach out to us in our Spectrum [App development channel](https://spectrum.chat/aragon/app-development).
 
 ### Note on Git
 
