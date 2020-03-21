@@ -392,11 +392,10 @@ function App() {
   const step = 2
 
   return (
-    // ...
     <Main>
-      // ...
+
       <Box>
-        // ...
+
         <div>
           <Button
             display="icon"
