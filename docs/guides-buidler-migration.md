@@ -8,7 +8,7 @@ sidebar_label: Buidler plugin migration
 
 This guide aims to describe the basic steps needed to migrate an Aragon app from the [aragonCLI](https://github.com/aragon/aragon-cli) to the new [Buidler plugin](https://blog.aragon.one/buidler-plugin). This new Aragon tool offers a more user-friendly and stable developer experience. You can learn more about the Buidler plugin [here](https://github.com/aragon/buidler-aragon). 
 
-For this tutorial, we will use the standard [react boilerplate](https://github.com/aragon/aragon-react-boilerplate) source code as our starting point. This guide assumes that you have a general understanding of the Aragon stack. 
+For this tutorial, we will use the original [react boilerplate for aragonCLI](https://github.com/aragon/aragon-react-boilerplate/tree/react-with-cli) source code as our starting point. This guide assumes that you have a general understanding of the Aragon stack. 
 
 ## 1. Install dependencies
 
@@ -100,7 +100,7 @@ Hooks are custom functions called at various stages of an app initialization. Th
   }
 ```
 
-Hooks can also be used to replace Aragon's templates logic. You can find complete examples [here](https://github.com/aragon/aragon-apps/pull/1084) and [here](https://github.com/aragon/aragon-apps/pull/1092). In our case, we will simply add empty functions since we don't need any initialization logic. So we will create a file named `buidler-hooks.js` in the `scripts` folder and add the following code:
+Hooks can also be used to replace Aragon's templates logic. You can find complete examples in 1Hive's [Conviction Voting](https://github.com/aragonone/conviction-voting-app/blob/buidlerized/buidler-app/scripts/buidler-hooks.js) and [Payroll](https://github.com/1Hive/payroll-app/blob/buidler-setup/buidler-app/scripts/buidler-hooks.js) apps. In our case, we will simply add empty functions since we don't need any initialization logic. So we will create a file named `buidler-hooks.js` in the `scripts` folder and add the following code:
 
 ```js
 module.exports = {
