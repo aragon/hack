@@ -56,6 +56,12 @@ root
 - [**buidler.config.js**](https://buidler.dev/config/): Buidler configuration file.
 - [**package.json**](https://docs.npmjs.com/creating-a-package-json-file): Main npm configuration file.
 
+### Stuck?
+
+If you get stuck at any point. [Come back here to check the diff with changes after the tutorial is completed](https://github.com/aragon/your-first-aragon-app/pull/2/files).
+
+Now let's start with it 💪.
+
 ## Writing a simple contract
 
 To illustrate how easy it is to use aragonOS, we will build our app as a vanilla smart contract, without any Aragon-specific interfaces at all.
@@ -522,6 +528,10 @@ At this point feel free to play around. Both front-end and smart contract files 
 If you've made it this far, congratulations! 😊🎉😊🎉
 
 ## Next steps
+
+### Tests
+
+If you feel like to keep learning about the Aragon stack right away. A great way of doing it is including some tests on your app. Check the [tests examples](https://github.com/aragon/aragon-react-boilerplate/blob/master/test/app.test.js) of the react boilerplate repo for ideas.
 
 ### Publishing
 
