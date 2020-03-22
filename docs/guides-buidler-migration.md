@@ -91,7 +91,7 @@ You can find more information about the Buidler configuration file [here](https:
 
 ## 5. Hooks
 
-Hooks are custom functions called at various stages of an app initialization. They can be used to execute any logic before or after the app is created and also to specify the app's [`initialize()`](https://hack.aragon.org/docs/aragonos-building#constructor-and-initialization) function parameters. For example, initializing the app with a `uint` and a `string` would be as simple as writing the following hook:
+Hooks are custom functions called at various stages of an app initialization. They can be used to execute any logic before or after the app is created and also to specify the app's [`initialize()`](https://hack.aragon.org/docs/aragonos-building#constructor-and-initialization) function parameters. For example, initializing the app with a `uint256` and a `string` would be as simple as writing the following hook:
 
 ```js
 getInitParams: async ({}, { web3, artifacts }) => {
@@ -99,7 +99,7 @@ getInitParams: async ({}, { web3, artifacts }) => {
 }
 ```
 
-Hooks can also be used to replace Aragon's templates logic. You can find complete examples in 1Hive's [Conviction Voting](https://github.com/aragonone/conviction-voting-app/blob/buidlerized/buidler-app/scripts/buidler-hooks.js) and [Payroll](https://github.com/1Hive/payroll-app/blob/buidler-setup/buidler-app/scripts/buidler-hooks.js) apps. In our case, we will simply add empty functions since we don't need any initialization logic. So we will create a file named `buidler-hooks.js` in the `scripts` folder and add the following code:
+If you were using a template contract before to initialize organization state during `aragon run`, you should convert the smart contract logic into the hooks. Because hooks are much easier to write, maintain, and debug, the Buidler plugin will not be supporting template contracts. You can find complete examples in 1Hive's [Conviction Voting](https://github.com/aragonone/conviction-voting-app/blob/buidlerized/buidler-app/scripts/buidler-hooks.js) and [Payroll](https://github.com/1Hive/payroll-app/blob/buidler-setup/buidler-app/scripts/buidler-hooks.js) apps. In our case, we will simply add empty functions since we don't need any initialization logic. So we will create a file named `buidler-hooks.js` in the `scripts` folder and add the following code:
 
 ```js
 module.exports = {
@@ -128,7 +128,9 @@ module.exports = {
 
 ## 5. Migrate tests
 
-Since the Aragon Buidler plugin uses truffle 5, you may have to migrate part of your tests. Here are a few tips to ease the process.
+Since the Aragon Buidler plugin uses truffle 5, you may have to migrate part of your tests. You can follow [this guide](https://medium.com/coinmonks/upgrading-to-truffle-5-22aedc7c2a4d) or the [truffle team anuncement](https://www.trufflesuite.com/blog/truffle-v5-has-arrived).
+
+Nevertheless, the following are a few tips to ease the process.
 
 ### Async/Await
 

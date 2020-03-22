@@ -57,7 +57,9 @@ root
 
 ### Stuck?
 
-If you get stuck at any point. [Come back here to check the diff with changes after the tutorial is completed](https://github.com/aragon/your-first-aragon-app/pull/2/files).
+If you get stuck at any point. [Come back here to check the diff with changes after the tutorial is completed](https://github.com/aragon/your-first-aragon-app/pull/2/files). 
+
+If you need help, please reach out to Aragon core contributors and community members in one of our [Aragon Spectrum channels](https://spectrum.chat/aragon).
 
 If you need help, please reach out to Aragon core contributors and community members in one of our [Aragon Spectrum channels](https://spectrum.chat/aragon).
 
@@ -261,6 +263,8 @@ The `store` method takes in a reducer function with the signature `(state, event
 The `store` should be used as the main "event loop" in an application's background script (running inside a WebWorker). Listens for events, passes them through reducer, caches the resulting state, and re-emits that state for easy chaining. Optionally takes a configuration object comprised of an init function, to re-initialize cached state, and an externals array for subscribing to external contract events. See below for more details.
 
 The store has block caching automatically applied, such that subsequent loads of the application only fetch new events from a cached ("committed") block height (rather than from 0 or the app's initialization block). This state can be observed in the view portion of your app. Also, note that the `store` method returns an observable of states. This is a recurring theme in the JavaScript implementation of aragonAPI—almost everything is an [RxJS](http://reactivex.io/rxjs/) observable.
+
+Learn more about it on the [store() documentation](https://github.com/aragon/aragon.js/blob/master/docs/API.md#store).
 
 Learn more about it on the [store() documentation](https://github.com/aragon/aragon.js/blob/master/docs/API.md#store).
 
