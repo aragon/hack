@@ -46,7 +46,7 @@ root
     - `index.js`: Aragon app entry point.
     - `script.sol`: Aragon app background script.
   - [**package.json**](https://docs.npmjs.com/creating-a-package-json-file): Frontend npm configuration file.
-- **contracts**: Smart Constracts folder.
+- **contracts**: Smart Contracts folder.
   - `CounterApp.sol`: Aragon app contract.
 - **scripts**: Scripts folder.
   - `buidler-hooks.js`: Buidler script hook.
@@ -57,7 +57,9 @@ root
 
 ### Stuck?
 
-If you get stuck at any point. [Come back here to check the diff with changes after the tutorial is completed](https://github.com/aragon/your-first-aragon-app/pull/2/files).
+If you get stuck at any point. [Come back here to check the diff with changes after the tutorial is completed](https://github.com/aragon/your-first-aragon-app/pull/2/files). 
+
+If you need help, please reach out to Aragon core contributors and community members in one of our [Aragon Spectrum channels](https://spectrum.chat/aragon).
 
 Now let's start with it 💪.
 
@@ -260,9 +262,11 @@ The `store` should be used as the main "event loop" in an application's backgrou
 
 The store has block caching automatically applied, such that subsequent loads of the application only fetch new events from a cached ("committed") block height (rather than from 0 or the app's initialization block). This state can be observed in the view portion of your app. Also note that the `store` method returns an observable of states. This is a recurring theme in the JavaScript implementation of aragonAPI—almost everything is an [RxJS](http://reactivex.io/rxjs/) observable.
 
+Learn more about it on the [store() documentation](https://github.com/aragon/aragon.js/blob/master/docs/API.md#store).
+
 ### Displaying State
 
-Now let's write the view portion of our app. In our case, this is a simple HTML file, and a simple React app wiht the `useAragonApi` [React Hook](https://reactjs.org/docs/hooks-intro.html) that observes the state that our background script builds for us and returns the data needed to interact with the app contract.
+Now let's write the view portion of our app. In our case, this is a simple HTML file, and a simple React app with the `useAragonApi` [React Hook](https://reactjs.org/docs/hooks-intro.html) that observes the state that our background script builds for us and returns the data needed to interact with the app contract.
 
 ```html
 <!-- app/index.html !-->
@@ -366,6 +370,9 @@ It returns an object containing the following entries:
 - `api`: This is the current AragonApp instance. Use it to call methods on the contract.
 
 These are not all the entries but the ones we are going to use in the tutorial. To learn about all of them check the [useAragonApi documentation](https://github.com/aragon/aragon.js/blob/master/packages/aragon-api-react/README.md#usearagonapi).
+
+> **Note**<br>
+> We are using several components from aragonUI. aragonUI is a React library based on aragonDS, the Aragon design system. It aims to provide the elements needed to build Aragon apps that feel native to the Aragon ecosystem. We are not going into details of aragonUI on this tutorial. If you feel like to learn more, check the [Getting started guide](https://ui.aragon.org/getting-started/).
 
 #### Sending transactions
 
