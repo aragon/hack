@@ -92,7 +92,7 @@
 └── package.json
 </code></pre>
 <ul>
-<li><strong>app</strong>: Frontend folder. Completely encapsulated, has its own package.json and dependencies.
+<li><strong>app</strong>: Frontend folder. Completely encapsulated, has its package.json and dependencies.
 <ul>
 <li><strong>src</strong>: Source files.
 <ul>
@@ -117,6 +117,7 @@
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="stuck"></a><a href="#stuck" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stuck?</h3>
 <p>If you get stuck at any point. <a href="https://github.com/aragon/your-first-aragon-app/pull/2/files">Come back here to check the diff with changes after the tutorial is completed</a>.</p>
+<p>If you need help, please reach out to Aragon core contributors and community members in one of our <a href="https://spectrum.chat/aragon">Aragon Spectrum channels</a>.</p>
 <p>If you need help, please reach out to Aragon core contributors and community members in one of our <a href="https://spectrum.chat/aragon">Aragon Spectrum channels</a>.</p>
 <p>Now let's start with it 💪.</p>
 <h2><a class="anchor" aria-hidden="true" id="writing-a-simple-contract"></a><a href="#writing-a-simple-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing a simple contract</h2>
@@ -164,7 +165,7 @@ We use <a href="https://github.com/aragon/aragonOS/blob/next/contracts/lib/math/
 }
 </code></pre>
 <p>Second, define the roles that you want your app to have. A role can be assigned to other apps or people and those entities will have access to methods guarded by that role.</p>
-<p>In this example we will define a role for incrementing and a role for decrementing but note that you can have a single role to guard all methods in your contract if you find that appropriate.</p>
+<p>In this example, we will define a role for incrementing and a role for decrementing but note that you can have a single role to guard all methods in your contract if you find that appropriate.</p>
 <pre><code class="hljs css language-solidity"><span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">CounterApp</span> <span class="hljs-keyword">is</span> <span class="hljs-title">AragonApp</span> </span>{
     <span class="hljs-comment">// ...</span>
     <span class="hljs-keyword">bytes32</span> <span class="hljs-keyword">constant</span> <span class="hljs-keyword">public</span> INCREMENT_ROLE = keccak256(<span class="hljs-string">"INCREMENT_ROLE"</span>);
@@ -193,7 +194,7 @@ We use <a href="https://github.com/aragon/aragonOS/blob/next/contracts/lib/math/
 </code></pre>
 <p>That's it. In 3 steps, you now have an Aragon app, with full upgradeability and modular governance.</p>
 <h2><a class="anchor" aria-hidden="true" id="descriptive-transactions"></a><a href="#descriptive-transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descriptive transactions</h2>
-<p>Aragon wants to be as user friendly as possible, so it provides an easy way for developers to describe what their smart contracts do in a human readable way. It's called <a href="/docs/human-readable-txs">Radspec</a>. It works by putting <code>@notice</code> statements alongside a human readable description for the function. In our example, we use the input <code>step</code> to describe what is doing our function at runtime.</p>
+<p>Aragon wants to be as user friendly as possible, so it provides an easy way for developers to describe what their smart contracts do in a human-readable way. It's called <a href="/docs/human-readable-txs">Radspec</a>. It works by putting <code>@notice</code> statements alongside a human-readable description for the function. In our example, we use the input <code>step</code> to describe what is doing our function at runtime.</p>
 <pre><code class="hljs css language-solidity"><span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">CounterApp</span> <span class="hljs-keyword">is</span> <span class="hljs-title">AragonApp</span> </span>{
     <span class="hljs-comment">/**
      * @notice Increment the counter by `step`
@@ -214,12 +215,12 @@ We use <a href="https://github.com/aragon/aragonOS/blob/next/contracts/lib/math/
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="building-the-frontend"></a><a href="#building-the-frontend" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Building the frontend</h2>
 <p>Because apps inside the <a href="/docs/client">Aragon client</a> are sandboxed, it also means that apps do not have direct access to Web3.</p>
-<p>Apps are run inside an iframe, which means that it only has access to its own DOM, not the outlying DOM. The app can communicate with the client over our own custom RPC protocol.</p>
+<p>Apps are run inside an iframe, which means that it only has access to its own DOM, not the outlying DOM. The app can communicate with the client over our custom RPC protocol.</p>
 <p>Then the client takes care of connecting to Ethereum via Web3, and also handles things like signing transactions, displaying notifications and more to the end-user.</p>
-<p>All of this is achieved by using aragonAPI. aragonAPI is split in two parts: one for clients and one for apps. The client portion of aragonAPI reads <em>requests</em> from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).</p>
+<p>All of this is achieved by using aragonAPI. aragonAPI is split into two parts: one for clients and one for apps. The client portion of aragonAPI reads <em>requests</em> from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).</p>
 <h3><a class="anchor" aria-hidden="true" id="background-scripts-and-building-state"></a><a href="#background-scripts-and-building-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background scripts and building state</h3>
 <p>Apps usually want to listen to events using Web3 and build an application state from those events. This concept is also known as <em>event sourcing</em>.</p>
-<p>aragonAPI was built with event sourcing in mind. To build state continually without having the app loaded indefinitely, though, we need to run a background script.</p>
+<p>aragonAPI was built with event sourcing in mind. To build the state continually without having the app loaded indefinitely, though, we need to run a background script.</p>
 <p>Thankfully the <a href="/docs/client">Aragon client</a> will run background scripts specified in the manifest files of our app (more on manifest files later).</p>
 <p>Let's start by writing a background script that listens for our <code>Increment</code> and <code>Decrement</code> events, and builds a state, for this example, the current value of our counter.</p>
 <pre><code class="hljs css language-js"><span class="hljs-comment">// app/src/script.js</span>
@@ -279,7 +280,8 @@ app.store(
 <p>If you've worked with <a href="https://redux.js.org/">Redux</a> before, this might look vaguely familiar.</p>
 <p>The <code>store</code> method takes in a reducer function with the signature <code>(state, event) =&gt; state</code>, where <code>state</code> is whatever you want it to be (in this example it is an integer), and <code>event</code> is a <a href="https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#contract-events">Web3 event</a>. The reducer function <strong>must always</strong> return a state, even if it is the same state as before. Returning undefined will reset the reduced state to its initial null state. Also note that the initial state is always null, not undefined, because of JSONRPC limitations.</p>
 <p>The <code>store</code> should be used as the main &quot;event loop&quot; in an application's background script (running inside a WebWorker). Listens for events, passes them through reducer, caches the resulting state, and re-emits that state for easy chaining. Optionally takes a configuration object comprised of an init function, to re-initialize cached state, and an externals array for subscribing to external contract events. See below for more details.</p>
-<p>The store has block caching automatically applied, such that subsequent loads of the application only fetch new events from a cached (&quot;committed&quot;) block height (rather than from 0 or the app's initialization block). This state can be observed in the view portion of your app. Also note that the <code>store</code> method returns an observable of states. This is a recurring theme in the JavaScript implementation of aragonAPI—almost everything is an <a href="http://reactivex.io/rxjs/">RxJS</a> observable.</p>
+<p>The store has block caching automatically applied, such that subsequent loads of the application only fetch new events from a cached (&quot;committed&quot;) block height (rather than from 0 or the app's initialization block). This state can be observed in the view portion of your app. Also, note that the <code>store</code> method returns an observable of states. This is a recurring theme in the JavaScript implementation of aragonAPI—almost everything is an <a href="http://reactivex.io/rxjs/">RxJS</a> observable.</p>
+<p>Learn more about it on the <a href="https://github.com/aragon/aragon.js/blob/master/docs/API.md#store">store() documentation</a>.</p>
 <p>Learn more about it on the <a href="https://github.com/aragon/aragon.js/blob/master/docs/API.md#store">store() documentation</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="displaying-state"></a><a href="#displaying-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Displaying State</h3>
 <p>Now let's write the view portion of our app. In our case, this is a simple HTML file, and a simple React app with the <code>useAragonApi</code> <a href="https://reactjs.org/docs/hooks-intro.html">React Hook</a> that observes the state that our background script builds for us and returns the data needed to interact with the app contract.</p>
@@ -385,9 +387,9 @@ We are using several components from aragonUI. aragonUI is a React library based
 <p>Our users need to be able to increment and decrement the counter. For this, we send what is called an <em>intent</em> to the client. An intent is an action you would like to occur on a specific contract. This intent is handled by the client, which will calculate a <em>transaction path</em> using the ACL of our DAO.</p>
 <p>To understand transaction paths, we must first understand a little bit about how the ACL works.</p>
 <p>The <a href="/docs/acl-intro">ACL (Access Control List)</a> is a simple mapping of <em>who</em> can perform <em>what</em> actions <em>where</em>. In our case, <em>someone</em> can perform an action guarded by a specific role (the <em>what</em>) on our app (the <em>where</em>).</p>
-<p>However, it is entirely possible that users can not perform actions directly. For example, in order to increment the counter, we might want a decision making process, such as a vote. The beauty of aragonOS is that we never need to specify this directly, as this is handled by the ACL.</p>
-<p>We simply say that the only one (<em>who</em>) that can perform increments and decrements (<em>what</em>) on our app (<em>where</em>) is the voting app. This is not done at compile time, it is done at run time.</p>
-<p>This works because of a concept called <a href="/docs/forwarding-intro"><em>forwarders</em></a>. A forwarder is simply an app that can execute transactions on someone's behalf, if the ACL permits it, and that app can have its own <em>arbitrary conditions</em> under which it wants to execute your transaction! In the example of the voting app, the voting app will only execute your transaction if the vote passes.</p>
+<p>However, it's entirely possible that users can not perform actions directly. For example, to increment the counter, we might want a decision-making process, such as a vote. The beauty of aragonOS is that we never need to specify this directly, as this is handled by the ACL.</p>
+<p>We simply say that the only one (<em>who</em>) that can perform increments and decrements (<em>what</em>) on our app (<em>where</em>) is the voting app. This is not done at compile-time, it is done at run time.</p>
+<p>This works because of a concept called <a href="/docs/forwarding-intro"><em>forwarders</em></a>. A forwarder is simply an app that can execute transactions on someone's behalf, if the ACL permits it, and that app can have its <em>arbitrary conditions</em> under which it wants to execute your transaction! In the example of the voting app, the voting app will only execute your transaction if the vote passes.</p>
 <p>It's really simple to use. Let's add our intents to our app:</p>
 <pre><code class="hljs css language-js"><span class="hljs-comment">// ...</span>
 
@@ -398,9 +400,7 @@ We are using several components from aragonUI. aragonUI is a React library based
 
   <span class="hljs-keyword">return</span> (
     &lt;Main&gt;
-
       &lt;Box&gt;
-
         &lt;div&gt;
           &lt;Button
             display="icon"
@@ -423,11 +423,11 @@ We are using several components from aragonUI. aragonUI is a React library based
   )
 }
 </code></pre>
-<p>That's it! Now whenever the user clicks one of either the increment or decrement buttons, an intent is sent to the wrapper, and it will show the user a transaction to sign.</p>
+<p>That's it! Now, whenever the user clicks one of either the increment or decrement buttons, an intent is sent to the wrapper, and it will show the user a transaction to sign.</p>
 <h2><a class="anchor" aria-hidden="true" id="writing-the-manifest-files"></a><a href="#writing-the-manifest-files" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing the manifest files</h2>
-<p>In order for aragonAPI to function, it needs some metadata about your app. This metadata is specified in two manifest files; <code>manifest.json</code> and <code>arapp.json</code>.</p>
+<p>For aragonAPI to function, it needs some metadata about your app. This metadata is specified in two manifest files; <code>manifest.json</code> and <code>arapp.json</code>.</p>
 <h3><a class="anchor" aria-hidden="true" id="arappjson"></a><a href="#arappjson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>arapp.json</h3>
-<p><code>arapp.json</code> defines smart contract and aragonPM-specific things like the roles in your app or different environments.</p>
+<p><code>arapp.json</code> defines the smart contract and aragonPM-specific things like the roles in your app or different environments.</p>
 <p>Let's modify <code>arapp.json</code> so that it knows about the roles we defined previously and use the development environment:</p>
 <pre><code class="hljs css language-json">{
   <span class="hljs-attr">"roles"</span>: [
@@ -451,10 +451,10 @@ We are using several components from aragonUI. aragonUI is a React library based
   <span class="hljs-attr">"path"</span>: <span class="hljs-string">"contracts/CounterApp.sol"</span>
 }
 </code></pre>
-<p>Notice that we input a fully qualified <a href="https://ens.domains/">ENS</a> name for <code>appName</code>. Let's examine the ENS name we entered, because it is not entirely arbitrary.</p>
+<p>Notice that we input a fully qualified <a href="https://ens.domains/">ENS</a> name for <code>appName</code>. Let's examine the ENS name we entered because it is not entirely arbitrary.</p>
 <p><img src="https://i.imgur.com/MQnYT6d.png" alt="Illustration of foo.aragonpm.eth"></p>
 <p>The first label in the ENS name is the name of our app. This can be anything you want, given that the full ENS name is not taken.</p>
-<p>The second and third label is the name of the <a href="/docs/package-management">aragonPM</a> registry that your repository will be (or is) registered to. For the sake of simplicity, this guide assumes that you have rights to create repositories on aragonpm.eth, but you could deploy your own aragonPM registry if you so desire.</p>
+<p>The second and third label is the name of the <a href="/docs/package-management">aragonPM</a> registry that your repository will be (or is) registered to. For the sake of simplicity, this guide assumes that you have rights to create repositories on aragonpm.eth, but you could deploy your aragonPM registry if you so desire.</p>
 <h3><a class="anchor" aria-hidden="true" id="manifestjson"></a><a href="#manifestjson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>manifest.json</h3>
 <p><code>manifest.json</code> defines end-user specific things like the human-readable name of your app, icons, and a small description of your app. It also (optionally) defines background scripts, of which we have one.</p>
 <p>Let's modify it accordingly:</p>
@@ -468,11 +468,11 @@ We are using several components from aragonUI. aragonUI is a React library based
 <h3><a class="anchor" aria-hidden="true" id="buidler-script-hooks"></a><a href="#buidler-script-hooks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Buidler script hooks</h3>
 <p>These hooks are called by the Aragon Buidler plugin during the start task's lifecycle. All hooks receive two parameters:</p>
 <ul>
-<li>A params object that may contain other objects that pertain to the particular hook.</li>
-<li>A &quot;bre&quot; or BuidlerRuntimeEnvironment object that contains enviroment objects like web3, Truffle artifacts, etc.</li>
+<li>Params object that may contain other objects that pertain to the particular hook.</li>
+<li>A &quot;bre&quot; or BuidlerRuntimeEnvironment object that contains environment objects like web3, Truffle artifacts, etc.</li>
 </ul>
 <p>We are going to use the <code>getInitParam</code> hook. Must return an array with the proxy's init parameters.</p>
-<p>That is called when the start task needs to know the app proxy's initialize parameters, <code>_initValue</code> for our <code>CounterApp</code> initialize function.</p>
+<p>That is called when the start task needs to know the app proxy's initialized parameters, <code>_initValue</code> for our <code>CounterApp</code> initialize function.</p>
 <pre><code class="hljs css language-js"><span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-comment">// ...</span>
   getInitParams: <span class="hljs-keyword">async</span> ({}, { web3, artifacts }) =&gt; {
@@ -489,12 +489,12 @@ We are using several components from aragonUI. aragonUI is a React library based
 <ul>
 <li>It will start a development chain you can interact with (it uses <code>ganache-core</code>, so it's a full testrpc instance) and prints 10 accounts.</li>
 <li>It compiles the contracts.</li>
-<li>It deploy the aragonOS bases (ENS, DAO factory, aragonPM registry).</li>
+<li>It deploys the aragonOS bases (ENS, DAO factory, aragonPM registry).</li>
 <li>It deploys an Aragon DAO with apps and development permissions (i.e. everyone can do everything)</li>
-<li>It build your app font-end. Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use <code>parcel</code> because it has zero config, but you can use your favorite bundler.</li>
+<li>It builds your app front-end. Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use <code>parcel</code> because it has zero-config, but you can use your favorite bundler.</li>
 <li>It publishes your app to a local aragonPM instance.</li>
-<li>It installs your app</li>
-<li>It initialize the app proxy with the parameter we defined in <code>getInitParams</code> hook.</li>
+<li>It installs your app.</li>
+<li>It initializes the app proxy with the parameter we defined in <code>getInitParams</code> hook.</li>
 <li>It starts the client locally, installing it if it's not cached.</li>
 </ul>
 <p>After running this command a browser tab should pop up with your freshly created DAO, complete with permissions and your local app installed.</p>
@@ -502,9 +502,9 @@ We are using several components from aragonUI. aragonUI is a React library based
 <p>If you've made it this far, congratulations! 😊🎉😊🎉</p>
 <h2><a class="anchor" aria-hidden="true" id="next-steps"></a><a href="#next-steps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next steps</h2>
 <h3><a class="anchor" aria-hidden="true" id="tests"></a><a href="#tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tests</h3>
-<p>If you feel like to keep learning about the Aragon stack right away. A great way of doing it is including some tests on your app. Check the <a href="https://github.com/aragon/aragon-react-boilerplate/blob/master/test/app.test.js">tests examples</a> of the react boilerplate repo for ideas.</p>
+<p>If you feel like to keep learning about the Aragon stack right away. A great way of doing it is including some tests on your app. Check the <a href="https://github.com/aragon/aragon-react-boilerplate/blob/master/test/app.test.js">test examples</a> of the react boilerplate repo for ideas.</p>
 <h3><a class="anchor" aria-hidden="true" id="publishing"></a><a href="#publishing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Publishing</h3>
-<p>Now that we're confident that our app will work and amaze the world, we should publish it. You can follow the publish guide to learn <a href="/docs/guides-publish">how to publish in different environments</a>.</p>
+<p>Now that we're confident that our app will work and amaze the world, we should publish it. You can follow the publishing guide to learn <a href="/docs/guides-publish">how to publish in different environments</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="documentation"></a><a href="#documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Documentation</h3>
 <p>A good place to go from here would be to check out <a href="https://github.com/aragon/aragon-apps">our existing apps</a>. They are fairly self-contained and use some patterns you might find helpful.</p>
 <p>There is much more to <a href="/docs/aragonos-intro">aragonOS</a> and <a href="/docs/api-intro">aragonAPI</a>, and we even have our own <a href="/docs/aragonui-intro">UI toolkit</a>. We encourage you to explore all 3 and provide us feedback.</p>
