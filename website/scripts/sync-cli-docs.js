@@ -1,6 +1,6 @@
 const { syncPages } = require('./sync-util')
 
-const GIT_REF = 'master'
+const GIT_REF = 'develop'
 const REPO = 'aragon/aragon-cli'
 
 const pages = [
