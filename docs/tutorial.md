@@ -40,7 +40,7 @@ root
 └── package.json
 ```
 
-- **app**: Frontend folder. Completely encapsulated, has its own package.json and dependencies.
+- **app**: Frontend folder. Completely encapsulated, has its package.json and dependencies.
   - **src**: Source files.
     - `App.js`: Aragon app root component.
     - `index.js`: Aragon app entry point.
@@ -58,6 +58,8 @@ root
 ### Stuck?
 
 If you get stuck at any point. [Come back here to check the diff with changes after the tutorial is completed](https://github.com/aragon/your-first-aragon-app/pull/2/files). 
+
+If you need help, please reach out to Aragon core contributors and community members in one of our [Aragon Spectrum channels](https://spectrum.chat/aragon).
 
 If you need help, please reach out to Aragon core contributors and community members in one of our [Aragon Spectrum channels](https://spectrum.chat/aragon).
 
@@ -119,7 +121,7 @@ contract CounterApp is AragonApp {
 
 Second, define the roles that you want your app to have. A role can be assigned to other apps or people and those entities will have access to methods guarded by that role.
 
-In this example we will define a role for incrementing and a role for decrementing but note that you can have a single role to guard all methods in your contract if you find that appropriate.
+In this example, we will define a role for incrementing and a role for decrementing but note that you can have a single role to guard all methods in your contract if you find that appropriate.
 
 ```solidity
 contract CounterApp is AragonApp {
@@ -156,7 +158,7 @@ That's it. In 3 steps, you now have an Aragon app, with full upgradeability and 
 
 ## Descriptive transactions
 
-Aragon wants to be as user friendly as possible, so it provides an easy way for developers to describe what their smart contracts do in a human readable way. It's called [Radspec](human-readable-txs.md). It works by putting `@notice` statements alongside a human readable description for the function. In our example, we use the input `step` to describe what is doing our function at runtime.
+Aragon wants to be as user friendly as possible, so it provides an easy way for developers to describe what their smart contracts do in a human-readable way. It's called [Radspec](human-readable-txs.md). It works by putting `@notice` statements alongside a human-readable description for the function. In our example, we use the input `step` to describe what is doing our function at runtime.
 
 ```solidity
 contract CounterApp is AragonApp {
@@ -182,17 +184,17 @@ contract CounterApp is AragonApp {
 
 Because apps inside the [Aragon client](client.md) are sandboxed, it also means that apps do not have direct access to Web3.
 
-Apps are run inside an iframe, which means that it only has access to its own DOM, not the outlying DOM. The app can communicate with the client over our own custom RPC protocol.
+Apps are run inside an iframe, which means that it only has access to its own DOM, not the outlying DOM. The app can communicate with the client over our custom RPC protocol.
 
 Then the client takes care of connecting to Ethereum via Web3, and also handles things like signing transactions, displaying notifications and more to the end-user.
 
-All of this is achieved by using aragonAPI. aragonAPI is split in two parts: one for clients and one for apps. The client portion of aragonAPI reads _requests_ from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).
+All of this is achieved by using aragonAPI. aragonAPI is split into two parts: one for clients and one for apps. The client portion of aragonAPI reads _requests_ from the app over RPC, sandboxes apps and performs Web3 actions, whereas the app portion provides a simple API to communicate with the client (to read state, send transactions and more).
 
 ### Background scripts and building state
 
 Apps usually want to listen to events using Web3 and build an application state from those events. This concept is also known as _event sourcing_.
 
-aragonAPI was built with event sourcing in mind. To build state continually without having the app loaded indefinitely, though, we need to run a background script.
+aragonAPI was built with event sourcing in mind. To build the state continually without having the app loaded indefinitely, though, we need to run a background script.
 
 Thankfully the [Aragon client](client.md) will run background scripts specified in the manifest files of our app (more on manifest files later).
 
@@ -260,7 +262,9 @@ The `store` method takes in a reducer function with the signature `(state, event
 
 The `store` should be used as the main "event loop" in an application's background script (running inside a WebWorker). Listens for events, passes them through reducer, caches the resulting state, and re-emits that state for easy chaining. Optionally takes a configuration object comprised of an init function, to re-initialize cached state, and an externals array for subscribing to external contract events. See below for more details.
 
-The store has block caching automatically applied, such that subsequent loads of the application only fetch new events from a cached ("committed") block height (rather than from 0 or the app's initialization block). This state can be observed in the view portion of your app. Also note that the `store` method returns an observable of states. This is a recurring theme in the JavaScript implementation of aragonAPI—almost everything is an [RxJS](http://reactivex.io/rxjs/) observable.
+The store has block caching automatically applied, such that subsequent loads of the application only fetch new events from a cached ("committed") block height (rather than from 0 or the app's initialization block). This state can be observed in the view portion of your app. Also, note that the `store` method returns an observable of states. This is a recurring theme in the JavaScript implementation of aragonAPI—almost everything is an [RxJS](http://reactivex.io/rxjs/) observable.
+
+Learn more about it on the [store() documentation](https://github.com/aragon/aragon.js/blob/master/docs/API.md#store).
 
 Learn more about it on the [store() documentation](https://github.com/aragon/aragon.js/blob/master/docs/API.md#store).
 
@@ -382,11 +386,11 @@ To understand transaction paths, we must first understand a little bit about how
 
 The [ACL (Access Control List)](acl-intro.md) is a simple mapping of _who_ can perform _what_ actions _where_. In our case, _someone_ can perform an action guarded by a specific role (the _what_) on our app (the _where_).
 
-However, it is entirely possible that users can not perform actions directly. For example, in order to increment the counter, we might want a decision making process, such as a vote. The beauty of aragonOS is that we never need to specify this directly, as this is handled by the ACL.
+However, it's entirely possible that users can not perform actions directly. For example, to increment the counter, we might want a decision-making process, such as a vote. The beauty of aragonOS is that we never need to specify this directly, as this is handled by the ACL.
 
-We simply say that the only one (_who_) that can perform increments and decrements (_what_) on our app (_where_) is the voting app. This is not done at compile time, it is done at run time.
+We simply say that the only one (_who_) that can perform increments and decrements (_what_) on our app (_where_) is the voting app. This is not done at compile-time, it is done at run time.
 
-This works because of a concept called [_forwarders_](forwarding-intro.md). A forwarder is simply an app that can execute transactions on someone's behalf, if the ACL permits it, and that app can have its own _arbitrary conditions_ under which it wants to execute your transaction! In the example of the voting app, the voting app will only execute your transaction if the vote passes.
+This works because of a concept called [_forwarders_](forwarding-intro.md). A forwarder is simply an app that can execute transactions on someone's behalf, if the ACL permits it, and that app can have its _arbitrary conditions_ under which it wants to execute your transaction! In the example of the voting app, the voting app will only execute your transaction if the vote passes.
 
 It's really simple to use. Let's add our intents to our app:
 
@@ -400,9 +404,7 @@ function App() {
 
   return (
     <Main>
-
       <Box>
-
         <div>
           <Button
             display="icon"
@@ -426,15 +428,15 @@ function App() {
 }
 ```
 
-That's it! Now whenever the user clicks one of either the increment or decrement buttons, an intent is sent to the wrapper, and it will show the user a transaction to sign.
+That's it! Now, whenever the user clicks one of either the increment or decrement buttons, an intent is sent to the wrapper, and it will show the user a transaction to sign.
 
 ## Writing the manifest files
 
-In order for aragonAPI to function, it needs some metadata about your app. This metadata is specified in two manifest files; `manifest.json` and `arapp.json`.
+For aragonAPI to function, it needs some metadata about your app. This metadata is specified in two manifest files; `manifest.json` and `arapp.json`.
 
 ### arapp.json
 
-`arapp.json` defines smart contract and aragonPM-specific things like the roles in your app or different environments.
+`arapp.json` defines the smart contract and aragonPM-specific things like the roles in your app or different environments.
 
 Let's modify `arapp.json` so that it knows about the roles we defined previously and use the development environment:
 
@@ -462,13 +464,13 @@ Let's modify `arapp.json` so that it knows about the roles we defined previously
 }
 ```
 
-Notice that we input a fully qualified [ENS](https://ens.domains/) name for `appName`. Let's examine the ENS name we entered, because it is not entirely arbitrary.
+Notice that we input a fully qualified [ENS](https://ens.domains/) name for `appName`. Let's examine the ENS name we entered because it is not entirely arbitrary.
 
 ![Illustration of foo.aragonpm.eth](https://i.imgur.com/MQnYT6d.png)
 
 The first label in the ENS name is the name of our app. This can be anything you want, given that the full ENS name is not taken.
 
-The second and third label is the name of the [aragonPM](package-management.md) registry that your repository will be (or is) registered to. For the sake of simplicity, this guide assumes that you have rights to create repositories on aragonpm.eth, but you could deploy your own aragonPM registry if you so desire.
+The second and third label is the name of the [aragonPM](package-management.md) registry that your repository will be (or is) registered to. For the sake of simplicity, this guide assumes that you have rights to create repositories on aragonpm.eth, but you could deploy your aragonPM registry if you so desire.
 
 ### manifest.json
 
@@ -489,12 +491,12 @@ Let's modify it accordingly:
 
 These hooks are called by the Aragon Buidler plugin during the start task's lifecycle. All hooks receive two parameters:
 
-- A params object that may contain other objects that pertain to the particular hook.
-- A "bre" or BuidlerRuntimeEnvironment object that contains enviroment objects like web3, Truffle artifacts, etc.
+- Params object that may contain other objects that pertain to the particular hook.
+- A "bre" or BuidlerRuntimeEnvironment object that contains environment objects like web3, Truffle artifacts, etc.
 
 We are going to use the `getInitParam` hook. Must return an array with the proxy's init parameters.
 
-That is called when the start task needs to know the app proxy's initialize parameters, `_initValue` for our `CounterApp` initialize function.
+That is called when the start task needs to know the app proxy's initialized parameters, `_initValue` for our `CounterApp` initialize function.
 
 ```js
 module.exports = {
@@ -518,12 +520,12 @@ This will do a couple of things for you:
 
 - It will start a development chain you can interact with (it uses `ganache-core`, so it's a full testrpc instance) and prints 10 accounts.
 - It compiles the contracts.
-- It deploy the aragonOS bases (ENS, DAO factory, aragonPM registry).
+- It deploys the aragonOS bases (ENS, DAO factory, aragonPM registry).
 - It deploys an Aragon DAO with apps and development permissions (i.e. everyone can do everything)
-- It build your app font-end. Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use `parcel` because it has zero config, but you can use your favorite bundler.
+- It builds your app front-end. Since we're importing Node.js modules in our front-end, we need a build script. For this, we opted to use `parcel` because it has zero-config, but you can use your favorite bundler.
 - It publishes your app to a local aragonPM instance.
-- It installs your app
-- It initialize the app proxy with the parameter we defined in `getInitParams` hook.
+- It installs your app.
+- It initializes the app proxy with the parameter we defined in `getInitParams` hook.
 - It starts the client locally, installing it if it's not cached.
 
 After running this command a browser tab should pop up with your freshly created DAO, complete with permissions and your local app installed.
@@ -536,11 +538,11 @@ If you've made it this far, congratulations! 😊🎉😊🎉
 
 ### Tests
 
-If you feel like to keep learning about the Aragon stack right away. A great way of doing it is including some tests on your app. Check the [tests examples](https://github.com/aragon/aragon-react-boilerplate/blob/master/test/app.test.js) of the react boilerplate repo for ideas.
+If you feel like to keep learning about the Aragon stack right away. A great way of doing it is including some tests on your app. Check the [test examples](https://github.com/aragon/aragon-react-boilerplate/blob/master/test/app.test.js) of the react boilerplate repo for ideas.
 
 ### Publishing
 
-Now that we're confident that our app will work and amaze the world, we should publish it. You can follow the publish guide to learn [how to publish in different environments](guides-publish.md).
+Now that we're confident that our app will work and amaze the world, we should publish it. You can follow the publishing guide to learn [how to publish in different environments](guides-publish.md).
 
 ### Documentation
 
