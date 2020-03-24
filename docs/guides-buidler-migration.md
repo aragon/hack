@@ -130,7 +130,7 @@ module.exports = {
 
 Since the Aragon Buidler plugin uses truffle 5, you may have to migrate part of your tests. You can follow [this guide](https://medium.com/coinmonks/upgrading-to-truffle-5-22aedc7c2a4d) or the [truffle team anuncement](https://www.trufflesuite.com/blog/truffle-v5-has-arrived).
 
-Nevertheless, the following are a few tips to ease the process.
+Nevertheless, the following tips can be helpful:
 
 ### Async/Await
 
@@ -173,6 +173,10 @@ would become:
 ```js
 const ZERO = '0x0000000000000000000000000000000000000000'
 ```
+
+### Coverage
+
+A useful Buidler plugin is available [here](https://github.com/sc-forks/solidity-coverage) for Solidity code coverage.
 
 ## 6. Start the app and uninstall unnecessary dependencies
 
