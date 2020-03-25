@@ -61,8 +61,6 @@ If you get stuck at any point. [Come back here to check the diff with changes af
 
 If you need help, please reach out to Aragon core contributors and community members in one of our [Aragon Spectrum channels](https://spectrum.chat/aragon).
 
-If you need help, please reach out to Aragon core contributors and community members in one of our [Aragon Spectrum channels](https://spectrum.chat/aragon).
-
 Now let's start with it 💪.
 
 ## Writing a simple contract
