@@ -92,13 +92,12 @@ For example, since blockchains are relatively expensive to store data on, it tur
 - [The future of organizations](https://blog.aragon.one/the-future-of-organizations/)
 - [The Aragon Manifesto](https://blog.aragon.org/the-aragon-manifesto-4a21212eac03/)
 - [The Aragon Whitepaper](https://github.com/aragon/whitepaper)
-- [Aragon Black: #1 White paper & Manifesto](https://blog.aragon.black/white-paper-manifesto/)
 - [Can Aragon make decentralized autonomous governance work](https://breakermag.com/can-aragon-make-decentralized-autonomous-governance-work/)
 - [Why The Internet Needs IPFS Before It’s Too Late](https://techcrunch.com/2015/10/04/why-the-internet-needs-ipfs-before-its-too-late/)
 - [A hands-on introduction to IPFS](https://medium.com/coinmonks/a-hands-on-introduction-to-ipfs-ee65b594937)
 - [Blockchain infrastructure landscape: a first principles framing](https://medium.com/@trentmc0/blockchain-infrastructure-landscape-a-first-principles-framing-92cc5549bafe)
-- [The case for decentralization](https://a16zcrypto.com/2019/04/why-work-in-crypto-startup-grind-2019/)
-- [What comes after open source?](https://a16zcrypto.com/2019/01/what-comes-after-open-source/)
+- [The case for decentralization](https://a16z.com/2019/04/17/why-work-in-crypto-startup-grind-2019/)
+- [What comes after open source?](https://a16z.com/2019/01/22/what-comes-after-open-source/)
 - [Fat protocols](http://www.usv.com/blog/fat-protocols)
 
 # Up and running
@@ -109,7 +108,7 @@ Now that we've got you all excited, let's go through what you need to get starte
 
 ### Node.js
 
-First off, we need to be sure we have a recent version of Node.js installed, for compatibility across OS we recommend LTS (`v10.5.3`) version.
+First off, we need to be sure we have a recent version of Node.js installed, for compatibility across OS we recommend LTS (`v12`) version.
 
 To see which version of Node you have installed, from the command line run:
 
@@ -141,7 +140,7 @@ For instructions on how to use Metamask as your web3 provider, please follow our
 
 ### The aragonCLI
 
-The final missing piece is what's known as the aragonCLI (or Aragon Command Line Interface). This is what we'll use to create, interact with, and develop Aragon apps and DAOs -- remember an Aragon DAO is just a combination of Aragon Apps.
+The aragonCLI (or Aragon Command Line Interface) is a tool used for complex interactions with DAOs, like installing a new app, granting permissions with specific parameters or executing transactions through the [Agent app](https://hack.aragon.org/docs/guides-use-agent).
 
 To install aragonCLI from the command line run:
 
@@ -149,9 +148,15 @@ To install aragonCLI from the command line run:
 npm i -g @aragon/cli
 ```
 
-Hopefully, it downloaded successfully. If that's the case, congrats! You're now officially ready to start building your first Aragon DAO!
-
 If you're having trouble with this step, you should take a look at the installing aragonCLI section of the [troubleshooting guide.](/docs/guides-faq#installing-aragonCLI) If that doesn't fix things, please don't hesitate to reach out to us in the [SDK Working Group channel](https://spectrum.chat/aragon/sdk-working-group).
+
+### The Aragon Buidler plugin
+
+The [Aragon Buidler plugin](https://github.com/aragon/buidler-aragon) is a user-friendly tool for developing apps on top of Aragon. The plugin is automatically installed when using the boilerplate templates but can be added to any project with the following command:
+
+```sh
+npm i @aragon/buidler-aragon
+```
 
 ## Quick start
 
@@ -179,7 +184,7 @@ If you look at your terminal, you should see a five step process:
 
 <span>![*](/docs/assets/check.svg) `Installing package dependencies`</span>
 
-<span>![*](/docs/assets/check.svg) `Created new application first_dao.aragonpm.eth in first_dao.`</span>
+<span>![*](/docs/assets/check.svg) `Created new application first-dao.aragonpm.eth in first-dao.`</span>
 
 <br>
 
@@ -201,13 +206,10 @@ If you've made it this far congrats 🤗. You've just created your first DAO! It
 If it's not already open, open your browser at the localhost address shown in your terminal. It should look something like this:
 
 ```sh
-This is the configuration for your development deployment:
-    Ethereum Node: ws://localhost:8545
-    ENS registry: 0x5f6f7e8cc7346a11ca2def8f827b7a0b612c56a1
-    APM registry: aragonpm.eth
-    DAO address: 0xE56671CA800F4516B5B705c729BD3c6Aee4DDbEC
-
-Opening http://localhost:3000/#/0xE56671CA800F4516B5B705c729BD3c6Aee4DDbEC to view your DAO
+frontend | You can now view the Aragon client in the browser.
+frontend | App content: http://localhost:8001
+frontend | Client:  http://localhost:3000/#/0x0D13999edC23D3475Ed3FE22a15Cc7828FeCD762/0xA1A7d254552BEB05f15522EeD93B54441E61d1d9
+frontend | Watching changes on front end...
 ```
 
 Once your browser is open at the right address, you should see a screen that looks like the one below.
