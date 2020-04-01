@@ -264,8 +264,6 @@ The store has block caching automatically applied, such that subsequent loads of
 
 Learn more about it on the [store() documentation](https://github.com/aragon/aragon.js/blob/master/docs/API.md#store).
 
-Learn more about it on the [store() documentation](https://github.com/aragon/aragon.js/blob/master/docs/API.md#store).
-
 ### Displaying State
 
 Now let's write the view portion of our app. In our case, this is a simple HTML file, and a simple React app with the `useAragonApi` [React Hook](https://reactjs.org/docs/hooks-intro.html) that observes the state that our background script builds for us and returns the data needed to interact with the app contract.
