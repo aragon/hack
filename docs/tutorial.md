@@ -495,6 +495,7 @@ We are going to use the `getInitParam` hook. Must return an array with the proxy
 That is called when the start task needs to know the app proxy's initialized parameters, `_initValue` for our `CounterApp` initialize function.
 
 ```js
+// scripts/buidler-hooks.js
 module.exports = {
   // ...
   getInitParams: async ({}, { web3, artifacts }) => {
