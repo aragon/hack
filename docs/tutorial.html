@@ -471,7 +471,8 @@ We are using several components from aragonUI. aragonUI is a React library based
 </ul>
 <p>We are going to use the <code>getInitParam</code> hook. Must return an array with the proxy's init parameters.</p>
 <p>That is called when the start task needs to know the app proxy's initialized parameters, <code>_initValue</code> for our <code>CounterApp</code> initialize function.</p>
-<pre><code class="hljs css language-js"><span class="hljs-built_in">module</span>.exports = {
+<pre><code class="hljs css language-js"><span class="hljs-comment">// scripts/buidler-hooks.js</span>
+<span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-comment">// ...</span>
   getInitParams: <span class="hljs-keyword">async</span> ({}, { web3, artifacts }) =&gt; {
     <span class="hljs-keyword">return</span> [<span class="hljs-number">15</span>]
