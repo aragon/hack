@@ -68,6 +68,27 @@ This will:
 Sample output:
 
 ```sh
+main     |   Deploy new repo to registry aragonpm.eth
+main     | 
+main     |   App name:          app.aragonpm.eth
+main     |   Initial version:   1.0.0
+main     |   Manager address:   0x5Ddb5ec4fF143fDaBCCD0a47F30FF2ce319C2a01
+main     |   Contract address:  0x2e25c8F88c5cCcbC9400e5bc86cF9C58C7604327
+main     |   ContentURI:        QmTBapuxxzFHzxdbxxZUmdEmyRxQohxoK7qiXiJ6id36tu
+main     | 
+main     |   http://localhost:8080/ipfs/QmTBapuxxzFHzxdbxxZUmdEmyRxQohxoK7qiXiJ6id36tu
+main     | 
+main     | 
+main     |   Tx sent
+main     | 
+main     |   Tx hash:  0x954fa737215152d2c9be5893bcda91cf889b30dd5e26bada10b657e87b89692f
+main     |   
+main     | 
+main     |   Tx mined
+main     |   
+main     |   Status:        Success
+main     |   Block number:  78
+main     |   Gas used:      960591
 ```
 
 > **Note**<br>
