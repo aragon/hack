@@ -11,11 +11,11 @@ This guide will show you how to publish an app to [aragonPM](/docs/package-manag
 > **Note**<br>
 > Publishing your app requires an on-chain action so you must connect an Ethereum account with enough funds on the selected environment to send a publish transaction.
 >
-> Secondly, your app's frontend content is uploaded to IPFS and it becomes **your responsibility** to ensure that it stays available to users. Click [here](https://docs.ipfs.io/introduction/overview/) to learn more about IPFS and [pinning files]()(https://docs.ipfs.io/guides/concepts/pinning/).
+> Secondly, your app's frontend content is uploaded to IPFS and it becomes **your responsibility** to ensure that it stays available to users. Click [here](https://docs.ipfs.io/introduction/overview/) to learn more about IPFS and [pinning files](https://docs.ipfs.io/guides/concepts/pinning/).
 
 ## Setup
 
-We'll start from the [React boilerplate](https://github.com/aragon/aragon-react-boilerplate).
+We'll start from the Aragon [React boilerplate](https://github.com/aragon/aragon-react-boilerplate).
 
 ```sh
 npx create-aragon-app app
@@ -25,7 +25,7 @@ This will create a new directory named `app`, with everything you need.
 
 To interact with aragonPM we will use the [`Aragon Buidler plugin`](https://github.com/aragon/buidler-aragon) already installed in the boilerplate repository. 
 
-We will also need a running [IPFS server](https://docs.ipfs.io/guides/guides/install/). For this tutorial, we will assume that the IPFS server is running locally with its API port set to `5001`. 
+We will also need a running [IPFS server](https://docs.ipfs.io/guides/guides/install/). For this tutorial, we will assume that the IPFS server is running locally with its API port set to `5001` and gateway to `8080`. 
 
 ## Introduction to environments
 
@@ -68,8 +68,6 @@ This will:
 Sample output:
 
 ```sh
-main     |   Deploy new repo to registry aragonpm.eth
-main     | 
 main     |   App name:          app.aragonpm.eth
 main     |   Initial version:   1.0.0
 main     |   Manager address:   0x5Ddb5ec4fF143fDaBCCD0a47F30FF2ce319C2a01
@@ -102,7 +100,7 @@ main     |   Gas used:      960591
 The publish task has the following syntax:
 
 ```sh
-buidler publish [global options] <bump> [task options]
+npx buidler publish [global options] <bump> [task options]
 ```
 
 Where `global options` are Buidler's [global options](https://buidler.dev/getting-started/#quick-start) and `bump` is the version bump (either `major`, `minor` or `patch`) or the semantic version. E.g. `minor` would increase version `1.2.0` to `1.3.0`.
