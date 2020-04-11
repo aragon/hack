@@ -27,6 +27,8 @@ To interact with aragonPM we will use the [`Aragon Buidler plugin`](https://gith
 
 We will also need a running [IPFS server](https://docs.ipfs.io/guides/guides/install/). For this tutorial, we will assume that the IPFS server is running locally with its API port set to `5001` and gateway to `8080`. 
 
+Excellent IPFS pinning services like [Pinata](https://pinata.cloud) and [Eternum](https://www.eternum.io) are also available for a reasonable price.
+
 ## Introduction to environments
 
 This app has 3 environments defined:
@@ -85,7 +87,7 @@ main     |
 main     |   Tx mined
 main     |   
 main     |   Status:        Success
-main     |   Block number:  78
+main     |   Block number:  6293860
 main     |   Gas used:      960591
 ```
 
@@ -107,17 +109,17 @@ Where `global options` are Buidler's [global options](https://buidler.dev/gettin
 
 The following task options are available:
 
-- `contract`: Contract address previously deployed.
-- `manager-address`: Owner of the APM repo. Must be provided in the initial release.
-- `ipfs-api-url` (default: `http://localhost:5001`): IPFS API URL to connect to an ipfs daemon API server.
+- `contract`: Address of the app's deployed smart contract.
+- `manager-address`: Permissions manager of the app's aragonPM repo. Must be provided in the initial release.
+- `ipfs-api-url` (default: `http://localhost:5001`): IPFS API URL to connect to an IPFS server.
 - `only-content` (flag): Prevents contract compilation, deployment and artifact generation.
 - `verify` (flag): Enables Etherscan verification.
-- `dry-run` (flag): Output tx data without broadcasting.
+- `dry-run` (flag): Output transaction data without broadcasting.
 
 
 ## Check published versions
 
-To fetch the versions published on aragonPM, we can use the [`aragon apm versions`](https://hack.aragon.org/docs/cli-apm-commands#aragon-apm-versions) command with aragonCLI.
+To fetch the versions published on aragonPM, we can use the [`aragon apm versions`](https://hack.aragon.org/docs/cli-apm-commands#aragon-apm-versions) command from aragonCLI.
 
 Command:
 
@@ -166,7 +168,7 @@ Sample output:
 
 Your application's frontend will have another build script associated with it, to transpile, bundle, and pack all of its assets (e.g. scripts, images, fonts, etc) together.
 
-If you've used the Aragon react boilerplate, this has already been set up for you with [`parcel-bundler`](https://parceljs.org) and [aragonUI](/docs/aragonui-intro).
+If you've used the Aragon React boilerplate, this has already been set up for you with [`parcel-bundler`](https://parceljs.org) and [aragonUI](/docs/aragonui-intro).
 
 If you need to add, modify, or remove assets or the way the frontend is built, it's important to remember to **always** use **relative paths** to serve those assets. Usually, this can be accomplished by adding a `./` in front of the path.
 
