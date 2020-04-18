@@ -12,7 +12,7 @@ sidebar_label: Troubleshooting
 
 If you're seeing several installation errors (e.g. `node-gyp rebuild`), the problem is probably due to an outdated Node.js version.
 
-aragonCLI currently supports the latest releases of the following Node.js versions: 10, 11 and 12.  
+aragonCLI currently supports the latest releases of the following Node.js versions: 10, 11 and 12.
 
 If you're seeing errors similar to:
 
@@ -33,7 +33,7 @@ An arguably better way to fix the problem is to follow the steps outlined in thi
 ### Windows considerations
 
 
-Windows is not officially supported by aragonCLI at the moment. 
+Windows is not officially supported by aragonCLI at the moment.
 
 You might need to run the shell with administrator rights when installing the aragonCLI, because our `go-ipfs` dependency will need to create a symlink to work correctly.
 
