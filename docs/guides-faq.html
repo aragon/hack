@@ -130,7 +130,8 @@
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="propagating-your-content-hash-through-ipfs"></a><a href="#propagating-your-content-hash-through-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Propagating your content hash through IPFS</h3>
 <p>When publishing a package via <code>aragon apm publish</code>, you will be returned an IPFS content (root) hash. For the Aragon client to load these files through its default IPFS configuration, this hash needs to be accessible at <code>https://ipfs.eth.aragon.network/ipfs/&lt;hash&gt;</code>.</p>
-<p>If you are running into issues with your hash being propagated to this URL, try running <code>ipfs propagate &lt;hash&gt;</code> or the following steps.</p>
+<p>The best way to propagate and keep your app's content accessible is to pin it via a cloud IPFS-pinning service like <a href="https://pinata.cloud/">Pinata</a> or <a href="https://temporal.cloud/">Temporal</a>. These services generally offer a generous free-tier that will allow you to host your app if it is not too large.</p>
+<p>Otherwise, as a quick fix, if you are running into issues with your hash being propagated to this URL, try running <code>ipfs propagate &lt;hash&gt;</code> or the following steps.</p>
 <ol>
 <li>If you have <code>aragon ipfs</code> running, quit that daemon.</li>
 <li>Run the command <code>ipfs daemon --enable-namesys-pubsub</code>.</li>
