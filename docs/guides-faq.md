@@ -110,7 +110,9 @@ The best way around this is to:
 
 When publishing a package via `aragon apm publish`, you will be returned an IPFS content (root) hash. For the Aragon client to load these files through its default IPFS configuration, this hash needs to be accessible at `https://ipfs.eth.aragon.network/ipfs/<hash>`.
 
-If you are running into issues with your hash being propagated to this URL, try running `ipfs propagate <hash>` or the following steps.
+The best way to propagate and keep your app's content accessible is to pin it via a cloud IPFS-pinning service like [Pinata](https://pinata.cloud/) or [Temporal](https://temporal.cloud/). These services generally offer a generous free-tier that will allow you to host your app if it is not too large.
+
+Otherwise, as a quick fix, if you are running into issues with your hash being propagated to this URL, try running `ipfs propagate <hash>` or the following steps.
 
 1. If you have `aragon ipfs` running, quit that daemon.
 2. Run the command `ipfs daemon --enable-namesys-pubsub`.
