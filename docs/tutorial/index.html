@@ -129,13 +129,13 @@
 <p>To illustrate how easy it is to use aragonOS, we will build our app as a vanilla smart contract, without any Aragon-specific interfaces at all.</p>
 <p>Today, we will build a simple counter app — you can increment it, you can decrement it, and it will all be decentralized. Decentralized coffee counter, anyone?</p>
 <pre><code class="hljs css language-solidity"><span class="hljs-comment">// contracts/CounterApp.sol</span>
-pragma solidity ^<span class="hljs-number">0.4</span><span class="hljs-number">.24</span>;
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.4.24;</span>
 
 <span class="hljs-keyword">import</span> <span class="hljs-string">"@aragon/os/contracts/lib/math/SafeMath.sol"</span>;
 
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">CounterApp</span> </span>{
-    <span class="hljs-keyword">using</span> SafeMath <span class="hljs-keyword">for</span> <span class="hljs-keyword">uint256</span>;
+    <span class="hljs-keyword">using</span> <span class="hljs-title">SafeMath</span> <span class="hljs-title"><span class="hljs-keyword">for</span></span> <span class="hljs-title"><span class="hljs-keyword">uint256</span></span>;
 
     <span class="hljs-comment">/// Events</span>
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Increment</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> entity, <span class="hljs-keyword">uint256</span> step</span>)</span>;
@@ -144,14 +144,14 @@ pragma solidity ^<span class="hljs-number">0.4</span><span class="hljs-number">.
     <span class="hljs-comment">/// State</span>
     <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> value;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">external</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         value = value.add(step);
-        emit Increment(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, step);
+        <span class="hljs-keyword">emit</span> Increment(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, step);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">external</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         value = value.sub(step);
-        emit Decrement(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, step);
+        <span class="hljs-keyword">emit</span> Decrement(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, step);
     }
 }
 </code></pre>
@@ -173,8 +173,8 @@ We use <a href="https://github.com/aragon/aragonOS/blob/next/contracts/lib/math/
 <p>In this example, we will define a role for incrementing and a role for decrementing but note that you can have a single role to guard all methods in your contract if you find that appropriate.</p>
 <pre><code class="hljs css language-solidity"><span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">CounterApp</span> <span class="hljs-keyword">is</span> <span class="hljs-title">AragonApp</span> </span>{
     <span class="hljs-comment">// ...</span>
-    <span class="hljs-keyword">bytes32</span> <span class="hljs-keyword">constant</span> <span class="hljs-keyword">public</span> INCREMENT_ROLE = keccak256(<span class="hljs-string">"INCREMENT_ROLE"</span>);
-    <span class="hljs-keyword">bytes32</span> <span class="hljs-keyword">constant</span> <span class="hljs-keyword">public</span> DECREMENT_ROLE = keccak256(<span class="hljs-string">"DECREMENT_ROLE"</span>);
+    <span class="hljs-keyword">bytes32</span> <span class="hljs-keyword">constant</span> <span class="hljs-keyword">public</span> INCREMENT_ROLE = <span class="hljs-built_in">keccak256</span>(<span class="hljs-string">"INCREMENT_ROLE"</span>);
+    <span class="hljs-keyword">bytes32</span> <span class="hljs-keyword">constant</span> <span class="hljs-keyword">public</span> DECREMENT_ROLE = <span class="hljs-built_in">keccak256</span>(<span class="hljs-string">"DECREMENT_ROLE"</span>);
     <span class="hljs-comment">// ...</span>
 }
 </code></pre>
@@ -182,17 +182,17 @@ We use <a href="https://github.com/aragon/aragonOS/blob/next/contracts/lib/math/
 <pre><code class="hljs css language-solidity"><span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">CounterApp</span> <span class="hljs-keyword">is</span> <span class="hljs-title">AragonApp</span> </span>{
     <span class="hljs-comment">// ...</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _initValue</span>) <span class="hljs-title">public</span> <span class="hljs-title">onlyInit</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _initValue</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title">onlyInit</span> </span>{
         value = _initValue;
 
         initialized();
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">auth</span>(<span class="hljs-params">INCREMENT_ROLE</span>) <span class="hljs-title">external</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">auth</span>(<span class="hljs-params">INCREMENT_ROLE</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         <span class="hljs-comment">// ...</span>
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">auth</span>(<span class="hljs-params">DECREMENT_ROLE</span>) <span class="hljs-title">external</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">auth</span>(<span class="hljs-params">DECREMENT_ROLE</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         <span class="hljs-comment">// ...</span>
     }
 }
@@ -205,7 +205,7 @@ We use <a href="https://github.com/aragon/aragonOS/blob/next/contracts/lib/math/
      * @notice Increment the counter by `step`
      * @param step Amount to increment by
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">auth</span>(<span class="hljs-params">INCREMENT_ROLE</span>) <span class="hljs-title">external</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">auth</span>(<span class="hljs-params">INCREMENT_ROLE</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         <span class="hljs-comment">// ...</span>
     }
 
@@ -213,7 +213,7 @@ We use <a href="https://github.com/aragon/aragonOS/blob/next/contracts/lib/math/
      * @notice Decrement the counter by `step`
      * @param step Amount to decrement by
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">auth</span>(<span class="hljs-params">DECREMENT_ROLE</span>) <span class="hljs-title">external</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> step</span>) <span class="hljs-title">auth</span>(<span class="hljs-params">DECREMENT_ROLE</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         <span class="hljs-comment">// ...</span>
     }
 }
@@ -251,7 +251,7 @@ app.store(
           <span class="hljs-keyword">return</span> { ...nextState, <span class="hljs-attr">isSyncing</span>: <span class="hljs-literal">true</span> }
         <span class="hljs-keyword">case</span> events.SYNC_STATUS_SYNCED:
           <span class="hljs-keyword">return</span> { ...nextState, <span class="hljs-attr">isSyncing</span>: <span class="hljs-literal">false</span> }
-        <span class="hljs-keyword">default</span>:
+        <span class="hljs-attr">default</span>:
           <span class="hljs-keyword">return</span> state
       }
     } <span class="hljs-keyword">catch</span> (err) {
@@ -290,7 +290,7 @@ app.store(
 <h3><a class="anchor" aria-hidden="true" id="displaying-state"></a><a href="#displaying-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Displaying State</h3>
 <p>Now let's write the view portion of our app. In our case, this is a simple HTML file, and a simple React app with the <code>useAragonApi</code> <a href="https://reactjs.org/docs/hooks-intro.html">React Hook</a> that observes the state that our background script builds for us and returns the data needed to interact with the app contract.</p>
 <pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!-- app/index.html !--&gt;</span>
-<span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Aragon App<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
@@ -370,12 +370,12 @@ ReactDOM.render(
       &gt;</span>
         Count: {count}
       <span class="hljs-tag">&lt;/<span class="hljs-name">Box</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">Main</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Main</span>&gt;</span></span>
   )
 }
 
-export default App
-</span></code></pre>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> App
+</code></pre>
 <p><code>useAragonApi()</code> is a React Hook that returns the data needed to interact with the app contract. As with any React Hook, please ensure that you follow the <a href="https://reactjs.org/docs/hooks-rules.html">Rules of Hooks</a>.
 It returns an object containing the following entries:</p>
 <ul>
@@ -403,27 +403,27 @@ We are using several components from aragonUI. aragonUI is a React library based
   <span class="hljs-keyword">const</span> step = <span class="hljs-number">2</span>
 
   <span class="hljs-keyword">return</span> (
-    &lt;Main&gt;
-      &lt;Box&gt;
-        &lt;div&gt;
-          &lt;Button
-            display="icon"
-            icon={&lt;IconMinus /&gt;}
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Main</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Box</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+            <span class="hljs-attr">display</span>=<span class="hljs-string">"icon"</span>
+            <span class="hljs-attr">icon</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">IconMinus</span> /&gt;</span>}
             label="Decrement"
             onClick={() =&gt; api.decrement(step).toPromise()}
           /&gt;
-          &lt;Button
-            display="icon"
-            icon={&lt;IconPlus /&gt;}
+          <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+            <span class="hljs-attr">display</span>=<span class="hljs-string">"icon"</span>
+            <span class="hljs-attr">icon</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">IconPlus</span> /&gt;</span>}
             label="Increment"
             onClick={() =&gt; api.increment(step).toPromise()}
             css={`
               margin-left: ${2 * GU}px;
             `}
           /&gt;
-        &lt;/div&gt;
-      &lt;/Box&gt;
-    &lt;/Main&gt;
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Box</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Main</span>&gt;</span></span>
   )
 }
 </code></pre>
@@ -480,7 +480,7 @@ We are using several components from aragonUI. aragonUI is a React library based
 <pre><code class="hljs css language-js"><span class="hljs-comment">// scripts/buidler-hooks.js</span>
 <span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-comment">// ...</span>
-  getInitParams: <span class="hljs-keyword">async</span> ({}, { web3, artifacts }) =&gt; {
+  <span class="hljs-attr">getInitParams</span>: <span class="hljs-keyword">async</span> ({}, { web3, artifacts }) =&gt; {
     <span class="hljs-keyword">return</span> [<span class="hljs-number">15</span>]
   },
   <span class="hljs-comment">// ...</span>

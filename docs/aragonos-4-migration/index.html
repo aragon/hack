@@ -86,7 +86,7 @@
     <span class="hljs-comment">/**
     * @dev Initialize can only be called once. It saves the block number in which it was initialized.
     */</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> <span class="hljs-title">onlyInit</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title">onlyInit</span> </span>{
         initialized();
     }
 }
@@ -96,7 +96,7 @@
     <span class="hljs-comment">/**
     * @dev Create a new DAO with App installed
     */</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">newDAO</span>(<span class="hljs-params"></span>) <span class="hljs-title">external</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">newDAO</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         <span class="hljs-comment">// ...</span>
 
         App app = App(dao.newAppInstance(<span class="hljs-comment">/* ... */</span>));

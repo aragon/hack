@@ -101,13 +101,13 @@
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">MyApp</span> <span class="hljs-keyword">is</span> <span class="hljs-title">AragonApp</span> </span>{
     <span class="hljs-keyword">address</span> receiver;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _receiver</span>) <span class="hljs-title">public</span> <span class="hljs-title">onlyInit</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _receiver</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title">onlyInit</span> </span>{
         initialized();
         receiver = _receiver;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendFunds</span>(<span class="hljs-params"></span>) <span class="hljs-title">payable</span> <span class="hljs-title">external</span> <span class="hljs-title">isInitialized</span> </span>{
-        receiver.transfer(<span class="hljs-built_in">msg</span>.value);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendFunds</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title">isInitialized</span> </span>{
+        receiver.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>);
     }
 }
 </code></pre>
@@ -138,21 +138,21 @@
 <pre><code class="hljs css language-solidity"><span class="hljs-keyword">import</span> <span class="hljs-string">"@aragon/os/contracts/apps/AragonApp.sol"</span>;
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">MyApp</span> <span class="hljs-keyword">is</span> <span class="hljs-title">AragonApp</span> </span>{
-    <span class="hljs-keyword">bytes32</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> SET_RECEIVER_ROLE = keccak256(<span class="hljs-string">"SET_RECEIVER_ROLE"</span>);
+    <span class="hljs-keyword">bytes32</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> SET_RECEIVER_ROLE = <span class="hljs-built_in">keccak256</span>(<span class="hljs-string">"SET_RECEIVER_ROLE"</span>);
 
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> receiver;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _receiver</span>) <span class="hljs-title">public</span> <span class="hljs-title">onlyInit</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _receiver</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title">onlyInit</span> </span>{
         initialized();
         receiver = _receiver;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setReceiver</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _newReceiver</span>) <span class="hljs-title">external</span> <span class="hljs-title">auth</span>(<span class="hljs-params">SET_RECEIVER_ROLE</span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setReceiver</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _newReceiver</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title">auth</span>(<span class="hljs-params">SET_RECEIVER_ROLE</span>) </span>{
         receiver = _newReceiver;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendFunds</span>(<span class="hljs-params"></span>) <span class="hljs-title">external</span> <span class="hljs-title">payable</span> <span class="hljs-title">isInitialized</span> </span>{
-        receiver.transfer(<span class="hljs-built_in">msg</span>.value);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendFunds</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> <span class="hljs-title">isInitialized</span> </span>{
+        receiver.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>);
     }
 }
 </code></pre>
@@ -178,22 +178,22 @@
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">MyApp</span> <span class="hljs-keyword">is</span> <span class="hljs-title">IForwarder</span>, <span class="hljs-title">AragonApp</span> </span>{
     <span class="hljs-keyword">address</span> receiver;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _receiver</span>) <span class="hljs-title">onlyInit</span> <span class="hljs-title">public</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _receiver</span>) <span class="hljs-title">onlyInit</span> <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         initialized();
         receiver = _receiver;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isForwarder</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> <span class="hljs-title">pure</span> <span class="hljs-title">returns</span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isForwarder</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
         <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">canForward</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _sender, <span class="hljs-keyword">bytes</span> _evmCallScript</span>) <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">canForward</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _sender, <span class="hljs-keyword">bytes</span> _evmCallScript</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
         <span class="hljs-comment">// Arbitrary logic for deciding whether to forward a given intent</span>
         <span class="hljs-keyword">return</span> _sender == receiver;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forward</span>(<span class="hljs-params"><span class="hljs-keyword">bytes</span> _evmScript</span>) <span class="hljs-title">public</span> </span>{
-        <span class="hljs-keyword">require</span>(canForward(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, _evmScript));
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forward</span>(<span class="hljs-params"><span class="hljs-keyword">bytes</span> _evmScript</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-built_in">require</span>(canForward(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, _evmScript));
 
         <span class="hljs-comment">// Input is unused at the moment</span>
         <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> input = <span class="hljs-keyword">new</span> <span class="hljs-keyword">bytes</span>(<span class="hljs-number">0</span>);
@@ -216,12 +216,12 @@
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">MyApp</span> <span class="hljs-keyword">is</span> <span class="hljs-title">AragonApp</span> </span>{
     <span class="hljs-keyword">address</span> receiver;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _receiver</span>) <span class="hljs-title">onlyInit</span> <span class="hljs-title">public</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialize</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _receiver</span>) <span class="hljs-title">onlyInit</span> <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         initialized();
         receiver = _receiver;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowRecoverability</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> token</span>) <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowRecoverability</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> token</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
         <span class="hljs-keyword">return</span> token != ETH; <span class="hljs-comment">// turns off fund recovery for ETH</span>
     }
 }

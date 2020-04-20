@@ -276,7 +276,7 @@
 </ol>
 <p>Note that, same as before, this command will trigger a vote in the DAO and <strong>you'll need to vote <em>yes</em> to confirm the new permissions you've granted the Voting app.</strong></p>
 <p>You can do this either by using the Aragon client again or, now that you know how to get the address of your apps, by running:</p>
-<pre><code class="hljs"><span class="hljs-string">dao</span> <span class="hljs-string">exec</span> <span class="hljs-string">&lt;your</span> <span class="hljs-string">organization</span> <span class="hljs-string">name&gt;</span> <span class="hljs-string">&lt;your</span> <span class="hljs-string">voting</span> <span class="hljs-string">app</span> <span class="hljs-string">address&gt;</span> <span class="hljs-string">vote</span> <span class="hljs-string">&lt;vote</span> <span class="hljs-string">id&gt;</span> <span class="hljs-literal">true</span> <span class="hljs-literal">true</span> <span class="hljs-bullet">--environment</span> <span class="hljs-attr">aragon:rinkeby</span> <span class="hljs-bullet">--ipfs-rpc</span> <span class="hljs-attr">https://ipfs.eth.aragon.network/ipfs/</span>
+<pre><code class="hljs">dao exec &lt;your organization <span class="hljs-built_in">name</span>&gt; &lt;your voting app address&gt; vote &lt;vote <span class="hljs-built_in">id</span>&gt; <span class="hljs-literal">true</span> <span class="hljs-literal">true</span> <span class="hljs-comment">--environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/</span>
 </code></pre>
 <p><details>
 <summary>Tell me more about dao exec.</summary></p>
@@ -352,7 +352,7 @@
 <p>In other words, A's Agent app allows it to participate as a stakeholder in B.</p>
 <p>This means that to allow A to vote in B we need to mint a token for A's Agent app in B.</p>
 <p>To do this run:</p>
-<pre><code class="hljs">dao exec &lt;<span class="hljs-built_in">name</span> <span class="hljs-keyword">of</span> dao B&gt; &lt;token manager app address <span class="hljs-keyword">of</span> dao B&gt; mint &lt;agent app address <span class="hljs-keyword">of</span> dao A&gt; <span class="hljs-number">1000000000000000000</span> <span class="hljs-comment">--environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/</span>
+<pre><code class="hljs"><span class="hljs-symbol">dao</span> exec &lt;name of dao <span class="hljs-keyword">B&gt; </span>&lt;token manager app <span class="hljs-keyword">address </span>of dao <span class="hljs-keyword">B&gt; </span>mint &lt;agent app <span class="hljs-keyword">address </span>of dao A&gt; <span class="hljs-number">1000000000000000000</span> --environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/
 </code></pre>
 <p>Remember, you can find the addresses of the apps in any of your DAOs by running <code>dao apps &lt;organization name&gt; --environment aragon:rinkeby</code>.</p>
 <p>As you can see, we are using the <code>dao exec</code> command to interact with the <code>mint</code> method of B's <a href="https://help.aragon.org/article/18-tokens">Token Manager</a> app.</p>
@@ -367,7 +367,7 @@ In our case this is a 1 followed by eighteen 0s, or <code>1000000000000000000</c
 </blockquote>
 <p>Finally, the usual warning: running the above command will trigger a vote in B to create and send a token to A's Agent App: we'll need to vote <em>yes</em> to confirm the minting of the token.</p>
 <p>You can do this either directly through the UI or by running:</p>
-<pre><code class="hljs">dao exec &lt;<span class="hljs-built_in">name</span> <span class="hljs-keyword">of</span> dao B&gt; &lt;voting app address <span class="hljs-keyword">of</span> dao B&gt; vote <span class="hljs-number">0</span> <span class="hljs-literal">true</span> <span class="hljs-literal">true</span> <span class="hljs-comment">--environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/</span>
+<pre><code class="hljs">dao exec &lt;name of dao B&gt; &lt;voting app address of dao B&gt; vote <span class="hljs-number">0</span> <span class="hljs-literal">true</span> <span class="hljs-literal">true</span> --environment <span class="hljs-string">aragon:</span>rinkeby --ipfs-rpc <span class="hljs-string">https:</span><span class="hljs-comment">//ipfs.eth.aragon.network/ipfs/</span>
 </code></pre>
 <p>On the UI, the vote will look something like this.</p>
 <p align="center">
@@ -380,8 +380,8 @@ In our case this is a 1 followed by eighteen 0s, or <code>1000000000000000000</c
 <p>You should see that you've successfully added another token holder (your Agent app)! 🎉🎉😊</p>
 <h3><a class="anchor" aria-hidden="true" id="3-create-a-vote-in-b-to-add-a-third-entity"></a><a href="#3-create-a-vote-in-b-to-add-a-third-entity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Create a vote in B to add a third entity</h3>
 <p>As in step 2, we'll run <code>dao exec</code> again, except this time the first argument to <code>mint</code> will be the address of the third entity we want to add to B.</p>
-<pre><code class="hljs">dao exec &lt;<span class="hljs-built_in">name</span> <span class="hljs-keyword">of</span> dao B&gt; &lt;token manager app address <span class="hljs-keyword">of</span> dao B&gt; mint &lt;<span class="hljs-keyword">third</span> entity's address&gt; <span class="hljs-number">1000000000000000000</span> <span class="hljs-comment">--environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/</span>
-</code></pre>
+<pre><code class="hljs">dao exec &lt;name of dao B&gt; &lt;token manager app<span class="hljs-built_in"> address </span>of dao B&gt; mint &lt;third entity<span class="hljs-string">'s address&gt; 1000000000000000000 --environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/
+</span></code></pre>
 <p>Running the above will create an open vote in B. Again we'll need to vote <em>yes</em> to confirm the minting.</p>
 <p align="center">
    <img width="800" src="/docs/assets/agent-guide/agent-10b.png">
@@ -409,7 +409,7 @@ In our case this is a 1 followed by eighteen 0s, or <code>1000000000000000000</c
 </ul></li>
 </ul>
 <p>So in our case, we run:</p>
-<pre><code class="hljs">dao act &lt;agent app address <span class="hljs-keyword">of</span> dao A&gt; &lt;voting app address <span class="hljs-keyword">of</span> dao B&gt;  <span class="hljs-string">"vote(uint256,bool,bool)"</span> <span class="hljs-number">1</span> <span class="hljs-literal">true</span> <span class="hljs-literal">true</span>  <span class="hljs-comment">--environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/</span>
+<pre><code class="hljs">dao act &lt;agent app address of dao A&gt; &lt;voting app address of dao B&gt;  <span class="hljs-string">"vote(uint256,bool,bool)"</span> <span class="hljs-number">1</span> <span class="hljs-literal">true</span> <span class="hljs-literal">true</span>  --environment <span class="hljs-string">aragon:</span>rinkeby --ipfs-rpc <span class="hljs-string">https:</span><span class="hljs-comment">//ipfs.eth.aragon.network/ipfs/</span>
 </code></pre>
 <p>The result of this command will be to trigger a vote in A on whether to allow A's Agent app to execute the vote in B.</p>
 <p align="center">
@@ -418,7 +418,7 @@ In our case this is a 1 followed by eighteen 0s, or <code>1000000000000000000</c
 <h3><a class="anchor" aria-hidden="true" id="5-confirm-the-vote-action-in-a"></a><a href="#5-confirm-the-vote-action-in-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. Confirm the vote/action in A</h3>
 <p>The final step is to confirm the vote in A.</p>
 <p>Again, we can do this either through the UI or by running:</p>
-<pre><code class="hljs">dao exec &lt;<span class="hljs-built_in">name</span> <span class="hljs-keyword">of</span> dao A&gt; &lt;voting app address <span class="hljs-keyword">of</span> dao A&gt; vote <span class="hljs-number">2</span> <span class="hljs-literal">true</span> <span class="hljs-literal">true</span> <span class="hljs-comment">--environment aragon:rinkeby --ipfs-rpc https://ipfs.eth.aragon.network/ipfs/</span>
+<pre><code class="hljs">dao exec &lt;name of dao A&gt; &lt;voting app address of dao A&gt; vote <span class="hljs-number">2</span> <span class="hljs-literal">true</span> <span class="hljs-literal">true</span> --environment <span class="hljs-string">aragon:</span>rinkeby --ipfs-rpc <span class="hljs-string">https:</span><span class="hljs-comment">//ipfs.eth.aragon.network/ipfs/</span>
 </code></pre>
 <p>Note that we passed in a vote id of <code>2</code> as the first argument to <code>vote</code>. That's because this is the third vote created in A, and vote ids start at 0.</p>
 <p>Once you've confirmed the vote, if you head over to B's voting app again you should see that the vote to mint one token for your chosen third entity now has 100% support.</p>
