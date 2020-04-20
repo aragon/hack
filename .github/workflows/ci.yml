@@ -13,9 +13,9 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v1
         with:
-          node-version: 10
-      - name: npm install
-        run: npm install
+          node-version: 12
+      - name: yarn install
+        run: yarn install --frozen-lockfile
         working-directory: ./website
       - name: install solc
         run: |
