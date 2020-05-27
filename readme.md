@@ -14,8 +14,8 @@ Note: `solidity-docgen` [does not work on Windows](https://github.com/OpenZeppel
 ```sh
 git clone https://github.com/aragon/hack.git
 cd hack/website
-npm install
-npm start
+yarn install
+yarn start
 ```
 
 This should open your local instance of these docs in your browser at <http://localhost:3000/>.
@@ -28,9 +28,9 @@ If you'd like to publish it locally though, you can run:
 
 ```sh
 cd website
-npm install
-npm run build
-npm run publish-gh-pages
+yarn install
+yarn run build
+yarn run publish-gh-pages
 ```
 
 Note: the `aragonOS` files **must** be generated on publish, [see issue](https://github.com/aragon/hack/issues/116).

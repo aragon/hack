@@ -4,7 +4,7 @@
 
 The sections below cover our documentation guidelines, the different ways you can contribute, and how to ask for help.
 
-All members of our community are expected to follow our [Code of Conduct](https://wiki.aragon.org/documentation/Code_of_Conduct/). In short, we expect you to be friendly and welcoming in all of our spaces.
+All members of our community are expected to follow our [Code of Conduct](https://wiki.aragon.org/about/code_of_conduct/). In short, we expect you to be friendly and welcoming in all of our spaces.
 
 ## Get Rewarded
 
