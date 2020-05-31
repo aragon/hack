@@ -27,7 +27,7 @@ jobs:
         run: |
           export PATH=/$HOME/.solc-select:$PATH
           solc --version
-          npm run build
+          yarn run build
         working-directory: ./website
       - name: deploy
         run: |
