@@ -17,4 +17,4 @@ The client provides Aragon app developers with the following capabilities:
 - **Notifications**: Aragon apps can send notifications to the user when something relevant happens
 
 It looks like this:
-![](https://raw.githubusercontent.com/aragon/aragon-wiki/master/docs/press/press-kit/screenshots/0.5/aragon_core_v05_beta_home04.png)
+![](https://raw.githubusercontent.com/aragon/aragon-wiki/master/docs/media/press/press-kit/screenshots/0.5/aragon_core_v05_beta_home04.png)
