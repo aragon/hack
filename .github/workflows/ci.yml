@@ -22,11 +22,11 @@ jobs:
           curl -s -f -L "https://github.com/ethereum/solidity/releases/download/v0.4.24/solc-static-linux" -o "$HOME/bin/solc"
           chmod u+x "$HOME/bin/solc"
           echo "Installed solc-v0.4.24"
-          export PATH=$HOME/bin/solc:$PATH
+          export PATH=$HOME/bin:$PATH
           solc --version
       - name: build
         run: |
-          export PATH=$HOME/bin/solc:$PATH
+          export PATH=$HOME/bin:$PATH
           solc --version
           yarn run build
         working-directory: ./website
