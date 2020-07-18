@@ -1,4 +1,4 @@
-# Documentation portal for Aragon Apps <a href="https://hack.aragon.org/"><img align="right" src="https://github.com/aragon/design/blob/master/readme-logo.png" height="80px" /></a>
+# Documentation portal for Aragon Apps <a href="https://hack.aragon.org/"><img align="right" src=".github/assets/aragon.svg" height="80px" /></a>
 
 ## Running a local instance
 
