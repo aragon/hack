@@ -80,7 +80,7 @@
 <li><p>Node + npm</p>
 <ul>
 <li>Version of Node we recommend to be <a href="https://nodejs.org/en/">the latest LTS version, available to download here</a>.</li>
-<li>After downloading and unpacking, you must add the /bin folder to you $PATH.s</li>
+<li>After downloading and unpacking, you must add the /bin folder to you $PATH.</li>
 </ul></li>
 </ul>
 <p>For Linux:</p>
@@ -129,7 +129,7 @@ npm link
 </code></pre>
 <p>After installing, the main <code>aragon</code> executable will be available for use. It will also install the <code>dao</code> alias which is a shortcut for <code>aragon dao</code> commands.</p>
 <h4><a class="anchor" aria-hidden="true" id="the-aragon-directory"></a><a href="#the-aragon-directory" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The ~/.aragon directory</h4>
-<p>The aragonCLI creates the <code>.aragon</code> directory under the user directory where it saves the state of the devchain and the <a href="/docs/client">Aragon client</a>.</p>
+<p>The aragonCLI creates the <code>.aragon</code> directory under the user's home directory, where it saves the state of the devchain and the <a href="/docs/client">Aragon client</a>. At the moment, this folder is only automatically created after running <code>aragon devchain</code> once, but can also be created by via <code>mkdir ~/.aragon</code>.</p>
 <p>In case the client is not loading properly, deleting the <code>~/.aragon</code> directory will make <code>aragon run</code> recreate the environment the next time it is used and may solve the issue.</p>
 <h4><a class="anchor" aria-hidden="true" id="set-a-private-key"></a><a href="#set-a-private-key" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set a private key</h4>
 <blockquote>
@@ -149,7 +149,7 @@ The default mnemonic for the Aragon CLI is the same for all users. If you are go
 }
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="install-ipfs"></a><a href="#install-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install IPFS</h4>
-<p>Since <code>v6.0.0</code> we separate the instalation of <code>go-ipfs</code> from the aragonCLI. If you do not have it installed globally on your system we have a couple of comands to help with that:<code>aragon ipfs install</code> and <code>aragon ipfs uninstall</code>.</p>
+<p>Since <code>v6.0.0</code> we separate the installation of <code>go-ipfs</code> from the aragonCLI. If you do not have it installed globally on your system we have a couple of commands to help with that:<code>aragon ipfs install</code> and <code>aragon ipfs uninstall</code>.</p>
 <h2><a class="anchor" aria-hidden="true" id="global-options"></a><a href="#global-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Global options</h2>
 <p>Options that change the behaviour of the command:</p>
 <ul>
@@ -176,7 +176,7 @@ The default mnemonic for the Aragon CLI is the same for all users. If you are go
 <ul>
 <li><code>react</code>: this boilerplate contains a very basic Counter app and a webapp for interacting with it. It showcases the end-to-end interaction with an Aragon app, from the contracts to the webapp. Also comes with a DAO Template which will allow for using your app to interact with other Aragon apps like the Voting app. You can read more about DAO Template <a href="/docs/templates-intro">here</a>.</li>
 <li><code>bare</code>: this boilerplate will just set up your app directory structure but contains no functional code.</li>
-<li><code>tutorial</code>: this boilerplate is the one used in Your first Aragon app guide.</li>
+<li><code>tutorial</code>: this boilerplate is the one used in the <a href="https://github.com/aragon/your-first-aragon-app">&quot;Your first Aragon app&quot;</a> guide.</li>
 </ul></li>
 </ul>
 <blockquote>
