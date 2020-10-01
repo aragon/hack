@@ -44,7 +44,7 @@ root
   - **src**: Source files.
     - `App.js`: Aragon app root component.
     - `index.js`: Aragon app entry point.
-    - `script.sol`: Aragon app background script.
+    - `script.js`: Aragon app background script.
   - [**package.json**](https://docs.npmjs.com/creating-a-package-json-file): Frontend npm configuration file.
 - **contracts**: Smart Contracts folder.
   - `CounterApp.sol`: Aragon app contract.
