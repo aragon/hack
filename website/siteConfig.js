@@ -163,18 +163,14 @@ const siteConfig = {
       <!-- End Countly code -->
       ${html.slice(0, insertStylesAt)}
       ${sheet.getStyleTags()}
-      <script type = "text/javascript" >
-        var $zoho = $zoho || {};
-        $zoho.salesiq = $zoho.salesiq || { widgetcode: "8368321708326b3f205f6985224f65416311aafa35bf8cb06e7d9f50921fc950", values: {}, ready: function() {} };
-        var d = document;
-        s = d.createElement("script");
-        s.type = "text/javascript";
-        s.id = "zsiqscript";
-        s.defer = true;
-        s.src = "https://salesiq.zoho.eu/widget";
-        t = d.getElementsByTagName("script")[0];
-        t.parentNode.insertBefore(s, t);
-        d.write("<div id='zsiqwidget'></div>"); 
+      <script>
+        window.intercomSettings = {
+          app_id: "v5igxkky"
+        };
+      </script>
+
+      <script>
+        (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/v5igxkky';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
       </script>
       ${html.slice(insertStylesAt)}
     `.trim()
