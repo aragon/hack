@@ -108,8 +108,6 @@ dao exec <dao-address> <token-manager-address> initialize [token-address] false 
 
 At this point if you open your DAO in a web browser you should see the token manager app installed, and should be able to mint tokens from `your-address`. Find your DAO UI here: `https://<network>.aragon.org/#/<DAO Address>`
 
-Even though we have initialized the token manager as `transferrable = false`, and token transfers fail, there is what appears to be a UI bug where the token manager will list the token as transferrable even though it is not. [GitHub issue](https://github.com/aragon/aragon-apps/issues/630).
-
 ## Adding a Voting instance
 
 Adding a voting app allows actions to be protected by a vote, each instance is associated with a token, but you can have multiple voting instances per token, with each instance having different parameters. A common case might be to have some actions require a simple majority, while other require a super-majority. We will create on voting app instance, but the process can be repeated as many times as required.
