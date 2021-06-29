@@ -216,13 +216,13 @@ Once your browser is open at the right address, you should see a screen that loo
 
 ![](/docs/assets/getting-started-dao-1.png)
 
-As you can see on the left, this DAO is made up of two Aragon apps -- Home and Counter. Right now, we're in the Home app. This app just displays a welcome message with no possible user interactions.
+As you can see on the left, this DAO is made up of two Aragon apps -- Home and first-dao. Right now, we're in the Home app. This app just displays a welcome message with no possible user interactions.
 
-Click on Counter to open up the (slightly) more interesting Counter app.
+Click on fisrt-dao to open up the (slightly) more interesting Counter app.
 
 ![](/docs/assets/getting-started-dao-2.png)
 
-Right now the count is at 0. Let's increment it.
+Right now the count is at 42. Let's increment it.
 
 Note that incrementing the counter triggers a blockchain transaction that saves the new value to the chain. But before the transaction can be sent, we need to sign it (to prove it was us that really sent it).
 
