@@ -22,7 +22,7 @@ Now that you have a high-level overview of both Git and GitHub, we're ready to c
 
 If you don't have a GitHub account already, the first thing you should do is [sign up for one](https://github.com/join). Follow the instructions to create your account. It shouldn't take more than a couple of minutes.
 
-The next step is to open the [Getting Started page](https://hack.aragon.org/getting-started) of the hack Aragon docs.
+The next step is to open the [Getting Started page](https://hack.aragon.org/docs/getting-started) of the hack Aragon docs.
 
 ![](/docs-internal/assets/github-guide/gh-0-hq.png)
 
