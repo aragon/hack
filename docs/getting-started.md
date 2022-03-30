@@ -192,7 +192,8 @@ Once all 5 have ticks next to them, you should run the following:
 
 ```sh
 cd first-dao
-npm start
+yarn upgrade
+yarn start
 ```
 
 The first line, `cd first-dao`, just moves us into the directory where the scaffolded app was created.
@@ -232,7 +233,7 @@ To sign your first transaction with Metamask, head to the **Signing your first t
 
 ## Next steps
 
-We hope you enjoyed that 😊! Please don't hesitate to leave us any feedback on [Spectrum](https://spectrum.chat/aragon/app-development).
+We hope you enjoyed that 😊! Please don't hesitate to leave us any feedback on [Discord](https://discord.com/invite/aragon).
 
 Now that you’ve built your first DAO, feel free to take a look at the docs. If you're interested in understanding things at a deeper level, we recommend you jump straight into our [awesome tutorial](/docs/tutorial.html).
 
